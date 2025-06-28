@@ -25,6 +25,7 @@ This repository contains a collection of documents originally sourced from the A
    >   - [08_Merge_Compl_spli_txt](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/tree/main/2020/08_Merge_Compl_spli_txt)
    >   - [09_Merge_Parzial_spli_txt](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/tree/main/2020/09_Merge_Parzial_spli_txt)
    >   - [10_Merge_Origi_txt](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/tree/main/2020/10_Merge_Origi_txt)
+   >   - [11_Original_documents_images](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/tree/main/2020/11_Original_documents_images)
 3. Access the AI starting from the repository.
    ![Screenshot](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/blob/main/ReadMeImgs/Screenshot.png)
 4. Write your prompt, making sure that the repository has been attached to the AI.
