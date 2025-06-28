@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 38  a 137  
+ 
+Risultati principali: 
+Good 
+Practice  The PSS  
+[https://www.esa.int/TEC/Software_engineering_and_st andardisation/TECBUCUXBQE_2.h 
+tml ] famiglia di standard per la qualità del software.  
+Una guida per l'applicazione degli standard ESA di ingegneria del software ai piccoli 
+progetti è disponibile all'indirizzo: ftp://ftp.estec.esa.nl/pub/wm/wme/bssc/Bssc962.pdf  
+L'Università di Tecnologia di Eindhoven fornisce ul teriori requisiti semplificati e checklists 
+di progettazione. [ https://www.win.tue.nl/is/doku.php ] 
+ 
+5.3  Iniziative US 
+In questa sezione viene fornita una panoramica dell e iniziative SSE negli Stati Uniti. Tali iniziative  sono state 
+classificate in funzione della tipologia: accademic he o governative. 
+5.3.1  CERT Secure Coding 
+Il CERT Secure Coding è un'iniziativa di sicurezza del programma Computer Emergency Response Team 
+(CERT). Questo programma fa parte del Software Engi neering Institute (SEI) alla Canergie Mellon 
+University 12  (Pennsylvania, USA). Alcuni dei suoi programmi son o finanziati dal governo degli Stati Uniti. 
+Nel novembre 1988, la Defense Advanced Research Pro jects Agency (DARPA) incaricò il SEI di creare un 
+centro per coordinare la comunicazione tra gli espe rti di sicurezza durante le emergenze e per aiutare  a 
+prevenire futuri incidenti, a fronte di ciò, il CER T ha sviluppato il Software Initiative Assurance, c he 
+comprende: Secure Coding Standards, Source Code Ana lysis Lab (SCALe), Vulnerability analysis, Function  
+extraction for malicious code. 
+Il SEI è un centro di ricerca e sviluppo finanziato  dal governo federale, che conduce ricerche di inge gneria 
+del software in acquisizione, architetture e linee di prodotto, miglioramento dei processi e misurazio ne 
+delle performance, sicurezza e l'interoperabilità d el sistema e l'affidabilità. 
+Il SEI lavora a stretto contatto con le organizzazi oni di difesa e di governo, soprattutto l'Ufficio S ecretary of 
+Defense/Acquisition, Technology, and Logistics (OSD /AT&L) 13 , l'industria e il mondo accademico, con 
+l’obiettivo di migliorare continuamente i sistemi s oftware-intensive. 
+ 
+URL  https://www.sei.cmu.edu  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Academic  
+ 
+Le aree di lavoro CERT Secure Coding sono: 
+• Secure coding standards  
+                                                           
+12  https://www.cmu.edu/  
+13  http://www.acq.osd.mil/ 

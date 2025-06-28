@@ -1,0 +1,17 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 96  a 137  
+ 
+ 
+Figura 21 -  Report di Checkmarx 
+ 
+2)  CodeDx consente di effettuare la verifica di eventuali vul nerabilità di programmi e software presi in 
+considerazione. CodeDx riunisce una serie di strume nti di analisi del codice (Checkmarx, IBM  App 
+Scan , Veracode ), sia gratuiti sia commerciali, che consentono a l oro volta di individuare e 
+correggere agevolmente eventuali bug nel codice da analizzare. Uno screenshot dell’interfaccia 
+CodeDx è riportata nella figura che segue: 
+ 
+Figura 22 -  Interfaccia CodeDx 
+

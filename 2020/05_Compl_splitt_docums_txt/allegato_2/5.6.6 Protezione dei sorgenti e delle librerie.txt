@@ -1,0 +1,47 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 19  a 156  
+ 
+5.6.3  Strumenti 
+Compilatori, editor ed altri strumenti di sviluppo non devono essere presenti nei sistemi di produzion e in 
+cui l’applicazione risiede. 
+5.6.4  Profili utente 
+I profili utente dell’applicazione che risiede nei sistemi di produzione devono essere differenti da q uelli 
+configurati e utilizzati nei sistemi di sviluppo e test. L’applicazione deve implementare un meccanism o di 
+avviso della tipologia di profilatura, ruoli e perm essi assegnati all’utente a seguito dell’accesso (v edasi per 
+maggior dettaglio “Procedura di accesso dell’applic azione” Cfr. [paragrafo 5.7.3]). 
+5.6.5  Trattamento dei dati 
+I dati personali e critici, gestiti dall’applicazio ne, che risiedono nell’ambiente di esercizio, non d evono 
+essere copiati negli ambienti di test e sviluppo. I n caso di utilizzo dell’applicazione al solo fine d i test questi 
+devono essere rimossi immediatamente dopo il comple tamento di detta fase. 
+5.6.6  Protezione dei sorgenti e delle librerie 
+I sorgenti dell’applicazione e delle librerie corre late, fatta eccezione per i linguaggi interpretati,  non devono 
+risiedere in testo chiaro all’interno dei sistemi d i esercizio, bensì sotto forma di oggetti compilati . Nel caso 
+di linguaggi interpretati, il sorgente dell’applica zione che risiede nei sistemi di esercizio deve ess ere 
+offuscato.  
+Una copia non offuscata deve comunque sempre essere  conservata su un supporto diverso (esempio copia 
+su CD o DVD). 
+5.7  Autenticazione, Autorizzazione e Gestione degli acc essi 
+Per le politiche degli accessi si raccomanda l’adoz ione dei criteri riportati di seguito. 
+5.7.1  Policy standard “Everything is generally forbidden u nless expressly permitted” 
+L’applicazione deve implementare un meccanismo di a ccess control adeguato. Tutte le operazioni svolte 
+dagli utenti e le fasi di autorizzazione e assegnaz ione dei permessi devono essere subordinate alla po licy 
+standard : “Ogni azione è negata se non espressamen te consentita”. 
+5.7.2  Assegnazione dei privilegi utente 
+L’applicazione non deve assegnare alcun privilegio/ permesso all’utente fin quando il processo di 
+autenticazione e autorizzazione non è stato complet ato. 
+5.7.3  Procedura di accesso dell’applicazione 
+La procedura di accesso e log-on dell’applicazione deve ridurre al minimo le informazioni fornite agli  utenti 
+non ancora autenticati e prevedere determinati comp ortamenti. In particolare: 
+• Non deve con messaggi specifici fornire alcun tipo di aiuto, né rendere comprensibile se il processo 
+di autenticazione è fallito a causa del nome utente  o della password errata; 
+• Non deve fornire alcuna chiara indicazione sui ruol i e sui permessi assegnati a un utente fin quando 
+il processo di autenticazione non viene completato;  
+• Deve visualizzare un messaggio di avviso sulle sanz ioni derivate dall’accesso fraudolento 
+all’applicazione; 
+• Deve prevedere il mascheramento della password digi tata dall’utente non rendendola visibile o 
+nascondendola attraverso simboli (ad esempio con as terischi); 
+• Non deve trasmettere in rete la password in chiaro;  
+• Deve “processare” le informazioni fornite dall’uten te per l’accesso solo quando sono complete; 
+• Deve prevedere procedure configurabili di blocco mo mentaneo dell’account dopo una serie di 
+tentativi d’accesso infruttuosi; 

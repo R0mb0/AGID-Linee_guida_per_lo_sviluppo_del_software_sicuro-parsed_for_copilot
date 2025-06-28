@@ -1,0 +1,41 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 9 a 132 
+ 
+Vocabolo  Descrizione  
+Token  Valore generato per identificare univocamente una sessione interattiva.  
+Tabella 2 - Definizioni  
+3.2 Acron imi 
+Codice  Titolo  
+ACLs  Access Control List  
+AgID  Agenzia per l'Italia Digitale  
+API Application Programming Interface  
+ASLR  Address Space Layout Randomization  
+ASVS  OWASP Application Security Verification Standard  
+BSIMM  Building Security in Maturity Model  
+CIO Chief information officer  
+CLASP  Comprehensive and Lightweight Application Security Process  
+CVSS  Common Vulnera bility Scoring System  
+DFD  Data Flow Diagram  
+DPA  Data Protection Authority  
+DPB  Data Protection Board  
+DPD  Data Protection Directive  (95/46/CE)  
+DPIA  Data Protection Impact Analysis  
+DPO  Data Protection Officer  
+DREAD  Damage Potential, Reproducibility, Exploitability, Affected users, Discoverability  
+DS Data Store  
+E Entity  
+EDA  Ente di accreditamento  
+FIPP  Fair Information Practice Principles  
+FIPPs  Fair Information Practice Principles  
+FPFSD  framework for Privacy -Friendly System Design  
+GDPR  General Data Protection Regulation  
+HAZOP  Hazardous Operations  
+IOI Item of Interest  
+IPSec IP Security  
+LINDDUN  Linkability, Identifiability, Non Repudiation, Detectability, Disclosure of 
+information, Content Unawareness e Policy and consent Non -compliance  
+MIC  Mandatory Integrity Control  
+MITM  Man In The Midle  

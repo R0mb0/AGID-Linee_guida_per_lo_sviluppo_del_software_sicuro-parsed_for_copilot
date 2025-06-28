@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 90  a 156  
+ 
+• Alterare i permessi di file e directory all’interno  del file system (read / create / modify / delete) 
+• Permettere delle connessioni di rete non autorizzat e verso il server da parte dell'attaccante 
+• Acquisire il controllo dei servizi di sistema, arre standoli o avviandoli. 
+• Prendere il pieno controllo del server. 
+Come difendersi 
+Rimodulare il codice per evitare una qualsiasi esec uzione diretta di script di comandi. Per effettuare  
+operazioni di basso livello, devono essere preferit e specifiche API fornite dalle aziende produttrici di 
+software. 
+Se è non è possibile rimuovere l'esecuzione del com ando, eseguire solo stringhe statiche che non inclu dono 
+l'input dell'utente. 
+Validare tutti gli input, indipendentemente dalla l oro provenienza. La convalida dovrebbe essere basat a su 
+una white list: dovrebbero essere accettati solo i dati conformi a una struttura specificata, e scarta ti i dati 
+che non rientrano in questa categoria. I parametri devono essere limitati a un set di caratteri consen tito e i 
+valori non validi devono essere eliminati. Oltre ai  caratteri, occorre verificare il tipo del dato, la  sua 
+dimensione, l'intervallo di validità (range), il fo rmato ed eventuali valori attesi (white list). Conf igurare 
+l'applicazione da eseguire utilizzando un account u tente limitato che non disponga di privilegi non 
+necessari. 
+Se possibile, isolare tutta l'esecuzione dinamica u tilizzando un account utente separato e dedicato, c he 
+abbia privilegi solo per le operazioni e i file spe cifici utilizzati dall'applicazione, in base al pri ncipio 
+denominato "Principle of Least Privilege". Il princ ipio stabilisce che agli utenti venga attribuito il  più basso 
+livello di “diritti” che possano detenere rimanendo  comunque in grado di compiere il proprio lavoro. 
+ 
+Esempio: 
+Nel seguente codice viene utilizzato un input non v erificato per lanciare una shell dei comandi: 
+import subprocess 
+ 
+def codifica_file(): 
+  nome_file = raw_input('Inserire nome file da codi ficare: ') 
+  comando = 'ffmpeg -i "{source}" file_di_output.mp g'.format(source=nome_file) 
+  subprocess.call(comando, shell=True) # DA NON FAR E 
+ 
+Se viene fornito un nome file concatenato con la st ringa “; rm -rf /”, il comando di cancellazione del l’intero 
+file system verrebbe eseguito automaticamente. 
+Il paramentro shell deve essere sempre “false” per impedire l’esecuzione di comandi multipli, ma ciò n on è 
+sufficiente se la stringa passata, incece di conete nere un nome file, contiene un comando malevolo. 
+Sarebbe meglio non usare affatto la subprocess.call (), ma se proprio dev’essere fatta, il parametro pa ssato 
+a questa funzione dovrebbe essere sottoposto a esca ping con la funzione shlex.quote(). 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/77.html , 
+CWE-77: Improper Neutralization of Special Elements  used in a Command ('Command Injection'). 
+ 
+7.5.4  Connection String Injection 
+Come riconoscerla 
+Questo tipo di attacchi è possibile nel momento in cui l’applicazione affida all’input utente la compo siszione 
+dinamica della stringa di connessione al database o  a un server LDAP. Un malintenzionato potrebbe inse rire 
+una stringa opportunamente artefatta ed eseguire un a delle seguenti operazioni: 
+• Danneggiare le performance delle applicazioni (ad e sempio incrementando il valore relativo al MIN 
+POOL SIZE); 
+• Manomettere la gestione delle connessioni di rete ( ad esempio, tramite TRUSTED CONNECTION); 
+• Dirigere l'applicazione sul database fraudolento an ziché a quello genuino; 

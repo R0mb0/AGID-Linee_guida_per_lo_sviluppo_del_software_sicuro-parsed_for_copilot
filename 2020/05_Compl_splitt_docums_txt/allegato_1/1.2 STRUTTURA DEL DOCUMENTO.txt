@@ -1,0 +1,31 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 6 a 137  
+ 
+1 INTRODUZIONE 
+1.1  Scopo 
+Scopo del presente documento è fornire le linee gui da per intraprendere un processo di sviluppo del 
+software “sicuro”, nel corso di tutte le fasi SDLC,  attraverso l’identificazione e l’implementazione d i 
+opportune azioni di sicurezza. 
+ 
+1.2  Struttura del documento 
+Il presente documento è articolato come di seguito:  
+• Esigenze e Ambiti di Applicazione , come nasce l’esigenza dello sviluppo di software sicuro. 
+• Analisi delle iniziative e degli standard , analizza lo scenario nazionale e globale fornendo  una 
+vista delle iniziative e dei risultati prodotti in termini di: metodi e modelli, standard best 
+practices, strumenti. L’analisi dello scenario ha c onsentito la creazione del Catalogo dei Security 
+Tools . 
+• Secure Software Development Life Cycle (SSDLC): Ana lisi delle metodologie e dei processi, 
+analizza i diversi metodi e modelli SDLC esistenti,  con l’obiettivo di identificare le caratteristiche  
+che rendono un ciclo di sviluppo software sicuro ed  efficace.  
+• La sicurezza in tutte le fasi del ciclo di sviluppo  software  è un approfondimento sulle fasi SDLC 
+poiché, tradizionalmente, gli aspetti di sicurezza non sono mai considerati con sufficiente 
+attenzione fin dall’inizio del SDLC stesso. 
+• Training e formazione , focalizza l’attenzione  sul fatto che  molti degli attuali problemi di 
+sicurezza derivano da errori di progettazione e/o d i implementazione, risolvibili solo 
+disponendo di personale formato e consapevole.  
+• Certificazioni professionali , è un elenco delle principali certificazioni ricon osciute in ambito 
+InfoSec.  
+ 

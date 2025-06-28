@@ -1,0 +1,61 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 43  a 137  
+ 
+ 
+ 
+Figura 7- CWE Top 25 [Fonte: https://cwe.mitre.org/top25/archive/2019/2019_cwe_top25.html ] 
+ 
+5.3.4  Common Attack Pattern Enumeration and Classificatio n (CAPEC) 
+CAPEC è un'iniziativa co-sponsorizzata dal NCSD del l’US DHS e guidata dalla Cigital 15 . Costruttori di software 
+sicuro devono proteggersi da importanti vulnerabili tà potenziali. Per identificare e mitigare le vulne rabilità 
+relative al software, la community di sviluppo ha b isogno di capire la prospettiva dell'attaccante e g li 
+approcci utilizzati per sfruttare il software. 
+Gli schemi di attacco sono le descrizioni di metodi  comuni per lo sfruttamento del software, fornendo sia la 
+prospettiva che la guida dell'attaccante sui modi p er mitigare il loro effetto. Essi derivano dal conc etto di 
+pattern design applicato in un distruttivo, piuttos to che costruttivo, contesto e sono generati da un’ analisi 
+approfondita di specifici esempi di casi del mondo reale. 
+Questa iniziativa mira a fornire un catalogo a disp osizione del pubblico di schemi di attacco, insieme  ad uno 
+schema di classificazione e tassonomia completo. La  filosofia è di evolvere il catalogo con la parteci pazione 
+e i contributi pubblici e così consolidare un mecca nismo standard per l'identificazione, la raccolta, la 
+raffinazione, e la condivisione di modelli di attac co nella community software. 
+URL  https://capec.mitre.org  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Government  
+ 
+                                                           
+15  https://www.synopsys.com/software-integrity.html 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 44  a 137  
+ 
+Secondo questa iniziativa, le informazioni sugli sc hemi di attacco, se catturati in modo formale, poss ono 
+portare un notevole valore per considerazioni di si curezza del software attraverso tutte le fasi del S DLC e le 
+altre attività relative alla sicurezza, tra cui: 
+• Raccolta dei requisiti: Identificazione dei requisi ti di sicurezza pertinenti, dei misuse e abuse case s. 
+• Architettura e design: Fornisce il contesto per l'a nalisi dei rischi architetturali e le linee guida p er la 
+sicurezza nelle architetture del software. 
+• Implementazione e codifica: Prioritizzazione e guid a delle attività di revisione sicura del codice. 
+• Test del software e controllo qualità: Fornisce il contesto per una appropriata analisi del rischio e 
+test di penetrazione. 
+• Operatività dei sistemi: Sfruttare le esperienze ap prese dagli incidenti di sicurezza per fornire una 
+guida preventiva. 
+• Politiche e generazione di standard: Guida all'iden tificazione di adeguate politiche e standard 
+organizzativi prescrittivi.  
+ 
+Risultati più rilevanti:  
+• List of Attack Patterns  [http://capec.mitre.org/ ]. L’elenco è disponibile in due diversi formati: 
+o View by Mechanisms of Attack [ http://capec.mitre.org/data/definitions/1000.html ]. 
+o View by Domains of Attack [ http://capec.mitre.org/data/definitions/3000.html ]. 
+ 
+ 
+ 
+ 
+ 

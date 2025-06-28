@@ -1,0 +1,165 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 25  a 141  
+ 
+Terze parti 
+Identificazione dei requisiti di sicurezza per l'ac cesso di fornitori/clienti ad informazioni o beni a ziendali  
+Minaccia  Violazione della sicurezza, rispetto alle politiche di sicurezza dell’organizza zione , ad 
+opera di soggetti esterni. 
+Contromisure  Devono essere considerati e identificati tutti i re quisiti di sicurezza prima di concedere 
+ai partners, fornitori/clienti, anche in fase di tr attativa, l'accesso a informazioni o beni 
+dell'organizzazione ospitati nel sistema/piattaform a. Effettuare un'analisi dei rischi per 
+valutare l'impatto sul business aziendale (a livell o economico, d'immagine, di 
+continuità operativa, eccetera) nel caso di violazi oni della sicurezza, divulgazione non 
+autorizzata (es. a concorrenti), illecito trattamen to delle informazioni, effettuati da tali 
+soggetti che accedono ad informazioni. 
+ 
+Identificazione dei requisiti di sicurezza negli ac cordi con i fornitori/clienti  
+Minaccia  Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+ad opera di soggetti esterni. 
+Contromisure  Gli accordi con terze parti che prevedono accesso, elaborazione, comunicazione, 
+aggiunte o, in generale, gestione delle informazion i ospitate nel 
+sistema/piattaforma dell'organizzazione, devono con siderare tutti i requisiti di 
+sicurezza pertinenti.  
+Prevedere, in particolare, misure preventive per ev itare violazioni o illeciti delle 
+terze parti nella gestione delle informazioni.  
+Definire con precisione le attività, le modalità, l e responsabilità e la periodicità, per 
+l'esercizio di diritti di audit o comunque di verif iche sull’attività dei fornitori/clienti.  
+Gli accessi logici privilegiati da parte di soggett i esterni devono essere subordinati 
+alla nomina di tali soggetti ad amministratori di s istema, e tale nomina deve essere 
+a sua volta legata ad uno specifico contratto con l a ditta di appartenenza 
+comprendente accordi di riservatezza e regole per i l corretto uso delle risorse 
+informatiche vincolanti per il fornitore e per i su oi dipendenti. Ovviamente gli 
+accessi logici devono essere monitorati da parte di  fornitori devono essere 
+completamente monitorati. 
+In ogni caso gli accessi privilegiati da parte di s oggetti esterni non devono mai 
+avvenire da sedi esterne (es. sede fornitore). 
+ 
+5.1.2  Autenticazione 
+Gestione delle informazioni segrete di autenticazio ne degl i utenti  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  L'assegnazione agli utenti delle informazioni segre te di autenticazione (es. password) 
+deve essere controllata attraverso un processo di g estione. Il processo dovrebbe 
+prevedere:  
+- l’uso di user ID e password individuali per sostene re il principio di accountability; 
+- le modalità di assegnazione temporanea delle inform azioni segrete di 
+autenticazione, da cambiare al primo uso; 
+- procedure per verificare l'identità di un utente, p rima di fornire, modificare o 
+sostituire nuove informazioni;  
+- le modalità per assicurare il rispetto dell'utente della riservatezza delle 
+informazioni segrete di autenticazione. Per quest'u ltimo punto l'organizzazione 
+dovrebbe informare l'utente delle sue responsabilit à ed acquisire dallo stesso un 
+formale impegno a mantenere riservate le informazio ni (ad es. mediante specifica 
+lettera da sottoscrivere). 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 26  a 141  
+ 
+ 
+Criteri per l'autenticazione mediante password  
+Minaccia  - Accesso non autorizzato a lle  informazioni . 
+- Furto di credenziali di autenticazione (ad es. con attacchi in grado di sfruttare 
+l’eventuale inadeguatezza delle password). 
+- Uso non autorizzato di privilegi (ad es. mediante t ecniche di “escalation” verticali 
+su un target o orizzontali). 
+Contromisure  Configurare le funzioni di controllo della qualità delle passwo rd per l'accesso ai sistemi, 
+affinché la composizione rispetti i criteri di lung hezza, complessità e univocità 
+necessari per avere una robustezza elevata. Ovvero,  la password: 
+- deve essere composta da un numero crescente di cara tteri (almeno 8) in funzione 
+della criticità delle informazioni da difendere (es . 15 caratteri per utenze 
+amministrative);  
+- deve contenere caratteri di almeno tre delle quattr o categorie seguenti:  
+a.  lettere maiuscole dell'alfabeto latino (dalla A all a Z);  
+b.  lettere minuscole dell'alfabeto latino (dalla a all a z); 
+c.  numeri in base 10 (da 0 a 9); 
+d.  caratteri speciali non alfanumerici, ad esempio pun to esclamativo (!); 
+- non si deve riferire a qualcosa che qualcun altro p ossa facilmente indovinare od 
+ottenere utilizzando informazioni relative alla per sona (ad esempio: nomi, numeri 
+di telefono e date di nascita, etc.); 
+Inoltre devono essere rispettate le seguenti regole : 
+- Vietare nomi di account predefiniti e rinominare ac count standard come, ad 
+esempio, l'account amministratore;  
+- Non mostrare a video la password (ma neanche PIN, p assphrase, ecc., in generale: 
+chiavi segrete) quando viene inserita e non dare in dicazioni sulla sua lunghezza; 
+- La password temporanea deve essere obbligatoriament e cambiata al primo log-on;  
+- Deve essere forzato per tutti gli utenti, e partico larmente per gli amministratori, il 
+cambiamento periodico della password; 
+- La procedura di cambiamento della password deve imp edire il riutilizzo di tutte le 
+password precedentemente utilizzate e includere una  procedura efficace che 
+tenga conto di errori di inserimento; 
+- Limitare il numero di tentativi consentiti in un de terminato periodo di tempo o, 
+alternativamente, effettuare il blocco dell'account  per l'accesso da parte degli 
+utenti finali dopo un determinato numero di tentati vi; 
+- Non consentire l’accesso fino a quando il processo di log-on sia stato completato 
+con successo; 
+- Convalidare le informazioni del log-on solo al comp letamento di tutti i dati di input. 
+Se una condizione di errore si presenta, il sistema  non deve indicare quale dato è 
+corretto o incorretto; 
+- Limitare il tempo entro il quale la procedura di lo g-on deve ultimarsi. In caso di 
+eccesso, la procedura deve terminare;  
+- Considerare di visualizzare le informazioni seguent i a valle di log-on con successo:  
+a.  data e ora del precedente log-on di successo; 
+b.  dettagliare ogni tentativo di log-on di insuccesso dall’ultimo log-on di 
+successo; 
+- La persistenza e la trasmissione delle password dev e avvenire in modo protetto. 
+Per quanto concerne la persistenza, la forma “hash salted” rappresenta la best 
+practices; 
+- Per contrastare la possibilità fornita dalla cache del browser nel consentire 
+l'accesso, implementare un criterio che consente al l'utente di scegliere di non 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 27  a 141  
+ 
+salvare le credenzi ali o di forzare  tale criterio come predefinito;  
+- Tracciare sia gli accessi riusciti sia i tentativi di accesso falliti; 
+- Eseguire l'Audit degli accessi non andati a buon fi ne per rilevare tentativi di 
+hacking delle password; 
+- Controllare e validare sempre l’indirizzo IP sorgen te del client usato dall’utente: 
+a.  Se l’applicazione è destinata alla sola intranet, i mpedire accessi 
+provenienti da indirizzi IP esterni alla propria LA N; 
+b.  Se l’applicazione è destinata ad utenti Internet ma  la connessione arriva da 
+IP esteri, prevedere un livello di controllo maggio re (es. una convalida via 
+SMS su un numero di cellulare italiano, oppure più in generale per 
+applicazioni critiche l’uso di meccanismi di autent icazione a due fattori); 
+c.  Se l’applicazione è destinata ad utenti Internet it aliani, quando risulti 
+tecnicamente fattibile si dovrebbe rilevare e imped ire l’eventuale accesso 
+da IP esteri basato su un servizio di Proxy Server situato in Italia. 
+Tali requisiti dovrebbero essere periodicamente rie saminati per mantenere o rendere 
+più sicura la password. 
+ 
+Altri criteri per l'autenticazione  
+Minaccia  Accesso non autorizzato alle informazioni . 
+Contromisure  La password costituisce la protezione minima obblig atoria per tutti gli accessi logici che 
+richiedono l’identificazione dell’utente. 
+Forme alternative più robuste di autenticazione qua li one-time password o 
+autenticazione forte a due fattori detta anche 2FA (pine e token o pin e impronta 
+biometrica) o a tre fattori (pin, token e biometria ) devono essere utilizzate per gli 
+accessi amministrativi e per l’accesso a dati e sis temi critici secondo un approccio 
+basato sull’analisi dei rischi. 
+Per semplificare l’adozione dei meccanismi di auten ticazione forte è possibile adottare 
+soluzioni basate su sistemi gatekeepers che permett ono di intermediare l'accesso 
+privilegiato ai sistemi target senza che su di essi  sia necessario alcun intervento. 
+Per sistemi isolati o in ambiti IT ristretti, è opp ortuno preferire l'amministrazione di 
+sistema esclusivamente attraverso l’accesso fisico locale al sistema, restringendo la 
+possibilità di accesso remoto al minimo. 
+In contesti più estesi la gestione remota è in gene re indispensabile; in tal caso, a causa 
+della sensibilità dei dati passati sulle interfacce  amministrative, è necessario utilizzare 
+canali crittografati, ad esempio, con tecnologia VP N o SSL, e nel caso del Remote 
+Desktop di Windows è necessario abilitare la critto grafia del protocollo RDP. 
+Per ridurre ulteriormente il rischio, va considerat o anche l'impiego di politiche IPSec 
+per limitare la gestione remota dei computer colleg ati nella rete interna. 
+In tutti i casi, il numero delle interfacce di ammi nistrazione deve essere ridotto al 
+minimo, disabilitando quelle non in uso. 
+ 
+Corretto utilizzo delle informazioni segrete di aut ent icazione  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  Tutti gli utenti devono essere informati dall'organ izzazione sul corretto utilizzo delle 
+informazioni segrete di autenticazione. Tutti gli u tenti dovrebbero essere avvisati di:  
+- evitare di tenere una registrazione (per esempio su  carta, documenti software) 
+delle informazioni segrete di autenticazione, salvo  indicazione di un metodo di 
+memorizzazione sicura; 
+- modificare le informazioni segrete di autenticazion e ogni qualvolta vi sia  
+un'indicazione della loro possibile compromissione.  

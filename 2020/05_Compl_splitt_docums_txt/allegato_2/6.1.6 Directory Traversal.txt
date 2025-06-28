@@ -1,0 +1,44 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 27  a 156  
+ 
+• Prendere il controllo remoto di un browser; 
+• Ottenere un cookie; 
+• Modificare il collegamento ad una pagina; 
+• Redirigere l’utente a un URI differente dall’origin ale; 
+• Forzare l’immissione di dati importanti in form non -trusted (phishing); 
+ 
+Esempio:  
+Segue un esempio di servlet vulnerabile a Cross Sit e Scripting: 
+ 
+Contromisure 
+Al fine di evitare il Cross Site Scripting è di fon damentale importanza verificare l’input che provien e 
+dall’esterno, prima di utilizzarlo all’interno dell a web application. 
+Tale verifica comporta l’utilizzazione di funzioni di escaping, le quali rilevano caratteri ritenuti p ericolosi, ad 
+esempio <, >, &, /, ’ ,” , sostituendoli con del te sto. 
+Esistono a tal proposito molte librerie che consent ono di neutralizzare tag html, come anche pezzi di codice 
+Javascript. 
+6.1.6  Directory Traversal 
+Le problematiche di Directory Traversal, note anche  come Dot-Dot Vulnerability, si verificano quando u n 
+aggressore ha la possibilità di immettere dell’inpu t che verrà utilizzato dall’applicazione per accede re ad un 
+file in lettura e/o scrittura. Solitamente le appli cazioni vietano l’utilizzo di percorsi completi (ad  esempio 
+/etc/shadow o c:\winnt\system32\cmd.exe) ma in assenza di controlli sui dati acquisiti in 
+ingresso, un aggressore può ugualmente raggiungere e acquisire il contenuto di un file residente all’e sterno 
+dell’area a lui accessibile, anteponendo una sequen za di punti al nome dello stesso (ad esempio 
+../../../../nomefile  oppure .../.../.../nomefile ). Poiché le problematiche di Directory 
+Traversal sono state utilizzate dagli aggressori fi n dallo sviluppo dei primi Web Server, sono oggi tr a le più 
+note. Non a caso molte applicazioni vengono progett ate in modo da mitigare il rischio del loro 
+sfruttamento. Alcune fra queste tentano di corregge re i dati non validi acquisiti in input, trasforman doli in 
+un flusso considerato valido. La casistica ha comun que dimostrato che è quasi sempre sconsigliato (al di 
+fuori di specifiche eccezioni) affidarsi all’input utente per costruire nomi file e percorsi all’inter no 
+dell’applicazione, in quanto vi è un’alta possibili tà di introdurre ulteriori fattori di instabilità o  insicurezza 
+all’interno del software sviluppato. 
+ 
+Esempio:  
+Se nel codice sorgente viene utilizzato il nome del  file: 
+BufferedReader reader = new BufferedReader(new File Reader(“data/”+ argv[1] )); 
+String line = reader.readLine(); 
+while(line!=null) { 
+   System.out.println(line); 
+   line = reader.readLine(); 
+} 

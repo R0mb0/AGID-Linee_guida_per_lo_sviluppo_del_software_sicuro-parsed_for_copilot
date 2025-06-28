@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 108  a 156  
+ 
+} 
+7.6.10.7  Definizione delle classi 
+Evitare l’utilizzo di classi Wrapper. Se il wrapper  è degno di maggiore fiducia rispetto al codice che  lo 
+utilizza, si può aprire un insieme unico di debolez ze di sicurezza. Qualsiasi cosa fatta per conto di un 
+chiamante, le cui autorizzazioni limitate non sono incluse nel controllo di sicurezza appropriato, è u na 
+potenziale debolezza da sfruttare. 
+Mai abilitare qualcosa attraverso il Wrapper che il  chiamante non potrebbe fare su se stesso. Questo è  un 
+pericolo quando si effettua qualcosa che comporta u n controllo di sicurezza limitato. Quando i control li a 
+livello singolo sono coinvolti, l'interposizione de l codice di Wrapper tra il chiamante reale e l'elem ento API 
+in questione può facilmente causare il controllo di  sicurezza per avere successo se non dovrebbe, quin di 
+indebolire la sicurezza. 
+7.6.10.8  User input 
+I dati utente, qualsiasi tipo di input (dati da una  richiesta Web o un URL, input ai controlli di un'a pplicazione 
+Microsoft Windows Form e così via), possono influen zare negativamente il codice perché spesso vengono 
+utilizzati direttamente come parametri per chiamare  altro codice. Questa situazione è analoga a un mod ulo 
+dannoso che chiama il codice con parametri estranei , e dovrebbero essere prese le stesse precauzioni.  
+Per cercare questi possibili bug, cercate di immagi nare quali siano i valori possibili e valutare se i l codice che 
+visualizza questi dati possa gestire tutti questi c asi. È possibile risolvere questi bug attraverso ‘a dozione 
+della tecnica della white list, per cui si accettan o solo i dati previsti e si rifiutano tutti gli alt ri. 
+ 
+Alcune considerazioni importanti che coinvolgono i dati utente includono quanto segue: 
+• tutti i dati contenuti in una risposta del server v engono eseguiti sulla pagina web dal client. Se il tuo 
+web server prende i dati utente e li inserisce nell a pagina Web restituita, potrebbe includere ad 
+esempio un tag <script> e ed essere eseguito (attac co XSS); 
+• il client può richiedere qualsiasi URL; 
+• la funzione eval(datiUtente) può fare qualsiasi cos a; 
+• fare attenzione ai nomi utente che potrebbero avere  più di un formato canonico. Ad esempio, in 
+Microsoft Windows 2000, è possibile utilizzare spes so il modulo di nome utente MYDOMAIN \ o il 
+modulo username@mydomain.example.com; 
+• prendere in considerazione i percorsi ingannevoli o  non validi: quelli forniti di ripetuti “..\” e que lli 
+molto lunghi; 
+• può esserci un uso sconsiderato del carattere (*); 
+• fare attenzione all’espansione dei token (% token%) ; 
+• verificare che non vi siano strani forme di percors i con un significato speciale; 
+• appurare la correttezza delle versioni brevi di nom i file lunghi, come longfi ~ 1 per longfilename. 
+7.6.10.9  Concorrenza 
+Utilizzo di synchronized per la gestione della memo ria 
+Se un metodo di una classe Dispose  non è synchronized , è possibile che il codice di cleanup all'interno di 
+Dispose sia eseguito più di una volta, come illustr ato nell'esempio seguente.  
+Esempio: 
+void  Dispose()  
+{ 
+  if ( myObj != null  )  
+  { 
+    Cleanup(myObj); 
+    myObj = null ; 
+  } 
+} 

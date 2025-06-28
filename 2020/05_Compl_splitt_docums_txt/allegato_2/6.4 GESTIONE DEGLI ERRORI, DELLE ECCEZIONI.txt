@@ -1,0 +1,58 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 35  a 156  
+ 
+Attraverso lo sfruttamento di altre vulnerabilità, quali la SQL injection, il buffer overflow, il dire ctory listing 
+e altre, un aggressore può introdursi nel sistema e  carpire queste informazioni. 
+Non direttamente correlabile con problematiche crit tografiche in senso stretto, la tecnica di File sys tem 
+Polling viene spesso utilizzata da un aggressore co n accesso locale ad un sistema per appropriarsi dei  dati 
+fintanto che essi permangono memorizzati su disco i n forma non cifrata. Questa condizione si verifica 
+quando tali dati vengono temporaneamente salvati pe r lunghi periodi in tabelle di staging o in punti b en 
+precisi del filesystem, prima di essere definitivam ente cifrati. L’aggressore, utilizzando script auto matici, 
+può copiare ciclicamente il contenuto di queste tab elle e directory in locazioni del disco differenti e 
+mantenere i relativi dati in forma intelligibile pe r i suoi scopi. 
+Esempio:  
+È banale accedere a un file non cifrato, contenente  dati elaborati, collocato in una directory raggiun gibile 
+del file system.  
+L’esecuzione del comando more /usr/app/data/accounts.txt  rivela i dettagli degli account che non 
+dovrebbero essere divulgati.  
+Contromisure 
+Occorre applicare le misure di sicurezza citate in precedenza per impedire le problematiche che 
+permettono agli attaccanti di raggiungere il file s ystem. I file e i dati sensibili o cruciali devono essere salvati 
+nel filesystem in collocazioni dotate permessi rest rittivi, solo dopo averli correttamente criptati co n un 
+algoritmo di crittografia “forte”. 
+6.4  Gestione degli errori, delle eccezioni  
+La gestione degli errori, delle eccezioni o delle c ircostanze fuori dalla norma sono tutti quanti aspe tti 
+frequentemente trascurati dagli sviluppatori di sof tware. La non corretta implementazione delle eccezi oni 
+può indurre l’applicazione a: 
+• bloccarsi o sospendersi; 
+• rilasciare informazioni utili all’aggressore per av anzare con successo nella sua azione intrusiva nel 
+sistema; 
+• permettere all’aggressore di acquisire il controllo  diretto del sistema o dell’applicazione. 
+ 
+Esempio:  
+Se l’applicazione non gestisce bene l’errore, le in dicazioni che possono essere mostrate possono forni re 
+molte informazioni all’attaccante, sia sull’applica zione, sia sull’ambiente nel quale gira. Ad esempio  si 
+guardi il seguente stack overflow  mostrato in chiaro sulla pagina web, in seguito a un errore 
+dell’applicazione: 
+ 
+Exception sending context initialized event to list ener instance of class 
+com.selexes.gcm.server.MyServletContextListener jav a.lang.ArithmeticException: / 
+by zero at  
+com.selexes.gcm.server.MyAppServerBase.<init>(MyApp ServerBase.java:46)at 
+com.insecurefirm.MyApp.server.MyAppServerXmpp.<init >(MyAppServerXmpp.java:33) at 
+com.insecurefirm.MyApp.server.MyAppServerXmpp.getIn stance(MyAppServerXmpp.java:77) 
+at 
+com.insecurefirm.MyApp.server.MyAppServerFactory.<i nit>(MyAppServerFactory.java:76 
+)at 
+com.insecurefirm.MyApp.server.MyAppServerFactory.ge tInstance(MyAppServerFactory.ja 
+va:27)at 
+com.insecurefirm.MyApp.server.MyServletContextListe ner.contextInitialized(MyServle 
+tContextListener.java:34)at 
+org.apache.catalina.core.StandardContext.listenerSt art(StandardContext.java:4812)a 
+t 
+org.apache.catalina.core.StandardContext.startInter nal(StandardContext.java:5255)a 
+t org.apache.catalina.util.LifecycleBase.start(Life cycleBase.java:147)at 
+org.apache.catalina.core.ContainerBase$StartChild.c all(ContainerBase.java:1408)at 
+org.apache.catalina.core.ContainerBase$StartChild.c all(ContainerBase.java:1398)at  
+java.util.concurrent.FutureTask.run(Unknown Source) at 

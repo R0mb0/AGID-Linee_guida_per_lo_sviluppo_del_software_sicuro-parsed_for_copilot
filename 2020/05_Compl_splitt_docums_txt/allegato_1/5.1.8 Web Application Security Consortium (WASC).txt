@@ -1,0 +1,50 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 28  a 137  
+ 
+Type  Academic  
+ 
+SANS pubblica relazioni annuali (Top 25 Software Er rors) con l’analisi sugli errori di programmazione più 
+pericolosi: http://www.sans.org/top25-software-errors/ .  
+L’ultima release ( 2019 CWE Top 25 Most Dangerous Software Errors ) è fruibile al seguente link: 
+https://cwe.mitre.org/top25/archive/2019/2019_cwe_t op25.html . 
+ 
+Risultati più rilevanti: 
+Resources  Application Security Resources: Whitepapers e webcasts sulla sicurezza della 
+applicazioni.  
+Security Laboratory: Il "Security Laboratory" è un insieme informale di articoli 
+e whitepaper sulla sicurezza, l'informatica e l'ind ustria della sicurezza 
+informatica. 
+Fundamental Practices for Secure Software Internet Storm Center (ISC)  
+Il ISC fornisce un servizio gratuito di analisi e d i allarme agli utenti di Internet e 
+alle organizzazioni. I volontari donano il loro tem po per analizzare difetti e 
+anomalie e pubblicare un diario giornaliero delle l oro analisi e riflessioni sul 
+sito web di Storm Center. 
+Application Security Procurement Language: Questo è un progetto di 
+contratto software per gli acquirenti di software p ersonalizzato. Il suo obiettivo 
+è quello di rendere gli sviluppatori di codice resp onsabili del controllo del 
+codice e della correzione dei difetti di sicurezza prima della consegna del 
+software. 
+Top 25 Software Errors . Sono elencate in tre categorie: 
+• Interazione non sicura fra componenti 
+• Risky Resource Management 
+• Difesa insufficiente. 
+Ciascun errore include: 
+• La classificazione all’interno della Top 25 
+• Collegamenti a tutti i riferimenti alla CWE 
+• Frequenza delle CWE e relative conseguenze nei camp i dati 
+• Costi di risanamento 
+• Facilità di rilevamento 
+• Esempi di codice 
+• Metodi di rilevamento 
+• Frequenza degli attacchi e consapevolezza degli agg ressori 
+• Le relative CWE e i modelli di attacco per questa v ulnerabilità. 
+Comprende anche misure di prevenzione e bonifica su fficientemente estese 
+che gli sviluppatori possono adottare per mitigare o eliminare la vulnerabilità.  
+ 
+5.1.8  Web Application Security Consortium (WASC) 
+WASC produce best practice per le applicazioni web.  WASC riassume la sua missione nella seguente frase  
+“to develop, adopt, and advocate standards for web ap plication security ”. 
+ 

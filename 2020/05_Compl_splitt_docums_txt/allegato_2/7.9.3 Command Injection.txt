@@ -1,0 +1,56 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 126  a 156  
+ 
+7.9.3  Command Injection 
+Come riconscerla 
+Sfruttando questa vulnerabilità un aggressore potre bbe eseguire comandi di sistema arbitrari 
+sull’application server. Il danno che potrebbe esse re arrecato comprende: 
+• la possibilità di modificare i permessi all’interno  di file o directory nel file system (read / create  / 
+modify / delete); 
+• la possibilità di instaurare connessioni di rete no n autorizzate verso il server;  
+• la possibilità di gestire i servizi di sistema, avv iandoli, fermandoli o rimuovendoli; 
+• la completa acquisizione del controllo del server d a parte dell'attaccante. 
+• Attraverso questa vulnerabilità l'applicazione vien e portata ad eseguire i comandi dell’attaccante. 
+L'operazione spesso viene effettuata utilizzando st ringhe di input controllate dall'utente, sulle qual i 
+non viene effettuata alcuna verifica. 
+• Potrebbero così essere eseguiti direttamente sul se rver comandi anche molto pericolosi per il 
+sistema o per la sicurezza dei dati. 
+Come difendersi 
+• Rimodulare il codice per evitare una qualsiasi esec uzione diretta di script di comandi. Per effettuare  
+operazioni di sistema, utilizzare eventualmente API  fornite dalla piattaforma. 
+• Se non è possibile fare a meno di lanciare shell de i comandi, assicurarsi tuttavia di eseguire solo 
+stringhe statiche, che non includano l'input dell'u tente. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La convalida dovrebbe essere 
+basata su una white list: dovrebbero essere accetta ti solo i dati che adattano a una struttura 
+specificata, e scartati i dati che non rientrano in  questa categoria. I parametri devono essere limita ti 
+a un set di caratteri consentito e i caratteri rico nosciuti come estranei devono essere filtrati e 
+neutralizzati (escaping). Oltre ai caratteri, occor re controllare il tipo del dato, la sua dimensione,  
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Configurare l'applicazione da eseguire utilizzando un account utente limitato che non disponga di 
+privilegi non necessari. 
+• L’esecuzione del codice dovrebbe utilizzare un acco unt utente separato e dedicato, fornito dei soli 
+privilegi strettamente necessari, in base al princi pio denominato "Principle of Least Privilege". Il 
+principio stabilisce che agli utenti venga attribui to il più basso livello di “diritti” che possano 
+detenere rimanendo comunque in grado di compiere il  proprio lavoro. 
+ 
+Esempio: 
+Codice vulnerabile: 
+<?php 
+  if (isset($_GET['host']) { 
+  $host = $_GET['host']; 
+  passthru("ping -c 1 ".$host); // Se host=www.goog le.com | cat 
+/etc/passwd verrà visualizzato il contenuto di /etc /passwd 
+  } 
+?> 
+Codice sicuro: 
+<?php 
+ if (isset($_GET['host']) { 
+  $host = $_GET['host']; 
+  passthru("ping -c 1 ". escapeshellarg ($host)); 
+  } 
+?> 
+  
+Per ulteriori informazioni: http://cwe.mitre.org/data/definitions/77.html,  
+CWE-77: Improper Neutralization of Special Elements  used in a Command ('Command Injection'). 
+ 

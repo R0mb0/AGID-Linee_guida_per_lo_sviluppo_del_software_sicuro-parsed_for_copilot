@@ -1,0 +1,54 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 87 a 132 
+ 
+• Ripudio ( Plausible  Deniability ); 
+• Non rilevabilità (Undetectability ); 
+• Non divulgazione di informazioni ( Conﬁdentiality ); 
+• Consapevolezza sul contenuto (Content Awareness ); 
+• Aderenza alla politic a sul consen so (Policy and consent compliance ). 
+ 
+LINDDUN viene presentato come un approccio completo alla modellazione delle minacce con un 
+metodo di individuazione  di processi, minacce e requisiti.  Può essere ragionevole utilizzare 
+LINDDDUN come framework per l’identificazione  delle minacce sulla privac y, in sostituzione o  in 
+aggiunta  alla STRIDE.  
+In primo luogo, viene creato un diagramma di flusso dei dati (DFD), una rappresentazione grafica 
+strutturata del sistema che utilizza quattro  tipi principali di elementi : entità, archivi dati, flussi di 
+dati e processi.  Ciascun  tipo di elemento DFD viene  associato a una serie di categorie di minacce 
+alla privacy ( sono  state identificat e sette categorie di alto livello di minacce alla privacy: L-
+Linkability , I-Identifiability , N-Non Repudiation , D-Detectability , D-Disclosure of information , U-
+Content Unawareness  e N-Policy and consent Non -compliance ). Per identificare le minacce che 
+insistono  sul sistema analizzato, per ciascun  elemento  è necessario esaminare  le minacce 
+corrispondenti alle categorie di cui sopra . 
+La tabella seguente, mostra la correlazione tra le minacce di privacy previste da LINDDUN e le 
+tipologie di elementi DFD sopra descritte:  
+ 
+Elemento 
+DFD  L I N D D U N 
+Archivio 
+dati X X X X X  X 
+Flusso 
+dati X X X X X  X 
+Processo  X X X X X  X 
+Entità  X X    X  
+Tabella 24 - Minacce LINDDUN per elemento DFD  
+La metodologia LINDDUN supporta l' analista fornendo una serie di alberi di minacc ia che 
+descrivono i percorsi d' attacco più comuni per ogni possibile combinazione tra le tipologie  di 
+minaccia e gli element i DFD.  Basandosi su  questi alberi, l'analista potrà documentare  le minacce 
+identificate , utilizzando scenari di casi di abuso per descrivere in dettaglio i possibi li attacchi.  Le 
+minacce vengono  quindi considerate prioritarie in base al loro rischio.  Tuttavia non fornisce 
+esplicitamente un supporto per l' analisi de l rischi o. Le minacce che derivano da tale processo, 
+possono quindi essere tradotte in requisiti di ris ervatezza.  Infine, LIND DUN fornisce un elenco di 
+soluzioni per la privacy al fine di mitigare le minacce individuate . 
+ 
+La tabella seguente, riporta gli o biettivi di privacy (proprietà della privacy) basati su le varie 
+tipologie  di minaccia previste in LIND DUN, dove (E-Entit à, DF-Flusso Dati, DS-DataStore, P-
+Process o). 
+Minacce LINDDUN  Obiettivo elementare a tutela della privacy  
+Linkability  of (E,E)  Unlinkability  of (E,E)  
+Linkability  of (DF,DF)  Unlinkability  of (DF,DF)  
+Linkability  of (DS,DS)  Unlinkability  of (DS,DS)  
+Linkability  of (P,P)  Unlinkability  of (P,P)  
+Identiﬁability  of (E,E)  Anonymity/pseudonymity of (E,E)  

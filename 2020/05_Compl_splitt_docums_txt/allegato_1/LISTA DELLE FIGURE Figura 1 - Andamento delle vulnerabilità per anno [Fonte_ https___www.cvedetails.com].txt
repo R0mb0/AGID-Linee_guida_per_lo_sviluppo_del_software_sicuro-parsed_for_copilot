@@ -1,0 +1,37 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 11  a 137  
+ 
+ 
+Figura 1 - Andamento delle vulnerabilità per anno [ Fonte: https://www.cvedetails.com ] 
+Nella Figura 1 è rappresentato il numero delle vuln erabilità nel periodo 1999-2019. Sull’asse delle as cisse 
+sono riportati gli anni progressivamente dal 1999 a l 2019, mentre nelle ordinate è indicata la numeros ità 
+delle vulnerabilità riscontrate per anno. 
+Tra le principali cause, si riscontra l’adozione di  metodologie concentrate, soprattutto, sulla correz ione di 
+difetti funzionali e di attenzione alle performance  delle logiche applicative, trascurando l’attuazion e di 
+pratiche di progettazione e programmazione che gara ntiscono la sicurezza del codice. 
+Da qui anche l’appello della comunità OWASP 6 che sottolinea la necessità di accrescere la consa pevolezza 
+sulla sicurezza delle applicazioni, poiché il SW no n sicuro mette a repentaglio le infrastrutture anch e più 
+critiche (finanziarie, sanitarie e difensive).  
+E’ necessario rispondere in modo efficace alle sfid e sulla sicurezza delle applicazioni, dotandosi di soluzioni 
+adeguate per: 
+• Migliorare la gestione del programma di sicurezza d elle applicazioni. Le componenti chiavi di un 
+programma di sicurezza devono includere: 
+o Risk Management Integration , 
+o Architect & Developer Guidance,  
+o Process Improvement (SDLC), 
+o Secure Development Activities, 
+o Vulnerability Management Integration; 
+ • Valutare il codice software e le applicazioni al fi ne di identificare le vulnerabilità; 
+• Automatizzare la correlazione dei risultati della v erifica della sicurezza per applicazioni interattiv e, 
+statiche e dinamiche. 
+4.2  Sviluppo applicazioni sicure  
+La sicurezza informatica è l’insieme delle tecniche  che mirano a proteggere l'ambiente informatico che  
+include: gli utenti, le reti, le applicazioni, i pr ocessi e i dati. Questa sicurezza “integrata” impli ca una visione 
+della security a 360° il cui obiettivo principale è  di ridurre i rischi, compreso la prevenzione e la mitigazione 
+degli attacchi informatici.  
+                                                           
+6 A free and open software security community (https: //www.owasp.org)  
+

@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 123  a 156  
+ 
+• Utilizzare gli IoC Container per gestire tutte le d ipendenze esterne. Di seguito sono riportati alcuni  
+dei contenitori / framework: Ninject, autofac, stru ctureMap, Unity block, Castle Windsor. 
+• Creare ViewModel per ogni View. Creare un ViewModel  specifico per ogni visualizzazione. Il ruolo 
+del ViewModel dovrebbe interessare solo il binding di dati e non dovrebbe contenere alcuna logica. 
+• Utilizzare HtmlHelper. Per generare view html utili zzare HtmlHelper. Se l'attuale HtmlHelper non è 
+sufficiente estenderlo utilizzando i metodi di este nsione. Questo manterrà la progettazione 
+controllata. 
+• Decorare action methods con verbi appropriati come Get o Post, se applicabile. 
+• Utilizzare l’attributo OutputCache.  
+• Decorare gli action methods più utilizzati con Outp utCache attribute. 
+• Controller e Domain logic. Cercare di separare il c ontroller dal dominio logico. Il controller deve 
+essere responsabile solo delle seguenti funzioni:  
+o convalidare l'input; 
+o ottenere i dati relativi alla view dal modello; 
+o ritornare la view appropriata o reindirizzare ad un  altro metodo di azione appropriato. 
+• Utilizzare il modello Post-Redirect-Get. Il modello  PRG viene utilizzato per evitare l'avvio del 
+browser classico quando si aggiorna una pagina dopo  il POST. Ogni volta che fai una richiesta POST, 
+una volta completata la richiesta, effettua un rein dirizzamento. In questo modo, quando l'utente 
+aggiorna la pagina, verrà eseguita l'ultima richies ta GET piuttosto che il POST. Questo consente di 
+evitare problemi di usabilità non necessari e imped isce che la richiesta iniziale venga eseguita due 
+volte evitando così possibili problemi di duplicazi one. 
+• View e presentation logic: la View non deve contene re presentation logic. Non ci dovrebbe essere 
+alcuna logica di dominio nelle viste. Le viste devo no essere solamente responsabili della 
+visualizzazione dei dati. Per esempio se un pulsant e "Elimina" deve essere visualizzato solo 
+dall’utente con ruolo "Amministratore", ciò dovrebb e essere estratto in un helper HTML.  
+ 
+7.9  PHP 
+PHP è un linguaggio di scripting lato server, proge ttato per lo sviluppo web ma anche usato come 
+linguaggio di programmazione generico. Originariame nte creato da Rasmus Lerdorf nel 1994, PHP è ora 
+distribuito da The PHP Group. PHP originariamente s ignificava “home page personale”, ma ora è l'acroni mo 
+ricorsivo PHP: Hypertext Preprocessor. 
+Il codice PHP può essere incorporato nel codice HTM L oppure può essere utilizzato in combinazione con 
+vari sistemi di modelli Web, sistemi di gestione de i contenuti Web e framework web. Il codice PHP vien e 
+solitamente elaborato da un interprete PHP implemen tato come modulo nel web server. Il codice PHP può 
+essere ancora incorporato nel codice HTML, ma più f requentemente può essere utilizzato in combinazione  
+con vari sistemi di modelli Web, sistemi di gestion e dei contenuti Web e framework. Il codice PHP vien e 
+solitamente elaborato da un interprete PHP implemen tato come modulo nel web server. 
+ 
+Segue un elenco delle principali vulnerabilità e co ntromisure da adottare. 
+7.9.1  Cross-site scripting (XSS)  
+Come riconoscerla 
+Il Cross Site Scripting consiste nella possibilità che un attaccante possa inserire nella pagina 
+dell’applicazione, quindi nel codice HTML, script c he, una volta eseguiti, possano trarre in inganno i  legittimi 
+utenti, trafugare informazioni e predisporre nuovi attacchi.  
+Questa minaccia, enormemente diffusa, è dovuta allo  scarso controllo dell’input da parte delle web 
+application.  
+ 

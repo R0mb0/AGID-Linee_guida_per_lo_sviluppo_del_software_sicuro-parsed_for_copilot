@@ -1,0 +1,99 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 101  a 137  
+ 
+autenticata con un livello adeguato di garanzia e che tale accesso non sia 
+vietato dalla legge applicabile. 
+Responsabilizzazione  Stabilisce che siano documentate e comunicate  in modo appropriato 
+tutte le politiche, le procedure e le pratiche rela tive alla privacy. Prevede 
+altresì l’assegnazione ad un individuo specifico al l'interno 
+dell'organizzazione del compito di attuare le polit iche, le procedure e le 
+best practice relative alla privacy. 
+Sicurezza delle informazioni  Stabilisce la protezione dei dati personali con controlli appropriati a 
+livello operativo, funzionale e strategico. Al fine  di garantire l'integrità, la 
+riservatezza e la disponibilità dei dati personali e proteggerli dai rischi 
+(quali l’accesso non autorizzato, la distruzione, l ’utilizzo non consentito, 
+la modifica, la divulgazione o la perdita in tutto il ciclo di vita 
+dell’informazione). 
+Conformità alla privacy  Stabilisce di  verificare e dimostrare che il trattamento rispetti  la 
+protezione dei dati e la tutela della privacy, attr averso requisiti specifici e 
+mediante verifiche periodiche – anche attraverso il  ricorso a revisori 
+interni o esterni. 
+Tabella 5 - Principi generali della privacy 
+A seguire vengono illustrate quelle che sono consid erate come migliori pratiche in cui è il titolare d el 
+trattamento che definisce lo scopo dei dati e l'inc aricato del trattamento che lo attua, coerentemente  con 
+gli obblighi definiti nel GDPR.  
+ 
+LIMITAZIONE NELLA RACCOLTA 
+• Limitazione nella raccolta dei dati personali 
+o Prima della raccolta di dati personali - ad esempio , quando si stipula un contratto con 
+l'interessato - il titolare del trattamento deve ot tenere il consenso preventivo e 
+inequivocabile da parte dell'interessato o informar e l'interessato della raccolta di suoi 
+dati personali e delle finalità di utilizzo indicat e in base alla normativa nazionale 
+vigente. 
+o Dal punto di vista del titolare del trattamento, il  consenso è necessario soprattutto 
+quando i dati personali vengono utilizzati in servi zi commerciali. Tuttavia, nei casi di 
+sicurezza e di servizi pubblici, può non essere nec essario un consenso esplicito 
+preliminare, anche se è probabile che il consenso i mplicito sia stato fornito nell'ambito 
+dell'accordo contrattuale tra l'utente e il fornito re di servizi. 
+• Metodi di raccolta dei dati personali 
+o Il titolare del trattamento non deve acquisire dati  personali con mezzi fraudolenti o altri 
+mezzi illeciti. 
+• Raccolta dati senza consenso 
+o Le limitazioni alla raccolta dei dati non si applic ano nei casi in cui il trattamento dei dati 
+personali è disciplinato dalla normativa nazionale vigente. I titolari del trattamento dei 
+dati dovrebbero raccogliere i dati senza il consens o, ad esempio se autorizzati da 
+un'ordinanza giudiziaria nazionale o da uno strumen to giuridico equipollente. 
+• Esclusione di quelle informazioni in grado di ident ificare un individuo dai dati raccolti 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 102  a 137  
+ 
+o Il responsabile del trattamento dei dati dovrebbe a dottare le opportune misure per 
+evitare di raccogliere dati dai quali una persona p otrebbe essere identificata facendo 
+riferimento ad una banca dati. 
+• Conferma del consenso da parte dell'interessato per  la raccolta dei propri dati personali 
+o Il titolare del trattamento dei dati deve adottare misure adeguate per ottenere la 
+conferma sul consenso da parte dell'interessato all a raccolta dei propri dati. 
+QUALITA’ DEI DATI 
+• Qualità dei dati raccolti 
+o Il titolare del trattamento dei dati personali deve  adoperarsi nel mantenere i dati 
+personali esatti e aggiornati entro i limiti necess ari per il raggiungimento degli scopi 
+dell'utilizzo. 
+SPECIFICA DELLO SCOPO 
+• Specifica dello scopo d'uso 
+o Nel trattare i dati personali, il titolare del trat tamento deve specificare le finalità 
+dell'utilizzo dei dati personali. 
+• Limitazioni al cambiamento dello scopo d'uso 
+o Il titolare del trattamento dei dati non deve modif icare le finalità d'uso al di fuori 
+dell'ambito in cui le nuove finalità possono ragion evolmente essere considerate 
+compatibili con quelle d'origine. 
+• La modifica delle finalità d'uso richiede il consen so preventivo 
+o Prima che il titolare del trattamento dei dati modi fichi le finalità d'uso che vanno oltre il 
+campo di applicazione in cui le nuove finalità poss ono ragionevolmente essere 
+considerate compatibili con le finalità di origine,  deve informare l'interessato di tale 
+modifica o ottenere un consenso preventivo e inequi vocabile. 
+LIMITAZIONE NELL’USO DEI DATI 
+• Limitazione d'uso 
+o Un responsabile del trattamento dei dati personali non deve trattare i dati personali, 
+senza ottenere il consenso preventivo da parte dell 'interessato, oltre quanto necessario 
+per il raggiungimento delle finalità d'uso specific ate. 
+• Restrizione della divulgazione a terze parti 
+o Il titolare del trattamento non deve fornire dati p ersonali a terzi senza ottenere il 
+consenso preventivo da parte dell'interessato, tran ne in casi molto limitati e ben 
+definiti (ad esempio a seguito di richieste legali) . 
+• Utilizzo senza consenso 
+o Le disposizioni delle due specifiche precedenti non  si applicano nei casi in cui il 
+trattamento dei dati personali si basa su leggi naz ionali vigenti. I titolari del trattamento 
+dei dati dovrebbero concedere l'accesso ai dati sol o alle autorità incaricate 
+all'applicazione della legge, come autorizzato da u n'ordinanza di un tribunale nazionale 
+o da uno strumento giuridico equivalente. 
+MISURE DI SICUREZZA 
+o I dati personali devono essere protetti da adeguate  misure di sicurezza contro rischi 
+quali la perdita o l'accesso non autorizzato, la di struzione, l'uso, la modifica o la 
+divulgazione dei dati. 
+APERTURA 

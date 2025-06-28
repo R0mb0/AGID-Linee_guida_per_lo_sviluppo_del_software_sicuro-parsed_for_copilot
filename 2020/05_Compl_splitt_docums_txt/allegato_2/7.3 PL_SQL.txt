@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 78  a 156  
+ 
+javax.servlet.http.HttpServletRequest) e rigettare le informazioni provenienti da host o link incorret ti e/o 
+inaspettati. 
+Trattamento dei files e degli oggetti embedded. Una  servlet non deve mai accettare in input contenuti 
+sottomessi da un utente che contengano tag HTML, ti pici dell’iclusione di file od oggetti come: <EMBED >, 
+<OBJECT> e <SCRIPT>. 
+ 
+Come già evidenziato altrove, tutte le eccezioni ch e si verificano durante l’esecuzione delle servlet che 
+costituiscono l’applicazione web devono essere catt urate e gestite opportunamente. I relativi mesaggi di 
+errore sollevati (es. dump di databse o codici di e rrore - out of memory, null pointer exceptions, sys tem call 
+failure, database unavailable, network timeout), de vono essere visualizzati verso l’utenza in accordo ad uno 
+schema ben dettagliato: agli utenti generici devono  essere inviate le informazioni minime in grado di 
+aiutarli nella comprensione degli errori stessi (se nza rivelare dettagli superflui), mentre le informa zioni sulla 
+diagnostica devono essere inviate per la visualizza zione esclusivamente agli amministratori 
+dell’applicazione. Il meccanismo di gestione errori  deve essere in grado di gestire ogni tipo di dati in 
+ingresso e di garantire la sicurezza. Devono essere  previsti dei messaggi di errore semplici, in grado  di 
+indicare la causa. I tentativi d’intrusione devono essere registrati nei file di log, qualunque ne sia  l’esito, in 
+modo tale da poterli verificare in un secondo tempo . La gestione degli errori non deve essere concentr ata 
+soltanto sui dati forniti in ingresso dall’utente, ma deve includere anche tutti gli errori che posson o essere 
+generati da componenti interni come system call, qu ery sul db o altre funzioni interne. 
+Anche il risparmio delle risorse macchina una buona  prassi. Ove possibile,implementare meccanismi che 
+consentono di limitare al massimo il numero di riso rse allocate per ogni singolo utente. Per gli utent i 
+auntenticati, è possibile fissare una quota in modo  da poter limitare il carico massimo che un utente può 
+applicare al sistema. Per gli utenti non autenticat i, si dovrebbero evitare tutti gli accessi che comp ortino 
+query e la possibilità di utilizzare altre applicaz ioni avide di risorse ritenute superflue, mantenend o ad 
+esempio in una cache il contenuto dei dati ricevuti  da questi utenti invece di eseguire delle nuove qu ery sul 
+DataBase. 
+7.3  PL/SQL 
+PL/SQL (Programming Language / Structured Query Lan guage) è un linguaggio di programmazione che 
+viene implementato su un Oracle RDBMS. PL/SQL è in grado di utilizzare gli oggetti messi a disposzione  dal 
+RDBMS Oracle, poiché è stato realizzato “su misura”  per tali oggetti. 
+I maggiori database relazionali di altri produttori  includono linguaggi di programmazione simili a PL/ SQL di 
+Oracle, anch’essi in grado di utilizzare le specifi cità degli oggetti a loro disposizione per incremen tare la 
+produttività e creare processi elaborativi automati zzati efficienti. Sybase e Microsoft SQL Server uti lizzano 
+Transact-SQL, IBM DB2 utilizza SQL procedural Langu age, PostgreSQL supporta PL/pgSQL, ecc.  
+7.3.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+Il Cross Site Scripting consiste nella possibilità di inoculare uno script e di mandarlo in esecuzione  sul front-
+end dell’applicazione. Tramite tecniche sviluppate da malintenzionati per ottenere informazioni person ali, 
+possono, ad esempio, essere simulate pagine quasi i dentiche ad altri siti molto frequentati per ottene re 
+informazioni riservate. La prassi del “social engin eering” consente di ingannare gli utenti per indurl i a 
+visitare pagine fraudolente. Gli attacchi XSS di ti po reflected si verificano ogni qualvolta uno scrip t viene 
+inoculato ed eseguito nel periodo in cui dura la se ssione. Gli XSS stored, viceversa, sono script male voli che 
+sono stati memorizzati su una base dati e vengono p ertanto incorporati nella pagina ( e quindi eseguit i) 
+ogni volta che qualcuno ne fa richiesta. 
+Siamo di fronte ad DOM based XSS se i dati malevoli , contenenti tag HTML e script, vengono incorporati  
+direttamente nell'HTML della pagina, in modo che il  browser visualizzerà queste informazioni come part e 
+della pagina web eseguendo in maniera silente gli s cript. Chi visualizza la pagina modificata in modo 
+fraudolento non sarà in grado di riconoscere l’inga nno. 

@@ -1,0 +1,40 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 41  a 156  
+ 
+Altri problemi di overflow si manifestano a seguito  di circostanze diverse e non necessariamente corre labili 
+alla copia o allo spostamento di dati in un buffer insufficiente. Le principali problematiche di overf low oggi 
+conosciute vengono di seguito descritte. 
+6.5.1  Stack overflow 
+Il principio di sfruttamento è molto semplice e si basa sulla possibilità di saturare un buffer oltre le sue reali 
+capacità di contenimento, fino a sovrascrivere l’in dirizzo di ritorno della funzione vulnerabile. L’in dirizzo di 
+ritorno è un valore posizionato nella regione di me moria stack che permette all’applicazione, al rient ro 
+della funzione chiamata, di riprendere l’esecuzione  dall’istruzione immediatamente successiva. Questo 
+valore è puntato da diversi registri, in base all’a rchitettura hardware per la quale l’applicazione è stata 
+compilata (ad esempio EIP su piattaforma x86 o RIP su piattaforma x64). Riuscendo a saturare un buffer  
+oltre le sue capacità di contenimento, un aggressor e ha la possibilità di sovrascrivere, con valori 
+prettamente arbitrari, tutte le aree di memoria adi acenti, fino a giungere all’indirizzo di ritorno, f acendo 
+proseguire l’esecuzione del programma da qualsiasi indirizzo di memoria desiderato, deviando il regola re 
+flusso esecutivo dell’applicazione. 
+L’esecuzione di codice malevolo attraverso uno stac k overflow si sostanzia fondamentalmente in tre ste p: 
+• l’aggressore satura il buffer non soggetto a bound- checking e colloca ad un certo punto della 
+memoria lo shellcode; 
+• l’aggressore sovrascrive l’indirizzo di ritorno del la funzione vulnerabile con l’indirizzo in memoria in 
+cui risiede lo shellcode; 
+• Dal ritorno della funzione lo shellcode viene esegu ito; 
+ 
+Esempio:  
+Rappresentazione generica di uno stack overflow: 
+ 
+Contromisure 
+Il programmatore deve configurare i cicli sugli arr ay in modo da non superare il numero di elementi 
+previsto. Un loop per tutta la lunghezza possibile  del buffer potrebbe attivare il codice malevolo. 
+6.5.2  Off-by-one/Off-by-few 
+Gli overflow che si manifestano nello stack sono og gi meno frequenti rispetto al passato, ma non sono del 
+tutto scomparsi. In realtà, queste problematiche so no ancora riscontrabili nei moderni software, a cau sa di 
+errate pratiche di programmazione. Gli overflow def initi Off-by-one o Off-by-few ne sono la dimostrazi one 
+palese. Rientrano in questa categoria tutti gli ove rflow che, al contrario degli stack overflow, perme ttono di 
+eccedere solo di uno o pochi byte oltre le reali ca pacità di contenimento di un buffer. Questa condizi one, a 
+seconda del  compilatore utilizzato, della predispo sizione dei buffer e delle variabili in memoria e q uindi 
+soprattutto dell’architettura hardware su cui il so ftware gira, può permettere ad un aggressore di alt erare a 
+

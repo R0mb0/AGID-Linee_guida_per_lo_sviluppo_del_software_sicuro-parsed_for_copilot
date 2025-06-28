@@ -1,0 +1,42 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 29  a 156  
+ 
+• Esempio: 
+Si consideri la query: $sql = "SELECT * FROM fattur e WHERE nome_cliente LIKE '%".$nome."%' AND 
+ref_cliente=2 ORDER BY num_fattura ASC" 
+Se il parametro $nome fosse acquisito da input utente e inizializzato all a stringa: %' #  
+La query risultante sarebbe: SELECT * FROM fatture WHERE nome_cliente LIKE '%%' # AND 
+ref_cliente=2 ORDER. 
+ 
+Esempio di Script vulnerabile a SQL Injection: 
+ 
+Contromisure 
+Per impedire un attacco di SQL Injection è necessar io evitare di concatenare le stringhe delle query e  
+affidarsi alle stored procedures e alle query param etriche (prepared statement). Può essere utile util izzare 
+una libreria ORM come EntityFramework, Hibernate, o r iBatis, ma questa tecnologia – di per sé - non me tte 
+al riparo dalla SQL Injection. 
+6.2  Session Management 
+Le problematiche di Session Management sono partico larmente comuni nelle applicazioni Web e più in 
+generale in tutte quelle applicazioni che gestiscon o sessioni di collegamento inidividuali di ciascun client. 
+Errori di progettazione del software in questo caso  possono consentire a utenti non autorizzati di acc edere 
+a dati protetti. Un aggressore può appropriarsi del la sessione di collegamento di un utente lecito ope rando 
+al suo posto, impedendo a quest’ultimo di accedere a una o più risorse.  
+ 
+La prevenzione di tali attacchi può essere messa in  atto in diversi modi, ad esempio rigenereando l’id  di 
+sessione a ogni login. La stessa cosa può essere fa tta con i cookies, rigenerandoli a ogni chiamata. È  
+possibile utilizzare un id di sessione molto lungo,  in modo che non possa essere facilemente indovinat o. 
+Nessuna di queste misure, tuttavia, riesce a elimin are del tutto il rischio di furto di sessione. L'un ico rimedio 
+veramente efficace è utilizzare una connessione sic ura con SSL/TLS. 
+ 
+Di seguito sono descritte le principali cause e vul nerabilità che danno origine a problematiche di Ses sion 
+Management. 
+6.2.1  Session Stealing e Hjihacking 
+Un aggressore che riesce ad ottenere l’identificati vo di una sessione (detto anche token) o il cookie di un 
+utente e replicarlo esattamente in una o più richie ste inviate al server, ha la capacità di accedere a d aree o 
+risorse che dovrebbero solo essere riservate all’ut enza lecita, bypassando in modo diretto i meccanism i di 
+autenticazione dell’applicazione.  
+Sono diverse le cause che agevolano o permettono di  portare a termine attività di Session Stealing/Ses sion 
+Hjhacking, di seguito vengono proposte le più comun i. 
+ 
+Esempio:  

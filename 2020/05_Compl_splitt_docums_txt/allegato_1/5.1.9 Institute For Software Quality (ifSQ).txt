@@ -1,0 +1,52 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 29  a 137  
+ 
+URL  http://www.webappsec.org/  
+Country of HQ location  
+Geographic Scope  US  
+International 
+Type  Industry (not for profit)  
+ 
+Risultati più rilevanti: 
+Resources  Web Application Security Scanner Evaluation Criteri a  (WASSEC ) 
+Una serie di linee guida per valutare gli strumenti  di scansione delle 
+applicazioni web riguardo la loro efficacia nel tes tare e identificare le 
+vulnerabilità. 
+The Web Hacking Incidents Database (WHID)  
+WHID è un progetto del Web Application Security Con sortium dedicato al 
+mantenimento di un elenco di applicazioni web relat ive agli incidenti di 
+sicurezza. 
+WASC Script Mapping Project 
+Elenco delle modalità di esecuzione degli script al l'interno di una pagina web 
+senza usare i tag <script>. 
+Distributed Web Honeypot (DWH) Project 
+Identificare gli attacchi emergenti contro le appli cazioni web e segnalarli alla 
+comunità. 
+Web Security Glossary 
+Indice dei termini e della terminologia relativa al la sicurezza delle applicazioni 
+web. 
+WASC Threat Classification v2.0 
+È un effort per classificare le debolezze e gli att acchi che possono portare alla 
+compromissione di un sito web, dei suoi dati o dei suoi utenti. 
+Web Application Firewall Evaluation Criteria 
+Sviluppo di criteri dettagliati per la valutazione di un firewall di un'applicazione 
+web (WAF). 
+WASC Web Application Security Statistics 
+Raccolta di statistiche sulla vulnerabilità delle a pplicazioni per identificare e 
+mappare i problemi di sicurezza delle applicazioni sui siti web aziendali. 
+ 
+5.1.9  Institute For Software Quality (ifSQ) 
+L'Istituto per la Qualità del Software, con sede ne i Paesi Bassi, è un gruppo di professionisti coinvo lti nello 
+sviluppo e nella distribuzione di software. ifSQ pe rsegue un obiettivo comune: aumentare gli standard 
+software (e dello sviluppo software) in tutto il mo ndo attraverso la promozione del Code Inspection, c ome 
+prerequisito del Software Testing nel ciclo di prod uzione e rilascio del software. 
+ 
+URL  http://ifsq. org  
+Country of HQ location  
+Geographic Scope  The Netherlands  
+International 
+Type  Industry (non profit)  
+ 

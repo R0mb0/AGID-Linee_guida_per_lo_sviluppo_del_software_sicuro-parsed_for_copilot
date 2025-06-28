@@ -1,0 +1,60 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 127 a 132 
+ 
+1. Domanda : il richiedente invia la domanda mediante un modulo disponibile 
+sul sito web della CNIL. Esso deve fornire tutti gli elementi atti a dimostrare 
+che la sua procedura o il suo prodotto sono conformi ai requisiti della 
+norma.  
+2. Valutazione dell' ammissibilità:  CNIL dispone di 2 mesi per analizza re 
+l'ammissibilità di una domanda. In caso contrario, essa è  considerata  
+ammissibile.  
+3. Esame da parte dell' unità Privacy Seals del CNIL in cui possono aver luogo 
+scambi tra la divisione Privacy Seals e il richiedente per chiarire alcuni punti 
+della domanda.  
+4. Valutazione della conformità da parte del comitato di certi ficazione:  
+Quando l' esame da parte della Privy Seals Unit è completato, questo viene 
+presentato al comitato d i certificazione, che svolge l' analisi legale, sviluppa 
+le raccomandazioni e pianifica le azioni correttive.  
+5. Presentazione e garanzia del marchio d i riservatezza:  La decisione di 
+rilasciare il certificato  di riservatezza viene presa dall' Autorità per la 
+protezione dei dati personali riunita in seduta plenaria.  
+6. Notifica e pubblicazione: La decisione viene inviata al richiedente, 
+accompagnata da loghi personalizzati a nome del titolare del marchio di 
+protezione dei dati perso nali, nonché dalle norme per l' utilizzo del 
+marchio, e viene pub blicata poi sul sito web Légifrance (CNIL 2017)  della 
+CNIL . 
+Accreditamento 
+dell'organismo di 
+certificazione  Non appl icabile (I certificati sono rilasciati solo dalla CNIL, non vi sono 
+organismi di certificazione coinvolti)  
+Durata del 
+processo  L' esame della domanda di certifi cazione avviene in due fasi: 
+l'ammissibilità della domanda e l'esame.  Il CNIL disp one di 2 mesi per 
+analizzare l' ammissibilità di una domanda. Il periodo di esame varia. Il 
+certificato di riservatezza deve essere consegnato entro 6 mesi dal 
+ricevimento degli ultimi elementi necessari per soddisfare i requisiti della 
+norma.  
+Monitoraggio post -
+certificazione  Il CNIL può verificare in qualsiasi momento e con qualsiasi mezzo che il 
+prodotto o la procedura certificati siano conformi alle condizioni definite 
+nella norma. CNIL può ritirare un certificato di privacy . Sul suo sito 
+Internet, il CNIL tiene un elenco aggiornato dei prodotti e dell e procedure 
+certificati, con l' identità dei propri  titolari.  
+Periodo di validità 
+della certificazione  3 anni, con possibilità di ri -certificazione/rinnovo  
+Risorse  Non viene corrisposta alcuna tassa al CNIL pe r il rilascio del sigillo. 
+Tuttavia, il richiedente potrebbe dover dedicare risorse organizzative per 
+conformarsi agli standard e adattare le proprie pratiche.  
+Certificazioni 
+rilasciate  CNIL ha rilasciato 91 certificazioni (incluse le ri -certificazioni) f ino a 
+settembre 2017  
+9.4 A.4 – ICO Privacy Seal  
+Ambito  Descrizione  
+Campo di 
+applicazione e 
+oggetto  Nel 2015, i l commissario britannico per l' informazione ha annunciato la sua 
+intenzione di introdurre un certificato nazionale di privacy , quale timbro di 
+approvazione "che dimostri la buona prassi in materia di  tutela della vita 

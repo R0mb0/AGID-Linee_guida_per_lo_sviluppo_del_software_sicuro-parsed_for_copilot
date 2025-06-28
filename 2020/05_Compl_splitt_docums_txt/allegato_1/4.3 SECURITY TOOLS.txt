@@ -1,0 +1,34 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 14  a 137  
+ 
+ 
+Figura 4 - OWASP Top 10 - 2017 
+L’adozione di un Secure Software Development Life C ycle (SSDLC) atto a considerare e implementare 
+opportune attività di sicurezza, nel corso di tutte  le sue fasi del ciclo di vita del SW (dall’analisi  fino alla 
+manutenzione), è una necessità inderogabile per ris pondere in modo efficace alle problematiche di 
+sicurezza e per ridurre i costi che comportano tras curarla. 
+Ripensare alla sicurezza tra responsabilità e consa pevolezza, oltre ad essere una buona pratica, è anc he un 
+obbligo di legge (Regolamento UE 679/2016).  
+ 
+4.3  Security Tools 
+Nell’ambito della cybersecurity, Forrester 8, nel suo report “ Five steps to reinforce and harden application 
+security ”9, rileva la necessità di cooperazione tra i team Se curity & Risk (S&R) e gli IT manager (I&O), 
+ribadendo più volte come i primi non siano in grado , da soli, di coprire tutte le vulnerabilità scatur ite dalle 
+nuove esigenze in ambiti IT e digital business. Dal  punto di vista dell’analista, infatti, l’IT team d eve 
+adottare, attraverso opportuni meccanismi di automa zione e integrazione, le security practices  all’interno 
+di una ‘ continuous delivery pipeline ’. Questo garantisce una maggiore visibilità nelle interazioni tra 
+hardware, software, servizi web e customer data. I professionisti I&O hanno, quindi, l’obiettivo di cr eare un 
+ambiente di sicurezza ‘responsive’.  
+A tal fine, Forrester propone cinque steps per cost ruire un responsive security environment : 
+ 
+ 
+Innanzitutto è necessario eliminare tutte le proble matiche di sicurezza spesso derivanti da vulnerabil ità 
+riconducibili a servizi non più utilizzati e non pi ù mantenuti o una cattiva gestione degli accessi e delle 
+autorizzazioni. Tale attività deve essere svolta at traverso la collaborazione tra i team dedicati (I&O  e S&R). 
+                                                           
+8 https://www.forrester.com/  
+9 https://www.forrester.com/report/Five+Steps+To+Rein force+And+Harden+Application+Security/-/E-RES127875  
+Step 1 : rimuovere le ‘inconsistenze’ e creare un ‘conto’ dei materiali  

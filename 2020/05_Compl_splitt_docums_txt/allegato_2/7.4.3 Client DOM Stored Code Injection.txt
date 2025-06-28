@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 85  a 156  
+ 
+• Se è assolutamente necessario includere dati estern i nell'esecuzione dinamica, è consentito passare 
+i dati come parametri al codice, ma non eseguire di rettamente i dati utente. 
+• Se è necessario passare dati non attendibili all'es ecuzione dinamica, applicare una convalida dei 
+dati molto rigorosa. Come al solito, occorre conval idare tutti gli input, indipendentemente dalla 
+fonte. I parametri devono essere limitati a un set di caratteri consentito e l'input non convalidato 
+deve essere eliminato. Oltre ai caratteri, occorre controllare il tipo di dati, la loro dimensione, 
+l’intervallo di validità, il formato e l’eventuale corrispondenza all’interno dei valori previsti (whi te 
+list). Sconsigliata invece la black list, ossia un elenco di valori non consentiti: l’elenco sarebbe 
+sempre troppo limitato, rispetto ai casi che potreb bero verificarsi. 
+• L’account con il quale l’applicazione viene avviata  deve avere molte restrizioni e non deve godere di 
+privilegi non necessari. 
+ 
+Esempio: 
+codice vulnerabile: 
+ eval (location.hash); 
+La funzione eval esegue dinamicamente del codice. V a evitata. 
+Il seguente codice è invece ragionevolmente sicuro,  poiché manda in esecuzione una funzione staticamen te 
+codificata: 
+ window.setTimeout(funzioneCodificata(), 1000); 
+ 
+Per maggiori informazioni vedere http://cwe.mitre.org/data/definitions/94.html  
+7.4.3  Client DOM Stored Code Injection 
+Come riconoscerla 
+Un malintenzionato potrebbe causare l'esecuzione di  contenuti ingegnerizzati nel browser, riscrivendo le 
+pagine Web e inserendo script dannosi. L’utente leg ittimo sarebbe quindi indotto a fidarsi di ciò che gli 
+viene proposto. Ciò permetterebbe all’attaccante di  rubare la password dell'utente, richiedere informa zioni 
+sulla sua carta di credito, fornire informazioni fa lse o eseguire malware. La vittima continuerebbe la  sua 
+attività ignara del pericolo, salvo poi accusare i responsabili del sito per i danni subiti. 
+La pagina web dell'applicazione esegue alcune azion i eseguendo codice sul lato client, concatenando da ti di 
+input da una cache sul lato client, come un cookie,  la LocalStorage dell’HTML5 o un database locale. C odice 
+dannoso eventualmente presente nei dati potrebbe av viare attività progettate da un attaccante. 
+ 
+Come difendersi 
+Occorre evitare qualsiasi esecuzione dinamica del c odice. Se è proprio necessaria, anziché utilizzare i dati 
+sul lato client, inclusi i dati precedentemente mem orizzati nella cache dalla stessa applicazione, uti lizzare 
+solo dati attendibili provenienti dal server.    
+ 
+ 
+Per maggiori informazioni vedere: http://cwe.mitre.org/data/definitions/94.html  
+ 
+7.4.4  Client DOM Stored XSS 
+Come riconoscerla 
+Un malintenzionato può utilizzare l'accesso legitti mo all'applicazione per inviare dati ingegnerizzati  al 
+database dell'applicazione. Quando un altro utente accede in seguito, le pagine Web potrebbero essere 
+riscritte con i dati salvati e potrebbero essere at tivati script dannosi.       
+L'applicazione crea pagine web che includono dati p rovenienti dal database, incorporati direttamente 
+nell'HTML della pagina. Il browser, quindi, li visu alizza come parte della pagina.  
+Il problema nasce quando questi dati salvati sono s tati immessi da un altro utente. Se i dati includon o 
+frammenti HTML o Javascript malevoli, anche questi vengono visualizzati (o eseguiti), sebbene la vitti ma 
+non si accorga dell’inganno sottostante. La vulnera bilità è perciò il risultato dell'incorporazione di  dati 

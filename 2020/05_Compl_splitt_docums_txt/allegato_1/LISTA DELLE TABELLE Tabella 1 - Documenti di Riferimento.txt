@@ -1,0 +1,25 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 7 a 137  
+ 
+2 RIFERIMENTI 
+2.1  Documenti di Riferimento 
+Rif.  Codice Titolo 
+DR-1.  -- Reg. (UE) 679/2016 “Regolamento generale sulla prot ezione dei dati” del 27/04/2017 
+DR-2.  --  ISO/IEC 12207:2008 “Software life cycle processes”,  01/02/2008 
+DR-3.  --  ENISA “Privacy and Data Protection by Design – from  policy to engineering”, 12/2014 
+DR-4.  --  Ann Cavoukian “Privacy by Design – The 7 Foundation al Principles”, Information & 
+Privacy Commissioner, Ontario, Canada, 01/2011 
+DR-5.  --  ISO/IEC 29151:2017 “Code of practice for personally  identifiable information 
+protection”, 01/08/2017 
+DR-6.  --  MITRE Privacy Engineering Framework, MITRE Privacy Community of Practice (CoP), 
+18/07/2014 
+DR-7.  --  WP ART29 “Guidelines on Data Protection Impact Asse ssment (DPIA) and determining 
+whether processing is “likely to result in a high r isk” for the purposes of Regulation 
+2016/679”, 04/10/2017 
+DR-8.  --  32nd International Conference of Data Protection an d Privacy Commissioners. “Privacy 
+by design Resolution”, Jerusalem, Israele, 10/2010 
+Tabella 1 - Documenti di Riferimento 
+ 

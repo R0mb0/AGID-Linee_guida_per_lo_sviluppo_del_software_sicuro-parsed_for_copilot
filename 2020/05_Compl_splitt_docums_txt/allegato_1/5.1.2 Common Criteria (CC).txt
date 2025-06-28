@@ -1,0 +1,49 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 20  a 137  
+ 
+composizione del software (SCA) che tiene traccia d i tutti i componenti di terze parti 
+per identificare proattivamente le vulnerabilità de i componenti che mettono a 
+rischio le applicazioni. 
+[Life cycle security Area] OWASP Software Assurance  Maturity Model (SAMM). Un 
+framework aperto per aiutare le organizzazioni a fo rmulare e implementare una 
+strategia per la sicurezza del software su misura p er i rischi specifici 
+dell'organizzazione. 
+Code Projects  [Protection Area] Progetto OWA SP AntiSamy - Una libreria per la codifica HTML e 
+CSS: API Java e .NET per la convalida degli input H TML/CSS forniti dagli utenti al fine 
+di prevenire gli attacchi di cross-site scripting e  phishing. 
+[Life cycle security Area] Progetto OWASP Enterpris e Security API (ESAPI) - Una 
+raccolta di librerie di sicurezza gratuite e open s ource che possono essere utilizzate 
+dagli sviluppatori per costruire applicazioni web s icure. 
+[Protection Area] Progetto OWASP ModSecurity Core R ule Set (CRS). Un insieme di 
+regole di sicurezza per configurare strumenti di fi rewall come ModSecurity. 
+[Protection Area] Progetto OWASP CSRFGuard. Una lib reria da includere nei progetti 
+di sviluppo software per costruire una difesa contr o gli attacchi CSRF (Cross-Site 
+Request Forgery). 
+[Detection Area] Progetto OWASP AppSensor. Un quadr o concettuale e una 
+metodologia che offre una guida prescrittiva per im plementare il rilevamento delle 
+intrusioni e la risposta automatica nelle applicazi oni. 
+[Protection Area] Progetto OWASP Top Ten. La pubbli cazione OWASP più famosa: le 
+prime 10 minacce per le applicazioni web, classific ate per prevalenza, sfruttabilità, 
+rilevabilità e impatto. 
+ 
+5.1.2  Common Criteria (CC) 
+I Common Criteria sono uno standard pubblicato dall ’ISO (ISO/IEC 15408-1:200910 ), lo standard è costituito 
+da tre parti: 
+• Introduzione e modello generale 
+• Requisiti di sicurezza funzionali 
+• Requisiti di sicurezza di assurance 
+Con i CC è fornita anche una metodologia per la val utazione, la Common Criteria Evaluation Methodology  
+(CEM), anch’essa standardizzata dall’ISO (ISO/IEC 1 8405:2008). Il processo di valutazione CC di un pro dotto 
+(software o hardware) riguarda diverse fasi del SDL C applicato:  
+• Requisiti (Protection Profile document - PP) 
+• Implementazione (Security Target document – ST) 
+• Test 
+Le verifiche previste sul sistema/prodotto, nel cor so della valutazione da parte dello sviluppatore e del 
+valutatore, mirano ad accertare che siano stati sod disfatti opportuni requisiti di assurance che diven tano 
+sempre più severi al crescere del livello di valuta zione.  
+I CC definiscono una scala di sette livelli di valu tazione: 
+                                                           
+10  https://www.iso.org/standard/50341.html  

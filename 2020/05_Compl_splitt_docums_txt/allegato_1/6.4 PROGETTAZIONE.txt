@@ -1,0 +1,61 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 54  a 137  
+ 
+Simulink 
+Requirements Requirements 
+management Requirements  Versione Trial 
+disponibile  https://it.mathworks.com/products 
+/simulink-requirements.html  
+Teamcenter  
+Systems 
+Engineering 
+Requirements 
+(TcSE)  Requirements 
+management Requirements  Versione trial 
+non disponibile https://www.plm.automation.sieme 
+ns.com/global/it/products/teamcen 
+ter  
+Telelogic DOORS Requirements 
+Management Requirements  Gratuito http://telelogic -
+doors.software.informer.com/  
+Visual Trace Spec Requirements 
+management Requirements  Versione trial 
+disponibile http://visualtracespec.com/#  
+Visure 
+Requirements 
+Management 
+Tool Requirements 
+management Requirements  Versione trial 
+disponibile su 
+richiesta https://visuresolutions.com/require 
+ments-management-tool/  
+ 
+6.4  Progettazione 
+La fase di progettazione identifica i requisiti gen erali e individua la struttura più adatta per la re alizzazione 
+del software. In questa fase viene definita l'archi tettura di sicurezza, adottando le linee guida di 
+progettazione; vengono altresì documentati gli elem enti che delimitano la superficie d’attacco e vengo no 
+modellate le minacce.  
+6.4.1  Secure Design Languages 
+Molti dei linguaggi per specificare i requisiti di sicurezza sono utilizzati anche per le specifiche d i design. Ciò 
+è dovuto al fatto che i requisiti di basso livello sono davvero vicini alla progettazione statica e di namica. 
+Questi linguaggi (ad esempio, UMLsec, SecureUML, e SecureTropos) sono già stati discussi nella sezione  
+precedente. Due sono i principali punti che dovrebb ero essere considerati nella scelta di un linguaggi o di 
+design sicuro: 
+- la varietà di schemi disponibili per rappresentare un disegno, comprensivo dei vari aspetti e livelli di 
+astrazione;   
+- la disponibilità degli strumenti.  
+ 
+UMLsec  fornisce una varietà di schemi e ha strumenti disp onibili.  
+SecureUML  può essere utilizzato anche per la progettazione d i software sicuro; tuttavia, si limita a 
+rappresentare solo nozioni di controllo degli acces si basati sui ruoli in un diagramma delle classi UM L.  
+Secure Tropos  propone di utilizzare gli Agent UML capability dia grams. Questi schemi sono simili ai 
+diagrammi di attività UML (piano e capacità) e diag rammi di sequenza (interazione agente). 
+ 
+6.4.2  Software Design Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Design T ools’: 

@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 114  a 137  
+ 
+solo richiede determinati requisiti tecnici "puri",  ma anche requisiti funzionali all'attività organiz zativa 
+supportati sia dalla tecnologia che dai processi az iendali. 
+In sintesi, il testo del GDPR contiene requisiti fu nzionali e tecnici del sistema, sia espliciti che i mpliciti, che 
+influiscono e influenzano l'SDLC adottato dalle org anizzazioni che progettano l'introduzione dei nuovi  
+sistemi nell'UE.  
+L'impatto del GDPR sullo sviluppo del software iniz ia a partire dall'architettura dei dati e dai livel li di 
+trasporto di questi, per arrivare fino ai livelli d i portale e di presentazione. La chiave di base per  il successo 
+dello sviluppo IT è la pianificazione di tali requi siti durante le fasi iniziali dell'SDLC; sebbene po ssano 
+aggiungere una certa complessità alle fasi iniziali  di pianificazione e progettazione dell'SDLC, i cos ti di 
+sviluppo complessivi saranno notevolmente ridotti a l minimo se considerati il più precocemente possibi le 
+nel processo di costruzione dei sistemi IT. 
+10.3  Implementazione della strategia nelle fasi di svilu ppo del software 
+10.3.1  Scopo 
+Gli elementi definiti all’interno della Privacy Imp lementation Strategy (10.1.6), i requisiti di prote zione della 
+privacy e le strategie di design per la privacy (ri cavabili sulla base di quelli individuati da ENISA in DR-3), 
+dovranno essere inquadrati all’interno di ciascuna fase della Engineering privacy by design (10.3.2) e  
+rimappati per ciascuna fase del ciclo di vita dei s oftware), così come definiti nelle fasi Software life Cycle 
+Processes (cfr. DR-2). 
+10.3.2  Le fasi di implementazione della Engineering Privac y by Design  
+La seguente impostazione è stata maturata dal Privacy Engineering Framework  del MITRE (cfr. DR-6), 
+prevedendo le seguenti attività: 
+Attività  Descrizione  
+Definizione dei requisiti privacy:  
+ Definizione delle proprietà della privacy di un sof tware in 
+modo che possa essere integrato con il design e lo sviluppo  
+Design e sviluppo privacy:  
+ Definizione del design e sviluppo dei requisiti pre visti  
+Verifica e validazione privacy:  
+ Riscontro della conferma che i requisiti di privacy  sono stati 
+correttamente implementati e validati attraverso de lle 
+verifiche  
+Tabella 9 - Fasi dell'Engineering Privacy by Design  
+10.3.2.1  Definizione dei requisiti privacy 
+Input : Requisiti di privacy di base e test; Normative, b est practice e procedure applicabili sulla privacy;  
+requisiti funzionali; Profili di rischio per la pri vacy. 
+Attività : Svolgere una Data Protection Impact Assessment mo dernizzata sugli obiettivi di protezione 
+individuati; Selezionare e perfezionare i requisiti  di protezione per la privacy di base e effettuare dei test; 
+Sviluppare dei requisiti di protezione della privac y personalizzati e testarli sulla base dei risultat i della DPIA. 
+Output : Requisiti di protezione per la privacy specifici per il software. 
+10.3.2.2  Design e sviluppo privacy 
+Input : Requisiti Architetturali e funzionali specifici p er la privacy 

@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 39  a 156  
+ 
+condizione di denial of service viene comunemente c ausata da un aggressore che sfrutta errori di 
+programmazione riconducibili a problematiche di ove rflow (descritte nel paragrafo 4.2.6) o come effett o di 
+un attacco non andato a buon fine, che mirava origi nariamente all’esecuzione di uno shellcode. 
+Condizioni di denial of service meno pesanti posson o ad esempio causare il blocco di un account utente . 
+Deadlock  - Nella programmazione multithread, uno degli erro ri che più comunemente da origine a 
+problematiche di Denial Of Service è il deadlock. È  una circostanza che si verifica quando due o più p rocessi 
+si fermano ad aspettarsi l’un l’altro, a tempo inde finito. La condizione che sbloccherebbe l’attesa, c he 
+potrebbe essere il termine di esecuzione di una pro cedura o il liberamento di una risorsa che causa il  
+blocco, non si verifica mai. 
+ 
+Esempio di crash di un’applicazione che presenta un a problematica di Stack Overflow: 
+ 
+ 
+L’attacco è andato a buon fine pertanto l’applicazi one necessita di essere riavviata per fornire nuova mente 
+il servizio  agli utenti. 
+Contromisure 
+Dato che il denial of service può essere causato da  numerose condizioni inerenti l’applicazione o l’am biente 
+operativo, le contromisure comprendono una serie di  best practises di programmazione che limitino al 
+minimo la superficie d’attacco. 
+A livello di web server è possibile: definire il nu mero massimo di richieste accettabili per una conne ssione 
+TCP; stabilire un timeout e la dimensione massima d el body di una singola richiesta; definire un timeo ut per 
+ogni connessione. 
+6.4.5  Race condition 
+La race condition, dove “race “ sta per “corsa” è u na situazione che si verifica in un ambiente 
+multithreading, dove più processi entrano in compet izione per le stesse risorse. Ciò è possibile quand o è 
+importante la sequenza delle operazioni, ma l’acces so alle risorse da parte dei vari thread non è sogg etto 
+ad alcun vincolo. 
+La circostanza più classica è riconducibile a quell e applicazioni che devono scrivere dei dati sul dis co dopo 
+aver effettuato una serie di controlli preventivi. Un aggressore può usufruire del lasso di tempo in c ui questi 
+controlli vengono effettuati, o bloccare per un suf ficiente periodo la loro esecuzione, sfruttando una  
+vulnerabilità logica dell‘applicazione (ad esempio un deadlock momentaneo), per alterare il dato di 
+destinazione.  
+Le conseguenze di una modifica malevola del dato po ssono variare da un errore logico o applicativo, fi no al 
+crash dell’applicazione, o addirittura del sistema,  se si riesce a generare un errore di overflow. 
+ 
+Esempio:  
+Il frammento di codice che segue; verifica l’access o a un determinato file e nel caso in cui l’esito d ella 
+verifica sia ‘truè, apre il file in scrittura: 
+if (access("file", W_OK) != 0) { 
+  exit(1); 
+} 
+fd = open("file", O_WRONLY); 
+// Actually writing over /etc/passwd 
+write(fd, buffer, sizeof(buffer)); 
+Se fra il controllo e l’apertura del file, l’attacc ante riesce a creare un link simbolico a “file” att raverso la 
+seguente sequenza di codice:  
+symlink("/etc/passwd", "file"); 
+

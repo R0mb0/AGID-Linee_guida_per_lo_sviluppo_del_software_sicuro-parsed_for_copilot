@@ -1,0 +1,53 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 94  a 141  
+ 
+in una apposita sezione di rete.  
+ 
+Continuità elettrica delle PdL  
+Minaccia  Negazione dei servizi - Black out elettrico o mancanza improvvisa di energi a elettrica  
+Contromisure  Verificare che sia garantita  l'alimentazione delle PdL in caso di interruzione d ella 
+corrente elettrica, tramite l'utilizzo di dispositi vi UPS che garantiscano anche la 
+protezione dalle sovratensioni, prevedendo uno shut down automatico allo scadere del 
+periodo di autonomia dell’UPS. Effettuare un monito raggio delle batterie degli UPS e 
+prevederne la sostituzione qualora si ravvisi un de grado della loro capacità. 
+ 
+Protezione fisica dei dispositivi (fissi e mobili)  
+Minaccia  - Cancellazione o furto di informazioni . 
+- Danneggiamento, perdita o furto di un asset fisico.  
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+Contromisure  Assicurare un cavo di acciaio galvanizzato, non men o di 3,5 mm di spessore, munito di 
+chiusura a chiave o a combinazione al computer da p roteggere o, in alternativa, 
+utilizzare delle gabbie di sicurezza facilmente anc orabili, in cui riporre i dispositivi. 
+Accertare che il cavo sia assicurato ad un elemento  fisso non smontabile, facendone 
+passare un’estremità nell’occhiello posto ad un cap o del cavo ed inserire il lucchetto di 
+sicurezza nell’apposito foro presente nel computer.  
+ 
+5.4.2  Hardening 
+Hardening del sistema operativo installato  sulla PDL  
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di sistema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Eseguire l’hardening del sistem a operativo che gira sulla PDL [rif.  5.2.2 ]. 
+ 
+Hardening del/i web browser/s installato /i sulla PDL  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware) 
+Contromisure  I principi per la sicurezza del web browser sono og getto di un paragrafo precedente.  
+Effettuare controlli periodici al fine di verificar e che i browser installati sulle PdL siano 
+effettivamente quelli autorizzati e con le configur azioni di sicurezza previste (es. 
+funzionalità di blocco dei popup, degli script, ecc .). 
+ 
+Hardening del sistem a  
+Minaccia  Negazione dei servizi (per spam su sistemi di messa ggistica).  
+Contromisure  Se è autorizzato l’uso di sistemi di messaggistica immediata, dotarsi di strumenti 
+specifici "IM spam blockers". 

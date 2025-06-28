@@ -1,0 +1,567 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 12  a 141  
+ 
+4.2  Catalogo delle tipologie di attacco 
+La tabella che segue fornisce una rassegna delle pi ù note tipologie (meccanismi) di attacco. 
+Si sottolinea che i meccanismi di attacco sono semp re in evoluzione e spesso sfruttano vulnerabilità n on 
+note (i cosiddetti “zero-day”, descritti brevemente  nel seguito), per cui un elenco di questo tipo, pe r sua 
+stessa natura, non può ovviamente essere del tutto esaustivo. 
+ 
+ID  Tipologia  Descrizione  
+A01  BIOS rootkit attack  Un attacco di rootkit a livello di BIOS, noto anche  come attacco persistente 
+del BIOS, è un exploit in cui il BIOS viene aggiorn ato con codice dannoso. Il 
+BIOS rootkit è un programma che risiede nella memor ia fisica non volatile 
+di un computer (in genera una EEPROM) e può consent ire anche l'accesso 
+e il monitoraggio del sistema da remoto. 
+A02  Brute Force Attack  Si definisce con il termine "Brute Force Attack"  tratta di  un attacco basato 
+sul potere computazionale per decifrare le password  o altre informazioni 
+sensibili, o per “indovinare” password protette da hashing e crittografia. 
+A03  Buffer overflow  Si indica con il termine "Buffer overflow"  tratta di  una tecnica con  cui un 
+attaccante riesce ad eseguire uno “sfondamento” del la memoria nel 
+processo del sistema. Le vulnerabilità di buffer ov erflow possono portare 
+ad attacchi di Denial of Service (DoS) o iniezione di codice (Code Injection). 
+Un attacco di Denial of Service può causare un cras h, uno stop o un 
+rallentamento del processo; l'iniezione di codice i nvece, può modificare 
+l'indirizzo di esecuzione del processo per eseguire  il codice iniettato 
+dall'aggressore. 
+A04  Cache poisoning  Il "cache poisoning", anche detto DNS poisoning o D NS cache poisoning, 
+consiste nella compromissione di una tabella di sis tema che memorizza gli 
+indirizzi IP dei server internet dei nomi ottenuti dal server di dominio (DNS) 
+Internet, sostituendo un indirizzo Internet corrett o con quello di un altro 
+indirizzo di un sito malevolo. Quando un utente Web  cerca la pagina con 
+tale indirizzo o nome host, la richiesta viene rein dirizzata dalla voce 
+all’indirizzo IP malevolo falsificato, presente nel la tabella, verso un indirizzo 
+diverso da quello reale. A quel punto è possibile c he, un worm, uno 
+spyware o un altro malware venga scaricato nel comp uter dell'utente 
+direttamente dall'indirizzo malevolo, oppure è poss ibile che un sito 
+contraffatto catturi le credenziali utente, eventua lmente ponendosi come 
+intermediario (man-in-the-middle) verso il sito leg ittimo. 
+A05  Clickjacking  Il Clickjacking (noto anche come reindirizzamento d ell'interfaccia utente e 
+“IFRAME overlay”) è un exploit in cui viene nascost o del codice dannoso 
+nel codice dei pulsanti apparentemente innocui o di  altri contenuti 
+cliccabili presenti in un sito web. 
+A06  Clipboard hijacking  Il "clipboard hijacking" è un exploit in cui l'aggr essore ottiene il controllo 
+della clipboard della vittima e sostituisce i conte nuti lì presenti con i propri 
+dati, ad esempio un collegamento ad un sito Web dan noso. 
+A07  Code injection  È un attacco basato sull’i nserimento nel codice dell’applicazione web di 
+istruzioni, opportunamente modificate da un malinte nzionato, finalizzate 
+ad esempio, all'impersonificazione di un utente aut enticato oppure nel 
+furto di reperimento di credenziali di accesso. 
+A08  Cold boot attack  Un "cold boot attack" è un processo utilizzato per ottenere accesso non 
+autorizzato alle chiavi di crittografia di un compu ter quando questo viene 
+lasciato fisicamente incustodito. I ricercatori del l'Università di Princeton, 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 13  a 141  
+ 
+della Electronic Frontier Found ation e Wind River Systems hanno scoperto 
+che è possibile portare un attacco di questo tipo, dato che i chip di 
+memoria ad accesso casuale dinamico (DRAM) conserva no i dati per un 
+breve periodo di tempo dopo lo spegnimento del comp uter su cui sono 
+installate. Questa quantità di tempo può aumentare se i chip vengono 
+rimossi dalla scheda madre e mantenuti a basse temp erature. Ciò può 
+essere fatto attraverso un raffreddamento con una c anna invertita ad aria 
+compressa. I chip possono quindi essere reinseriti rapidamente in un 
+computer per poi leggerne il contenuto. 
+A09  Cracking  Con cracking si intende la modifica di un software per rimuovere la 
+protezione dalla copia, oppure per ottenere accesso  ad un'area altrimenti 
+riservata. Per cracking si intende anche la violazi one di sistemi informatici 
+collegati ad Internet o ad un'altra rete, allo scop o di danneggiarli, di rubare 
+informazioni oppure di sfruttare i servizi telemati ci della vittima 
+(connessione ad Internet, traffico voce, sms, acces so a database etc..) 
+senza la sua autorizzazione (thiefing). 
+A10  Cross -Frame 
+Scripting (XFS) Si tratta di un attacco che combina un codice JavaS cript malizioso con un 
+iframe che carica una pagina legittima allo scopo d i rubare dati da un 
+utente inconsapevole. 
+In genere funziona in combinazione con il social en gineering o il phishing. 
+A titolo di esempio, un attaccante può convincere u n utente a navigare su 
+una pagina contenente il codice JavaScript e un ifr ame HTML che punta a 
+un sito legittimo. Quando l’utente inserisce le cre denziali sul sito legittimo, 
+il codice JavaScript ne memorizza i caratteri. 
+A11  Cross -site request 
+forgery (CSRF) Un attacco "cross -site request forgery", detto anche brevemente CSRF e 
+talvolta pronunciato "Sea-Surf", consiste nell'abus o della fiducia tra 
+l'applicazione e un determinato client (la vittima)  al fine di eseguire una 
+transazione a livello applicativo, pilotata da un a ttaccante utilizzando 
+l'identità del client. L'attacco è basato sull'inco rporamento di URL, che 
+rappresentano transazioni specifiche dell'applicazi one di destinazione, 
+all'interno di una pagina controllata dall' attacca nte, che è già stata 
+acceduta dalla vittima tramite browser dopo aver st abilito una relazione di 
+fiducia con l'applicazione di destinazione (ad esem pio tramite 
+l'autenticazione). Esempi di tali richieste includo no il trasferimento di fondi 
+monetari e titoli, attività di provisioning, ammini strazione di applicazioni e 
+perfino operazioni di l’acquisto di beni e servizi.  
+A12  Cross -site scripting 
+(XSS) Esistono 3 tipi di Cross Site Scripting:  
+- “Reflected”: Il web server legge i dati dannosi (pa yload di attacco) 
+direttamente dalla richiesta HTTP e li rimanda (rif lette) indietro nella 
+risposta HTTP (Il meccanismo più comune per distrib uire i contenuti 
+dannosi è quello di includerli come parametro in un a URL che viene 
+resa pubblica o inviata per e-mail direttamente all a vittima). 
+- “Stored”: Il web server memorizza i dati dannosi (p ayload di attacco) in 
+un suo archivio. In un secondo momento, i dati dann osi vengono letti e 
+inclusi in una risposta http. 
+- “DOM based”: A differenza dei due tipi precedenti, i dati dannosi 
+(payload di attacco) non vengono inseriti nella ris posta (a causa di un 
+difetto lato server). L’attacco mira a modificare i l DOM “environment” 
+all’interno del browser della vittima in modo che u no script che gira 
+lato client produca un esito diverso da quello atte so (a causa appunto 
+della presenza dei dati dannosi che sono stati inie ttati nel DOM 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 14  a 141  
+ 
+“environment” ). Ad esempio , lo script che gira lato client usa il 
+“document.location” –ossia l’url- e l’attaccante in serisce 
+opportunamente uno script nell’url. 
+A13  CSV Injection  Questo attacco, noto anche come Formula Injection, avviene quando un 
+sito web inserisce input malevoli in dati e formule  (o anche delle macro 
+maliziose) in un file CSV che viene scaricato dagli  utenti. 
+Quando un programma come Excel (o LibreOffice Calc)  apre tale foglio 
+CSV, “valuta” le formule presenti nelle celle e con tenenti valori “maliziosi”. 
+Ci sono tre tipi di attacco di questo tipo: 
+- quelli che sfruttano le vulnerabilità del foglio el ettronico, come 
+quella descritta in CVE-2014-3524; 
+- quelli che compromettono il computer dell’utente sf ruttando la 
+tendenza degli utenti a non effettuare controlli an tivirus e a 
+ignorare gli avvisi di sicurezza sui fogli CSV scar icati; 
+- quelli mirati al furto di informazioni da altri fog li elettronici aperti 
+dall’utente o da qualsiasi file presente sul suo co mputer. 
+A1 4 Denial of Service  È un attacco mirato a che si perpetra porta ndo  al limite delle prestazioni il 
+funzionamento di un sistema (ad es., un sito web) a l limite delle 
+prestazioni, (ad es., un sito web) causando il bloc co del servizio. La variante 
+distribuita (DDoS) si attua, invece, generando un n umero molto elevato di 
+richieste simultanee da parte di più macchine (a vo lte decine di migliaia) 
+generalmente controllati attraverso un malware spec ifico, 
+contemporaneamente dirette tutte al medesimo server , in modo da 
+esaurirne le risorse e renderlo non più in grado di  erogare i propri servizi. 
+Come conseguenza, il server vittima non risulta più  raggiungibile 
+dall'esterno. 
+A1 5 Dictionary Attack  Con l'attacco Dictionary, un aggressore utilizza un programma per  
+l'iterazione di tutte le parole presenti in un dizi onario (o più dizionari in 
+diverse lingue) e calcola l'hash per ogni parola. L 'hash risultante viene 
+confrontato con il valore presente nell'archivio de lle password. Le 
+password deboli come una squadra preferita o un'aut o preferita, verranno 
+decifrate rapidamente. Le password più forti come a d esempio quelle che 
+combinano sequenze di caratteri differenti ("? 
+BiolLNessFiNdMeyePasSWirt!"), sono meno probabili d a decifrare. 
+A1 6 Direct Dynamic 
+Code Evaluation 
+('Eval Injection') L’attacco colpisce gli script che non validano corr ettamente l’input utente 
+usato nel parametro page. 
+Un utente remoto può fornire un input una URL oppor tunamente formata, 
+per passare codice arbitrario a un’istruzione eval( ). 
+A1 7 Directory harvest 
+attack (DHA) Un attacco "directory harvest" (DHA) è un tentativo  di determinare gli 
+indirizzi di posta elettronica validi associati a u n server di posta elettronica 
+in modo tale da poterli aggiungere a un database di  spam. 
+Attraverso un attacco di brute force (a volte più o  meno selettivo e mirato 
+a una specifica organizzazione/evoluto nella compos izione degli 
+usernames) indirizzato verso l'e-mail Mail Server, il programma DHA 
+alimenta il database di spam secondo il seguente cr iterio: se l'e-mail Mail 
+Server ritorna restituisce un messaggio di replica errore di tipo "Not found" 
+allora l'indirizzo provato è inesistente e  va scar tato, se l'e-mail server 
+invece non restituisce nulla allora l'indirizzo pro vato è valido e va aggiunto 
+al database. 
+A1 8 Drive -by -Downloads 
+attack In un attacco "Drive -by -Download", l'applicazione web viene modificata 
+(ad esempio iniettando codice HTML) in modo tale da  istruire il browser 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 15  a 141  
+ 
+del visitatore a scaricare  il malware situato nel server controllato da un 
+aggressore.  
+Spesso, la manomissione non è visibile ai visitator i, quindi le vittime 
+innocenti non sono a conoscenza dell'operazione di download che avviene 
+in background. 
+Pertanto l'attacco "Drive-by-Download" si svolge su  3 fronti:  
+- compromissione di un web server legittimo per hosta re il 
+contenuto malevolo capace di avviare il download su l client della 
+vittima o utilizzare, per lo stesso scopo, un third party service  (ad 
+es. un banner pubblicitario) che il web server legi ttimo 
+(inconsapevolmente) espone;  
+- compromissione del client per avviare il download d el malware 
+vero e proprio;  
+- esecuzione del malware sul client. 
+A1 9 Esecuzione 
+arbitraria di codice Se un utente malintenzionato riesce a eseguire  codice dannoso sul server, 
+questo può compromettere le risorse del server o in stallare ulteriore 
+software capace di portare attacchi contro i sistem i a valle 
+dell'infrastruttura. I rischi derivanti dall'esecuz ione arbitraria di codice 
+aumentano se il processo server in cui viene esegui to il codice 
+dell'attaccante ha privilegi elevati.  
+Le vulnerabilità più comuni che consentono l’esecuz ione arbitraria di 
+codice sono legate a sistemi server mal configurati  (privi di hardening) o 
+non aggiornati (privi delle patch di sicurezza), op pure alla mancata 
+validazione dell’input utente, specie in applicazio ni scritte in linguaggi in 
+cui la memoria dinamica non è gestita automaticamen te e l’accesso diretto 
+alla memoria tramite puntatori non viene impedito a  causa di 
+configurazioni deboli dell'application server  e da  server non sottoposti agli 
+ultimi aggiornamenti che consentono l'attraversamen to di percorsi non 
+protetti (path traversal) e attacchi di buffer over flow, dove entrambi 
+comunque, possono portare all'esecuzione di codice arbitrario. 
+A20  Format String Attack  Questo attacco si verifica quando i dati forniti in  input e copiati in una 
+stringa vengono in realtà “valutati” come un comand o che viene eseguito 
+dall’applicazione. 
+In tal modo un attaccante può iniettare codice arbi trario, leggere lo stack o 
+causare un “segmentation fault”. 
+A2 1 Heap Overflow  Consiste in un tipo particolare di buffer overflow che avviene però 
+nell’area di memoria dello “heap”. 
+La memoria nello heap è allocata dinamicamente dall ’applicazione a run-
+time e tipicamente contiene le strutture dati alloc ate dinamicamente dal 
+programma. 
+L’attacco mira a corrompere queste strutture in var i modi, come ad es. 
+sovrascrivendole attraverso i relativi puntatori, u sati per accedere ad 
+indirizzi che vanno oltre la fine di una determinat a struttura memorizzata. 
+A2 2 Heartbleed  Si tratta di un attacco che sfrutta un bug della libreria crit tografi ca fornita 
+da OpenSSL, usata da innumerevoli applicazioni, com presi client e server 
+Web, VPN, LDAP(S), IMAP(S), SMTP(S), SFTP, RDBMS, e cc. 
+La vulnerabilità è dovuta a una impropria validazio ne dell’input da parte 
+della libreria, in particolare nell’estensione TLS heartbeat, che comporta un 
+“buffer over-read” in grado di esporre la chiave cr ittografica del server. 
+È descritto in CVE-2014-0160. 
+A23  HTML Injectio n L'HTML injection è una tecnica utilizzata per sfrutt are input non validati al 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 16  a 141  
+ 
+fine di modificare una pagina web fornita da un'app licazione web  ai propri 
+utenti. Gli aggressori sfruttano il fatto che il co ntenuto di una pagina web è 
+spesso legato ad una precedente interazione con gli  utenti. Quando 
+l'applicazione non riesce a convalidare i dati forn iti dall'utente, un utente 
+malintenzionato può inviare un testo HTML opportuna mente modificato 
+per alterare quei contenuti del sito che vengono po i presentati ad altri 
+utenti.  
+Una query creata ad-hoc può portare all'inserimento  nella pagina web di 
+elementi HTML controllati dall'attaccante che modif icano il modo in cui il 
+contenuto dell'applicazione viene esposto sul web. 
+A24  HTTP response 
+splitting Un attaccante passa dati “maliziosi” a una applicazion e che non li valida e li 
+include immutati in una HTTP Response Header. 
+L’applicazione è vulnerabile se consente l’input di  caratteri contenenti CR 
+(carriage return, ovvero %0d o \r) ed LF (line feed , ovvero %0a o \n) 
+nell’header http e se contemporaneamente la piattaf orma su cui gira il 
+sistema è a sua volta vulnerabile alla injection di  tali caratteri. 
+Con questo attacco l’aggressore ha la possibilità d i controllare le successive 
+http response dell’applicazione, incluse l’HEADER e  il BODY, e inoltre di 
+creare altre response a suo piacimento. 
+A25  Infezione da 
+malware Per c ompromissione di un sistema di elaborazione causata da un software 
+malevolo, si intende il malfunzionamento di un sist ema di elaborazione 
+causato da software che esegue funzioni "nocive" (a d esempio, virus, 
+worm, cavalli di Troia). 
+A26  Information 
+gathering Si indica con il termine "Information gathering"  una tecnica mirata a 
+individuare, identificare e caratterizzare i dispos itivi di rete che possono 
+essere scoperti e profilati. Ciò avviene attraverso  la scansione delle porte. 
+Dopo aver identificato le porte aperte, si rilevano  i tipi di periferica e si 
+determinano le versioni del sistema operativo e del le applicazioni. Con 
+queste informazioni, un aggressore può successivame nte attaccare le 
+vulnerabilità note che potrebbero non essere state risolte con patch di 
+protezione. 
+A2 7 Integer Overflow  Un integer overflow avviene quando un’operazione ar itmetica cerca di 
+calcolare un valore numerico che supera il range ch e può essere 
+rappresentato con un dato numero di bit. 
+In tal modo si ottiene un risultato imprevisto che può compromettere la 
+stabilità e l’integrità dell’applicazione, laddove l’errore non sia intercettato 
+e gestito. 
+A2 8 Keylogging  Un keylogger è uno strumento hardware o software in  grado di effettuare 
+lo sniffing della registrazione dei caratteri premu ti sulla della tastiera di un 
+computer, cioè è in grado di intercettare e cattura re segretamente tutto 
+ciò che viene digitato sulla tastiera senza che l'u tente si accorga di essere 
+monitorato. 
+A2 9 KRACK  L’attacco Key Reinstallation AttaCK  (KRACK), e un att acco di “repl ay” 
+mirato allo standard Wi-Fi Protected Access protoco l (WPA / WPA2), che si 
+suppone metta in sicurezza le connessioni WiFi. 
+L’attacco consiste nel resettare ripetutamente il “ nonce” trasmesso in una 
+specifica fase dell’handshake WPA2, consentendo di analizzare e decifrare 
+gradualmente i pacchetti attraverso la comparazione  con quelli precedenti, 
+fino a ottenere la chiave crittografica utilizzata per cifrare il traffico. 
+L’attacco sfrutta una vulnerabilità insita nello st andard e non in specifici 
+prodotti, e colpisce tutti i principali sistemi ope rativi compresi quelli usati 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 17  a 141  
+ 
+da smartphone e tablet.  
+Particolarmente grave è il fatto che sui sistemi li nux-based, il client wpa-
+supplicant usato per connettersi alla rete WiFi con  il WPA2 consente 
+addirittura l’inserimento di una chiave “nulla”. 
+A30  LDAP Injection  L'LDAP Injection è un tipo di attacco portato verso  un'applicazione web 
+dove gli hacker introducono del codice malevolo in un campo di input 
+dell'interfaccia utente nel tentativo di ottenere a ccesso a informazioni non 
+autorizzate.  
+L'LDAP Injection utilizza i dati forniti nella rich iesta proveniente dal client, 
+nella costruzione di istruzioni LDAP (Lightweight D irectory Access 
+Protocol), quando questi non vengono controllati e validati al fine di 
+rimuovere codice potenzialmente dannoso. Quando un' applicazione web 
+non applica adeguati controlli sull'input fornito d all'utente, gli hacker 
+possono essere in grado di modificare la costruzion e di un'istruzione LDAP 
+che verrà poi eseguita con le stesse autorizzazioni  del componente 
+destinato all'esecuzione del comando.  
+Un LDAP Injection può causare seri problemi di prot ezione se le 
+autorizzazioni consentono di interrogare, modificar e o rimuovere qualsiasi 
+oggetto presente all'interno dell'albero LDAP. 
+A3 1 Man -in -the -browser  È un attacco simile al man -in -the -middle , ma agisce all’interno del browser 
+utente. 
+Generalmente è basato su un “Trojan Horse” che si i nstalla nel browser per 
+intercettare e manipolare richieste e risposte http . 
+Spesso questa tecnica è usata da malware mirati a s pecifici siti di Home 
+Banking, in grado di rubare denaro modificando “al volo” le transazioni 
+finanziarie (es. i bonifici). 
+Il malware può insediarsi nei “Browser Helper Objec ts” di Internet Explorer 
+(librerie caricate dinamicamente all’avvio del brow ser), nelle Estensioni dei 
+browser più recenti o attraverso “API-Hooking” in u n eseguibile o una 
+libreria DLL, o ancora tramite Javascript (ad es. a ttraverso uno “worm” 
+basato su Ajax). 
+A3 2 Man -in -the -middle  Questo attacco consiste nell’intercettare la comuni cazione tra due sistemi 
+ponendosi in mezzo e fingendo con ciascuno degli in terlocutori di essere 
+l’altro. 
+Ad es. in una connessione http l’attaccante rompe l a connessione originale 
+in due parti: una connessione dal client a sé stess o (fingendosi il server) e 
+una da sé stesso al server (fingendosi il client), inoltrando dopo averle 
+intercettate ed eventualmente manipolate, le richie ste del client al server 
+e le risposte del server al client. 
+A3 3 Manipolazione dei 
+campi di Form I valori dei campi presenti in un a form HTML vengono inviati in chiaro al 
+server utilizzando il protocollo HTTP POST. Ciò può  includere campi di form 
+visibili e nascosti. Indipendentemente dalla tipolo gia, questi campi 
+possono essere facilmente modificati ignorando le r outine di convalida lato 
+client. Di conseguenza, le applicazioni che si basa no sui valori di input di un 
+campo di una form per prendere decisioni di sicurez za lato server sono 
+vulnerabili all'attacco in oggetto. 
+A34  Manipolazione dei 
+Cookie I cookie sono suscettibili a modif iche da parte del client. Ciò è vero sia per i 
+cookie persistenti che per quelli che risiedono in memoria. Sono disponibili 
+diversi strumenti per supportare un aggressore nell a modifica del 
+contenuto di un cookie residente in memoria. La man ipolazione del cookie 
+è l'attacco che si riferisce alla modifica di un co okie, si effettua di solito per 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 18  a 141  
+ 
+ottenere un accesso non autorizzato ad un sito Web.  
+A35  Manipolazione della 
+Query String Gli utenti possono facilmente manipolare i valori d ella stringa di query 
+passati tramite HTTP GET da client a server in quan to vengono visualizzati 
+nella barra degli indirizzi URL del browser Web. Se  l'applicazione si basa su 
+valori della stringa di query per prendere decision i di sicurezza o se i valori 
+rappresentano dati sensibili o parametri critici di  una transazione come 
+importi monetari, l'applicazione è vulnerabile all' attacco in oggetto. 
+A3 6 Manipolazione 
+dell'intestazione 
+HTTP Le headers HTTP passano le informazioni tra il clie nt e il server. Il client 
+costruisce le headers di richiesta mentre il server  costruisce le headers di 
+risposta. 
+Se l'applicazione si basa sulle headers di richiest a per prendere una 
+decisione, questa allora è vulnerabile all'attacco in oggetto. 
+A3 7 Memory dump 
+attack Un attacco di dump di memoria consiste nella cattura e nell'utilizzo di 
+contenuti RAM che sono stati scritti su un'unità di  memorizzazione durante 
+un errore irreversibile (a scopo di diagnostica), t ipicamente innescato 
+dall'attaccante. 
+A3 8 Path Manipulation  Simile alla Resource Inject ion , salvo che si focalizza sul re -indirizzamento  
+verso risorse di file system locali del server, for zandolo a caricare risorse 
+diverse da quelle previste. 
+A39  Path traversal  Accesso alla struttura del file system non di perti nenza dell'applicativo 
+web. Un aggressore avendo accesso alla gerarchia de l file system (ad es. 
+mediante la notazione "../") potrebbe prelevare inf ormazioni riservate 
+presenti all'interno della struttura di file e dell e cartelle esterne 
+all'applicazione. 
+A40  Pharming  Il phishing ed il pharming sono due  tecniche utilizzat e per ottenere 
+l'accesso a informazioni personali o riservate.   N el primo caso un utente 
+incauto viene indotto, tramite tecniche di social e ngineering, ad accedere 
+ad un sito web contraffatto in modo tale da sembrar e ufficiale ed a 
+inserirvi dati personali e/o sensibili. 
+Nel secondo caso, l'utente viene reindirizzato auto maticamente, tramite 
+alterazione delle richieste DNS (che possono coinvo lgere direttamente il 
+DNS server o la PdL vittima, tramite l'installazion e di trojan) al sito web 
+contraffatto, anche nel caso in cui digiti nel brow ser l'indirizzo corretto del 
+server autentico. 
+A41  Phishing  Per "phishing" si intende un qualsiasi tentativo (p er telefono, e -mail, 
+messaggistica immediata o fax) di ottenere informaz ioni di identificazione 
+personale a scopo di furto di identità. Un tipico a ttacco di phishing 
+elettronico comprende due componenti: un messaggio e-mail dall’aspetto 
+autentico e una pagina web fraudolenta. I collegame nti web inclusi in 
+questi messaggi e-mail quasi sempre hanno l’aspetto  e il funzionamento 
+dei siti legittimi copiati, rendendo la frode quasi  impossibile da rilevare. 
+A42  POODLE attack  Il POODLE (Padding Oracle On Downgraded Legacy Encr yption) è una 
+vulnerabilità che riguarda la sicurezza di una vecc hia versione del 
+protocollo SSL, la 3.0, che potrebbe essere sfrutta ta per intercettare i dati 
+in transito fra client e server. La vulnerabilità, rivolta al lato client e non a 
+quello server, potrebbe ad esempio consentire a un utente 
+malintenzionato di decifrare i cookie che corrispon dono a servizi come 
+Twitter o Google, per entrare negli account degli u tenti senza la necessità 
+di conoscere la password di accesso. 
+Il protocollo SSL 3.0, così come utilizzato in molt i prodotti (es. OpenSSL 
+1.0.1i), usa un padding CBC non deterministico che consente a un attacco 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 19  a 141  
+ 
+di tipo man -in -the -middle di decifrare facilmente i dati trasmessi 
+utilizzando un attacco "padding-oracle". 
+Il protocollo TLS (Transport Layer Security) ha lar gamente sostituito il 
+protocollo SSL per la comunicazione sicura su Inter net, ma molti browser 
+tornano ad utilizzare SSL 3.0 quando non è disponib ile una connessione 
+TLS. Un aggressore che vuole sfruttare il POODLE ap profitta di questa 
+vulnerabilità inserendosi nella sessione di comunic azione e costringendo il 
+browser a utilizzare SSL 3.0. 
+A4 3 Privilege horizontal 
+escalation attack Un attacco di "privilege escalation" è un tipo di i ntrusione di rete che 
+sfrutta gli errori di programmazione o i difetti di  progettazione per 
+concedere all'attaccante un accesso privilegiato al la rete, ai dati e alle 
+applicazioni ad essa associati. Nel caso di "horizo ntal esclation", per 
+"accesso privilegiato" si intende un accesso nel qu ale un utente con certi 
+privilegi accede alle funzioni e/o contenuti riserv ati a un altro utente che 
+gode degli stessi privilegi. 
+A44  Privilege vertical 
+escalation attack Un attacco di "privilege escalation" è un tipo di i ntrusione di rete che 
+sfrutta gli errori di programmazione o i difetti di  progettazione per 
+concedere all'attaccante un accesso privilegiato al la rete, ai dati e alle 
+applicazioni ad essa associati. Nel caso di "vertic al escalation", per "accesso 
+privilegiato" si intende un accesso più alto di que llo previsto 
+dall'amministratore o dallo sviluppatore dell'appli cazione. 
+A45  Proxy hijacking 
+attack Il "proxy hijacking" è una tecnica di attacco in cu i il  codice malevolo non 
+installa un malware ma configura il browser present e sul sistema della 
+macchina vittima per usare un web proxy controllato  dall'attaccante 
+stesso. Oltre a eseguire il deploy dei proxy settin gs fraudolenti, l'attacco 
+installa un "self-signed root certificate" sul sist ema in modo che 
+l’attaccante possa leggere il traffico HTTPS che pa ssa attraverso il proxy 
+server fraudolento (man-in-the-middle MITM Attack).  Tipicamente 
+l'attacco parte da spam email con un attachment mal evolo che esegue le 
+operazioni di cui sopra. 
+A46  Remote File 
+Inclusion (RFI) Il "Remote File Inclusion (RFI)" è un attacco che p unta ad un server di 
+computer su cui sono in esecuzione siti e applicazi oni web. Gli exploit RFI 
+sono spesso attribuiti al linguaggio di programmazi one PHP utilizzato da 
+molte grandi aziende, tra cui Facebook e SugarCRM. Tuttavia, l'RFI può 
+manifestarsi in altri ambienti ed è stato infatti i ntrodotto inizialmente 
+come "SHTML injection". RFI funziona sfruttando app licazioni che 
+dinamicamente fanno riferimento a script esterni in dicati da input 
+dell'utente, senza adeguati controlli. Di conseguen za, l'applicazione può 
+essere istruita per includere uno script ospitato s u un server remoto e 
+quindi eseguire codice controllato da un utente mal intenzionato. Gli script 
+eseguiti possono essere utilizzati per il furto tem poraneo o l’accesso non 
+autorizzato ai dati, la loro manipolazione o anche la loro sottrazione, per 
+una acquisizione dati a lungo termine. 
+A47  Resource Injection  Questo attacco consiste nel modificare il tipo o l’ identificatore di una 
+risorsa usato da un’applicazione, attraverso un inp ut non validato, i cui 
+caratteri vengono usati dall’applicazione vulnerabi le per determinare la 
+risorsa da accedere (es. un nome file su uno share remoto, una porta 
+TCP/IP, una URL, ecc.). 
+In tal modo l’attaccante forza il server a caricare  una risorsa arbitraria dalla 
+rete, potenzialmente contenente codice dannoso, che  in alcuni casi può 
+essere persino memorizzato sul server ed essere inv iato ad altri utenti. 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 20  a 141  
+ 
+A48  SEO poisoning 
+attack Il "SEO poisoning", noto anche come "search poisoni ng", è un metodo di 
+attacco in cui i cyber criminali creano siti web da nnosi e utilizzano tattiche 
+di ottimizzazione dei motori di ricerca per renderl i prominenti nei risultati 
+della ricerca. Tali siti vengono associati a termin i presumibilmente utilizzati 
+nella ricerca da un numero elevato di persone in un  dato momento, ad 
+esempio frasi correlate a festività, news e video v irali. Secondo i Websense 
+Security Labs, in questi casi, fino ad un quarto de lla prima pagina dei 
+risultati della ricerca, questi possono essere coll egati a siti web dannosi. Gli 
+aggressori creano siti web con nomi e descrizioni a ssociate a temi popolari 
+o ad argomenti di tendenza. Ad esempio, nelle setti mane precedenti a 
+Halloween, gli aggressori potrebbero attivare siti che offrono modelli 
+gratuiti per i costumi di Halloween. Tuttavia, il v ero scopo è quello di 
+infettare i visitatori con malware o accedere in mo do fraudolento a 
+informazioni sensibili da utilizzare poi per il fur to di identità. 
+A49  Sfruttamento delle 
+sessioni Ogni applicazione web che si avvale di un meccanism o di login di 
+autenticazione, basato sul logon gestisce delle ses sioni con le quali 
+tracciare l’utente, che si attua con l'assegnazione  di un token (ad es. un 
+cookie, un parametro di sessione) univoco. L'attacc o si perpetra dopo aver 
+determinato il funzionamento dell'algoritmo di gene razione del token e, in 
+genere, comporta la sostituzione di identità, dando  all'aggressore 
+l'opportunità di accedere all'applicazione web poic hé da essa ritenuto un 
+utente accreditato. 
+A50  Shellcode  Uno shellcode è un programma in linguaggio assembly  che 
+tradizionalmente esegue una shell, come la shell Un ix '/bin/sh' oppure la 
+shell “command.com” sui sistemi operativi DOS e Mic rosoft Windows. Uno 
+shellcode può essere utilizzato per sfruttare un bu g mediante un exploit, 
+consentendo ad un hacker o un cracker di acquisire l'accesso alla riga di 
+comando di un computer, o più in generale di esegui re codice arbitrario. 
+A51  Spam  Il termine "spam" descrive una comunicazione non so llecitata (inviata per 
+e-mail o messaggi/chat immediata) e destinata al lu cro commerciale. Il 
+termine spam comprende un’ampia gamma di attività, molte delle quali 
+sono dannose (come la distribuzione di e-mail di ph ishing). Una variante di 
+tale attacco è lo spam per immagini (spam in cui il  messaggio è testo sotto 
+forma di immagine, anziché testo effettivo) come me zzo usato per evadere 
+il rilevamento. 
+A52  Spim  
+(Instant Messaging 
+Spam) Lo Spim è una forma di spam distribuito tramite mes saggistica istantanea 
+(IM) anziché tramite messaggistica di posta elettro nica. Anche se meno 
+diffuso rispetto alla sua controparte di posta elet tronica, lo Spim sta 
+raggiungendo sempre più utenti. l'IM è un canale pa rticolarmente adatto 
+per gli spammer. Per prima cosa, l'immediatezza nel lo scambio di messaggi 
+fornita dall'IM rende probabilmente gli utenti meno  riflessivi nel cliccare 
+sui link. Inoltre, con il fatto che l'IM bypassa il  software antivirus e i 
+firewall, questo rappresenta un mezzo facile per pa ssare non solo messaggi 
+commerciali, ma anche virus e altri malware. 
+A53  SQL injection  "SQL injection" è una tecnica di hacking che mira a  colpire le applicazioni 
+web connesse ad un database di tipo SQL. Tale attac co sfrutta l'inefficienza 
+dei controlli sui dati ricevuti in input ed inseris ce codice maligno all'interno 
+di una query SQL. La tecnica permette al malintenzi onato di autenticarsi 
+con ampi privilegi in aree protette dell'applicazio ne e di visualizzare e/o 
+alterare dati sensibili. 
+A54  Stack overflow  Lo stack overflow si verifica quando il puntatore d i stack di chiamata , 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 21  a 141  
+ 
+supera lo spazio di memoria associato allo stack. Lo stack d elle  chiamat e 
+può occupare uno spazio di memoria di dimensioni ri dotte, in genere 
+questa spesso viene determinata all'avvio del progr amma. La dimensione 
+dello stack di chiamata dipende da molti fattori, t ra cui il linguaggio di 
+programmazione, l'architettura della macchina, il m ulti-threading e la 
+quantità di memoria disponibile. Quando un programm a tenta di utilizzare 
+più spazio di quanto non sia disponibile nello stac k di chiamata (ovvero 
+quando tenta di accedere alla memoria oltre i limit i dello stack di chiamata, 
+che è essenzialmente un buffer overflow), si parla di overflow dello stack, 
+che porta al crash del programma. Questo si verific a in genere in caso di 
+errori di programmazione quali la ricorsione infini ta o l’uso di variabili di 
+stack troppo grandi. 
+A55  XPath Injection  XPath è un linguaggio di query  che consente di accedere a qualsiasi parte 
+di un documento XML senza alcuna restrizione nel co ntrollo di accesso (chi 
+può accedere a cosa). 
+Con un attacco di XPATH Injection, un malintenziona to può modificare una 
+query XPATH per eseguire un’azione differente da qu ella prevista. 
+La XPath Injection può essere usata per estrarre da  un’applicazione, dati 
+forniti dagli utenti, memorizzati in modo non sicur o. 
+Questo può avvenire se l’applicazione non valida co rrettamente l’input 
+usato per comporre una query XPATH. 
+A56  Zero -day exploit  Un exploit "zero -day" consiste nello sfruttamento di una vulnerabili tà di 
+sicurezza nello stesso giorno in cui questa general mente diventa nota. Ci 
+sono zero giorni tra il momento della scoperta dell a vulnerabilità e il primo 
+attacco. Normalmente, quando qualcuno rileva che un  programma 
+software contiene un potenziale problema di sicurez za, la persona o 
+l'azienda notificano il problema riscontrato alla s ocietà che ha realizzato il 
+software (e talvolta al mondo in generale) in modo da poter intraprendere 
+azioni di correzione. Passa del tempo prima che, la  società che ha 
+realizzato il software, possa correggere il codice e distribuire una patch o 
+un aggiornamento software. Anche se potenziali aggr essori sono a 
+conoscenza della vulnerabilità, potrebbe essere nec essario un certo tempo 
+per poterla sfruttare a loro vantaggio. Nel frattem po, si spera che la 
+soluzione di correzione sia disponibile prima che c iò avvenga. 
+ 

@@ -1,0 +1,49 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 46  a 137  
+ 
+Progettazione : in questa fase si esamina il sistema in divenire con l’ausilio di tecniche di analisi e 
+modellazione delle minacce. Requisiti di sicurezza di maggior dettaglio si aggiungono quindi a quelli 
+prodotti nella precedente fase. 
+Implementazione : in questa fase si realizza il sistema attraverso la stesura di codice sicuro. Seguono 
+l’esecuzione di test di sicurezza basati sull'anali si delle minacce e l’analisi statica del codice sor gente. 
+Quest’ultima può produrre nuovi requisiti di sicure zza, che possono portare alla revisione del codice.  
+Verifica : in questa fase si analizzano gli aspetti di sicur ezza del sistema in esecuzione in un ambiente 
+controllato impiegando tecniche e strumenti di anal isi dinamica; 
+Validazione : è la fase immediatamente prima del rilascio, nell a quale viene effettuata una final security 
+review per la verifica del rispetto dei requisiti.  
+Supporto : in questa fase si esamina il sistema in essere co n l’ausilio di tecniche di: analisi e modellazione 
+delle minacce e/o verifica statica/dinamica del cod ice applicativo, al fine di produrre nuovi requisit i di 
+sicurezza di dettaglio per indirizzare un’eventuale  fase di reingegnerizzazione e/o di patching del si stema in 
+oggetto. 
+6.2  Risk Assessment 
+L’obiettivo dell’analisi del rischio è da una parte  identificare, valutare e misurare la probabilità e  la gravità 
+dei rischi (ciò che viene generalmente indicato con  il nome di Risk Assessment ) nei diversi processi 
+dell’organizzazione e, dall’altra decidere come com portarsi a fronte dei rischi identificati (ciò che viene 
+generalmente indicato con il nome di Risk Management ) al fine di minimizzarli o eliminarli.  
+Si fornisce di seguito, una classificazione dei pri ncipali rischi: 
+• Rischio strategico, derivante dall’incompatibilità tra due o più dei seguenti fattori: 
+o obiettivi strategici,  
+o strategie di business,  
+o mezzi utilizzati per raggiungere gli obiettivi, 
+o quadro macroeconomico nel quale opera l’organizzazi one. 
+• Rischio reputazionale, che può manifestarsi in molt eplici situazioni, per esempio in caso di mancato 
+soddisfacimento della clientela. 
+• Rischio finanziario, derivante dall’incapacità di a ssolvere gli oneri finanziari assunti. 
+• Rischio operativo, che è connesso ai processi utili zzati per definire le strategie. 
+• Rischi di compliance, derivanti da inadempienze leg islative (normative e regolamenti). 
+• Rischi di gestione delle informazioni, derivanti da  un insufficiente livello di sicurezza dei sistemi 
+informatici. 
+• Rischi emergenti e/o potenziali che potrebbero dann eggiare il business dell’organizzazione e/o le 
+persone che vi operano. 
+La gestione del rischio comprende tre attività prin cipali: 
+• Risk Assessment che include l’identificazione e la valutazione dei rischi e degli impatti; le 
+raccomandazioni e le misure per la riduzione del ri schio;  
+• Mitigazione del rischio, che si riferisce alla prio ritizzazione, implementazione e mantenimento delle 
+misure appropriate per la riduzione del rischio rac comandate dal processo di Risk Assessment;  
+• Valutazione e analisi dei processi e delle misure p er l'implementazione di un programma di 
+gestione del rischio di successo (vedi paragrafo 6. 2.1).  
+Una metodologia di gestione del rischio ben struttu rata, se utilizzata in modo efficace, può aiutare 
+l’organizzazione a identificare i controlli adeguat i per garantire le capacità di sicurezza essenziali . 

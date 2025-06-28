@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 117  a 156  
+ 
+L'applicazione esegue del codice ricevuto attravers o l’input che non è stato sufficientemente verifica to. Un 
+utente in grado di inserire codice arbitrario può p rendere il controllo dell’applicazione e del server , se non 
+sono state adottate tecniche di difesa in profondit à. 
+Esempio: 
+Il codice seguente mostra come del codice .NET può essere passibile di code injection: 
+String codiceUtente = request.Form["Codice"]; 
+  
+CSharpCodeProvider compiler = new CSharpCodeProvide r(); 
+CompilerParameters parametri = new CompilerParamete rs();  
+parametri.GenerateInMemory = true; 
+parametri.GenerateExecutable = true; 
+ 
+try  
+{ 
+ CompilerResults risultati  = compiler.CompileAssemblyFromSource(parametri, 
+codiceUtente); 
+   
+ Assembly compilato = risultati .CompiledAssembly;  
+ exitCode = (int)compilato.EntryPoint.Invoke(null, new object[0]); 
+ 
+Come difendersi. 
+• È vietata qualsiasi esecuzione dinamica di codice r icevuto da canali non attendibili. Se è prorpio 
+necessario compilare ed eseguire dinamicamente del codice dinamico, occorre allore predisporre 
+una sandbox isolata, ad esempio AppDomain di .NET o  un thread isolato.  
+• Devono essere effettuati tutti i controlli possibil i per validare il codice in ingresso. 
+• Configurare l'applicazione da eseguire utilizzando un account utente limitato che non disponga di 
+privilegi non necessari. 
+• Se è possibile optare per isolare tutta l'esecuzion e dinamica utilizzando un account utente separato 
+e dedicato che abbia privilegi solo per le operazio ni e i file specifici utilizzati dal codice da eseg uire, 
+in base al principio denominato "Principle of Least  Privilege". Il principio stabilisce che agli utent i 
+venga attribuito il più basso livello di “diritti” che possano, detenere rimanendo comunque in grado 
+di compiere il proprio lavoro. 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/94.html, 
+Improper Control of Generation of Code ('Code Injec tion') CWE-94. 
+7.8.3  Command Injection 
+Come riconscerla 
+Sfruttando questa vulnerabilità un aggressore potre bbe eseguire comandi di sistema arbitrari 
+sull’application server. Il danno che potrebbe esse re arrecato comprende: 
+• la possibilità di modificare i permessi all’interno  di file o directory nel file system (read / create  / 
+modify / delete); 
+• la possibilità di instaurare connessioni di rete no n autorizzate verso il server;  
+• la possibilità di gestire i servizi di sistema, avv iandoli, fermandoli o rimuovendoli; 
+• la completa acquisizione del controllo del server d a parte dell'attaccante. 
+In pratica, l'applicazione manda in esecuzione sul server comandi di sistema operativo inseriti 
+dell’attaccante. L'operazione spesso viene effettua ta utilizzando stringhe di input controllate dall'u tente, 
+sulle quali non viene effettuata alcuna verifica. 
+Potrebbero così essere eseguiti direttamente sul se rver comandi anche molto pericolosi per il sistema o per 
+la sicurezza dei dati. 
+ 

@@ -1,0 +1,29 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 99  a 137  
+ 
+ 
+ 
+Figura 26 - Continuous Security 
+Qualsiasi modifica a un sistema ha il potenziale pe r ridurre l'efficacia dei controlli esistenti o per  avere in 
+qualche modo un impatto sulla riservatezza, sulla d isponibilità o sull'integrità dello stesso. La solu zione è 
+garantire che nella valutazione delle modifiche del  sistema sia inclusa una fase di valutazione del ri schio 
+(paragrafo 6.2). Sfortunatamente, non solo i sistem i, ma anche le minacce possono cambiare. Quando 
+vengono identificate nuove minacce, potrebbero esse re necessari nuovi controlli per portare il rischio  a un 
+livello accettabile. Questo è il motivo per cui le valutazioni periodiche del rischio sono importanti,  anche 
+quando un sistema cambia raramente. La valutazione del rischio può fornire un ulteriore vantaggio in p er 
+migliorare l'efficacia di politiche, procedure e fo rmazione. 
+9.5.1  Identificazione degli strumenti a supporto 
+In ottica di un processo di ‘Continuous Security’, in questa fase vengono attuate di nuovo le azioni a fferenti 
+alle diverse fasi di: Revisione dei requisiti di si curezza, revisione dei risultati di progettazione, revisione degli 
+aspetti di sicurezza del codice sorgente implementa to, penetration test del codice rilasciato.  
+Gli strumenti per le fasi sopra menzionati sono sta ti già identificati e indicati nei precedenti parag rafi: 
+• Definizione dei requisiti di sicurezza [Par. 9.1.1] ; 
+• Progettazione di applicazioni sicure [Par. 9.2.1]; 
+• Implementazione di applicazioni sicure [Par. 9.3.1] ; 
+• Verifica della sicurezza delle applicazioni [Par. 9 .4.1]. 
+ 
+  
+

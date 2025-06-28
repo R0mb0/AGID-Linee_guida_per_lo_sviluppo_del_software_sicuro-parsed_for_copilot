@@ -1,0 +1,50 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 86  a 137  
+ 
+modificata in base ai risultati dell'analisi del ri schio. In fase di progettazione, si raccomanda l’us o di 
+[6]UMLsec 35 . Per la fase di implementazione, si suggerisce di scegliere un linguaggio di programmazione 
+che meglio soddisfa gli obiettivi di sicurezza. Ino ltre, particolare attenzione deve essere posta su c ome 
+evitare: (i) buffer overflow, (ii) format string vu lnerabilities. Essi sottolineano di utilizzare per la crittografia 
+algoritmi già verificati. Per la fase di security a ssurance vengono indicate le seguenti attività: sta tic 
+vulnerability code scanning, code reviews, ad-hoc u nit e system security testing, fuzz testing. 
+8.2.6  Secure Software Development Model (SecSDM) 
+SecSDM 36  utilizza l'analisi dei rischi nella fase di specif ica dei requisiti al fine di dare priorità alla 
+modellazione delle minacce. Gli obiettivi di sicure zza di alto livello quali la riservatezza, l'integr ità e la 
+disponibilità sono poi identificati sulla base dell e minacce rilevate [7]. 
+In fase di progettazione, vengono identificate e se lezionate le funzionalità di sicurezza per mitigare  le 
+minacce e raggiungere gli obiettivi di sicurezza. S ecSDM propone di seguire standard di secure coding 
+durante la fase di implementazione. 
+8.2.7  Software Security Assessment Instrument (SSAI) 
+SSAI 3738  raggruppa un insieme di attività che utilizzano de terminate risorse e strumenti per lo sviluppo di 
+software sicuro. [8] [9] La prima risorsa che SSAI fornisce è un database online 39  che contiene informazioni 
+sulle varie vulnerabilità e le indicazioni per la l oro mitigazione. [10] La seconda risorsa SSAI è una  security 
+checklist che può essere sviluppata e utilizzata co me guida per lo sviluppo sicuro. Sono forniti i det tagli di 
+come redigere una checklist e quali sono gli elemen ti potenziali che possono essere inclusi 40 . La terza 
+risorsa è un elenco di strumenti accessibili pubbli camente, per la scansione statica del codice. SSAI fornisce 
+anche Flexible Modeling Framework (FMF), uno strume nto di modellazione e il property-based testing too l 
+(PBT), che utilizza le proprietà di sicurezza speci ficate nella security checklist o nel FMF come base  dei test 
+per il software. 
+8.2.8  Hadawi’s Set of Secure Development Activities 
+Hadawi 41  identifica 25 vulnerabilità (common vulnerabilitie s) da evitare durante lo sviluppo [11]. Egli 
+propone anche una serie di requisiti di sicurezza p er le fasi di progettazione e implementazione che, se 
+adottati, aiuterebbero ad evitare queste vulnerabil ità [12]. 
+                                                           
+35  J. Juerjens, Secure Systems Development with UML, Springer, 2005. 
+36  L. Futcher and R.v. Solms, “SecSDM: A Model for In tegrating Security into the Software Development Li fe Cycle,” In IFIP 
+International Federation for Information Processing , Volume 237, Proc. of the 5th World Conference on Inf ormation Security 
+Education, Springer, 2007, pp. 41-48. 
+37  D.P. Gilliam, T.L. Wolfe, J.S. Sherif, and M. Bish op, “Software Security Checklist for the Software L ife Cycle,” In Proc. of the 12th 
+IEEE International Workshops on Enabling Technologi es: Infrastructure for Collaborative Enterprises (W ETICE’03), Linz, Austria, IEEE 
+CS Press, 2003, pp. 243-248. 
+38  D. Gilliam, J. Powell, E. Haugh, and M. Bishop, “A ddressing Software Security Risk and Mitigations in  the Life Cycle,” In Proc. of 
+the 28th Annual NASA Goddard Software Engineering Wor kshop (SEW’03), Greenbelt, Maryland, USA, 2003, pp. 201-206. 
+39  DOVES: Database of Vulnerabilities, Exploits, and Signatures, http://seclab.cs.ucdavis.edu/projects/D OVES/. Last Accessed March 
+2009. 
+40  D.P. Gilliam, T.L. Wolfe, J.S. Sherif, and M. Bish op, “Software Security Checklist for the Software L ife Cycle,” In Proc. of the 12th 
+IEEE International Workshops on Enabling Technologi es: Infrastructure for Collaborative Enterprises (W ETICE’03), Linz, Austria, IEEE 
+CS Press, 2003, pp. 243-248.  
+41  M.A. Hadawi, “Vulnerability Prevention in Software  Development Process,” In Proc. of the 10th Internat ional Conference on 
+Computer & Information Technology (ICCIT’07), Dhaka,  Bangladesh, 2007, 

@@ -1,0 +1,54 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 32  a 141  
+ 
+protette. L'interfaccia di programmazione per la pr otezione dei dati applicativi (DPAPI) 
+è un esempio di un servizio di crittografia fornito  su sistemi operativi Windows 2000 e 
+successivi in cui il sistema operativo gestisce la chiave. 
+Se si utilizza un meccanismo di crittografia che ri chiede di generare o gestire la chiave, 
+utilizzare algoritmi di generazione forti delle chi avi casuali e memorizzare la chiave in 
+una posizione protetta. Ad esempio, in una chiave d el Registro di sistema protetta con 
+un ACL restrittivo. 
+Crittografare la chiave di crittografia utilizzando  DPAPI per una maggiore sicurezza. 
+Impostare i limiti temporali di scadenza delle chia vi ad intervalli regolari. 
+ 
+5.1.5  Documentazione 
+Protezione della documentazione di sistema da acces si non autorizzati  
+Minaccia  Accesso non autorizzato alle informazioni . 
+Contromisure  La documentazione di sistema (ad es. relativa al so ftware del web server/DBMS, della 
+piattaforma ospitante il web server/DBMS, ecc.) dev e essere protetta da accessi non 
+autorizzati e conservata in modo sicuro. In partico lare, la documentazione cartacea, se 
+non utilizzata, deve essere conservata e custodita all'interno di contenitori (es. armadi, 
+cassettiere) chiusi a chiave e accessibile esclusiv amente dai soggetti autorizzati. Per la 
+documentazione memorizzata su supporto informatico l'accesso dovrebbe essere 
+consentito ad una lista ridotta di utenti, mediante  l'utilizzo di idonei sistemi di 
+autenticazione e autorizzazione informatica. 
+ 
+5.1.6  Logging 
+Registrazione degli eventi (audit)  
+Minaccia  - Abuso di privilegi  da parte dell’utente  
+- Cancellazione dei log di accountability e/o ripudio  di operazioni effettuate. 
+- Negazione dei servizi. 
+Contromisure  I log di audit che registrano le attività dell'utente, le ec cezioni e gli eventi di sicurezza 
+devono essere prodotti e conservati per essere util izzati in indagini, come prove da 
+esibire in caso di dispute, e monitoraggi, come ele menti da considerare 
+nell'identificazione di misure migliorative della s icurezza. 
+Gli eventi che devono essere registrati includono: 
+- log-on e log-off e durata dell'accesso dell'utente o applicazione software; 
+- tentativi di accesso riusciti e falliti; 
+- utilizzo di funzioni amministrative o di gestione; 
+- avvio e arresto delle funzioni di audit; 
+- errori del software. 
+ 
+La registrazione dell'evento deve riportare almeno i seguenti dati: 
+- identità dell'utente o l'identificativo del process o che ha scatenato l'evento; 
+- indirizzo IP dell’utente nel caso di sessione remot a; 
+- data e ora dell'evento; 
+- tipo dell'evento; 
+- oggetti coinvolti dall'evento; 
+- eventuali errori prodotti dall’evento. . 
+ 
+Conservare i dati relativi agli eventi registrati p er un periodo di tempo di almeno 5 
+anni. 
+ 

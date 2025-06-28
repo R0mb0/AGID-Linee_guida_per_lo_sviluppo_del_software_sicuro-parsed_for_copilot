@@ -1,0 +1,58 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 106  a 156  
+ 
+Viene qui utilizzata la funzione  StrongNameIdentit yPermissionAttribute con una richiesta di nome sicu ro: 
+  
+[StrongNameIdentityPermissionAttribute(SecurityActi on.Demand, 
+PublicKey= "…hex…" , Name= "App1" , Version= "0.0.0.0" )] 
+public class Class1 
+{ 
+ 
+} 
+7.6.10.5  Protezione e campi pubblici di sola lettura 
+Non utilizzare mai campi pubblici di sola lettura d alle librerie managed in quanto i campi pubblici di  sola 
+lettura possono essere modificati.  
+Alcune classi di framework .NET includono campi pub blici di sola lettura che contengono parametri di 
+confine specifici per la piattaforma. Ad esempio, i l campo InvalidPathChars è un array che descrive i 
+caratteri che non sono consentiti in una stringa de l percorso di file. 
+I valori dei campi pubblici di sola lettura come In validPathChars possono essere modificati dal codice  o dal 
+codice che condivide il dominio di applicazione. Se  si utilizzano i campi pubblici in sola lettura, co me 
+InvalidPathCharsi, il codice dannoso può alterare l e definizioni dei limiti e utilizzare il codice in modi 
+inaspettati. 
+Nella versione 2.0 e versioni successive di .NET Fr amework, è necessario utilizzare metodi che restitu iscono 
+un nuovo array anziché utilizzare i campi di array pubblici. Ad esempio, invece di utilizzare il campo  
+InvalidPathChars, è necessario utilizzare il metodo  GetInvalidPathChars. 
+Si noti che i tipi di .NET Framework non utilizzano  i campi pubblici per definire internamente i tipi di confini. 
+Al contrario, il framework .NET utilizza campi priv ati separati. La modifica dei valori di questi camp i pubblici 
+non altera il comportamento dei tipi di .NET Framew ork. 
+7.6.10.6  Esclusione di classi e membri utilizzati da codice non attendibile 
+Utilizzare le dichiarazioni illustrate in questa se zione per impedire che classi e metodi specifici, n onché 
+proprietà e eventi, siano utilizzati da un codice p arzialmente attendibile. Applicare queste dichiaraz ioni a 
+una classe, applica la protezione a tutti i suoi me todi, proprietà e eventi; tuttavia, si noti che l'a ccesso sul 
+campo non è influenzato dalla sicurezza dichiarativ a. Si noti inoltre che le richieste di collegamento  aiutano 
+a proteggere solo i chiamanti immediati e potrebber o essere ancora soggetti ad attacchi. 
+In associazione con il nome sicuro, un LinkDemand v iene applicato a tutti i metodi, le proprietà e gli  eventi 
+accessibili a livello pubblico per limitarne l'uso a chiamanti affidabili. Per disattivare questa funz ionalità, è 
+necessario applicare l'attributo AllowPartiallyTrus tedCallersAttribute. Pertanto, la selezione esplici ta di 
+classi per escludere i chiamanti non attendibili è necessaria solo per assemblies non assegnate o asse mblies 
+con questo attributo; è possibile utilizzare queste  dichiarazioni per contrassegnare un sottoinsieme d i tipi in 
+esso che non sono destinati a chiamanti non attendi bili. 
+ 
+Gli esempi seguenti mostrano come evitare che class i e membri siano utilizzati da codice non attendibi le. 
+Esempi: 
+Per classi pubbliche non sealed: 
+[System.Security.Permissions.PermissionSetAttribute ( 
+System.Security.Permissions.SecurityAction.Inherita nceDemand, 
+Name= "FullTrust" )] 
+[System.Security.Permissions.PermissionSetAttribute ( 
+System.Security.Permissions.SecurityAction.LinkDema nd, Name= "FullTrust" )] 
+public  class  CanDeriveFromMe 
+{ 
+} 
+Per classi pubbliche sealed: 
+[System.Security.Permissions.PermissionSetAttribute ( 
+System.Security.Permissions.SecurityAction.LinkDema nd, Name= "FullTrust" )] 
+public  sealed  class  CannotDeriveFromMe 
+{ 
+} 

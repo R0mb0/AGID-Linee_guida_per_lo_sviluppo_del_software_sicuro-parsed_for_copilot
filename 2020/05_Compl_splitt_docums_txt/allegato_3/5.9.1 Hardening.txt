@@ -1,0 +1,158 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 127  a 141  
+ 
+ 
+5.8.9  Procedure 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.7]. 
+ 
+5.8.10  Informazioni addizionali 
+Gli standard citati per mettere in sicurezza l’ESB (Security Assertion Markup Language (SAML), WS-Secu rity, 
+eXtensible Access Control Markup Language (XACML), ecc.) sono implementati e resi fruibili da soluzion i 
+COTS (Commercial Of The Shelf), la cui adozione ind irizza molte delle best practices descritte.  
+ 
+Riferimenti  
+SAML, XACML , etc  Gli standard citati per mettere in sicurezza l’ESB (SAML - Security Assertion 
+Markup Language, WS-Security, XACML - eXtensible Ac cess Control Markup 
+Language, ecc.) sono implementati e resi fruibili d a soluzioni COTS  (Commercial Of 
+The Shelf), la cui adozione indirizza molte delle b est practices descritte nei 
+paragrafi precedenti. 
+Web Services  Per informazioni sulle problematiche di sicurezza r elative alla tecnologia dei Web 
+Services, visitare il sito: 
+https://www.us-cert.gov/bsi/articles/best-practices /assembly-integration-and-
+evolution--security-concept-challenge-and-design-co nsiderations-web-services-
+integration. 
+ 
+5.9  Sicurezza del pacchetto MS Office 
+5.9.1  Hardening 
+Hardening della suite Office  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Limitare/Disabilitare/Condizionare l'uso di contenu ti attivi.  
+Per contenuti attivi si intendono: 
+- i controlli ActiveX,  
+- i componenti aggiuntivi quali, ad esempio: 
+• Componenti aggiuntivi COM (Component Object Model) 
+• Componenti aggiuntivi Visual Studio Tools per Offic e (VSTO) 
+• Componenti aggiuntivi di automazione 
+• Server RTD (RealTimeData) 
+• Componenti aggiuntivi di applicazioni, ad esempio f ile con estensioni wll, xll e 
+xlam 
+• Pacchetti di espansione XML 
+• Fogli di stile XML 
+• Macro VBA  
+Riferimenti  - Pianificare le impostazioni di sicurezza per i cont rolli ActiveX in Office 2013 , 
+https://technet.microsoft.com/it-it/library/cc17907 6.aspx  
+- Pianificare le impostazioni di protezione per i com ponenti aggiuntivi per Office 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 128  a 141  
+ 
+2013 , https://technet.microsoft.com/it -it/library/ee857086.aspx  
+- Pianificare le impostazioni di protezione per le ma cro VBA per Office 2013, 
+https://technet.microsoft.com/it-it/library/ee85708 5.aspx 
+ 
+Hardening della suite Office  
+Minaccia  Accesso non autorizzato alle informazioni . 
+Attacchi all’integrità dei sistemi. 
+Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Bloccare i contenuti esterni, come: Immagini, elementi multimediali , Hyperlinks, 
+Connessioni dati, Templates, etc.  
+I contenuti esterni possono nascondere Web beacons (che minano la privacy) o 
+malware (con svariati esiti). 
+Riferimenti  - Blocco o sblocco di contenuti esterni in documenti di Office , 
+https://support.office.com/en-us/article/Block-or-u nblock-external-content-in-
+Office-documents-10204ae0-0621-411f-b0d6-
+575b0847a795?CorrelationId=2589076c-bc38-4c1e-bac5- 317c19aed229&ui=en-
+US&rs=en-US&ad=US&ocmsassetID=HA010065176 
+ 
+Hardening della suite Office  
+Minaccia  Divulgazione di informazioni riservate.  
+Contromisure  I documenti possono contenere grandi quantità di in formazioni nascoste:  
+- Nome utente, organizzazione  
+- Storia delle modifiche, aggiunte, cancellazioni 
+- Note, Commenti  
+- Testo nascosto  
+- Un intero foglio di calcolo “dietro” a un semplice diagramma (con cifre 
+confidenziali!) 
+- A volte anche blocchi casuali di memoria 
+- Proprietà del server di documenti (se il documento fosse stato salvato in un server 
+di gestione dei documenti, che ad esempio si basa s u Microsoft Windows 
+SharePoint Services, il documento potrebbe contener e informazioni aggiuntive 
+relative a quel server). 
+Per rimuovere tali informazioni, utilizzare lo stru mento di Office denominato 
+“Document Inspector”.   
+Riferimenti  - Remove hidden data and personal information by insp ecting documents , 
+https://support.office.com/en-us/article/Remove-hid den-data-and-personal-
+information-by-inspecting-documents-356b7b5d-77af-4 4fe-a07f-9aa4d085966f  
+- Using the document inspector, https://msdn.microsof t.com/en-us/vba/office-
+shared-vba/articles/using-the-document-inspector  
+ 
+Hardening della suite Office  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- (Zero-day-exploits). 
+Contromisure  - Bloccare (in via temporanea) l’apertura e/o il salv ataggio di certi di tipi di file. Ciò 
+attenua il rischio di attacchi alla sicurezza di ti po zero-day, impedendo 
+temporaneamente agli utenti di aprire tipi di file specifici, nell’attesa di 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 129  a 141  
+ 
+aggiornamento so ftware o un Service Pack . 
+- Attivare la funzionalità “Convalida file di Office” . Tale funzionalità consente di 
+individuare e prevenire un tipo di exploit noto com e “file format attack” o “file 
+fuzzing attack” (la struttura del file viene modifi cata al fine di aggiungere malware). 
+In pratica se “Convalida file di Office” determina che la struttura di un file (prima 
+ancora di essere aperto) non è conforme a tutte le regole descritte nello schema, il 
+file non supera la convalida.  
+Riferimenti  - Pianificare le imp ostazioni di blocco dei file per Office , 
+https://technet.microsoft.com/it-it/library/cc17923 0.aspx  
+ 
+Hardening della suite Office  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  - Limitare/Disabilitare i servizi, basati su Internet , che contribuiscono a proteggere e 
+migliorare le applicazioni di Office (ad esempio qu elli che inviano le informazioni 
+dei messaggi di errore a Microsoft), al fine di con trollare la divulgazione di 
+informazioni private (privacy).  
+- Attivare la funzionalità di “Visualizzazione protet ta”. La “Visualizzazione protetta” 
+protegge da diversi tipi di exploit poiché apre i d ocumenti in una sandbox (un 
+ambiente isolato da dove risulta difficile sferrare  attacchi). In Visualizzazione 
+protetta: 
+• i contenuti attivi non sono abilitati 
+• gli utenti possono visualizzare il contenuto di un file ma non possono eseguire 
+operazioni di modifica, salvataggio o stampa, né vi sualizzare le eventuali firme 
+digitali del file. 
+- Limitare/Disabilitare l’uso dei meccanismi: 
+• Trusted Documents 
+• Trusted Locations 
+• Trusted Publishers 
+Tali meccanismi infatti by-passano molti controlli di sicurezza. In particolare tutti i 
+contenuti di un “trusted document” o di un document o preso da una “ trusted 
+location ”, o firmati da un “Trusted Publisher” sono immedia tamente attivi all’apertura 
+del documento.  
+References  - Pianificare le impostazioni di Visualizzazione prot etta per Office  2013 , 
+https://technet.microsoft.com/it-it/library/ee85708 7.aspx 
+- Trusted documents, https://support.office.com/en-us /article/Trusted-documents-
+cf872bd8-47ec-4c02-baa5-1fdba1a11b53 
+- Pianificare e configurare le impostazioni di Percor si attendibili per Office 2013, 
+https://docs.microsoft.com/it-it/previous-versions/ office/office-2013-resource-
+kit/cc179039(v=office.15)?redirectedfrom=MSDN 
+ 
+Hardening del sistema operativo che ospita la suite  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Eseguire l’hardening del sistema operativo che ospi ta la suite  Office . L’hardening del 
+sistema operativo è oggetto di un paragrafo specifi co [rif. 5.2.2]. 

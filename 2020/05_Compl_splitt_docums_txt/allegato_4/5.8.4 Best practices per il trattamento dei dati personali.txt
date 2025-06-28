@@ -1,0 +1,54 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 83 a 132 
+ 
+Successivamente l’Italia, attraverso il d.lgs. 101/2018 art. 2 septie sdecies, ha identificato 
+nell’organismo nazionale di accreditamento (Accredia) designato in virtù del regolamento (CE) 
+765/2008, il soggetto che dovrà effettuare  l’accreditamento  pur rimane ndo al Garante il potere di 
+accreditare direttamente in alcune mate rie specifiche (es. Biometria, genetica, ecc.) o lì dove  l’Ente 
+di accreditamento risulti inadempiente.  
+5.8.4 Best practice s per il trattamento dei dati personali  
+• Ridurre al minimo i dati personali utilizzati - Ridurre l’impatto dei rischi limitando la gestione  dei dati 
+personali a ciò che è strettamente necessario per raggiungere lo scopo definito.  
+o Comprovare che i dati personali siano sufficienti, pertinenti e non eccessivi rispetto all’intento; 
+diversamente , non raccoglier li. 
+o Comprovare che i dati personali non rivelino (direttamente o indirettamente) l'origine razziale o 
+etnica, le opinioni politiche, filosofiche o religiose, l'appartenenza sindacale, le informazioni sulla 
+salute o le informazioni sulla vita sessuale di un individuo, tranne che  per circostanze eccezionali.  
+o Comprovare che i dati personali non si riferisc ano a reati, sentenze penali o misure di sicurezza.  
+o Evitare la raccolta di dati personali aggiuntivi.  
+o Limitare la trasmissione di documenti elettronici contenenti dati personali allo stretto necessario.  
+o Eliminare  in caso di necessità se non più utili,  i dati personali o le richieste di un soggetto dal 
+sistema in esercizio o dai backup.  
+• Gestire i periodi di conservazione dei dati personali - Ridurre l’impatto dei rischi assicurando che i 
+dati personali non vengano mantenuti per più di quanto necessario.  
+o Definire periodi di conservazione dei dati personali limitati nel tempo e appropriati allo scopo 
+dell'elaborazione.  
+o Verificare che l'elaborazione possa rilevare la scadenza del periodo di  conservazione.  
+o Verificare che l'elaborazione consenta la cancellazione dei dati personali a scadenza del periodo 
+di conservazione e che il metodo scelto per l’eliminazione sia appropriato ai rischi legati all a 
+libertà civil e e alla privacy dei soggetti in teressati.  
+o Eliminare immediatamente i dati personali quando il periodo di conservazione scade . 
+• Informare i soggetti e ottenere il consenso - Consentire ai soggetti interessati di effettuare una scelta 
+libera, specifica e informata.  
+o Determinare se l'elabor azione si basa su una base giuridica diversa dal consenso . 
+o Determinare i mezzi pratici da attuare per ottenere il consenso degli interessati.  
+o Assicurare che il consenso sia ottenuto prima che inizi l'elaborazione.  
+o Assicurare che il consenso sia ottenuto li beramente.  
+o Assicurare che il consenso sia ottenuto in modo notificato e trasparente in termini di finalità del 
+trattamento.  
+o Assicurare che il consenso sia ottenuto per uno scopo specifico.  
+• Partizionare i dati personali - Ridurre la possibilità che i dati personali possano essere correlati e  che 
+possa verificarsi una violazione di questi . 
+o Identificare i dati personali utili solo al singolo processo (l’identificazione deve essere svolta per 
+ciascun processo dell’organizzazione ). 
+o Separare in modo logico i dati utili di ciascun  processo.  
+o Comprovare regolarmente che i dati personali sia no partizionati in modo efficace e che i 
+destinatari e le interconnessioni non siano correlabili ai dati stessi . 
+• Cifrare i dati personali - Rendere incomprensibili i dati per sonali a chiunque non sia  autorizz ato all’ 
+accesso.  
+o Determinare tutto ciò che deve essere crittografato (inclus i dischi rigidi, file, dati provenienti da 
+un database o canali di comunicazione) in base alla forma in cui sono memorizzati i dati personali, 
+i rischi individuati e le prestazioni richieste.  

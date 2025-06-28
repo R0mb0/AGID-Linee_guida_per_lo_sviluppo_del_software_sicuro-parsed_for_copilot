@@ -1,0 +1,59 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 53  a 137  
+ 
+UML State Charts for Security 26  i diagrammi di stato UML (senza alcuna estensione)  sono stati utilizzati per 
+specificare gli attacchi, che a loro volta possono essere collegati alle snort rules. Questi diagrammi  di stato 
+possono essere tradotti manualmente nelle snort rul es, che poi potranno essere utilizzati con 
+un'estensione di IDS Snort. Attraverso l’impiego de i diagrammi di stato, è possibile rappresentare att acchi 
+complessi con step multipli che normalmente non pos sono essere rappresentati con snort rules ordinarie . 
+STATL 27  sta per “State Transition Analysis Technique Langu age” e utilizza due costrutti principali per 
+specificare un attacco: stato e transizione. Ogni t ransizione deve avere un evento associato che, quan do si 
+verifica, avvia la transizione. All’avvio le transi zioni possono eseguire azioni facoltative. Stato e transizione 
+specifiche possono anche avere del codice eseguibil e al loro interno. Un ambiente di sviluppo per STAT L è 
+inoltre disponibile e può essere utilizzato, tra le  altre cose, per visualizzare scenario di attacco s pecificati 
+come macchina a stati.  
+6.3.2  Tool per la specifica dei requisiti  
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Requirem ents Tools’: 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+CaseComplete Requirements 
+management Requirements  Versione  trial 
+disponibile su 
+richiesta https://casecomplete.com/  
+IBM Engineering 
+Requirements 
+Management 
+DOORS Next Requirements 
+management Requirements   Versione trial 
+non disponibile https://www.ibm.com   
+IBM Rational 
+RequisitePro 
+solution Requirements 
+management Requirements   Versione trial 
+non disponibile https://www.ibm.com  
+Microfocus Atlas Requirements 
+management Requirements   Versione trial 
+disponibile https://www.microfocus.com/  
+Objectives Requirements 
+management Requirements  Versione trial 
+disponibile http://www.objectiver.com  
+Open Source 
+Requirements 
+Management 
+Tool (OSRMT) Requirements 
+management Requirements  Open Source http://sourceforge.net/projects/osr 
+mt/  
+Reqtify Requirements 
+management Requirements  Demo non 
+disponibile https://www.3ds.com/it/prodotti -e-
+servizi/catia/prodotti/reqtify/  
+rmtoo Requirements 
+management Requirements  Open Source http://rmtoo.florath.net/  
+                                                           
+26  https://ieeexplore.ieee.org/document/7042284  
+27  https://pdfs.semanticscholar.org/8e78/63430446f610f5015a484d084cccb7e3c376.pdf  

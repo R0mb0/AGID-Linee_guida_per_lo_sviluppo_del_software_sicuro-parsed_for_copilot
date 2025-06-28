@@ -1,0 +1,41 @@
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 128  a 137  
+ 
+  APPENDICE 2.  VALUTAZIONE STRUMENTI 
+a.  CHECKMARX 
+PRODOTTO  CATEGORIA  FASE SSE  SITO WEB   
+CxSAST  SAST  Implementation  https://www.checkmarx.co 
+m/  
+DESCRIZIONE  
+È un tool commerciale , per l’analisi statica del codice, posizionato da Gartner nel quadrante Leaders 
+nell’ambito dell’Application Security Testing (AST) . Supporta numerosi linguaggi (vedi oltre). Può ess ere 
+integrato a vari livelli nell’ambito della fase di implementation: IDE, build server, bug tracking too ls. 
+Tainted analysis, Pattern matching, "scan r ules" (customizable)  
+ANALISI DEL VALUTATORE  SCORE  
+Livello di integrazione con i seguenti prodotti   
+a.        IDEs  Esistono plugin per i seguenti IDE:  
+Eclipse,  
+Visual Studio e  
+IntelliJ. 
+I plugin consentono la scansione del codice, l'anal isi e la navigazione dei 
+risultati in modo integrato con l'IDE. 7 
+b.       source repository,  TFS,  
+SVN,  
+GIT,  
+Perforce. 7 
+c.        build server,  Jenkins,  
+Bamboo, 
+TeamCity, 
+TFS, 
+Anthill Pro, 
+Maven. 7 
+d.       bug tracking tools  
+ Jira.  5 
+I linguaggi di 
+programmazione 
+supportati C#, JavaScript and commonly used frameworks, Node.J S and commonly 
+used frameworks, VB.NET, ASP, VB6, PHP, C/C++, Apex  and VisualForce, 
+Ruby, VBScript, Perl, HTML5, Python, Groovy, Scala,  PL/SQL, JSP, 
+Typescript, Go, Windows Mobile .NET/.NET Core 8 

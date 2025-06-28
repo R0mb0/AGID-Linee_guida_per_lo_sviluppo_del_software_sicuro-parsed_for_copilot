@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 55  a 156  
+ 
+• Inizializzazioni 
+• Tutte le variabili locali devono essere inizializza te prima di essere utilizzate. Se sono inizializzat e con 
+valori "dummy" o momentanei devono essere reinizial izzate con i valori reali al momento dell'uso. 
+• Tutte le variabili legate ai cicli devono essere re inizializzate con l'entrata in una nuova iterazione  
+prima di essere riutilizzate nel nuovo ciclo. 
+• Tutte le strutture devono essere azzerate prima del  loro utilizzo. 
+• Tutti i buffer devono essere azzerati prima del lor o utilizzo o riutilizzo. 
+7.1.8.2  Utilizzo dei tipi di dati 
+Stringhe 
+• Tutte le stringhe devono essere terminate dal carat tere NULL. Evitare errori logici di 
+programmazione che agevolino l’insorgere di una con dizioni di memory leak. Deve essere riposta la 
+massima attenzione nell’utilizzo di funzioni che no n aggiungono al termine di una stringa copiata in 
+un buffer di destinazione il carattere NULL se ques to non risiede nel buffer sorgente.  
+Esempio: 
+Forma non corretta: 
+strncpy(dest, source, sizeof(dest));  
+Forma corretta: 
+strncpy(dest, source, sizeof(dest); 
+dest[sizeof(dest) – 1] = ‘\0’; 
+ 
+• Il codice non deve effettuare operazioni su una str inga o su un char arrayche non siano terminati 
+dal carattere NULL;  
+• L’input proveniente dall’utente deve sempre essere convalidato e scremato da caratteri invalidi ( ;| 
+! & ~ ' " - * % ` \ / < > ? $ @ : ( ) [ ] { } . ) p rima di essere passato alle successive elaborazioni  
+dell’applicazione (ad esempio alla funzione system( ) );  
+• Utilizzare le funzioni strspn(), strcspn() e strpbr k() per filtrare l’input utente; 
+• Il formato delle stringhe deve sempre essere specif icato nei parametri delle funzioni che lo 
+richiedono. In questo contesto le funzioni consider ate critiche e soggette a problematiche di format 
+string overflow, se non correttamente utilizzate, s ono: printf(), fprintf(), sprintf(), snprintf(), 
+vprintf(), vfprintf(), vsprintf(), vsnprintf(), sca nf(), fscanf(), sscanf(), vscanf(), vsscanf(), vfsc anf(), 
+wprintf(), fwprintf(), swprintf(), vwprintf(), vfwp rintf(), vswprintf(). 
+Esempio: 
+Forma non corretta: 
+printf(buffer1); 
+snprintf(dest, sizeof(dest), buf); 
+fprintf(FILE, num, stringa); 
+Forma corretta: 
+printf(“%s\r\n”, buffer1); 
+snprintf(dest, sizeof(dest), “%s”, buf); 
+fprintf(FILE, “%d: %s%\n”, num, stringa); 
+Buffer  
+Tutti i buffer devono essere abbastanza grandi per contenere i dati a loro destinati, inoltre: 
+• Evitare l’utilizzo di funzioni che non consentono d i specificare la dimensione delle stringhe copiate 
+da un buffer sorgente a uno di destinazione. Le fun zioni considerate critiche in questo contesto, 
+che non devono mai essere utilizzate sono: strcpy() , wcscpy(), sprintf(), strcat(), gets(), scanf(), 
+vsprintf() e wcscat(); 
+• Quando i dati vengono copiati all'interno di un buf fer deve essere sempre verificata la loro 
+dimensione confrontandola con quella del buffer di destinazione. Le funzioni considerate critiche 
+per errori di bound-checking, pur permettendo di sp ecificare la lunghezza delle stringhe soggette a 
+copia da un buffer all’altro, sono: strncpy(), wcsn cpy(), snprintf(), strncat(), vsnprintf(), wcsncat( ), 

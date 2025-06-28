@@ -1,0 +1,109 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 109  a 156  
+ 
+Poiché questa implementazione di Dispose  non è synchronized , è possibile che Cleanup  sia chiamato da 
+un primo thread e poi un secondo thread prima che _ myObj  sia impostato a null . In base a ciò che accade 
+quando viene eseguito il codice di cleanup, si può trattare di un problea di sicurezza o meno. 
+Un problema importante con l'implementazione di Dis pose non sincronizzata comporta un reale problema 
+nella gestione di risorse. La deallocazione impropr ia può causare una gestione dell’utilizzo errata, c he 
+spesso conduce a vulnerabilità di sicurezza. 
+In alcune applicazioni, potrebbe essere possibile c he altri thread accedano ai membri della classe pri ma che 
+i loro costruttori di classe siano completamente es eguiti. È necessario esaminare tutti i costruttori di classe 
+per assicurarsi che non ci siano problemi di protez ione e sincronizzare i thread, se necessario. 
+7.6.10.10  Serializzazione e deserializzazione 
+Poiché la serializzazione può consentire ad altri m oduli di visualizzare o modificare i dati di istanz a 
+dell'oggetto che altrimenti sarebbero inaccessibili , è necessaria una autorizzazione speciale per la 
+serializzazione del codice. Per default questa auto rizzazione non viene fornita al codice scaricato da  
+internet o intranet; solo al codice sul computer lo cale è concessa questa autorizzazione. 
+Normalmente, tutti i campi dell'istanza di un ogget to vengono serializzati, il che significa che vengo no 
+serializzati anche i dati. È possibile che il codic e possa interpretare il formato per determinare i v alori dei 
+dati, indipendentemente dall'accessibilità dei sing oli membri. Analogamente, la deserializzazione estr ae i 
+dati dalla rappresentazione serializzata e imposta lo stato dell'oggetto direttamente, di nuovo 
+indipendentemente dalle regole di accessibilità. 
+Qualsiasi oggetto che potrebbe contenere dati sensi bili alla sicurezza dovrebbe essere reso non serial izable. 
+Se trettamente necessario adottare questa tecnica, occorre comunque creare campi specifici non 
+serializzabili, quelli che - per esempio - contenga no dati sensibili. Se questo non può essere fatto, tenere 
+presente che questi dati saranno esposti a qualsias i modulo che abbia l'autorizzazione a 
+serializzare/deserializzare. In tal caso assicurars i che nessun modulo non attendibile possa ottenere tale 
+autorizzazione. 
+L'interfaccia ISerializable  è destinata esclusivamente all'infrastruttura di s erializzazione. Se si fornisce 
+una serializzazione personalizzata implementando ISerializable , assicurarsi di adottare le seguenti 
+precauzioni:  
+Il metodo GetObjectData  dovrebbe essere protetto in modo esplicito o richi edendo l'autorizzazione 
+SecurityPermission con SerializationFormatter speci ficata. Occorre anche assicurarsi che non venga 
+rilasciata alcuna informazione sensibile con l'outp ut del metodo.  
+Esempio: 
+[SecurityPermissionAttribute(SecurityAction.Demand, SerializationFormatter = true )] 
+public  override  void  GetObjectData(SerializationInfo info,  
+StreamingContext context) 
+{ 
+} 
+Il costruttore speciale utilizzato per la serializz azione dovrebbe inoltre eseguire una convalida comp leta 
+degli input e dovrebbe essere dichiarata private o protected per proteggere la classe da un uso improp rio e 
+abusivo.  
+7.7  ASP 
+ASP (Active Server Page) identifica non un linguagg io di programmazione, ma una tecnologia Microsoft, per 
+la creazione di pagine web dinamiche attraverso lin guaggi di script come VBScript e Microsoft JScript.  ASP 
+sfrutta non solo la connettività del web server ma,  si può interfacciare (attraverso oggetti COM) con tutte le 
+risorse disponibili sul server e, in maniea traspar ente, sfruttare tecnologie diverse. 
+Vengono di seguito analizzate le principali vulnera bilità e relative contromisure da adottare. 
+7.7.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 110  a 156  
+ 
+Il Cross Site Scripting consiste nella possibilità che un attaccante possa inserire nella pagina 
+dell’applicazione, quindi nel codice HTML, script c he, una volta eseguiti, possano trarre in inganno i  legittimi 
+utenti, trafugare informazioni e predisporre nuovi attacchi.  
+Questa minaccia, enormemente diffusa, è dovuta allo  scarso controllo dell’input da parte delle web 
+application.  
+Il Cross Site Scripting può essere reflected o stor ed. Nel primo caso, uno script inoculato è valido s olo 
+all’interno della sessione corrente, ma i suoi effe tti possono essere molto dannosi per il sito vittim a 
+dell’attacco. 
+Ancora più grave è il Cross Site Scripting di tipo stored. In questo caso lo script inoculato viene me morizzato 
+come parte intregrante della pagina all’interno di un database e rispristinato ogni qual volta la pagi na in 
+questione viene caricata. Quest’attacco è stato sfr uttato ampiamente nel recente passato, soprattutto 
+laddove veniva consentito agli utenti di inserire r ecensioni, commenti e altri contributi. 
+ 
+Volendo schematizzare, possiamo categorizzare gli a ttacchi XSS nelle seguenti tipologie: 
+• Reflected XSS, in cui la stringa dannosa proviene d alla richiesta dell’utente. 
+• Stored XSS, in cui la stringa dannosa proviene dal database del sito Web. 
+ 
+Esiste anche un Cross Site Scripting dovuto a una l acuna nella codifica UTF-7, che permettere di masch erare 
+i caratteri “<” e “>”, facendoli sfuggire al contro llo. Questa minaccia non è più possibile nei modern i 
+browser, ad eccezione di Microsoft Internet Explore r 11.  
+ 
+Come difendersi 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white 
+list, scartando quelli che non la rispettano). Occo rre controllare il tipo del dato, la sua dimensione , 
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Codificare completamente tutti i dati dinamici prim a di incorporarli (encoding). La codifica 
+dovrebbe essere sensibile al contesto, in base al t ipo di dato che si vuole neutralizzare: se ci si 
+aspetta che possa esserci codice HTML abusivo, occo rre codificare gli eventuali tag HTML, se ci si 
+potrebbe trovare di fronte a uno script, allora bis ogna codificare gli elementi sintattici di Javascri pt, 
+ecc. 
+• Si consiglia di utilizzare la libreria di codifica ESAPI di OWASP. 
+• Nell'intestazione di risposta Content-Type HTTP, è necessario definire esplicitamente la codifica dei 
+caratteri (charset) per l'intera pagina. 
+• Impostare l’attributo HTTPOnly per proteggere il co okie della sessione da indebite letture da parte 
+di script malevoli. 
+Esempio: 
+ASP offre la possibilità di fare l’encoding delle s tringhe dell’input (HTMLEncode): 
+<% 
+  Function XSS_Filter(MyQueryString) 
+    If IsNumeric(MyQueryString) Then 
+      MyQueryString = CInt(MyQueryString) 
+    Else 
+      MyQueryString = Server.HTMLEncode(MyQueryStri ng) 
+    End If 
+    XSS_Filter = MyQueryString 
+  End Function 
+%> 
+Tale funzione verrebbe chiamata in questo modo: 
+<% 
+  Dim parametro 
+  parametro = XSS_Filter(Request.QueryString("param etro")) 
+%> 

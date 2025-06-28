@@ -1,0 +1,85 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 131 a 132 
+ 
+complessiva è quello di decidere se il sistema  di gestione della protezione 
+delle informazioni personali (PMS) del richiedente gestisce adeguatamente 
+i rischi connessi al trattamento delle informazioni personali.  Il Sistema 
+PrivacyMark collabora con un totale di 1.246 valutatori, di cui 305 sono 
+lead assessor. Esistono diciotto organismi di valutazione e tre organismi di 
+formazione.  
+Accreditamento 
+dell'organismo di 
+certificazione  Non specificato  
+Durata del 
+processo  Non specificato  
+Monitoraggio post -
+certificazione  Non specificato  
+Periodo di validità  
+della certificazione  Due anni, con possibilità  di ri-certificazione  
+Risorse  La struttura tariffaria del Sistema PrivacyMark tiene conto della scala di 
+business del richiedente (piccolo, medio, grande) e se la richiesta  riguarda 
+una prima applicazione piuttosto che  un rinnovo del PrivacyMark.  
+Certificazioni 
+rilasciate  Entro il 2017,  21.307 certificazioni hanno ottenuto il marchio PrivacyMark, 
+incluse le ri -certificazioni . 
+9.8 A.8 – Certificazione Privacy by Design della  Ryerson University & Deloitte Canada  
+Ambito  Descrizione  
+Campo di 
+applicazione e 
+oggetto  I‘obiettivo  dichiarato  è quello di "far progredire l' operatività della Privacy 
+by Design" e di aiutare le aziende e le organizzazioni che stanno lavorando 
+per integra re la Privacy by Design nei loro processi quotidiani.  La 
+certificazione valuta: sistemi IT,  "accountable business practices" e 
+infrastruttura di rete.  
+Requisiti e base 
+normativa  I criteri si basano sui 7 principi fondamentali della Privacy By Design:  
+1. Proattivo non reattivo; preventivo non correttivo  
+2. Privacy come impostazione predefinita  
+3. Privacy integrata nel design  
+4. Funzionalità completa - somma positiva, non somma zero  
+5. Sicurezza end -to-end - Protezione completa del ciclo di vita  
+6. Visibilità e trasparenz a – Keep it Open  
+7. Rispetto della privacy dell' utente - Keep it User -Centric  
+L' elenco dei criteri e le relative attività di controllo sono disponibili online.  
+La Certificazione Privacy by Design non significa conformità  alle leggi 
+sulla privacy dell' Ontario . 
+Processo di 
+certificazione  Il processo inizia con l'applicazione dell' organizzazione interessata. Il 
+"Privacy and  Big Data Institute" esamina l' applicazione e trasmette le 
+informazioni a Deloitte Canada per iniziare la valutazione. La ricorrente 
+stipula  un accordo separato con la Deloitte Canada. Deloitte Deloitte 
+"esamina i prodotti, i se rvizi e/o le offerte certificate , conduce colloqui ed 
+esamina i processi operativi. Deloitte pubblicherà quindi un rapporto basato 
+sulla metodologia di valutazione e su lla tecnica della scorecard sviluppata 
+esclusivamente per la Privacy by Desi gn Certification che esamina 
+l'aderenza dell' organizzazi one alla Privacy by Design". In seguito al 
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 132 a 132 
+ 
+rapporto di Deloitte, il Privacy by Design Centre of Excellence emette una 
+decisi one sul ri lascio della certificazione. L' Organizzazione cui viene 
+concessa la Certificazione sulla Priivacy by Design , può utilizzare il 
+relativo certificato , chiamato " Certification Shield ". 
+Accreditamento 
+dell'organismo di 
+certificazione  Non Specificato  
+Durata del 
+processo  Non Specificato  
+Monitoraggio post -
+certificazione  Annuale. Le certificazioni devono essere rinnovate annualmente per essere 
+mantenute aggi ornate. Il rinnovo richiede un' attestazione da parte 
+dell'Organizzazione attestante che non vi è stata alcuna modifica che abbia 
+influito sulla certificazione  da loro rilasciata . Inoltre, viene applicata una 
+tassa di rinnovo.  
+Periodo di validità 
+della certificazione  Tre anni  
+Risorse  Non Specificato  
+Certificazi oni 
+rilasciate  7 certificazioni dal 2015 al settembre 2017.  
+ 

@@ -1,0 +1,53 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 39 a 132 
+ 
+Segue una tabella riepilogativa in cui, per ciascun elemento DFD viene riportato l’aspetto che 
+assume nel diagramma, il significato e alcuni brevi esempi:  
+ELEMENTO DFD  ASPETTO  SIGNIFICATO  ESEMPIO  
+Processo  Rettangolo  
+arrotondato , cerchio o 
+cerchio concentrico  Qualunque codice in 
+esecuzione  Codice scritto in C, 
+C#, Python o PHP , 
+etc. 
+Flusso dati  Freccia  Comunicazione tra 
+processi o tra processi 
+e archivi di dati  Connessioni di rete, 
+HTTP, RPC, LPC, etc. 
+Archivio dati  Due linee  parallele con 
+etichetta nel mezzo  Supporti di 
+memorizzazione dati  File, database, registro 
+di Windows, segmenti 
+di memoria condivisi . 
+Entità esterna  Rettangolo con angoli 
+retti Persone o codice  al di 
+fuori del nostro  
+controllo  Un utente , un sito web 
+esterno . 
+Tabella 5 - Caratteristiche degli elementi DFD  
+L’impiego di diverse tipologie di diagramma concepiti come diversi blocchi di costruzione aiutano 
+a modellare ciò che si sta realizzando.  
+Nell’esempio che segue, viene rappr esentato un modello di una semplice applicazione web che 
+implementa una su logica di business che interagisce con un browser web, con un server web  e con 
+un database (vedi figura a seguire).  
+ 
+ 
+ 
+Un modo semplice per migliorare il diagramma consiste nel delineare i confini per dare evidenza di 
+“chi controlla cosa”. Si può facilmente comprendere che le minacce che attraversano questi confini 
+sono probabilmente le più importanti e possono essere un buon punto di partenza nel processo di 
+identificazione. Questi confini prendono il nom e di “trust boundaries” (confini  di fiducia) e 
+dovrebbero essere sicuramente disegnati ovunque esiste un controllo da parte di persone. Alc uni 
+esempi significativi:  
+• Account (User ID sui sistemi Unix o i Security Identifiers su sistemi Microsoft Windows) ; 
+• Interfacce di rete ; 
+• Macchine fisiche ; 
+• Macchine virtuali ; 
+• Perimetri organizzativi ; 
+• Ovunque possa essere messa in discussione la diversificazi one dei privilegi . 
+Nel diagramma  riportato nella Figura che segue , si aggiungono i “trust boundaries” (rappresentati 
+da rettangoli tratteggiati ) e la descrizione di ciò che il perimetro contiene : 
+Figura 5 - Diagramma del sistema  

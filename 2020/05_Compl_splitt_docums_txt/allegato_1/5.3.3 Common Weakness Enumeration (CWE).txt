@@ -1,0 +1,32 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 41  a 137  
+ 
+strumenti di testare le loro metodologie applicate.  
+ SRD database  
+[https://samate.nist.gov/SRD/view.php ] 
+Una raccolta di casi di test per individuare le deb olezze del codice. 
+ 
+5.3.3  Common Weakness Enumeration (CWE) 
+CWE è un'iniziativa sostenuta e co-sponsorizzata da lla NCSD della US DHS e dal NIST. Attualmente è 
+mantenuta e guidata da MITRE Corporation. 
+Il CWE è una lista formale o tassonomia, che classi fica le tipologie più comuni di vulnerabilità del s oftware. 
+Gli obiettivi principali di CWE sono: 
+• Gestire la common taxonomy  per la classificazione delle vulnerabilità comuni del software 
+relativamente ad architettura, progettazione e codi ce; 
+• Fornire una classificazione standard per tool di pr otezione del software  
+• Fornire una linea di base da cui partire per aiutar e la community SSE a identificare, attenuare e 
+prevenire questo tipo di debolezza software. 
+ 
+URL  https://cwe.mitre.org  
+https://nvd.nist.gov/cwe.cfm  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Government  
+ 
+Questo progetto utilizza i risultati del progetto S AMATE per creare l'elenco CWE delle vulnerabilità e  la sua 
+tassonomia associata e l’albero di classificazione (vedi figura sotto tratta dal NIST). 
+ 

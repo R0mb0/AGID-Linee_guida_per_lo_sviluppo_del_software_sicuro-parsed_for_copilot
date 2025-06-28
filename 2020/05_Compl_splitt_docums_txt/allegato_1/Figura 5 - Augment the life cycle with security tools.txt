@@ -1,0 +1,39 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 16  a 137  
+ 
+fondamentale importanza individuare le vulnerabilit à (e porvi rimedio) sin dalle prime fasi del ciclo di vita 
+dello sviluppo, quando è ancora poco costoso e poco  rischioso intervenire. 
+ 
+ 
+Figura 5 - Augment the life cycle with security too ls 
+[Fonte: Forrester, Five Steps To Reinforce And Hard en Application Security] 
+Per comporre lo stack, queste le tecnologie cui gli  I&O professional dovrebbero porre attenzione:  
+• Static Application Security Testing (SAST) , tool che esaminano il codice binario e il codice di 
+programmazione delle applicazioni senza ‘mandare in  esecuzione’ l’applicazione (ossia senza la 
+necessità di farla girare sui sistemi nei processi di testing);  
+• Software composition analysis (SCA) tool , tecnologie che consentono di analizzare le buildi ng block 
+applicative per scovare vulnerabilità all’interno, per esempio, delle librerie, dei componenti open 
+source o dei vari ‘blocchi’ di software che compong ono l’applicazione.  
+• Dynamic Application Security Testing (DAST) , sistemi che permettono di osservare in dettaglio come si 
+comporta l’applicazione quando è in funzione per sc ovarne imperfezioni o vulnerabilità prima che si 
+prosegua con lo step di sviluppo successivo;   
+• Fuzz testing tool , sistemi che analizzano le vulnerabilità sul front e di protocolli network, application 
+data e input location (sempre durante i cicli di te sting applicativo);  
+• Hybrid analysis tool , si tratta di tecnologie di testing per la sicurez za delle applicazioni che integrano 
+funzionalità di Instrumented application security t esting (LAST) e Runtime application security testin g 
+(RASP) utili per ridurre i falsi positivi e i falsi  negativi generalmente evidenziati dai sistemi DAST ; 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 17  a 137  
+ 
+• Vulnerability assessment tool , sistemi utili a rendere visibili eventuali critic ità a livello di sistema 
+operativo, configurazione dei sistemi, micro-config urazioni dei server e delle altre architetture con cui 
+l’applicazione in sviluppo dovrà interagire una vol ta messa in produzione; 
+• Penetration testing tool , tecnologie utili a ‘validare’ l’assessment delle vulnerabilità perché mostrano 
+come potrebbero avvenire gli attacchi simulando la penetrazione nei sistemi e nelle applicazioni. 

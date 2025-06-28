@@ -1,0 +1,29 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 22  a 141  
+ 
+5 BEST PRACTICES PER ADEGUARE E MANTENERE LA SICUREZZ A DEL 
+SOFTWARE DI BASE 
+L’apertura delle applicazioni verso fornitori, clie nti, utenti remoti e mobili ha comportato la scompa rsa di 
+un perimetro aziendale definito e un’estrema divers ificazione delle minacce. In questo nuovo scenario,  le 
+applicazioni sono diventate il  principale vettore di attacco  ed è sempre più difficile proteggerle. Lo studio 
+presentato nel Rapporto OAD 1 2017 sugli attacchi applicativi in Italia, evidenzia com e  principale causa degli 
+attacchi  applicativi, sono le vulnerabilità  delle infrastrutture ICT, del software di base e d ei middleware 
+usati dalle applicazioni (circa il 37%). Seguono po i le vulnerabilità intrinseche all'applicativo  stesso quali, 
+ad esempio, quelle dei sistemi di identificazione, autenticazione e controllo degli accessi. Nell’ulti mo 
+Rapporto Clusit del 2019 2 si evidenzia un trend di crescita degli attacchi s ia in termini quantitativi che in 
+termini di gravità dei danni prodotti. Il suddetto rapporto riporta quanto segue “Nell’ultimo biennio il tasso 
+di crescita del numero di attacchi gravi è aumentat o di 10 volte rispetto al precedente. Non solo, la Severity 
+media di questi attacchi è contestualmente peggiora ta, agendo da moltiplicatore dei danni.”. 
+ 
+ 
+Figura 1 - Scenario - Sicurezza ad ogni livello (fi sico, logico e organizzativo) 
+ 
+ 
+                                                           
+1 Osservatorio Attacchi Digitali – 
+https://www.malaboadvisoring.it/index.php?option=co m_content&view=article&id=126:rapporto-2017-oad-attacchi- agli-
+applicativi-in-italia-&catid=13:oci-ed-oai-&Itemid=127  
+2 https://clusit.it/rapporto-clusit/ 
+

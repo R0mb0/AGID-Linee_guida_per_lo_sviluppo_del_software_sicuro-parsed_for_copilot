@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 36  a 137  
+ 
+URL  https://www.owasp.org/index.php/Ukraine  
+OWASP Ukraine Local 
+Chapter E’ un gruppo di recente formazione ancora in fase d i organizzazione . 
+ 
+5.2.4  Motor Industry Software Reliability Association (MI SRA) 
+MISRA è un Motor Companies Consortium  all’interno del Regno Unito. I suoi risultati (ric erca, risultati della 
+ricerca e standard de facto, linee guida) sono fina lizzati principalmente allo sviluppo di software si curo e 
+affidabile per sistemi embedded nel settore automob ilistico. 
+MISRA instaura quindi una collaborazione tra costru ttori di veicoli, fornitori di componenti e di cons ulenza 
+ingegneristica. Esso mira a promuovere le migliori pratiche nello sviluppo di sistemi elettronici lega ti alla 
+sicurezza dei veicoli stradali e di altri sistemi e mbedded. 
+La sua documentazione non è accessibile al pubblico , ma può essere acquistata sul sito web del consorz io. 
+ 
+URL  https://www.misra.org.uk  
+Country of HQ location  
+Geographic Scope  UK  
+National 
+Type  Industry  
+ 
+I lavori in corso MISRA includono: 
+Model based development and autocode – Incoraggia a lle buone pratiche. 
+• MISRA Autocode (Produzione di best practice di mode llazione) 
+• MISRA C++ (Produzione di una serie di linee guida p er l'uso di C ++ in sistemi critici) 
+• MISRA C3 (3rd review of MISRA C) 
+• Mira a promuovere le migliori pratiche nello svilup po di sistemi elettronici legati alla sicurezza nei  
+veicoli stradali e di altri sistemi embedded (è sta to adottato e utilizzato in una vasta gamma di 
+settori e applicazioni, tra cui il settore ferrovia rio, aerospaziale, militare e medico) 
+MISRA Safety Analysis – Linee Guida che descrivono come il ciclo di vita della sicurezza dei sistemi 
+automotive si inserisce nel ciclo di vita dello svi luppo dei veicoli. 
+ 
+Risultati più rilevanti: 
+Good Practice  MISRA Compliance 2016: Achieving compliance with MI SRA coding guidelines, ISBN 
+978-906400-13-2 (PDF), April 2016.  
+Guidelines for the Use of the C Language in Vehicle  Based Software, ISBN 978-0-
+9524156-6-5, April 1998, October 2002 
+Guidelines for the Use of the C Language in Critica l Systems, ISBN 0 9524156 2 3 
+(paperback), ISBN 0 9524156 4 X (PDF), October 2004  
+Guidelines for safety analysis of vehicle based pro grammable systems, ISBN 978-0-
+9524156-5-7 (paperback), ISBN 978-0-9524156-7-1 (PD F), November 2007. 
+Guidelines for the Use of the C++ Language in Criti cal Systems, ISBN 978-906400-03-3 

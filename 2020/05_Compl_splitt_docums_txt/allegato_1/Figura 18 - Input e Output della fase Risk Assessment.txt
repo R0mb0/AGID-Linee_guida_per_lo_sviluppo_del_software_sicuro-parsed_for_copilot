@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 92  a 137  
+ 
+• A completamento di questa fase è necessario produrr e la Reportistica/documentazione completa 
+che sintetizza i risultati per ogni punto precedent e. 
+ 
+ 
+Figura 18 - Input e Output della fase Risk Assessmen t 
+ 
+Si evidenzia che in questa fase devono essere tenut i in considerazione anche gli aspetti di integrazio ne e di 
+interfaccia con eventuali altri moduli dell’ecosist ema software. Inoltre vanno considerati i requisiti  di 
+sicurezza applicativa di carattere generale: Perfor mance, Password nel codice sorgente, Privilegi esec utivi 
+minimi, Fattore di integrità, Input data validation , Gestione dell’output, etc. (per ulteriori dettagl i si rinvia al 
+al paragrafo 4.1  “Progettazione e sviluppo dell’Ap plicazione: direttive standard” del documento Allegato 2 
+- Linee Guida per lo sviluppo sicuro di codice ). Tali requisiti di sicurezza applicativa devono e ssere mutuati 
+in questa fase sulla base dei requisiti, funzionali  e non funzionali, individuati.  
+ 
+9.1.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.3.2 è stato presentato lo stato del l’arte dei tool a supporto di questa fase. Di segui to viene 
+fornito un esempio di approccio metodologico per la  valutazione dei tool. 
+La baseline comparativa è costituita da 8 parametri  (Software Security Requirements). I tool vengono 
+analizzati sulla base di questi parametri. Il risul tato è illustrato nella tabella che segue: 
+ 
+Tools Fair 
+Exchange Non- 
+repudiation Rbac Secrecy &  
+Integrity Authenticity Secure 
+Informat. 
+Flow Guarded 
+Access Freshness 
+RequisitePro √ X X X X X X √ 
+CaseComplete √ X X X X X X √ 
+Analyst Pro √ X √ X √ X X X 
+DOORS √ X √ X √ X √ √ 
+Objectiver X X X X X X X √ 
+RDT X X X X X X X √ 
+RDD-100 √ X X X X X X √ 
+RTM X X √ √ √ X √ √ 
+Reqtify √ X X X X X X √ 
+TcSE X √ √ √ √ √ √ √ 
+Atlas X √ √ √ √ √ √ √ 
+Visure RMT X X √ X X X X X 
+ 
+

@@ -1,0 +1,53 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 84  a 137  
+ 
+contenuti per migliorare l’aspetto di sicurezza e d i privacy.  
+Microsoft SDL for Agile Development  
+ 
+Microsoft SDL for Line -of -Business Applications  
+ 
+The Security Development Lifecycle  
+Fornisce una guida attraverso ogni fase della SDL, dall'istruzione e progettazione alla 
+sperimentazione e post-rilascio. Gli autori sono es perti di sicurezza del team Microsoft 
+Security Engineering. 
+Simplified Implemen tation of the Microsoft SDL  
+Questo documento illustra i concetti chiave e le si ngole attività di sicurezza che 
+devono essere eseguite per la conformità con il pro cesso Microsoft SDL. Gli aspetti da 
+tenere in considerazione includono ruoli e responsa bilità, attività di sicurezza 
+obbligatorie, attività di sicurezza opzionali e pro cesso di verifica della sicurezza 
+dell'applicazione. 
+SDL Quick Security Reference (QSR)  
+Con SDL QSR, il team SDL introduce una serie di doc umenti di orientamento di base, 
+progettati per affrontare le vulnerabilità comuni, dal punto di vista di molteplici ruoli 
+aziendali: decisori aziendali, architetti, sviluppa tori e tester / QA. 
+Securing Applications  
+Questa documentazione è rivolta agli sviluppatori d i .NET Framework per la scrittura 
+di codice sicuro. Comprende: concetti chiave sulla sicurezza, sicurezza dell'accesso al 
+codice, sicurezza basata sui ruoli, servizi crittog rafici, gestione delle politiche di 
+sicurezza, best practice sulle politiche di sicurez za, linee guida per la codifica sicura e 
+strumenti di sicurezza. 
+Tools  
+& Templates Microsoft SDL Threat Modeling Tool  
+La modellazione delle minacce consente agli archite tti di software di identificare e 
+mitigare tempestivamente potenziali problemi di sic urezza, quando risolverli è 
+relativamente facile ed economico. È uno strumento gratuito che richiede Visio. Lo 
+strumento è focalizzato sulle tecniche di analisi d el progetto. 
+Microsoft SDL Process Template  
+Un modello scaricabile che incorpora automaticament e la policy, il processo e gli 
+strumenti associati a SDL nell'ambiente di sviluppo  software di Visual Studio. 
+MSF -Agile+SDL Process Template  
+Un modello scaricabile che incorpora automaticament e la policy, il processo e gli 
+strumenti associati alla guida allo sviluppo di SDL  per Agile, nel Microsoft Solutions 
+Framework per lo sviluppo di software Agile (MSF-Ag ile) e nell'ambiente Visual Studio.  
+The Microsoft SDL Tools  
+Una mappa degli strumenti e dei modelli gratuiti di sponibili per ogni fase SDL. 
+ 
+8.2.3  Appropriate and Effective Guidance for Information Security (AEGIS) 
+AEGIS 31 32  [2] [3] è un processo SSDLC basato sul modello a s pirale e si concentra sulla specifica dei requisiti  
+di sicurezza, identificando gli elementi principali  ed eseguendo l’analisi dei rischi. Le fasi di anal isi dei 
+                                                           
+31  I. Flechais, M.A. Sasse, and S.M.V. Hales, “Bringi ng Security Home: A Process for Developing Secure a nd Usable Systems,” In Proc. 
+of the New Security Paradigms Workshop (NSPW’07), Asc ona, Switzerland, ACM Press, 2003, pp. 49-57. 

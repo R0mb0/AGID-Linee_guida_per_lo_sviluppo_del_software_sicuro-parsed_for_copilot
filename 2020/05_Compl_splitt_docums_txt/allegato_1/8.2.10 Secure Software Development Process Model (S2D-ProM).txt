@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 87  a 137  
+ 
+Durante la fase di implementazione, l'unica attivit à SSD è la scelta di un appropriato linguaggio di 
+programmazione (sicuro). Per la fase di security as surance, Hadawi consiglia di utilizzare: (i) securi ty code 
+reviews, (ii) static code analysis tools.   
+8.2.9  Comprehensive, Lightweight Application Security Pro cess (CLASP) 
+Comprehensive, Lightweight Application Security Pro cess (CLASP) 42  identifica un insieme di attività SSD 
+classificate in base ai ruoli svolti durante lo svi luppo. CLASP suggerisce l’impiego di un esperto di sicurezza 
+fin dall'inizio dello sviluppo. Per la fase di spec ifica dei requisiti, sottolinea la necessità di un’ analisi dei rischi 
+e della modellazione delle minacce. L'analisi dei r ischi e la modellazione delle minacce devono essere  
+eseguite anche nella fase di progettazione. 
+CLASP propone di annotare i diagrammi di classe con  le informazioni di sicurezza. Nella fase di securi ty 
+assurance, consiglia di effettuare le seguenti oper azioni: security code reviews, security code scanni ng, 
+security testing.  
+CLASP fornisce anche un elenco di vulnerabilità (co mmon vulnerabilities) con informazioni complete su 
+come e quando possono essere introdotti durante lo sviluppo e come evitarli. 
+ 
+URL  https://www.owasp.org/index.php/CLASP_Concepts  
+ 
+Risultati più rilevanti: 
+Security Process  CLASP version 1.2  
+ 
+8.2.10  Secure Software Development Process Model (S2D-ProM ) 
+S2D-PROM 43  specifica molteplici strategie possibili per avanz are da ogni fase di sviluppo all’altra [13]. Alla 
+base di questo processo, c’è l’idea di fornire agli  sviluppatori opzioni flessibili. Il processo si pr opone di 
+condurre l'analisi dei rischi durante le fasi di sp ecifica dei requisiti, progettazione, e implementaz ione. 
+L'analisi del rischio, secondo S2D-PROM, può essere  eseguita in modi diversi per ogni fase di sviluppo . I 
+rischi identificati possono essere mitigati utilizz ando varie strategie (ad esempio, definendo le norm e di 
+sicurezza o utilizzando meccanismi di difesa).  
+ 
+8.2.11  Team Software Process for Secure Software Developme nt (TSP Secure) 
+[14]TSP-Secure 44  garantisce la sicurezza attraverso:  
+• la pianificazione per la sicurezza,  
+• la qualità e la gestione della sicurezza in tutto i l ciclo di vita dello sviluppo,  
+• la formazione degli sviluppatori circa gli aspetti relativi alla sicurezza.  
+ 
+                                                           
+42  https://www.owasp.org/index.php/CLASP_Concepts 
+43  M. Essafi, L. Labed, and H.B. Ghezala, “S2D-ProM: A  Strategy Oriented Process Model for Secure Softwar e Development,” In Proc. 
+of the 2nd International Conference on Software Engi neering Advances (ICSEA’07), Cap Esterel, French Rivi era, France, 2007, p. 24. 
+44  N. Davis, “Secure Software Development Life Cycle Processes: A Technology Scouting Report”, technical  note CMU/SEI-2005-TN-
+024, Software Engineering Institute, Carnegie Mellon U niversity, Pittsburgh, Pennsalyania, USA, 2005.  

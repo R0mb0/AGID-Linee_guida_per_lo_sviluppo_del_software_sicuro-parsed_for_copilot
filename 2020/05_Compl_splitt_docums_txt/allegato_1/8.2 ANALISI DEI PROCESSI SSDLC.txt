@@ -1,0 +1,28 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 82  a 137  
+ 
+ 
+Figura 16 - Training practice BSIMM 
+ 
+Risultati più rilevanti: 
+Maturity Model  BSIMM2 - https://www.bsimm.com/download/    
+ 
+8.2  Analisi dei Processi SSDLC 
+8.2.1  McGraw’s Secure Software Development Life Cycle Pro cess 
+McGraw 30  [1] si propone di accrescere il processo SDLC (cas cata o iterativo) attraverso l’integrazione di 
+alcune attività SSD. In sostanza, il processo di Mc Graw si focalizza su:  
+• incorporazione dei requisiti di sicurezza,  
+• esecuzione dell’analisi dei rischi durante le diver se fasi di sviluppo,  
+• applicazione di metodi di security assurance quali test di sicurezza risk-based,  
+• analisi statica e test di penetrazione.  
+ 
+Il processo suggerisce anche di utilizzare l'analis i dei rischi durante la fase di progettazione. Per la fase di 
+security assurance, McGraw suggerisce di utilizzare  gli abuse cases e i requisiti di sicurezza per gui dare i test 
+di penetrazione. 
+ 
+                                                           
+30  G. McGraw, Software Security: Building Security In,  Addison Wesley, 2006  
+

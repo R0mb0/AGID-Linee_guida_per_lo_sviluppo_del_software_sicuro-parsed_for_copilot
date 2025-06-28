@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 91  a 156  
+ 
+• Scoprire la password dell'account di sistema nel da tabase (tramite un brute-force attack). 
+ 
+Per comunicare con il proprio database o con un alt ro server (ad esempio Active Directory), l'applicaz ione 
+costruisce dinamicamente una sua stringa di conness ione. Questa stringa di connessione viene costruita  
+dinamicamente con l’input inserito dall’utente per l'autenticazione stessa. Se i valori immessi sono s tati 
+verificati in misura insufficiente o non sono stati  affatto verificati, la stringa di connessione potr ebbe essere 
+manipolata ad arte a vantaggio dell’attaccante. 
+Come difendersi 
+Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia l ’approccio 
+white list (sono accettati solo i dati che adottano  una struttura specificata nella white list, scarta ndo quelli 
+che non la rispettano). In generale, è necessario c ontrollare il tipo del dato, la sua dimensione, l'i ntervallo di 
+validità (range), il formato ed eventuali valori at tesi (white list). 
+Evitare di costruire dinamicamente stringhe di conn essione. Se è necessario creare dinamicamente una 
+stringa di connessione evitare di includere l'input  dell'utente. In ogni caso, utilizzare utilità basa te sulla 
+piattaforma per validarlo. 
+ 
+Esempio: 
+Forma non corretta: L'applicazione crea una stringa  di connessione usando l'input dell'utente: 
+from  sys import  stdin 
+import  cx_Oracle 
+print  'Insert your ID: '  
+userInput = stdin.readline() 
+connection = cx_Oracle.connect(userInput + '/password@99.999.9.99:PORT/SID' ) 
+ 
+L’input deve essere validato prima di utilizzarlo a ll’interno della costruzione di una stringa di conn essione. 
+Se si riesce a fare a meno dell’input utente per qu esto scopo è ancora meglio. 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/99.html , 
+CWE-99: Improper Control of Resource Identifiers (' Resource Injection'). 
+7.5.5  LDAP Injection 
+Come riconoscerla 
+Si verifica quando l’applicazione comopne dinamicam ente query LDAP utilizzando l’input utente, senza 
+preventivamente verificarlo e validarlo. 
+Un attacco del genere permette: 
+• il login con un’utenza diversa (spoofing); 
+• l’acquisizione di privilegi di sistema (escalation of privileges); 
+• Il furto di  informazioni. 
+Per comunicare con il proprio servizio di directory  (ad esempio Active Directory), l'applicazione cost ruisce 
+dinamicamente una stringa di connessione, includend o valori inseriti dall'utente in fase di autenticaz ione. 
+Se i valori immessi dall'utente non sono stati veri ficati, né tantomeno sanificati, l'input potrebbe e ssere 
+utilizzato per manipolare ad arte la stringa di con nessione. 
+Come difendersi 
+Validare tutti gli input, indipendentemente dalla p rovenienza. Per la validazione, si consiglia l’appr occio 
+white list (sono accettati solo i dati specificati nella white list, scartando quelli che non la rispe ttano). 
+Occorre controllare il tipo del dato, la sua dimens ione, l'intervallo di validità (range), il formato ed eventuali 
+valori attesi (white list). 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/90.html , 
+CWE-90: Improper Neutralization of Special Elements  used in an LDAP Query ('LDAP Injection'). 

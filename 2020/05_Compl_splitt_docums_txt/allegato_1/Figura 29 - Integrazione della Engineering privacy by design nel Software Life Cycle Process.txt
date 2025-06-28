@@ -1,0 +1,75 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 115  a 137  
+ 
+Attività : Identificare delle strategie e dei modelli di des ign della privacy; Identificare dei controlli di pr ivacy, 
+dei criteri tecnici e delle policy; Sviluppare dei dati e dei modelli di processo che riflettano i con trolli di 
+privacy identificati; Allineare, integrare e implem entare i controlli di privacy con gli elementi funz ionali; 
+Analizzare il rischio del design di privacy comples sivo (vedi anche Allegato 4 – Linee Guida per la 
+modellazione delle minacce e individuazione delle a zioni di mitigazione conformi ai principi del 
+Secure/Privacy by Design – Paragrafo 5.8). 
+Output : Componenti del software implementati; Mitigazione  dei rischi accettabili per la privacy residua 
+10.3.2.3  Verifica e validazione privacy 
+Input : Componenti del software implementati; Requisiti d i privacy specifici del sistema e test]; Politiche e 
+procedure di privacy applicabili. 
+Attività : Sviluppare / perfezionare dei test sulla privacy;  Eseguire delle verifiche sulla privacy; Verificare  il 
+comportamento operativo rispetto alle politiche e a lle procedure sulla privacy applicabili. 
+Output : Risultati dei test di privacy; Documentazione del le Incoerenze sulla privacy documentate; 
+Descrizione del piano di trattamento della privacy.  
+10.4  Integrazione della Engineering Privacy by Design ne l Software Life Cycle Process 
+Il diagramma illustrato nella Figura 29, definisce la mappatura delle fasi della Engineering Privacy b y Design 
+sulle fasi del Software Life Cycle Process: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figura 29 - Integrazione della Engineering privacy b y design nel Software Life Cycle Process Definizione dei 
+requisiti privacy 
+•Svolgere una Data Protection Impact Assessment parametra ta 
+sugli obiettivi di protezione individuati; Selezionare e
+perfezionare i requisiti di protezione per la privacy di bas e e
+effetturare dei test; Sviluppare dei requisiti di protezio ne della 
+privacy personalizzati e testarli sulla base dei risultati della DPIA.
+Design e sviluppo 
+priavcy 
+•Identificare delle strategie e dei modelli di design della
+privacy; Identificare dei controlli di privacy, dei criter i 
+tecnici e delle policy; Sviluppare dei dati e dei modelli di 
+processo che riflettano i controlli di privacy identificat i;
+Allineare, integrare e implementare i controlli di privacy
+con gli elementi funzionali; Analizzare il rischio del desi gn 
+di privacy complessivo .
+Verifica e 
+validazione privacy 
+•Sviluppare / perfezionare dei test sulla privacy; Eseguir e 
+delle verifiche sulla privacy; Verificare il comportament o 
+operativo rispetto alle politiche e alle procedure sulla 
+privacy applicabili.• Software Requirements Analysis 
+Process  
+• Software Architectural Design Process  
+• Software Detailed Design Process  
+• Software Construction Process 
+• Software Integration Process 
+ 
+• Software Qualification Testing Process 
+• Software Configuration Management 
+Process 
+• Software Quality Assurance Process 
+• Software Verification, Validation and Audit 
+Process 
+Software Problem Resolution Process  

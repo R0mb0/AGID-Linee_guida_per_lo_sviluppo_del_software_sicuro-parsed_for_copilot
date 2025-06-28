@@ -1,0 +1,40 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 8 a 137  
+ 
+3 DEFINIZIONI E ACRONIMI 
+3.1  Definizioni 
+Vocabolo Titolo 
+Applicazione Cloud Applicazione sviluppata sfruttando la tecnologia Cl oud Computing  
+Defence in Depth Difesa a differenti livelli-Layered Defense. 
+Gray Box  Metodo di test del software costituito da una combi nazione tra il metodo Black Box 
+Testing e il metodo White Box Testing. Nel Black Bo x Testing, la struttura interna 
+dell'elemento da testare è sconosciuta al tester e nel White Box Testing la struttura 
+interna è nota. Nel Gray Box Testing, la struttura interna è parzialmente nota. Ciò 
+comporta l'accesso alle strutture dati e agli algor itmi interni per definire i casi d'uso. Il test 
+finale è assimilabile al tipo Black Box. 
+Hardening processo che mira attraverso operazioni di configurazione  specifica di un dato sistema  e 
+dei suoi componenti, a minimizzare l'impatto di pos sibili vulnerabilità, migliorandone 
+quindi la sicurezza complessiva 
+Tabella 2 - Definizioni 
+3.2  Acronimi 
+Codice Titolo 
+Amministrazione  AgID  
+AgID  Agenzia per l'Italia Digitale  
+APP Atom Publishing Protocol  
+AsmL Abstract State Machine Language  
+BRP Business Risk Profile  
+CAPEC Common Attack Pattern Enumeration and Classificatio n  
+CC Common Criteria  
+CCRA Common Criteria Recognition Agreement  
+CE  Contratto Esecutivo  
+CERT Computer Emergency Response Team  
+CQ  Contratto Quadro  
+CWE Common Weakness Enumeration  
+DAST Dynamic Application Security Testing  
+DiDI Defense -in -Depth Index  
+ESA European Space Agency  
+IACS Automation and Control Systems  
+IASP Instrumented application security testing  

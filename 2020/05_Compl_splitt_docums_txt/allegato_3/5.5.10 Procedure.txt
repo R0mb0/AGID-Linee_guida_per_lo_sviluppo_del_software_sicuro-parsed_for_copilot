@@ -1,0 +1,108 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 103  a 141  
+ 
+- Generare un nuovo identificativo di sessione dopo i l login (per evitare il  session 
+fixation ossia che il session ID sia forzato dall'e sterno). 
+- Limitare il periodo di scadenza del token di sessio ne in modo da limitare il tempo 
+disponibile per sferrare un attacco. 
+- Utilizzare un protocollo di comunicazione cifrato ( TLS 1.2 o successivo) per la 
+creazione di un canale di comunicazione protetto, e  configurare il protocollo in 
+modo che i cookie di autenticazione transitino solo  mediante connessione HTTPS; 
+- Configurare il client web (browser) in modo da cons entire di non archiviare i dati di 
+sessione sulla postazione di lavoro; 
+- Prevedere un meccanismo che imponga di terminare un a sessione qualora ne 
+venga avviata una nuova con le medesime credenziali  di autenticazione della 
+precedente. 
+- Attivare un meccanismo per la disconnessione automa tica delle sessioni di lavoro 
+dopo un periodo di inattività inferiore ai 5 minuti . 
+ 
+Gestione delle informazioni segrete di autenticazio ne degli utenti  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Crittografia debole o non validata. 
+- Falsificazione di identità. 
+- Uso non autorizzato di privilegi. 
+Contromisure  Mentre l’ SSL /TLS  protegge i cookie in rete, non impedisce loro di es sere modificati nel 
+computer del client. Per contrastare la minaccia di  manipolazione dei cookie, 
+crittografare i cookie utilizzando un HMAC. 
+ 
+5.5.10  Procedure 
+A i principi generali già introdotti nel paragrafo [rif. 5.1.7], si aggiungono le seguenti indicazioni  per il 
+contesto specifico: 
+Controlli sulla regolamentazione dell’uso del codic e mobile per Web Server  
+Minaccia  - Negazione dei servizi.  
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+Contromisure  Controllare che nel caso in cui si sia concesso l’u tilizzo del mobile code (codice, come 
+Java Applet, che è trasmesso via rete e eseguito su  una macchina remota, “a fianco” di 
+altro mobile code, potenzialmente malevolo ) non siano effettuate operazioni non 
+autorizzate rispetto alla politica definita per l’u tilizzo del codice mobile. In particolare, 
+controllare il rispetto delle politiche riguardanti : 
+- esecuzione del mobile code in un ambiente isolato l ogicamente; 
+- blocco di ogni utilizzo di mobile code; 
+- blocco della ricezione di mobile code dall’esterno;  
+- attivazione di controlli crittografici per autentic are univocamente il mobile code. 
+- rispetto delle security guidelines di programmazion e sicura per il per mobile code. 
+ 
+Inventario piattaforma web  
+Minaccia  - Attacchi all’integrità dei sistemi (software e conf igurazioni).  
+- Errori di amministrazione dei sistemi. 
+- Negazione dei servizi. 
+Contromisure  Mantenere un inventario aggiornato che evidenzi:  
+- Le date di pubblicazione dei dati forniti dal servi zio web; 
+- La release software del servizio web con l'indicazi one, nelle Release Notes, di tutte 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 104  a 141  
+ 
+le modifiche introdotte (come nuove funzionalità, plug -in, etc.);  
+- I sistemi su cui è implementato il servizio web; 
+- L’owner o funzione responsabile dei servizi web e d ei relativi sistemi. 
+ 
+Collaudo del servizio web  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Uso non autorizzato di privilegi. 
+- Negazione dei servizi. 
+Contromisure  Effettuare un collaudo del servizio web prima di re nderlo operativo, a tal proposito:  
+- Svolgere il test in un ambiente diverso da quello d ello sviluppo; 
+- Considerare, nelle specifiche di collaudo, le tipol ogie di browser maggiormente 
+diffuse e le versioni più recenti; 
+- Assicurarsi che durante la fase di testing siano pr edisposte verifiche mirate non 
+solo alla componente funzionale ma si attui anche u na mirata attività dedicata alle 
+eventuali falle di sicurezza. A questo riguardo:  
+• Utilizzare specifici software per il controllo dell a qualità del codice (analisi 
+statica) che tenga conto dei princìpi di sicurezza della programmazione 
+(SAST). 
+• Utilizzare specifici software per l’analisi dinamic a del codice (DAST). 
+ 
+Procedura di monitoraggio sull'uso del web server  
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Negazione dei servizi. 
+Contromisure  Definire procedure che specifichino le modalità con  cui monitorare il web server per 
+garantirne la funzionalità e l'uso corretto. La pro cedura deve specificare cosa 
+monitorare (ambito del monitoraggio) e quando esegu ire l'audit rimanendo conformi 
+ai requisiti di legge e alle policy in vigore nell’ organizzazione.  
+Gli aspetti da considerare sono: 
+- accessi autorizzati, includendo dettagli quali: 
+• user ID; 
+• indirizzo IP del client; 
+• data e ora degli eventi chiave; 
+• i tipi di eventi; 
+• indirizzo delle risorse accedute; 
+- tutte le operazioni privilegiate, come: 
+• l'uso di account privilegiati (supervisor, root, ad ministrator); 
+• avvio e arresto del sistema; 
+• collegamento e scollegamento di dispositivi di inpu t/output; 
+- tentativi di accesso non autorizzato, come: 
+• azioni degli utenti falliti o rifiutati; 
+• azioni fallite o rifiutate che coinvolgono dati o a ltre risorse; 
+• violazioni della policy di accesso e notifiche gene rate da gateway e firewall;  
+• alert da sistemi di intrusion detection;  
+- alert o avaria dei sistemi come: 
+• alert o messaggi inviati alle console di amministra zione; 
+• eccezioni dei log dei sistemi; 
+• allarmi provenienti da sistemi di gestione della re te; 

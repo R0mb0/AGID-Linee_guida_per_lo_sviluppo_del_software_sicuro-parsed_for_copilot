@@ -1,0 +1,57 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 95  a 156  
+ 
+• Trust boundaries. Non utilizzare il modulo OS per l a manipolazione di file host ricevuti da una fonte 
+non attendibile o controllata dall'utente.  
+• Comunicazione protetta. Assicurarsi che venga utili zzata una connessione di rete crittografata. 
+• Validazione. Il path di un file che si vuole manipo lare dev’essere validato in modo corretto: evitare 
+che possa essere inserito da un utente in modo dina mico. Assicurarsi, inoltre, che rispecchi 
+completamente delle regole canoniche. 
+• Sandbox. Limitare l'accesso al percorso dei file al l'interno di una directory specifica. 
+• White list. Creare una white list di file o directo ry che possono essere manipolati in modo sicuro e 
+consentire l'accesso solo a questi file o directory . 
+ 
+Esempio:  
+Forma non corretta: l'applicazione riceve un file p ath dall'utente e rimuove il file stesso: 
+import os 
+import sys 
+[…] 
+path = sys.stdin.readline()[:- 1] 
+os.remove(path) 
+Forma corretta: l'applicazione restringe l'accesso ad un file ad una specifica directory: 
+import os 
+import sys 
+def  is_safe_path (basedir, path): 
+return  os.path.abspath(path).startswith(basedir) 
+path = sys.stdin.readline()[:- 1] 
+if  not  is_safe_path( '/tmp/userfiles' , path): 
+sys.stdout.write( 'Not allowed!\n' ) 
+sys.exit() 
+os.remove(path) 
+7.5.11  Unsecure deserialization 
+Come riconoscerla 
+La “unsecure deserialization” è una vulnerabilità c he si verifica quando un’applicazione utilizza il p rocesso 
+di deserializzazione di dati serializzati non atten dibili. Tra la serializzazione da parte del process o originario 
+e la deserializzazione da parte del processo di des tinazione, i dati serializzati possono aver subito 
+inserimenti di codice dannoso. 
+In seguito a deserializzazione di dati inquinati co n porzioni di codice malevolo, l’attaccante può inf liggere un 
+attacco di denial of service (DoS) o eseguire codic e arbitrario.  
+Come difendersi 
+• Evitare di utilizzare le tecniche di serializzazion e/deserializzazione. Se è strettamente necessario 
+utilizzarle, verificare che il dato serializzato no n possa essere inquinato e manomesso durante il suo  
+percorso. Ad esempio, garantire la trasmissione att raverso una connessione sicura e criptata. 
+• Eliminare, se possibile, dal codice sorgente le seg uenti API vulnerabili: 
+o Pickle 
+  Esempio: 
+  import pickle 
+  data = """ cos.system(S'dir')tR. """ 
+  pickle.loads(data) 
+o PyYAML 
+  Esempio: 
+import yaml 
+document = "!!python/object/apply:os.system ['ipcon fig']" 
+print(yaml.load(document)) 
+o Jsonpickle  
+o Metodi encode e store 
+ 

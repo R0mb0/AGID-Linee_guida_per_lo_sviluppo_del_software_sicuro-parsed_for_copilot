@@ -1,0 +1,267 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 136  a 141  
+ 
+6 RIFERIMENTI A ISTRUZIONI OPERATIVE E TOOLS DI HARDE NING 
+6.1  Istruzioni operative (benchmarks) di terze parti 
+Si riporta nel seguito l’elenco completo dei riferi menti alle istruzioni operative di hardening (o ben chmarks) 
+delle varie componenti (sistemi operativi, middlewa re, office automation, ecc.) che sono state oggetto  di 
+analisi nei capitoli precedenti. 
+Fonte Categoria Famiglia Target Titolo 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Ubuntu Securing Ubuntu Linux - An objective, consensus-driven security 
+guideline for the Ubuntu Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/ubuntu_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux CentOS Securing CentOS Linux - An objective, consensus-driven security 
+guideline for the CentOS Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/centos_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Red Hat Securing Red Hat Linux - An objective , consensus-driven security 
+guideline for the Red Hat Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/red_hat_linux/  
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Debian Securing Debian Linux - An objective, consensus-driven security 
+guideline for the Debian Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/debian_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Oracle 
+Linux Securing Oracle Linux - An objective, consensus-dri ven security 
+guideline for the Oracle Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/oracle_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux SUSE Securing SUSE Linux - An objective, cons ensus-driven security 
+guideline for the SUSE Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/suse_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX AIX 7.1 CIS IBM AIX 7.1 Benchmark 
+https://www.cisecurity.org/benchmark/ibm_aix 
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+11.1 CIS Oracle Solaris 11.1 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+11 CIS Oracle Solaris 11 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+10 CIS Oracle Solaris 10 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+10 CIS Benchmarks for CIS Microsoft Windows 10 Enterpris e: Securing 
+Microsoft Windows Desktop - An objective, consensus -driven security 
+guideline for the Microsoft Windows Desktop Operati ng Systems - For 
+Microsoft Windows Desktop 10 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+8.1 CIS Microsoft Windows 8.1 Workstation Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+8 CIS Microsoft Windows 8 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 137  a 141  
+ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+7 CIS Microsoft Windows 7 Workstation Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+XP CIS Microsoft Windows XP Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2016 CIS Microsoft Windows Server 2016 RTM Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2012 R2 CIS Microsoft Windows Server 2012 R2 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2012 CIS Microsoft Windows Server 2012 (non-R2) Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2008 R2 CIS Microsoft Windows Server 2008 R2 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2008 CIS Microsoft Windows Server 2008 (non-R2) Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Server 2003 CIS Microsoft Windows Server 2003 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_server/ 
+CIS 
+Benchmarks Collaboration 
+Server Microsoft 
+SharePoint 2019 CIS Microsoft SharePoint 2019 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_shar epoint/ 
+CIS 
+Benchmarks Collaboration 
+Server Microsoft 
+SharePoint 2016 CIS Microsoft SharePoint 2016 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_shar epoint/ 
+CIS 
+Benchmarks Web / 
+Application 
+Server Microsoft IIS IIS 10 CIS Microsoft IIS 10 Benchmark  
+https://www.cisecurity.org/benchmark/microsoft_iis/  
+CIS 
+Benchmarks Web / 
+Application 
+Server Microsoft IIS IIS 8 CIS Microsoft IIS 8 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_iis/  
+CIS 
+Benchmarks Web / 
+Application 
+Server Microsoft IIS IIS 7 CIS Microsoft IIS 7 Benchmark  
+https://www.cisecurity.org/benchmark/microsoft_iis/  
+CIS 
+Benchmarks Web / 
+Application 
+Server Apache 
+HTTP 2.4 CIS Apache HTTP Server 2.4 Benchmark 
+https://www.cisecurity.org/benchmark/apache_http_se rver/ 
+CIS 
+Benchmarks Web / 
+Application 
+Server Apache 
+HTTP 2.2 CIS Apache HTTP Server 2.2 Benchmark 
+https://www.cisecurity.org/benchmark/apache_http_se rver/ 
+CIS 
+Benchmarks Web / 
+Application 
+Server Apache 
+Tomcat 9 CIS Apache Tomcat 9 Benchmark 
+https://www.cisecurity.org/benchmark/apache_tomcat/  
+CIS 
+Benchmarks Web / 
+Application 
+Server Apache 
+Tomcat 8 CIS Apache Tomcat 8 Benchmark 
+https://www.cisecurity.org/benchmark/apache_tomcat/  
+CIS 
+Benchmarks Web / 
+Application 
+Server Apache 
+Tomcat 7 CIS Apache Tomcat 7 Benchmark 
+https://www.cisecurity.org/benchmark/apache_tomcat/  
+CIS 
+Benchmarks DBMS Microsoft 
+SQL Server 2016 CIS Microsoft SQL Server 2016 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_sql_ server/ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 138  a 141  
+ 
+CIS 
+Benchmarks DBMS Microsoft 
+SQL Server 2014 CIS Microsoft SQL Server 2014 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_sql_ server/ 
+CIS 
+Benchmarks DBMS Microsoft 
+SQL Server 2012 CIS Microsoft SQL Server 2012 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_sql_ server/ 
+CIS 
+Benchmarks DBMS Microsoft 
+SQL Server 2008 R2 CIS Microsoft SQL Server 2008 R2 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_sql_ server/ 
+CIS 
+Benchmarks DBMS Oracle DB 12c CIS Oracle Database 12c Benchmark 
+https://www.cisecurity.org/benchmark/oracle_databas e/ 
+CIS 
+Benchmarks DBMS Oracle DB 11g R2 CIS Oracle Database 11g R2 Benchm ark 
+https://www.cisecurity.org/benchmark/oracle_databas e/ 
+CIS 
+Benchmarks DBMS Oracle DB 11 – 11g CIS Oracle Database Server 11 - 11g  Benchmark 
+https://www.cisecurity.org/benchmark/oracle_databas e/ 
+CIS 
+Benchmarks DBMS Oracle 
+MySQL 5.7 EE CIS Oracle MySQL Enterprise Edition 5.7 Benchmar K 
+https://www.cisecurity.org/benchmark/oracle_mysql/ 
+CIS 
+Benchmarks DBMS Oracle 
+MySQL 5.7 CE CIS Oracle MySQL Community Server 5.7 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_mysql/ 
+CIS 
+Benchmarks DBMS Oracle 
+MySQL 5.6 EE CIS Oracle MySQL Enterprise Edition 5.6 Benchmar k 
+https://www.cisecurity.org/benchmark/oracle_mysql/ 
+CIS 
+Benchmarks DBMS Oracle 
+MySQL 5.6 CE CIS Oracle MySQL Community Server 5.6 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_mysql/ 
+CIS 
+Benchmarks DBMS IBM DB2 10 CIS IBM DB2 10 Benchmark 
+https://www.cisecurity.org/benchmark/ibm_db2/ 
+CIS 
+Benchmarks DBMS IBM DB2 9 CIS IBM DB2 9 Benchmark 
+https://www.cisecurity.org/benchmark/ibm_db2/ 
+CIS 
+Benchmarks DBMS IBM DB2 8 CIS IBM DB2 Benchmark 
+https://www.cisecurity.org/benchmark/ibm_db2/ 
+CIS 
+Benchmarks DNS Server BIND 9.9 CIS ISC BIND DNS Server 9.9 Benchm ark 
+https://www.cisecurity.org/benchmark/bind/ 
+CIS 
+Benchmarks Mail Server Microsoft 
+Exchange 
+Server 2016 CIS Microsoft Exchange Server 2016 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_exch ange_server/ 
+CIS 
+Benchmarks Mail Server Microsoft 
+Exchange 
+Server 2013 CIS Microsoft Exchange Server 2013 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_exch ange_server/ 
+CIS 
+Benchmarks Mail Server Microsoft 
+Exchange 
+Server 2010 CIS Microsoft Exchange Server 2010 BenchmarK 
+https://www.cisecurity.org/benchmark/microsoft_exch ange_server/ 
+CIS 
+Benchmarks Office 
+Automation Microsoft 
+Office Office 
+365 
+2016 
+2013 CIS Microsoft Office 365 Benchmark 
+CIS Microsoft Office Word 365 Benchmark 
+CIS Microsoft Office Excel 365 Benchmark 
+CIS Microsoft Office PowerPoint 365 Benchmark 

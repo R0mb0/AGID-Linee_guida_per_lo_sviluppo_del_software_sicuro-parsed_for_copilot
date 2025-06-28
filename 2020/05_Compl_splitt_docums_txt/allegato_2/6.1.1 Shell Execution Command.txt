@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 23  a 156  
+ 
+6 PRINCIPALI VULNERABILITÀ DERIVANTI DA ERRORI DI 
+PROGRAMMAZIONE: OVERVIEW 
+Nel presente capitolo viene fornita un overwiev del le principali vulnerabilità, ad oggi conosciute, ch e 
+scaturiscono da errori di programmazione indicando le buone pratiche che, indipendentemente dal 
+linguaggio di programmazione utilizzato, è necessar io adottare al fine di ridurre il rischio (common b est 
+practices). 
+A tal fine, si evidenzia che il 90% delle vulnerabi lità nel software deriva da due distinte macro-cate gorie di 
+errori di programmazione:  
+• una poco accorta gestione dell’input utente; 
+• controlli erronei o assenti durante l’allocazione d elle aree di memoria adibite a contenere i dati.  
+ 
+A queste macro-categorie vanno ad aggiungersi: 
+• le problematiche di gestione delle sessioni utente;  
+• l’assenza di meccanismi crittografici a protezione dei dati scambiati in rete o conservati su disco; 
+• le vulnerabilità correlate al controllo degli acces si. 
+ 
+Vi è inoltre un fattore di media entità che, seppur  non infici in via diretta la sicurezza di un softw are o di un 
+sistema, consente a una minaccia esterna di acquisi re informazioni preziose sullo stato dell’applicazi one e 
+di ottenere utili spunti per progredire gradualment e verso tecniche di attacco più complesse e sempre più 
+finalizzate all’accesso fraudolento o al trafugamen to dei dati. Queste tematiche, congiuntamente a que lle 
+circostanze possono indurre al blocco del sistema o  del software 
+6.1  Validazione dell’input 
+ Il programmatore, spesso, non si pone il problema che gli utenti autorizzati, che possiedono una rego lare 
+password d’accesso, potrebbero non essere gli unici  coinvolti a interagire con l’applicazione e si dà per 
+scontato che l’input acquisito, in ingresso, dal pr ogramma sarà sempre conforme e pertinente al caso.  
+Le vulnerabilità di Input Validation scaturiscono p roprio dall’assenza di controlli o da errori nella gestione 
+dei dati inviati dall’utente e/o da un processo est erno al dominio di analisi. Le conseguenze di tali 
+vulnerabilità consistono in una serie di tecniche d i attacco differenti, solitamente finalizzate all’e secuzione 
+di comandi remoti o alla visualizzazione di dati im portanti. 
+È necessario quindi, verificare che l’input dell’ut ente e la sua rappresentazione non contenga caratte ri o 
+sequenze di caratteri che possono essere sfruttati in modo malizioso.  
+La validazione dell'input deve essere implementata utilizzando espressioni regolari, o algoritmi di fi ltro, 
+dopo aver definito la lista di ciò che può essere a ccettato. La white list, contentente solo i valori ammissibili, 
+è da preferire alla black list, che elenca i valori  non ammissibii, poichéil continuo evolversi degli attacchi 
+rende l’insieme delle stringhe ‘non accettabili’, d i fatto, infinito. 
+Le problematiche di Input Validation sono comuni a tutti gli ambienti, ma trovano la loro espressione 
+massima nelle applicazioni Web. Di seguito sono tra ttate le principali vulnerabilità, causate dal manc ato 
+filtro dei dati utente, nelle quali un aggressore p uò imbattersi sul Web, presentate da script, Servle t o CGI. 
+6.1.1  Shell Execution Command 
+Se nella casistica degli Overflow la vulnerabilità di riferimento è lo Stack Overflow, nelle applicazi oni Web è 
+senza dubbio lo Shell Execution Command. Le problem atiche di Shell Execution Command, infatti, rientra no 
+nella sfera delle vulnerabilità più note e più sfru ttate di sempre . Si manifesta quando i parametri a cquisiti 
+in input vengono passati all’interprete di shell se nza essere filtrati. L’esecuzione di un comando non  è 
+spesso possibile in modo diretto (ovvero sempliceme nte specificando ciò che si desidera eseguire), ma 
+viene causata da una precisa condizione. Sui sistem i Unix è, ad esempio, possibile utilizzare il carat tere “;” 
+per concatenare più comandi fra loro, mentre in mol ti altri casi la condizione scatenante può essere c ausata 
+da caratteri differenti come: 

@@ -1,0 +1,41 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 16 a 132 
+ 
+ 
+Figura 2 - SDL: Passi nella modellazione delle minacce  
+ 
+I processi riguardanti le diverse metodologie di Threat Mode ling possono differire fra loro, ma  
+hanno tutti in comune la raccolta delle informazioni riguardanti l'applicazione, il suo ambiente  
+operativo , come questa viene utilizzata e distribuita, come eventuali  vulnerabilità vengono 
+identificate e come i relativi rischi vengono valutati.  
+La tabella che segue riassume le caratteristiche principali  di un processo di modellazione delle 
+minacce : 
+Caratteristica/ambito  Descrizione  
+Ambito e vincoli  La modellazione delle minacce può essere un processo che richiede tempo, 
+soprattutto se si modella un’applicazione di scala enterprise. Avere chiari gli 
+obiettivi, aiuta a focalizzare l'attività di modellazione delle minacce. 
+L’obiettivo del modello dovreb be essere ben definito fin dall'inizio. Nel 
+caso di sistemi più grandi, il processo può dare in modo più rapido maggior 
+valore, riuscendo a limitare il campo di azione solo ad aree specifiche.  
+Nella fase iniziale del processo di Threat Model ing, quando l’a mbito e i 
+vincoli sono ben definiti, informazioni aggiuntive come scenari d'uso, 
+dipendenze e note di sicurezza forniscono supporto a una migliore 
+comprensione del sistema stesso.  
+Scenari d’uso  Viene creato un elenco di possibili scenari di utilizzo o di trascorsi che 
+dimostrano l'uso previsto dell'applicazione. Ciò può aiutare 
+nell'identificazione di potenziali aree di abuso presenti nel sistema.  
+Dipendenze 
+esterne/interne  Le applicazioni software spesso dipendono da altri sistemi o componenti. 
+Quest i possono avere un impatto diretto sulla sicurezza del sistema in 
+oggetto. È importante elencare tali dipendenze e individuare l'impatto che 
+quest i possono avere sul sistema stes so. Alcuni esempi posso essere 
+l’utilizzo di : Antivirus, Firewalls, librerie di terze parti e sistemi di 
+autenticazione.  
+Note di sicurezza  Vengono registrati dettagli come le informazioni già conosciute relative agli 
+aspetti di sicurezza di un sistema, ev entuali ipotesi fatte sull'applicazione, o 
+trade -off a livello di disegno. Queste note di sicurezza possono aiutare il 
+processo decisionale.  
+

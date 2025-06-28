@@ -1,0 +1,111 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 107  a 137  
+ 
+un’area accessibile al pubblico  
+4 - Dati sensibili o 
+estremamente 
+personali Tutti quei trattamenti che si riferiscono a partico lari categorie di dati sensibili o 
+estremamente personali 
+5 - Dati trattati su 
+larga scala Tutti i trattamenti che gestiscono  dati personali su larga scala, in relazione al 
+numero di soggetti interessati, al volume dei dati,  alla durata o all’ambito 
+geografico 
+6 - Combinazioni o 
+raffronto di insieme di 
+dati Tutti quei trattamenti nei quali è prevista una pre senza congiunta di d ue o più 
+titolari distinti, secondo modalità che esulano dal le ragionevoli aspettative 
+dell’interessato 
+7 - Dati relativi a 
+interessati vulnerabili Tutti quei trattamenti in cui la tipologia delle in formazioni trattate determina uno 
+squilibrio fra interessato e titolare, nel senso de lla mancanza del potere, in capo al 
+primo, di acconsentire o di opporsi al trattamento.  Si inseriscono in questa 
+categoria i dati dei minori, dei dipendenti o delle  persone richiedenti specifiche 
+tutele 
+8 - Utilizzi innovativi  Tutti quei trattamenti che utilizzano tecnologie o tecniche innovative per la 
+raccolta o l’utilizzo dei dati personali, dato che il livello di conoscenza tecnologica, 
+in un dato momento storico, non è in grado valutare  il livello di rischio connesso 
+all’innovazione 
+9 - Trattamenti che 
+impediscono di 
+esercitare un diritto o 
+avvalersi di un servizio 
+o contratto Tutti quei trattamenti che impediscono agli interes sati di esercitare un diritto di 
+avvalersi di un servizio o di un contratto, ossia t utti i trattamenti dai quali 
+l’interessato non può esimersi qualora volesse acce dere a detto servizio o 
+concludere detto contratto 
+Tabella 7 - Tipologie di trattamento che rappresent ano un rischio elevato 
+Nel caso in cui la DPIA sia stata valutata come nec essaria (cfr. DR-7), si potrà procedere con l’anali si degli 
+impatti potenziali sui diritti e le libertà dell’in teressato (persone fisiche), a fronte del trattamen to dei 
+relativi dati personali, allo scopo di porre in ess ere le opportune attività di trattamento dei rischi  per la 
+protezione dei dati personali. 
+In linea con quanto previsto da regolamenti e stand ard applicabili in materia (cfr. Errore. L'origine 
+riferimento non è stata trovata. ), tale attività costituisce un processo composto d a un insieme di attività 
+ben definite, da compiersi in sequenza ordinata, ne ll’ambito delle seguenti fasi: 
+1)  Definizione del contesto , tramite la comprensione dell’organizzazione, dell ’architettura tecnologica 
+e dei fattori che potrebbero influenzare la gestion e del rischio privacy; 
+2)  Privacy risk assessment , attraverso cui si identificano, si analizzano e s i valutano i rischi per gli 
+interessati; 
+3)  Privacy risk treatment , in cui si identificano le strategie e le modalità  operative per 
+l’implementazione delle misure di sicurezza adeguat e alla copertura dei rischi rilevati in sede di ris k 
+assessment. (I requisiti di protezione per la priva cy, da implementare all’interno del piano di 
+trattamento dei rischi individuati per il software possono essere ricavati dai controlli descritti nel la 
+ISO/IEC 29151 (cfr. DR-5) 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 108  a 137  
+ 
+10.1.4.1  Riconoscere le informazioni personali  
+Per poter definire adeguatamente il trattamento del  rischio privacy per i software, sarà necessario 
+individuare le tipologie di informazioni personali,  ossia quelle da cui possono essere ricavati dei da ti 
+personali, che potrebbero essere trattate da un app licativo software. Per determinare se una persona f isica 
+debba o meno essere considerata identificabile, sar à necessario prendere in considerazione diversi fat tori. 
+In particolare, si dovrebbe tenere conto dei mezzi che possono ragionevolmente essere utilizzati dai 
+software per il trattamento dei dati personali. I s oftware dovrebbero supportare meccanismi adeguati a d 
+informare l’interessato, raccogliere il consenso e proteggere i suoi dati personali. Le seguenti speci ficazioni 
+forniscono degli ulteriori chiarimenti su come dete rminare se un’informazione possa essere considerata  
+personale. 
+Identificativi  
+In alcuni casi, l'identificabilità dell’interessato  potrebbe essere molto semplice (e.g. quando l'info rmazione 
+contiene o è associata ad un identificatore che è u sato per riferirsi o per comunicare con l’interessa to). Le 
+informazioni possono essere considerate personali a lmeno nei seguenti casi: 
+o se contiene o è associato a un identificatore che f a riferimento a una persona fisica (ad esempio, il 
+codice fiscale); 
+o se contiene o è associato a un identificatore che p uò essere correlato a una persona fisica (ad 
+esempio, numero del passaporto, numero di conto); 
+o se contiene o è associato a un identificatore che p uò essere utilizzato per stabilire una 
+comunicazione con una persona fisica identificata ( ad esempio, una posizione geografica precisa, 
+un numero di telefono);  
+o se contiene un riferimento che collega i dati a uno  degli identificatori di cui sopra. 
+ 
+Altre caratteristiche identificative 
+Le informazioni non devono necessariamente essere a ssociate a un identificatore per poter essere 
+considerate personali. Le informazioni saranno cons iderate personali anche se contengono o sono 
+associate a una caratteristica che distingue una pe rsona fisica da altre persone fisiche, ad esempio i  dati 
+biometrici. Qualsiasi attributo che assume un valor e che identifica univocamente un l’interessato deve  
+essere considerato come una caratteristica identifi cativa. Si noti che indipendentemente dal fatto che  una 
+determinata caratteristica distingue una persona fi sica da altre potrebbe cambiare a seconda del conte sto 
+di utilizzo. Ad esempio, mentre il cognome di una p ersona fisica potrebbe essere insufficiente per 
+identificare quella persona fisica su scala globale , potrebbe invece esserlo su una scala aziendale. I noltre, 
+potrebbero anche esservi situazioni in cui una pers ona fisica è identificabile anche se non esiste un singolo 
+attributo che la identifica in modo univoco. Questo  è il caso in cui una combinazione di diversi attri buti 
+messi insieme consente di distinguere tale persona dalle altre, ad esempio la combinazione degli attri buti 
+"femmina", "45" e "avvocato" può essere sufficiente  per identificare una persona fisica all'interno di  una 
+determinata organizzazione, ma con buona probabilit à sarà insufficiente per identificare quella person a 
+fisica al di fuori di tale contesto. 
+La tabella che segue fornisce alcuni esempi di attr ibuti che potrebbero essere personali, a seconda de l 
+dominio.  
+Età o bisogni speciali delle persone fisiche vulner abili  
+Accuse di condotta criminale 
+Qualsiasi informazione raccolta durante i servizi 
+sanitari 
+Conto bancario o numero di carta di credito Posizione derivata dai sistemi di 
+telecomunicazione 
+Storia medica 
+Nome 
+Identificativi nazionali (ad es. Numero di 

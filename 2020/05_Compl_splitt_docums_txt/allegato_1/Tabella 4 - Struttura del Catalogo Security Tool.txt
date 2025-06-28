@@ -1,0 +1,63 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 66  a 137  
+ 
+Netsparker 
+Web 
+Application 
+Security 
+Scanner DAST Response Demo disponibile su 
+richiesta https://www.netsparker.com/  
+Neustar DDoS Protection, 
+WAF Response Demo disponibile su 
+richiesta https://www.home.neustar/  
+Palo Alto Threat 
+Prevention 
+Services RASP WAF Response Demo disponibile su 
+richiesta https://www.paloaltonetworks.c 
+om  
+Network Threat 
+Detection Intrusion 
+Prevention System  Response Demo disponibile su 
+richiesta https://www.bricata.com  
+Sophos Next-
+Gen Firewall WAF Response Versione Trial a 30 
+giorni disponibile https://www.sophos.com/en-
+us/products/next-gen-
+firewall.aspx  
+Sucuri Website 
+Security 
+Solutions WAF, DDoS 
+Protection, App 
+Security Scanning Response Demo non 
+disponibile https://sucuri.net/website-
+security-platform/signup/  
+Ziften Endpoint Security Response Demo disponibile su 
+richiesta https://ziften.com/  
+ 
+6.9  Catalogo Security Tools  
+Il CATALOGO SECURITY TOOLS raccoglie i tool disponi bili che offrono funzionalità applicabili in ambito  
+secure application development.  
+ 
+In Appendice 1 viene riportato il Catalogo Security  Tools con il seguente formato: 
+Tabella 4 - Struttura del Catalogo Security Tool  
+ 
+6.10  Training e formazione 
+ 
+ 
+ Prodotto  Categoria  Fase SSE  Tipo Licenza  Sito Web  
+nome 
+commerciale 
+del tool  indica la macro -funzione: 
+per es. DAST, SAST, WAF 
+ecc. la fase del sw life -
+cycle coperta dal 
+tool tipo licenza indirizzo web per 
+approfondimenti 
+Le organizzazioni inoltre dovrebbero investire di più anche nello svi luppo di competenze interne 
+sulla base anche del fatto che molti degli attuali problemi di sicurezza derivano da errori di 
+progettazione o di implementazione, risolvibili sol o disponendo di personale qualificato. Alcuni 
+analisti affermano che il 64% degli sviluppatori no n sono confidenti di poter scrivere applicazioni 
+sicure  [fonte: Microsoft Developer Research]. 

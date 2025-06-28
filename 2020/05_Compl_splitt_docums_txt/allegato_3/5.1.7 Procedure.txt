@@ -1,0 +1,53 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 34  a 141  
+ 
+- Le registrazioni dei log degli amministratori devon o essere conservate per un 
+congruo periodo, non inferiore a sei mesi, in confo rmità alla normativa in materia 
+di protezione dei dati personali (Privacy) e dei pr incipi di sicurezza. 
+- Tracciare le operazioni critiche eseguite a livello  applicativo. 
+- Eseguire un regolare backup dei file di log e anali zzarli regolarmente per verificare 
+la presenza di attività sospette. 
+ 
+Protezione log  
+Minaccia  - Abuso di privilegi da parte dell’utente.  
+- Negazione dei servizi (ad es. da errori hardware/so ftware non rilevati in maniera 
+tempestiva o corretta per carenze di monitoraggio n ei sistemi ICT). 
+- Accesso non autorizzato alle informazioni. 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Controllare che le informazioni contenute nei file di log siano protette da 
+manomissioni e accessi non autorizzati e che non ci  siano problemi operativi con le 
+logging facilities. In particolare, occorre verific are che non vi sia: 
+- alterazione delle informazioni tracciate nel file d i log; 
+- discordanza fra il periodo di conservazione dei log  e quanto indicato dalle policy di 
+retention o specifiche disposizioni legali; 
+- fallimento delle operazioni di registrazione degli eventi causato da un 
+raggiungimento della dimensione massima del file di  log; 
+- sovrascrittura delle informazioni precedentemente t racciate causata da un 
+raggiungimento della dimensione massima del file di  log, nel caso in cui la scrittura 
+dei log sia effettuata in modo ciclico sempre sullo  stesso file. 
+ 
+Registrazione degli accessi logici da parte degli a mministratori di sistema  
+Minaccia  - Abuso di privilegi da parte dell'utente ; 
+- Cancellazione dei log di accountability e/o ripudio  di operazioni effettuate.  
+Contromisure  Devono essere adottati sistemi idonei alla registra zione degli accessi logici 
+(autenticazione informatica) al sistema/piattaforma  da parte degli amministratori di 
+sistema. Le registrazioni devono comprendere i rife rimenti temporali e la descrizione 
+dell'evento che le ha generate. 
+Si tenga presente che il controllo e la registrazio ne possono essere aggirati da un 
+account condiviso (questo vale sia per gli account amministrativi che per gli account 
+utente / applicativi / di servizio): pertanto gli a ccount amministrativi non devono 
+essere condivisi.  
+In generale, anche per gli account utente non privi legiati e per gli account usati dagli 
+applicativi per l’esecuzione dei servizi in uno spe cifico contesto (es. account httpd per 
+un server web in ambito UNIX), devono essere nomina tivi / specifici per l’utente o 
+l’applicativo e non condivisi. 
+ 
+5.1.7  Procedure  
+Change management 
+Gestione  dei cambiamenti  
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc .) . 
+- Accesso non autorizzato alle informazioni. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 

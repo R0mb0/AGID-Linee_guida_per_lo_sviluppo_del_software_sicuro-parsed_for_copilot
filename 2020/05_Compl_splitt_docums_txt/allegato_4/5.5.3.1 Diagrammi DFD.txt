@@ -1,0 +1,44 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 37 a 132 
+ 
+• Cosa potr ebbe andare storto una volta realizzato?  
+• Cosa è necessario fare per contrastare eventuali problemi?  
+• È stato svolto un lavoro di analisi accettabile?  
+Queste domane indirizza no puntualmente i quattro step del processo  illustrato graficamente nella 
+figura che segue e che possono essere così riassunti:  
+• Modellare il sistema che si sta costruendo, rilasciando o modificando.  
+• Identificare  le minacce usando il modello e gli approcci descritti nel Paragrafo 5.5.4 . 
+• Indirizzare le minacce utilizzando gli approcci descritti nel  Paragrafo  5.6. 
+• Conval idare il lavoro per completezza ed efficacia sulla base delle best practices riportate nel 
+Paragrafo 5.5.4.5 . 
+ 
+ 
+ 
+ 
+Il framework si concretizza come una modalità strutturata per modellare le minacce.  
+5.5.3.1  Diagrammi  DFD  
+I diagrammi s ono un buon metodo per rappresentare ciò che si sta realizzando. Questi  sono il modo 
+più efficace per pensare a ciò che si sta costruendo. Ci sono diversi modi per diagrammare il 
+software, e si può iniziare con un diagramma disegnato su una lavagna che rap presenta i flussi di 
+dati e come questi attraversano il sistema.  
+La modellazione delle minacce si concentra sui dati, su come questi vengono fruiti (flussi) e su 
+come si muovono tra i vari componenti del sistema. I diagrammi di modellazione forniscono una 
+rappresentazione visiva del modo in cui i singoli sottosistemi operano e lavorano insieme. I 
+diagrammi di flusso di dati (DFD) vengono normalmente utilizzati in molti processi di 
+modellazione delle minacce. Questi forniscono un modo coerente e compatto per  modellare i flussi 
+di dati presenti in un'applicazione attraverso l'utilizzo di sei forme distinte che rappresentano: il 
+processo, i processi multipli, l’entità esterna, l’archivio dati, il flusso di dati e il perimetro 
+privilegiato (Figura sottostante).  
+ 
+ 
+Modellazione  del 
+sistema  
+Individuazione  
+delle minacce  
+Indirizzamento  
+delle minacce  
+Validazione  
+Figura 3 - I quattro step del Framework  

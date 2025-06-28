@@ -1,0 +1,54 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 40  a 141  
+ 
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni; 
+- Compromissione delle comunicazioni. 
+- Divulgazione di informazioni riservate. 
+- Negazione dei servizi. 
+- Cancellazione o furto di informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Attacchi all’integrità delle informazioni. 
+- Uso non autorizzato di privilegi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Effettuare, almeno una volta l'anno, un'attività di  Penetration Test (PT) sui sistemi più 
+critici, simulando dall'esterno un'azione di intrus ione al sistema/piattaforma. L'attività 
+deve prevedere degli opportuni scenari d'intrusione  affinché siano evidenziate la 
+presenza di vulnerabilità nel sistema, e la consegu ente possibilità di ottenere accessi 
+non autorizzati a funzioni ed informazioni riservat e. 
+ 
+Fuzzing Test  
+Minaccia  - Divulgazione di informazioni riservate . 
+- Negazione dei servizi. 
+- Cancellazione o furto di informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Attacchi all’integrità delle informazioni. 
+Contromisure  Eseguire test regolari di tipo fuzzing per rilevare  e correggere eventuali 
+malfunzionamenti causati da mancata validazione del l’input (es. buffer overflow). 
+ 
+Disposal 
+Protezione dei dati personali in caso di  reimpiego o riciclo dell'apparecchiatura elettronic a  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Divulgazione di informazioni riservate. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Chi procede al reimpiego o al riciclaggio di rifiuti di apparecchiature elettrich e ed 
+elettroniche o di loro componenti è comunque tenuto  ad assicurarsi dell'inesistenza o 
+della non intelligibilità di dati personali sui sup porti, acquisendo, ove possibile, 
+l'autorizzazione a cancellarli o a renderli non int elligibili. 
+ 
+Protezione dei dati personali in caso di smaltiment o dell'apparecchiatura elettronica   
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Divulgazione di informazioni riservate. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  In caso di smaltimento di rifiuti elettrici ed elet tronici, l'effettiva cancellazione dei dati 
+personali dai supporti contenuti nelle apparecchiat ure elettriche ed elettroniche può 
+anche risultare da procedure che, nel rispetto dell e normative di settore, comportino 
+la distruzione dei supporti di memorizzazione di ti po ottico o magneto-ottico in modo 
+da impedire l’acquisizione indebita di dati persona li. 
+La distruzione dei supporti prevede il ricorso a pr ocedure o strumenti diversi a secondo 
+del loro tipo, quali: 
+- sistemi di punzonatura o deformazione meccanica; 

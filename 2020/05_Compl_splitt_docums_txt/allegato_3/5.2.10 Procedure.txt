@@ -1,0 +1,106 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 49  a 141  
+ 
+5.2.7  Documentazione 
+Valgono i principi generali introdotti nel paragraf o [rif. 5.1.5]. 
+ 
+5.2.8  Logging 
+Valgono i principi generali introdotti nel paragraf o [rif.5.1.6]. 
+ 
+5.2.9  Antivirus 
+Prevenzione e individuazione di codice malevolo sul  sistema operativo  
+Minaccia  - Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+causata da Malware. 
+- Negazione dei servizi causata da Malware. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Su sistemi sia client sia server è necessario in stallare  un softwar e antivirus e 
+antimalware di riconosciuta efficacia, in grado di rilevare e rimuovere keylogger, 
+spyware, trojans, worms, ransomware ed ogni altro t ipo di malware conosciuto. 
+I sistemi devono essere configurati in modo che l'a ntivirus/antimalware: 
+- sia eseguito in modo automatico all'avvio della mac china senza possibilità di 
+disattivazione da parte di utenti non autorizzati; 
+- esegua in automatico l'aggiornamento della lista di  definizione dei virus (DAT) 
+anche più volte al giorno mediante un'infrastruttur a di sistemi dedicati alla 
+distribuzione del DAT; 
+- esegua una scansione approfondita del disco fisso a lmeno una volta alla settimana, 
+in orari che riducano l'impatto sulle attività lavo rative (ad es. durante la pausa 
+pranzo); 
+- esegua una scansione anche dei file compressi fino a 3 livelli di nidificazione; 
+- preveda una gestione remota per la segnalazione di infezioni virali; 
+- abbia funzionalità di tipo euristico per la rilevaz ione dei virus che consenta di 
+inserire in "quarantena" tutti i file ritenuti sosp etti dal motore euristico; 
+- si integri nel sistema operativo al livello di file  system e nel software di gestione 
+della posta; 
+- notifichi, durante la fase di shutdown, se è presen te un dispositivo removibile. 
+L’amministratore di sistema deve verificare (e se n ecessario effettuare manualmente) 
+l’effettivo aggiornamento dei sistemi anti-virus co n cadenza almeno mensile. 
+ 
+5.2.10  Procedure  
+Alle linee guida ‘Procedure generali’ (Change manag ement, Maintenance, Patching, Secure testing, 
+Disposal) introdotti nel paragrafo [rif. 5.1.7], si  aggiungono, per l’ambito specifico, le indicazioni  di cui di 
+seguito: 
+ 
+Controlli  sulla regolamentazione dell’uso del codice mobile p er Sistemi Operativi  
+Minaccia  - Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+causata da Malware. 
+- Negazione dei servizi causata da Malware. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Nel caso in cui si utilizz i “mobile code ” (ad es. JavaScript /  VBScript  scaricati da siti web , 
+Java applets, controlli ActiveX, codice Adobe Flash  o Shockwave, documenti PDF attivi 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 50  a 141  
+ 
+o anche semplici macro  VBA trasferite attraverso documenti Microsoft Offic e ), è 
+necessario controllare che il “mobile code” non eff ettui operazioni non autorizzate. 
+In particolare è necessario predisporre il maggior numero possibile di controlli tra 
+quelli di seguito elencati: 
+- esecuzione del mobile code in un ambiente di test i solato logicamente (sistemi di 
+malware analysis in grado di analizzare il mobile c ode); 
+- blocco di ogni utilizzo di mobile code sulle postaz ioni di lavoro e sui server;  
+- blocco della ricezione di mobile code da internet ( operato dai firewall perimetrali);  
+- attivazione delle misure tecniche disponibili sul b rowser in uso per bloccare o 
+quanto meno mettere in sicurezza l’utilizzo del mob ile code, ad es. impedendo che 
+il mobile code possa eseguire qualsiasi operazione sul sistema operativo, o 
+all’esterno di una “sandbox” predisposta dal browse r; 
+- limitazione delle risorse di sistema che possono es sere utilizzate dal mobile code; 
+- attivazione di controlli crittografici per autentic are il mobile code (firma digitale del 
+codice). 
+ 
+Controlli dell'installazione di software sui sistem i in funzione  
+Minaccia  - Negazione dei servizi . 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+Contromisure  Devono essere in vigore procedure per controllare l'installazione ed i cambiamenti del 
+software sui sistemi di produzione. L’installazione  deve essere effettuata seguendo 
+scrupolosamente le indicazioni scritte fornite dal produttore e rispettando l’ordine 
+delle operazioni da compiere. Nelle procedure devon o essere indicate le istruzioni per i 
+controlli che possono variare in relazione alla tip ologia di ambiente/sistema operativo. 
+ 
+Autorizzazione per trasferimento di informazioni, s trumenti elettronici e supporti all'esterno  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Divulgazione di informazioni riservate. 
+- Uso non autorizzato di privilegi. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Il trasferimento all'esterno del sito aziendale o d ell'organizzazione di informazioni 
+contenute su strumenti o supporti elettronici, oppu re in altre tipologie di supporti (es. 
+atti e documenti cartacei) deve avvenire mediante p reventiva autorizzazione dei 
+soggetti responsabili. 
+Per il trasferimento di archivi contenenti dati per sonali presso fornitori esterni 
+operanti nell’Unione Europea, è necessaria l’autori zzazione del Titolare e può 
+richiedere l’aggiornamento dell’informativa agli ut enti laddove necessario. Il fornitore 
+esterno deve essere formalmente nominato responsabi le del trattamento. 
+Il trasferimento di tali archivi all’esterno dell’U nione Europea deve essere impedito. 
+ 
+Security awareness : come combattere  il phishing/pharming  
+Minaccia  - Divulgazione di informazioni riservate . 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Sensibilizzare il personale sui rischi del phishing /pharming (divulgazione non 
+autorizzata a terzi di informazioni riservate o cri tiche, perdita delle informazioni ad es. 
+da ransomware, ecc.). 
+Istruire il personale sulle norme di comportamento cui attenersi per diminuire i rischi 
+di phishing/pharming. Tali norme dovrebbero, almeno , indicare di: 
+- non fare affidamento sull’intuito per distinguere t ra richieste legittime e illegali di 

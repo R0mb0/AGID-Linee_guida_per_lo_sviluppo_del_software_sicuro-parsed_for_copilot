@@ -1,0 +1,48 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 21  a 137  
+ 
+• EAL1. Functionally tested  
+• EAL2. Structurally tested  
+• EAL3. Methodically tested and checked  
+• EAL4. Methodically designed, tested and reviewed  
+• EAL5. Semi-formally designed and tested  
+• EAL6. Semi-formally verified design and tested  
+• EAL7. Formally verified design and tested.  
+ 
+I seguenti paesi hanno firmato l’accordo Common Cri teria Recognition Agreement (CCRA) che si applica d a 
+EAL1 to EAL4: 
+• Paesi EU/EFTA: Austria, Repubblica Ceca, Danimarca,  Finlandia, Francia, Germania, Grecia, 
+Ungheria, Italia, Paesi Bassi, Norvegia, Spagna, Sv ezia e Regno Unito; 
+• Paesi Non-EU/EFTA: Australia, Canada, India, Israel e, Giappone, Corea, Malesia, Nuova Zelanda, 
+Pakistan, Singapore, Turchia e Stati Uniti. 
+ 
+L’European Mutual Recognition Agreement of IT Secur ity Evaluation Certificates o ‘SOGIS-agreement’ è u n 
+accordo tra alcune nazioni europee con l'adesione d ell'UE o dell’EFTA relativo al mutuo riconoscimento  dei 
+certificati di valutazione secondo gli standard CC per tutti i livelli di valutazione (EAL1 EAL7). 
+ 
+URL  https://www.co mmoncriteriaportal.org  
+Country of HQ location  
+Geographic Scope  International  
+Type  Government  
+ 
+I criteri comuni per la valutazione della sicurezza  informatica e la metodologia comune per la sicurez za delle 
+tecnologie di valutazione sono stati pubblicati com e standard ISO. 
+ 
+Risultati più rilevanti: 
+Standard  Common Methodology for Information Technology Secur ity Evaluation and Common 
+Criteria for Information Technology Security Evalua tion 
+Queste costituiscono la base tecnica di un accordo internazionale (CCRA). La versione 
+2.3 è stata pubblicata anche come ISO/IEC 15408:200 9 e ISO/IEC 18045:2008.  
+Future  
+Related Standard JTC 1/SC 27  
+ISO/IEC NP 20004  
+Tecnologie dell'informazione, tecniche di sicurezza , sviluppo di software sicuro e 
+valutazione secondo le norme ISO/IEC 15408 e ISO/IE C 18405. 
+ 
+5.1.3  IEEE Computer Society 
+L’Iniziativa IEEE Computer Society è un'organizzazi one senza fini di lucro, i principali progetti sono  finalizzati 
+alla pubblicazione di standard su tecnologie IT.  
+ 

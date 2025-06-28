@@ -1,0 +1,51 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 49  a 141  
+ 
+5.2.7  Documentazione 
+Valgono i principi generali introdotti nel paragraf o [rif. 5.1.5]. 
+ 
+5.2.8  Logging 
+Valgono i principi generali introdotti nel paragraf o [rif.5.1.6]. 
+ 
+5.2.9  Antivirus 
+Prevenzione e individuazione di codice malevolo sul  sistema operativo  
+Minaccia  - Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+causata da Malware. 
+- Negazione dei servizi causata da Malware. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Su sistemi sia client sia server è necessario in stallare  un softwar e antivirus e 
+antimalware di riconosciuta efficacia, in grado di rilevare e rimuovere keylogger, 
+spyware, trojans, worms, ransomware ed ogni altro t ipo di malware conosciuto. 
+I sistemi devono essere configurati in modo che l'a ntivirus/antimalware: 
+- sia eseguito in modo automatico all'avvio della mac china senza possibilità di 
+disattivazione da parte di utenti non autorizzati; 
+- esegua in automatico l'aggiornamento della lista di  definizione dei virus (DAT) 
+anche più volte al giorno mediante un'infrastruttur a di sistemi dedicati alla 
+distribuzione del DAT; 
+- esegua una scansione approfondita del disco fisso a lmeno una volta alla settimana, 
+in orari che riducano l'impatto sulle attività lavo rative (ad es. durante la pausa 
+pranzo); 
+- esegua una scansione anche dei file compressi fino a 3 livelli di nidificazione; 
+- preveda una gestione remota per la segnalazione di infezioni virali; 
+- abbia funzionalità di tipo euristico per la rilevaz ione dei virus che consenta di 
+inserire in "quarantena" tutti i file ritenuti sosp etti dal motore euristico; 
+- si integri nel sistema operativo al livello di file  system e nel software di gestione 
+della posta; 
+- notifichi, durante la fase di shutdown, se è presen te un dispositivo removibile. 
+L’amministratore di sistema deve verificare (e se n ecessario effettuare manualmente) 
+l’effettivo aggiornamento dei sistemi anti-virus co n cadenza almeno mensile. 
+ 
+5.2.10  Procedure  
+Alle linee guida ‘Procedure generali’ (Change manag ement, Maintenance, Patching, Secure testing, 
+Disposal) introdotti nel paragrafo [rif. 5.1.7], si  aggiungono, per l’ambito specifico, le indicazioni  di cui di 
+seguito: 
+ 
+Controlli  sulla regolamentazione dell’uso del codice mobile p er Sistemi Operativi  
+Minaccia  - Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+causata da Malware. 
+- Negazione dei servizi causata da Malware. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Nel caso in cui si utilizz i “mobile code ” (ad es. JavaScript /  VBScript  scaricati da siti web , 
+Java applets, controlli ActiveX, codice Adobe Flash  o Shockwave, documenti PDF attivi 

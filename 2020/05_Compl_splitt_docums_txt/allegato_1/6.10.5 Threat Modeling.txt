@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 68  a 137 
+ 
+• Process Handling  
+• Error Handling and Exception Management  
+• Logging and Auditing  
+• Memory Management 
+ 
+6.10.3  Writing Secure Code - Java (J2EE) 
+Questo corso di formazione computer-based illustra le caratteristiche chiave di sicurezza della piatta forma 
+J2EE, come evitare che gli sviluppatori cadano nell e trappole di sicurezza comuni e come creare applic azioni 
+web sicure e affidabili utilizzando Java. Gli stude nti sono guidati attraverso esempi di codice hands- on che 
+evidenziano i problemi e le soluzioni prescritte. 
+Il corso ha i seguenti moduli: 
+• Introduction to Software Security  
+• Data Protection – in Storage and in Transit  
+• Authentication  
+• Authorisation  
+• Data Validation  
+• Process Handling  
+• Error Handling and Exception Management  
+• Logging and Auditing  
+• Memory Management 
+ 
+6.10.4  Foundstone (Mcafee) Courses 
+Foundstone offre un programma di formazione di sicu rezza di rete per la creazione di professionisti de lla 
+sicurezza qualificati. 
+URL  http://www.foundstone.com  
+Contact Method  http://www.mcafee.com/us/about/contact -us.aspx   
+Email, web form, phone and address  
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Industry (McAfee)  
+ 
+6.10.5  Threat Modeling 
+Questo corso di formazione computer-based spiega i processi e i concetti di creazione di software sicu ro al 
+fine di designare un quadro di sicurezza, identific ando quindi minacce e contromisure. Gli studenti po ssono 
+apprendere come utilizzare la modellazione delle mi nacce per migliorare il SDLC. 
+Il corso ha i seguenti moduli: 
+• Introduction to Threat Modeling and Hacme Books  
+• Identify Security Requirements  
+• Understand the System and the Application  
+• Identify Threats and Countermeasures  
+• Post-Threat Modeling Activities 

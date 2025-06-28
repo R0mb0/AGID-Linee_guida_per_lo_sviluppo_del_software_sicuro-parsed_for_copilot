@@ -1,0 +1,48 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 18  a 156  
+ 
+• Tentativi di accesso a risorse inibite : si devono tracciare tutti i tentativi di accesso a risorse inibite 
+ai servizi come, ad esempio, tentativi di accesso a lla root di un server web, modifica a 
+configurazioni per mezzo di credenziali non appropr iate, etc. (Cfr. [paragrafo 5.6]); 
+• Violazioni delle policy configurate : si devono tracciare le violazioni o i tentativi d i bypass delle 
+regole di autorizzazione che definiscono ruolo e pe rmessi assegnati all’utente nonché le operazioni 
+ad esso concesse in base alla tipologia di profilat ura (Cfr. [paragrafo 5.6]); 
+• Process Issue : si devono tracciare gli avvisi, generati in ambit o Server Applicativo, relativi 
+all’esecuzione di moduli applicativi che risultano diversi in quantità e dimensione rispetto a quanto 
+atteso/definito in fase di progettazione/realizzazi one dell’applicativo stesso (ad es. numero 
+eccessivo di istanze duplicate, esecuzione di istru zioni non previste, eccessiva occupazione di 
+memoria, etc.) -(Cfr. [paragrafo 6.1.7]);  
+• Funzioni input/output anomale : si devono tracciare i tentativi inaspettati di di chiarazioni di 
+funzioni e/o comandi in input ed in output (Cfr. [p aragrafo 5.2.7 , 5.2.8, cap. 6]); 
+• Disattivazione anomala del meccanismo di tracciamen to : devono essere osservati e tracciati tutti i 
+cambiamenti di stato (attivo ↔ disattivo) delle funzioni di tracciamento e genera zione allarmi, su 
+tutte le componenti funzionalmente coinvolte. Altre sì, è necessario tenere sempre sotto controllo 
+le attività di download/upload dell’utente, al qual e è stato consentito l’accesso al sistema, al fine di 
+individuare situazioni anomale (generazione di alla rmi laddove la quantità di dati superi una certa 
+soglia che tiene conto del livello/ruolo di accesso  dell’utente). 
+5.5  Compilazione dell’applicazione 
+Per la compilazione del codice dell’applicazione si  raccomanda l’adozione dei criteri riportati nei pa ragrafi 
+(Cfr. [5.5.1,5.5.2]) che seguono. 
+5.5.1  Stack Canary 
+I sorgenti dell’applicazione e delle librerie che l a compongono (DLL o altre forme comparabili in ambi enti 
+operativi differenti) devono essere compilati con f unzionalità di stack canary. A runtime viene impost ato un 
+valore (spesso un intero) in memoria e viene verifi cato che non venga sovrascritto da un eventuale buf fer 
+overflow, dopo una chiamata allo stack. Ciò permett e di bloccare gli effetti di un buffer overflow in tempo 
+utile. In fase di compilazione, devono essere attiv ate opzioni di anti-sovversione dei puntatori ai ge stori 
+delle eccezioni (ad esempio SafeSEH), relativamente  alla piattaforma dell’applicazione. 
+5.5.2  Correttezza del sorgente 
+La compilazione dei sorgenti deve terminare senza a lcun tipo di warning. 
+5.6  Ambiente operativo dell’applicazione 
+In merito agli ambienti operativi di sviluppo e tes t delle applicazioni, si raccomanda l’adozione dei criteri 
+riportati nei paragrafi (Cfr. [5.6.1 - 5.6.6]) che seguono. 
+5.6.1  Separazione degli ambienti 
+I sistemi di sviluppo, test e produzione devono ess ere separati fisicamente e/o logicamente. 
+5.6.2  Test dell’Applicazione 
+• L’applicazione deve essere consegnata e portata in produzione/esercizio solo dopo essere stata 
+verificata la rispondenza ai requisiti dati.  
+• I casi di test devono includere controlli sull’usab ilità dell’applicazione, sulla sicurezza e sulla 
+compatibilità con l’infrastruttura hardware/softwar e in cui andrà installata.  
+• È raccomandato l’utilizzo di appositi strumenti di stress test prima dell’avvio in esercizio 
+dell’applicazione, al fine di certificare la corret ta implementazione delle procedure di input data 
+validation e security menzionate in questo document o. 

@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 134  a 156  
+ 
+7.10  VBNET 
+Visual Basic NET, abbreviato VBNET, è un linguaggio  di programmazione della suite Microsoft .NET, ered e di 
+Visual Basic, che tanta fortuna ebbe un tempo. Cara tteristiche vincenti di VB.NET sono la sua semplici tà, 
+l’orientamento agli oggetti, la condivisione della comune piattaforma .NET. Si pone come strumento ide ale 
+da chi proviene dalla programmazione Visual Basic. 
+ 
+Segue un elenco delle principali vulnerabilità e co ntromisure da adottare. 
+7.10.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+Il Cross Site Scripting consiste nella possibilità che un attaccante possa inserire nella pagina 
+dell’applicazione, quindi nel codice HTML, script c he, una volta eseguiti, possano trarre in inganno i  legittimi 
+utenti, trafugare informazioni e predisporre nuovi attacchi.  
+Questa minaccia, enormemente diffusa, è dovuta allo  scarso controllo dell’input da parte delle web 
+application.  
+Il Cross Site Scripting può essere reflected o stor ed. Nel primo caso, uno script inoculato è valido s olo 
+all’interno della sessione corrente, ma i suoi effe tti possono essere molto dannosi per il sito vittim a 
+dell’attacco. 
+Ancora più grave è il Cross Site Scripting di tipo stored. In questo caso lo script inoculato viene me morizzato 
+come parte integrante della pagina all’interno di u n database e rispristinato ogni qual volta la pagin a in 
+questione viene caricata. Quest’attacco è stato sfr uttato ampiamente nel recente passato, soprattutto 
+laddove veniva consentito agli utenti di inserire r ecensioni, commenti e altri contributi. 
+ 
+Volendo schematizzare, possiamo categorizzare gli a ttacchi XSS nelle seguenti tipologie: 
+• Reflected XSS, in cui la stringa dannosa proviene d alla richiesta dell’utente. 
+• Stored XSS, in cui la stringa dannosa proviene dal database del sito Web. 
+ 
+Esiste anche un Cross Site Scripting dovuto a una l acuna nella codifica UTF-7, che permettere di masch erare 
+i caratteri “<” e “>”, facendoli sfuggire al contro llo. Questa minaccia non è più possibile nei modern i 
+browser, ad eccezione di Microsoft Internet Explore r 11.  
+ 
+Come difendersi 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white 
+list, scartando quelli che non la rispettano). Occo rre controllare il tipo del dato, la sua dimensione , 
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• La codifica dovrebbe essere sensibile al contesto, in base al tipo di dato che si vuole neutralizzare:  
+se ci si aspetta che possa esserci codice HTML abus ivo, occorre codificare gli eventuali tag HTML, se 
+ci si potrebbe trovare di fronte a uno script, allo ra bisogna codificare gli elementi sintattici di 
+Javascript, ecc. 
+• Si consiglia di utilizzare la libreria di codifica ESAPI. 
+• Nell'intestazione di risposta Content-Type HTTP, è necessario definire esplicitamente la codifica dei 
+caratteri (charset) per l'intera pagina. 
+• Impostare l’attributo HTTPOnly per proteggere il co okie della sessione da indebite letture da parte 
+di script malevoli. 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/79.html,  
+CWE-79: Improper Neutralization of Input During Web  Page Generation ('Cross-site Scripting'). 

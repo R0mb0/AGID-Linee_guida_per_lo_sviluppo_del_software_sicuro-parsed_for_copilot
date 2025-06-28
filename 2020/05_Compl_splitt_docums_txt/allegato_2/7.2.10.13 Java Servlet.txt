@@ -1,0 +1,186 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 75  a 156  
+ 
+import java.util.*; 
+public class BadGenericThrow { 
+ public void makeFile() throws Exception { 
+  //create a Serializable List 
+  List<String> quarks = new ArrayList<String>(); 
+  quarks.add("hello word"); 
+  FileOutputStream file = null; 
+  ObjectOutputStream output = null; 
+  try{ 
+   file = new FileOutputStream("quarks.ser"); 
+   output = new ObjectOutputStream(file); 
+output.writeObject(quarks); 
+  } 
+  finally{ 
+   if (output != null) { 
+    output.close(); 
+   } 
+  } 
+ } 
+}  
+ 
+Forma corretta 
+import java.io.*; 
+import java.util.*; 
+ 
+public class BadGenericThrow { 
+ public void makeFile() throws  IOException, FileNo tFoundException{ 
+  //create a Serializable List 
+  List<String> quarks = new     ArrayList<String>() ; 
+  quarks.add("hello word"); 
+  FileOutputStream file = null; 
+  ObjectOutputStream output = null; 
+  try{ 
+   file = new FileOutputStream("quarks.ser"); 
+   output = new ObjectOutputStream(file); 
+output.writeObject(quarks); 
+  } 
+  finally{ 
+   if (output != null) { 
+    output.close(); 
+   } 
+  } 
+ } 
+} 
+7.2.10.13  Java Servlet 
+I dati dei moduli (form) html dovrebbero viaggiare preferibilmente attraverso richieste di tipo http P OST, 
+per cui il metodo doGet dovrebbe solo contenere la gestione dell’errore sollevato se viene invocato il  
+metodo GET. La ragione per preferire il metodo POST  sta nel fatto che in questo caso i parametri non 
+viaggiano sull’url e non vengono pertanto memorizza ti nei file di log o nella cache del browser. 
+Chiaramente POST è ugualmente manipolabile, ma con maggior difficoltà. 
+Per implementare in maniera flessibile la sicurezza  delle servlet si può agire attraverso la configura zione 
+web.xml, oppure è possibile utilizzarel’annotazione  @ServletSecurity con le annotazioni ausiliarie 
+@HttpMethodConstraint e @HttpConstraint. 
+ 
+Nell’esempio seguente la servlet viene resa sicura attraverso la configurazione del file web.xml: 
+<?xml version="1.0" encoding="UTF-8"?> 
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" [...] version="3.0"> 
+  <display-name>Esempio Servlet Sicurezza</display- name> 
+ 
+  <servlet> 
+    <servlet-name>servletSicurezza</servlet-name> 
+    <servlet-class>com.package.servlet.servletSicur ezza</servlet-class> 
+  </servlet> 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 76  a 156  
+ 
+ 
+  <servlet-mapping> 
+    <servlet-name>servletSicurezza</servlet-name> 
+    <url-pattern>/</url-pattern> 
+  </servlet-mapping> 
+ 
+  <security-constraint> 
+    <web-resource-collection> 
+      <web-resource-name>secure</web-resource-name>  
+      <url-pattern>/</url-pattern> 
+      <http-method>GET</http-method> 
+    </web-resource-collection> 
+    <auth-constraint> 
+      <role-name>dipendente</role-name> 
+    </auth-constraint> 
+  </security-constraint> 
+ 
+  <login-config> 
+    <auth-method>BASIC</auth-method> 
+    <realm-name>default</realm-name> 
+  </login-config> 
+ 
+</web-app> 
+Si impone l’autenticazione base, per il metodo GET.  Solo gli utenti appartenenti al ruolo “dipendente”  
+possono accedere. 
+La stessa cosa può essere ottenuta attraverso l’ann otazione @ServletSecurity. 
+Esempi:  
+Il seguente codice impone l’uso della crittografia in tutte le connessioni GET  
+@ServletSecurity(@HttpConstraint(transportGuarantee  =                 
+TransportGuarantee.CONFIDENTIAL)) 
+ 
+La dichiarazione seguente, invece, nega le connessi oni con il metodo GET. POST invece è ammesso: 
+@ServletSecurity( 
+    httpMethodConstraints = @HttpMethodConstraint(v alue = "GET", 
+                        emptyRoleSemantic = EmptyRo leSemantic.DENY) 
+) 
+Con la seguente affermazione si permette l’acceso s olo a utentti del ruolo “admin”: 
+@ServletSecurity(@HttpConstraint(rolesAllowed = "ad min")) 
+ 
+I valori presenti come parametri nella request devo no essere validati prima di poter essere utilizzati  
+dall’applicazione. URL, Cookies, Form Fields, Hidde n Fields, Headers, etc. ottenuti dai metodi 
+getParameter(), getCookie(), o getHeader() degli og getti HttpServletReques), prima di essere utilizzat i, 
+devono essere rigorosamente validate server-side. 
+Ciascun parametro in input deve specificare : 
+• il tipo di dato (string, integer, real, etc.); 
+• il set di caratteri consentito; 
+• la lunghezza minima e massima; 
+• la possibilità di accettare il valore NULL; 
+• la possibilità che il parametro sia richiesto o men o; 
+• la possibilità che siano  permessi i duplicati; 
+• intervallo numerico; 
+• i valori ammessi (numerazione) ; 
+• i pattern (espressioni regolari) ; 
+Per ciascun parametro occorre inoltre filtrare qual siasi carattere speciale e sostituirlo con il corri spondente 
+carattere HTML. Queste routine di controllo devono essere sempre eseguite all’interno dei metodi doGet () 
+e doPost() di tutte le Servlet che compongono la We b Application.  
+La tabella seguente mostra un’esemplificazione dei caratteri speciali che devono essere ricercati e le  
+corrispondenti sostituzioni HTML che devono essere effettuate.  
+ 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 77  a 156  
+ 
+Carattere speciale da 
+ricercare:  
+ Car attere HTML sostitutivo:  
+ 
+< &lt;  
+> &gt;  
+( &40;  
+) &41;  
+# &35;  
+& &38;  
+Un metodo spesso adottato per effettuare queste ope razioni di filtro e controllo consiste nell’adozion e di 
+un Web Application Firewall (WAF). Questi reverse p roxies ricevono il traffico dai client, e dopo oppo rtune 
+modifiche, lo passano alla parte di back-end, sul s erver. 
+ 
+Anche per le servlet esiste la possibilità di una S QL injection. Un Web Application Firewall è una dif esa 
+contro le injection in generale, ma se una servlet accede ad un database, è opportuno che  i relativi 
+statements SQL non siano mai costruiti utilizzando concatenazioni di stringhe soprattutto se tali 
+informazioni sono inserite dagli utenti. Invece del la concatenazione dinamica di stringhe, occorre uti lizzare 
+l’interfaccia PreparedStatement che, tramite il dri ver JDBC, effettua la canonicalizzazione dei parame tri in 
+modo automatico. Di seguito un esempio di utilizzo dell’interfaccia PreparedStatement. 
+Esempio: 
+. . . 
+String selectStatement = "SELECT * FROM User WHERE userId = ? "; 
+PreparedStatement prepStmt = con.prepareStatement(s electStatement); 
+prepStmt.setString(1, userId); 
+ResultSet rs = prepStmt.executeQuery(); 
+. . . 
+Per quanto riguarda il controllo delle sessioni, bi sogna evitare di creare token di sessione ad-hoc ed  
+utilizzare preferibilmente quelli messi a disposizi one del web container (o web application server) in  uso, 
+gestendo le sessioni utente tramite l’apposita inte rfaccia javax.servlet.http.HttpSession. In qualsias i caso i 
+token di sessione dovrebbero sempre rispettare le s eguenti regole: 
+• non devono mai essere inclusi nelle URL; 
+• devono essere costituiti da lunghe e complicate cat ene di numeri randomici che non possano 
+essere facilmente indovinati; 
+• dovrebbero cambiare di frequente durante una sessio ne; 
+• dovrebbero cambiare quando si passa ad utilizzare p rotocolli come SSL; 
+• non devono mai essere utilizzati token scelti da un  utente. 
+Se per memorizzare le sessioni si utilizzano i cook ies, si devono sempre rispettare le seguenti regole  
+minime: 
+• i cookies non devono essere mai utilizzati per memo rizzare dati personali o informazioni sensibili 
+(es: login, password, fede religiosa, malattie, etc .); 
+• prima di trasferire informazioni personali o sensib ili verso un utente è necessario richiedere sempre 
+la sua autenticazione e autorizzazione tramite inse rimento di login e password: non basarsi mai 
+sulla presenza o meno di un cookie precedentemente memorizzato; 
+• configurare i session cookies in modo tale che scad ano quando l’utente esce dal browser; 
+• assicurarsi che tutte le informazioni contenute nei  cookies siano accuratamente verificate e filtrate 
+prima di essere utilizzate e/o inserite nei documen ti HTML. 
+Altra norma che agevola la sicurezza consiste nel l imitare la dimensione delle risposte http. Ove poss ible 
+limitare sempre la lunghezza delle risposte HTTP al  minimo necessario, troncando quelle che hanno una 
+dimensione eccedente. 
+C’è anche una buona prassi che riguarda l’HTTP Refe rer. Ove possible, verificare sempre il campo Refer er 
+dell’header HTTP (es. metodo getHeader(java.lang.St ring name) dell’interfaccia 

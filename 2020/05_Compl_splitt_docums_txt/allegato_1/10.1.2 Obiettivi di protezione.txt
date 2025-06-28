@@ -1,0 +1,48 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 103  a 137  
+ 
+o Dovrebbe esistere una politica generale di apertura  nei riguardi di sviluppi, pratiche e 
+politiche in materia di dati personali. Dovrebbero essere prontamente disponibili mezzi 
+per stabilire l'esistenza e la natura dei dati pers onali e le principali finalità del loro 
+utilizzo, nonché l'identità e la residenza abituale  della persona che raccoglie i dati. 
+PARTECIPAZIONE INDIVIDUALE 
+o Un individuo può avere il diritto, tra gli altri, d i: 
+a)  ottenere dal titolare del trattamento la conferma d ell'esistenza o meno di dati che 
+lo riguardano;  
+b)  di avergli comunicato i dati che lo riguardano:  
+i)  entro un termine ragionevole; 
+ii)  ad un onere, se del caso, non eccessivo; 
+iii)  in modo ragionevole; 
+iv)  in una forma per lui facilmente comprensibile; 
+c)  essere motivati nel caso in cui una richiesta prese ntata ai sensi dei punti a) e b) 
+viene respinta e di essere in grado di contestare t ale rifiuto; 
+d)  contestare i dati che lo riguardano e, se la contes tazione è accolta, far cancellare, 
+rettificare, completare o modificare i dati che lo riguardano. 
+RESPONSABILIZZAZIONE 
+o Il titolare del trattamento dei dati deve essere re sponsabile del rispetto delle misure 
+che attuano i principi di cui sopra e di garantire che i responsabili del trattamento dei 
+dati allo stesso modo si conformino. 
+EQUIVALENZA DI REGIME 
+o Il titolare del trattamento dei dati non dovrebbe t rasferire dati personali al di fuori delle 
+proprie frontiere, a meno che la destinazione non a bbia un regime di privacy 
+equivalente a quello di origine. 
+ 
+10.1.2  Obiettivi di protezione 
+Gli obiettivi di protezione mirano a fornire delle proprietà astratte, ossia indipendenti dal contesto  per i 
+sistemi IT. Nella sicurezza ICT la triade della ris ervatezza, dell’integrità e della disponibilità è s tata 
+ampiamente accettata. Sebbene siano state proposte diverse estensioni e perfezionamenti, questi obiett ivi 
+di protezione core  sono rimasti stabili per decenni e sono serviti da  base per molte metodologie di sicurezza 
+ICT, (cfr. DR-3). A completamento di questi obietti vi di protezione della sicurezza, sono stati propos ti tre 
+obiettivi di protezione specifici per la privacy ch e approfonditi nella tabella che segue: 
+ 
+Obiettivo  Descrizione  
+Incollegabilità  Garantisce che i dati rilevanti per la privacy non p ossano essere collegati tra domini 
+con scopo e contesto comuni. Ciò significa che i pr ocessi devono essere gestiti in 
+modo tale che i dati rilevanti per la privacy non s iano collegabili a qualsiasi altro 
+insieme di dati rilevanti sulla privacy al di fuori  del dominio. 
+La trasparenza  Garantisce che tutte le elaborazioni dei dati rileva nti per la privacy, comprese le 
+impostazioni legali, tecniche e organizzative, poss ano essere comprese e ricostruite 
+in qualsiasi momento. Le informazioni devono essere  disponibili prima, durante e 

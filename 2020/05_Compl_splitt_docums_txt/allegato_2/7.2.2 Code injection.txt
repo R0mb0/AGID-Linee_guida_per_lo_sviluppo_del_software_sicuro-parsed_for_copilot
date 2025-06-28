@@ -1,0 +1,55 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 61  a 156  
+ 
+Come difendersi 
+Per prima cosa, occorre convalidare tutti gli input , indipendentemente dalla loro provenienza: la 
+convalidazione dovrebbe essere basata su una white list (una lista di valori ammessi), per cui verrebb ero 
+accettati solo i dati che corrispondono, e verrebbe ro rifiutati tutti gli altri. 
+Occorre controllare, oltre che i valori siano fra q uelli ammessi o che rientrino in un determinato int ervallo 
+di validità, se corrispondano alle attese anche il tipo, la dimensione e il formato dei dati in input.  
+Un altro accorgimento consiste nel codificare compl etamente tutti i dati dinamici (encoding) in modo d a 
+neutralizzare eventuali inserimenti malevoli. La li breria ESAPI fornisce funzioni di encryption per un a grande 
+varietò di tipologie di input atteso La codifica do vrebbe essere sensibile al contesto, in base al tip o di dato 
+che si vuole neutralizzare: se ci si aspetta che po ssa esserci codice HTML abusivo, occorre codificare  gli 
+eventuali tag HTML, se ci si potrebbe trovare di fr onte a uno script, allora bisogna codificare gli el ementi 
+sintattici di Javascript, ecc. 
+Definire in modo esplicito la codifica dei caratter i (charset) per l'intera pagina nell'intestazione d i risposta 
+HTTP Content-Type. 
+Impostare il flag HttpOnly a true, per evitare tent ativi di furto tramite la lettura tramite script de i cookie di 
+sessione. 
+Esempio:  
+Nel codice che segue, un valore preso dalla request  viene scritta direttametne sulla response: 
+String nomeUtente = request.getParameter("nome"); 
+response.getWriter().write("Nome Utente: " + nomeUt ente); 
+Il rimedio consiste nel filtrare il valore in input : 
+response.getWriter().write(ESAPI.encoder().encodeFo rHTML 
+( request.getParameter( "nome" ) ); 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/79.html,   
+CWE-79: Improper Neutralization of Input During Web  Page Generation ('Cross-site Scripting'). 
+7.2.2  Code injection 
+Come riconoscerla 
+Accade quando l’applicazione utilizza, concatenando le, stringhe in input non bonificate. L’attaccante 
+potrebbe introdurvi script che potrebbero essere es eguiti direttamente nell’application server. Ciò 
+potrebbe portare ad azioni indesiderate. È simile a l Cross Site Scripting, ma qui il codice introdotto  non 
+viene integrato nella pagina HTML, ma viene eseguit o a sé. 
+Come difendersi 
+Evitare di eseguire del codice dinamicamente, speci almente se costruito a partire da input proveniente  
+dall’esterno. 
+Occorre verificare sempre l’input, fissando control li rigidi che impediscano di immettere caratteri e tipi di 
+dati potenzialmente dannosi. L’optimum è designare una white list di valori ammessi e scartare tutto c iò 
+che non vi rientra. 
+ 
+Esempio : 
+Il seguente codice permette di eseguire un file pun tato dinamicamente in base al valore dell’input 
+proveniente dall’esterno, senza controlli. 
+ 
+public class CodeInjection { 
+ static void main(String[] args){ 
+  System.load(args[0]); 
+ } 
+} 
+ 
+Nel codice seguente, l’input viene controllato cont ro una white list di valori ammessi: 
+ 

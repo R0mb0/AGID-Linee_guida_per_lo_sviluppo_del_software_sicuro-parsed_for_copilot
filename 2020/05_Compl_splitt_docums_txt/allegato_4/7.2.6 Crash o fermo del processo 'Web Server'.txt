@@ -1,0 +1,51 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 113 a 132 
+ 
+• Implementare le protezioni contro la manomissione dei dati di log/audit poiché , dati 
+di log/audit manomessi possono produrre potenziali repudiation.  
+• Considerare di far sì che l’applicazione ricevente rich ieda al mittente di firmare i dati 
+trasmessi per garantire che il mittente di informazioni non possa negare l'invio delle 
+stesse . 
+Valutazione della priorità della  minaccia  (Ranking ) 
+DREAD  Descrizione  Score  
+Damage Potential  A fronte della elaborazione dati o dell’esecuzione di transazioni 
+disconosciute dalla sorgente, non si ha modo di attribuire il 
+malfunzionamento alla parte che ne è responsabile . 1 
+Reproducibility  L’attacco può essere condotto in qualunque momento . 3 
+Exploitability  Per la natura del servizio, l’attacco richiede un’utenza autenticata . 2 
+Affected Users  100% (qualunque utente potrebbe tentare la repudiation) . 3 
+Discoverability  Il rilevamento della minaccia è contestualizzato nell’ambito di 
+un’utenza aut enticata . 2 
+ 
+DREAD Score: 11/15 ( MEDIO ) 
+ 
+7.2.6 Crash o fermo del processo 'Web Server'  
+Categoria : Denial Of Service  
+Descrizione : Il 'Web Server' va in crash, si ferma o risponde lentamente, in ogni caso violando 
+una metrica di disponibilità.  
+Contromisure :  
+• Convalidare tutti i dati di input per assicurare che i valori non possano causare il crash 
+del 'Web Server'.  
+• Gestire tutti i casi di errore (sia le exceptions del linguaggio di programmazione sia i 
+casi di errore nelle condizioni logiche) in  modo graceful, ossia in modo che non 
+provochi crash o servizi degradati.  
+• I log devono  indicare se è in atto o meno una corretta validazione degli input (per 
+evitare crash) e come vengono trattati i casi eccezionali.  
+• Prevedere il r ipristino  del sistema : Si consideri l'utilizzo di un meccanismo di recupero 
+(ad esempio il watchdog) per riavviare il ‘Web Server’ in caso di crash . 
+• Utilizzare le tecniche di throttling e rate -limiting per evitare che il ‘Web Server’collassi . 
+ 
+Valutazione della priorità della  minaccia  (Ranking ) 
+• Si considera lo scenario del DDOS, oggi disponibile “As -a-Service” sul Dark Web.  
+DREAD  Descrizione  Score  
+Damage Potential  L’attaccante può impedire agli utenti del sistema di interagire con 
+esso (del tutto o in modo degradato) . 2 
+Reproducibility  L’attacco funziona solo in certe finestre temporali: un attacco 
+DDOS ha per sua natura una durata limitata nel tempo.  1 
+Exploitability  L’attacco richiede un figura senior capace di organizzare un 
+DDOS . 1 
+Affected Users  100% (la piattaforma è resa indisponibile o comunque ne viene 
+degradato il funzionamento) . 3 

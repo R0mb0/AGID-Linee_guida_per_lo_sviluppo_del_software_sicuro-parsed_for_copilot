@@ -1,0 +1,57 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 126 a 132 
+ 
+Risorse  Costi per la valutazione da parte degli esperti e onorari per la certificazione 
+da parte degli organismi di certificazione.  I costi della valutazione sono 
+negoziati tra il richiedente e l' esperto.  I costi per la ce rtificazione sono 
+fissati dall' organismo di certificazione.  
+Certificazioni 
+rilasciate  Dal 2008 a settembre 2017:  68 Certificazioni (incluse le ri -certificazioni)  
+9.3 A.3 – CNIL Labels  
+Ambito  Descrizione  
+Campo di 
+applicazione e 
+oggetto  La certificazione può riguardare qualsiasi persona fisica o giuridica la cui 
+procedura o prodotto corrisponda ad una delle norme pubblicate dalla 
+CNIL nella Gazzetta ufficiale.  
+Requisiti e base 
+normativa  I requisiti sono attualmente  definiti in 4 standard:  
+1. Procedure di audit relative al trattamento dei dati personali:  Il certificato 
+di audit sulla privacy rilasciato dal CNIL  non si applica direttamente al 
+trattamento effettuato . Questo si applica alla procedura di audit utilizzata 
+per verificare che tali processi siano conformi alla legge francese sulla 
+protezione dei dati.  La procedura descrive le varie fasi e i processi in base 
+ai quali tale audit deve essere preparato, attuato e completato.  Questo 
+Include a nche i requi siti riguardanti l' organizzazione che esegue l' audit e 
+gli auditor stessi.  Può essere rilasciato per l' elaborazione delle procedure 
+di audit svolte dai fornitori di servizi (società di consulenza, avvocati, ecc.) 
+o da organizzazioni (in questo caso si parl a di internal audit).  Il certificato 
+di riservatezza del CNIL viene consegnato agli audit legali e tecnici.  
+2. Corsi di formazione sulla protezione dei dati:  Il certificato CNIL può essere 
+consegnato per i cor si di formazione interna ad un' organizzazione, sia  per 
+i corsi di formazione in aula che per e -learning, purché rispondano ai 
+requisiti dello standard.  
+3. Cassette di sicurezza digitali:  differiscono da uno spazio di memorizzazione 
+in quanto i dati ivi memorizzati (documenti e alcuni metadati) sono 
+accessibi li solo al detentore della cassetta di sicurezza e a qualsiasi persona 
+che abbia ricevuto mandato.  I fornitori di servizi che forniscono una 
+cassetta di sicurezza digitale (operatori) o ne propongono una agli utenti 
+(fornitori) possono richiedere il sigill o di riservatezza.  La richiesta può 
+quindi essere presentata congiuntamente dall' operatore e dal suo cliente 
+(fornitore).  
+4. Le procedure di governance dei dati personali sono tutte le misure, le 
+regole e le best practices  per la ges tione dei dati personali d i 
+un'organizzazione.  CNIL verifica la conformità della ri chiesta di 
+certificazione dell' Organizzazione a 25 requisiti, tutti cumulativi, nella 
+norma relativa a tre tem atiche : organizzazione interna della gestione dei 
+dati personali; procedura di verifica d ella conformità del trattamento con 
+la Legge; gestione dei reclami e degli incidenti (CNIL 2017).  
+5. Il CNIL riconosce che un prodotto o una procedura è conforme alle 
+disposizioni della legge francese sulla protezione dei dati personali.  Essa 
+non intende esentare i suoi titolari dalle formalità amministrative (CNIL 
+2017)  
+Processo di 
+certificazione  La procedura consiste nelle seguenti fasi:  

@@ -1,0 +1,54 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 38  a 141  
+ 
+apparecchiature in manutenzione, tenendo anche cont o se tale manutenzione  è 
+fatta da personale in sito o all’esterno dell’organ izzazione;                              
+- ove necessario, si dovrebbero eliminare le informaz ioni critiche 
+dall’apparecchiatura oppure il personale di manuten zione dovrebbe essere 
+sufficientemente selezionato; 
+Patching 
+Controllo di vulnerabilità tecniche  
+Minaccia  - Abuso di risorse.  
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Compromissione delle comunicazioni. 
+- Crittografia debole o non validata. 
+- Divulgazione di informazioni riservate. 
+- Negazione dei servizi. 
+- Cancellazione o furto di informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Attacchi all’integrità delle informazioni 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Ottenere tempestive informazioni sulle vulnerabilit à tecniche dei sistemi di 
+informazione in uso, valutare l’esposizione dell’az ienda a tali vulnerabilità e prendere 
+appropriate misure per indicare il rischio associat o.  
+A tale scopo è necessario mantenere un inventario a ggiornato e completo dei beni 
+quali il rivenditore del software, il numero della versione, i software installati e i 
+sistemi su cui sono installati, e i referenti inter ni all’azienda responsabili del software.  
+In particolare è necessario: 
+- definire i ruoli e le responsabilità per la gestion e delle vulnerabilità tecniche;  
+- definire i mezzi di informazione che saranno usati per identificare le vulnerabilità 
+tecniche;  
+- identificare i rischi associati e le azioni da intr aprendere una volta che una 
+potenziale vulnerabilità tecnica è stata identifica ta;  
+- gestire le patch disponibili valutando anche i risc hi associati alla loro installazione;  
+- controllare il processo di gestione delle vulnerabi lità tecniche e valutare la sua 
+efficacia ed efficienza. 
+ 
+Software Patching  
+Minaccia  - Abuso di risorse.  
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Compromissione delle comunicazioni. 
+- Crittografia debole o non validata. 
+- Divulgazione di informazioni riservate. 
+- Negazione dei servizi. 
+- Cancellazione o furto di informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Attacchi all’integrità delle informazioni 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Verificare che sia applicata una procedura di gesti one delle patch composto almeno 

@@ -1,0 +1,12 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 8 a 156  
+ 
+2 RIFERIMENTI 
+2.1  Documenti di Riferimento 
+Rif.   Codice  Titolo  
+DR -1  CWE/SANS Top 25 Most Dangerous Software Errors (cwe.mitre.org/top25/)  
+DR -2  OWASP Top 10 (www.owasp.org)  
+DR -3  The CERT Secure Coding Standard ( www.cert.org ) 
+Tabella 1 - Documenti di Riferimento 
+ 

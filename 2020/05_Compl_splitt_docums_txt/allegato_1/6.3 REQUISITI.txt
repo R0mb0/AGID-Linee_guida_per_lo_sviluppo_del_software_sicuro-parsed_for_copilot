@@ -1,0 +1,48 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 50  a 137  
+ 
+ 
+Ad esempio, per valutare l'impatto in termini di ri servatezza, integrità e disponibilità delle informa zioni, ci si 
+sofferma sugli aspetti economico/finanziario, opera tivo, reputazionale e legale (compliance). 
+Le fasi che costituiscono la gestione del rischio e ffettuato con Cyber Risk Management di AgID sono le  
+seguenti: 
+1)  Analisi del contesto. Vengono identificati i serviz i erogati e i servizi trasversali utilizzati in amb ito 
+pubblica amministrazione.  Di ogni servizio viene d escritto un profilo di criticità. 
+2)  Valutazione di ciascun servizio erogato e da ciascu n servizio trasversale in termini d’impatto su 
+riservatezza, integrità e disponibilità delle infor mazioni trattate. 
+3)  Calcolo del rischio attuale, sulla base dei valori di probabilità di accadimento e d’impatto, per ogni  
+minaccia identificata. La fase di Risk Assessment p revede anche l’identificazione delle contromisure 
+da implementare per un’efficace mitigazione del ris chio. 
+4)  Applicazione delle contromisure previste dal piano di trattamento del rischio, volte a mitigare, 
+accettare o trasferire i rischi individuati. 
+5)  Analisi del rischio residuo, cioè la valutazione de l rischio che permane, nonostante l’applicazione 
+del piano di trattamento del rischio. 
+6)  Fase di monitoraggio dell’intero processo, con even tuale adeguamento in seguito a modifiche del 
+contesto o in presenza di nuove minacce alla sicure zza delle informazioni. 
+ 
+Il tool AGID di Risk Management è gratuito ed a com pleta disposizione di tutte le Pubbliche 
+Amministrazioni: www.sicurezzait.gov.it  
+ 
+6.3  Requisiti 
+La fase di analisi e specifica dei requisiti è fond amentale nel ciclo di vita dello sviluppo software.   
+ 
+Di seguito si riportano i linguaggi e gli strumenti  utili alla fase di definizione dei requisiti di si curezza del 
+software. 
+6.3.1  Linguaggi per la specifica dei requisiti 
+Un linguaggio di specifica in ambito sicurezza può essere considerato: 
+• un linguaggio di specifica software utilizzato per indicare gli attacchi (AsmL e UML state charts),  
+• l’estensione di un linguaggio di specifica software  utilizzato per rappresentare gli attacchi (Misuse 
+Cases , Abuse Cases, AsmLSec e UMLintr) e i requisi ti di sicurezza (UMLsec, SecureUML, Secure 
+Tropos e Misuse Cases),  
+• un linguaggio per la specifica degli attacchi ( attack specification language), per esempio  STATL e 
+Snort Rules. 
+ 
+UMLsec 17  è un'estensione di UML per lo sviluppo di sistemi s icuri e usa stereotype, tag e constraint per 
+specificare i requisiti di sicurezza. Gli stereotyp e servono come etichette per gli elementi del model lo UML 
+allo scopo di introdurre informazioni al modello e specificare i vincoli che devono essere soddisfatti  da 
+questo. I tag sono associati con gli stereotype e s ono utilizzati per specificare in modo esplicito un a 
+                                                           
+17  https://en.wikipedia.org/wiki/UMLsec  

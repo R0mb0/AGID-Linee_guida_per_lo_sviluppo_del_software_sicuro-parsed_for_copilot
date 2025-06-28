@@ -1,0 +1,49 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 147  a 156  
+ 
+ 
+  $.ajax("api/values", { 
+    type: "post", 
+    contentType: "application/json", 
+    data: { }, // JSON data goes here 
+    dataType: "json", 
+    headers: { 
+      'RequestVerificationToken': '@TokenHeaderValu e()' 
+    } 
+  }); 
+</script> 
+ 
+7.12  GO 
+Go è un linguaggio di programmazione open source, s viluppato da Google e pubblicato per la prima volta  
+nel 2009. È nato dall’esigenza di avere un linguagg io facile da imparare, specializzato nella programm azione 
+concorrente e che avesse un compilatore in grado di  produrre eseguibili efficienti e veloci. La sintas si è 
+molto simile al C. 
+7.12.1  Client Dom Stored XSS 
+Come riconoscerla 
+Cross-site scripting (XSS) è una vulnerabilità che affligge siti web dinamici che impiegano un insuffi ciente 
+controllo dell'input, in qualsiasi modo pervenuto. Un attacco di XSS permette a un malintenzionato di 
+inserire o eseguire codice lato client al fine di a ttuare un insieme variegato di operazioni quali ad esempio: 
+raccolta, manipolazione e reindirizzamento di infor mazioni riservate, visualizzazione e modifica di da ti 
+presenti sui server, alterazione del comportamento dinamico delle pagine web ecc.  
+GO, proprio come qualsiasi altro linguaggio di prog rammazione multiuso, è vulnerabile a XSS nonostante  la 
+documentazione indirizzi chiaramente sull'utilizzo di html/template package.  
+In riferimento al seguente frammento di codice: 
+ 
+package main 
+import "net/http"  
+import "io" 
+func handler (w http.ResponseWriter, r 
+*http.Request) {  io.WriteString(w, 
+r.URL.Query().Get( "param1" )) 
+} 
+func main () {  
+http.HandleFunc( "/" , handler)  
+http.ListenAndServe( ":8080" , nil )  
+} 
+ 
+Questo codice crea e avvia un server HTTP in ascolt o sulla porta 8080 (main()) gestendo le richieste s ulla 
+root del server (/).  
+La funzione handler(), che gestisce le richieste, p revede un parametro query stringa Param1, il cui va lore 
+viene quindi scritto nel flusso di risposta (w):  
+Se param1=test, il Content-Type sarà inviato come t ext/plain:  

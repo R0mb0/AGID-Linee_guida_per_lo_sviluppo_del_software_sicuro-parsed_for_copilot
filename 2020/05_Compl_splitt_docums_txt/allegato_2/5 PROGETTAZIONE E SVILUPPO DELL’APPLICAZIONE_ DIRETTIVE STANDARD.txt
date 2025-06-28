@@ -1,0 +1,49 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 13  a 156  
+ 
+5 PROGETTAZIONE E SVILUPPO DELL’APPLICAZIONE: DIRETTI VE 
+STANDARD  
+5.1  Progettazione dell’applicazione  
+L'architettura dell’applicazione deve essere proget tata e sviluppata secondo i paradigmi standard 
+dell’industria del software, quali: Architettura mo nolitica (mainframe), Client server, Service Orient ed 
+Architecture (SOA), ecc. 
+Nel corso della fase di progettazione è necessario garantire un adeguato livello di sicurezza applicat iva e 
+infrastrutturale attraverso l’analisi e la modellaz ione delle minacce relative agli applicativi coinvo lti, delle 
+interfacce e degli agenti che potrebbero minacciare  il sistema. Per l’analisi della sicurezza applicat iva di 
+un’architettura di sistema si adotta un approccio d ifferente a seconda che si tratti di progettazione di 
+applicazioni ex-novo (approccio Secure by Design) p iuttosto che di reingegnerizzazione di applicazioni  
+esistenti (approccio Security Control). Nel dettagl io: 
+• PROGETTAZIONE SICURA BY DESIGN  - Durante le fasi di analisi della sicurezza appli cativa di una 
+architettura di sistema (da definire o in fase di r ivisitazione) è necessaria l’attuazione di pratiche  di 
+progettazione sicura attraverso l’individuazione di  requisiti di sicurezza e contromisure secondo i 
+Security by Design Principles. Le pratiche di proge ttazione sicura realizzano la sicurezza delle 
+informazioni attraverso un approccio di "Defense in  Depth” del layer applicativo. La “difesa in 
+profondità” ha come scopo limitare al minimo i dann i in caso di attacco riuscito. In pratica, 
+nell’ipotesi che un attaccante riesca a oltrepassar e il primo livello di difesa (ad esempio aggirando il 
+controllo di autenticazione), ulteriori misure più restrittive devono intervenire per ostacolarne 
+l’avanzata (ad esempio, restringendo al minimo i pr ivilegi d’accesso alle risorse o applicando la 
+compartimentazione dell’applicazione al fine di ost acolare bloccare la propagazione dell’attacco 
+all’intero sistema). 
+• SECURITY CONTROL  (su applicazione esistente) – È necessario: 1) Ide ntificare, quantificare e 
+risolvere i rischi di sicurezza associati ad un’int erfaccia, un'applicazione e/o un sistema esistenti.  2) 
+Validare dal punto di vista della sicurezza applica tiva gli sviluppi realizzati da terze parti (sicure zza 
+della supply chain). 3) Tutelare il proprio patrimo nio informativo e i dati. 
+ 
+Le tecniche di modellazione delle minacce e d’ident ificazione delle relative contromisure, finalizzate  a 
+indirizzare i requisiti di sicurezza applicativa di  un’architettura di sistema, insieme alle pratiche di 
+progettazione sicura, sono trattate in dettaglio ne ll’ Allegato 4 -  Linee Guida per la modellazione delle 
+minacce ed individuazione delle azioni di mitigazio ne conformi ai principi del Secure/Privacy by Desig n. 
+5.2  Sviluppo dell’applicazione – Criteri Generali 
+Nel corso della fase di sviluppo di un’applicazione , si raccomanda l’adozione dei criteri generali rip ortati nei 
+paragrafi successivi. 
+5.2.1  Performance 
+Le soluzioni di programmazione impiegate devono rid urre al minimo l'impatto sulle risorse di sistema.  
+È necessario: 
+• non ottimizzare mai manualmente ciò che può essere ottimizzato dai compilatori; 
+• per i linguaggi che accedono direttamente alla memo ria del sistema, evitare di avere puntatori 
+multipli ad una determinata risorsa; 
+• utilizzare i data-types appropriati (es: non utiliz zare long quando int è sufficiente);  
+• utilizzare switch/case al posto di strutture nidifi cate di if; 
+• porre le risorse più frequentemente utilizzate le u ne vicine alle altre; 
+• allocare la memoria il più tardi possibile (costruz ione degli oggetti); 

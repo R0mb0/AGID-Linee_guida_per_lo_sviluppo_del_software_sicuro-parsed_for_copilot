@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 80  a 137  
+ 
+• Assess Vulnerability 
+• Build Assurance Argument 
+• Coordinate Security 
+• Monitor Security Posture 
+• Provide Security Input 
+• Specify Security Needs 
+• Verify and Validate Security 
+ 
+Risultati più significativi: 
+Maturity Model  Capability Maturity Model - Model Description Document - 
+http://all.net/books/standards/ssecmmv3final.pdf   
+Standard  ISO/IEC 21827 - http://www.iso.org/iso/catalogue_detail.htm?csnumbe r=44716   
+ 
+8.1.3  Building Security In Maturity Model (BSIMM) 
+BSIMM non è una guida completa ‘how to’ di sicurezz a software, ma piuttosto una raccolta di idee e att ività 
+che sono oggi in uso all'interno delle aziende di s viluppo software. Il modello Building Security In M aturity 
+(BSIMM) è uno studio delle iniziative di sicurezza del software in uso all'interno delle aziende che s i 
+occupano di sviluppo software. Mettendo insieme le pratiche di molte organizzazioni diverse, è possibi le 
+descrivere le misure comuni, quelle condivise da mo lti, e le peculiarità che rendono unico ogni singol o 
+sistema. Il BSIMM è stato creato attraverso un proc esso di comprensione e analisi dei dati del mondo r eale 
+provenienti dalle esperienze di numerose aziende. Q uelle che partecipano allo studio BSIMM provengono 
+da differenti settori verticali, inclusi i servizi finanziari, il software indipendente, la tecnologia , la sanità, 
+l’elettronica di consumo, ecc. Ogni mese al campion e si aggiungono nuove aziende. Nove imprese 
+nell’ambito sicurezza software, che sono stati a se guire validati e regolamentati con i dati provenien ti da 21 
+aziende aggiuntive. Il BSIMM mette quindi insieme l e esperienze di trenta imprese di sviluppo software  - la 
+maggior parte di essi si trovano negli Stati Uniti - che hanno implementato iniziative di sicurezza de l 
+software. 
+ 
+URL  https://www.bsimm.com/  
+Country of HQ location  US  
+Geographic Scope  Inter national (mainly the US)  
+Type  Industry  
+ 
+BSIMM ha sviluppato il https://www.bsimm.com/  (SSF), che fornisce un vocabolario comune per desc rivere 
+gli elementi più importanti di un quadro di sicurez za software all'interno di una società. 
+Sono stati identificati quattro domini e pratiche c omuni alla maggior parte delle esperienze. Il BSIMM  
+descrive 109 attività che ogni organizzazione può m ettere in pratica. Le attività sono descritte in te rmini di 
+SSF, che identifica dodici pratiche raggruppati in 4 domini, 3 pratiche di dominio, come mostrato nell a 
+figura presa dal documento BSIMM2: di funzionalità,  all’interno dei quali sono previste delle attività  da 
+svolgere. 

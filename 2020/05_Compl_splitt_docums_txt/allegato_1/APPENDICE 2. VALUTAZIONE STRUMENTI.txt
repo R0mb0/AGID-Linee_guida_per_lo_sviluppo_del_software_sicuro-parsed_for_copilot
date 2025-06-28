@@ -1,0 +1,200 @@
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 128  a 137  
+ 
+  APPENDICE 2.  VALUTAZIONE STRUMENTI 
+a.  CHECKMARX 
+PRODOTTO  CATEGORIA  FASE SSE  SITO WEB   
+CxSAST  SAST  Implementation  https://www.checkmarx.co 
+m/  
+DESCRIZIONE  
+È un tool commerciale , per l’analisi statica del codice, posizionato da Gartner nel quadrante Leaders 
+nell’ambito dell’Application Security Testing (AST) . Supporta numerosi linguaggi (vedi oltre). Può ess ere 
+integrato a vari livelli nell’ambito della fase di implementation: IDE, build server, bug tracking too ls. 
+Tainted analysis, Pattern matching, "scan r ules" (customizable)  
+ANALISI DEL VALUTATORE  SCORE  
+Livello di integrazione con i seguenti prodotti   
+a.        IDEs  Esistono plugin per i seguenti IDE:  
+Eclipse,  
+Visual Studio e  
+IntelliJ. 
+I plugin consentono la scansione del codice, l'anal isi e la navigazione dei 
+risultati in modo integrato con l'IDE. 7 
+b.       source repository,  TFS,  
+SVN,  
+GIT,  
+Perforce. 7 
+c.        build server,  Jenkins,  
+Bamboo, 
+TeamCity, 
+TFS, 
+Anthill Pro, 
+Maven. 7 
+d.       bug tracking tools  
+ Jira.  5 
+I linguaggi di 
+programmazione 
+supportati C#, JavaScript and commonly used frameworks, Node.J S and commonly 
+used frameworks, VB.NET, ASP, VB6, PHP, C/C++, Apex  and VisualForce, 
+Ruby, VBScript, Perl, HTML5, Python, Groovy, Scala,  PL/SQL, JSP, 
+Typescript, Go, Windows Mobile .NET/.NET Core 8 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 129  a 137  
+ 
+  I framework applicativi 
+supportati (es. Spring, 
+Hibernate, …) [*] Requires minor adjustments  
+ 
+Platform/Enviroment: Java     
+Struts, Spring MVC, iBatis*, GWT, Hibernate, OWASP ESAPI, JSTL FMT 
+Taglib, ATG DSP Taglib, Java Server Faces (JSF), Ja vaScript 
+ 
+Platform/Enviroment: .NET  
+Enterprise Libraries, Telerik, ComponentArt, Infrag istics, FarPoint, iBatis*, 
+Hibernate.Net [*], Entity framework up to 4.3.1 
+ 
+Platform/Enviroment: PHP  
+Zend, Kohana, CakePHP, Symfony, Smarty, OWASP ESAPI  
+ 
+Platform/Enviroment: C/C++  
+MISRA 
+ 
+Platform/Enviroment: Ruby  
+Ruby on Rails 
+ 
+Platform/Enviroment: JavaScript 
+JQuery, Node.js, Ajax, Knockout, AngularJS, Express JS, Jade, Backbone, 
+Handlebars, Hapi.JS 
+ 
+Platform/Enviroment: iOS  
+iOS mobile applications 
+ 
+Platform/Enviroment: Python 
+Django 
+ 
+Platform/Enviroment: Groovy 
+Grails 
+ 7 
+Le tipologie di 
+applicazione 
+supportate (Web, 
+Mobile, Client-
+Server…) Web application, Mobile , Client -Server . 7 
+Le vulnerabilità 
+riconosciute (Sql 
+injection, Cross-site 
+scripting, Code 
+injection…) SQL Injection, Cross -site scripting, Code injection, Buffer Overflow, 
+Parameter tampering, Cross-site request forgery, XXE injection, Unsecure 
+deserializarion,  HTTP splitting, Log forgery, DoS, Session Fixation,  Session 
+poisoning, path traversal, Unhandled exceptions, Unreleased resources, 
+unvalidated input, URL redirection attack, Dangerou s Files Upload, 
+Hardcoded password. 7 
+Gli Standard supportati 
+(OWASP Top 10, SANS 
+25, …) OSWAP Top 10, OSWAP Mobile Top 10, SANS 25, HIPAA, FISMA, BSIMM, 
+PCI DSS, Mitre CWE, MISRA. 7 
+L’integrazione di 
+“Custom rules” È possibile definire delle regole personalizzate.  4 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 130  a 137  
+ 
+  L’incidenza dei “Falsi 
+positivi” In primo luogo, è possibile “spegnere” falsi positi vi estendendo la lista dei 
+“sanitizer” fornita out of the box da checkmarx (co n pochi colpi di click). 
+In secondo luogo, è possibile “spegnere” falsi posi tivi dichi arandoli come 
+“Not Exploitable”. 
+In terzo luogo, è stato possibile apprezzare un app roccio messo in atto da 
+Checkmarx atto a limitare il numero di segnalazioni. La prova eseguita ha 
+evidenziato che: in presenza di codice evidentement e prono a una SQL 
+INJECTION, ma in assenza di un vettore di attacco, la segnalazione della 
+vulnerabilità viene soppressa. Viceversa la segnala zione viene prodotta se 
+vie ne individuato anche un vettore di attacco. Il side  effect è che in una 
+scansione parziale che considera il codice vulnerab ile ma esclude in tutto o 
+in parte il vettore d’attacco, non vengono prodotte  segnalazioni. 
+ 4 
+La capacità di analisi 
+“raw source code” vs 
+“need to compile” Lo strumento è in grado di funzionare in modalità “ raw source code”. È 
+quindi possibile sottoporre anche porzioni di codic e "out-of- context". 
+Tuttavia, in questo caso potrebbero non essere segn alate certe 
+vulnerablità che invece si manifestano in una scans ione "in-context". È una 
+scelta by design per limitare falsi positivi. Raw 
+Source  
+La capacità di 
+analizzare le 
+dipendenze da librerie 
+esterne al fine di 
+controllare se sono 
+presenti vulnerabilità 
+note Questa funzionalità non è compresa fra quelle stand ard del prodotto. 
+Esiste un add- on di CheckMarx (acquistabile a parte) che analizza  le 
+dipendenze da librerie esterne al fine di controlla re se sono presenti 
+vulnerabilità note, interrogando una base dati este rna. 1 
+La capacità di correlare 
+lo scan statico con 
+l’esito di uno scan 
+dinamico (correlazione 
+White Box con Black 
+Box) CxSAST non possiede questa funzionalità.  1 
+LE PERFORMANCE  
+a.        Full scan vs 
+Incremental scan  Sono supportati sia Full sia Incremental scanning . 7 
+b.       Client -side scan 
+vs Server-side scan Server -side scanning: i sorgenti vengono compressi e invia ti al server dove 
+vengono decompressi e riconosciuti, dopodichè avvie ne effettivamente lo 
+scan. L’elaborazione è sempre centrale . Se più scansioni sono ordinate 
+contemporaneamente, i lavori vengono accodati. 7 
+Eventuali funzionalità 
+di prioritizzazione delle 
+remediation Le vulnerabilità individuate vengono ordinate secon do 4 livelli: High, 
+Medium, Low, Information che indirizzano la priorit à della remediation. 7 
+La facilità d’uso  Lo strumento è fortemente orientato alla facilità.  Alla prova dei fatti, lo 
+strumento è davvero molto user friendly e intuitivo . 
+ 7 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 131  a 137  
+ 
+  I costi di licenza  Esistono varie forme di licenza. In generale i criteri per stabilir e il costo 
+della licenza sono: il numero di progetti, le linee di codice e il nume ro di 
+sviluppatori. Il prezzo è stabilito attraverso una trattativa commerciale. Medio 
+/Alto 
+Il supporto alla 
+reportistica E' supportata una reportistica di tipo custom (non sono espressamente 
+disponibili report pre- definiti, ad esempio specificamente orientati a CWE  
+SANS Top 25, OWASP Top 10, PCI Data Security Standa rd, ecc). I formati 
+supportati sono: PDF, CSV, RTF, XML. 4 
+La classificazione degli 
+errori riportati Sono riferiti agli standard supportati (es. "PCI DSS (3.1) - 6.5.1 - Injection 
+flaws - particularly SQL injection", OWASP Top 10 2 013 - A1-Injection). 7 
+CONSIDERAZIONI GENERALI  
+Considerazioni generali:  
+• L’installazione risulta agevole. 
+• La dashboard di gestione è semplice e intuitiva. 
+• Apprezzabile il riconoscimento automatico del lingu aggio: è sufficiente eseguire lo zip dei sorgenti 
+e farne l’upload verso il server. 
+• Agevole utilizzare il plug-in integrato con un IDE (tasto destro su un punt o del progetto per 
+eseguire la scansione) 
+• Supporto alla remediation in tutti gli ambienti: Cx Audit, plug-in, browser  
+• Inserimento di regole custom agevole (esaminato il caso "sanitizer") 
+• Reportistica completa e flessibile in diversi forma ti. 
+• È possibile ef fettuare una scansione piena (iniziale) e una scans ione incrementale (successiva alla 
+prima). 
+• Il software caricato per la scansione non deve esse re compilato  
+• Non è prevista la funzionalità di controllo delle v ulnerabilità delle librerie utilizzate dal pro getto, a 
+meno di integrare un componente licenziato a parte.  
+• Integrazione con Jenkins, come step aggiuntivo dell a fase di build (Continuous Integration), agevole 
+attraverso plug-in  
+ 
+Punti di forza: 
+• Vettore di attacco  
+• Funzionalità “Full Graph” che raccord a più vettori di attacco mostrando eventuali punti di 
+intersezione (candidati ideali per il fix)   
+APPROCCIO PER LA VALUTAZIONE  

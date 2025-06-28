@@ -1,0 +1,100 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 95  a 141  
+ 
+5.4.3  Utenze 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1]. 
+5.4.4  Autenticazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.2]. 
+5.4.5  Autorizzazione 
+Valgono i principi generali già introdotti nel para grafo [rif.5.1.3]. 
+5.4.6  Crittografia 
+Ai principi generali introdotti nel paragrafo [rif.  5.1.1.4], si aggiungono le indicazioni, di cui di seguito: 
+ 
+Crittografia  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  Per l'accesso ai dati critici o sensibili definire requisiti di sicurezza più stringenti 
+applicando tecniche di cifratura o altri meccanismi  di sicurezza per rafforzare la 
+protezione dagli accessi non autorizzati. 
+ 
+5.4.7  Documentazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1.5]. 
+ 
+5.4.8  Logging 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1.6]. 
+ 
+5.4.9  Procedure 
+Ai principi generali introdotti nel paragrafo [rif.  5.1.7], si aggiungono le indicazioni, di cui di se guito: 
+ 
+Politica per la gestione delle postazioni di lavoro  
+Minaccia  - Abuso di privilegi da parte dell'utente.  
+- Abuso di risorse. 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Danneggiamento, perdita o furto di un asset fisico.   
+- Uso non autorizzato di privilegi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.) 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+Contromisure  Verificare l'esistenza e l'applicazione di una form ale politica di sicurezza che specifichi 
+dei principi e delle linee guida per il corretto ut ilizzo delle postazioni di lavoro 
+(workstation, desktop, notebook) da parte degli ute nti, al fine di garantire la 
+salvaguardia dell’informazione aziendale. Tale poli tica di sicurezza deve, nel rispetto 
+della politica di sicurezza generale dell'azienda, specificare: 
+- i requisiti di sicurezza fisica da soddisfare duran te l'utilizzo dei dispositivi (ad 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 96  a 141  
+ 
+esempio, il corretto posizionamento delle PdL);  
+- i requisiti relativi alla corretta gestione della p assword, al backup, alla protezione 
+contro i virus, alla configurazione del sistema ope rativo e delle applicazioni; 
+- gli utilizzi non consentiti, estranei agli incarich i lavorativi, della propria postazione 
+di lavoro; 
+- i requisiti relativi al riutilizzo o alla rottamazi one della PdL; 
+- i requisiti relativi alla restituzione della PdL in  caso di cessazione del rapporto di 
+lavoro e/o cambio mansione. 
+Eseguire delle attività di controllo e degli audit periodici sull'utilizzo della PdL da parte 
+degli utenti, anche tramite tecnologie di controllo  compatibili con quanto disposto 
+dalle norme di legge. 
+ 
+Misure tecniche di garanzia di effettiva cancellazi one dei dati o di loro non intellegibilità in caso di 
+reimpiego o riciclo dell'apparecchiatura elettronic a 
+Minaccia  Accesso non autorizzato alle informazioni / ai dati personali contenuti in 
+apparecchiature elettroniche dismesse. 
+Contromisure  Adottare misure tecniche che garantisc ano la non intellegibilità dei dati o l'effettiva 
+cancellazione. Le prime possono consistere, tra l'a ltro, nella cifratura di singoli file o 
+gruppi di file, di volta in volta protetti con paro le-chiave riservate, note al solo utente 
+proprietario dei dati, che può con queste procedere  alla successiva decifratura.  
+La cancellazione sicura delle informazioni, è otten ibile mediante misure tecniche 
+consistenti in:  
+- utilizzo di programmi informatici (quali wiping pro gram o file shredder); 
+- demagnetizzazione (degaussing) dei dispositivi di m emoria basati su supporti 
+magnetici o magneto-ottici (dischi rigidi, floppy-d isk, nastri magnetici); 
+- distruzione fisica dei dispositivi di memoria disme ssi. 
+ 
+Politica di protezione da accesso fisico non autorizzato  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Danneggiamento, perdita o furto di un asset fisico.  
+- Violazione della sicurezza (riservatezza, integrità , disponibilità) delle informazioni. 
+Contromisure  Deve essere adottata una politica di sospensione della sessione per inattività  su PC e 
+notebook che preveda almeno che i terminali:  
+- non debbano essere lasciati incustoditi durante e f uori orario di lavoro;  
+- siano protetti da accessi non autorizzati con la so spensione della sessione 
+mediante un salva-schermo che richieda l’autenticaz ione per continuare.  
+Le informazioni critiche, riportate su carta o su s upporti informatici e i dispositivi critici 
+quando non utilizzati, dovrebbero essere chiusi a c hiave (in cassaforte o armadio o altri 
+mobili con caratteristiche di sicurezza) soprattutt o quando l’ufficio è vuoto. 
+Devono essere adottate regole e accorgimenti per ev itare il danneggiamento/ 
+distruzione delle apparecchiature. 
+ 
+Sensibilizzazione del personale sui rischi di divul gazione di informazioni riservate  
+Minaccia  - Divulga zione di informazioni riservate ( codici di accesso ).  
+- Furto di credenziali di autenticazione. 
+Contromisure  Effettuare opere di sensibilizzazione nei confronti  del personale perché non divulghi a 
+terze parti informazioni riservate o critiche quali , ad esempio, dati personali e 
+password. 
+ 

@@ -1,0 +1,114 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 85  a 156  
+ 
+• Se è assolutamente necessario includere dati estern i nell'esecuzione dinamica, è consentito passare 
+i dati come parametri al codice, ma non eseguire di rettamente i dati utente. 
+• Se è necessario passare dati non attendibili all'es ecuzione dinamica, applicare una convalida dei 
+dati molto rigorosa. Come al solito, occorre conval idare tutti gli input, indipendentemente dalla 
+fonte. I parametri devono essere limitati a un set di caratteri consentito e l'input non convalidato 
+deve essere eliminato. Oltre ai caratteri, occorre controllare il tipo di dati, la loro dimensione, 
+l’intervallo di validità, il formato e l’eventuale corrispondenza all’interno dei valori previsti (whi te 
+list). Sconsigliata invece la black list, ossia un elenco di valori non consentiti: l’elenco sarebbe 
+sempre troppo limitato, rispetto ai casi che potreb bero verificarsi. 
+• L’account con il quale l’applicazione viene avviata  deve avere molte restrizioni e non deve godere di 
+privilegi non necessari. 
+ 
+Esempio: 
+codice vulnerabile: 
+ eval (location.hash); 
+La funzione eval esegue dinamicamente del codice. V a evitata. 
+Il seguente codice è invece ragionevolmente sicuro,  poiché manda in esecuzione una funzione staticamen te 
+codificata: 
+ window.setTimeout(funzioneCodificata(), 1000); 
+ 
+Per maggiori informazioni vedere http://cwe.mitre.org/data/definitions/94.html  
+7.4.3  Client DOM Stored Code Injection 
+Come riconoscerla 
+Un malintenzionato potrebbe causare l'esecuzione di  contenuti ingegnerizzati nel browser, riscrivendo le 
+pagine Web e inserendo script dannosi. L’utente leg ittimo sarebbe quindi indotto a fidarsi di ciò che gli 
+viene proposto. Ciò permetterebbe all’attaccante di  rubare la password dell'utente, richiedere informa zioni 
+sulla sua carta di credito, fornire informazioni fa lse o eseguire malware. La vittima continuerebbe la  sua 
+attività ignara del pericolo, salvo poi accusare i responsabili del sito per i danni subiti. 
+La pagina web dell'applicazione esegue alcune azion i eseguendo codice sul lato client, concatenando da ti di 
+input da una cache sul lato client, come un cookie,  la LocalStorage dell’HTML5 o un database locale. C odice 
+dannoso eventualmente presente nei dati potrebbe av viare attività progettate da un attaccante. 
+ 
+Come difendersi 
+Occorre evitare qualsiasi esecuzione dinamica del c odice. Se è proprio necessaria, anziché utilizzare i dati 
+sul lato client, inclusi i dati precedentemente mem orizzati nella cache dalla stessa applicazione, uti lizzare 
+solo dati attendibili provenienti dal server.    
+ 
+ 
+Per maggiori informazioni vedere: http://cwe.mitre.org/data/definitions/94.html  
+ 
+7.4.4  Client DOM Stored XSS 
+Come riconoscerla 
+Un malintenzionato può utilizzare l'accesso legitti mo all'applicazione per inviare dati ingegnerizzati  al 
+database dell'applicazione. Quando un altro utente accede in seguito, le pagine Web potrebbero essere 
+riscritte con i dati salvati e potrebbero essere at tivati script dannosi.       
+L'applicazione crea pagine web che includono dati p rovenienti dal database, incorporati direttamente 
+nell'HTML della pagina. Il browser, quindi, li visu alizza come parte della pagina.  
+Il problema nasce quando questi dati salvati sono s tati immessi da un altro utente. Se i dati includon o 
+frammenti HTML o Javascript malevoli, anche questi vengono visualizzati (o eseguiti), sebbene la vitti ma 
+non si accorga dell’inganno sottostante. La vulnera bilità è perciò il risultato dell'incorporazione di  dati 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 86  a 156  
+ 
+arbitrari provenienti dal database, senza prima cod ificarli. La codifica trasforma i caratteri malevol i in 
+normale testo, e il browser non può più trattarli c ome codice valido HTML/Javascript. 
+ 
+Come difendersi 
+• I parametri devono essere limitati a un set di cara tteri consentito e l'input non convalidato deve 
+essere eliminato. Oltre ai caratteri, occorre contr ollare il tipo di dati, la loro dimensione, l’inter vallo 
+di validità, il formato e l’eventuale corrispondenz a all’interno dei valori previsti (white list). 
+Sconsigliata invece la black list, ossia una lista di valori non consentiti: l’elenco sarebbe sempre 
+troppo limitato, rispetto ai casi che potrebbero ve rificarsi. 
+• La convalida non sostituisce la codifica (encoding) , ossia la neutralizzazione di tutti i caratteri 
+potenzialmente eseguibili. Tutti i dati dinamici, i ndipendentemente dall'origine, devono essere 
+codificati prima di incorporarli nell'output. La co difica dovrebbe essere sensibile al contesto, in ba se 
+al tipo di dato che si vuole neutralizzare: se ci s i aspetta che possa esserci codice HTML abusivo, 
+occorre codificare gli eventuali tag HTML, se ci si  potrebbe trovare di fronte a uno script, allora 
+bisogna codificare per Javascript, ecc. 
+• L’account con il quale l’applicazione viene avviata  deve avere molte restrizioni e non deve godere di 
+privilegi non necessari. 
+• Nell'intestazione della risposta HTTP Content-Type,  definire esplicitamente la codifica dei caratteri 
+(set di caratteri) per l'intera pagina. 
+• Impostare il flag httpOnly sul cookie di sessione, per impedire agli exploit XSS di rubarlo. 
+ 
+Esempio : 
+La funzione Javascript che segue utilizza dati del database, senza verificarli, per creare dinamicamen te uno 
+script: 
+ 
+function renderUserProfileTable(res, connection, us er_id) { 
+ connection.query('SELECT id,name,description from user WHERE id= ?', 
+[user_id],function(err, results) { 
+  var table = "<table>" 
+  table += "<table class='profile-html-tablè>" 
+  table += "<tr><td>" + results[0].name + "</td></t r>" 
+  table += "<tr><td>" + results[0].description + "< /td></tr>" 
+  table += "</table>" 
+  res.render("profile", table) 
+ }); 
+} 
+Qui di seguito la funzione viene bonificata tramite  l’encoding dei valori letti dal database, effettua to prima 
+di incorporarli nella pagina web: 
+ 
+var htmlencoder = require('htmlencodè); 
+ 
+function renderUserProfileTable(res, connection, us er_id) { 
+connection.query('SELECT id,name,description from u ser WHERE id= ?',  
+[user_id],function(err, results) { 
+  var table = "<table>" 
+  table += "<table class='profile-html-tablè>" 
+  table += "<tr><td>" + htmlencoder.htmlEncode(resu lts[0].name) + 
+"</td></tr>" 
+  table += "<tr><td>" + htmlencoder.htmlEncode(resu lts[0].description) + 
+"</td></tr>" 
+  table += "</table>" 
+  res.render("profile", table) 
+ }); 
+} 
+ 
+Per maggiori informazioni vedere: http://cwe.mitre.org/data/definitions/79.html  

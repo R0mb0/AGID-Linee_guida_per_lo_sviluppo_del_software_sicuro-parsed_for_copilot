@@ -1,0 +1,50 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 111  a 137  
+ 
+ 
+  Interessato Titolare del 
+trattamento Responsabile del 
+trattamento Terze parti 
+Raccolta     
+Archiviazione     
+Utilizzo     
+Trasferimento      
+Cancellazione     
+Figura 28 - Esempio di flusso informativo del tratta mento 
+10.1.6  Privacy Implementation Strategy 
+La Privacy Implementation Strategy prevede che i pr ogettisti del software definiscano e selezionino un  
+modello di ciclo di vita adeguato all’ambiente di p roduzione e di sviluppo, all'ambito, all'ampiezza e  alla 
+complessità del progetto, parametrato sulle necessi tà emerse dai risultati della data protection impac t 
+assessment per la privacy ( 10.1.4) .  
+Dovranno essere documentate: 
+• I principi generali della privacy applicabili alla progettazione del software (10.1.1) 
+• Gli obiettivi di protezione che il software dovrebb e garantire (10.1.2) 
+• I principi della privacy by design applicabili alla  progettazione del software (10.1.3.2) 
+• I risultati della data protection impact assessment  per il software e l’individuazione dei requisiti d i 
+protezione per la privacy (10.1.4) 
+• Le tipologie di Informazioni Personali Identificabi li (PII) trattate nell’ambiente software (10.1.4.1)  
+• La descrizione del flusso informativo derivante dal  trattamento all’interno del software (10.1.5) 
+10.2  Ciclo di vita dello sviluppo software nell'ambito d el GDPR 
+Molti articoli che trattano la tecnologia dell'info rmazione sulla base del regolamento generale sulla 
+protezione dei dati dell'UE si focalizzano su speci fici obblighi commerciali e legali in materia di da ti 
+personali. Tali articoli si concentrano spesso sul trattamento fisico dei dati e sugli obblighi del re sponsabile 
+di quest’ultimo nella gestione dello stesso. Questa  è una considerazione importante per le organizzazi oni 
+che operano nell'UE.  
+Tuttavia, oltre alla localizzazione dei dati, il GD PR ha un impatto profondo e significativo sul ciclo  di vita 
+dello sviluppo del software e sui relativi processi  di sviluppo informatico per quelle organizzazioni che 
+prevedono la realizzazione di progetti relativi a s istemi informativi all'interno dell'UE. Registrazione 
+utente Dato  Raccoglie 
+Trasferisce Trasferisce Riceve Fruizione 
+Servizio 
+ Utilizza Tratta Archivia Fornisce 
+Cancella  Dato  Dato  
+Dato  Dato  
+ Dato   Dato  
+Legenda  
+Flusso dei dati 
+Istruzione 
+Servizio 
+ Cancella 

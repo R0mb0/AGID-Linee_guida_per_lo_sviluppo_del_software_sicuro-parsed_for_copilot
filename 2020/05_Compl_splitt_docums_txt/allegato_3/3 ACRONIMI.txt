@@ -1,0 +1,38 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 9 a 141  
+ 
+3 ACRONIMI 
+3.1  Acronimi 
+Codice Titolo 
+AgID  Agenzia per l'Italia Digitale  
+ASLR  Address Space Layout R andomization  
+CAR  Committed Access Rate  
+CE  Contratto Esecutivo  
+CMDB  Configuration Management Data Base  
+COM  Component Object Model  
+COTS  Commercial Of The Shelf  
+CQ  Contratto Quadro  
+CRL  Liste di Revoca dei C ertificati  
+CSRF  Cross -site request forgery  
+CVE  Common Vulnerabilities Exposures  
+DEP  Data Execution Prevention  
+DHA  Directory harvest attack  
+Dmz  De -militarized zone  
+DoS  Denial of Service  
+IDS  Intrusion D etection System  
+IM  Instant Messaging  
+IPS  Intrusion Prevention System  
+KRACK  Key Reinstallation Attacks  
+LDAP  Lightweight Directory Access Protocol  
+LLF  Low -level formatting  
+OCSP  Online Certificate Status Protocol  
+OSVDB  Open Source Vulnerability DataBase  
+PDL  Postazione di Lavoro  
+POODLE  Padding Oracle On Downgraded Legacy Encryption  
+PT  Penetration Test  
+QoS  Quality of Service  
+RFI  Remote File Inclusion  
+RTD  Real  Time  Data  
+RTI  Raggruppamento Temporaneo di Impresa  

@@ -1,0 +1,42 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 62  a 137  
+ 
+• Software Remediation dopo un'analisi statica (SAST)   
+o Analisi della reportistica e classificazione degli errori, rilevati nella fase di analisi statica del 
+codice;  
+o Rimozione degli errori di sicurezza legati all’uso di librerie esterne vulnerabili, sostituendo 
+queste ultime con le versioni sicure;  
+o Ristrutturazione delle classi e funzioni identifica te come vulnerabili alle varie injection, al cross 
+site scripting, etc.  
+o Applicazione delle modifiche ai costrutti sintattic i che rendono il software vulnerabile; 
+o Correzione del software in base ai warning sulla qu alità del codice; 
+• Software Remediation dopo un'analisi dinamica (DAST ) 
+o Analisi della reportistica e classificazione degli errori per rilevanza e quindi per priorità e 
+urgenza della loro correzione. 
+o Rimozione degli errori messi in evidenza dal fuzzy testing, ad esempio aumentando i controlli 
+applicativi. 
+o Correzioni degli errori, eventualmente tramite impl ementazione di nuove funzioni, per 
+esempio aggiungendo meccanismi di autenticazione o rivedendo la struttura delle classi e 
+funzioni. 
+o Adozione di attributi del protocollo per innalzare la sicurezza di cookie e sessioni. 
+• Definizione di un Incident Response Plan  cioè la documentazione contenente le istruzioni pe r 
+rispondere e limitare gli effetti di un incidente d i sicurezza. 
+• Produzione di un documento di Security Review un pr ocesso collaborativo che identifica i problemi 
+relativi alla sicurezza, il livello di rischio asso ciato a tali problemi e le decisioni da prendere pe r ridurre 
+o accettare tale rischio. 
+• Aggiornamento delle procedure di sicurezza, certifi cazione del rilascio del software, testing e 
+archiviazione. 
+ 
+ 
+ 
+Figura 13 - Input e Output della fase Final Review -  Secure Release 
+ 
+6.7.1  Software Release Tools 
+Il CATALOGO SECURITY TOOLS (vedi paragrafo 6.9) rac coglie i tool disponibili, divisi per fase del proc esso 
+SSDLC, che offrono funzionalità applicabili in ambi to secure application development.  
+ 
+Si riporta di seguito la tabella ‘Software Release Tools’: 
+

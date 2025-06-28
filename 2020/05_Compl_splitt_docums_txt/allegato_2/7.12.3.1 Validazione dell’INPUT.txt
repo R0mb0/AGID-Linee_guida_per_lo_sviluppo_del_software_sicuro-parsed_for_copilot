@@ -1,0 +1,34 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 151  a 156  
+ 
+7.12.3  Ulteriori indicazioni per lo sviluppo sicuro 
+L'input dell'utente e i relativi dati associati rap presentano un rischio se non vengono attuati opport uni 
+controlli di "Input Validation" e "Input Sanitizati on". Tutte le procedure di convalida dei dati devon o essere 
+eseguite su sistemi affidabili (ad esempio sul serv er) e devono essere eseguite a ogni livello 
+dell'applicazione.  
+7.12.3.1  Validazione dell’INPUT 
+I dati dell’input devono essere considerati non sic uri per impostazione predefinita e accettati solo d opo 
+aver effettuato i controlli di sicurezza appropriat i. Anche le fonti dei dati devono essere identifica te come 
+attendibili o non affidabili e, in caso di fonti no n attendibili, devono essere eseguiti controlli di convalida.  
+Se la convalida fallisce, l'input deve essere rifiu tato.  
+Go dispone di librerie native che includono metodi a supporto del processo di validazione e sanitizzaz ione 
+dei dati: 
+• strconv per la conversione  di stringhe ad altre tipologie di dati: 
+o Atoi 
+o ParseBool 
+o ParseFloat 
+o ParseInt 
+• strings per gestire  le stringhe e relative proprietà: 
+o Trim 
+o ToLower 
+o ToTitle 
+• regexp utilizzabile nelle espressioni regolari per gestire formati  personalizzati. 
+• Altre  tecniche per garantire la validità dei dati di inp ut includono: 
+o White listing – verificare l’input sulla base di una white list d i caratteri consentiti. 
+o Boundary checking  – verificare la lunghezza dei numeri e dei dati. 
+o Validazione numerica. 
+o Verificare i Null Bytes: ( %00)  
+o Verificare i caratteri di linea: %0d , %0a , \r , \n  
+o Verificare i caratteri di alterazione del percorso ../ oppure \\..  
+NOTA: Assicurarsi che le intestazioni di richiesta e risposta HTTP contengano solo caratteri ASCII . 

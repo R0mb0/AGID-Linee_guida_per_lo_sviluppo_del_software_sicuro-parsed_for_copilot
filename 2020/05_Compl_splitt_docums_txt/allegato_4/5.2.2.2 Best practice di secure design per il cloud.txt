@@ -1,0 +1,111 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 24 a 132 
+ 
+dovrebbero essere distribuite solo dopo il completamento  degli appropriati  test e 
+della relativa documentazione.  (Vedi CWE 439).  
+o Definire gli opportuni requisiti di sicurezza.  
+▪ Descrizione : Incaricare il business owner per la defini zione  dei requisiti di sicurezza 
+del software . Ciò include gli aspetti  che vanno dalle regole di convalida basate su  
+whitelist fino ai requisiti non funzi onali, come le prestazioni di una  funzione specifica 
+del sistema . La defin izione anticipata di tali requisiti garantisce  che la sicurezza sia 
+integrata nel sistema  sin dall’inizio . 
+o Condurre una Design Review.  
+▪ Descrizione : L'integrazione delle pratiche di  sicurezza nella fase di progettazione 
+consente di risparmiare tempo e denar o. Condurre un'analisi dei rischi con i 
+professionisti della sicurezza  (ad esempio attraverso il tool di Risk Management 
+fornito da AGID)  e modellare l'applicazione per identificare i rischi maggiormente  
+rilevanti . Ciò consente di integrare le appropriate contromisure nella progettazione 
+e nell'architettura dell'applicazione  software . (Vedi CWE 701, 656).  
+o Eseguire una Code Review.  
+▪ Descrizione : La revision e del codice incentrat a sugli aspetti di  sicurezza possono 
+rappresentare  uno dei mezzi  più efficaci per individuare  i bug di sicurezza. E’ 
+importante revisionare  regolarmente il codice alla ricerca di problem atiche  comuni 
+di sicurezza come SQL Injection e Cross -Site Scripting. Avvalersi  degli strumenti 
+automatizzati per massimizzare l'ampie zza della copertura e la coerenza  dei findings . 
+(Vedi CWE 702).  
+o Eseguire gli opportuni test di sicurezza.  
+▪ Descrizione : Condurre dei test di sicurezza sia durante che dopo lo sviluppo al fine di 
+garantire che l'applicazione soddisfi gli standard di sicurezz a imposti . Tali test 
+dovrebbero essere condotti anche dopo le major release per garantire che eventuali  
+vulnerabilità non siano state introdotte durante il processo di aggiornamento. 
+Avvalersi del l'automazione includendo i test di sicurezza nella pipeline CI/CD.  
+o Hardenizzare l’infrastruttura.  
+▪ Descrizione : Tutti i componenti dell'infrastruttura a supporto  dell'applicazione 
+devono essere configurati secondo le migliori pratiche di sicurezza e le linee guida di 
+hardening . In una tipica applicazione web ciò può includere router, firewall, switch 
+di rete, sistemi operativi, server web, application server, database e framework 
+applicativi.  (Vedi CWE 15, 656).  
+o Definire un piano di gestione degli incidenti.  
+▪ Descrizione : E’ opportuno elaborare e regolarmente verifica re un piano di gestione 
+degli incidenti. Si deve ben defini re e mantenere aggiornato , l'elenco delle persone 
+da coinvolgere in un incidente di sicurezza che riguarda l'applicazione  software . 
+o Formare il team sugli aspetti della sicurezza.  
+▪ Descrizione : La formazione aiuta a definire un linguaggio comune che il team può 
+utilizzare per migliorare la sicurezza dell'applicazione  software . La formazione non 
+dovrebbe essere limitata esclusivamente a gli sviluppatori di software, tester e 
+architetti . Chiunque sia coinvolto  nel processo di sviluppo, come gli analisti funzionali  
+e i project manager, dovrebbe essere soggetto a  formazione periodica sulla sicurezza 
+del software.  
+5.2.2.2  Best practice di secure design per il cloud  
+In questo paragrafo, vengono sinteticamente descritte alcune delle migliori pratiche da adottare in 
+fase di design, per fronteggiare  le vulnerabilità e i rischi che potrebbero nascere  a seguito dello 
+spostamento di applicazioni e dati verso i l cloud.  
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 25 a 132 
+ 
+Tali pratiche si rivolgono a tutte le organizzazioni, indipendentemente dalle dimensioni, che 
+intendono migliorare la sicurezza dei propri  servizi in cloud. Si fa notare che queste best practice 
+non sono da intendersi  esaustive e che devono essere integrate con le linee guida  rilasciate dai 
+fornitori di servizi cloud  (CSP) , con le best practice generali di sicurezza informatica, con i requisiti 
+di conformità normativa e con le pratiche definite dalle associazioni di categoria del cloud  (ad 
+esempio,  la Cloud Security Alliance ). 
+• Utilizzo non sicuro delle credenziali di sviluppo  
+o Le credenziali dello sviluppatore consentono al team e a d eventuali  integrazioni di accedere 
+all’account  cloud . Queste d ovrebbero essere conservate e utilizzate in modo sicuro per 
+garantire che solo le pers one e i casi d'uso autorizzati ne abbiano acc esso. Se possibile, 
+prevedere un monitoraggio adeguato e una scadenza automatica dopo un determinato 
+periodo di tempo o di inattività  delle credenziali . 
+• Storage pubblicamente accessibili  
+o I provider cloud normalm ente prevedono  diversi metodi di memorizzazione di oggetti e dati. 
+E’ importante r evisionare regolarmente le relative configurazioni al fine di  garantire che solo 
+i componenti previsti siano pubblicamente accessibili.  
+• Uso improprio della configurazione di default  
+o I provider cloud di solito pre-configura no i criteri di default  di controllo degli accessi. Tale 
+impostazione a volte può essere utile, ma spesso introduc e dei rischi in quanto le offerte di 
+servizi del fornitore spesso sono soggette a cambia mento . Quindi, le r egole preconfigurate 
+spesso vengono modificate  per consentire  l'accesso a i nuovi servizi che sono fuori del 
+contesto di ciò che è di fatto  necessario o in uso.  
+• Compromissione delle regole di  controllo accesso  
+o Quando si progetta l’accesso ad un servizio in cloud è buona norma seguire sempre il 
+principio del minimo privilegio . E’ necessario considerare la granularità dell’accesso ai servizi, 
+ai sistemi e alla rete. Pertanto è opportuno r evisionare regolarmente o automaticamente tali 
+tipologie di accesso al fine di garantire che il principio del minimo privilegio venga rispettato.  
+• Costrutti di rete non configurati correttamente  
+o La maggior parte dei provider cloud dispone di metodi per controllare l'accesso alla rete che 
+vanno al di là delle  semplici regole basate su gli indirizzi IP. Considerare l'utilizzo di tali  
+costrutti per controllare l'accesso a livello granu lare. Considerar e l'utilizzo di  componenti di 
+rete basti  su provider cloud per segmentare il traffico in modo ponderato . 
+• Monitoraggio e Logging inadeguato  
+o Attiva re e monitora re regolarmente la registrazione su log degli accessi  attraverso  API. 
+Adottare  una strategia di logging basata sul rischio per quei servizi che non vengono  loggati  
+attraverso  i core logging services . 
+• Mancanza di un Inventory Management  
+o L'accesso basato su API risolve molti problemi di inventory management . Adottare le 
+opportune strategie al fine di  arricchire l’ambiente con informazioni aggiuntive su proprietà, 
+casi d'uso e sensibilità . 
+• Dirottamento del dominio  
+o Spesso esiste un rapporto di fiducia transitoria tra i servizi cloud e le entries  DNS. Revisionare  
+regolarmente le configurazioni DNS e cloud per prevenire  situazioni di acquisizione di 
+controllo fraudolento . 
+• Mancanza di un piano di  Disaster Recovery  
+o Gli a mbienti cloud non risolvono automaticamente i problemi di Disaster Recovery. 
+Considera re l’appropriato livello di investimento per gli eventi catastrofici che avvengono 
+all'interno del l’ambiente cloud. Progettare un programma di Disaster Recovery  per il 
+ripristino abilitato da account  esterni , provider o da locale . 
+• Configurazione manuale degli account  

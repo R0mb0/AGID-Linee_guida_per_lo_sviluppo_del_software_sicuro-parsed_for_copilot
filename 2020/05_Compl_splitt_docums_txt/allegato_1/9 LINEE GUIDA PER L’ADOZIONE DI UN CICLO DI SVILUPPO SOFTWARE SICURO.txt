@@ -1,0 +1,51 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 89  a 137  
+ 
+9 LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO SOFTWARE 
+SICURO 
+Negli ultimi anni, un numero considerevole di appli cazioni e sistemi hanno dovuto affrontare gravi min acce 
+alla sicurezza a causa di un significativo incremen to nell’impiego di nuove tecnologie disponibili e n el 
+contempo della mancanza di conoscenza e di tecniche  di indagine che riguardano la sicurezza informatic a. 
+In passato, le problematiche in materia di sicurezz a riguardavano essenzialmente i livelli dell'infras truttura 
+di rete. Attualmente, a causa del crescente utilizz o delle reti e della dominanza del concetto di Inte rnet, 
+come il cloud computing, Software as a Service (Saa S), gli aggressori stanno scoprendo sempre più la 
+presenza di gravi vulnerabilità nel livello applica tivo del software.  
+Il concetto di sicurezza a livello di applicazione è quindi emerso come una attività essenziale da int egrare 
+nel processo di sviluppo del software. 
+La sicurezza dell'informazione richiede una partico lare attenzione a causa di un gran numero di 
+vulnerabilità individuate nelle applicazioni/sistem i dichiarate come sicure. Sono ben note la compless ità e 
+la difficolta nel realizzare un’applicazione priva di difettosità e/o vulnerabilità, tuttavia, le orga nizzazioni 
+che producono hardware e software non possono asten ersi nel migliorare i propri processi di sviluppo e  
+adattarli agli attuali scenari. Oltre alle numerose  pubblicazioni di ricercatori accademici e industri e del 
+software che evidenziano l’importanza di integrare pratiche di sicurezza nel System Development Life C ycle 
+(SDLC), esiste un paradosso nell’effettiva implemen tazione. La maggior parte dei centri di sviluppo no n 
+attua le raccomandazioni di cui sopra a causa della  resistenza ai nuovi processi e al mancato adeguame nto 
+di mentalità da parte degli attori che operano nell ’ambito del SDLC. E' anche solita una certa resiste nza da 
+parte d’ingegneri e sviluppatori nell’accettare che  il software/hardware da loro realizzato possa esse re 
+soggetto a difetti di sicurezza. Anche i team di sv iluppo oramai comprendono l'importanza di un nuovo 
+paradigma di sicurezza per il SDLC, anche se, purtr oppo, ciò non è sufficiente.  
+Per raggiungere i livelli di sicurezza adeguati, è necessaria una conoscenza approfondita e dettagliat a delle 
+procedure e delle tecniche di sicurezza da adottare : una Security Policy completa è il giusto riferime nto per 
+guidare lo sviluppo della sicurezza e tutti gli att ori coinvolti come gli ingegneri hardware, sviluppa tori, 
+architetti applicativi, ingegneri software, collaud atori e project leader devono considerarla come una  regola 
+imprescindibile.  
+Questa deve stabilire le opportune indicazioni per ciascuna fase di sviluppo: requisiti, 
+progettazione/architettura, implementazione, collau do e manutenzione, e deve definire le responsabilit à 
+per tutti i ruoli coinvolti nel processo di svilupp o. Deve inoltre, stabilire le regole per la definiz ione dei 
+requisiti di fase abilitando i principi di sicurezz a, come la sicurezza delle informazioni, integrità,  privacy, 
+riservatezza, disponibilità delle informazioni, con tinuità, in base all’ambiente e alle minacce pubbli che che 
+possono in qualche modo coinvolgere il sistema.  
+Al fine di dare copertura agli aspetti di sicurezza  è necessario riunire i team di business, di svilup po e di 
+sicurezza per comprendere le principali vulnerabili tà e le conseguenze sul business causate dal rischi o 
+dovuto alla presenza di difetti di sicurezza nella versione finale del prodotto. Poiché il SDLC è un p rocesso di 
+“feed forward” come tale, eventuali errori introdot ti in questa fase, saranno poi diffusi nelle fasi s uccessive. 
+Per questo motivo è importante analizzare i rischi per la sicurezza sin dalle primissime fasi del cicl o di 
+sviluppo del software. 
+L'analisi dei requisiti, rappresenta il primo passo  nell'SDLC. Attraverso questo, vengono identificati  e definiti 
+gli obiettivi delle specifiche di sicurezza, i meto di necessari per implementarle e l'importanza che q ueste 
+ricoprono. I requisiti di sicurezza definiscono i r equisiti funzionali e non funzionali che devono ess ere 
+soddisfatti per ottenere le caratteristiche di sicu rezza di un sistema IT.  Tali requisiti possono ess ere 
+formulati a diversi livelli di astrazione; al più a lto livello, riflettono fondamentalmente solo gli o biettivi di 

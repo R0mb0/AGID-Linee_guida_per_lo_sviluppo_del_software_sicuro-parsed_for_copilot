@@ -1,0 +1,44 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 38 a 132 
+ 
+ 
+Figura 4 - Simbolismo nel Threat Modeling  
+ 
+I Trust boundaries (confini di fiducia) vengono identificati da una linea tratteggiata rossa, i Process 
+Boundary (confini di processo) vengono invece identificati da una linea tratteggiata marrone, i 
+Machine Boundary (confini della macchina) vengono identificati da una linea tratteggiata blu 
+mentre gli altri confini vengono identificati da una linea tratteggiata verde.  
+L'utilizzo del colore consente ai team di riconoscere facilm ente durante la valutazione del DFD del 
+sistema quale tipo di confine il flusso di dati attraversa.  Qui alcuni esempi di elementi che 
+costituisco il DFD:  
+• Processo o Processi multipli  
+o File di libreria dinamica  
+o File eseguibile  
+o Componente SW/FW  
+o Web Service  
+o Assemblies  
+o Etc. 
+• Interazione o Entità esterna  
+o Persona  
+o Altro sistema  
+o Sito web  
+o Etc. 
+• Archivio dati  
+o Database  
+o File 
+o Registro  
+o Memoria condivisa  
+o Code e Stack  
+o Etc. 
+• Flusso dati  
+o Chiamata a funzione  
+o Traffico di rete  
+o Etc. 
+• Trust boundaries  
+o Perimetro del processo  
+o File system  
+o Etc. 
+

@@ -1,0 +1,330 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 57  a 137  
+ 
+Management 
+Solution 
+Website 
+Malware 
+Scanner SAST, 
+DAST Implementation 
+/ Verification Demo non 
+disponibile https://www.sitelock.com  
+SonarLint SAST Implementation Open Source https://www.sonarlint.org  
+SonarQube SAST Implementation Open Source https://www.sonarqube.org  
+Symantec 
+Advanced 
+Threat 
+Protection IAST, RASP  Implementation 
+/ Verification Versione Trial 
+disponibile su 
+richiesta https://www.symantec.com  
+Tanium 
+Endpoint 
+Platform Endpoint 
+Security, 
+App 
+Security 
+Scanning Implementation 
+/ Verification Demo non 
+disponibile https://www.tanium.com  
+Trend Micro 
+Deep Security 
+Platform SAST, 
+DAST Implementation 
+/ Verification Versione Trial 
+disponibile https://www.trendmicro.com  
+Tripwire 
+Enterprise IAST, RASP  Implementation 
+/ Verification  Demo disponibile su 
+richiesta https://www.tripwire.com  
+Veracode 
+Cloud 
+Platform SAST, 
+DAST, 
+Mobile 
+AST, 
+Penetratio 
+n Testing Implementation 
+/ Verification Demo disponibile su 
+richiesta www.veracode.com  
+WhiteHat 
+Sentinel SAST, 
+DAST, 
+MAST Implementation 
+/ Verification Demo di 30 giorni 
+disponibile su 
+richiesta https://www.whitehatsec.com/inf 
+o/security-check/  
+ 
+6.6  Verifica 
+Prima della fase di rilascio definitiva del softwar e i team che lavorano in sicurezza effettuano un ul teriore 
+verifica del codice elaborato mediante test di sicu rezza. I test di sicurezza mirano a controllare la 
+vulnerabilità delle superficie di attacco, in modo da agire in via preventiva alla correzione di event uali 
+problemi che potrebbero verificarsi in fase di rila scio. 
+6.6.1  Software Verification Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Verifica tion Tools’: 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 58  a 137  
+ 
+Acunetix Web 
+Vulnerability 
+Scanner DAST, IAST Verification Versione trial a 14 
+giorni disponibile https://www.acunetix.com/  
+AppSpider Pro 
+by Rapid7 DAST Verification Versione trial 
+disponibile https://www.rapid7.com  
+BeEF Penetration 
+Testing Verification Open Source https://beefproject.com/  
+BrightCloud 
+Threat 
+Intelligence by 
+Webroot DAST Verification Nessuna versione trial 
+disponibile https://www.brightcloud.com  
+Burp Suite by 
+PortSwigger SAST, DAST, 
+Penetration 
+Testing Implementa 
+tion / 
+Verification Versione Community 
+liberamente 
+scaricabile https://portswigger.net  
+Checkmarx  SAST, DAST, 
+RASP Implementa 
+tion / 
+Verification Versione trial 
+disponibile a richiesta  https://www.checkmarx.com/  
+Citrix Web App 
+Firewall WAF Verification Demo disponibile su 
+richiesta https://www.citrix.com/it -
+it/products/citrix-web-app-
+firewall/  
+CloudSOC 
+Cloud Access 
+Security 
+Broker (CASB) Cloud 
+Security 
+Testing/Scan 
+ning Verification Nessuna versione trial 
+disponibile https://www.symantec.com/prod 
+ucts/cloud-application-security-
+cloudsoc  
+CodeDx SAST, DAST Implementa 
+tion / 
+Verification Versione trial 
+disponibile https://codedx.com/  
+Contrast 
+Enterprise IAST, RASP Implementa 
+tion / 
+Verification Demo disponibile su 
+richiesta https://www.contrastsecurity.com  
+Endpoint 
+Privilege 
+Management Endpoint 
+Security Verification 
+/ Response Demo disponibile su 
+richiesta https://www.beyondtrust.com/  
+Falcon  Endpoint 
+Security Verification 
+/ Response Versione trial 
+disponibile https://www.crowdstrike.com  
+GrayMatter 
+Platform Penetration 
+Testing, App 
+Security 
+Scanning Verification Demo disponibile su 
+richiesta https://www.reliaquest.com/  
+HCL Security 
+AppScan SAST, DAST, 
+IAST Implementa 
+tion / 
+Verification Versione trial non 
+disponibile https://www.hcltech.com  
+Kali Linux Penetration 
+Testing Verification Open Source https://www.kali.org/  
+LogRhythm 
+Security 
+Intelligence Predictive 
+Security 
+Analytics Verification 
+/ Response Demo disponibile su 
+richiesta www.logrhythm.com  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 59  a 137  
+ 
+Platform  
+Malwarebytes 
+Endpoint 
+Security Endpoint 
+Security Verification Versione trial 
+disponibile https://www.malwarebytes.com/ 
+business/endpointsecurity/  
+MetaDefender  Predictive 
+Security 
+Analytics Verification 
+/ Response Available by Request https://metadefender.opswat.co 
+m/  
+Metasploit by 
+Rapid7 Penetration 
+Testing Verification Open Source https://www.metasploit.com/  
+Microfocus 
+Fortify Static 
+Code Analyzer SAST, DAST, 
+IAST, RASP Implementa 
+tion / 
+Verification Demo disponibile su 
+richiesta https://www.microfocus.com/it -
+it/products/static-code-analysis-
+sast/overview  
+Microsoft 
+Application 
+Verifier DAST Verification Free https://www.microsoft.com  
+Microsoft 
+Attack Surface 
+Analyzer  Intrusion 
+Prevention Verification Free https://www.microsoft.com  
+Microsoft 
+Cloud App 
+Security 
+(MCAS)  Cloud Access 
+Security 
+Broker Verification Versione trial 
+disponibile  https://www.microsoft.com/en -
+us/microsoft-365/enterprise-
+mobility-security/cloud-app-
+security  
+ModSecurity WAF Implementa 
+tion / 
+Verification Open Source http://modsecurity.org/  
+Network 
+Security 
+Monitoring 
+and 
+Management CDN, App 
+Security 
+Scanning Verification Demo non disponibile  https://enterprise.verizon.com/pr 
+oducts/security/  
+NEVIS Security 
+Suite WAF, 
+Authenticatio 
+n, Identity 
+mngt Verification Available by Request https://www.nevis-security.ch/en/  
+Next -
+Generation 
+Firewalls 
+(NGFW)   Verification     
+Nikto2 Web Server 
+Scanner Verification Open Source https://www.cirt.net/Nikto2  
+Nmap Penetration 
+Testing and 
+Network 
+Mapping Verification 
+/ Response Open Source https://nmap.org/  
+NSFOCUS Web 
+Application 
+Firewall DAST, WAF Verification Demo non disponibile  https://nsfocusglobal.com/web-
+application-firewall-waf/  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 60  a 137  
+ 
+N-Stalker 
+Cloud Web 
+Scan SAST, DAST Implementa 
+tion / 
+Verification Free Tier Available https://www.nstalker.com  
+OWASP Zed 
+Attack Proxy 
+(ZAP) Penetration 
+Testing Verification 
+/ Response Open Source www.owasp.org  
+Paloalto Next -
+Generation 
+Firewall WAF Verification Demo disponibile su 
+richiesta https://www.paloaltonetworks.co 
+m  
+Peach Fuzzer Penetration 
+Testing Verification 
+/ Response Demo disponibile su 
+richiesta https://www.peach.tech/  
+Pradeo 
+Security Mobile AST Verification Nessuna versione trial 
+disponibile https://www.pradeo.com/it -
+IT/protezione-flotta-mobile  
+Qualys 
+Security & 
+Compliance 
+Suite DAST, WAF Verification 
+/ Response Versione trial 
+disponibile https://www.qualys.com  
+Risk Fabric by 
+Bay Dynamics Predictive 
+Security 
+Analytics Implementa 
+tion / 
+Verification 
+/ Response Demo disponibile su 
+richiesta https://baydynamics.com  
+RSA Advanced 
+Threat 
+Management 
+Solution DAST Implementa 
+tion / 
+Verification Available by Request https://www.dellemc.com  
+Runtime 
+Application 
+Self-Protection  RASP Verification 
+/ Response Demo disponibile su 
+richiesta https://www.imperva.com/produc 
+ts/runtime-application-self-
+protection-rasp/  
+Samurai Web 
+Testing 
+Framework DAST, 
+Penetration 
+testing Verification Open Source http://www.samurai-wtf.org/  
+SRX Series 
+Firewall by 
+Juniper 
+Networks WAF Verification Versione Trial 
+disponibile https://www.juniper.net/us/en/pr 
+oducts-services/security/srx-
+series/  
+Sucuri Website 
+Application 
+Firewall WAF Verification Demo non disponibile  https://sucuri.net/website-
+firewall/  
+Symantec 
+Advanced 
+Threat 
+Protection IAST, RASP Implementa 
+tion / 
+Verification Versione Trial 
+disponibile su 
+richiesta https://www.symantec.com  
+Synopsys Black 
+Duck Hub Library 
+Inspection Verification  Demo disponibile su 
+richiesta https://www.blackducksoftware.c 
+om/  
+Tanium 
+Endpoint 
+Platform Endpoint 
+Security, App 
+Security Implementa 
+tion / 
+Verification Demo non disponibile  https://www.tanium.com  

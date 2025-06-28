@@ -1,0 +1,52 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 98 a 132 
+ 
+• External reporting;  
+• Porte TCP/UDP (network socket).  
+6.1.3.4  Punti di Uscita ( Exit Points ) 
+È importante identificare da dove l'applicazione invia i dati all’utente o a i sistemi esterni , dando 
+priorità ai punti di uscita in cui l'applicazione scrive dati che includono l'input proveniente 
+dall’utente o dati provenienti da fonti non attendi bili, ad esempio basi dati condivis e. 
+A titolo esplicativo  si elencano di seguito ulteriori esempi di Exit Points:  
+• File di Log;  
+• Database;  
+• Interfacce esterne (es. web service).  
+6.1.4 Identificazione delle minacce  
+In questa fase, è possibile individuare minacce e attacchi che potrebbero compromettere 
+l'applicazione e gli obiettivi di sicurezza. Il processo di identificazione consiste  in sessioni di 
+brainstorming tra i team di sviluppo e test. Idealmente, il team di lavoro è costituit o da architetti 
+software , profes sionisti della sicurezza, sviluppatori, tester e amministratori di sistema.  
+Esistono due approcci per affrontare questa fase:  
+• Iniziare , elencando minacce e attacchi comuni. Con questo approccio, si inizia con un elenco di 
+minacce comuni raggruppate per cat egorie di vulnerabilità . Successiv amente, occorre adattare tale 
+elenco alla propria architettura. Ad esempio, utilizza ndo gli scenari identificati per esaminare i flussi 
+di dati, prestando particolare attenzione ai punti di ingresso e in particolare a quelli  che attraversano 
+i confini di fiducia. I n questo modo si potr anno  eliminare immediatamente alcune minacce , in quanto  
+non applicabili ai casi d’uso.  
+• Utilizzare un approccio basato su domande . Un approccio basato su questionari può aiutare a 
+identificare le minacce e i possibili attacchi. La categorizzazione STRIDE si basa su categorie di 
+minacce molto estese, quali spoofi ng (assunzione impropria di identità), manomissione di dati, 
+ripudio, divulgazione indesiderata di informazioni e interruzione di servizio. Il modello STRIDE deve 
+essere usato per porre domande relative a qualsiasi aspetto dell'architettura e del design 
+dell'applicazione. Questo è un approccio basato su obiettivi, in cui si prendono in considerazione tutti 
+gli obiettivi di un possibile aggressore  (punto di vista di un attaccante) .  
+Per identificare le minacce, si esaminano tutti i livelli dell’applicazione,  livello per livello e 
+funzione per funzione. Ponendo l’attenzione  sulle categorie di vulnerabilità, ci si concentra sulle 
+aree in cui vengono spesso effettuati errori di sicurezza. Occorre identificare le potenziali minacce e 
+le possibili azioni che un ag gressore potrebbe tentare di eseguire per sfruttare le vulnerabilità a cui 
+l'applicazione  è esposta . Durante questa attività di identificazione delle minacce si eseguono le 
+seguenti attività : 
+• Identificazione delle minacce e degli attacchi comuni.  
+• Identifi cazione delle minacce annidate nei casi d’uso.  
+• Identificazione delle minacce annidate nei flussi di dati.  
+6.1.4.1  Identificazione delle minacce e attacchi comuni  
+Esistono una serie di minacce e attacchi comuni che si basano su vulnerabilità di carattere comun e. 
+Questa sezione identifica una serie di domande chiave da porsi  per ciascuna categoria.  
+Autenticazione:  
+• Come potrebbe un aggressore rubare una identità?  
+• Come potrebbe un utente malintenzionato accedere all'archivio delle credenziali?  
+• Come potrebbe un aggre ssore portare  un attacco? Come vengono memorizzate le credenziali 
+dell'utente e quali criteri di codici di accesso vengono applicati?  

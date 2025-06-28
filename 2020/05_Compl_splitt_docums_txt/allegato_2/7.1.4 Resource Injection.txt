@@ -1,0 +1,63 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 51  a 156  
+ 
+7.1.4  Resource Injection 
+Come riconoscerla  
+L'applicazione apre un socket di rete, per l'ascolt o delle connessioni in entrata, utilizzando dati no n 
+attendibili per configurarlo, consentendo a un even tuale malintenzionato di controllarlo. 
+Il malintenzionato potrebbe perciò essere in grado di aprire una backdoor che gli consenta di connette rsi 
+direttamente al server delle applicazioni, acquisen do il controllo del server o esponendolo ad altri a ttacchi 
+indiretti. In particolare, modificando il numero di  porta del socket, un utente malintenzionato può es sere in 
+grado di aggirare controlli di rete deboli, mascher ando l'attacco da parte di altri dispositivi di ret e. 
+Una resource injection può essere sfruttata anche p er bypassare i firewall o altri meccanismi di contr ollo 
+degli accessi. Si può anche utilizzare l'applicazio ne come proxy per la scansione delle porte delle re ti interne 
+e per l'accesso diretto ai sistemi locali; oppure i ndurre un utente a inviare informazioni riservate a  un server 
+fasullo. 
+Come difendersi  
+Non consentire a un utente di definire i parametri relativi ai sockets di rete. Il principio della whi te list può 
+essere adottato per scegliere un valore tra quelli ammissibili, codificandoli – ad esempio - in una sw itch. 
+ 
+Esempio:  
+ 
+int main( int argc, char* argv[] )  
+{  
+ int sockfd, portno; 
+ struct sockaddr_in serv_addr = {};  
+ struct hostent *server; 
+  
+ if ( argc != 3 ) 
+  errorAndExit(); 
+ 
+ server = gethostbyname(argv[1]); 
+ if (server == NULL)    
+  errorAndExit(); 
+   
+ portno = atoi(argv[2]); 
+ 
+ serv_addr.sin_family = AF_INET; 
+ memcpy(&serv_addr.sin_addr.s_addr, server->h_addr,  server->h_length); 
+ serv_addr.sin_port = htons(portno); 
+  
+ sockfd = socket(AF_INET, SOCK_STREAM, 0); 
+ if (sockfd < 0)  
+  errorAndExit(); 
+   
+ if (connect(sockfd, &serv_addr, sizeof(serv_addr))  < 0)  
+  errorAndExit(); 
+ 
+ sendAndProcessMessage(sockfd); 
+  
+ close(sockfd); 
+} 
+In questo esempio la configurazione del socket vien e realizzata con l’input non verificato proveniente  
+dall’utente. Qui di seguito la scelta è ristretta a  una white list: 
+ 
+int main( int argc, char* argv[] )  
+{  
+ int sockfd, portno; 
+ struct sockaddr_in serv_addr = {};  
+ char* portname; 
+  
+ if ( argc != 1 ) 
+  errorAndExit(); 

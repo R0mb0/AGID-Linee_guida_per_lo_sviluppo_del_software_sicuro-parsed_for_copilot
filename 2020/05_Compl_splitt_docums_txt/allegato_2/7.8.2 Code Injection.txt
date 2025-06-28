@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 116  a 156  
+ 
+Il Cross Site Scripting può essere reflected o stor ed. Nel primo caso, uno script inoculato è valido s olo 
+all’interno della sessione corrente, ma i suoi effe tti possono essere molto dannosi per il sito vittim a 
+dell’attacco. 
+Ancora più grave è il Cross Site Scripting di tipo stored. In questo caso lo script inoculato viene me morizzato 
+come parte intregrante della pagina all’interno di un database e rispristinato ogni qual volta la pagi na in 
+questione viene caricata. Quest’attacco è stato sfr uttato ampiamente nel recente passato, soprattutto 
+laddove veniva consentito agli utenti di inserire r ecensioni, commenti e altri contributi. 
+ 
+Volendo schematizzare, possiamo categorizzare gli a ttacchi XSS nelle seguenti tipologie: 
+• Reflected XSS, in cui la stringa dannosa proviene d alla richiesta dell’utente. 
+• Stored XSS, in cui la stringa dannosa proviene dal database del sito Web. 
+ 
+Esiste anche un Cross Site Scripting dovuto a una l acuna nella codifica UTF-7, che permettere di masch erare 
+i caratteri “<” e “>”, facendoli sfuggire al contro llo. Questa minaccia non è più possibile nei modern i 
+browser, ad eccezione di Microsoft Internet Explore r 11.  
+ 
+Come difendersi 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white 
+list, scartando quelli che non la rispettano). Occo rre controllare il tipo del dato, la sua dimensione , 
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Codificare completamente tutti i dati dinamici prim a di incorporarli (encoding). La codifica 
+dovrebbe essere sensibile al contesto, in base al t ipo di dato che si vuole neutralizzare: se ci si 
+aspetta che possa esserci codice HTML abusivo, occo rre codificare gli eventuali tag HTML, se ci si 
+potrebbe trovare di fronte a uno script, allora bis ogna codificare gli elementi sintattici di Javascri pt, 
+ecc. 
+• Si consiglia di utilizzare la libreria di codifica ESAPI. 
+• Nell'intestazione di risposta Content-Type HTTP, è necessario definire esplicitamente la codifica dei 
+caratteri (charset) per l'intera pagina. 
+• Impostare l’attributo HTTPOnly per proteggere il co okie della sessione da indebite letture da parte 
+di script malevoli. 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/79.html, 
+CWE-79: Improper Neutralization of Input During Web  Page Generation ('Cross-site Scripting'). 
+ 
+Esempio: 
+Nel seguente codice, un dato in input (parametro pe r la ricerca viene stampato a video, senza averlo p rima 
+sottoposto ad alcun controllo): 
+Sub cmdSearch _Click(Source As Object, _ e As Event Args)  
+  
+// Do Search….. 
+ 
+lblResult.Text="You Searched for: " & txtInput.Text   
+ 
+// [loop per mostrare I risultati della query] 
+ 
+End Sub  
+7.8.2  Code Injection 
+Come riconoscerla 

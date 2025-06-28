@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 45  a 156  
+ 
+6.5.5  Integer overflow ed altri errori logici di programm azione 
+Inizialmente con il termine integer overflow si ten deva a descrivere una moltitudine di vulnerabilità 
+differenti tra loro. Solo nel 2002 questo tipo di p roblematica è stata circoscritta a una specifica co ndizione 
+che si verifica quando un’applicazione effettua un’ operazione matematica di addizione, sottrazione o 
+moltiplicazione su un intero con segno, acquisendo un operando da input utente e non considerando i ca si 
+in cui il valore numerico ottenuto può essere negat ivo o minore/maggiore del previsto. Nel caso in cui  
+l’aggressore ha la possibilità di specificare un va lore arbitrario, può causare uno stack o un heap ov erflow  
+secondario, quando il risultato dell’operazione mat ematica viene utilizzato per specificare la dimensi one di 
+un buffer, forzandone un’allocazione non sufficient e a contenere i dati acquisiti in ingresso dalla fu nzione 
+vulnerabile. 
+Una problematica simile si verifica anche nei casi in cui un valore numerico acquisito da input utente  viene 
+convertito in un formato differente rispetto alla v ariabile originaria che lo contiene. Secondo il tip o di 
+conversione, il risultato finale può differire note volmente in eccesso o in difetto dal valore inizial e, 
+causando l’allocazione di buffer insufficienti a so ddisfare la necessità di contenimento dei dati o lo  
+spostamento/la copia di un numero di byte eccessivo  da un’area di memoria all’altra. 
+Un terzo fattore di instabilità in un’applicazione può derivare dalla asseganzione di valori non tenen do nella 
+gisuta considerazione il fatto che una variabile nu merica sia signed o unsigned. 
+ 
+Esempio:  
+Nel seguente codice un numero troppo grande causa u n overflow della memoria: 
+char variabileChar = ‘0’; 
+int valoreIntero = 1000; 
+variabileChar = valoreIntero; 
+variabileChar , dichiarato come char , può contentere: un valore da -128 a +127, se sign ed; un valore da 0 
+a 256, se unsigned. L’attribuzione del valore 1000 causerà un buffer overflow. 
+Nel seguente esempio, un valore accettabile in un c har dichiarato unsigned, causa overflow se il char è 
+dichiarato signed: 
+signed char variabileChar = ‘0’; 
+int valoreIntero = 200; 
+variabileChar = valoreIntero; 
+Contromisure 
+• Controllare l’input dell’utente è indispensabile pe r verificare la congruità dei dati prima di 
+accettarli. 
+• L’adozione delle Best practises di programmazione r iduce gli errori e quindi l’insorgenza del buffer 
+overflow. 
+6.6  Processi di tracciamento 
+Il tracciamento delle operazioni svolte dagli utent i è una delle attività più critiche per un’applicaz ione, 
+poichè l’implementazione di un meccanismo di loggin g inadatto o insufficiente permette ad un aggressor e 
+di mascherare le sue operazioni, di sospendere il s ervizio o in taluni casi di eseguire comandi remoti  sul 
+sistema che ospita l’applicazione vulnerabile. 
+Di seguito sono riportate alcune categorie di error i che agevolano l’aggressore in operazioni che port ano a 
+sospendere il servizio di tracciamento dell’applica zione o in talune circostanze di eseguire codice da  
+remoto. 
+6.6.1  Agevolazione delle attività malevole dell’aggressor e 
+Una delle principali preoccupazioni di un aggressor e che sferra o porta a termine un attacco a fini in trusivi è 
+di rimuovere ogni traccia delle sue attività, per n on essere chiaramente identificato. Qualora abbia l a 
+possibilità di manomettere il meccanismo di log, il   tracciamento non fornirà all’amministratore alcun a 

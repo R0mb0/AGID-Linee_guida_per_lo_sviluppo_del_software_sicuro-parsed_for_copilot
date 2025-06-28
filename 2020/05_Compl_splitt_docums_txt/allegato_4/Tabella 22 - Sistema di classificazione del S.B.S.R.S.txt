@@ -1,0 +1,51 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 68 a 132 
+ 
+• nel caso si voglia adottare una scala a 10 valori si potrebbero voler considerare e pesare in modo 
+diverso i seguenti casi ( Quanto è difficile sfruttare la vulnerabilità?) : 
+o 1 = Anche con conoscenza approfondita della vulnerabilità non si individua  un 
+percorso di attacco valido per l’exploit ; 
+o 2 = Sono richieste tecniche avanzate e tool custom. Sfruttabile solo dagli utenti 
+autenticati ; 
+o 5 = La possibilità di exploit esiste, alla portata di skill medie da un’utenza 
+autenticata ; 
+o 7 = La possibilità di e xploit esiste, alla portata di un’utenza non autenticata ;  
+o 10 = Banale: basta un web browser . 
+Nel primo caso il calcolo del DREAD  score:  
+DREAD Score= (Damage + Reproducibility + Exploitability + Affected Users + Discoverability) / 
+5 
+ricade in un numero compreso tra 1 e 3. Nel secondo caso ricade in un numero compreso tra 1 e 10.  
+Il risultato finale è, in entrambi i casi, come desiderato, un elenco di vulnerabilità classificate per 
+rischio ossia ordinate per priorità di intervento (a valori bassi c orrisponde priorità bassa, a valori alti 
+priorità alta).  
+5.7.2 Security Bulletin Severity Rating System (S.B.S.R.S)  
+Come alternativa a lla metodologia di analisi  DREAD , Microsoft si avvale  anche del "Security 
+Bulletin Severity Rating System" per valutare le vulne rabilità nei prodotti Microsoft.  Il sistema di 
+classificazione raggruppa le vulnerabilità in una delle quattro categorie  sotto riportate . Microsoft 
+utilizza questo sistema per valutare la necessità di patch di sicurezza per i propri prodotti.  
+ 
+CLASSIFICAZIONE  DEFINIZIONE  
+CRITICA  Una vulnerabilità il cui sfruttamento potrebbe consentire 
+l'esecuzione di codice senza alcuna interazione da parte 
+dell’utente.  
+IMPORTANTE  Una vulnerabilità il cui sfruttamento potrebbe compromettere 
+la riservatezza, l'integrità o la disponibilità dei dati degli utenti 
+o l'integrità o la disponibilità delle risorse necessarie all’ 
+elaborazione.  
+MODERATA  La sfruttabilità viene mitigata in misura significativa da fattori 
+quali l ’adozione della  configurazione predefinita, l'auditing o 
+la difficoltà di sfruttamento.  
+BASSA  Una vulnerabilità il cui sfruttamento è estremamente difficile, 
+o il cui impatto è minimo.  
+Tabella 22 - Sistema di classificazione del S.B.S.R.S.  
+Questo sistema di rating può anche essere adattato per classificare le  vulnerabilità identificate da lla 
+STRIDE.  L'obiettivo finale è quello di produrre un elenco di priorit izzazione  delle vulnerabilità a 
+supporto de l processo decisionale.  Sebbene Microsoft non utilizzi più l’analisi DREAD, le 
+motivazioni potrebbero essere giustificate dal fatto che si tratt a di un processo di valutazione del 
+rischio più adatto ai non  esperti di sicurezza o a team novizi nella modellazione delle minacce  
+rispetto al Security Bulletin Severity Rating System . L’analisi DREAD prevede  un calcolo basato 
+sulla valutazione di diversi aspetti della vulnerabilità, quali il danno p otenziale o la riproducibilità.  
+Il Security Bulletin Severity Rating System  classifica le vulnerabilità in una di  quattro categorie.  

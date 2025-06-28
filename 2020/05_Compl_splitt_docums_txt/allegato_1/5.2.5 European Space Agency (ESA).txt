@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 37  a 137  
+ 
+(paperback), ISBN 978 -906400 -04 -0 (PDF), June 2008.  
+Standard  MISRA AC GMG: Generic modeling design and style guidelines, ISBN 978 -906400 -06 -4 
+(PDF), May 2009. 
+MISRA Compliance: MISRA C, MISRA C++ coding guideli nes 
+5.2.5  European Space Agency (ESA) 
+Dall'inizio degli anni ‘90 l'ESA si è occupata di d efinire la qualità dei prodotti software. La famigl ia PSS 11  di 
+standard (poi sostituito da standard ECSS) include un software engineering standard e una serie di gui de. 
+ 
+URL  https://www.esa.int/  
+Country of HQ location  
+Geographic Scope  Paris  
+European 
+Type  Collaboration of Several European Countries  
+ 
+Uno degli standard di software ampiamente utilizzat o, chiamato "Guide to applying the ESA Software 
+Engineering Standards to small software projects" è  disponibile all'indirizzo: http://emits.sso.esa.int/emits-
+doc/e_support/Bssc962.pdf  
+Questo standard definisce una serie di criteri di q ualità per i requisiti software e di design, che ha nno una 
+influenza diretta e indiretta sulla sicurezza del s oftware. Nell’ambito dei quality criteria requirements  sono 
+rilevanti i seguenti aspetti: 
+• Sono menzionate le caratteristiche degli utenti e d elle funzionalità del software maggiormente 
+utilizzate? (Non risultano mancanti categorie di ut enti) 
+• Sono esplicitamente menzionate tutte le interfacce e sterne del software? (Non risultano mancanti 
+interfacce) 
+• E' stata definita una priorità per ciascun requisito ? (Il significato dei livelli di priorità è chiaro?)  
+• Ciascun requisito è verificabile (in un test di acce ttazione provvisoria)? (Misurabile: dove possibile,  
+quantificare; capacità, prestazione e accuratezza).  
+• I requisiti sono consistenti? (Non sono in conflitto )  
+• I requisiti sono sufficientemente accurati e inequiv ocabili? (Quali interfacce sono coinvolte, chi ha 
+l'iniziativa, chi fornisce quali dati, nessuna voce passiva).  
+• I requisiti sono completi? Tutto ciò che non è espl icitamente vincolato può essere considerato dal 
+punto di vista dello sviluppo libero? Un prodotto c he soddisfa tutti i requisiti è davvero accettabile?  
+(Nessun requisito mancante)  
+• I requisiti sono comprensibili per coloro che li do vranno successivamente utilizzare?  
+• I requisiti sono realizzabili all'interno del budge t?  
+• La maggior parte dei criteri di qualità di progetta zione sono rilevanti per la sicurezza del software.  
+ 
+ 
+ 
+                                                           
+11  http://www.esa.int/TEC/Software_engineering_and_st andardisation/TECBUCUXBQE_2.html 

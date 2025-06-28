@@ -1,0 +1,64 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 72  a 156  
+ 
+} 
+Forma corretta: 
+void method (String filename){ 
+if (new File(filename).exists()){  
+ // Controlli di white list …. 
+System.exec("more " + filename); 
+} 
+} 
+7.2.10.8  Oggetti 
+Per ragioni di sicurezza è necessario rendere le cl assi e gli oggetti non clonabili. Di seguito viene riportato 
+un esempio su come è possibile rispettare questa re gola: 
+[...] 
+public final void clone() throws java.lang.CloneNot SupportedException { 
+  throw new java.lang.CloneNotSupportedException();  
+} 
+[...] 
+Nei casi eccezionali, che dovrebbero essere motivat i e ampiamente documentati, bisogna etichettare i 
+metodi che consentono la clonazione di tipo “final” , in modo da evitare potenziali un loro malevolo 
+override. Di seguito viene riportato un esempio su come è possibile gestire queste eccezioni: 
+[...] 
+public final void clone() throws java.lang.CloneNot SupportedException { 
+  super.clone(); 
+} 
+  [...] 
+Comparazione degli oggetti di classe. Non effettuar e mai la comparazione per nome degli oggetti di cla sse. 
+Di seguito viene riportato un esempio su come è pos sibile rispettare questa regola: 
+ 
+Esempio: 
+Forma non corretta: 
+public class MyClass { 
+  public boolean sameClass (Object o) { 
+    Class thisClass = this.getClass(); 
+    Class otherClass = o.getClass(); 
+    return (thisClass.getName() == otherClass.getNa me()); 
+  } 
+} 
+Forma corretta: 
+package esempio; 
+public class MyClass { 
+  public boolean sameClass (Object o) { 
+    Class thisClass = this.getClass(); 
+    Class otherClass = o.getClass(); 
+    return (thisClass == otherClass); 
+  } 
+} 
+7.2.10.9  Serializzazione e deserializzazione 
+Rendere le classi e gli oggetti non serializzabili.  Di seguito viene riportato un esempio su come è po ssibile 
+rispettare questa regola: 
+[...] 
+private final void writeObject(ObjectOutputStream o ut) throws java.io.IOException 
+{ 
+   throw new java.io.IOException("L’oggetto non può  essere serializzato "); 
+} 
+[...] 
+Rendere le classi e gli oggetti non deserializzabil i. Di seguito un esempio su come è possibile rispet tare 
+questa regola: 
+[...] 
+private final void readObject(ObjectInputStream in)  throws java.io.IOException { 
+   throw new java.io.IOException("L’oggetto non può  essere deserializzato"); 
+} 

@@ -1,0 +1,49 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 47  a 156  
+ 
+7 BEST PRACTICES PER LO SVILUPPO IN SICUREZZA  
+Molti dei problemi di sicurezza del software sono d a attribuire alla scarsa conoscenza, da parte degli  
+sviluppatori, delle principali vulnerabilità e dei possibili attacchi che potrebbero sfruttarle.  
+ Il presente capitolo fornisce una vista delle prin cipali vulnerabilità e delle relative contromisure,  
+contestualizzate per ogni specifica area di svilupp o (C/C++, Java, PL/SQL, etc), anche in termini di t ecniche 
+da utilizzare per riconoscerle e difendersi opportu namente.  
+7.1  C/C++  
+Il linguaggio di programmazione procedurale denomin ato C fu sviluppato da Dennis Ritchie tra il 1969 e  il 
+1973 presso i Bell Labs, con lo scopo di implementa re parti di sistema operativo Unix. Da allora è div entato 
+uno dei linguaggi di programmazione più diffusi e u tilizzati, grazie alla sua grande potenza e flessib ilità. Il 
+linguaggio C, infatti, consente al programmatore di  accedere alla memoria della macchina in maniera 
+diretta, in modo da indirizzare e sfruttare qualsia si risorsa, software e hardware. 
+ 
+Dal C deriva il linguaggio di programmazione C++ (o  CPP acronimo di “C plus plus”) , orientato agli og getti, 
+con tipizzazione statica. È stato sviluppato (in or igine col nome di "C con classi") da Bjarne Stroust rup, 
+sempre presso ai Bell Labs nel 1983 nell’ottica del la modernizzazione del linguaggio C.  
+ 
+Poiché i linguaggi C e C++ hanno caratteristiche mo lto simili, ai fini della sicurezza del codice le v ulnerabilità 
+e le relative contromisure sono da considerarsi val ide per entrambi i linguaggi. 
+7.1.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+Il Cross-site scripting (XSS) è una vulnerabilità c he affligge siti web dinamici che operano un contro llo 
+insufficiente dell'input. Un XSS permette ad un att accante di inserire o eseguire codice script lato c lient, al 
+fine di attuare i seguenti exploit:  
+• raccolta, manipolazione e reindirizzamento di infor mazioni riservate;  
+• visualizzazione e modifica di dati presenti sui ser ver;  
+• alterazione del comportamento dinamico delle pagine  web. 
+ 
+Rientrano nelle problematiche di tipo XSS: 
+• Stored XSS . Gli attacchi di tipo “stored XSS” sono quelli in cui lo script iniettato viene memorizzato 
+in modo permanente sui server di destinazione, come  ad esempio in un database, in un forum di 
+messaggi, in un registro dei visitatori, in un camp o commentato, etc. Da quel momento in poi, ogni 
+qualvolta verrà rischiesta la pagina che include lo  script memorizzato, quest’ultimo verrà 
+rispristinato ed eseguito. 
+• Reflected XSS . Gli attacchi XSS riflessi, noti anche come attacc hi non persistenti, si verificano 
+quando uno script dannoso viene restituito da un'ap plicazione Web al browser della vittima. Sono 
+più diffusi, proprio per la facilità di propagazion e: non è neessario individuare alcun meccanismo 
+per memorizzare permanentemente gli script malevoli . Sono i più evitabili e spesso i danni che 
+apportano sono di entità inferiore, rispetto agli s tored XSS. 
+Come difendersi 
+Convalidare tutti gli input, indipendentemente dall a fonte: la convalidazione dovrebbe essere basata s u una 
+white list (una lista di valori ammessi), per cui v errebbero accettati solo i dati che corrispondono, e 
+verrebbero rifiutati tutti gli altri. 
+Occorre controllare, oltre che i valori siano fra q uelli ammessi o che rientrino in un determinato int ervallo 
+di validità, se corrispondano alle attese anche il tipo, la dimensione e il formato dei dati in input.  

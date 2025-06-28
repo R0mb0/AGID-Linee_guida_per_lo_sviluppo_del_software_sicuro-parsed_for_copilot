@@ -1,0 +1,26 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 6 a 132 
+ 
+1 INTRODUZIONE  
+1.1 Scopo  
+Gli obiettivi degli attacchi sono spesso vulnerabilità che si celano all’inte rno delle applicazioni 
+software . La comunità OWASP  (www.owasp.org ) sottolinea la necessità di accrescere la 
+consapevolezza sulla sicurezza delle applicazioni in  quanto il software  non sicuro mette a 
+repentaglio le infrastrutture finanziarie, sanitarie , difensive , etc. 
+Questo documento vuole analizzare  il contesto (processi, metodi e modelli) della Progettazione di 
+Applicazioni  Sicur e con l’obiettivo di fornire le  linee guida per la modellazione delle minacce e 
+conseguente individuazione  di azioni di mitigazione , in conformità con i  principi “ Secure/privacy 
+by Design”. Ciò costituisce una fase importante nel processo d’individuazione preventiva dei 
+requisiti di sicurezza e privacy.  
+1.2 Struttura del documento  
+Il presente documento è articolato come segue:  
+• Il Capitolo 5, introdu ce i concetti base di security e privacy by design , analizza gli strumenti e i modelli 
+a supporto della fase di progettazione del software sicuro, in essere e in divenire;  
+• Il Capitolo 6, definisce le linee guida per l’identificazione preventiva delle possibili minacce,  delle 
+relative azioni di mitigazione  e per la valutazione e prioritizzazione delle minacce  stesse;  
+• Il Capit olo 7, fornisce un caso d’uso applicativo in cui vengono impiegate le metodologie e gli 
+strumenti  di sicurezza  indicati nel Capitolo 5 (Linee Guida).  
+ 

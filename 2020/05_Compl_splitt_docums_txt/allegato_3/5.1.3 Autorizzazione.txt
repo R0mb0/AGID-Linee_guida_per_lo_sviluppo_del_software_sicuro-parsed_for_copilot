@@ -1,0 +1,109 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 28  a 141  
+ 
+L'organizzazione dovrebbe definire un processo affi nché l'utente "proprietario" o altri 
+utenti possano segnalare immediatamente - H24 - eve nti/incidenti di sicurezza inerenti 
+l'informazione segreta di autenticazione, quali: la  divulgazione non autorizzata o la 
+perdita di segretezza. 
+ 
+5.1.3  Autorizzazione 
+Definizione della politica di controllo accesso log ico  
+Minaccia  Accesso non autorizzato a lle  informazioni (ad es. causato dal personale utente per 
+carenza di una politica per il controllo degli acce ssi che accoglie i requisiti di sicurezza). 
+Contromisure  Definire e documentare la politica che regola le au torizzazioni per ciascun utente e 
+gruppo di utenti con una granularità che consenta u n rigoroso rispetto del principio del 
+''need to know''. Deve essere soddisfatta la regola  del ''tutto proibito tranne ciò che è 
+espressamente concesso''. La politica deve tenere c onto di: 
+- requisiti di sicurezza delle applicazioni e dei ris chi che le informazioni gestite da tali 
+applicazioni possono incontrare; 
+- leggi e obblighi contrattuali che riguardano la pro tezione degli accessi a dati e 
+servizi; 
+- gestione dei diritti di accesso in un ambiente dist ribuito e di rete che riconosce 
+ogni tipo di connessione disponibile; 
+- separazione dei ruoli riguardanti il controllo degl i accessi (richiesta di accesso, 
+autorizzazione degli accessi, amministrazione degli  accessi); 
+- rimozione dei diritti di accesso per le credenziali  non utilizzate da almeno sei mesi. 
+ 
+Separazioni dei compiti e delle responsabilità  
+Minaccia  Abuso di risorse . 
+Contromisure  I compiti e le aree di responsabilità in conflitto tra loro devono essere separati al fine di 
+ridurre le possibilità di accedere, modificare o ut ilizzare asset dell'organizzazione 
+impropriamente, senza autorizzazione o misure di co ntrollo. 
+ 
+Definizione di regole di trattamento e d etichettatura  
+Minaccia  Compromissione della sicurezza dell'informazione pe r carenza di regole di 
+classificazione e trattamento delle informazioni 
+Contromisure  Definire criteri e procedure per la corretta e tichettatura delle informazioni  (non solo in 
+forma elettronica, ma anche cartacea). Considerare le seguenti etichette: 
+- Confidenziale (Informazione la cui impropria diffus ione può provocare danni molto 
+gravi, ad esempio: perdite economiche, conseguenze legali, conseguenze sul 
+patrimonio, danno di immagine) 
+- Riservata (Informazione la cui impropria diffusione  può provocare danni gravi, ad 
+esempio: perdita di vantaggio competitivo) 
+- Interna (Informazione la cui diffusione può provoca re danno lieve) 
+- Pubblica (Informazione la cui diffusione non può pr ovocare danno) 
+Definire procedure che regolino come debba avvenire  il trattamento delle informazioni 
+ai vari livelli di classifica con riferimento alle attività di elaborazione, diffusione, 
+utilizzo, custodia, riclassificazione, distruzione.  
+Rendere disponibili le procedure a tutto il persona le. 
+ 
+Definizione e assegnazione di ruoli e responsabilit à  
+Contromisura  Compromissione della sicurezza dell'informazione pe r carenza dell ’organizzazione 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 29  a 141  
+ 
+interna  
+Contromisure  Dare la responsabilità delle informazioni (insieme di dati) e delle risorse associate per 
+la loro elaborazione (processo di business, gruppo specifico di attività, applicazioni) ad 
+una determinata parte dell'organizzazione per assic urare l’appropriata classificazione e 
+l'applicazione delle politiche di controllo degli a ccessi a tali risorse. In particolare: 
+- identificare e definire chiaramente i vari beni (qu ali i server, le postazioni di lavoro 
+client, gli apparati di rete e di sicurezza, i sist emi di storage, i dispositivi di stampa, i 
+sistemi di continuità elettrica, ecc.) e i processi  di sicurezza (es. gestione degli 
+incidenti, gestione delle configurazioni di sistema , gestione degli aggiornamenti, 
+gestione dei sistemi antivirus, gestione dei sistem i firewall, gestione delle verifiche 
+tecniche di vulnerability assessment, gestione dell e non conformità e monitoraggio 
+dei rientri, ecc.);  
+- nominare un responsabile della sicurezza di ciascun  bene e un responsabile per 
+ciascun processo di gestione della sicurezza e docu mentare in modo; dettagliato i 
+processi, definendo in modo chiaro i ruoli e le res ponsabilità 
+- definire chiaramente i livelli di autorizzazione pe r l’accesso o l’utilizzo di ciascun 
+bene. 
+ 
+Protezione dell'accesso ai dati  
+Minaccia  - Abuso di privilegi da parte dell'utente . Accesso non autorizzato ai sistemi (risorse 
+di sistema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Furto di credenziali di autenticazione. 
+Contromisure  Per quanto riguarda il furto di credenziali di aute nticazione e quel che ne consegue 
+(accesso non autorizzato a sistemi e informazioni, furto d’identità, ecc.), è necessario 
+stabilire meccanismi di autenticazione la cui robus tezza sia adeguata alla criticità 
+dell’applicazione e ancor più alla sensibilità dei dati che l’applicazione tratta. 
+Ad es. per applicazioni critiche o dati particolarm ente sensibili è necessario adottare 
+meccanismi di autenticazione a due fattori, basati ad es. su SMS inviati su un numero 
+di cellulare precedentemente “certificato”, o codic i inviati tramite una app per 
+smartphone o altri metodi equivalenti. 
+Tuttavia qualsiasi misura di sicurezza in tale ambi to può risultare inefficace se non 
+accompagnata da una appropriata campagna di diffusi one della consapevolezza delle 
+problematiche di sicurezza (“security awareness”) v erso gli utenti che devono essere 
+informati e responsabilizzati verso un uso corretto  delle credenziali di autenticazione 
+con documenti (politiche di sicurezza) ed eventualm ente corsi di formazione. 
+Per impedire l’accesso non autorizzato ai dati, a r iposo e/o in transito, da parte di 
+utenti reali (ma non abilitati per i dati in oggett o) e per limitare le possibilità di accesso 
+di eventuali utenti che abbiano ottenuto illecitame nte delle credenziali valide non di 
+propria pertinenza, i dati memorizzati all'interno dei sistemi (file e cartelle) devono 
+essere adeguatamente protetti attraverso l’assegnaz ione di diritti di accesso il più 
+possibile granulari e specifici (dal punto di vista  delle risorse). 
+Qualora i dati siano conservati in archivi elettron ici (es. database) accertarsi che 
+l'accesso ai dati avvenga mediante un'adeguata prof ilatura degli utenti e che le 
+applicazioni che accedono ai database non utilizzin o una singola utenza di “super-
+amministratore” per tutte le operazioni, dato che t ale configurazione può essere 
+sfruttata da un malintenzionato per prendere pieno possesso dell’archivio. 
+L'organizzazione dovrebbe adottare controlli di acc esso fisico e/o logico per 
+l’isolamento di applicazioni, dati o sistemi critic i o sensibili. Per l'accesso ai dati critici o 
+sensibili definire requisiti di sicurezza più strin genti applicando tecniche di cifratura o 
+altri meccanismi di sicurezza per rafforzare la pro tezione dell'accesso. 

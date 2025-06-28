@@ -1,0 +1,54 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 26  a 137  
+ 
+ANSI/ISA -62443 -2-1 (99.02.01 )-2009, Security for Industrial Automation and 
+Control Systems: Establishing an Industrial Automat ion and Control Systems 
+Security Program.  
+ANSI/ISA-62443-1-1 (99.01.01)-2007, Security for In dustrial Automation and 
+Control Systems Part 1: Terminology, Concepts, and Models. 
+INDUSTRIAL 
+CYBERSECURITY 
+CERTIFICATE PROGRAM Certificate 1: ISA/IEC 62443 Cybersecurity Fundamen tals Specialist . 
+Certificate 2: ISA/IEC 62443 Cybersecurity Risk Ass essment Specialist. 
+Certificate 3: ISA/IEC 62443 Cybersecurity Design S pecialist. 
+Certificate 4: ISA/IEC 62443 Cybersecurity Maintena nce Specialist. 
+ISA/IEC 62443 Cybersecurity Expert. 
+CONFORMITY 
+ASSESSMENT Cybersecurity Certification to ISA/IEC 62443 Standa rds – It certifies devices and 
+systems to the ISA/IEC 62443 Industrial Automation and Control Systems 
+(IACS) cybersecurity standards. 
+TRAINING COURSES  Introduction to Industrial Automation Security and the ANSI/ISA99 Standards 
+(IC32C). 
+Using the ANSI/ISA99 Standard to Secure Your Contro l System (IC32). 
+Industrial Networking and Security (TS12). 
+Assessing the Cybersecurity of New or Existing IACS  Systems (IC33).  
+IACS Cybersecurity Design & Implementation (IC34).   
+IACS Cybersecurity Operations & Maintenance (IC37).  
+ 
+5.1.6  Software Assurance Forum for Excellence in Code (SA FECODE) 
+SAFECode è un'iniziativa privata creata da sviluppa tori software e fornitori. Individuando e promuoven do le 
+migliori pratiche in SSE, questa iniziativa sostien e che l'industria del software potrebbe rilasciare software, 
+hardware e servizi più sicuri e affidabili. Tra le sue uscite principali, ci sono i documenti che racc olgono le 
+migliori pratiche, tenendo conto del ciclo di vita di sviluppo del software. 
+ 
+URL  https://www.safecode.org  
+Country of HQ loca tion  
+Geographic Scope  US  
+International 
+Type  Industry (not for profit ) 
+ 
+SAFECode afferma che i suoi obiettivi sono: 
+1.  Identificare e condividere collaudate pratiche di g aranzia del software;  
+2.  Promuovere una più ampia adozione di tali pratiche nell'ecosistema informatico;  
+3.  Lavorare con istituzioni e fornitori di infrastrutt ure critiche per sfruttare le pratiche nella gestio ne 
+dei rischi aziendali. 
+ 
+Risultati più rilevanti: 
+Training   Security Engineering Training  
+Un quadro di riferimento per i programmi di formazi one aziendale sui principi 
+dello sviluppo sicuro del software. 
+Security engineering training by SAFECode è una ris orsa della comunità online 
+che offre corsi gratuiti di formazione sulla sicure zza del software erogati 

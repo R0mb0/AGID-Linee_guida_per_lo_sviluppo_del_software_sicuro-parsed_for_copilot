@@ -1,0 +1,48 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 113  a 141  
+ 
+processo di “anonimizzazione” o “tokenizzazione” . 
+ 
+Protezione delle informazioni strumentali all'acces so  
+Minaccia  Crittografia debole o non validata.  
+Accesso non autorizzato alle informazioni. 
+Contromisure  Per la memorizzazione sicura delle chiavi applicati ve di accesso e/o di cifratura 
+utilizzare funzionalità o prodotti di tipo “wallet”  native o aggiuntive ma comunque 
+certificate dal vendor dello specifico database. 
+ 
+5.6.7  Documentazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.5]. 
+ 
+5.6.8  Logging 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.6]. 
+ 
+5.6.9  Sessioni 
+Protezione delle sessioni di lavoro  
+Minaccia  Accesso non autorizzato alle informazioni.  
+Contromisure  Attivare un meccanismo per la disconnessione automa tica delle sessioni di lavoro dopo 
+un periodo di inattività inferiore ai 5 minuti 
+ 
+5.6.10  Procedure 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.7], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+Limitare e controllare l'uso dei programmi di utilità  
+Minaccia  Accesso non autorizzato a i sistem i.  
+Contromisure  Limitare e tenere sotto controllo l'uso di programm i di utilità, considerando le seguenti 
+linee guida:  
+- utilizzo di procedure di identificazione, autentica zione e autorizzazione per i 
+programmi di utilità;  
+- limitazione della disponibilità e tracciamento di t utti gli utilizzi dei programmi di 
+utilità;  
+- rimozione o disabilitazione di tutti i programmi di  utilità non necessari. 
+ 
+Tecniche di programmazione SQL sicura e protezione degli accessi  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Cancellazione o furto di informazioni. 
+Contromisure  Alcuni prodotti di mercato (es. Oracle Database 12c ) forniscono un “database firewall” 
+specializzato per monitorare le istruzioni SQL dire tte al DBMS. Ciò corrobora le best 
+practices di programmazione sicura, difendendo il D BMS da vari tipi di attacchi. 
+ 
+5.6.11  Informazioni addizionali 
+Riferimenti  

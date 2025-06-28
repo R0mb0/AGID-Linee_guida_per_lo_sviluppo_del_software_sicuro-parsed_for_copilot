@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 136  a 156  
+ 
+  proc.WaitForExit(MAX_TIMEOUT) 
+   
+  exitCode = proc.ExitCode 
+ End Using 
+  
+ Return exitCode 
+End Function 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/94.html,  
+Improper Control of Generation of Code ('Code Injec tion') CWE-94. 
+7.10.3  Command Injection 
+Come riconscerla 
+Sfruttando questa vulnerabilità un aggressore potre bbe eseguire comandi di sistema arbitrari 
+sull’application server. Il danno che potrebbe esse re arrecato comprende: 
+• la possibilità di modificare i permessi all’interno  di file o directory nel file system (read / create  / 
+modify / delete); 
+• la possibilità di instaurare connessioni di rete no n autorizzate verso il server;  
+• la possibilità di gestire i servizi di sistema, avv iandoli, fermandoli o rimuovendoli; 
+• la completa acquisizione del controllo del server d a parte dell'attaccante. 
+Attraverso questa vulnerabilità l'applicazione vien e portata ad eseguire i comandi dell’attaccante. 
+L'operazione spesso viene effettuata utilizzando st ringhe di input controllate dall'utente, sulle qual i non 
+viene effettuata alcuna verifica. 
+Potrebbero così essere eseguiti direttamente sul se rver comandi anche molto pericolosi per il sistema o per 
+la sicurezza dei dati. 
+Come difendersi 
+• Rimodulare il codice per evitare una qualsiasi esec uzione diretta di script di comandi. Per effettuare  
+operazioni di sistema, utilizzare eventualmente API  fornite dalla piattaforma. 
+• Se non è possibile fare a meno di lanciare shell de i comandi, assicurarsi tuttavia di eseguire solo 
+stringhe statiche, che non includano l'input dell'u tente. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La convalida dovrebbe essere 
+basata su una white list: dovrebbero essere accetta ti solo i dati che adattano a una struttura 
+specificata, e scartati i dati che non rientrano in  questa categoria. I parametri devono essere limita ti 
+a un set di caratteri consentito e i caratteri rico nosciuti come estranei devono essere filtrati e 
+neutralizzati (escaping). Oltre ai caratteri, occor re verificare il tipo del dato, la sua dimensione, 
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Configurare l'applicazione da eseguire utilizzando un account utente limitato che non disponga di 
+privilegi non necessari. 
+L’esecuzione del codice dovrebbe utilizzare un acco unt utente separato e dedicato, fornito dei soli pr ivilegi 
+strettamente necessari, in base al principio denomi nato "Principle of Least Privilege". Il principio s tabilisce 
+che agli utenti venga attribuito il più basso livel lo di “diritti” che possano detenere rimanendo comu nque in 
+grado di compiere il proprio lavoro. 
+ 
+Per ulteriori informazioni: http://cwe.mitre.org/data/definitions/77.html,  
+CWE-77: Improper Neutralization of Special Elements  used in a Command ('Command Injection'). 
+7.10.4  Connection String Injection 
+Come riconoscerla 
+Questo tipo di attacchi è possibile nel momento in cui l’applicazione affida all’input utente la compo siszione 
+dinamica della stringa di connessione al database. 

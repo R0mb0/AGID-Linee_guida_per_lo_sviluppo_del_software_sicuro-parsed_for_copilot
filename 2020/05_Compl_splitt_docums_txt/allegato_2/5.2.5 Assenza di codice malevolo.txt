@@ -1,0 +1,48 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 14  a 156  
+ 
+• deallocare la memoria il più presto possibile (dist ruzione degli oggetti) laddove tale operazione non 
+pregiudichi la sicurezza dell’applicazione; 
+• compilare il software per la piattaforma di utilizz o (es: non compilare per architettura hardware 64-
+bit se non è necessario). 
+5.2.2  Password nel codice sorgente 
+I dati di accesso (username/password/nome db/ecc..)  ai database o a sistemi di altra natura non devono  
+mai essere inseriti all'interno dei sorgenti. 
+Nei casi in cui non sia possibile, tali dati devono   apparire in forma  cifrata. Per le chiavi di cifr atura e in 
+generale per tutte le informazioni riservate valgon o le stesse indicazioni. 
+5.2.3  Privilegi esecutivi minimi 
+Quando l’applicazione viene avviata all’interno del  sistema operativo, porta con sé i privilegi dell’u tenza che 
+effettua l’operazione. L’applicazione non deve esse re lanciata con i privilegi amministrativi. 
+5.2.4  Metodi TRACE e TRACK 
+Uno dei principi di sicurezza più saggi afferma che  ciò che non viene utilizzato dovrebbe essere disab ilitato. 
+Nelle applicazioni Web è obbligatoria la disattivaz ione lato server del metodo HTTP TRACE o del metodo  
+TRACK (utilizzato in ambienti Microsoft IIS ). Tali  metodi consentono al client di vedere ciò che vien e 
+ricevuto dal web server. Tali informazioni possono poi essere utilizzate per organizzare un attacco di  Cross 
+Site Scripting. Si parla di “Cross Site Tracing” (X ST). 
+5.2.5  Assenza di codice malevolo 
+L’applicazione non deve contentere alcun tipo malwa re (malicious software): virus, trojan, rootkit, wo rms, 
+ramsonware, ecc.  
+Sono da considerare potenzialmente pericolose anche  le backdoor amministrative, poiché consentono 
+l’accesso alle macchine in rete bypassando il proce sso di autenticazione. Un attaccante che trovasse i l 
+modo di manomettere una backdoor amministrativa, po trebbe penetrare nelle macchine e prenderne il 
+controllo. 
+5.2.6  Fattore integrità 
+Il concetto di integrità del software include la re silienza agli attacchi informatici e alle violazion i della 
+privacy, ma essenzialmente sta a indicare che possa no essere impedite modifiche non autorizzate. 
+La fase di progettazione e la successiva fase d’imp lementazione  devono assicurare che tutti gli error i e le 
+eccezioni rilevati durante il processamento e l’ela borazione dei dati acquisiti in ingresso siano 
+correttamente gestiti, in modo che non causino il d anneggiamento o la perdita di integrità delle 
+informazioni. 
+5.2.7  Input character validation 
+L’applicazione deve assicurare, attraverso opportun i meccanismi di convalida, che tutti i parametri in  input, 
+specificati dall’utente, siano congruenti a quanto atteso. 
+In particolare, sui dati acquisiti in ingresso, l’a pplicazione deve prevedere l’implementazione di mec canismi 
+di controllo che limitino il set di caratteri o val ori, inseribili dall’utente, solo a quelli congruen ti ai campi 
+richiesti e/o alle form di pertinenza, al fine di i dentificare e annullare gli effetti dei seguenti er rori: 
+• Valori out-of-range o non pertinenti (ad esempio l’ immissione di caratteri non numerici nel campo 
+“anno di nascita”); 
+• Caratteri invalidi negli stream o nei data field; 
+• Dati mancanti o incompleti; 
+• Limite del minimo volume di dati richiesti non sodd isfatto o del massimo volume di dati acquisibile 
+in ingresso raggiunto; 
