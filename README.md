@@ -99,6 +99,8 @@ This repository contains a collection of documents originally sourced from the A
 > 
 > **Nota:** Se la branch principale non è `main`, oppure la struttura delle cartelle differisce, i link potrebbero dover essere adattati. Se vuoi la lista di tutti i PDF presenti nella cartella (non solo quelli legati ai file visti prima), fammi sapere!
 
+</details>
+
 <details>
 <summary>
 
@@ -712,7 +714,6 @@ This repository contains a collection of documents originally sourced from the A
 </details>
 
 </details>
-
 
   <picture>
     <source media="(prefers-color-scheme: dark)"srcset="https://github.com/R0mb0/Not_made_by_AI/blob/main/Badge/SVG/NotMadeByAIDark.svg">
