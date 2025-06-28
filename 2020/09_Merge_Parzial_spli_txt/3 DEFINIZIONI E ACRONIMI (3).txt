@@ -1,0 +1,115 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 9 a 156  
+ 
+3 DEFINIZIONI E ACRONIMI 
+3.1  Definizioni 
+Vocabolo  Descrizione  
+Ambiente di produzione  Agglomerato di sistemi, dispositivi hardware ed app licazioni in cui il software 
+viene installato nella sua forma definitiva al fine  di soddisfare le richieste 
+dell’operatore o dell’utente finale. 
+Ambiente di sviluppo  Agglomerato di sistemi, dispositivi hardware ed app licazioni in cui il software 
+viene progettato e creato. 
+Ambiente di test  Agglomerato di sistemi, dispositivi hardware ed app licazioni in cui il software 
+creato viene testato. 
+Autenticazione Processo attraverso il quale un sistema, un utente o un programma tenta di 
+confermare la sua identità ad un altro sistema o ap plicazione. 
+Autorizzazione Processo di definizione dei privilegi, ruoli e perm essi di un utente su un sistema 
+o un’applicazione. 
+Batch Job Processo di scambio dati o informazioni che interco rre automaticamente, in 
+periodi temporali prestabiliti, tra due sistemi, ap plicazioni o componenti. 
+Dati critici Dati che hanno una rilevanza preponderante per l’im magine e l’operato 
+aziendale (esempio cartellini di traffico telefonic o). 
+Dati personali  Come da decreto legislativo 196/03: “qualunque info rmazione relativa a persona 
+fisica, persona giuridica, ente od associazione, id entificati o identificabili, anche 
+indirettamente, mediante riferimento a qualsiasi al tra informazione, ivi 
+compreso un numero di identificazione personale”. 
+Dati sensibili  Come da decreto legislativo 196/03: “Dati personali  idonei a rivelare l'origine 
+razziale ed etnica, le convinzioni religiose, filos ofiche o di altro genere, le 
+opinioni politiche, l'adesione a partiti, sindacati , associazioni od organizzazioni a 
+carattere religioso, filosofico, politico o sindaca le, nonché i dati personali idonei 
+a rivelare lo stato di salute e la vita sessuale”. 
+Eccezione  Occor renza di una circostanza che altera o mira ad alter are il corso previsto o il 
+normale operato di un sistema, di un’applicazione o  di una sua componente. 
+Evento  Situazione riconducibile ad un’attività svolta o ad  un’eccezione causata 
+dall’utente, rilevante ai fini della sicurezza del sistema e dell’Information 
+Security. 
+Identificazione  Meccanismo di convalida preventiva di un’azione.  
+Information Gathering & 
+Disclosure Processo relativo alla fuga di dati o informazioni,  causato da bug o errori nel 
+software. 
+Information Security  Insieme di controlli, policy, processi e procedure mirate a garantire la sicurezza 
+delle informazioni in azienda. 
+Offuscatore  Software che converte il codice sorgente in forma d ifficilmente interpretabile o 
+non interpretabile del tutto al fine di inibire l’u tilizzo di tecniche di reverse 
+engineering. 
+Organizzazione  Ente locale o centrale della Pubblica Amministrazio ne  
+Reverse Engineering  Processo mirato a scoprire i principi tecnologici d i un’applicazione attraverso la 
+sua analisi strutturale. 
+Token  Valore generato per identificare univocamente una s essione interattiva.  
+Tabella 2 - Definizioni 
+3.2  Acronimi 
+Codice  Titolo  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 10  a 156  
+ 
+AES  Advanced Encryption Standard  
+AgID  Agenzia per l'Italia Digitale  
+ANSI  American National Standards Institute  
+API  Application programming interface  
+ASP  Active Server Pages  
+CD  Compact Disk  
+CE  Contratto Esecutivo  
+CGI  Common Gateway Interface  
+CQ  Contratto Quadro  
+CLR  Common Language Runtime  
+CSRF/XSRF  Cross -Site Request Forgery  
+CSS  Cascading Style Sheets  
+CWE  Common Weakness Enumeration  
+DB  Database  
+DDNS  Distributed Denial Of Service  
+DES  Data Encryption Standard  
+DNS  Denial Of Service  
+DOM  Document Object Model  
+DVD  Digital Versatile Disc  
+ECMA  European Computer Manufacturers Association  
+ESAPI  The OWASP Enterprise Security API  
+FTP  File Transfer Protocol  
+GPL  General Public License  
+HTML  HyperText Markup Language  
+HTTP  Hypertext Transfer Protocol  
+HTTPS  HTTP Secure  
+IoC Inversion of Control  
+ISO  International Organization for Standardization  
+JDBC  Java DataBase Connectivity  
+JSON  JavaScript Object Notation  
+JWT  JSON Web Token  
+LDAP  Lightweight Directory Access Protocol  
+MDA5  Message Digest 5  
+MVC  Model -View -Controller  
+ORM  Object -relational mapping  
+OS  Operating System  
+OTP  One Time Password  
+PL/SQL  Programming language / Structured Query Language  
+RDBMS  Relational database management system  
+REST  Representational State Transfer  
+RPC  Remote Procedure Call  
+RTI  Raggruppamento Temporaneo di Impresa  
+SHA -1 Secure Hash Algorithm.  
+SOAP  Simple Object Access Protocol  
+SQL  Structured Query Language  
+SSH  Secure Socket Shell  
+SSL  Secure Sockets Layer  
+TCP  Transmission Control Protocol  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 11  a 156  
+ 
+TLS  Transport Layer Security  
+URL  Uniform Resource Locator  
+UTF  Unicode Transformation Format  
+XML  eXtensible Markup Language  
+XSS  Cross Site Scripting  
+Tabella 3 - Acronimi  
+  

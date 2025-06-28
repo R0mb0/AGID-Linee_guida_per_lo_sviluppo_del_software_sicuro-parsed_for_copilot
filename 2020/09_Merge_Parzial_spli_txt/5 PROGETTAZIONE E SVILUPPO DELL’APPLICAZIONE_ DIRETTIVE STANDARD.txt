@@ -1,0 +1,450 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 13  a 156  
+ 
+5 PROGETTAZIONE E SVILUPPO DELL’APPLICAZIONE: DIRETTI VE 
+STANDARD  
+5.1  Progettazione dell’applicazione  
+L'architettura dell’applicazione deve essere proget tata e sviluppata secondo i paradigmi standard 
+dell’industria del software, quali: Architettura mo nolitica (mainframe), Client server, Service Orient ed 
+Architecture (SOA), ecc. 
+Nel corso della fase di progettazione è necessario garantire un adeguato livello di sicurezza applicat iva e 
+infrastrutturale attraverso l’analisi e la modellaz ione delle minacce relative agli applicativi coinvo lti, delle 
+interfacce e degli agenti che potrebbero minacciare  il sistema. Per l’analisi della sicurezza applicat iva di 
+un’architettura di sistema si adotta un approccio d ifferente a seconda che si tratti di progettazione di 
+applicazioni ex-novo (approccio Secure by Design) p iuttosto che di reingegnerizzazione di applicazioni  
+esistenti (approccio Security Control). Nel dettagl io: 
+• PROGETTAZIONE SICURA BY DESIGN  - Durante le fasi di analisi della sicurezza appli cativa di una 
+architettura di sistema (da definire o in fase di r ivisitazione) è necessaria l’attuazione di pratiche  di 
+progettazione sicura attraverso l’individuazione di  requisiti di sicurezza e contromisure secondo i 
+Security by Design Principles. Le pratiche di proge ttazione sicura realizzano la sicurezza delle 
+informazioni attraverso un approccio di "Defense in  Depth” del layer applicativo. La “difesa in 
+profondità” ha come scopo limitare al minimo i dann i in caso di attacco riuscito. In pratica, 
+nell’ipotesi che un attaccante riesca a oltrepassar e il primo livello di difesa (ad esempio aggirando il 
+controllo di autenticazione), ulteriori misure più restrittive devono intervenire per ostacolarne 
+l’avanzata (ad esempio, restringendo al minimo i pr ivilegi d’accesso alle risorse o applicando la 
+compartimentazione dell’applicazione al fine di ost acolare bloccare la propagazione dell’attacco 
+all’intero sistema). 
+• SECURITY CONTROL  (su applicazione esistente) – È necessario: 1) Ide ntificare, quantificare e 
+risolvere i rischi di sicurezza associati ad un’int erfaccia, un'applicazione e/o un sistema esistenti.  2) 
+Validare dal punto di vista della sicurezza applica tiva gli sviluppi realizzati da terze parti (sicure zza 
+della supply chain). 3) Tutelare il proprio patrimo nio informativo e i dati. 
+ 
+Le tecniche di modellazione delle minacce e d’ident ificazione delle relative contromisure, finalizzate  a 
+indirizzare i requisiti di sicurezza applicativa di  un’architettura di sistema, insieme alle pratiche di 
+progettazione sicura, sono trattate in dettaglio ne ll’ Allegato 4 -  Linee Guida per la modellazione delle 
+minacce ed individuazione delle azioni di mitigazio ne conformi ai principi del Secure/Privacy by Desig n. 
+5.2  Sviluppo dell’applicazione – Criteri Generali 
+Nel corso della fase di sviluppo di un’applicazione , si raccomanda l’adozione dei criteri generali rip ortati nei 
+paragrafi successivi. 
+5.2.1  Performance 
+Le soluzioni di programmazione impiegate devono rid urre al minimo l'impatto sulle risorse di sistema.  
+È necessario: 
+• non ottimizzare mai manualmente ciò che può essere ottimizzato dai compilatori; 
+• per i linguaggi che accedono direttamente alla memo ria del sistema, evitare di avere puntatori 
+multipli ad una determinata risorsa; 
+• utilizzare i data-types appropriati (es: non utiliz zare long quando int è sufficiente);  
+• utilizzare switch/case al posto di strutture nidifi cate di if; 
+• porre le risorse più frequentemente utilizzate le u ne vicine alle altre; 
+• allocare la memoria il più tardi possibile (costruz ione degli oggetti); 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 14  a 156  
+ 
+• deallocare la memoria il più presto possibile (dist ruzione degli oggetti) laddove tale operazione non 
+pregiudichi la sicurezza dell’applicazione; 
+• compilare il software per la piattaforma di utilizz o (es: non compilare per architettura hardware 64-
+bit se non è necessario). 
+5.2.2  Password nel codice sorgente 
+I dati di accesso (username/password/nome db/ecc..)  ai database o a sistemi di altra natura non devono  
+mai essere inseriti all'interno dei sorgenti. 
+Nei casi in cui non sia possibile, tali dati devono   apparire in forma  cifrata. Per le chiavi di cifr atura e in 
+generale per tutte le informazioni riservate valgon o le stesse indicazioni. 
+5.2.3  Privilegi esecutivi minimi 
+Quando l’applicazione viene avviata all’interno del  sistema operativo, porta con sé i privilegi dell’u tenza che 
+effettua l’operazione. L’applicazione non deve esse re lanciata con i privilegi amministrativi. 
+5.2.4  Metodi TRACE e TRACK 
+Uno dei principi di sicurezza più saggi afferma che  ciò che non viene utilizzato dovrebbe essere disab ilitato. 
+Nelle applicazioni Web è obbligatoria la disattivaz ione lato server del metodo HTTP TRACE o del metodo  
+TRACK (utilizzato in ambienti Microsoft IIS ). Tali  metodi consentono al client di vedere ciò che vien e 
+ricevuto dal web server. Tali informazioni possono poi essere utilizzate per organizzare un attacco di  Cross 
+Site Scripting. Si parla di “Cross Site Tracing” (X ST). 
+5.2.5  Assenza di codice malevolo 
+L’applicazione non deve contentere alcun tipo malwa re (malicious software): virus, trojan, rootkit, wo rms, 
+ramsonware, ecc.  
+Sono da considerare potenzialmente pericolose anche  le backdoor amministrative, poiché consentono 
+l’accesso alle macchine in rete bypassando il proce sso di autenticazione. Un attaccante che trovasse i l 
+modo di manomettere una backdoor amministrativa, po trebbe penetrare nelle macchine e prenderne il 
+controllo. 
+5.2.6  Fattore integrità 
+Il concetto di integrità del software include la re silienza agli attacchi informatici e alle violazion i della 
+privacy, ma essenzialmente sta a indicare che possa no essere impedite modifiche non autorizzate. 
+La fase di progettazione e la successiva fase d’imp lementazione  devono assicurare che tutti gli error i e le 
+eccezioni rilevati durante il processamento e l’ela borazione dei dati acquisiti in ingresso siano 
+correttamente gestiti, in modo che non causino il d anneggiamento o la perdita di integrità delle 
+informazioni. 
+5.2.7  Input character validation 
+L’applicazione deve assicurare, attraverso opportun i meccanismi di convalida, che tutti i parametri in  input, 
+specificati dall’utente, siano congruenti a quanto atteso. 
+In particolare, sui dati acquisiti in ingresso, l’a pplicazione deve prevedere l’implementazione di mec canismi 
+di controllo che limitino il set di caratteri o val ori, inseribili dall’utente, solo a quelli congruen ti ai campi 
+richiesti e/o alle form di pertinenza, al fine di i dentificare e annullare gli effetti dei seguenti er rori: 
+• Valori out-of-range o non pertinenti (ad esempio l’ immissione di caratteri non numerici nel campo 
+“anno di nascita”); 
+• Caratteri invalidi negli stream o nei data field; 
+• Dati mancanti o incompleti; 
+• Limite del minimo volume di dati richiesti non sodd isfatto o del massimo volume di dati acquisibile 
+in ingresso raggiunto; 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 15  a 156  
+ 
+Per quanto riguarda i caratteri speciali, se presen ti/richiesti in input, sono considerati pericolosi (innescano 
+diverse vulnerabilità, Cfr. [paragrafo 6.1.1]) poic hè la loro combinazione non può essere considerata 
+semplice ‘testo’.  
+Di seguito qualche esempio di possibile combinazion e: 
+ 
+Caratteri pericolosi  Possibile utilizzazione  
+< >  identificano tag HTML  
+! | &  ;   esecuzione comandi  
+' " * %   database queries  
+? $ @    programmi e script  
+( ) [ ]    programmi e script  
+.. \./     filesystem paths  
+ 
+ 
+Inoltre, caratteri speciali quali: 
+; | ! ~ ' " - * % ` \ / < > ? $ @ : ( ) [ ] { } . 
+ 
+devono essere identificati e neutralizzati (input s anitizing) con tecniche specifiche quali l’escaping  (i 
+caratteri pericolosi devono essere sempre convertit i prima del salvataggio), di seguito alcuni esempi di 
+sostituzione: 
+ 
+Carattere pericoloso  Sostituito con  
+<   &lt ; 
+> &gt;  
+# &#35;  
+& &#38;  
+( &#40;  
+) &#41;  
+ 
+ 
+Il controllo, quindi, deve sempre verificare che no n siano inseriti script potenzialmente dannosi. È 
+importante sottolineare che la convalida dell’input  utente non deve mai essere svolta lato client, ma 
+sempre dal back-end, sul server, poiché sul client i dati sono sempre visibili e modificabili. 
+5.2.8  Gestione dell’output 
+L’applicazione deve fornire in output solamente le informazioni pertinenti e conformi alle richieste 
+avanzate dagli utenti, al fine di evitare qualsiasi  raccolta d’informazioni (information gathering) o 
+rivelazione di dati (disclosure) non autorizzate. 
+5.3  Formattazione del codice 
+La formattazione del codice e la sintassi devono se guire le seguenti direttive standard: 
+• Ogni file deve contenere un’intestazione (file head er) in cui si specificano l’autore del codice, la 
+data di creazione dello stesso e la storia degli ag giornamenti successivi (se presenti); 
+• Ogni file header deve contenere la dichiarazione di  una ed una sola classe; 
+• Le dichiarazioni correlate ad una classe riportata all’interno di un file, devono essere poste 
+all’interno dello stesso file; 
+• Le righe di codice devono avere un numero di caratt eri uguale o inferiore a quello previsto dal 
+formato ISO/ANSI per la descrizione delle dimension i dello schermo (80 caratteri x 24 righe). 
+5.3.1  Stile e sintassi 
+Alla dichiarazione di ogni funzione, metodo o class e deve sempre precedere un commento che riporti: 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 16  a 156  
+ 
+• Scopo della funzione; 
+• Parametri di input e output a/dalla funzione; 
+• Valori di ritorno dei parametri di output; 
+• Tracciamento degli aggiornamenti del codice della f unzione (data ultima modifica). 
+• Le parentesi graffe, nel codice, devono essere appo ste sulla riga superiore e inferiore rispetto alla 
+dichiarazione del costrutto linguistico (struttura,  classe, funzione, metodo, etc.). 
+• È raccomandato che ogni funzione assolva un unico c ompito, in maniera efficiente ed efficace.  
+5.3.2  Algoritmi 
+Nell'ottica di rendere l'applicazione conforme agli  standard internazionali è richiesto l’utilizzo esc lusivo di 
+algoritmi riconosciuti nell’industria del software.  Gli standard internazionali devono essere strettam ente 
+seguiti per lo sviluppo di algoritmi crittografici e processi di autenticazione. 
+5.3.3  Utilizzo funzioni di gestione delle stringhe 
+Tutto l’input utente processato dall’applicazione d eve passare per funzioni sicure di gestione delle s tringhe 
+che ne prevedono il bound-checking (controllo del r ange di validità). L’applicazione deve risultare im mune 
+da problematiche di tipo stack overflow, off by one /off by few overflow o heap overflow. 
+5.3.4  Specifica del formato delle stringhe 
+Nei sorgenti dell’applicazione il formato delle str inghe deve essere sempre specificato nei parametri delle 
+funzioni che lo prevedono e mai dato per assunto. L ’applicazione deve risultare immune da problematich e 
+di tipo format string overflow. 
+5.3.5  Casting e variabili numeriche 
+L’input utente deve essere filtrato in modo che all e variabili o strutture dati interne dell’applicazi one non 
+sia possibile assegnare valori negativi (ad esempio  dichiarando array come signed integer) ad eccezion e dei 
+casi previsti e per i quali sia stata pianificata l a gestione. In fase di comparazione di due variabil i numeriche 
+dove il contenuto di almeno una deriva da input ute nte, il casting o l’assegnazione di un valore da un a 
+variabile all’altra deve avvenire in base alla stes sa tipologia (ad esempio assegnare un valore intero  a una 
+variabile di tipo short è un errore). L’applicazion e deve risultare immune da problematiche di tipo in teger 
+overflow, cambi di segno, troncamento di valori num erici o altri errori di programmazione logico-
+computazionali. 
+5.4  Tracciamento e Raccomandazioni di “Alarm Detection”  
+Per il tracciamento degli eventi di “Alarm Detectio n” si raccomanda l’adozione dei criteri generali ri portati 
+nei paragrafi (Cfr. [5.4.1- 5.4.4]) che seguono. 
+5.4.1  Tracciamento eventi 
+L’applicazione deve essere predisposta sia per il t racciamento di attività “anomale” sia per le “eccez ioni” 
+verificatesi sui sistemi.  
+Il tracciamento degli eventi può essere attivato su : 
+• Eventi andati a buon fine; 
+• Eventi non andati a buon fine; 
+• Errori di sistema o utente; 
+• La configurazione del sistema di tracciamento e det ection degli allarmi sarà predisposta sulla base 
+delle policy stabilite nell’ambito dei requisiti de ll’applicazione. 
+ 
+Gli eventi per i quali è richiesto il tracciamento riguardano: 
+• Autenticazione e processi correlati; 
+• Start e Stop delle componenti dell’applicazione; 
+• Violazioni dei criteri o delle policy configurate; 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 17  a 156  
+ 
+• Modifiche alle configurazioni dell’applicazione; 
+• Accesso ai dati (inserimento, modifica, lettura, ri mozione), ai file e alle risorse dell’applicazione e 
+tipo di accesso; 
+• Disattivazione del meccanismo di tracciamento; 
+• La procedura di tracciamento sarà predisposta per l ’emissione di “Alert” al verificarsi di uno o più 
+eventi configurabili dall’amministratore del sistem a. 
+5.4.2  Tracciamento eventi di “Alarm Detection” 
+Oltre ad attenersi alle prescrizioni riportate nei paragrafi precedenti, durante lo sviluppo del codic e è 
+essenziale inserire particolari funzioni di traccia mento che, operanti in determinati e specifici punt i 
+dell’applicativo, permettano la rilevazione e il lo gging di eventi anomali o di frode, significativi p er la 
+sicurezza dell’organizzazione. 
+Attraverso l’inserimento di specifiche stringhe di codice all’interno dell’applicativo, si vogliono ri levare 
+alcuni eventi ritenuti sensibili ai fini del manten imento della riservatezza, integrità e disponibilit à del dato 
+applicativo. 
+In seguito, le segnalazioni prodotte e inserite in appositi file di Log, discriminate per mezzo di TAG  
+(DetCode) opportuni, possono essere elaborate da un  sistema di correlazione e utilizzate come fonte pe r 
+attività di Audit (Ex/Post) degli eventi di sicurez za. 
+ 
+Questa nuova strategia di rilevazione, risulta stre ttamente necessaria per superare i limiti tecnologi ci 
+intrinseci delle tecnologie Anti-Intrusione commerc iali. In particolare, tali tecnologie non permetton o:  
+• l’analisi di flussi applicativi di applicazioni del l’ente di tipo “Make” (le soluzioni di mercato sono  
+progettate per l’esclusivo utilizzo su applicazioni  di tipo commerciale); 
+• l’analisi di flussi applicativi che fanno uso di me ccanismi di cifratura delle informazioni; 
+• la rilevazione di vulnerabilità software determinat e da errori in input commessi dall’utente; 
+• la rilevazione di vulnerabilità software determinat e dall’assenza di controlli applicativi durante le 
+operazioni di allocazione di blocchi di memoria nel le aree di memoria volatile. 
+5.4.3  Scopo e campo di applicazione per eventi di “Alarm D etection” 
+Il software sviluppato e personalizzato per l’organ izzazione è realizzato seguendo le indicazioni e le  
+necessità espresse dall’organizzazione medesima, ne l rispetto dei vincoli di sicurezza imposti nel Pia no di 
+Sicurezza (in seguito PdS). 
+Nella fase di produzione e/o aggiornamento del Pian o di Sicurezza di una specifica applicazione, insie me 
+all'esame del funzionamento, all’analisi delle info rmazioni da esso trattate e all’analisi dei flussi applicativi 
+pertinenti (input, output, accesso a DB, autenticaz ione, ecc.), si procederà all’individuazione delle 
+raccomandazioni degli eventi di Alarm Detection che  permetteranno, alle competenti linee di Sviluppo, di 
+identificare e implementare gli opportuni meccanism i di generazione delle informazioni di tracciamento . 
+5.4.4  Raccomandazioni generali per eventi di “Alarm Detec tion” 
+L’attivazione ed il tracciamento per gli eventi di Alarm Detection, di seguito elencati, sono fortemen te 
+raccomandati, poichè riguardano alcune delle princi pali debolezze applicative che, se utilizzate per s copi 
+malevoli, possono comportare un elevato fattore di rischio: 
+• Validazione Input : si devono tracciare tutti gli input (provenienti da Client o da Server) non 
+conformi con quanto atteso dall’applicativo (Cfr. [ paragrafo 5.2.7]); 
+• Buffer Overflow : si devono tracciare tutti gli avvisi e/o le eccez ioni generate dall’applicativo a 
+fronte di un evento di Buffer Overflow (Cfr. [parag rafo 6.1.7]); 
+• Sessioni applicative anomale : si devono tracciare le occorrenze di eventi che n on rientrano nella 
+corretta gestione delle sessioni applicative, come tentativi massivi di autenticazione, sessioni 
+multiple dell’utente non previste e/o consentite, p resenza di cookie con contenuti incomprensibili, 
+referrer errato o inconsistente con la funzione o c on la pagina chiamata, etc.( Cfr.[paragrafo 6.1.2]) ; 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 18  a 156  
+ 
+• Tentativi di accesso a risorse inibite : si devono tracciare tutti i tentativi di accesso a risorse inibite 
+ai servizi come, ad esempio, tentativi di accesso a lla root di un server web, modifica a 
+configurazioni per mezzo di credenziali non appropr iate, etc. (Cfr. [paragrafo 5.6]); 
+• Violazioni delle policy configurate : si devono tracciare le violazioni o i tentativi d i bypass delle 
+regole di autorizzazione che definiscono ruolo e pe rmessi assegnati all’utente nonché le operazioni 
+ad esso concesse in base alla tipologia di profilat ura (Cfr. [paragrafo 5.6]); 
+• Process Issue : si devono tracciare gli avvisi, generati in ambit o Server Applicativo, relativi 
+all’esecuzione di moduli applicativi che risultano diversi in quantità e dimensione rispetto a quanto 
+atteso/definito in fase di progettazione/realizzazi one dell’applicativo stesso (ad es. numero 
+eccessivo di istanze duplicate, esecuzione di istru zioni non previste, eccessiva occupazione di 
+memoria, etc.) -(Cfr. [paragrafo 6.1.7]);  
+• Funzioni input/output anomale : si devono tracciare i tentativi inaspettati di di chiarazioni di 
+funzioni e/o comandi in input ed in output (Cfr. [p aragrafo 5.2.7 , 5.2.8, cap. 6]); 
+• Disattivazione anomala del meccanismo di tracciamen to : devono essere osservati e tracciati tutti i 
+cambiamenti di stato (attivo ↔ disattivo) delle funzioni di tracciamento e genera zione allarmi, su 
+tutte le componenti funzionalmente coinvolte. Altre sì, è necessario tenere sempre sotto controllo 
+le attività di download/upload dell’utente, al qual e è stato consentito l’accesso al sistema, al fine di 
+individuare situazioni anomale (generazione di alla rmi laddove la quantità di dati superi una certa 
+soglia che tiene conto del livello/ruolo di accesso  dell’utente). 
+5.5  Compilazione dell’applicazione 
+Per la compilazione del codice dell’applicazione si  raccomanda l’adozione dei criteri riportati nei pa ragrafi 
+(Cfr. [5.5.1,5.5.2]) che seguono. 
+5.5.1  Stack Canary 
+I sorgenti dell’applicazione e delle librerie che l a compongono (DLL o altre forme comparabili in ambi enti 
+operativi differenti) devono essere compilati con f unzionalità di stack canary. A runtime viene impost ato un 
+valore (spesso un intero) in memoria e viene verifi cato che non venga sovrascritto da un eventuale buf fer 
+overflow, dopo una chiamata allo stack. Ciò permett e di bloccare gli effetti di un buffer overflow in tempo 
+utile. In fase di compilazione, devono essere attiv ate opzioni di anti-sovversione dei puntatori ai ge stori 
+delle eccezioni (ad esempio SafeSEH), relativamente  alla piattaforma dell’applicazione. 
+5.5.2  Correttezza del sorgente 
+La compilazione dei sorgenti deve terminare senza a lcun tipo di warning. 
+5.6  Ambiente operativo dell’applicazione 
+In merito agli ambienti operativi di sviluppo e tes t delle applicazioni, si raccomanda l’adozione dei criteri 
+riportati nei paragrafi (Cfr. [5.6.1 - 5.6.6]) che seguono. 
+5.6.1  Separazione degli ambienti 
+I sistemi di sviluppo, test e produzione devono ess ere separati fisicamente e/o logicamente. 
+5.6.2  Test dell’Applicazione 
+• L’applicazione deve essere consegnata e portata in produzione/esercizio solo dopo essere stata 
+verificata la rispondenza ai requisiti dati.  
+• I casi di test devono includere controlli sull’usab ilità dell’applicazione, sulla sicurezza e sulla 
+compatibilità con l’infrastruttura hardware/softwar e in cui andrà installata.  
+• È raccomandato l’utilizzo di appositi strumenti di stress test prima dell’avvio in esercizio 
+dell’applicazione, al fine di certificare la corret ta implementazione delle procedure di input data 
+validation e security menzionate in questo document o. 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 19  a 156  
+ 
+5.6.3  Strumenti 
+Compilatori, editor ed altri strumenti di sviluppo non devono essere presenti nei sistemi di produzion e in 
+cui l’applicazione risiede. 
+5.6.4  Profili utente 
+I profili utente dell’applicazione che risiede nei sistemi di produzione devono essere differenti da q uelli 
+configurati e utilizzati nei sistemi di sviluppo e test. L’applicazione deve implementare un meccanism o di 
+avviso della tipologia di profilatura, ruoli e perm essi assegnati all’utente a seguito dell’accesso (v edasi per 
+maggior dettaglio “Procedura di accesso dell’applic azione” Cfr. [paragrafo 5.7.3]). 
+5.6.5  Trattamento dei dati 
+I dati personali e critici, gestiti dall’applicazio ne, che risiedono nell’ambiente di esercizio, non d evono 
+essere copiati negli ambienti di test e sviluppo. I n caso di utilizzo dell’applicazione al solo fine d i test questi 
+devono essere rimossi immediatamente dopo il comple tamento di detta fase. 
+5.6.6  Protezione dei sorgenti e delle librerie 
+I sorgenti dell’applicazione e delle librerie corre late, fatta eccezione per i linguaggi interpretati,  non devono 
+risiedere in testo chiaro all’interno dei sistemi d i esercizio, bensì sotto forma di oggetti compilati . Nel caso 
+di linguaggi interpretati, il sorgente dell’applica zione che risiede nei sistemi di esercizio deve ess ere 
+offuscato.  
+Una copia non offuscata deve comunque sempre essere  conservata su un supporto diverso (esempio copia 
+su CD o DVD). 
+5.7  Autenticazione, Autorizzazione e Gestione degli acc essi 
+Per le politiche degli accessi si raccomanda l’adoz ione dei criteri riportati di seguito. 
+5.7.1  Policy standard “Everything is generally forbidden u nless expressly permitted” 
+L’applicazione deve implementare un meccanismo di a ccess control adeguato. Tutte le operazioni svolte 
+dagli utenti e le fasi di autorizzazione e assegnaz ione dei permessi devono essere subordinate alla po licy 
+standard : “Ogni azione è negata se non espressamen te consentita”. 
+5.7.2  Assegnazione dei privilegi utente 
+L’applicazione non deve assegnare alcun privilegio/ permesso all’utente fin quando il processo di 
+autenticazione e autorizzazione non è stato complet ato. 
+5.7.3  Procedura di accesso dell’applicazione 
+La procedura di accesso e log-on dell’applicazione deve ridurre al minimo le informazioni fornite agli  utenti 
+non ancora autenticati e prevedere determinati comp ortamenti. In particolare: 
+• Non deve con messaggi specifici fornire alcun tipo di aiuto, né rendere comprensibile se il processo 
+di autenticazione è fallito a causa del nome utente  o della password errata; 
+• Non deve fornire alcuna chiara indicazione sui ruol i e sui permessi assegnati a un utente fin quando 
+il processo di autenticazione non viene completato;  
+• Deve visualizzare un messaggio di avviso sulle sanz ioni derivate dall’accesso fraudolento 
+all’applicazione; 
+• Deve prevedere il mascheramento della password digi tata dall’utente non rendendola visibile o 
+nascondendola attraverso simboli (ad esempio con as terischi); 
+• Non deve trasmettere in rete la password in chiaro;  
+• Deve “processare” le informazioni fornite dall’uten te per l’accesso solo quando sono complete; 
+• Deve prevedere procedure configurabili di blocco mo mentaneo dell’account dopo una serie di 
+tentativi d’accesso infruttuosi; 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 20  a 156  
+ 
+• Deve visualizzare, al completamento della procedura  di autenticazione, la data, l’ora e le 
+informazioni sull’ultimo sistema (indirizzo IP/FQDN ) che ha completato con successo la fase di log-
+on per una specifica utenza; 
+• Deve visualizzare nella console dell’amministratore  o nei file di log, i dettagli di tutti i precedent i 
+tentativi infruttuosi di accesso per una specifica utenza; 
+• L’autenticazione non deve mai essere un processo co nvalidato lato client. 
+5.7.4  Account standard 
+L’applicazione non deve essere rilasciata da chi la  sviluppa, con account utente standard di tipo 
+amministrativo/operativo o con account protetti tra mite password di default. 
+5.7.5  Autorizzazione 
+L’applicazione deve sempre operare un controllo sui  reali privilegi d’accesso dell’utente prima di 
+autorizzare qualsiasi operazione in lettura, scritt ura,  esecuzione o cancellazione.  
+L’autorizzazione non deve mai essere un processo co nvalidato lato client. 
+5.7.6  Generazione dei token 
+I token dell’applicazione devono essere generati ut ilizzando algoritmi true random ed analizzati 
+ogniqualvolta l’utente richiede autorizzazione a sv olgere una qualsiasi azione, al fine di determinarn e 
+permessi e privilegi. 
+5.7.7  Generazione dei cookie 
+Nelle applicazioni web i cookie di sessione applica tiva devono essere cifrati, non persistent, avere i l flag 
+secure attivato e l’attributo HttpOnly impostato. 
+5.7.8  Contenuto del cookie 
+Un cookie non deve contenere informazioni critiche quali password o essere composto da parti predicibi li 
+come username o valori elaborati basandosi su algor itmi sequenziali. L’identificatore della sessione n el 
+cookie deve avere un’entropia pari almeno a 128 bit . 
+5.7.9  Scadenza del cookie 
+Nelle applicazioni web, ciascun cookie generato dev e essere soggetto a un tempo di scadenza oltre il q uale 
+non deve più essere considerato valido. 
+5.7.10  Logout utente 
+Quando un utente ha effettuato il log-out, la sessi one relativa deve essere invalidata sia sul server 
+(sganciandola nella Entry Table delle sessioni atti ve) che sul client (ad esempio rimuovendo il cookie  o 
+svuotando il suo contenuto). 
+5.7.11  Timeout di sessione 
+L’applicazione deve prevedere il rilascio della ses sione utente dopo un certo periodo configurabile di  
+inattività della sessione stessa. 
+5.7.12  Isolamento delle funzioni dall’applicazione 
+È vietata l’implementazione della sicurezza attrave rso l’oscuramento delle funzioni a livello di 
+presentazione. È obbligatorio invece isolare e rend ere inutilizzabili le funzioni che non devono esser e rese 
+accessibili agli utenti, direttamente a livello log ico (es: imponendo la consultazione del token della  sessione 
+per determinarne i reali privilegi di esecuzione). 
+5.8  Password, chiavi e certificati 
+Per la gestione di dati quali password, chiavi e ce rtificati, si raccomanda l’adozione dei criteri rip ortati di 
+seguito. 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 21  a 156  
+ 
+5.8.1  Gestione di password, chiavi e certificati 
+Le password mantenute dall’applicazione o le chiavi  private dei certificati devono essere conservate i n 
+forma cifrata. Le informazioni sulle password e le chiavi devono risiedere in container (aree del file system, 
+tabelle del database, ecc.) differenti rispetto ai dati dell’applicazione. 
+5.8.2  Trasmissione delle password in rete 
+Utilizzare protocolli crittografici, come TLS (Tran sport Layer Security) o SSH (Secure Socket Shell), che 
+impiegano algoritmi standard di derivazione delle c hiavi basata su password (Password-based Key 
+Derivation/key stretching) detti anche algoritmi di  slow hashing, come PBKDF2, scrypt o bcrypt, i qual i, 
+rallentando di molto la funzione di hashing, rendon o inefficaci eventuali attacchi di forza bruta per il 
+password cracking.  
+Prevedere, inoltre, l’aggiunta di una chiave segret a alla hash, in modo tale da consentire la convalid a della 
+password solo a coloro che la conoscono. Ciò si può  fare cifrando l’hash con algoritmo AES oppure 
+includendo la chiave segreta nell’hash utilizzando poi un algoritmo di hashing come HMAC. 
+È sconsigliato l’utilizzo di funzioni di hash critt ografico veloce come MD5, SHA-1, SHA-256, SHA-512, 
+RipeMD, WHIRLPOOL, SHA-3. 
+5.8.3  Generazione/conservazione delle password nel filesy stem/DB 
+Le password memorizzate nel filesystem o nel DB sot to forma di hash (esempio MD5/SHA-1 etc.), devono 
+prevedere l’introduzione di un ulteriore fattore ra ndomico (salt) durante la loro generazione. 
+5.8.4  Batch Job dell’applicazione 
+Le informazioni, i dati o gli allegati trasmessi tr amite i batch job dell’applicazione (ad esempio ses sioni ftp o 
+altri protocolli di rete non cifrati o proprietari) , devono utilizzare canali di comunicazione sicuri come SSL o 
+TLS, in cui le chiavi di cifratura simmetriche veng ono scambiate all’interno di una comunicazione prot etta 
+attraverso algoritmo crittografico asimmetrico (Ad esempio RSA con dimensione delle chiavi uguale o 
+superiore a 1024 bit). 
+5.8.5  Storage dei dati applicativi 
+I dati dell’applicazione memorizzati nel database o  nel filesystem devono essere cifrati tramite algor itmi 
+simmetrici con chiave pari almeno a 192 bit (inclus i i bit di parità). 
+5.8.6  Integrità delle informazioni 
+Tutti i dati di natura critica conservati e mantenu ti dall’applicazione, oltre che cifrati, devono pre vedere 
+l’utilizzo di algoritmi di hashing o firma digitale  per poterne vagliare l’integrità/autenticità. 
+5.8.7  Meccanismi di autenticazione 
+L’applicazione sviluppata non deve impiegare meccan ismi di autenticazione con chiave condivisa (altrim enti 
+detti pre-shared secret). 
+5.8.8  Non ripudio delle sessioni 
+Tutte le sessioni riconducibili all’applicazione, s volte dalle utenze operative/amministrative, devono  essere, 
+oltre che supportate da meccanismi di tracciamento idonei, anche cifrate con algoritmi crittografici. In 
+questo modo si garantisce il non ripudio delle sing ole sessioni. Deve cioè essere possibile determinar e con 
+esattezza se  un evento si è verificato o meno. 
+5.8.9  Schemi di sicurezza e crittografici 
+Gli schemi di sicurezza devono essere semplici e be n documentati. È vietata la predisposizione di sche mi di 
+autenticazione , crittografia e/o gestione delle ch iavi non-standard, oppure fatta in proprio ("hand-m ade").. 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 22  a 156  
+ 
+5.8.10  Weak Keys e Collision 
+Il processo di creazione/assegnazione delle chiavi di cifratura ai dati dell’applicazione, in base al cipher 
+utilizzato, non deve generare weak keys (chiavi deb oli) o, nel caso di algoritmi di hashing, alcuna co llision 
+(valori ripetuti). 
+5.8.11  URL cifrati 
+Le directory contenenti file o dati di natura perso nale, critici e sensibili, residenti nella document  root del 
+web server devono apparire cifrate nell’URL del cli ent browser. 
+5.8.12  Normalizzazione dei dati cifrati 
+Nelle applicazioni web l’utilizzo della codifica base64  è autorizzato solo per la normalizzazione dei dati , 
+delle stringhe o degli URL cifrati. 
+ 

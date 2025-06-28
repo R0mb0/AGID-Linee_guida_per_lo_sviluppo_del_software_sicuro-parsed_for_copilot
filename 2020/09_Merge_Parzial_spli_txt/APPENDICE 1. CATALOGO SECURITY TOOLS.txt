@@ -1,0 +1,403 @@
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 116  a 137  
+ 
+  APPENDICE 1.  CATALOGO SECURITY TOOLS 
+ 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+Acunetix Web Vulnerability Scanner DAST, IAST Verification Versione trial a 
+14 giorni disponibile https://www.acunetix.com/  
+Microsoft Cloud App 
+Security (MCAS) Cloud Access 
+Security Broker Verification Versione trial 
+disponibile  https://www.microsoft.com/en -us/microsoft -365/enterprise -mobility -
+security/cloud-app-security  
+Airlock Suite by Ergon Informatik WAF, 
+Authentication, Identity Response Versione trial disponibile  
+https://www.airlock.com  
+Management 
+Akamai CDN, DDoS 
+Protection, WAF Response Prova gratuita 
+disponibile https://www.akamai.com/it/it/   
+Alert Logic SIEMless Threat Management Intrusion 
+Prevention System, Cloud Access Security Broker, WAF, Container Security Response Versione trial disponibile 
+https://www.alertlogic.com/  
+AWS WAF WAF Response Nessuna trial 
+disponibile https://aws.amazon.com/it/waf/   
+Visual Trace Spec Requirements 
+management Requirements Versione trial 
+disponibile http://visualtracespec.com/#  
+Open Source 
+Requirements Management ToolaNimble Requirements management Requirements Open Source 
+https://github.com/osrmt/osrmt/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 117  a 137  
+ 
+  Potection Center Mobile AST  Response Non disponibile https://appmobi.com  
+AppSpider Pro by 
+Rapid7 DAST Verification Versione trial 
+disponibile https://www.rapid7.com  
+AppWall by Radware WAF, DDoS Protection Response Nessuna 
+versione trial disponibile https://www.radware.com/  
+Arbor DDoS Protection DDoS Protection Response Nessuna 
+versione trial disponibile https://www.netscout.com/arbor-ddos  
+Armor Complete Cloud Security Platform Release Nessuna 
+versione trial disponibile https://www.armor.com  
+Arxan Application Protection Mobile AST  DAST Response 
+Nessuna 
+versione trial disponibile https://www.arxan.com/application-protection  
+Pradeo Security Mobile AST Verification Nessuna 
+versione trial disponibile https://www.pradeo.com/it-IT/protezione-flotta-mobi le  
+Barracuda Web Application Firewal WAF Response Versione trial 
+disponibile su richiesta https://www.barracuda.com/products/webapplicationfi rewall  
+BeEF Penetration 
+Testing Verification Open Source https://beefproject.com/  
+VMWare Carbon Black Endpoint Security Verification / Response 
+Demo 
+disponibile su richiesta https://www.carbonblack.com/  
+Synopsys Black Duck Hub Library Inspection Verification  
+Demo 
+disponibile su richiesta https://www.blackducksoftware.com/  
+Lookout Mobile Mobile Access Response Demo https://www.lookout.com/products/mobile-endpoint-se curity  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 118  a 137  
+ 
+  Endpoint Security  Security Broker  disponibile su 
+richiesta 
+Brakeman SAST Implementation Open Source https://brakemanscanner.org/  
+BrightCloud Threat 
+Intelligence by Webroot DAST Verification Nessuna 
+versione trial disponibile https://www.brightcloud.com  
+Burp Suite by PortSwigger SAST, DAST, Penetration Testing Implementation / Verification 
+ Versione 
+Community liberamente scaricabile https://portswigger.net  
+CaseComplete Requirements management Requirements Versione  trial 
+disponibile su richiesta https://casecomplete.com/  
+CppCheck SAST Implementation Open Source http://cppcheck.sourceforge.net/  
+CD Protection by CD Networks CDN, WAF, DDoS Protection Response 
+Nessuna 
+versione trial disponibile https://www.cdnetworks.com  
+Checkmarx CxSAST SAST, DAST, RASP Implementation / Verification Versione  trial 
+disponibile a richiesta https://www.checkmarx.com/  
+CipherCloud Cloud Access 
+Security Broker Response Versione trial 
+disponibile https://www.ciphercloud.com  
+CloudFlare CDN, DDoS Protection, WAF Response Nessuna 
+versione trial disponibile www.cloudflare.com  
+CloudFront by Amazon CDN, DDoS Protection Response 
+Nessuna 
+versione trial disponibile https://aws.amazon.com/it/cloudfront/  
+Cloud Access Security 
+Broker (CASB) Cloud Access 
+Security Broker Response Demo gratuita a 
+richiesta https://umbrella.cisco.com/products/casb  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 119  a 137  
+ 
+  CloudPassage Halo Cloud Access 
+Security Broker Response Versione trial 
+disponibile https://www.cloudpassage.com  
+CloudSOC Cloud 
+Access Security Broker (CASB)CloudSOC by Elastica Cloud Security Testing/Scanning 
+ Verification Nessuna versione trial disponibile 
+https://www.symantec.com/products/cloud-application -security-cloudsoc  
+CodeDx SAST, DAST Implementation / 
+Verification Versione trial 
+disponibile https://codedx.com/  
+CodeProfiler by Virtual Forge SAST per applicazioni SAP Implementation 
+Nessuna 
+versione trial disponibile https://www.virtualforge.com  
+Yottaa CDN, DDoS Protection, WAF Verification Demo 
+disponibile su richiesta https://www.yottaa.com  
+Contrast Enterprise IAST, RASP Implementation / Verification Demo 
+disponibile su richiesta https://www.contrastsecurity.com  
+Coras Threat Modeling 
+tool/practies Design Open Source http://coras.sourceforge.net/downloads.html  
+DDoS Strike by Security Compass DDoS Protection Response Demo 
+disponibile su richiesta https://www.securitycompass.com  
+Endpoint Privilege Management Endpoint Security Verification / Response 
+Demo 
+disponibile su richiesta https://www.beyondtrust.com/  
+R&S®Web Application Firewall WAF Response Demo 
+disponibile su richiesta www.denyall.com  
+Dependency Check Library 
+Inspection Implementation Open Source https://www.owasp.org/index.php/OWASP_Dependency_Ch eck  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 120  a 137  
+ 
+  F5 Big-IP  WAF, DDoS Protection Response Demo 
+disponibile su richiesta https://f5.com  
+Falcon  Endpoint 
+Security Verifica tion / 
+Response Versione trial 
+disponibile https://www.crowdstrike.com  
+SpotBugs SAST Implementation Open Source https://spotbugs.github.io/  
+FireEye NX Web Server 
+Scanner, WAF Response Versione trial 
+non disponibile https://www.fireeye.com  
+FortiWeb: Web 
+Application Firewall and API ProtectionFortigate Firewall Platform by Fortinet WAF Response Demo disponibile su richiesta 
+https://www.fortinet.com/products/web-application-
+firewall/fortiweb.html  
+FortiGate NGFW WAF Response Demo 
+disponibile su richiesta https://www.fortinet.com/it/products/next-generatio n-firewall/models-
+specs.html  
+Gendarme SAST Implementation Open Source https://github.com/mono/website/blob/gh -
+pages/docs/tools+libraries/tools/gendarme/index.md  
+Microfocus Fortify Static Code Analyzer SAST, DAST, IAST, RASP Implementation / Verification 
+Demo 
+disponibile su richiesta https://www.microfocus.com/it-it/products/static-co de-analysis-
+sast/overview  
+HCL Security AppScan  SAST, DAST, IAST  Implementation / 
+Verification Versione trial 
+non disponibile https://www.hcltech.com  
+IBM Engineering 
+Requirements Management DOORS Next Requirements management Requirements  Versione trial non disponibile 
+https://www.ibm.com   
+IBM Rational 
+RequisitePro solution  Requirements 
+management Requirements  Versione trial 
+non disponibile https://www.ibm.com  
+Imperva FlexProtect WAF, DDoS Response Demo https://www.imperva.com/products/flexprotect-plans/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 121  a 137  
+ 
+  Protection  disponibile su 
+richiesta 
+BloxOne Threat Defense WAF Response Versione trial 
+disponibile su richiesta https://www.infoblox.com/products/bloxone-threat-de fense/  
+Hillstone E -Series  
+WAF Response Demo non disponibile https://www.hillstonenet.com  
+Next -Generation 
+Firewalls (NGFW) Verification Demo non 
+disponibile  https://www.hillstonenet.com  
+Visure Requirements Management Tool Requirements management Requirements 
+Versione trial 
+disponibile su richiesta https://visuresolutions.com/requirements-management -tool/  
+JSHint SAST Implementation Open Source https://jshint.com/  
+Kali Linux Penetration 
+Testing Verification Open Source https://www.kali.org/  
+Klocwork SAST Implementation Versione trial 
+disponibile su richiesta https://www.perforce.com/products/klocwork  
+Kona Site Defender by Akamai WAF, DDoS Protection Response 
+Demo 
+disponibile su richiesta https://www.akamai.com/it/it/products/security/kona -site-defender.jsp  
+CenturyLink DDoS 
+and Web Application Security CDN, DDoS Protection Response Demo non disponibile 
+https://www.centurylink.com/business/security/ddos- and-web-
+application.html  
+LogRhythm Security Intelligence Platform Predictive 
+Security Analytics Verification / Response Demo 
+disponibile su richiesta www.logrhythm.com  
+Malwarebytes 
+Endpoint Security Endpoint 
+Security Verification Versione trial 
+disponibile https://www.malwarebytes.com/business/endpointsecur ity/  
+MetaFlows Cloud Security Implementation Demo www.metaflows.com  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 122  a 137  
+ 
+  Scanning  disponibile su 
+richiesta 
+MetaDefender Predictive 
+Security Analytics Verification / Response Available by Request 
+https://metadefender.opswat.com/  
+Metasploit by Rapid7 Penetration 
+Testing Verification Open Source https://www.metasploit.com/  
+Microsoft Application 
+Verifier DAST Verification Free https://www.microsoft.com  
+Microsoft Attack 
+Surface Analyzer  Intrusion 
+Prevention Verification Free https://www.microsoft.com  
+Microsoft BinScope SAST Implementation Free https://www.microsoft.com  
+Microsoft Code 
+Analysis Tool SAST Implementation Free https://www.microsoft.com  
+Microsoft FxCop Library 
+Inspection Implementation Free https://www.microsoft.com  
+Microsoft SDL Regex 
+Fuzzer SAST Implementation Free https://www.microsoft.com  
+Microsoft SDL 
+MiniFuzz File Fuzzer SAST Implementation Free https://www.microsoft.com  
+Microsoft Security 
+Assessment Tool (MSAT) Risk Management Risk Assessment Free 
+https://technet.microsoft.com/it-it/security/cc1857 12.aspx  
+Microsoft Threat 
+Modeling Tool Threat Modeling 
+tool Design Free https://www.microsoft.com  
+ModSecurity WAF Implementation / 
+Verification Open Source http://modsecurity.org/  
+MyAppSecurity ThreatModeler Threat Modeling tool Design Demo disponibile 
+https://threatmodeler.com/  
+N-Stalker Cloud Web SAST, DAST Implementation / Free Tier https://www.nstalker.com  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 123  a 137  
+ 
+  Scan  Verification  Available  
+Citrix Web App Firewall WAF Verification Demo 
+disponibile su richiesta https://www.citrix.com/it-it/products/citrix-web-ap p-firewall/  
+Netsparker Web 
+Application Security Scanner DAST Response Demo 
+disponibile su richiesta https://www.netsparker.com/  
+Neustar DDoS Protection, WAF Response Demo 
+disponibile su richiesta https://www.home.neustar/  
+NEVIS Security Suite  WAF, Authentication, Identity mngt Verification Available by Request 
+https://www.nevis-security.ch/en/  
+NEVIS Security Suite  
+Nikto2 Web Server 
+Scanner Verification Open Source https://www.cirt.net/Nikto2  
+Nmap Penetration 
+Testing and Network Mapping Verification / Response Open Source 
+https://nmap.org/  
+NSFOCUS Web Application Firewall DAST, WAF Verification Demo non disponibile 
+https://nsfocusglobal.com/web-application-firewall- waf/  
+Objectives Requirements 
+management Requirements Versione trial 
+disponibile http://www.objectiver.com  
+OWASP Zed Attack 
+Proxy (ZAP) Penetration 
+Testing Verification / 
+Response Open Source www.owasp.org  
+Open Source 
+Requirements Management Tool (OSRMT) Requirements management Requirements Open Source 
+http://sourceforge.net/projects/osrmt/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 124  a 137  
+ 
+  Paloalto Next -
+Generation Firewall 
+WAF Verification Demo disponibile su richiesta 
+https://www.paloaltonetworks.com  
+Paloalto Next -
+Generation Firewall  
+Palo Alto Threat Prevention Services RASP WAF Response Demo 
+disponibile su richiesta https://www.paloaltonetworks.com  
+Peach Fuzzer Penetration Testing Verification / Response Demo 
+disponibile su richiesta https://www.peach.tech/  
+PYLINT SAST Implementation Demo 
+disponibile su richiesta https://polarion.plm.automation.siemens.com/product s/polarion-
+requirements  
+PMD SAST Implementation Demo 
+disponibile su richiesta https://www.imperva.com/products/runtime-applicatio n-self-protection-
+rasp/  
+Polarion REQUIREMENTS 
+ Application Lifecycle Management (ALM) Requirements   
+http://www.emerasoft.com/agile-application-lifecycl e-
+management/polarion-alm/  
+Runtime Application Self-Protection RASP Verification / Response Demo 
+disponibile su richiesta https://www.imperva.com/products/runtime-applicatio n-self-protection-
+rasp/  
+Network Threat Detection Intrusion 
+Prevention System Response Demo 
+disponibile su richiesta https://www.bricata.com  
+Network Security 
+Monitoring and Management CDN, App 
+Security Scanning Verification Demo non disponibile 
+https://enterprise.verizon.com/products/security/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 125  a 137  
+ 
+  Qualys Security & Compliance Suite DAST, WAF Verification / Response Versione trial disponibile 
+https://www.qualys.com  
+Reqtify Requirements management Requirements Demo non disponibile 
+https://www.3ds.com/it/prodotti-e-servizi/catia/pro dotti/reqtify/  
+Risk Fabric by Bay Dynamics Pred ictive 
+Security Analytics Implementation / 
+Verification / Response Demo 
+disponibile su richiesta https://baydynamics.com  
+rmtoo Requirements management Requirements Open Source 
+http://rmtoo.florath.net/  
+RSA Advanced Threat 
+Management Solution DAST Implementation / Verification Available by Request 
+https://www.dellemc.com  
+Samurai Web Testing Framework DAST, 
+Penetration testing Verification Open Source 
+http://www.samurai-wtf.org/  
+SeaMonster- Security Modeling Software Threat Modeling tool Design  Open Source 
+https://sourceforge.net/projects/seamonster/  
+Website Malware 
+Scanner SAST, DAST Implementation / 
+Verification Demo non 
+disponibile https://www.sitelock.com  
+SonarLint SAST Implementation Open Source https://www.sonarlint.org  
+SonarQube SAST Implementation Open Source https://www.sonarqube.org  
+Sophos Next-Gen Firewall WAF Response Versione Trial a 
+30 giorni disponibile https://www.sophos.com/en-us/products/next-gen-fire wall.aspx  
+SRX Series Firewall by Juniper Networks WAF Verification Versione Trial disponibile 
+https://www.juniper.net/us/en/products-services/sec urity/srx-series/  
+Sucuri Website WAF Verification Demo non https://sucuri.net/website-firewall/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 126  a 137  
+ 
+  Application Firewall  disponibile  
+Sucuri Website Security Solutions WAF, DDoS 
+Protection, App Security Scanning Response Demo non 
+disponibile https://sucuri.net/website-security-platform/signup /  
+Symantec Advanced Threat Protection IAST, RASP Implementation / Verification Versione Trial 
+disponibile su richiesta https://www.symantec.com  
+Tanium Endpoint Platform Endpoint 
+Security, App Security Scanning Implementation / Verification Demo non disponibile 
+https://www.tanium.com  
+Simulink Requirements Requirements management Requirements Versione Trial disponibile  
+https://it.mathworks.com/products/simulink-requirem ents.html  
+Telelogic DOORS Requirements Management Requirements Gratuito 
+http://telelogic-doors.software.informer.com/  
+Thunder TPS by A10 
+Networks DDoS Protection Verification / 
+Response Versione Trial 
+disponibile https://www.a10networks.com/products/thunder-tps/  
+Trend Micro Deep Security Platform SAST, DAST Implementation / Verification Versione Trial disponibile 
+https://www.trendmicro.com  
+TRIKE Threat Modeling 
+tool/practies Design Open Source http://www.octotrike.org/  
+Tripwire Enterprise IAST, RASP Implementation / Verification  Demo 
+disponibile su richiesta https://www.tripwire.com  
+Trustwave Secure 
+Web Gateway CDN, DAST Verification Demo non 
+disponibile https://www.trustwave.com/en -us/services/technology/secure -web -
+gateway/  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 127  a 137  
+ 
+  Trustwave Web Application Firewall WAF, 
+Penetration Testing Verification Demo non disponibile 
+https://www.trustwave.com  
+Veracode Cloud Platform SAST, DAST, 
+Mobile AST, Penetration Testing Implementation / Verification Demo disponibile su richiesta 
+www.veracode.com  
+vSentry by Bromium Endpoint Security Verification / Response Demo 
+disponibile su richiesta www.bromium.com  
+GrayMatter Platform Penetration 
+Testing, App Security Scanning Verification Demo disponibile su richiesta 
+https://www.reliaquest.com/  
+WhiteHat Sentinel SAST, DAST Implementation / Verification Demo di 30 
+giorni disponibile su richiesta https://www.whitehatsec.com/info/security-check/  
+Wireshark Penetration 
+Testing and Packet-level Monitoring Verification Open Source 
+https://www.wireshark.org/  
+Ziften Endpoint Security Response Demo 
+disponibile su richiesta https://ziften.com/  
+    
+ 

@@ -1,0 +1,472 @@
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 128  a 137  
+ 
+  APPENDICE 2.  VALUTAZIONE STRUMENTI 
+a.  CHECKMARX 
+PRODOTTO  CATEGORIA  FASE SSE  SITO WEB   
+CxSAST  SAST  Implementation  https://www.checkmarx.co 
+m/  
+DESCRIZIONE  
+È un tool commerciale , per l’analisi statica del codice, posizionato da Gartner nel quadrante Leaders 
+nell’ambito dell’Application Security Testing (AST) . Supporta numerosi linguaggi (vedi oltre). Può ess ere 
+integrato a vari livelli nell’ambito della fase di implementation: IDE, build server, bug tracking too ls. 
+Tainted analysis, Pattern matching, "scan r ules" (customizable)  
+ANALISI DEL VALUTATORE  SCORE  
+Livello di integrazione con i seguenti prodotti   
+a.        IDEs  Esistono plugin per i seguenti IDE:  
+Eclipse,  
+Visual Studio e  
+IntelliJ. 
+I plugin consentono la scansione del codice, l'anal isi e la navigazione dei 
+risultati in modo integrato con l'IDE. 7 
+b.       source repository,  TFS,  
+SVN,  
+GIT,  
+Perforce. 7 
+c.        build server,  Jenkins,  
+Bamboo, 
+TeamCity, 
+TFS, 
+Anthill Pro, 
+Maven. 7 
+d.       bug tracking tools  
+ Jira.  5 
+I linguaggi di 
+programmazione 
+supportati C#, JavaScript and commonly used frameworks, Node.J S and commonly 
+used frameworks, VB.NET, ASP, VB6, PHP, C/C++, Apex  and VisualForce, 
+Ruby, VBScript, Perl, HTML5, Python, Groovy, Scala,  PL/SQL, JSP, 
+Typescript, Go, Windows Mobile .NET/.NET Core 8 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 129  a 137  
+ 
+  I framework applicativi 
+supportati (es. Spring, 
+Hibernate, …) [*] Requires minor adjustments  
+ 
+Platform/Enviroment: Java     
+Struts, Spring MVC, iBatis*, GWT, Hibernate, OWASP ESAPI, JSTL FMT 
+Taglib, ATG DSP Taglib, Java Server Faces (JSF), Ja vaScript 
+ 
+Platform/Enviroment: .NET  
+Enterprise Libraries, Telerik, ComponentArt, Infrag istics, FarPoint, iBatis*, 
+Hibernate.Net [*], Entity framework up to 4.3.1 
+ 
+Platform/Enviroment: PHP  
+Zend, Kohana, CakePHP, Symfony, Smarty, OWASP ESAPI  
+ 
+Platform/Enviroment: C/C++  
+MISRA 
+ 
+Platform/Enviroment: Ruby  
+Ruby on Rails 
+ 
+Platform/Enviroment: JavaScript 
+JQuery, Node.js, Ajax, Knockout, AngularJS, Express JS, Jade, Backbone, 
+Handlebars, Hapi.JS 
+ 
+Platform/Enviroment: iOS  
+iOS mobile applications 
+ 
+Platform/Enviroment: Python 
+Django 
+ 
+Platform/Enviroment: Groovy 
+Grails 
+ 7 
+Le tipologie di 
+applicazione 
+supportate (Web, 
+Mobile, Client-
+Server…) Web application, Mobile , Client -Server . 7 
+Le vulnerabilità 
+riconosciute (Sql 
+injection, Cross-site 
+scripting, Code 
+injection…) SQL Injection, Cross -site scripting, Code injection, Buffer Overflow, 
+Parameter tampering, Cross-site request forgery, XXE injection, Unsecure 
+deserializarion,  HTTP splitting, Log forgery, DoS, Session Fixation,  Session 
+poisoning, path traversal, Unhandled exceptions, Unreleased resources, 
+unvalidated input, URL redirection attack, Dangerou s Files Upload, 
+Hardcoded password. 7 
+Gli Standard supportati 
+(OWASP Top 10, SANS 
+25, …) OSWAP Top 10, OSWAP Mobile Top 10, SANS 25, HIPAA, FISMA, BSIMM, 
+PCI DSS, Mitre CWE, MISRA. 7 
+L’integrazione di 
+“Custom rules” È possibile definire delle regole personalizzate.  4 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 130  a 137  
+ 
+  L’incidenza dei “Falsi 
+positivi” In primo luogo, è possibile “spegnere” falsi positi vi estendendo la lista dei 
+“sanitizer” fornita out of the box da checkmarx (co n pochi colpi di click). 
+In secondo luogo, è possibile “spegnere” falsi posi tivi dichi arandoli come 
+“Not Exploitable”. 
+In terzo luogo, è stato possibile apprezzare un app roccio messo in atto da 
+Checkmarx atto a limitare il numero di segnalazioni. La prova eseguita ha 
+evidenziato che: in presenza di codice evidentement e prono a una SQL 
+INJECTION, ma in assenza di un vettore di attacco, la segnalazione della 
+vulnerabilità viene soppressa. Viceversa la segnala zione viene prodotta se 
+vie ne individuato anche un vettore di attacco. Il side  effect è che in una 
+scansione parziale che considera il codice vulnerab ile ma esclude in tutto o 
+in parte il vettore d’attacco, non vengono prodotte  segnalazioni. 
+ 4 
+La capacità di analisi 
+“raw source code” vs 
+“need to compile” Lo strumento è in grado di funzionare in modalità “ raw source code”. È 
+quindi possibile sottoporre anche porzioni di codic e "out-of- context". 
+Tuttavia, in questo caso potrebbero non essere segn alate certe 
+vulnerablità che invece si manifestano in una scans ione "in-context". È una 
+scelta by design per limitare falsi positivi. Raw 
+Source  
+La capacità di 
+analizzare le 
+dipendenze da librerie 
+esterne al fine di 
+controllare se sono 
+presenti vulnerabilità 
+note Questa funzionalità non è compresa fra quelle stand ard del prodotto. 
+Esiste un add- on di CheckMarx (acquistabile a parte) che analizza  le 
+dipendenze da librerie esterne al fine di controlla re se sono presenti 
+vulnerabilità note, interrogando una base dati este rna. 1 
+La capacità di correlare 
+lo scan statico con 
+l’esito di uno scan 
+dinamico (correlazione 
+White Box con Black 
+Box) CxSAST non possiede questa funzionalità.  1 
+LE PERFORMANCE  
+a.        Full scan vs 
+Incremental scan  Sono supportati sia Full sia Incremental scanning . 7 
+b.       Client -side scan 
+vs Server-side scan Server -side scanning: i sorgenti vengono compressi e invia ti al server dove 
+vengono decompressi e riconosciuti, dopodichè avvie ne effettivamente lo 
+scan. L’elaborazione è sempre centrale . Se più scansioni sono ordinate 
+contemporaneamente, i lavori vengono accodati. 7 
+Eventuali funzionalità 
+di prioritizzazione delle 
+remediation Le vulnerabilità individuate vengono ordinate secon do 4 livelli: High, 
+Medium, Low, Information che indirizzano la priorit à della remediation. 7 
+La facilità d’uso  Lo strumento è fortemente orientato alla facilità.  Alla prova dei fatti, lo 
+strumento è davvero molto user friendly e intuitivo . 
+ 7 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 131  a 137  
+ 
+  I costi di licenza  Esistono varie forme di licenza. In generale i criteri per stabilir e il costo 
+della licenza sono: il numero di progetti, le linee di codice e il nume ro di 
+sviluppatori. Il prezzo è stabilito attraverso una trattativa commerciale. Medio 
+/Alto 
+Il supporto alla 
+reportistica E' supportata una reportistica di tipo custom (non sono espressamente 
+disponibili report pre- definiti, ad esempio specificamente orientati a CWE  
+SANS Top 25, OWASP Top 10, PCI Data Security Standa rd, ecc). I formati 
+supportati sono: PDF, CSV, RTF, XML. 4 
+La classificazione degli 
+errori riportati Sono riferiti agli standard supportati (es. "PCI DSS (3.1) - 6.5.1 - Injection 
+flaws - particularly SQL injection", OWASP Top 10 2 013 - A1-Injection). 7 
+CONSIDERAZIONI GENERALI  
+Considerazioni generali:  
+• L’installazione risulta agevole. 
+• La dashboard di gestione è semplice e intuitiva. 
+• Apprezzabile il riconoscimento automatico del lingu aggio: è sufficiente eseguire lo zip dei sorgenti 
+e farne l’upload verso il server. 
+• Agevole utilizzare il plug-in integrato con un IDE (tasto destro su un punt o del progetto per 
+eseguire la scansione) 
+• Supporto alla remediation in tutti gli ambienti: Cx Audit, plug-in, browser  
+• Inserimento di regole custom agevole (esaminato il caso "sanitizer") 
+• Reportistica completa e flessibile in diversi forma ti. 
+• È possibile ef fettuare una scansione piena (iniziale) e una scans ione incrementale (successiva alla 
+prima). 
+• Il software caricato per la scansione non deve esse re compilato  
+• Non è prevista la funzionalità di controllo delle v ulnerabilità delle librerie utilizzate dal pro getto, a 
+meno di integrare un componente licenziato a parte.  
+• Integrazione con Jenkins, come step aggiuntivo dell a fase di build (Continuous Integration), agevole 
+attraverso plug-in  
+ 
+Punti di forza: 
+• Vettore di attacco  
+• Funzionalità “Full Graph” che raccord a più vettori di attacco mostrando eventuali punti di 
+intersezione (candidati ideali per il fix)   
+APPROCCIO PER LA VALUTAZIONE  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 132  a 137  
+ 
+  Nei test di sicurezza delle applicazioni, i “falsi positivi” da soli non determinano la piena precisio ne, 
+sebbene la loro bassa incidenza sia spesso considerata l’indicatore più i mportante che rivela la bontà del 
+tool in esame. I falsi positivi sono solo uno dei q uattro aspetti che determinano l'accuratezza di uno  
+strumento: gli altri tre sono i "veri positivi", i "veri negativi" e i "falsi negativi". 
+ 
+    Falsi Positivi (FP): false vulnerabilità che so no non ci sono. 
+    Veri Positivi (TP): vulnerabilità reali segnala te correttamente. 
+    Falsi negativi (FN): vulnerabilità reali che no n sono state correttamente segnalate. 
+    Veri negativi (TN): false vulnerabilità che cor rettamente non sono state segnalate. 
+ 
+Pertanto, il tasso dei veri positivi (TPR) è il tas so con il quale sono state segnalate correttamente le 
+vulnerabilità reali. Il tasso di falsi positivi (FP R) è il tasso con c ui le vulnerabilità false sono state segnalate 
+come reali, in modo errato. 
+Le formule per determinare i veri e i falsi positiv i: 
+• Tasso dei veri positivi (TPR) = FP / (FP + TN) 
+• Tasso dei falsi positivi (FPR) = TP / (TP + FN) 
+CONSIDERAZIONI FINALI DEL VALUTATORE  
+Nonostante la presenza accertata di falsi positivi e falsi negativi nei risultati delle scansioni, il prodotto si 
+presta a una grande facilità d’uso e a una buona fl essibilità, sia nella personalizzazione delle regol e, sia 
+nella reportistica. 
+Il prodotto prevede la scansione di molti tipi di li nguaggi sviluppati su diverse piattaforme e s’integ ra nelle 
+pipeline di DevOps. 
+L’interpretazione dei risultati è tuttavia d’obblig o, per valutare l’effettiva presenza delle vulnerab ilità 
+segnalate. 
+TEAM DI VALUTAZIONE  Software Security team  
+ 
+b.  CodeDX 
+PRODOTTO CATEGORIA FASE SSE SITO WEB 
+CodeDx SAST/DAST  Implementation/Verification https://codedx.com/  
+DESCRIZIONE 
+CodeDx è un Tool commerciale che serve ad effettuare la veri fica di eventuali vulnerabilità di programmi e 
+software presi in considerazione relative al codice  sorgente. CodeDx riunisce una serie di strumenti d i 
+analisi del codice (sia gratuiti, sia commerciali) che consentono a loro volta di individuare agevolme nte 
+eventuali difetti nel codice da analizzare. 
+Source analysis, Pattern matching, "scan rules" (cu stomizable). 
+ANALISI DEL VALUTATORE SCORE 
+Livello di integrazione con i seguenti prodotti   
+a.       IDEs CodeDx si integra con i seguenti ide: Eclipse, Inte lliJ e Visual Studio. 8 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 133  a 137  
+ 
+  b.      source 
+repository, CodeDx si integra i seguenti repository:  
+Git (direttamente); Subversion, Mercurial, o Team F oundation 
+Version Control (TFVC) (tramite zip del "source out side" di CodeDx e 
+successivo upload verso CodeDx). 8 
+c.       build server,  CodeDx si integra con i seguenti build server:  
+ Azure DevOps, Jenkins, Maven, TeamCity, Bamboo. 7 
+d.       bug tracking 
+tools CodeDx supporta AlienVault, Git, Jira Software, Microsoft Threat 
+Modeling, SD Elements.   
+Le tipologie di 
+applicazione 
+supportate (Web, 
+Mobile, Client-
+Server…) Client Server, Web, Mobile (Android Studio). 7 
+ I linguaggi di 
+programmazione 
+supportati C/C++, Java, Javascript, JSP, .NET(C#, Visual Basic ), PHP, Python, 
+Ruby, Scala. 8 
+I framework 
+applicativi supportati 
+(es. Spring, 
+Hibernate, …) Il tool supporta i più popolari frameworks tra i qu ali Spring-MVC, 
+JQuery e molti altri. 7 
+Gli Standard 
+supportati (OWASP 
+Top 10, SANS 25, …) 7PK (Seven Pernicious Kingdoms), CERT Coding Standards for C/C++ 
+& Java, CLASP Vulnerability Lexicon, CWE/SANS Top 2 5 Most 
+Dangerous Software Errors, DISA STIGs version 3.1 a nd 4.3, HIPAA 
+Compliance Check, MISRA C, Mobile OWASP Top 10, NIS T 800-53, 
+OWASP Top 10 Project, PCI DSS, Software Fault Patte rns (SFP), WASC 
+Threat Classification v2 9 
+Le vulnerabilità 
+riconosciute (Sql 
+injection, Cross-site 
+scripting, Code 
+injection…) Le vulnerabilità riportate dai seguenti tools, dire ttamente incorporati 
+nel prodotto: Brakeman, Checkstyle, CppCheck, ESLin t, SpotBugs, 
+Find Security-Bugs, Gendarme, OWASP Dependency Chec k, JSHint, 
+PHP_CodeSniffer, PHPMD, PMD, Pylint, Retire.js, Sca laStyle.  8 
+L’integrazione di 
+“Custom rules”  È possibile all'interno di CodeDx creare delle rego le personalizzate. 7 
+Possi bilità  di inibire 
+la segnalazione di 
+particolari 
+vulnerabilità  È possibile all'interno del Tool gestire la segnal azione di una 
+particolare vulnerabilità. 7 
+L’incidenza dei “Falsi 
+positivi” Dai riscontri, l'incidenza di falsi positivi è acce ttabile. 8 
+La capacità di analisi 
+“raw source code” vs 
+“need to compile” CodeDx (a seconda dei tool embedded che vengono inv ocati) 
+permette di analizzare il codice in entrambe le mod alità (sia source-
+code che raw-code). Entrambe 
+La capacità di 
+analizzare le 
+dipendenze da 
+librerie esterne al 
+fine di controllare se 
+sono presenti 
+vulnerabilità note Black Duck (by Synopsys), OWASP Dependency Check,  
+Retire.js,  Synopsys Protecode, Sonatype Nexus 8 
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 134  a 137  
+ 
+  La capacità di 
+correlare lo scan 
+statico con l’esito di 
+uno scan dinamico 
+(correlazione White 
+Box con Black Box) Il prodotto è in grado di effettuare correlazioni t ra entrambe le 
+tipologie di scan del codice. 7 
+LE PERFORMANCE 
+a.       Full scan vs 
+Incremental scan  Il prodotto è in grado di effettuare entrambe le ti pologie di scan del 
+codice. 8 
+b.       Client -side 
+scan vs Server-side 
+scan Il prodotto consente di effettuare scan sia lato se rver che client. 7 
+Supporto alla 
+Remediation  Il tool guida nella localizzazione del problema ed offre supporto 
+informativo utile per sanarlo. 6 
+Funzionalità di 
+prioritizzazione delle 
+Remediation Il tool permete di evidenziare i bugs in base a del le priorità di 
+intervento. 7 
+La facilità d’uso Il prodotto è piuttosto facile da installare e asso lutamente intuitivo 
+da utilizzare. 8 
+I costi di licenza CodeDx è un prodotto commerciale a pagamento dai costi non 
+eccessivi rispetto a strumenti similari commerciali . L'argomento 
+andrebbe comunque analizzato in una logica commerci ale 
+complessiva aziendale. MEDIO 
+Il supporto alla 
+reportistica Il tool consente di produrre un'ottima reportistica  in vari tipi di 
+formato (Pdf, xml, Excel). 8 
+La classificazione 
+degli errori riportati Il Tool CodeDx permette di classificare gli errori secondo quattro 
+tipologie di gravità: High, Medium, Low e Info. 7 
+CONSIDERAZIONI FINALI DEL VALUTATORE  
+Dopo aver preso in considerazione tutti i punti des critti nella scheda si ritiene che il Tool CodeDx s ia un 
+ottimo strumento di facile uso e integrabile con mo lti altri tool sia gratuiti che a pagamento. Il too l 
+permette agli sviluppatori di software, tester e an alisti della sicurezza di individuare e gestire con  modalità 
+abbastanza semplici le vulnerabilità nel software. Il tool permette di integrare una quantità molto am pia 
+di plugin e di altri tool che danno una copertura e stesa di tutti i linguaggi più diffusi e degli IDE.  
+L’integrazione fra i risultati di scansioni di tool  differenti e la reportistica molto dettagliata e d isponibile in 
+vari formati, sono i veri punti di forza di CodeDx.  Dalle evidenze riscontrate, è emerso che i tool ai  quali 
+CodeDx si appoggia forniscano risultati per lo più affidabili. Si ritiene pertanto che CodeDx sia util izzabile 
+proficuamente per gli scopi aziendali. 
+TEAM DI 
+VALUTAZIONE Software Security team 
+ 
+c.  SonarQube 
+PRODOTTO  CATEGORIA  FASE SSE  SITO WEB    
+SonarQube  SAST  Implementation  http://www.sonarqube.org  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 135  a 137  
+ 
+  DESCRIZIONE       
+SonarQube è un prodotto avanzato per l'analisi stat ica del codice sorgente, finalizzato alla ricerca d i errori 
+di programmazione e di costrutti che costituiscono delle bad practise. I Bug rilevati sono tracciati e d 
+evidenziati in un'interfaccia web intuitiva, in mod o da poter seguire e gestire il processo di remedia tion. 
+Dato che si tratta di un prodotto open source, il m iglioramento dei pattern per il riconoscimento dei 
+problemi è demandato all'ampia community in rete. 
+      
+SonarQube esegue  le sue analisi attraverso appositi plugin che appli cano al codice  
+sorgente dei pattern match pre-definiti.   
+ANALISI DEL VALUTATORE  SCORE  
+Livello di integrazione con i seguenti prodotti   
+a.        IDEs  S’ integra tramite il plugin SonarLint con Eclipse, Vi sual Studio, 
+IntelliJ. SonarLint è uno strumento che analizza il  codice dal 
+punto di vista della qualità, ma è possibile utiliz zarlo in 
+collegamento con SonarQube, per sfruttare le regole  di sicurezza 
+di quest'ultimo. 8 
+b.       source repository,  S’ integra, tramite plugin, a Git, Svn, CVS, TFVC, Jaz z RTC, 
+ClearCase. 8 
+c.        build server,    
+d.       bug tracking tools  
+ SonarQube comprende la gestione completa dei bug 
+riscontrati (tracciamento incluso).  8 
+Le tipologie di applicazione 
+supportate (Web, Mobile, 
+Client-Server…) Web, Mobile Android . 8 
+ I linguaggi di 
+programmazione supportati ABAP, Apex, C#, C, C++, COBOL, CSS, Flex, Go, Java,  JavaScript, 
+Kotlin, Objective-C, PHP, PLI, PLSQL, Python, RPG, Ruby, Scala, 
+Swift, TypeScript, TSQL, VB.NET, VB6, HTML, XML 10  
+I framework applicativi 
+supportati (es. Spring, 
+Hibernate, …)    
+Gli Standard supportati 
+(OWASP Top 10, SANS 25, …)  SonarQube comprende fra le sue rules CWE, SANS TOP 25 e 
+OWASP TOP 10 10  
+L’integrazione di “Custom 
+rules”  SonarQube offre la possibilità di creare delle rego le 
+personalizzate, attraverso dei custom templates 10  
+Possibilità  di inibire la 
+segnalazione di particolari 
+vulnerabilità Il tool consente di "s opprimere" la segnalazione di una 
+particolare vulnerabilità in maniera agevole. 9 
+L’incidenza dei “Falsi 
+positivi” Coloro che scoprono un falso positivo possono segna larlo alla 
+Community. Per questo motivo l'incidenza dei falsi positivi è 
+tenuta bassa. 7 
+La capacità di analisi “raw 
+source code” vs “need to 
+compile” SonarQube fa le sue valutazioni su bytecode, per cu i presuppone 
+un rebuild del codice modificato. Need to 
+Compile  
+  
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 136  a 137  
+ 
+  La capacità di analizzare le 
+dipendenze da librerie 
+esterne al fine di controllare 
+se sono presenti 
+vulnerabilità note Attraverso plugin  7 
+La capacità di correlare lo 
+scan statico con l’esito di 
+uno scan dinamico 
+(correlazione White Box con 
+Black Box)    
+LE PERFORMANCE  
+a.        Full scan vs Incremental scan  Il prodotto è in grado di eseguire  entrambe le tipologie di 
+scan del codice. 8 
+b.       Client -side scan vs Server -
+side scan Il prodotto consente di eseguire  scan sia lato server, sia 
+lato client. 8 
+Supporto alla Remediation  SonarQube offre la possibilità di organizzare e seguire la 
+fase di correzione dei bugs. 9 
+Funzionalità di prioritizzazione 
+delle Remediation SonarQube classifica i bugs in base all'urgenza con  la quale 
+devono essere corretti. 8 
+La facilità d’uso  Il prodotto è piuttosto facile da installare e assolutamente 
+intuitivo da utilizzare. 7 
+I costi di licenza  La Community edition di SonarQube è Open Source, con 
+licenza GNU Lesser GPL License, Version 3, quindi n on 
+comporta alcun costo di licenza. Le edizioni Develo per, 
+Enterprise e Data Center sono commerciali. Free  
+Il supporto alla reportistica  Si realizza tramite plugin open source o commercial i. La 
+dashboard e l'interfaccia web costituiscono, di per  sé, una 
+valida reportistica. 7 
+CONSIDERAZIONI FINALI DEL VALUTATORE  
+Sebbene l’aspetto della sicurezza non sia ancora il  core delle funzionalità di SonarQube, sono stati f atti 
+molti passi avanti per migliorare la scoperta delle  vulnerabilità insite nella scrittura di codice sor gente. 
+SonarQube ha diversi punti di forza che ne hanno fa tto lo strumento preferito dai gruppi di sviluppo p er il 
+controllo statico del codice: 
+• Un’estesa community che lavora costantemente al suo  miglioramento. 
+• Una grande disponibilità di plugin che ne ampliano le funzionalità, fino a coprire molteplici aspetti 
+dello sviluppo sicuro. 
+• La possibilità di utilizzarlo all’interno di una mo derna pipeline di delivery DevOps-oriented, per 
+automatizzare l’efficientamento del codice ad ogni rilascio. 
+• Metriche sofisticate che servono a stabilire comple ssità e leggibilità del codice e l’adesione alle 
+best practises di programmazione. 
+• La gestione grafica delle vulnerabilità emerse.  
+• L’adesione ai principali standard di sicurezza: CWE , SANS To 25 e OWASP Top 10. 
+TEAM DI VALUT AZIONE  Software Security team   
+ 
+  

@@ -1,0 +1,817 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 100  a 137  
+ 
+10  LINEE GUIDA PER L’IMPLEMENTAZIONE DELLA PRIVACY BY DESIGN 
+NEL SDLC 
+10.1  Introduzione e concetti base 
+10.1.1  Principi della Privacy 
+All’interno dalla ISO/IEC 29100:2011 sono descritti  undici principi che indirizzano la progettazione, lo 
+sviluppo e l’implementazione dei requisiti di prote zione della privacy ( 10.1.4 ). Questi principi, sono anche 
+un riferimento per quel che concerne il monitoraggi o e la misurazione delle prestazioni del software e  per 
+gli aspetti del controllo dei programmi di gestione  della privacy in un’organizzazione (vedere anche 
+paragrafo 5.8.1 dell’ Allegato 4 - Linee Guida per la modellazione delle minacce e individuazione delle azioni 
+di mitigazione conformi ai principi del Secure/Priva cy by Design). 
+ 
+Princ ipi  Descrizione  
+Consenso e scelta  Secondo questo principio, l’interessato deve poter scegliere se 
+acconsentire o meno al trattamento dei propri dati personali (Consenso 
+Informato). Aderire a questo principio significa fo rnire all’interessato - in 
+maniera chiara, facilmente comprensibile, accessibi le e conveniente - i 
+meccanismi per esercitare la scelta e fornire il co nsenso in relazione al 
+trattamento dei suoi dati personali al momento dell a raccolta, al primo 
+utilizzo o non appena possibile. 
+Scopo legittimo e specifico  Il principio di legittimità e specificità dello sco po assicura che 
+quest’ultimo sia conforme alla legge applicabile e si basi su una base 
+giuridica ammissibile. 
+Limitazione della raccolta  Lim ita la raccolta dei dati personali a ciò che è strettam ente necessario 
+per gli scopi specificati. 
+Minimizzazione dei dati  Prevede  la progettazione , l’implementazione e l'elaborazione dei dati, 
+attraverso procedure o sistemi ICT, in modo da ridu rre al minimo i dati 
+personali che vengono elaborati e il numero di part i interessate dalla 
+privacy. 
+Limitazione dell’utilizzo, 
+conservazione e divulgazione  Limita l 'utilizzo, la conservazione e la divulgazione (incl uso il 
+trasferimento) dei dati personali a scopi specifici , espliciti e legittimi del 
+trattamento. 
+Precisione e qualità  Assicura  che i dati personali elaborati siano accurati, comp leti, aggiornati 
+(a meno che non vi sia una base legittima per mante nere dati obsoleti), e 
+adeguati e pertinenti ai fini del trattamento. 
+Apertura, trasparenza e 
+preavviso  Tale principio prevede di fornite informazioni chia re e facilmente 
+accessibili sulle politiche stabilite dal titolare del trattamento e sulle 
+procedure relative al trattamento dei dati personal i. 
+Par tecipazione individuale e 
+accesso  Stabilisce che a gli interessati sia data la possibilità di accedere e di 
+rivedere i propri dati personali, a condizione che la loro identità sia 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 101  a 137  
+ 
+autenticata con un livello adeguato di garanzia e che tale accesso non sia 
+vietato dalla legge applicabile. 
+Responsabilizzazione  Stabilisce che siano documentate e comunicate  in modo appropriato 
+tutte le politiche, le procedure e le pratiche rela tive alla privacy. Prevede 
+altresì l’assegnazione ad un individuo specifico al l'interno 
+dell'organizzazione del compito di attuare le polit iche, le procedure e le 
+best practice relative alla privacy. 
+Sicurezza delle informazioni  Stabilisce la protezione dei dati personali con controlli appropriati a 
+livello operativo, funzionale e strategico. Al fine  di garantire l'integrità, la 
+riservatezza e la disponibilità dei dati personali e proteggerli dai rischi 
+(quali l’accesso non autorizzato, la distruzione, l ’utilizzo non consentito, 
+la modifica, la divulgazione o la perdita in tutto il ciclo di vita 
+dell’informazione). 
+Conformità alla privacy  Stabilisce di  verificare e dimostrare che il trattamento rispetti  la 
+protezione dei dati e la tutela della privacy, attr averso requisiti specifici e 
+mediante verifiche periodiche – anche attraverso il  ricorso a revisori 
+interni o esterni. 
+Tabella 5 - Principi generali della privacy 
+A seguire vengono illustrate quelle che sono consid erate come migliori pratiche in cui è il titolare d el 
+trattamento che definisce lo scopo dei dati e l'inc aricato del trattamento che lo attua, coerentemente  con 
+gli obblighi definiti nel GDPR.  
+ 
+LIMITAZIONE NELLA RACCOLTA 
+• Limitazione nella raccolta dei dati personali 
+o Prima della raccolta di dati personali - ad esempio , quando si stipula un contratto con 
+l'interessato - il titolare del trattamento deve ot tenere il consenso preventivo e 
+inequivocabile da parte dell'interessato o informar e l'interessato della raccolta di suoi 
+dati personali e delle finalità di utilizzo indicat e in base alla normativa nazionale 
+vigente. 
+o Dal punto di vista del titolare del trattamento, il  consenso è necessario soprattutto 
+quando i dati personali vengono utilizzati in servi zi commerciali. Tuttavia, nei casi di 
+sicurezza e di servizi pubblici, può non essere nec essario un consenso esplicito 
+preliminare, anche se è probabile che il consenso i mplicito sia stato fornito nell'ambito 
+dell'accordo contrattuale tra l'utente e il fornito re di servizi. 
+• Metodi di raccolta dei dati personali 
+o Il titolare del trattamento non deve acquisire dati  personali con mezzi fraudolenti o altri 
+mezzi illeciti. 
+• Raccolta dati senza consenso 
+o Le limitazioni alla raccolta dei dati non si applic ano nei casi in cui il trattamento dei dati 
+personali è disciplinato dalla normativa nazionale vigente. I titolari del trattamento dei 
+dati dovrebbero raccogliere i dati senza il consens o, ad esempio se autorizzati da 
+un'ordinanza giudiziaria nazionale o da uno strumen to giuridico equipollente. 
+• Esclusione di quelle informazioni in grado di ident ificare un individuo dai dati raccolti 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 102  a 137  
+ 
+o Il responsabile del trattamento dei dati dovrebbe a dottare le opportune misure per 
+evitare di raccogliere dati dai quali una persona p otrebbe essere identificata facendo 
+riferimento ad una banca dati. 
+• Conferma del consenso da parte dell'interessato per  la raccolta dei propri dati personali 
+o Il titolare del trattamento dei dati deve adottare misure adeguate per ottenere la 
+conferma sul consenso da parte dell'interessato all a raccolta dei propri dati. 
+QUALITA’ DEI DATI 
+• Qualità dei dati raccolti 
+o Il titolare del trattamento dei dati personali deve  adoperarsi nel mantenere i dati 
+personali esatti e aggiornati entro i limiti necess ari per il raggiungimento degli scopi 
+dell'utilizzo. 
+SPECIFICA DELLO SCOPO 
+• Specifica dello scopo d'uso 
+o Nel trattare i dati personali, il titolare del trat tamento deve specificare le finalità 
+dell'utilizzo dei dati personali. 
+• Limitazioni al cambiamento dello scopo d'uso 
+o Il titolare del trattamento dei dati non deve modif icare le finalità d'uso al di fuori 
+dell'ambito in cui le nuove finalità possono ragion evolmente essere considerate 
+compatibili con quelle d'origine. 
+• La modifica delle finalità d'uso richiede il consen so preventivo 
+o Prima che il titolare del trattamento dei dati modi fichi le finalità d'uso che vanno oltre il 
+campo di applicazione in cui le nuove finalità poss ono ragionevolmente essere 
+considerate compatibili con le finalità di origine,  deve informare l'interessato di tale 
+modifica o ottenere un consenso preventivo e inequi vocabile. 
+LIMITAZIONE NELL’USO DEI DATI 
+• Limitazione d'uso 
+o Un responsabile del trattamento dei dati personali non deve trattare i dati personali, 
+senza ottenere il consenso preventivo da parte dell 'interessato, oltre quanto necessario 
+per il raggiungimento delle finalità d'uso specific ate. 
+• Restrizione della divulgazione a terze parti 
+o Il titolare del trattamento non deve fornire dati p ersonali a terzi senza ottenere il 
+consenso preventivo da parte dell'interessato, tran ne in casi molto limitati e ben 
+definiti (ad esempio a seguito di richieste legali) . 
+• Utilizzo senza consenso 
+o Le disposizioni delle due specifiche precedenti non  si applicano nei casi in cui il 
+trattamento dei dati personali si basa su leggi naz ionali vigenti. I titolari del trattamento 
+dei dati dovrebbero concedere l'accesso ai dati sol o alle autorità incaricate 
+all'applicazione della legge, come autorizzato da u n'ordinanza di un tribunale nazionale 
+o da uno strumento giuridico equivalente. 
+MISURE DI SICUREZZA 
+o I dati personali devono essere protetti da adeguate  misure di sicurezza contro rischi 
+quali la perdita o l'accesso non autorizzato, la di struzione, l'uso, la modifica o la 
+divulgazione dei dati. 
+APERTURA 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 103  a 137  
+ 
+o Dovrebbe esistere una politica generale di apertura  nei riguardi di sviluppi, pratiche e 
+politiche in materia di dati personali. Dovrebbero essere prontamente disponibili mezzi 
+per stabilire l'esistenza e la natura dei dati pers onali e le principali finalità del loro 
+utilizzo, nonché l'identità e la residenza abituale  della persona che raccoglie i dati. 
+PARTECIPAZIONE INDIVIDUALE 
+o Un individuo può avere il diritto, tra gli altri, d i: 
+a)  ottenere dal titolare del trattamento la conferma d ell'esistenza o meno di dati che 
+lo riguardano;  
+b)  di avergli comunicato i dati che lo riguardano:  
+i)  entro un termine ragionevole; 
+ii)  ad un onere, se del caso, non eccessivo; 
+iii)  in modo ragionevole; 
+iv)  in una forma per lui facilmente comprensibile; 
+c)  essere motivati nel caso in cui una richiesta prese ntata ai sensi dei punti a) e b) 
+viene respinta e di essere in grado di contestare t ale rifiuto; 
+d)  contestare i dati che lo riguardano e, se la contes tazione è accolta, far cancellare, 
+rettificare, completare o modificare i dati che lo riguardano. 
+RESPONSABILIZZAZIONE 
+o Il titolare del trattamento dei dati deve essere re sponsabile del rispetto delle misure 
+che attuano i principi di cui sopra e di garantire che i responsabili del trattamento dei 
+dati allo stesso modo si conformino. 
+EQUIVALENZA DI REGIME 
+o Il titolare del trattamento dei dati non dovrebbe t rasferire dati personali al di fuori delle 
+proprie frontiere, a meno che la destinazione non a bbia un regime di privacy 
+equivalente a quello di origine. 
+ 
+10.1.2  Obiettivi di protezione 
+Gli obiettivi di protezione mirano a fornire delle proprietà astratte, ossia indipendenti dal contesto  per i 
+sistemi IT. Nella sicurezza ICT la triade della ris ervatezza, dell’integrità e della disponibilità è s tata 
+ampiamente accettata. Sebbene siano state proposte diverse estensioni e perfezionamenti, questi obiett ivi 
+di protezione core  sono rimasti stabili per decenni e sono serviti da  base per molte metodologie di sicurezza 
+ICT, (cfr. DR-3). A completamento di questi obietti vi di protezione della sicurezza, sono stati propos ti tre 
+obiettivi di protezione specifici per la privacy ch e approfonditi nella tabella che segue: 
+ 
+Obiettivo  Descrizione  
+Incollegabilità  Garantisce che i dati rilevanti per la privacy non p ossano essere collegati tra domini 
+con scopo e contesto comuni. Ciò significa che i pr ocessi devono essere gestiti in 
+modo tale che i dati rilevanti per la privacy non s iano collegabili a qualsiasi altro 
+insieme di dati rilevanti sulla privacy al di fuori  del dominio. 
+La trasparenza  Garantisce che tutte le elaborazioni dei dati rileva nti per la privacy, comprese le 
+impostazioni legali, tecniche e organizzative, poss ano essere comprese e ricostruite 
+in qualsiasi momento. Le informazioni devono essere  disponibili prima, durante e 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 104  a 137  
+ 
+dopo l'elaborazione. Pertanto, la trasparenza deve riguardare non solo 
+l'elaborazione effettiva, ma anche l'elaborazione p ianificata (trasparenza ex ante) e 
+il tempo trascorso dall'elaborazione per sapere cos a è successo esattamente 
+(trasparenza ex post) 
+L’intervenibilità  Garantisce l'intervento in relazione a tutti i tratt amenti di dati relativi alla privacy in 
+corso o pianificati, in particolare da parte di col oro i cui dati vengono elaborati. 
+L'obiettivo dell'intervenibilità è l'applicazione d i misure correttive e controbilanci 
+ove necessario. L'intervenibilità è legata ai princ ipi relativi ai diritti degli individui, ad 
+es. i diritti di rettifica e cancellazione dei dati , il diritto di revocare il consenso o il 
+diritto di presentare un reclamo o di sollevare una  controversia per ottenere il 
+rimedio. 
+10.1.3  Privacy by design 
+10.1.3.1  Definizione della Privacy by design 
+La Privacy by Design (PbD) è definita come “un appr occio olistico concettuale che può essere applicato  - 
+end-to-end - all’interno di un’organizzazione, incl udendo le sue tecnologie informatiche, le sue prati che 
+commerciali, i suoi processi, la progettazione fisi ca e le infrastrutture di rete” (cfr. DR-8). Second o questa 
+impostazione, l'utente dovrebbe essere considerato il centro di un sistema di protezione dei dati pers onali 
+(per definizione, quindi il sistema è "user centric "). Qualsiasi progetto - sia strutturale, sia conce ttuale - 
+andrebbe realizzato considerando, sin dalla fase di  progettazione, la riservatezza e la protezione dei  dati 
+personali. La PbD comprende la seguente trilogia di  applicazioni:  
+• Sistemi IT;  
+• Pratiche di business;  
+• Progettazione delle reti.  
+E’ in questo contesto che si inserisce la necessità  di prevedere l’ingegnerizzazione della privacy by design in 
+ogni fase del ciclo di vita del software. 
+10.1.3.2  I sette principi della privacy by design 
+Principio  Descrizione  
+Proattivo non reattivo; 
+Preventivo non correttivo L'approccio di Privacy by Design  (PbD) è caratterizzato da misure 
+proattive piuttosto che reattive. Essa è diretta ad  anticipare e previene 
+gli eventi invasivi della privacy prima che accadan o. PbD non attende 
+che i rischi per la privacy si materializzino, né o ffre rimedi per la 
+risoluzione delle infrazioni della privacy una volt a che si sono verificati, 
+in quanto è diretta ad impedire che si verifichino.  
+Privacy come impostazione 
+predefinita La Privacy by Design  è diretta a garantire il massimo  grado di privacy 
+prevedendo che i dati personali siano automaticamen te protetti in 
+qualsiasi sistema IT o di business. Nessuna azione è richiesta da parte 
+dei singoli per proteggere la loro privacy, in quan to è integrata nei 
+sistemi per impostazione predefinita. 
+Privacy incorporata nel design  La Privacy by Design  è incorporato nel design e nell'architettura dei 
+sistemi IT e di business. Non è attuata successivam ente ad un evento. Il 
+risultato è che la privacy diventa una componente e ssenziale delle 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 105  a 137  
+ 
+funzio nalità principali. La privacy è parte integrante de l sistema, senza 
+diminuirne la funzionalità. 
+Funzionalità completa; somma 
+positiva, non somma zero La Privacy by Design  cerca di tutelare tutti i legittimi interessi e gli  
+obiettivi in un’ottica win-win , senza prevedere delle soluzioni a somma 
+zero che includano degli inutili trade-off. Privacy by Design  evita la 
+pretesa di false dicotomie, come la sicurezza a dis capito della privacy, in 
+quanto dimostra che è possibile averle entrambe. 
+Sicurezza end -to -end - 
+Protezione completa del ciclo 
+di vita La Privacy by Design  che è stata incorporata in un sistema sin dal primo  
+momento, si estende in modo sicuro durante l'intero  ciclo di vita dei 
+dati coinvolti: prevedendo robuste misure di sicure zza - essenziali per la 
+privacy - dall'inizio alla fine di un ciclo di vita . Ciò garantisce che tutti i 
+dati vengano conservati e distrutti – in modo sicur o e tempestivamente 
+- alla fine del processo. Pertanto, la Privacy by Design  garantisce una 
+gestione delle informazioni sicura end-to-end. 
+Visibilità e trasparenza - Keep 
+it Open La Privacy by Design  cerca di assicurare a tutti gli stakeholder che 
+qualunque sia la pratica aziendale o la tecnologia coinvolta, essa 
+opererà secondo le promesse e gli obiettivi dichiar ati, anche 
+assoggettandosi a verifiche indipendenti. Le sue co mponenti e le sue 
+operazioni rimangono visibili e trasparenti, sia pe r gli utenti che per i 
+fornitori. 
+Rispetto per la privacy degli 
+utenti - Mantenerlo incentrato 
+sull'utente La Privacy by Desi gn  richiede ai progettisti e agli operatori di garanti re 
+gli interessi dei singoli, offrendo robuste misure di privacy per 
+impostazione predefinita. Prevedendo degli avvisi a ppropriati e 
+potenziando le opzioni user-friendly, pertanto gara ntendo 
+l’impostazione user-centric. 
+Tabella 6 - I sette principi della Privacy by Desig n 
+Vedere anche il paragrafo 5.8.1.2 dell’ Allegato 4 - Linee Guida per la modellazione delle minacce e 
+individuazione delle azioni di mitigazione conformi ai principi del Secure/Privacy by Design.  
+ 
+10.1.4  Data protection Impact Assessment 
+La progettazione di qualsiasi software che coinvolg a il trattamento dei dati personali deve essere pre ceduta 
+da un'identificazione dei requisiti di protezione p er la privacy, in quanto dal trattamento o dall’ela borazione 
+dei dati personali potrebbero derivare dei rischi. I rischi per la privacy negli applicativi software che 
+comportano il trattamento dei dati personali, dovre bbero essere trattati prima della loro implementazi one, 
+ossia sin dalla fase di progettazione ( Engineering Privacy by Design ). Dovranno, quindi, essere analizzati i 
+rischi collegati alle applicazioni software. 
+In linea con i requisiti di attuazione previsti dal  Regolamento (UE) 679 del 2016 (cfr. DR-1), di segu ito 
+indicato come GDPR , qualora un trattamento dei dati personali possa p resentare un rischio elevato per i 
+diritti e le libertà delle persone fisiche, i titol ari di quest’ultimo dovranno effettuare una valutaz ione 
+dell’impatto del trattamento sulla protezione dei d ati personali o Data Protection Impact Assessment , di 
+seguito indicata come “DPIA” (cfr.  Art. 35 DR-1), quest’obbligo è applicabile anche al ciclo di vita del 
+software. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 106  a 137  
+ 
+Sulla base di quanto stabilito dal WP Art. 29 (cfr.  DR-7), sarà necessario effettuare una valutazione della 
+necessità di svolgere una DPIA, basandosi sulla map pa concettuale definita nella Figura 27 . 
+In particolare, al fine di valutare se il trattamen to - posto in essere all’interno di un’applicazione  software - 
+possa comportare un rischio elevato per i diritti e  le libertà delle persone fisiche (Cfr. ART. 35 DR- 1) sarà 
+necessario determinare se rientra tra quelli indica ti nella Tabella 7- in cui sono descritte alcune ti pologie di 
+trattamento che obbligano il titolare a svolgere un a Data Protection Impact Assessment DPIA. 
+ 
+Figura 27 – Esempio di flusso di valutazione necessi tà DPIA 
+Alla luce di quanto sopra, se il trattamento, le su e modalità di attuazione o i dati trattati rientran o in quelli 
+descritti nella Tabella 7, e non si configurano ecc ezioni – individuate all’interno di elenchi che dov ranno 
+essere redatti dagli Stati Membri (ad oggi non risu ltano essere stati ancora individuati) - sarà neces sario 
+svolgere una DPIA. 
+ 
+Tipologia di 
+trattamento Descrizione 
+1 - Valutazione di 
+profilazione o scoring Tutti quei trattamenti che analizzano i dati presen ti all’interno dei propri archivi 
+allo scopo di trarne informazioni riguardo il rendi mento professionale, la 
+situazione economica, la salute, le preferenze o gl i interessi personali, l’affidabilità 
+o il comportamento, l’ubicazione o gli spostamenti dell’interessato 
+2 - Decisioni 
+automatizzate  Tutti quei trattamenti che producano effetti giurid ici sulla persona fisica ovvero 
+che incidono in modo analogo significativamente su dette persone fisiche 
+3 - Monitoraggio 
+sistematico Tutti quei trattamenti che sono utilizzati per osse rvare, monitorare o controllare 
+gli interessati, compresa la raccolta di dati attra verso reti o la sorveglianza di 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 107  a 137  
+ 
+un’area accessibile al pubblico  
+4 - Dati sensibili o 
+estremamente 
+personali Tutti quei trattamenti che si riferiscono a partico lari categorie di dati sensibili o 
+estremamente personali 
+5 - Dati trattati su 
+larga scala Tutti i trattamenti che gestiscono  dati personali su larga scala, in relazione al 
+numero di soggetti interessati, al volume dei dati,  alla durata o all’ambito 
+geografico 
+6 - Combinazioni o 
+raffronto di insieme di 
+dati Tutti quei trattamenti nei quali è prevista una pre senza congiunta di d ue o più 
+titolari distinti, secondo modalità che esulano dal le ragionevoli aspettative 
+dell’interessato 
+7 - Dati relativi a 
+interessati vulnerabili Tutti quei trattamenti in cui la tipologia delle in formazioni trattate determina uno 
+squilibrio fra interessato e titolare, nel senso de lla mancanza del potere, in capo al 
+primo, di acconsentire o di opporsi al trattamento.  Si inseriscono in questa 
+categoria i dati dei minori, dei dipendenti o delle  persone richiedenti specifiche 
+tutele 
+8 - Utilizzi innovativi  Tutti quei trattamenti che utilizzano tecnologie o tecniche innovative per la 
+raccolta o l’utilizzo dei dati personali, dato che il livello di conoscenza tecnologica, 
+in un dato momento storico, non è in grado valutare  il livello di rischio connesso 
+all’innovazione 
+9 - Trattamenti che 
+impediscono di 
+esercitare un diritto o 
+avvalersi di un servizio 
+o contratto Tutti quei trattamenti che impediscono agli interes sati di esercitare un diritto di 
+avvalersi di un servizio o di un contratto, ossia t utti i trattamenti dai quali 
+l’interessato non può esimersi qualora volesse acce dere a detto servizio o 
+concludere detto contratto 
+Tabella 7 - Tipologie di trattamento che rappresent ano un rischio elevato 
+Nel caso in cui la DPIA sia stata valutata come nec essaria (cfr. DR-7), si potrà procedere con l’anali si degli 
+impatti potenziali sui diritti e le libertà dell’in teressato (persone fisiche), a fronte del trattamen to dei 
+relativi dati personali, allo scopo di porre in ess ere le opportune attività di trattamento dei rischi  per la 
+protezione dei dati personali. 
+In linea con quanto previsto da regolamenti e stand ard applicabili in materia (cfr. Errore. L'origine 
+riferimento non è stata trovata. ), tale attività costituisce un processo composto d a un insieme di attività 
+ben definite, da compiersi in sequenza ordinata, ne ll’ambito delle seguenti fasi: 
+1)  Definizione del contesto , tramite la comprensione dell’organizzazione, dell ’architettura tecnologica 
+e dei fattori che potrebbero influenzare la gestion e del rischio privacy; 
+2)  Privacy risk assessment , attraverso cui si identificano, si analizzano e s i valutano i rischi per gli 
+interessati; 
+3)  Privacy risk treatment , in cui si identificano le strategie e le modalità  operative per 
+l’implementazione delle misure di sicurezza adeguat e alla copertura dei rischi rilevati in sede di ris k 
+assessment. (I requisiti di protezione per la priva cy, da implementare all’interno del piano di 
+trattamento dei rischi individuati per il software possono essere ricavati dai controlli descritti nel la 
+ISO/IEC 29151 (cfr. DR-5) 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 108  a 137  
+ 
+10.1.4.1  Riconoscere le informazioni personali  
+Per poter definire adeguatamente il trattamento del  rischio privacy per i software, sarà necessario 
+individuare le tipologie di informazioni personali,  ossia quelle da cui possono essere ricavati dei da ti 
+personali, che potrebbero essere trattate da un app licativo software. Per determinare se una persona f isica 
+debba o meno essere considerata identificabile, sar à necessario prendere in considerazione diversi fat tori. 
+In particolare, si dovrebbe tenere conto dei mezzi che possono ragionevolmente essere utilizzati dai 
+software per il trattamento dei dati personali. I s oftware dovrebbero supportare meccanismi adeguati a d 
+informare l’interessato, raccogliere il consenso e proteggere i suoi dati personali. Le seguenti speci ficazioni 
+forniscono degli ulteriori chiarimenti su come dete rminare se un’informazione possa essere considerata  
+personale. 
+Identificativi  
+In alcuni casi, l'identificabilità dell’interessato  potrebbe essere molto semplice (e.g. quando l'info rmazione 
+contiene o è associata ad un identificatore che è u sato per riferirsi o per comunicare con l’interessa to). Le 
+informazioni possono essere considerate personali a lmeno nei seguenti casi: 
+o se contiene o è associato a un identificatore che f a riferimento a una persona fisica (ad esempio, il 
+codice fiscale); 
+o se contiene o è associato a un identificatore che p uò essere correlato a una persona fisica (ad 
+esempio, numero del passaporto, numero di conto); 
+o se contiene o è associato a un identificatore che p uò essere utilizzato per stabilire una 
+comunicazione con una persona fisica identificata ( ad esempio, una posizione geografica precisa, 
+un numero di telefono);  
+o se contiene un riferimento che collega i dati a uno  degli identificatori di cui sopra. 
+ 
+Altre caratteristiche identificative 
+Le informazioni non devono necessariamente essere a ssociate a un identificatore per poter essere 
+considerate personali. Le informazioni saranno cons iderate personali anche se contengono o sono 
+associate a una caratteristica che distingue una pe rsona fisica da altre persone fisiche, ad esempio i  dati 
+biometrici. Qualsiasi attributo che assume un valor e che identifica univocamente un l’interessato deve  
+essere considerato come una caratteristica identifi cativa. Si noti che indipendentemente dal fatto che  una 
+determinata caratteristica distingue una persona fi sica da altre potrebbe cambiare a seconda del conte sto 
+di utilizzo. Ad esempio, mentre il cognome di una p ersona fisica potrebbe essere insufficiente per 
+identificare quella persona fisica su scala globale , potrebbe invece esserlo su una scala aziendale. I noltre, 
+potrebbero anche esservi situazioni in cui una pers ona fisica è identificabile anche se non esiste un singolo 
+attributo che la identifica in modo univoco. Questo  è il caso in cui una combinazione di diversi attri buti 
+messi insieme consente di distinguere tale persona dalle altre, ad esempio la combinazione degli attri buti 
+"femmina", "45" e "avvocato" può essere sufficiente  per identificare una persona fisica all'interno di  una 
+determinata organizzazione, ma con buona probabilit à sarà insufficiente per identificare quella person a 
+fisica al di fuori di tale contesto. 
+La tabella che segue fornisce alcuni esempi di attr ibuti che potrebbero essere personali, a seconda de l 
+dominio.  
+Età o bisogni speciali delle persone fisiche vulner abili  
+Accuse di condotta criminale 
+Qualsiasi informazione raccolta durante i servizi 
+sanitari 
+Conto bancario o numero di carta di credito Posizione derivata dai sistemi di 
+telecomunicazione 
+Storia medica 
+Nome 
+Identificativi nazionali (ad es. Numero di 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 109  a 137  
+ 
+Identificatore biometrico  
+Estratto conto della carta di credito 
+Condanne penali o reati commessi 
+Rapporti di indagini penali 
+Numero cliente 
+Data di nascita 
+Informazioni sanitarie diagnostiche 
+Disabilità 
+Fatture del medico 
+Stipendi dei dipendenti e file di risorse umane 
+Profilo finanziario 
+Genere 
+Posizione GPS 
+Traiettorie GPS 
+Indirizzo di casa 
+Indirizzo IP passaporto)  
+Indirizzo e-mail personale 
+Numeri di identificazione personale (PIN) o 
+password 
+Interessi personali derivati dall'utilizzo di 
+tracciamento di siti Web 
+Profilo personale o comportamentale 
+Numero di telefono personale 
+Fotografia o video identificabili con una persona 
+fisica 
+Preferenze di prodotto e servizio 
+Origine razziale o etnica 
+Credenze religiose o filosofiche 
+Orientamento sessuale 
+Appartenenza sindacale 
+Bollette 
+Tabella 8 - Esempi di attributi per indentificare u na persona 
+Dati pseudonimizzati  
+Al fine di limitare la capacità del titolare o del responsabile di identificare l’interessato, l’ident ità di 
+quest’ultimo e le informazioni che lo riguardano po ssono essere sostituite da pseudonimi. Tale sostitu zione 
+viene solitamente eseguita da un soggetto terzo pri ma di trasmettere le informazioni a un destinatario . La 
+sostituzione viene considerata pseudonimizzazione q uando: 
+(a) gli attributi collegati allo pseudonimo non son o sufficienti per identificare l’interessato; 
+(b) l'assegnazione degli pseudonimi è tale da non p oter essere invertita da parte delle persone che l’ hanno 
+eseguita.  
+La pseudonimizzazione evita il collegamento. Ma ess endo diversi i dati collegabili allo stesso pseudon imo, 
+esiste il rischio che la pseudonimizzazione sia vio lata, in quanto più grande è il set di dati associa to a un 
+dato pseudonimo, maggiore è il rischio che la propr ietà (a) venga violata. Inoltre, più piccolo è il g ruppo di 
+persone fisiche a cui un insieme di dati pseudonimi  si riferisce, maggiore sarà la probabilità che un 
+interessato sia identificabile. Gli attributi conte nuti direttamente nelle informazioni in questione e  quelli 
+che possono essere facilmente collegati a queste in formazioni (ad es. utilizzando un motore di ricerca  o dei 
+riferimenti incrociati con altri database) devono e ssere presi in considerazione nel determinare se 
+l'informazione si riferisce a un elemento identific abile dell’interessato. 
+La pseudonimizzazione è differente dall'anonimizzaz ione: i processi di anonimizzazione soddisfano 
+entrambe le proprietà (a) e (b) di cui sopra, ma el iminano il collegamento. Durante l'anonimizzazione,  le 
+informazioni sull'identità vengono cancellate o sos tituite da pseudonimi per i quali la funzione di 
+associazione viene distrutta. Quindi, i dati resi a nonimi non sono più personali. 
+Metadati 
+I dati personali possono essere memorizzati in un s istema ICT in modo tale da non essere facilmente vi sibili 
+all'utente del sistema. Ad esempio, la memorizzazio ne del nome dell’interessato come metadato nelle 
+proprietà di un documento, nei commenti o nelle mod ifiche. L’interessato deve essere a conoscenza 
+dell’esistenza di tali dati sotto forma di metadati  o del loro trattamento per tale scopo, in quanto p otrebbe 
+preferire che le informazioni personali non vengano  elaborate in questo modo o condivise pubblicamente . 
+Dati non richiesti 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 110  a 137  
+ 
+Anche le informazioni personali non richieste da un  titolare, cioè non intenzionalmente ottenute, 
+potrebbero essere memorizzate da un software. Ad es empio, l’interessato potrebbe fornire delle 
+informazioni personali anche quando non è stato ric hiesto dal trattamento (ad es. ulteriori informazio ni 
+personali fornite nel contesto di un modulo di feed back anonimo su un sito Web). Il rischio di raccogl iere 
+informazioni personali indesiderate può essere rido tto considerando le misure di tutela della privacy al 
+momento della progettazione del software. 
+I dati personali stabiliti dal GDPR (cfr. DR-1 ) sono suddivisi nelle seguenti categorie di dati p ersonali: 
+Categorie di dati 
+personali Descrizione 
+Dati identificativi  I dati identificativi rappresentano tutti quei dati  che possono identificare, 
+direttamente o indirettamente una persona, con part icolare riferimento a un 
+identificativo come il nome, un numero di identific azione, dati relativi 
+all'ubicazione, un identificativo online. 
+Dati 
+Particolari/Sensibili I dati particolari  sono tutti quei dati personali che rivelino l’origi ne razziale o 
+etnica, le opinioni politiche, le convinzioni relig iose o filosofiche, o l’appartenenza 
+sindacale, nonché dati genetici dati biometrici int esi a identificare in modo 
+univoco una persona fisica, dati relativi alla salu te o alla vita sessuale o 
+all'orientamento sessuale della persona. 
+Dati giudiziari  I dati giudiziari rappresentano tutti quei dati rel ativi alle condanne penali e ai 
+reati o a connesse misure di sicurezza. 
+10.1.5  Flusso informativo del trattamento 
+Per definire l’architettura e il design di un softw are i progettisti dovranno prendere in considerazio ne la 
+struttura del flusso informativo, descrivendo le in terazioni tra interessato, titolare, responsabile e  terze 
+parti all’interno dell’applicativo software. Gli at tori identificati possono interagire tra loro in va ri modi, 
+secondo i seguenti scenari, maturati dalla ISO/IEC 29134:2017 45 : 
+ 
+ 
+  
+                                                           
+45  https://www.iso.org/standard/62289.html  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 111  a 137  
+ 
+ 
+  Interessato Titolare del 
+trattamento Responsabile del 
+trattamento Terze parti 
+Raccolta     
+Archiviazione     
+Utilizzo     
+Trasferimento      
+Cancellazione     
+Figura 28 - Esempio di flusso informativo del tratta mento 
+10.1.6  Privacy Implementation Strategy 
+La Privacy Implementation Strategy prevede che i pr ogettisti del software definiscano e selezionino un  
+modello di ciclo di vita adeguato all’ambiente di p roduzione e di sviluppo, all'ambito, all'ampiezza e  alla 
+complessità del progetto, parametrato sulle necessi tà emerse dai risultati della data protection impac t 
+assessment per la privacy ( 10.1.4) .  
+Dovranno essere documentate: 
+• I principi generali della privacy applicabili alla progettazione del software (10.1.1) 
+• Gli obiettivi di protezione che il software dovrebb e garantire (10.1.2) 
+• I principi della privacy by design applicabili alla  progettazione del software (10.1.3.2) 
+• I risultati della data protection impact assessment  per il software e l’individuazione dei requisiti d i 
+protezione per la privacy (10.1.4) 
+• Le tipologie di Informazioni Personali Identificabi li (PII) trattate nell’ambiente software (10.1.4.1)  
+• La descrizione del flusso informativo derivante dal  trattamento all’interno del software (10.1.5) 
+10.2  Ciclo di vita dello sviluppo software nell'ambito d el GDPR 
+Molti articoli che trattano la tecnologia dell'info rmazione sulla base del regolamento generale sulla 
+protezione dei dati dell'UE si focalizzano su speci fici obblighi commerciali e legali in materia di da ti 
+personali. Tali articoli si concentrano spesso sul trattamento fisico dei dati e sugli obblighi del re sponsabile 
+di quest’ultimo nella gestione dello stesso. Questa  è una considerazione importante per le organizzazi oni 
+che operano nell'UE.  
+Tuttavia, oltre alla localizzazione dei dati, il GD PR ha un impatto profondo e significativo sul ciclo  di vita 
+dello sviluppo del software e sui relativi processi  di sviluppo informatico per quelle organizzazioni che 
+prevedono la realizzazione di progetti relativi a s istemi informativi all'interno dell'UE. Registrazione 
+utente Dato  Raccoglie 
+Trasferisce Trasferisce Riceve Fruizione 
+Servizio 
+ Utilizza Tratta Archivia Fornisce 
+Cancella  Dato  Dato  
+Dato  Dato  
+ Dato   Dato  
+Legenda  
+Flusso dei dati 
+Istruzione 
+Servizio 
+ Cancella 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 112  a 137  
+ 
+Il reparto IT di un'organizzazione può utilizzare u no dei molteplici e distinti tipi di SDLC (System 
+Development LifeCycle) presenti sul mercato, come A gile, DevOPS, Waterfall, Iterative e così via. 
+Nonostante i nomi e gli approcci differenti, queste  tipologie di SDLC hanno diverse aree in comune: tu tti gli 
+SDLC hanno una qualche forma di pianificazione, pro gettazione, realizzazione, test, rollout e mantenim ento 
+che coprono l'intero ciclo di vita di un sistema in formativo. 
+Gli SDLC vengono utilizzati per costruire sistemi i nformatici gestendo e controllando con successo il 
+progetto IT, sfruttando il fatto che la maggior par te dei sistemi informatici hanno livelli o moduli c omuni.  
+In generale, nella maggior parte delle tecnologie i mpiegate, troviamo in comune i seguenti moduli: 
+• Livelli di trasporto dati e sicurezza; 
+• I livelli di database e architettura dei dati; 
+• I livelli applicativi e logici; 
+• I livelli di presentazione e portale. 
+L'SDLC, qualunque sia il tipo utilizzato, gestisce e controlla il progetto informatico, dalla pianific azione 
+all'implementazione, attraverso i suddetti livelli o moduli. 
+Nell'ambito del GDPR vi è un numero significativo d i requisiti e cambiamenti a livello di attività, pr ocesso, 
+politica e procedure.  
+Il GDPR ha un impatto incredibile sul processo SDLC  per quelle imprese che installano sistemi nell'UE e 
+aumenta notevolmente la complessità dei progetti fu nzionali e tecnici associati ai vari livelli tecnic i sopra 
+descritti (ad esempio il livello di database). 
+I requisiti funzionali e tecnici introdotti dal GDP R per i sistemi informatici, sono sostanziali e non  irrilevanti. 
+In effetti, influenzano quasi tutti gli aspetti del la progettazione e della realizzazione dei sistemi attraverso 
+ciascuno dei suddetti livelli tecnologici. Tali inf luenze da parte del GDPR devono essere affrontate n ella fase 
+di pianificazione dell'SDLC, ovvero all'inizio, per  evitare sovraccosti significativi e rielaborazioni  successive 
+nel processo informatico. 
+Segue un inventario di sedici aree di pertinenza ad  articoli del GDPR che influenzano la pianificazion e 
+funzionale e tecnica dell'SDLC e i requisiti per i reparti IT. Tale elenco può essere considerato come  un 
+insieme di consigli generali per i CIO e i responsa bili IT che redigono i requisiti dei loro sistemi o peranti 
+nell’ambito dell'UE: 
+1.  L' implementazione della protezione dei dati nel si stema e nell'organizzazione, per progettazione e 
+per impostazione predefinita, è un requisito legale : 
+a.  considerando 78 e Articolo 25 
+2.  I dati devono essere protetti, e l'integrità e la r iservatezza devono essere mantenute, utilizzando 
+mezzi tecnici e organizzativi sotto la direzione de l controllore: 
+a.  considerando 49 e Articoli 5-1(f), 32-1(b-d) 
+3.  Ove possibile, deve essere utilizzata la cifratura dei dati: 
+a.  considerando 83 e Articoli 6-4(e), 32-1(a) 
+4.  Ove possibile, deve essere utilizzata una pseudonim izzazione dei dati: 
+a.  considerando 26, 28, 29, 78 e Articoli 6-4(e), 25-1 , 32-1(a) 
+5.  Ove possibile, i dati devono essere resi anonimi: 
+a.  considerando 26 
+6.  Al momento della raccolta dei dati, gli attributi d el trattamento e le fasi elaborative devono essere 
+forniti all'interessato, per via elettronica o per iscritto, in forma chiara e facilmente comprensibil e: 
+a.  considerando 39, 58 e Articoli 12-1, 13-2(a-f) 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 113  a 137  
+ 
+7.  Le persone interessate hanno il diritto di accedere  ai loro dati e di controllarne il trattamento in 
+qualsiasi momento: 
+a.  considerando 58, 61, 63 e Articoli 12, 15-1(a, d) 
+8.  Separare le informazioni che potrebbero essere cons iderate dati personali o profili personali se 
+trattati o combinati separatamente o insieme, al ri sultato di attività illecite: 
+a.  considerando 30 
+9.  I dati relativi a un soggetto interessato dovranno essere portabili verso un altro provider (anche se 
+concorrente): 
+a.  considerando 68 e Articoli 13-2(b), 14-2(c), 20 
+10.  L'interessato ha diritto a una copia dei suoi dati in un formato comunemente utilizzato 
+a.  Articolo 15-3 
+11.  L'interessato ha il diritto di ottenere gratuitamen te l'aggiornamento dei propri dati in caso di 
+errore. 
+a.  considerando 59, 65 e articolo 16 e, l'interessato ha il diritto di chiedere tale 
+aggiornamento per via elettronica, riferimento 59 
+12.  L'interessato ha il diritto di ottenere la cancella zione immediata dei dati che lo riguardano: 
+a.  considerando 59, 65 e articoli 13-2(b), 14-2(b), 17  e, l'interessato ha il diritto di chiedere 
+tale cancellazione per via elettronica, riferimento  59 (Nota: Esistono nel GDPR particolari 
+eccezioni a tale diritto.) 
+13.  Il titolare del trattamento deve comunicare ad altr e organizzazioni IT che detengono i dati 
+dell'interessato che questi ha richiesto la cancell azione dei propri dati: 
+a.  considerando 66 e articolo 19 (quindi, il dipartime nto IT deve sapere dove vengono 
+conservati da terze parti tutti i dati degli intere ssati in modo che le parti coinvolte possano 
+essere informate della richiesta di cancellazione. Sono essenziali inventari aggiornati dei 
+dati interni ed esterni). 
+14.  L'interessato ha il diritto di opporsi, revocare il  consenso e rinunciare al trattamento. Questo può 
+opporsi o revocare il proprio consenso in caso di t rattamento elettronico dei propri dati: 
+a.  considerando 59, 63 e articoli 7-3,18,21 (e con rac comandazione tecnica del Consiglio UE: 
+riferimento 67) 
+15.  I dati vengono conservati solo per il tempo necessa rio a conseguire gli obiettivi dell'interessato. I 
+dati personali scaduti non devono essere memorizzat i. (Parte di una strategia di gestione dei 
+registri elettronici). La persona interessata deve essere informata di tale periodo o delle modalità d i 
+elaborazione al momento della raccolta dei suoi dat i: 
+a.  considerando 39, 45 e Articoli 13-2(a), 14-2(a), 25 -2 
+16.  Si deve stabilire, quasi immediatamente, se una vio lazione dei dati possa essere stata un "rischio 
+elevato per i diritti e la libertà della persona fi sica" in quanto deve essere predisposto l’opportuno  
+ambiente tecnico per individuare, tracciare e valut are tali violazioni. 
+a.  considerando 85, 86 (relativi agli obblighi di noti fica), 87 (Nota: Molti articoli, ad esempio 
+33,34) del GDPR riguardanti gli obblighi di comunic azione alla persona interessata e alle 
+autorità competenti in materia. 
+Inoltre, molti dei punti di cui sopra, ad esempio l ’undicesimo, richiedono aggiornamenti del contact c enter 
+e interazioni e conferme con e da parte dell'intere ssato.  
+Una cosa è certa: ciascuno dei sedici punti di cui sopra dovrà avere una posizione nella documentazion e di 
+progettazione funzionale e tecnica dei sistemi real izzati con il supporto dell'SDLC, e ciascuno di ess i 
+apporterà una certa complessità alle fasi di proget tazione del sistema nel suo complesso. In più, molt i di 
+questi influenzeranno anche i processi globali di a ssistenza verso i clienti dell'azienda, poiché il G DPR non 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 114  a 137  
+ 
+solo richiede determinati requisiti tecnici "puri",  ma anche requisiti funzionali all'attività organiz zativa 
+supportati sia dalla tecnologia che dai processi az iendali. 
+In sintesi, il testo del GDPR contiene requisiti fu nzionali e tecnici del sistema, sia espliciti che i mpliciti, che 
+influiscono e influenzano l'SDLC adottato dalle org anizzazioni che progettano l'introduzione dei nuovi  
+sistemi nell'UE.  
+L'impatto del GDPR sullo sviluppo del software iniz ia a partire dall'architettura dei dati e dai livel li di 
+trasporto di questi, per arrivare fino ai livelli d i portale e di presentazione. La chiave di base per  il successo 
+dello sviluppo IT è la pianificazione di tali requi siti durante le fasi iniziali dell'SDLC; sebbene po ssano 
+aggiungere una certa complessità alle fasi iniziali  di pianificazione e progettazione dell'SDLC, i cos ti di 
+sviluppo complessivi saranno notevolmente ridotti a l minimo se considerati il più precocemente possibi le 
+nel processo di costruzione dei sistemi IT. 
+10.3  Implementazione della strategia nelle fasi di svilu ppo del software 
+10.3.1  Scopo 
+Gli elementi definiti all’interno della Privacy Imp lementation Strategy (10.1.6), i requisiti di prote zione della 
+privacy e le strategie di design per la privacy (ri cavabili sulla base di quelli individuati da ENISA in DR-3), 
+dovranno essere inquadrati all’interno di ciascuna fase della Engineering privacy by design (10.3.2) e  
+rimappati per ciascuna fase del ciclo di vita dei s oftware), così come definiti nelle fasi Software life Cycle 
+Processes (cfr. DR-2). 
+10.3.2  Le fasi di implementazione della Engineering Privac y by Design  
+La seguente impostazione è stata maturata dal Privacy Engineering Framework  del MITRE (cfr. DR-6), 
+prevedendo le seguenti attività: 
+Attività  Descrizione  
+Definizione dei requisiti privacy:  
+ Definizione delle proprietà della privacy di un sof tware in 
+modo che possa essere integrato con il design e lo sviluppo  
+Design e sviluppo privacy:  
+ Definizione del design e sviluppo dei requisiti pre visti  
+Verifica e validazione privacy:  
+ Riscontro della conferma che i requisiti di privacy  sono stati 
+correttamente implementati e validati attraverso de lle 
+verifiche  
+Tabella 9 - Fasi dell'Engineering Privacy by Design  
+10.3.2.1  Definizione dei requisiti privacy 
+Input : Requisiti di privacy di base e test; Normative, b est practice e procedure applicabili sulla privacy;  
+requisiti funzionali; Profili di rischio per la pri vacy. 
+Attività : Svolgere una Data Protection Impact Assessment mo dernizzata sugli obiettivi di protezione 
+individuati; Selezionare e perfezionare i requisiti  di protezione per la privacy di base e effettuare dei test; 
+Sviluppare dei requisiti di protezione della privac y personalizzati e testarli sulla base dei risultat i della DPIA. 
+Output : Requisiti di protezione per la privacy specifici per il software. 
+10.3.2.2  Design e sviluppo privacy 
+Input : Requisiti Architetturali e funzionali specifici p er la privacy 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 115  a 137  
+ 
+Attività : Identificare delle strategie e dei modelli di des ign della privacy; Identificare dei controlli di pr ivacy, 
+dei criteri tecnici e delle policy; Sviluppare dei dati e dei modelli di processo che riflettano i con trolli di 
+privacy identificati; Allineare, integrare e implem entare i controlli di privacy con gli elementi funz ionali; 
+Analizzare il rischio del design di privacy comples sivo (vedi anche Allegato 4 – Linee Guida per la 
+modellazione delle minacce e individuazione delle a zioni di mitigazione conformi ai principi del 
+Secure/Privacy by Design – Paragrafo 5.8). 
+Output : Componenti del software implementati; Mitigazione  dei rischi accettabili per la privacy residua 
+10.3.2.3  Verifica e validazione privacy 
+Input : Componenti del software implementati; Requisiti d i privacy specifici del sistema e test]; Politiche e 
+procedure di privacy applicabili. 
+Attività : Sviluppare / perfezionare dei test sulla privacy;  Eseguire delle verifiche sulla privacy; Verificare  il 
+comportamento operativo rispetto alle politiche e a lle procedure sulla privacy applicabili. 
+Output : Risultati dei test di privacy; Documentazione del le Incoerenze sulla privacy documentate; 
+Descrizione del piano di trattamento della privacy.  
+10.4  Integrazione della Engineering Privacy by Design ne l Software Life Cycle Process 
+Il diagramma illustrato nella Figura 29, definisce la mappatura delle fasi della Engineering Privacy b y Design 
+sulle fasi del Software Life Cycle Process: 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Figura 29 - Integrazione della Engineering privacy b y design nel Software Life Cycle Process Definizione dei 
+requisiti privacy 
+•Svolgere una Data Protection Impact Assessment parametra ta 
+sugli obiettivi di protezione individuati; Selezionare e
+perfezionare i requisiti di protezione per la privacy di bas e e
+effetturare dei test; Sviluppare dei requisiti di protezio ne della 
+privacy personalizzati e testarli sulla base dei risultati della DPIA.
+Design e sviluppo 
+priavcy 
+•Identificare delle strategie e dei modelli di design della
+privacy; Identificare dei controlli di privacy, dei criter i 
+tecnici e delle policy; Sviluppare dei dati e dei modelli di 
+processo che riflettano i controlli di privacy identificat i;
+Allineare, integrare e implementare i controlli di privacy
+con gli elementi funzionali; Analizzare il rischio del desi gn 
+di privacy complessivo .
+Verifica e 
+validazione privacy 
+•Sviluppare / perfezionare dei test sulla privacy; Eseguir e 
+delle verifiche sulla privacy; Verificare il comportament o 
+operativo rispetto alle politiche e alle procedure sulla 
+privacy applicabili.• Software Requirements Analysis 
+Process  
+• Software Architectural Design Process  
+• Software Detailed Design Process  
+• Software Construction Process 
+• Software Integration Process 
+ 
+• Software Qualification Testing Process 
+• Software Configuration Management 
+Process 
+• Software Quality Assurance Process 
+• Software Verification, Validation and Audit 
+Process 
+Software Problem Resolution Process  

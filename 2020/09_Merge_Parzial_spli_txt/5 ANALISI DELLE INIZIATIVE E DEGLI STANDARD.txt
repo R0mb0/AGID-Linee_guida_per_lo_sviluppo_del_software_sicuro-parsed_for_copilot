@@ -1,0 +1,1283 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 18  a 137  
+ 
+5 ANALISI DELLE INIZIATIVE E DEGLI STANDARD  
+5.1  Iniziative Internazionali 
+5.1.1  Open Web Application Security Project (OWASP) 
+L'Open Web Application Security Project (chiamato s emplicemente OWASP) è un progetto open-source per 
+la sicurezza delle applicazioni Web. L'OWASP offre guide con consigli sulla creazione di applicazioni Internet 
+sicure, e indicazioni per i test cui andrebbero sot toposte. È stato, inoltre, pubblicato WebGoat, util e ad 
+apprendere, attraverso esempi concreti, le minacce più diffuse per la sicurezza delle applicazioni web . Nel 
+2004 è stata istituita una fondazione no-profit che  supporta l'OWASP e che persegue l'obiettivo di 
+aumentare la sicurezza delle applicazioni consenten do di prendere le decisioni in base ai rischi. In E uropa è 
+un'organizzazione no-profit registrata da giugno 20 11 ed è presente anche in Italia. 
+La filosofia cui si ispira OWASP si può riassumere nei seguenti punti: 
+• Apertura . Tutto in OWASP è aperto e trasparente, dal codice  sorgente ai bilanci societari. 
+• Innovazione . OWASP incoraggia e supporta l'innovazione e la sp erimentazione per trovare nuove e 
+sempre più efficaci soluzioni alle sfide della sicu rezza del software. 
+• Universalità . Chiunque è incoraggiato a partecipare alla comuni tà OWASP. 
+• Integrità . OWASP è una comunità globale, che si basa sull’on està e sull’indipendenza. 
+ 
+URL  https://www.owasp.org/  
+Country of HQ location  
+Geographic Scope  US  
+International  
+Type  Various Industry (not for profit)   
+ 
+L'iniziativa è organizzata come una comunità collab orativa che produce tool e documenti nelle seguenti  tre 
+aree principali: 
+• Protection, 
+• Detection, 
+• Life-cycle security. 
+Relativamente a queste tre aree, OWASP ha prodotto:  
+• un insieme di guide sulle buone pratiche quali: OWA SP Testing Guide, OWASP Code Review e 
+Software Assurance Maturity Model; 
+•  il Report’ OWASP Top 10’ sui rischi per le applica zioni web.  
+Da considerare inoltre, come attività rilevanti svo lte da OWASP, quanto segue: 
+Good Practice  [Protection Area] OWASP Secure Coding Practices - Quick Reference Guide v2.0 - Un 
+insieme indipendente dalla tecnologia di pratiche d i codifica della sicurezza generale 
+del software, in formato checklist, che può essere integrata nel ciclo di vita dello 
+sviluppo del software. 
+[Protection Area] OWASP Developers Guide v2.0 (2005 ) - Un documento completo 
+che copre tutti gli aspetti della sicurezza delle a pplicazioni e dei servizi web. 
+[Detection Area] OWASP Code Review Guide v2.0 - Una  guida che raccoglie le 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 19  a 137  
+ 
+migliori pratiche per la revisione del codice.  
+[Detection Area] OWASP Testing Guide v4.0 - Una gui da sulle procedure e checklist di 
+test di sicurezza dell'applicazione. 
+[Detection Area] OWASP Mobile Security Testing Guid e (MSTG). Un manuale 
+completo per il test di sicurezza delle applicazion i “mobile” e il reverse engineering 
+per il security testing delle piattaforme iOS e And roid. 
+Standards  [Detection  Area] Application Security Verification Standard (A SVS). L'ASVS definisce 
+uno standard internazionale per la valutazione dell a sicurezza delle applicazioni e 
+copre sia la verifica delle applicazioni automatizz ata che quella manuale, utilizzando 
+tecniche di test di sicurezza e di revisione del co dice. 
+[Detection Area] OWASP Mobile Application Security Verification Standard (MASVS). 
+Uno standard per la sicurezza delle applicazioni mo bili. 
+Tools  (Projects ) [Detection Area] Progetto OWASP Web Testing Environ ment (WTE). Una raccolta di 
+strumenti di sicurezza delle applicazioni e di docu mentazione disponibile in diversi 
+formati come VM, pacchetti di distribuzione Linux, installazioni basate su cloud e 
+immagini ISO. Il progetto OWASP WTE è un migliorame nto dell'originale OWASP Live 
+CD Project. 
+[Detection Area] Progetto Zed Attack Proxy (ZAP) - Questo progetto di punta di 
+OWASP è tecnicamente uno strumento proxy per interc ettare, attraverso il traffico di 
+rete, le vulnerabilità nelle applicazioni web. È st ato progettato per essere utilizzato 
+da persone con un’esperienza consolidata in materia  di sicurezza e, come tale, è 
+ideale per gli sviluppatori e tester funzionali chi amati a svolgere il penetration 
+testing. Include le caratteristiche dei vecchi prog etti WebScarab e DirBuster. 
+[Detection Area] Progetto SWFIntruder. È uno strume nto per analizzare e testare la 
+sicurezza delle applicazioni flash in fase di esecu zione. 
+[Life cycle security Area] Progetto OWASP WebGoat. Un'applicazione web insicura 
+per insegnare la sicurezza delle applicazioni web a ttraverso lezioni pratiche 
+interattive.   
+[Life cycle security Area] Piattaforma OWASP O2. Un a raccolta di moduli Open 
+Source a supporto dei professionisti della sicurezz a delle applicazioni web per 
+massimizzare i loro sforzi e ottenere rapidamente u na significativa conoscenza del 
+profilo di sicurezza di un'applicazione. 
+[Protection Area] OWASP OWASP OWTF. Un altro strume nto di punta di OWASP per i 
+pen-test. 
+[Detection Area] OWASP Dependency Check. Strumento per controllare e verificare 
+la vulnerabilità delle librerie di terze parti util izzate nei progetti di sviluppo software. 
+[Protection Area] OWASP Security Shepherd. Strument o destinato a migliorare la 
+capacità di pen-test del personale di sicurezza. 
+[Protection Area] OWASP DefectDojo. Uno strumento o pen source di gestione delle 
+vulnerabilità che semplifica il processo di testing , fornendo template, report, 
+metriche e strumenti di base. 
+[Life cycle security Area] OWASP Juice Shop. Un'app licazione web volutamente 
+insicura per i corsi di sicurezza scritta interamen te in JavaScript che comprende 
+l'intera Top Ten di OWASP e altri gravi difetti di sicurezza. 
+[Protection Area] OWASP Security Knowledge Framewor k. Uno strumento che viene 
+utilizzato come guida per la creazione e la verific a di software sicuro; può essere 
+utilizzato anche per formare gli sviluppatori sulla  sicurezza delle applicazioni. 
+[Detection Area] OWASP Dependency Track. Una piatta forma di analisi della 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 20  a 137  
+ 
+composizione del software (SCA) che tiene traccia d i tutti i componenti di terze parti 
+per identificare proattivamente le vulnerabilità de i componenti che mettono a 
+rischio le applicazioni. 
+[Life cycle security Area] OWASP Software Assurance  Maturity Model (SAMM). Un 
+framework aperto per aiutare le organizzazioni a fo rmulare e implementare una 
+strategia per la sicurezza del software su misura p er i rischi specifici 
+dell'organizzazione. 
+Code Projects  [Protection Area] Progetto OWA SP AntiSamy - Una libreria per la codifica HTML e 
+CSS: API Java e .NET per la convalida degli input H TML/CSS forniti dagli utenti al fine 
+di prevenire gli attacchi di cross-site scripting e  phishing. 
+[Life cycle security Area] Progetto OWASP Enterpris e Security API (ESAPI) - Una 
+raccolta di librerie di sicurezza gratuite e open s ource che possono essere utilizzate 
+dagli sviluppatori per costruire applicazioni web s icure. 
+[Protection Area] Progetto OWASP ModSecurity Core R ule Set (CRS). Un insieme di 
+regole di sicurezza per configurare strumenti di fi rewall come ModSecurity. 
+[Protection Area] Progetto OWASP CSRFGuard. Una lib reria da includere nei progetti 
+di sviluppo software per costruire una difesa contr o gli attacchi CSRF (Cross-Site 
+Request Forgery). 
+[Detection Area] Progetto OWASP AppSensor. Un quadr o concettuale e una 
+metodologia che offre una guida prescrittiva per im plementare il rilevamento delle 
+intrusioni e la risposta automatica nelle applicazi oni. 
+[Protection Area] Progetto OWASP Top Ten. La pubbli cazione OWASP più famosa: le 
+prime 10 minacce per le applicazioni web, classific ate per prevalenza, sfruttabilità, 
+rilevabilità e impatto. 
+ 
+5.1.2  Common Criteria (CC) 
+I Common Criteria sono uno standard pubblicato dall ’ISO (ISO/IEC 15408-1:200910 ), lo standard è costituito 
+da tre parti: 
+• Introduzione e modello generale 
+• Requisiti di sicurezza funzionali 
+• Requisiti di sicurezza di assurance 
+Con i CC è fornita anche una metodologia per la val utazione, la Common Criteria Evaluation Methodology  
+(CEM), anch’essa standardizzata dall’ISO (ISO/IEC 1 8405:2008). Il processo di valutazione CC di un pro dotto 
+(software o hardware) riguarda diverse fasi del SDL C applicato:  
+• Requisiti (Protection Profile document - PP) 
+• Implementazione (Security Target document – ST) 
+• Test 
+Le verifiche previste sul sistema/prodotto, nel cor so della valutazione da parte dello sviluppatore e del 
+valutatore, mirano ad accertare che siano stati sod disfatti opportuni requisiti di assurance che diven tano 
+sempre più severi al crescere del livello di valuta zione.  
+I CC definiscono una scala di sette livelli di valu tazione: 
+                                                           
+10  https://www.iso.org/standard/50341.html  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 21  a 137  
+ 
+• EAL1. Functionally tested  
+• EAL2. Structurally tested  
+• EAL3. Methodically tested and checked  
+• EAL4. Methodically designed, tested and reviewed  
+• EAL5. Semi-formally designed and tested  
+• EAL6. Semi-formally verified design and tested  
+• EAL7. Formally verified design and tested.  
+ 
+I seguenti paesi hanno firmato l’accordo Common Cri teria Recognition Agreement (CCRA) che si applica d a 
+EAL1 to EAL4: 
+• Paesi EU/EFTA: Austria, Repubblica Ceca, Danimarca,  Finlandia, Francia, Germania, Grecia, 
+Ungheria, Italia, Paesi Bassi, Norvegia, Spagna, Sv ezia e Regno Unito; 
+• Paesi Non-EU/EFTA: Australia, Canada, India, Israel e, Giappone, Corea, Malesia, Nuova Zelanda, 
+Pakistan, Singapore, Turchia e Stati Uniti. 
+ 
+L’European Mutual Recognition Agreement of IT Secur ity Evaluation Certificates o ‘SOGIS-agreement’ è u n 
+accordo tra alcune nazioni europee con l'adesione d ell'UE o dell’EFTA relativo al mutuo riconoscimento  dei 
+certificati di valutazione secondo gli standard CC per tutti i livelli di valutazione (EAL1 EAL7). 
+ 
+URL  https://www.co mmoncriteriaportal.org  
+Country of HQ location  
+Geographic Scope  International  
+Type  Government  
+ 
+I criteri comuni per la valutazione della sicurezza  informatica e la metodologia comune per la sicurez za delle 
+tecnologie di valutazione sono stati pubblicati com e standard ISO. 
+ 
+Risultati più rilevanti: 
+Standard  Common Methodology for Information Technology Secur ity Evaluation and Common 
+Criteria for Information Technology Security Evalua tion 
+Queste costituiscono la base tecnica di un accordo internazionale (CCRA). La versione 
+2.3 è stata pubblicata anche come ISO/IEC 15408:200 9 e ISO/IEC 18045:2008.  
+Future  
+Related Standard JTC 1/SC 27  
+ISO/IEC NP 20004  
+Tecnologie dell'informazione, tecniche di sicurezza , sviluppo di software sicuro e 
+valutazione secondo le norme ISO/IEC 15408 e ISO/IE C 18405. 
+ 
+5.1.3  IEEE Computer Society 
+L’Iniziativa IEEE Computer Society è un'organizzazi one senza fini di lucro, i principali progetti sono  finalizzati 
+alla pubblicazione di standard su tecnologie IT.  
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 22  a 137  
+ 
+URL  http s://www. computer .org   
+Country of HQ location  
+Geographic Scope  US  
+International 
+Type  Academic (not for profit)  
+ 
+Risultati di questa iniziativa sono libri, conferen ze, pubblicazioni relative a conferenze, riviste, c orsi on-line, 
+certificazioni di sviluppo software, standard e riv iste tecniche. 
+ 
+Risultati più rilevanti: 
+Good Practice  Guide to the Software Engineering Body of Knowledge  (SWEBOK), la guida descrive le 
+conoscenze generalmente accettate in materia di ing egneria del software. Le sue 15 
+aree di conoscenza (knowledge areas) riassumono i c oncetti di base e includono un 
+elenco di riferimento per informazioni più dettagli ate. 
+Enterprise Information Technology Body of Knowledge  (EITBOK) Guide. Un 
+compendio di descrizioni di alto livello delle aree  di conoscenza (knowledge areas) 
+che sono generalmente necessarie per il buon funzio namento della tecnologia 
+dell'informazione (IT). 
+Standard  Software & Systems Engineering Standards Committee (S2ESC)  
+Formal Liaisons with ISO/IEC JTC1/SC7. 
+ 
+5.1.4  International Organisation for Standardization (ISO ) 
+ISO è il più grande sviluppatore e editore al mondo  di standard internazionali. Industrie ed esperti d el 
+settore generalmente contribuiscono come membri dei  comitati tecnici ISO proponendo nuove normative 
+che devono essere approvate almeno dal 70% dei memb ri ISO. 
+ 
+Il comitato tecnico che opera nell’ambito degli sta ndard IT è il JTC 1 che, a sua volta, è organizzato  in 22 
+sottocomitati che coprono aree specifiche. Si ripor ta di seguito un sottoinsieme significativo: 
+• ISO / IEC JTC 1 / SC 7: Ingegneria del software e d ei sistemi; 
+• ISO / IEC JTC 1 / SC 22: Linguaggi di programmazion e, compresi ambienti e interfacce software di 
+sistema; 
+• ISO / IEC JTC 1 / SC 27: Sicurezza delle informazio ni, sicurezza informatica e protezione della 
+privacy; 
+• ISO / IEC JTC 1 / SC 38: Cloud Computing e piattafo rme distribuite; 
+• ISO / IEC JTC 1 / SC 41: Internet of Things e tecno logie correlate; 
+• ISO / IEC JTC 1 / SC 42: Intelligenza artificiale. 
+ 
+Relativamente agli ambiti SSE troviamo: 
+• pubblicazione di rapporti tecnici e standard: 
+o ISO / IEC TR 15026-1: 2013, ISO / IEC TR 24731-1: 2 007, ISO / IEC TR 24772: 2013, ISO / IEC 
+15408 e ISO / IEC 18405  
+• 2 progetti in corso.  
+ 
+ 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 23  a 137  
+ 
+URL  https://www.iso.org  
+Geographic Scope  International  
+Type  Network of national standards institutes  
+ 
+Risultati più rilevanti: 
+ISO/IEC JTC 1/SC 7  
+ ISO/IEC 15026 -1: 2019  Systems and software engineering --  Systems and 
+software assurance -- Part 1: Concepts and vocabula ry 
+ 
+ISO/IEC JTC 1/SC 22  
+ ISO/IEC TR 24731 -1:2007  Information technology - Programming languages, 
+their environments and system software interfaces -  Extensions to the C library 
+- Part 1: Bounds-checking interfaces.  
+Specifica una serie di estensioni del linguaggio di  programmazione C, 
+specificato dalla norma internazionale ISO/IEC 9899 : 1999. Queste estensioni 
+possono essere utili nella mitigazione delle vulner abilità di sicurezza nei 
+programmi. 
+ISO/IEC TR 24731-2:2010 Information technology — Pr ogramming languages, 
+their environments and system software interfaces —  Extensions to the C 
+library — Part 2: Dynamic Allocation Functions. 
+Fornisce funzioni alternative per la libreria C che  favoriscono la 
+programmazione sicura.  
+ISO/IEC TR 24772:2013 Information technology - Prog ramming languages - 
+Guidance on avoiding vulnerabilities in programming  languages through 
+language selection and use.  
+Specifica le vulnerabilità del linguaggio di progra mmazione software da evitare 
+nello sviluppo di sistemi in cui è richiesto un com portamento sicuro ai fini 
+security/safety, mission critical e software busine ss-critical. In generale, questa 
+guida è applicabile al software sviluppato, rivisto , o mantenuto per qualsiasi 
+applicazione. Le vulnerabilità sono descritte in mo do generico, applicabili a una 
+vasta gamma di linguaggi di programmazione. 
+Questa guida può essere anche utilizzata dagli svil uppatori per produrre o 
+selezionare gli strumenti di valutazione del codice  sorgente capaci di scoprire 
+ed eliminare alcuni costrutti che potrebbero portar e alla vulnerabilità del 
+software o per selezionare un linguaggio di program mazione che consenta di 
+evitare i problemi attesi. 
+ 
+  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 24  a 137  
+ 
+Progetti in corso: 
+ISO/IEC JTC 1/SC 7  
+ ISO/IEC 15026 -2:2011  - Systems and software engineering - Systems and 
+software assurance -- Part 2: Assurance case.  
+Specifica i requisiti minimi per la struttura e il contenuto di un Assurance Case 
+per migliorare la coerenza e la comparabilità degli  Assurance Case e per 
+facilitare le comunicazioni delle parti interessate , le decisioni d’ingegneria e 
+altri Assurance Case. 
+Secondo questo documento ISO “ An assurance case includes a top-level claim 
+for a property of a system or product (or set of claim s), systematic 
+argumentation regarding this claim, and the evidenc e and explicit assumptions 
+that underly this argumentation. Arguing through mu ltiple levels of 
+subordinate claims, this structured argumentation c onnects the top-level claim 
+to the evidence and assumptions ”. 
+ISO/IEC CD 15026-3 Systems and software engineering  -- Systems and software 
+assurance -- Part 3:2015 System Integrity levels.  
+Si riferisce ai livelli d’integrità dell’Assurance Case e include i requisiti relativi al 
+loro utilizzo con e senza un Assurance Case. 
+Secondo questo documento ISO “ A software integrity level denotes a range of 
+values of a software property necessary to maintain s ystem risks within 
+tolerable limits ”. 
+ISO/IEC JTC 1/SC 27  
+ ISO/IEC 27021:2017  Information technology --  Security techniques --  
+Competence requirements for information security ma nagement systems 
+professionals 
+ISO/IEC/IEE 15026-1:2019: Systems and software engi neering -- Systems and 
+software assurance -- Part 1: Concepts and vocabula ry 
+ISO/IEC 15026-2:2011 Systems and software engineeri ng — Systems and 
+software assurance — Part 2: Assurance case 
+ISO/IEC NP 20004: Information technology - Security  techniques - Secure 
+software development and evaluation under ISO/IEC 1 5408 and ISO/IEC 18405. 
+Si riferisce a un problema differente e più urgente  associato all’uso pratico dei 
+Common Criteria, ossia la relazione tra i processi di sviluppo e di valutazione 
+con l’analisi dei potenziali attacchi. E’ legato al l’iniziativa CAPEC. 
+ISO/IEC TS 19608: 2018 Guidance for developing secu rity and privacy 
+functional requirements based on ISO/IEC 15408 
+ISO/IEC TS 19249: 2017 Information technology — Sec urity techniques — 
+Catalogue of architectural and design principles fo r secure products, systems 
+and applications 
+ISO/IEC 27002:2013 Information technology — Securit y techniques — Code of 
+practice for information security controls 
+ 
+5.1.5  International Society of Automation (ISA) 
+ISA è un'organizzazione globale no-profit che svilu ppa standard per l'industria, certifica i professio nisti di 
+settore, offre istruzione e formazione, pubblica li bri e articoli tecnici, ospita convegni e fiere per  i 
+professionisti dell’automazione. 
+La cybersecurity per l’industria è diversa dalle al tre aree. Nell’automazione industriale la priorità è 
+mantenere l’impianto in funzione garantendo, laddov e possibile, integrità e riservatezza (AIC - availa bility, 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 25  a 137  
+ 
+integrity and confidentiality) mentre nelle altre a ree la priorità è la protezione dei dati (CIA - con fidentiality, 
+integrity, availability). 
+ 
+URL  https://www.isa.org/   
+Country of HQ location  
+Geographic Scope  US  
+International 
+Type  Industry (not for profit)  
+ 
+I membri ISA pagano una tassa regolare (annuale o b iennale), in base al loro tipo di appartenenza, al fine di 
+ottenere i benefici ISA come l'accesso alle informa zioni tecniche e alle risorse per lo sviluppo profe ssionale. 
+Risultati più rilevanti: 
+Standards   ANSI/ISA 62443 (formerly  ISA -99 ) - Security for industrial automation and 
+control systems  - è una serie di standard, report tecnici e relati ve informazioni 
+che definiscono le procedure per l'implementazione di sistemi sicuri di 
+automazione e controllo industriale (IACS). La pres ente guida si applica a tutte 
+le parti interessate che attuano o gestiscono l'IAC S. Tutti gli standard ISA-
+62443 e i report tecnici sono organizzati in quattr o categorie generali 
+denominate General , Policies and Procedures , System and Component . 
+ 
+INDUSTRIAL 
+CYBERSECURITY 
+STANDARDS ANSI/ISA -62443 -4-2-2018, Security for industrial automation and control 
+systems – Part 4-2: Technical security requirements  for IACS components. 
+ANSI/ISA-62443-4-1-2018, Security for industrial au tomation and control 
+systems, Part 4-1: Product security development lif e-cycle requirements. 
+Definisce un secure development life-cycle (SSDLC)  allo scopo di realizzare e 
+mantenere prodotti software sicuri. Questo ciclo di  vita comprende la 
+definizione dei requisiti di sicurezza, la progetta zione sicura, l'implementazione 
+sicura (incluse le linee guida di codifica), la ver ifica e la convalida, la gestione 
+dei difetti di sicurezza, la gestione delle patch e  la fine del ciclo di vita del 
+prodotto. Tali requisiti possono essere applicati a  processi nuovi o esistenti per 
+sviluppare, mantenere e dismettere hardware, softwa re o firmware per 
+prodotti nuovi o esistenti. Tali requisiti si rivol gono allo sviluppatore e al 
+manutentore del prodotto, ma non agli addetti all’i ntegrazione né all'utente 
+finale del prodotto. 
+ANSI/ISA-62443-2-4-2018 / IEC 62443-2-4:2015+AMD1:2 017 CSV, Security for 
+industrial automation and control systems, Part 2-4 : Security program 
+requirements for IACS service providers (IEC 62443- 2-4:2015+AMD1:2017 CSV, 
+IDT). 
+ANSI/ISA-62443-3-3 (99.03.03)-2013, Security for In dustrial Automation and 
+Control Systems Part 3-3: System Security Requireme nts and Security levels. 
+Questo standard definisce i requisiti di sicurezza che sono raggruppati in sette 
+categorie: 1) Controllo degli accessi, 2) Controllo  dell'utilizzo, 3) Integrità dei 
+dati, 4) Riservatezza dei dati, 5) Limitazione dei flussi di dati, 6) Risposta 
+tempestiva a un evento e 7) Disponibilità delle ris orse di rete. Ogni categoria 
+comprende una mappatura dei requisiti per garantire  un adeguato livello di 
+sicurezza. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 26  a 137  
+ 
+ANSI/ISA -62443 -2-1 (99.02.01 )-2009, Security for Industrial Automation and 
+Control Systems: Establishing an Industrial Automat ion and Control Systems 
+Security Program.  
+ANSI/ISA-62443-1-1 (99.01.01)-2007, Security for In dustrial Automation and 
+Control Systems Part 1: Terminology, Concepts, and Models. 
+INDUSTRIAL 
+CYBERSECURITY 
+CERTIFICATE PROGRAM Certificate 1: ISA/IEC 62443 Cybersecurity Fundamen tals Specialist . 
+Certificate 2: ISA/IEC 62443 Cybersecurity Risk Ass essment Specialist. 
+Certificate 3: ISA/IEC 62443 Cybersecurity Design S pecialist. 
+Certificate 4: ISA/IEC 62443 Cybersecurity Maintena nce Specialist. 
+ISA/IEC 62443 Cybersecurity Expert. 
+CONFORMITY 
+ASSESSMENT Cybersecurity Certification to ISA/IEC 62443 Standa rds – It certifies devices and 
+systems to the ISA/IEC 62443 Industrial Automation and Control Systems 
+(IACS) cybersecurity standards. 
+TRAINING COURSES  Introduction to Industrial Automation Security and the ANSI/ISA99 Standards 
+(IC32C). 
+Using the ANSI/ISA99 Standard to Secure Your Contro l System (IC32). 
+Industrial Networking and Security (TS12). 
+Assessing the Cybersecurity of New or Existing IACS  Systems (IC33).  
+IACS Cybersecurity Design & Implementation (IC34).   
+IACS Cybersecurity Operations & Maintenance (IC37).  
+ 
+5.1.6  Software Assurance Forum for Excellence in Code (SA FECODE) 
+SAFECode è un'iniziativa privata creata da sviluppa tori software e fornitori. Individuando e promuoven do le 
+migliori pratiche in SSE, questa iniziativa sostien e che l'industria del software potrebbe rilasciare software, 
+hardware e servizi più sicuri e affidabili. Tra le sue uscite principali, ci sono i documenti che racc olgono le 
+migliori pratiche, tenendo conto del ciclo di vita di sviluppo del software. 
+ 
+URL  https://www.safecode.org  
+Country of HQ loca tion  
+Geographic Scope  US  
+International 
+Type  Industry (not for profit ) 
+ 
+SAFECode afferma che i suoi obiettivi sono: 
+1.  Identificare e condividere collaudate pratiche di g aranzia del software;  
+2.  Promuovere una più ampia adozione di tali pratiche nell'ecosistema informatico;  
+3.  Lavorare con istituzioni e fornitori di infrastrutt ure critiche per sfruttare le pratiche nella gestio ne 
+dei rischi aziendali. 
+ 
+Risultati più rilevanti: 
+Training   Security Engineering Training  
+Un quadro di riferimento per i programmi di formazi one aziendale sui principi 
+dello sviluppo sicuro del software. 
+Security engineering training by SAFECode è una ris orsa della comunità online 
+che offre corsi gratuiti di formazione sulla sicure zza del software erogati 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 27  a 137  
+ 
+tramite webcast on -demand.  
+Good Practice  Software Integrity Controls  
+Un approccio impiegato per ridurre al minimo i risc hi nella catena di fornitura 
+del software. Sulla base delle pratiche dei membri SAFECode, il rapporto 
+fornisce controlli di integrità per l'approvvigiona mento, lo sviluppo, i test, la 
+consegna e la resilienza del software. 
+The Software Supply Chain Integrity Framework  
+Documento che definisce i rischi e le responsabilit à per rendere sicuro il 
+software nella catena di fornitura globale. Sulla b ase dell'esperienza dei 
+membri del SAFECode, descrive la catena di fornitur a del software (modello a 
+scala dei fornitori di software) e i principi per l a progettazione dei controlli di 
+integrità del software. 
+Fundamental Practices for Secure Software Developme nt  
+Sulla base delle pratiche dei membri SAFECode, ques to documento delinea un 
+insieme di pratiche per lo sviluppo sicuro del soft ware che possono essere 
+applicate nelle diverse fasi del ciclo di vita dell o sviluppo del software. 
+Software Assurance: An Overview of Current Industry  Best Practices  
+Documento che descrive i metodi di sviluppo e i con trolli di integrità utilizzati 
+dai membri SAFECode per migliorare la sicurezza del  software e la sicurezza nel 
+rilascio. 
+Practices for Secure Development of Cloud Applicati ons 
+SAFECode e la Cloud Security Alliance (CSA) rilasci ano una guida per lo sviluppo 
+sicuro di applicazioni cloud. Questo documento rapp resenta il prodotto di tale 
+collaborazione ed è destinato ad aiutare i lettori a comprendere meglio e 
+implementare le migliori pratiche per lo sviluppo d i software cloud sicuro. 
+Tactical Threat Modeling 
+Questo documento sfrutta le intuizioni dei membri d el SAFECode per offrire 
+modi efficaci per integrare meglio la modellazione delle minacce nei processi di 
+sviluppo. 
+Managing Security Risks Inherent in the Use of Thir d-party Components 
+L'uso di componenti di terze parti (TPC), compresi i componenti software open 
+source (OSS) o commerciali off-the-shelf (COTS), è diventato di fatto uno 
+standard nello sviluppo del software. Questo docume nto analizza il processo e 
+le procedure di cui gli sviluppatori necessitano pe r testare, migliorare e 
+quantificare la sicurezza dei componenti di terze p arti. 
+5.1.7  SANS Software Security Institute (SANS SSI) 
+SANS SSI offre una libreria di iniziative di ricerc a e di community per aiutare sviluppatori, architet ti, 
+programmatori e responsabili della sicurezza delle applicazioni a proteggere le loro applicazioni 
+software/web. 
+Questa iniziativa raccoglie e fornisce informazioni  tecniche aggiornate, come l’accesso gratuito alle risorse 
+sui più recenti vettori di attacco e sulle vulnerab ilità di sicurezza delle applicazioni, tra cui un b log 
+aggiornato, news-letters settimanali, webcast, arti coli e documenti in materia di sicurezza del softwa re. 
+ 
+URL  https://www.sans.org  
+Country of HQ location  
+Geographic Scope  US  
+International 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 28  a 137  
+ 
+Type  Academic  
+ 
+SANS pubblica relazioni annuali (Top 25 Software Er rors) con l’analisi sugli errori di programmazione più 
+pericolosi: http://www.sans.org/top25-software-errors/ .  
+L’ultima release ( 2019 CWE Top 25 Most Dangerous Software Errors ) è fruibile al seguente link: 
+https://cwe.mitre.org/top25/archive/2019/2019_cwe_t op25.html . 
+ 
+Risultati più rilevanti: 
+Resources  Application Security Resources: Whitepapers e webcasts sulla sicurezza della 
+applicazioni.  
+Security Laboratory: Il "Security Laboratory" è un insieme informale di articoli 
+e whitepaper sulla sicurezza, l'informatica e l'ind ustria della sicurezza 
+informatica. 
+Fundamental Practices for Secure Software Internet Storm Center (ISC)  
+Il ISC fornisce un servizio gratuito di analisi e d i allarme agli utenti di Internet e 
+alle organizzazioni. I volontari donano il loro tem po per analizzare difetti e 
+anomalie e pubblicare un diario giornaliero delle l oro analisi e riflessioni sul 
+sito web di Storm Center. 
+Application Security Procurement Language: Questo è un progetto di 
+contratto software per gli acquirenti di software p ersonalizzato. Il suo obiettivo 
+è quello di rendere gli sviluppatori di codice resp onsabili del controllo del 
+codice e della correzione dei difetti di sicurezza prima della consegna del 
+software. 
+Top 25 Software Errors . Sono elencate in tre categorie: 
+• Interazione non sicura fra componenti 
+• Risky Resource Management 
+• Difesa insufficiente. 
+Ciascun errore include: 
+• La classificazione all’interno della Top 25 
+• Collegamenti a tutti i riferimenti alla CWE 
+• Frequenza delle CWE e relative conseguenze nei camp i dati 
+• Costi di risanamento 
+• Facilità di rilevamento 
+• Esempi di codice 
+• Metodi di rilevamento 
+• Frequenza degli attacchi e consapevolezza degli agg ressori 
+• Le relative CWE e i modelli di attacco per questa v ulnerabilità. 
+Comprende anche misure di prevenzione e bonifica su fficientemente estese 
+che gli sviluppatori possono adottare per mitigare o eliminare la vulnerabilità.  
+ 
+5.1.8  Web Application Security Consortium (WASC) 
+WASC produce best practice per le applicazioni web.  WASC riassume la sua missione nella seguente frase  
+“to develop, adopt, and advocate standards for web ap plication security ”. 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 29  a 137  
+ 
+URL  http://www.webappsec.org/  
+Country of HQ location  
+Geographic Scope  US  
+International 
+Type  Industry (not for profit)  
+ 
+Risultati più rilevanti: 
+Resources  Web Application Security Scanner Evaluation Criteri a  (WASSEC ) 
+Una serie di linee guida per valutare gli strumenti  di scansione delle 
+applicazioni web riguardo la loro efficacia nel tes tare e identificare le 
+vulnerabilità. 
+The Web Hacking Incidents Database (WHID)  
+WHID è un progetto del Web Application Security Con sortium dedicato al 
+mantenimento di un elenco di applicazioni web relat ive agli incidenti di 
+sicurezza. 
+WASC Script Mapping Project 
+Elenco delle modalità di esecuzione degli script al l'interno di una pagina web 
+senza usare i tag <script>. 
+Distributed Web Honeypot (DWH) Project 
+Identificare gli attacchi emergenti contro le appli cazioni web e segnalarli alla 
+comunità. 
+Web Security Glossary 
+Indice dei termini e della terminologia relativa al la sicurezza delle applicazioni 
+web. 
+WASC Threat Classification v2.0 
+È un effort per classificare le debolezze e gli att acchi che possono portare alla 
+compromissione di un sito web, dei suoi dati o dei suoi utenti. 
+Web Application Firewall Evaluation Criteria 
+Sviluppo di criteri dettagliati per la valutazione di un firewall di un'applicazione 
+web (WAF). 
+WASC Web Application Security Statistics 
+Raccolta di statistiche sulla vulnerabilità delle a pplicazioni per identificare e 
+mappare i problemi di sicurezza delle applicazioni sui siti web aziendali. 
+ 
+5.1.9  Institute For Software Quality (ifSQ) 
+L'Istituto per la Qualità del Software, con sede ne i Paesi Bassi, è un gruppo di professionisti coinvo lti nello 
+sviluppo e nella distribuzione di software. ifSQ pe rsegue un obiettivo comune: aumentare gli standard 
+software (e dello sviluppo software) in tutto il mo ndo attraverso la promozione del Code Inspection, c ome 
+prerequisito del Software Testing nel ciclo di prod uzione e rilascio del software. 
+ 
+URL  http://ifsq. org  
+Country of HQ location  
+Geographic Scope  The Netherlands  
+International 
+Type  Industry (non profit)  
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 30  a 137  
+ 
+ifSQ ha analizzato, quantificato e migliorato lo st ato dell’arte della ricerca sulla qualità del softw are, e ha 
+definito un set di indicatori (Defect Indicators) c he sono stati raccolti in un insieme coordinato di tre 
+standard, pubblicati sul sito, in forma di opuscolo  e sotto forma di corsi e workshop. La maggior part e dei 
+criteri di valutazione, in particolare "major strin g", "parametri non controllati" e " unexpected stat e not 
+trapped", sono rilevanti per migliorare la sicurezz a del software. 
+Risultati più rilevanti: 
+Resources  Software Quality Standards - Levels 1  (An Entry -Level Standard for Computer 
+Program Source Code), 2 (A Foundation-Level Standar d for Computer Program 
+Source Code) and 3 (Industry Best Practice for Comp uter Program Source Code 
+- is not yet complete ) are available. 
+ 
+5.2  Iniziative europee 
+Questo paragrafo ha l’obiettivo di fornire una vist a delle iniziative in ambito Europeo. Le iniziative  di seguito 
+presentate sono state classificate sulla base dell’ ambito geografico e della tipologia di appartenenza  
+(accademiche, governative, industria).  
+Analizzando ambiti, obiettivi e risultati di ognuna , emerge che: 
+• Un insieme di iniziative rappresentano per obiettiv i e risultati una categoria isolata. Tra queste 
+iniziative, definiamole ‘non raggruppabili’, ci son o: NESSI, OWASP Local Chapters, MISRA e Serenity 
+Forum. 
+• Altre iniziative posso essere ‘raggruppate’ sulla b ase di alcuni elementi che li caratterizzano e li 
+accomunano: Events and Periodicals, Certifications,  Academic Education. Queste iniziative 
+potrebbero essere classificate con più tag sulla ba se dei loro risultati rilevanti o attesi in SSE: 
+standardisation, industry platform, vulnerability d etection, vulnerability protection, information 
+sharing, specialised workshop, certification and tr aining. 
+ 
+5.2.1  Networked European Software and Services Initiative  (NESSI) 
+NESSI è la piattaforma tecnologica europea dedicata  al Software e ai Servizi. L'obiettivo principale d i NESSI 
+si indirizza sul potenziamento dei servizi Internet  attraverso attività di ricerca, standard e policy,  e 
+contributi costruiti attraverso una community indus tria/università. 
+I partecipanti NESSI sono divisi in tre gruppi: 
+• partner NESSI: prevalentemente industriale, ma ci s ono anche alcuni profili accademici -  
+coordinano la piattaforma e forniscono il sostegno finanziario per le attività NESSI; 
+• I membri NESSI: industria, mondo accademico e gli u tenti - rappresentano i principali stakeholders 
+del dominio della fornitura di servizi ICT.  Non è obbligatorio un contributo finanziario 
+• abbonati NESSI: usano diversi canali di informazion e per tenersi aggiornati sulle attività di NESSI. 
+ 
+URL  http://www.nessi -europe.com  
+Country of HQ location  
+Geographic Scope  Belgium  
+Europe 
+Type  Industry  
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 31  a 137  
+ 
+Piattaforme tecnologiche nazionali e regionali sono  parte della rete NESSI: gestiscono obiettivi NESSI  da un 
+punto di vista locale. 
+I focus NESSI hanno alcune correlazioni SSE: 
+• Identificare le direzioni della ricerca futura sui servizi; 
+• costruire contributi formali sui settori chiave; 
+• investire sulla rete NESSI per migliorare il coordi namento tra i programmi di ricerca europei, 
+nazionali e regionali. 
+ 
+Risultati più rilevanti: 
+Research Agenda  NESSI Strategic Research and Innovation Agenda  (NESSI SRIA 2017 )  
+ 
+Next Generation Software Technologies Empowering the  Digital 
+Transformation of Europe.  Recommendations on Software Technology 
+Research for Horizon Europe. 
+ 
+ 
+Working Group related 
+to SSE Security and Privacy: From the Perspective of Softwar e, Services, Cloud and 
+Data . NESSI è la Horizon 2020 European Technology Platf orm (ETP) per il 
+software, i servizi e i dati. Il presente white pap er si concentra sul ruolo 
+crescente della sicurezza e della privacy e mette i n evidenza le direzioni di 
+ricerca di una prospettiva NESSI.  
+ 
+Software and the Next Generation Internet (2019-05- 09). Per sfruttare il 
+potenziale delle NGI sono necessarie ricerca e inno vazione per affrontare le 
+sfide poste dalle crescenti minacce derivanti da at tacchi informatici, compresa 
+la gestione dei rischi e il contenimento delle intr usioni, nonché le minacce 
+derivanti dalle nuove tecnologie. 
+ 
+5.2.2  Piattaforme Nazionali NESSI  
+L'obiettivo generale delle Piattaforme NESSI è di p romuovere lo sviluppo e l'applicazione di tecnologi e e 
+servizi ICT per affrontare le sfide future all'inte rno dell'industria europea e del governo. 
+Nella tabella che segue vengono sintetizzate le att ività di ciascuna piattaforma nazionale il cui scop o è di 
+gestire gli obiettivi NESSI da un punto di vista lo cale e di pubblicare le proprie SRA nazionali. 
+URL  http://www.nessi -europe.com   
+NESSI - Norway  E’ la filiale norvegese del NESSI. Il suo obiettivo  principale è quello di creare 
+un'arena norvegese per gli stakeholders del settore  industria, ricerca/mondo 
+accademico e pubblico e di influenzare la strategia  di ricerca ICT del governo 
+norvegese. 
+ 
+URL  http://www.nessi -europe .com  
+NESSI - Slovenia  Alla base di queste attività è che NESSI assumerà l a responsabilità del 
+contenuto e dell'attuazione del 7° programma quadro  dell'UE per R&D. Essi 
+invitano chiunque sia coinvolto in attività di R&D a partecipare a questo lavoro.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 32  a 137  
+ 
+ 
+ 
+URL  http://www -it.fmi .uni -sofia.bg/nessibg/  
+NESSI -Bulgaria  NESSI -Bulgaria è stata fondata nel 2005. Si tratta di un forum per lo scambio di 
+conoscenze, lo sviluppo di strategie e la ricerca d i nuove potenzialità a livello 
+internazionale IT e servizi industriali. La visione  centrale della piattaforma è di 
+consentire nuovi modelli di business orientate ai s ervizi. I loro obiettivi sono: 
+• Definire una Roadmap bulgara e l’SRA per l’evoluz ione del programma di 
+innovazione R&D bulgaro. 
+• Supporto alle attività R&D nei settori del softwa re e dei servizi. 
+•Fornire formazione: nuovi corsi, programmi MSc, pr ogrammi PhD e 
+formazione 
+ 
+URL  http://nessi.ik.bme.hu/  
+NESSI - Hungary  NESSI -Ungheria è stata fondata nel 2007 con lo scopo di e volvere la direzione 
+della ricerca e dello sviluppo strategico nel setto re del software e dei servizi, 
+sulla base di un approccio unificato. 
+Gruppi di lavoro di questa piattaforma sono divisi in due sottogruppi: domain-
+oriented e technological-oriented. La piattaforma è  aperta a qualsiasi altra 
+organizzazione ungherese. 
+ 
+URL  http://www.bicc -net.de / 
+Germany Bicc -Net  BICC -NET, Piattaforma di NESSI tedesca, è il Polo ICT ba varese della Germania. 
+Fondata nel 2007, intende stimolare selettivamente l'innovazione. BICC-NET 
+comprende quanto segue: 
+• sviluppo e distribuzione del software 
+• lo sviluppo e la distribuzione di hardware 
+• telecomunicazioni 
+• sistemi software e hardware embedded nei prodotti  
+• processi basati su software in fase di sviluppo, la produzione, i servizi e della 
+pubblica amministrazione 
+• Servizi nelle aree di cui sopra. 
+BICC-NET viene utilizzato per garantire la crescita  ICT in Baviera. Essa è guidata 
+dalla BICC sede ufficiale "cluster", che è stato di rettamente commissionato dal 
+Ministero bavarese per gli Affari economici, infras trutture, trasporti e 
+tecnologia. 
+BICC-NET supporterà i profili di innovazione delle aziende ICT bavaresi e gli 
+sviluppi in corso. 
+ 
+URL  https://www.fi -stockholm.eu/  
+NESSI - Sweden  NESSI svedese è stata fondata nel 2010. L'obiettivo  generale di NESSI Svezia è 
+di promuovere lo sviluppo e l'applicazione di tecno logie e servizi ICT per 
+affrontare le sfide future all'interno dell'industr ia svedese e del governo 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 33  a 137  
+ 
+URL  http:// www.nessi -europe.com/  
+NESSI - Romania  NESSI Romania è stata fondata nel 2010.  Gli obiettivi a  breve termine di NESSI -
+Romania sono: 
+• istituire gruppi di lavoro nazionali su diversi a rgomenti definiti in NESSI SRA 
+• Definire un SRA nazionale per l'evoluzione futura  del programma nazionale 
+R&D e innovazione relativamente a software e serviz i 
+• Diffondere i risultati NESSI dei progetti strateg ici e compatibili 
+ 
+5.2.3  OWASP Local Chapters 
+Questa sezione fornisce una vista dei gruppi di lav oro OWASP distribuiti sul territorio Europeo. 
+URL  https://www.owasp.org/index.php/Belgium  
+OWASP Belgium Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri su come 
+difendere le applicazioni web da attacchi. 
+ 
+URL  https://www.owasp.org/index.php/Aarhus  
+OWASP Denmark Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri su diversi 
+argomenti di sicurezza delle informazioni legate al le applicazioni web. Le 
+presentazioni sono disponibili sul sito web 
+ 
+URL  https://www.owasp.org/index.php/France  
+OWASP France Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri e la 
+traduzione della documentazione OWASP in francese. Questo Chapter fornisce 
+anche la formazione su progetti e risorse OWASP att raverso il programma 
+"OWASP projects and resources you can use today", c he ha lo scopo di 
+promuovere progetti OWASP, fornendo una selezione d i progetti maturi ed 
+enterprise-ready, insieme con esempi pratici di com e usarli. 
+ 
+URL  https://www.owasp.org/index.php/Germany  
+OWASP Germany Local 
+Chapter Le principali attività riguardano l'organizzazione di incontri, conosciuti come 
+AppSec Germany Conference, che si svolge ogni anno.  
+ 
+URL  https://www.owasp.org/index.php/Geneva  
+OWASP Geneva Local 
+Chapter Le principali attività svolte da questo capitolo ri guardano  l'organizzazione di 
+incontri legati alle identità digitali e autenticaz ione nelle applicazioni web. 
+ 
+URL  https://www.owasp.org/index.php/Greece  
+OWASP Greece Local 
+Chapter Il gruppo di lavoro OWASP greco è stata fondato nel  2005 con l'obiettivo di 
+informare la comunità greca sui rischi per la sicur ezza nelle applicazioni web. Il 
+motivo principale che ha spinto alla sua creazione è il sempre crescente 
+numero di incidenti di sicurezza su Internet, come ad esempio i tentativi di 
+phishing a banche greche. Oggi, il gruppo greco pro muove localmente 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 34  a 137  
+ 
+l’iniziativa OWASP attraverso il Software Libero/Op en e la traduzione in greco 
+della documentazione OWASP. Emettono una newsletter  mensile, 
+mantengono una mailing list per gli aggiornamenti e  gestiscono dibattiti online 
+su problemi di sicurezza di attualità. 
+La comunità greca OWASP vuole riunire tutti coloro che sono interessati e 
+preoccupati per la sicurezza delle applicazioni web . Allo stesso tempo, accoglie 
+i volontari che sono disposti a lavorare su progett i coordinati dall’OWASP, 
+utilizzando software libero/open source. Invitano a  chiunque di condividere le 
+proprie idee, pensieri e riflessioni sugli attacchi , la difesa, i metodi di risposta, 
+strumenti e buone pratiche in materia di sicurezza di Internet. 
+ 
+URL  https://www.owasp.org/index.php/Category:Ireland  
+OWASP Ireland Local 
+Chapter Questo paese ha quattro gruppi locali: Belfast, Cork, Dublino e Limerick. Il 
+gruppo più attivo è quello di Dublino le cui attivi tà principali riguardano 
+l'organizzazione di eventi e conferenze. Questo gru ppo fornisce anche la 
+formazione su progetti e risorse OWASP attraverso i l programma " OWASP 
+projects and resources you can use today". Questo h a lo scopo di promuovere i 
+progetti OWASP, fornendo una selezione di progetti maturi ed enterprise-
+ready con esempi pratici di come usarli. 
+ 
+URL  https://www.owasp.org/index.php/Italy  
+OWASP Italy Local 
+Chapter Le attività riguardano l’organizzazione di eventi e  lo sviluppo di tool. Il gruppo 
+cerca di organizzare almeno 2 conferenze l’anno, un o in primavera e un altro in 
+autunno. Recentemente, hanno lavorato sullo svilupp o di sqlmap, un 
+automatic SQL injection tool  sviluppato in Python. L'iniziativa è sostenuta da 
+partner come IsecLab, CLUSIT e ISACA Roma. 
+ 
+URL  https://www.owasp.org/index.php/Latvia%20  
+OWASP Latvia Local 
+Chapter E’ stata creata nell’ottobre 2007. Le attività prin cipali riguardano 
+l’organizzazione di eventi. Il gruppo non si è dimo strato molto attivo negli 
+ultimi anni. 
+ 
+URL  https://www.owasp.org/index.php/London  
+OWASP London Local 
+Chapter Le attività di OWASP Londra si concentrano sulla pr eparazione e 
+l'organizzazione di eventi, conferenze e presentazi oni. Il gruppo ha registrato 
+elevata attività nel corso del 2010. 
+Esso prevede anche la formazione su progetti e riso rse OWASP attraverso il 
+programma "OWASP projects and resources you can use  today", che mira a 
+promuovere progetti OWASP, fornendo una selezione d i progetti maturi ed 
+enterprise-ready con esempi pratici di come usarli.  
+ 
+URL  https://www.owasp.org/index.php/Luxembourg  
+OWASP Luxembourg 
+Local Chapter Le attività del gruppo riguardano la preparazione e  l'organizzazione di eventi e 
+conferenze come il Java User Group (YAJUG) o Chaos Computer Club 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 35  a 137  
+ 
+Letzebuerg (C3L). Attualmente sembra che vi sia poc a attività in questo 
+gruppo. 
+ 
+URL  https://www.owasp.org/index.php/Norway  
+OWASP Norway Local 
+Chapter Le attività di OWASP Norvegia riguardano la prepara zione e l'organizzazione di 
+eventi e conferenze. Questo gruppo è stato molto at tivo negli anni passati, 
+quando ha organizzato 8 conferenze in Norvegia in u n anno. 
+ 
+URL  https://www.owasp.org/index.php/Poland  
+OWASP Poland Local 
+Chapter L'attività principale che questo gruppo è di  organizzare eventi. In questo 
+gruppo sembra essere molto attivo, sono stati coinv olti in 11 conferenze nel 
+corso del 2010. L'iniziativa è sostenuta da ISSA. 
+ 
+URL  https://www.owasp.org/index.php/Porto  
+OWASP Portugal Local 
+Chapter Le attività di questo gruppo riguardano l'organizza zione di conferenze e 
+pubblicazioni. Ha organizzato uno dei più important i eventi di OWASP: Ibero-
+American Web Application Security Conference IBWAS’2 010 .  
+ 
+URL  https://www.owasp.org/index.php/Scotland  
+OWASP Scotland Local 
+Chapter Le principali attività svolte da questo gruppo, sec ondo quanto riportato sul loro 
+sito, sono finalizzate a fornire risposte insieme a d altri gruppi britannici locali ai 
+diversi uffici governativi del Regno Unito. Questo gruppo sembra che organizzi 
+anche incontri annuali. 
+ 
+URL  https://www.owasp.org/index.php/Spain  
+OWASP Spain Local 
+Chapter Questo gruppo svolge due attività principali. Da un  lato collabora attivamente 
+con OWASP su un progetto per fornire le specifiche e i requisiti legali per le 
+applicazioni Web. D'altra parte, come la maggior pa rte degli altri gruppi locali 
+di questa sezione, organizza eventi e conferenze an nuali. Ha partecipato anche 
+all'evento IBWAS'2010 [ https://www.owasp.org/index.php/IBWAS10 ] in 
+collaborazione con il gruppo portoghese. 
+ 
+URL  https://www.owasp.org/index.php/Sweden  
+OWASP Sweden Local 
+Chapter Questo gruppo si concentra sull'organizzazione di m eeting ed eventi. Ha 
+organizzato conferenze anche in collaborazione con altri gruppi del nord, come 
+il norvegese e il finlandese. 
+ 
+URL  https://www.owasp.org/index.php/Switzerland  
+OWASP Switzerland 
+Local Chapter Questo gruppo organizza incontri su base periodica,  soprattutto nella parte 
+tedesca della Svizzera. I loro incontri e gli event i sono principalmente su temi 
+come test di sicurezza, lo sviluppo sicuro, hacking  e architetture sicure. Sul loro 
+sito Web sono fruibili diapositive di eventi e conf erenze. 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 36  a 137  
+ 
+URL  https://www.owasp.org/index.php/Ukraine  
+OWASP Ukraine Local 
+Chapter E’ un gruppo di recente formazione ancora in fase d i organizzazione . 
+ 
+5.2.4  Motor Industry Software Reliability Association (MI SRA) 
+MISRA è un Motor Companies Consortium  all’interno del Regno Unito. I suoi risultati (ric erca, risultati della 
+ricerca e standard de facto, linee guida) sono fina lizzati principalmente allo sviluppo di software si curo e 
+affidabile per sistemi embedded nel settore automob ilistico. 
+MISRA instaura quindi una collaborazione tra costru ttori di veicoli, fornitori di componenti e di cons ulenza 
+ingegneristica. Esso mira a promuovere le migliori pratiche nello sviluppo di sistemi elettronici lega ti alla 
+sicurezza dei veicoli stradali e di altri sistemi e mbedded. 
+La sua documentazione non è accessibile al pubblico , ma può essere acquistata sul sito web del consorz io. 
+ 
+URL  https://www.misra.org.uk  
+Country of HQ location  
+Geographic Scope  UK  
+National 
+Type  Industry  
+ 
+I lavori in corso MISRA includono: 
+Model based development and autocode – Incoraggia a lle buone pratiche. 
+• MISRA Autocode (Produzione di best practice di mode llazione) 
+• MISRA C++ (Produzione di una serie di linee guida p er l'uso di C ++ in sistemi critici) 
+• MISRA C3 (3rd review of MISRA C) 
+• Mira a promuovere le migliori pratiche nello svilup po di sistemi elettronici legati alla sicurezza nei  
+veicoli stradali e di altri sistemi embedded (è sta to adottato e utilizzato in una vasta gamma di 
+settori e applicazioni, tra cui il settore ferrovia rio, aerospaziale, militare e medico) 
+MISRA Safety Analysis – Linee Guida che descrivono come il ciclo di vita della sicurezza dei sistemi 
+automotive si inserisce nel ciclo di vita dello svi luppo dei veicoli. 
+ 
+Risultati più rilevanti: 
+Good Practice  MISRA Compliance 2016: Achieving compliance with MI SRA coding guidelines, ISBN 
+978-906400-13-2 (PDF), April 2016.  
+Guidelines for the Use of the C Language in Vehicle  Based Software, ISBN 978-0-
+9524156-6-5, April 1998, October 2002 
+Guidelines for the Use of the C Language in Critica l Systems, ISBN 0 9524156 2 3 
+(paperback), ISBN 0 9524156 4 X (PDF), October 2004  
+Guidelines for safety analysis of vehicle based pro grammable systems, ISBN 978-0-
+9524156-5-7 (paperback), ISBN 978-0-9524156-7-1 (PD F), November 2007. 
+Guidelines for the Use of the C++ Language in Criti cal Systems, ISBN 978-906400-03-3 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 37  a 137  
+ 
+(paperback), ISBN 978 -906400 -04 -0 (PDF), June 2008.  
+Standard  MISRA AC GMG: Generic modeling design and style guidelines, ISBN 978 -906400 -06 -4 
+(PDF), May 2009. 
+MISRA Compliance: MISRA C, MISRA C++ coding guideli nes 
+5.2.5  European Space Agency (ESA) 
+Dall'inizio degli anni ‘90 l'ESA si è occupata di d efinire la qualità dei prodotti software. La famigl ia PSS 11  di 
+standard (poi sostituito da standard ECSS) include un software engineering standard e una serie di gui de. 
+ 
+URL  https://www.esa.int/  
+Country of HQ location  
+Geographic Scope  Paris  
+European 
+Type  Collaboration of Several European Countries  
+ 
+Uno degli standard di software ampiamente utilizzat o, chiamato "Guide to applying the ESA Software 
+Engineering Standards to small software projects" è  disponibile all'indirizzo: http://emits.sso.esa.int/emits-
+doc/e_support/Bssc962.pdf  
+Questo standard definisce una serie di criteri di q ualità per i requisiti software e di design, che ha nno una 
+influenza diretta e indiretta sulla sicurezza del s oftware. Nell’ambito dei quality criteria requirements  sono 
+rilevanti i seguenti aspetti: 
+• Sono menzionate le caratteristiche degli utenti e d elle funzionalità del software maggiormente 
+utilizzate? (Non risultano mancanti categorie di ut enti) 
+• Sono esplicitamente menzionate tutte le interfacce e sterne del software? (Non risultano mancanti 
+interfacce) 
+• E' stata definita una priorità per ciascun requisito ? (Il significato dei livelli di priorità è chiaro?)  
+• Ciascun requisito è verificabile (in un test di acce ttazione provvisoria)? (Misurabile: dove possibile,  
+quantificare; capacità, prestazione e accuratezza).  
+• I requisiti sono consistenti? (Non sono in conflitto )  
+• I requisiti sono sufficientemente accurati e inequiv ocabili? (Quali interfacce sono coinvolte, chi ha 
+l'iniziativa, chi fornisce quali dati, nessuna voce passiva).  
+• I requisiti sono completi? Tutto ciò che non è espl icitamente vincolato può essere considerato dal 
+punto di vista dello sviluppo libero? Un prodotto c he soddisfa tutti i requisiti è davvero accettabile?  
+(Nessun requisito mancante)  
+• I requisiti sono comprensibili per coloro che li do vranno successivamente utilizzare?  
+• I requisiti sono realizzabili all'interno del budge t?  
+• La maggior parte dei criteri di qualità di progetta zione sono rilevanti per la sicurezza del software.  
+ 
+ 
+ 
+                                                           
+11  http://www.esa.int/TEC/Software_engineering_and_st andardisation/TECBUCUXBQE_2.html 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 38  a 137  
+ 
+Risultati principali: 
+Good 
+Practice  The PSS  
+[https://www.esa.int/TEC/Software_engineering_and_st andardisation/TECBUCUXBQE_2.h 
+tml ] famiglia di standard per la qualità del software.  
+Una guida per l'applicazione degli standard ESA di ingegneria del software ai piccoli 
+progetti è disponibile all'indirizzo: ftp://ftp.estec.esa.nl/pub/wm/wme/bssc/Bssc962.pdf  
+L'Università di Tecnologia di Eindhoven fornisce ul teriori requisiti semplificati e checklists 
+di progettazione. [ https://www.win.tue.nl/is/doku.php ] 
+ 
+5.3  Iniziative US 
+In questa sezione viene fornita una panoramica dell e iniziative SSE negli Stati Uniti. Tali iniziative  sono state 
+classificate in funzione della tipologia: accademic he o governative. 
+5.3.1  CERT Secure Coding 
+Il CERT Secure Coding è un'iniziativa di sicurezza del programma Computer Emergency Response Team 
+(CERT). Questo programma fa parte del Software Engi neering Institute (SEI) alla Canergie Mellon 
+University 12  (Pennsylvania, USA). Alcuni dei suoi programmi son o finanziati dal governo degli Stati Uniti. 
+Nel novembre 1988, la Defense Advanced Research Pro jects Agency (DARPA) incaricò il SEI di creare un 
+centro per coordinare la comunicazione tra gli espe rti di sicurezza durante le emergenze e per aiutare  a 
+prevenire futuri incidenti, a fronte di ciò, il CER T ha sviluppato il Software Initiative Assurance, c he 
+comprende: Secure Coding Standards, Source Code Ana lysis Lab (SCALe), Vulnerability analysis, Function  
+extraction for malicious code. 
+Il SEI è un centro di ricerca e sviluppo finanziato  dal governo federale, che conduce ricerche di inge gneria 
+del software in acquisizione, architetture e linee di prodotto, miglioramento dei processi e misurazio ne 
+delle performance, sicurezza e l'interoperabilità d el sistema e l'affidabilità. 
+Il SEI lavora a stretto contatto con le organizzazi oni di difesa e di governo, soprattutto l'Ufficio S ecretary of 
+Defense/Acquisition, Technology, and Logistics (OSD /AT&L) 13 , l'industria e il mondo accademico, con 
+l’obiettivo di migliorare continuamente i sistemi s oftware-intensive. 
+ 
+URL  https://www.sei.cmu.edu  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Academic  
+ 
+Le aree di lavoro CERT Secure Coding sono: 
+• Secure coding standards  
+                                                           
+12  https://www.cmu.edu/  
+13  http://www.acq.osd.mil/ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 39  a 137  
+ 
+[https://wiki.sei.cmu.edu/confluence/display/seccode /SEI+CERT+Coding+Standards ] - Propone 
+standard per migliorare la sicurezza nell’uso dei l inguaggi di programmazione (Android, C, C++, 
+Java, Perl). 
+• International Standards Development /- Standard di sviluppo Internazionale. 
+• Source Code Analysis Laboratory (SCALe)  [cert.org/secure-coding/products-services/scale.cfm ] 
+SCALe consente di valutare il codice sorgente rispe tto a una serie di standard di codifica sicura. 
+SCALe rilascia e certifica i test di conformità qua ndo le risultanze dei test sono state indirizzate d agli 
+sviluppatori. 
+• Secure Coding Tools  - Tali strumenti sono utilizzati nell'auditing SCA Le, ma possono anche essere di 
+supporto agli sviluppatori di software per ridurre il numero di vulnerabilità presenti nel loro codice .  
+ 
+CERT Secure Coding vuole influenzare i fornitori pe r migliorare la sicurezza base all'interno dei loro  
+prodotti. Al fine di raggiungere questo obiettivo, CERT Secure Coding lavora con sviluppatori di softw are e 
+organizzazioni di sviluppo software per ridurre le vulnerabilità derivanti da errori di codifica (C, C  ++ o 
+linguaggi di programmazione Java) prima di essere d istribuiti. Inoltre, gli analisti CERT valutano le cause 
+della vulnerabilità e identificano le pratiche di s ecure coding. 
+CERT collabora con ISO per la creazione di diversi standard su secure coding. 
+ 
+Risultati più rilevanti: 
+Training  Secure Coding in C and C++   
+[http://www.sei.cmu.edu/training/p63.cfm ] 
+Course of secure coding in C and C++ based on Addis on-Wesley’s material: “Secure Coding in 
+C and C++” and “The CERT C Secure Coding Standard” 
+Standards 
+for 
+Software 
+Developers SEI CERT C Coding Standard   
+[https://wiki.sei.cmu.edu/confluence/display/c/SEI+C ERT+C+Coding+Standard ] 
+SEI CERT C++ Coding Standard 
+[https://wiki.sei.cmu.edu/confluence/pages/viewpage. action?pageId=88046682 ] 
+SEI CERT Oracle Coding Standard for Java 
+[https://wiki.sei.cmu.edu/confluence/display/java/SE I+CERT+Oracle+Coding+Standard+for+J 
+ava ] 
+SEI CERT Perl Coding Standard 
+[https://wiki.sei.cmu.edu/confluence/display/perl/SE I+CERT+Perl+Coding+Standard ] 
+Android TM   Secure Coding Standard 
+[https://wiki.sei.cmu.edu/confluence/display/android /Android+Secure+Coding+Standard ] 
+ 
+5.3.2  Software Assurance Metrics and Tool Evaluation (SAM ATE) 
+SAMATE è un’iniziativa US Government software assur ance, un progetto inter-agenzie tra gli Stati Uniti  e il 
+DHS National Institute of Standards and Technology (NIST).  
+Obiettivo di SAMATE è migliorare la garanzia softwa re:  
+• sviluppando metriche e metodologie per valutare i t ool di sicurezza del software;  
+• identificando le vulnerabilità relative alla pratic he di codifica e dei metodi di ingegneria del 
+software. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 40  a 137  
+ 
+Il progetto di riferimento di SAMATE sviluppa casi di test al fine di esaminare il codice sorgente di strumenti 
+e applicazioni. Rileva e segnala le debolezze in mo do da fornire, agli utenti finali e sviluppatori, t ool di 
+garanzia del software con una serie di flaws noti a ttraverso i quali valutare i propri tool. 
+L'uscita principale di questa iniziativa è il SAMAT E Reference Dataset (SRD), un database online alime ntato 
+regolarmente da SAMATE. Questa banca dati online, a  disposizione del pubblico, fornisce casi di test p er gli 
+sviluppatori e utenti finali, attraverso i quali è possibile effettuare valutazioni di tool di sicurez za. 
+URL  https://samate.nist.gov/  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Governement  
+ 
+SAMATE è finalizzato al miglioramento del software assurance attraverso lo sviluppo di metodologie che  
+consentano la valutazione software dei tool, misura re l'efficacia dei tool e delle tecniche, individua re le 
+lacune negli strumenti e nei metodi. Il progetto so stiene Tools Software Assurance della US DHS e R&D 
+Requirements Identification Program (in particolare , la Parte 3, tecnologia -strumenti e requisiti-), che 
+affronta l'individuazione, la valorizzazione e lo s viluppo di software assurance tools. 
+Il progetto SAMATE compone di due parti: 
+• sviluppo di metriche per l’efficacia dei software s ecurity assessment (SSA) tools  
+• valutazione di metodi e strumenti SSA attuali al fi ne di individuare le carenze che possono portare a 
+guasti dei prodotti software e vulnerabilità 
+ 
+Infine, SAMATE sta sviluppando anche alcune specifi che rivolte agli sviluppatori di strumenti di garan zia del 
+software, che gli consentano di classificare e valu tare questa tipologia di tool. 
+ 
+Risultati più significativi: 
+Specifications  Source Code Security Analysis  
+[https://samate.nist.gov/index.php/Source_Code_Secur ity_Analysis.html ] 
+“Source Code Security Analysis Tool Functional Spec ification Version 1.1” 
+Specifiche e piani di test per gli strumenti di ana lisi della sicurezza del codice 
+sorgente. Questo tipo di strumento esamina il codic e sorgente al fine di 
+rilevare e segnalare le difettosità che possono por tare a vulnerabilità di 
+sicurezza. 
+ Web Application Scanner  
+[https://samate.nist.gov/index.php/Web_Application_S canner.html ] 
+“Web Application Scanner Functional Specification V ersion 1.0”. Queste 
+specifiche sono raccolte nella pubblicazione NIST S pecial Publication 500-269 
+[https://samate.nist.gov/docs/webapp_scanner_spec_sp 500-269.pdf ]. 
+Test Cases  SAMATE reference datasheet  
+[https://samate.nist.gov/SRD/ ] 
+Fornisce a utenti, ricercatori e sviluppatori di st rumenti di garanzia della 
+sicurezza del software una serie di difetti di sicu rezza noti. Questi 
+consentiranno agli utenti finali di valutare tali s trumenti e agli sviluppatori degli 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 41  a 137  
+ 
+strumenti di testare le loro metodologie applicate.  
+ SRD database  
+[https://samate.nist.gov/SRD/view.php ] 
+Una raccolta di casi di test per individuare le deb olezze del codice. 
+ 
+5.3.3  Common Weakness Enumeration (CWE) 
+CWE è un'iniziativa sostenuta e co-sponsorizzata da lla NCSD della US DHS e dal NIST. Attualmente è 
+mantenuta e guidata da MITRE Corporation. 
+Il CWE è una lista formale o tassonomia, che classi fica le tipologie più comuni di vulnerabilità del s oftware. 
+Gli obiettivi principali di CWE sono: 
+• Gestire la common taxonomy  per la classificazione delle vulnerabilità comuni del software 
+relativamente ad architettura, progettazione e codi ce; 
+• Fornire una classificazione standard per tool di pr otezione del software  
+• Fornire una linea di base da cui partire per aiutar e la community SSE a identificare, attenuare e 
+prevenire questo tipo di debolezza software. 
+ 
+URL  https://cwe.mitre.org  
+https://nvd.nist.gov/cwe.cfm  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Government  
+ 
+Questo progetto utilizza i risultati del progetto S AMATE per creare l'elenco CWE delle vulnerabilità e  la sua 
+tassonomia associata e l’albero di classificazione (vedi figura sotto tratta dal NIST). 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 42  a 137  
+ 
+ 
+Figura 6 - Una porzione dell’albero di classificazi one CWE  
+[Fonte: https://nvd.nist.gov/vuln/categories/cwe-layout ] 
+La Figura 6 mostra la classificazione gerarchica de lle CWE, come proposto nella pagina del National 
+Vulnerability Database 14  (NVD) della NIST. Il grafico presenta le varie CWE  raggruppate in categorie. Ogni 
+CWE può essere in relazione con una CWE di livello superiore (più generica). 
+Va inoltre sottolineato che CWE è una community-dev eloped, l'elenco formale delle vulnerabilità comuni  
+del software coinvolgono il mondo accademico, il se ttore commerciale e il governo degli Stati Uniti. 
+Risultati più rilevanti: 
+- CWE List (Version 3.4): https://cwe.mitre.org/data/index.html  
+Le definizioni e le descrizioni di CWE supportano l a scoperta delle tipologie di flaw di sicurezza 
+software nel codice, prima di rilasciarlo. Ciò sign ifica che sia gli utilizzatori che gli sviluppatori  dei 
+tool e dei servizi di sicurezza software possono ut ilizzare CWE come un meccanismo per descrivere i 
+flaw di sicurezza del software. 
+L'elenco CWE è disponibile in tre diversi formati: 
+• Research Concepts [ https://cwe.mitre.org/data/definitions/1000.html ]; 
+• Development Concepts [ https://cwe.mitre.org/data/definitions/699.html ]; 
+• Architectural Concepts [ https://cwe.mitre.org/data/definitions/1008.html ].  
+ 
+- CWE Top 25 Most Dangerous Software Errors. Di seguito è riportato un l’elenco pubblicato nel 
+2019: 
+                                                           
+14  https://nvd.nist.gov/vuln/categories  
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 43  a 137  
+ 
+ 
+ 
+Figura 7- CWE Top 25 [Fonte: https://cwe.mitre.org/top25/archive/2019/2019_cwe_top25.html ] 
+ 
+5.3.4  Common Attack Pattern Enumeration and Classificatio n (CAPEC) 
+CAPEC è un'iniziativa co-sponsorizzata dal NCSD del l’US DHS e guidata dalla Cigital 15 . Costruttori di software 
+sicuro devono proteggersi da importanti vulnerabili tà potenziali. Per identificare e mitigare le vulne rabilità 
+relative al software, la community di sviluppo ha b isogno di capire la prospettiva dell'attaccante e g li 
+approcci utilizzati per sfruttare il software. 
+Gli schemi di attacco sono le descrizioni di metodi  comuni per lo sfruttamento del software, fornendo sia la 
+prospettiva che la guida dell'attaccante sui modi p er mitigare il loro effetto. Essi derivano dal conc etto di 
+pattern design applicato in un distruttivo, piuttos to che costruttivo, contesto e sono generati da un’ analisi 
+approfondita di specifici esempi di casi del mondo reale. 
+Questa iniziativa mira a fornire un catalogo a disp osizione del pubblico di schemi di attacco, insieme  ad uno 
+schema di classificazione e tassonomia completo. La  filosofia è di evolvere il catalogo con la parteci pazione 
+e i contributi pubblici e così consolidare un mecca nismo standard per l'identificazione, la raccolta, la 
+raffinazione, e la condivisione di modelli di attac co nella community software. 
+URL  https://capec.mitre.org  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Government  
+ 
+                                                           
+15  https://www.synopsys.com/software-integrity.html 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 44  a 137  
+ 
+Secondo questa iniziativa, le informazioni sugli sc hemi di attacco, se catturati in modo formale, poss ono 
+portare un notevole valore per considerazioni di si curezza del software attraverso tutte le fasi del S DLC e le 
+altre attività relative alla sicurezza, tra cui: 
+• Raccolta dei requisiti: Identificazione dei requisi ti di sicurezza pertinenti, dei misuse e abuse case s. 
+• Architettura e design: Fornisce il contesto per l'a nalisi dei rischi architetturali e le linee guida p er la 
+sicurezza nelle architetture del software. 
+• Implementazione e codifica: Prioritizzazione e guid a delle attività di revisione sicura del codice. 
+• Test del software e controllo qualità: Fornisce il contesto per una appropriata analisi del rischio e 
+test di penetrazione. 
+• Operatività dei sistemi: Sfruttare le esperienze ap prese dagli incidenti di sicurezza per fornire una 
+guida preventiva. 
+• Politiche e generazione di standard: Guida all'iden tificazione di adeguate politiche e standard 
+organizzativi prescrittivi.  
+ 
+Risultati più rilevanti:  
+• List of Attack Patterns  [http://capec.mitre.org/ ]. L’elenco è disponibile in due diversi formati: 
+o View by Mechanisms of Attack [ http://capec.mitre.org/data/definitions/1000.html ]. 
+o View by Domains of Attack [ http://capec.mitre.org/data/definitions/3000.html ]. 
+ 
+ 
+ 
+ 
+ 
