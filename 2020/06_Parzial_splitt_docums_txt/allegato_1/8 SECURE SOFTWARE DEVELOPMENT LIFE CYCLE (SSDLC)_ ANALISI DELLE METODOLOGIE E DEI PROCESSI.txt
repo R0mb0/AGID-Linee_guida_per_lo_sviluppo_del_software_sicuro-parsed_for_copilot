@@ -1,0 +1,444 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 78  a 137  
+ 
+8 SECURE SOFTWARE DEVELOPMENT LIFE CYCLE (SSDLC): ANA LISI 
+DELLE METODOLOGIE E DEI PROCESSI 
+8.1  Life Cycle & Maturity Models  
+8.1.1  Software Assurance Maturity Model (SAMML)  
+SAMM è un framework aperto per aiutare le organizza zioni a formulare e attuare una strategia di sicure zza 
+software, che più si adatti ai rischi specifici del la particolare organizzazione. Il progetto OpenSAMM , 
+un'attività di OWASP, mantiene e aggiorna la docume ntazione SAMM. 
+ 
+References  www.owasp.org/index.php/Categ ory:Software_Assurance_Maturity_ModelOWASP 
+SAMM Project  
+www.opensamm.orgOpenSAMM  
+ 
+Le risorse fornite da SAMM attraverso il sito web a iutano a: 
+• Valutare le pratiche di sicurezza software esistent i di un'organizzazione 
+• Costruire un programma software security assurance in iterazioni ben definite 
+• Dimostrare miglioramenti concreti al programma di s ecurity assurance 
+• Definire e misurare le attività relative alla sicur ezza in tutta l'organizzazione  
+ 
+Essendo un progetto Open, i contenuti SAMM sono lib eramente fruibili. Il modello si basa su 4 funzioni  
+aziendali (Governance, Construction, Verification e  Deployment) di sviluppo software e di 12 procedure  di 
+sicurezza. Ogni funzione all’interno dello sviluppo  del software prevede tre pratiche di sicurezza: 
+• Governance 
+o Strategy & Metrics 
+o Education & Guidance 
+o Policy & Compliance 
+• Construction 
+o Security Requirements 
+o Threat Assessment  
+o Secure Architecture 
+• Verification 
+o Design Review 
+o Security Testing 
+o Code Review 
+• Deployment 
+o Environment Hardening 
+o Vulnerability Management 
+o Operational Enablement 
+ 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 79  a 137  
+ 
+ 
+ 
+Figura 14 - SAMM Structure 
+ 
+Per ogni security practice, tre Maturity Levels son o definiti in termini di specifiche attività e metr iche che 
+un'organizzazione potrebbe adottare al fine di ridu rre i rischi per la sicurezza e aumentare l’affidab ilità del 
+software. 
+ 
+Risultati più rilevanti: 
+Maturi ty Model: SAMM 
+version 1.0 Il modello è disponibile in format o XML ed è stato tradotto in diverse lingue. 
+Nella stessa pagina sono evidenziati i tool a suppo rto:  
+http://www.opensamm.org/download/  
+ 
+ 
+8.1.2  Systems Security Engineering Capability Maturity Mo del (SEE-CMM) 
+Il modello SSE-CMM si indirizza sui requisiti per l 'implementazione della sicurezza in un sistema. Le attività 
+di ingegneria di sicurezza coprono l'intero ciclo d i vita del sistema (definizione dei concetti, anali si dei 
+requisiti, progettazione, sviluppo, integrazione, i nstallazione, manutenzione e disattivazione). L'SSE -CMM si 
+applica a tutti i tipi di organizzazioni, a prescin dere dalle loro dimensioni, da quelle commerciali a  quelle di 
+carattere governativo o accademico. 
+ 
+URL  http://www.sse -cmm.org   
+Country of HQ location  US  
+Geographic Scope  International  
+Type  Industry (not for profit)  
+ 
+Questo modello ha undici aree di processo di sicure zza ciascuna delle quali comprende un insieme di 
+pratiche di base. Queste aree si concentrano sui co ntrolli, sulle minacce, sulla scoperta e sull’elimi nazione 
+delle vulnerabilità: 
+• Administer Security Controls 
+• Assess Impact 
+• Assess Security Risk 
+• Assess Threat 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 80  a 137  
+ 
+• Assess Vulnerability 
+• Build Assurance Argument 
+• Coordinate Security 
+• Monitor Security Posture 
+• Provide Security Input 
+• Specify Security Needs 
+• Verify and Validate Security 
+ 
+Risultati più significativi: 
+Maturity Model  Capability Maturity Model - Model Description Document - 
+http://all.net/books/standards/ssecmmv3final.pdf   
+Standard  ISO/IEC 21827 - http://www.iso.org/iso/catalogue_detail.htm?csnumbe r=44716   
+ 
+8.1.3  Building Security In Maturity Model (BSIMM) 
+BSIMM non è una guida completa ‘how to’ di sicurezz a software, ma piuttosto una raccolta di idee e att ività 
+che sono oggi in uso all'interno delle aziende di s viluppo software. Il modello Building Security In M aturity 
+(BSIMM) è uno studio delle iniziative di sicurezza del software in uso all'interno delle aziende che s i 
+occupano di sviluppo software. Mettendo insieme le pratiche di molte organizzazioni diverse, è possibi le 
+descrivere le misure comuni, quelle condivise da mo lti, e le peculiarità che rendono unico ogni singol o 
+sistema. Il BSIMM è stato creato attraverso un proc esso di comprensione e analisi dei dati del mondo r eale 
+provenienti dalle esperienze di numerose aziende. Q uelle che partecipano allo studio BSIMM provengono 
+da differenti settori verticali, inclusi i servizi finanziari, il software indipendente, la tecnologia , la sanità, 
+l’elettronica di consumo, ecc. Ogni mese al campion e si aggiungono nuove aziende. Nove imprese 
+nell’ambito sicurezza software, che sono stati a se guire validati e regolamentati con i dati provenien ti da 21 
+aziende aggiuntive. Il BSIMM mette quindi insieme l e esperienze di trenta imprese di sviluppo software  - la 
+maggior parte di essi si trovano negli Stati Uniti - che hanno implementato iniziative di sicurezza de l 
+software. 
+ 
+URL  https://www.bsimm.com/  
+Country of HQ location  US  
+Geographic Scope  Inter national (mainly the US)  
+Type  Industry  
+ 
+BSIMM ha sviluppato il https://www.bsimm.com/  (SSF), che fornisce un vocabolario comune per desc rivere 
+gli elementi più importanti di un quadro di sicurez za software all'interno di una società. 
+Sono stati identificati quattro domini e pratiche c omuni alla maggior parte delle esperienze. Il BSIMM  
+descrive 109 attività che ogni organizzazione può m ettere in pratica. Le attività sono descritte in te rmini di 
+SSF, che identifica dodici pratiche raggruppati in 4 domini, 3 pratiche di dominio, come mostrato nell a 
+figura presa dal documento BSIMM2: di funzionalità,  all’interno dei quali sono previste delle attività  da 
+svolgere. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 81  a 137  
+ 
+ 
+ 
+Figura 15 - BSIMM SSF 
+ 
+Per ogni livello di pratica e di maturità vi è un'a ssociazione “one activity - one objective”. I domin i sono: 
+1.  Governance - Pratiche che aiutano a organizzare, ge stire e calibrare un framework di sicurezza del 
+software. Anche l’addestramento del personale è una  pratica da far rientrare nella governance 
+centrale. 
+2.  Intelligence - Un insieme di conoscenze aziendali u tili per svolgere attività di sicurezza del softwar e 
+all'interno di un'organizzazione; comprende sia ind icazioni proattive sulla sicurezza che modelli di 
+organizzazione delle minacce.  
+3.  SSDL Touchpoints - Pratiche associate all'analisi e  alla sicurezza di particolari sviluppi software, 
+artefatti e processi. Tutte le metodologie di sicur ezza del software includono queste pratiche.  
+4.  Deployment - Pratiche che si rifanno alla sicurezza  della rete tradizionale e alla manutenzione del 
+software. La configurazione del software, la manute nzione e altri problemi ambientali hanno un 
+impatto diretto sulla sicurezza. 
+ 
+Il modello di maturità si presenta come una serie d i attività connesse con le pratiche. Gli obiettivi per ogni 
+livello di pratica sono identificati. Gli obiettivi  possono essere ulteriormente suddivisi in obiettiv i per la 
+pratica/livello e sono associati alle attività. A t itolo di esempio, la figura seguente, tratta dal do cumento 
+BSIMM2, mostra il modello di maturità per la pratic a di addestramento del dominio Governance. 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 82  a 137  
+ 
+ 
+Figura 16 - Training practice BSIMM 
+ 
+Risultati più rilevanti: 
+Maturity Model  BSIMM2 - https://www.bsimm.com/download/    
+ 
+8.2  Analisi dei Processi SSDLC 
+8.2.1  McGraw’s Secure Software Development Life Cycle Pro cess 
+McGraw 30  [1] si propone di accrescere il processo SDLC (cas cata o iterativo) attraverso l’integrazione di 
+alcune attività SSD. In sostanza, il processo di Mc Graw si focalizza su:  
+• incorporazione dei requisiti di sicurezza,  
+• esecuzione dell’analisi dei rischi durante le diver se fasi di sviluppo,  
+• applicazione di metodi di security assurance quali test di sicurezza risk-based,  
+• analisi statica e test di penetrazione.  
+ 
+Il processo suggerisce anche di utilizzare l'analis i dei rischi durante la fase di progettazione. Per la fase di 
+security assurance, McGraw suggerisce di utilizzare  gli abuse cases e i requisiti di sicurezza per gui dare i test 
+di penetrazione. 
+ 
+                                                           
+30  G. McGraw, Software Security: Building Security In,  Addison Wesley, 2006  
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 83  a 137  
+ 
+8.2.2  Microsoft Software Development Life Cycle (MS SDL) 
+MS SDL è un modello che pone molta attenzione alla fase di specifica dei requisiti durante la quale pr evede 
+di interagire con il cliente (end-user), al fine di  identificare gli obiettivi e le caratteristiche di  sicurezza 
+necessarie.  
+L'incorporazione di queste caratteristiche/funziona lità di sicurezza sono guidate da standard di setto re e 
+criteri di certificazione. Durante la fase di proge ttazione MS SDL suggerisce di svolgere le seguenti attività: 
+l'identificazione dei componenti critici per la sic urezza, l'identificazione di tecniche di progettazi one e linee 
+guida, l'identificazione dei punti di accesso degli  attacchi, la modellazione delle minacce e analisi del rischio 
+componente per componente, l'identificazione dei re quisiti di sicurezza per mitigare le minacce, 
+l'identificazione dei componenti che necessitano di  particolare attenzione durante le fasi di test e r eview 
+del codice, e i criteri per il completamento del so ftware. 
+ 
+ 
+Figura 17 - Microsoft SDL 
+ 
+MS SDL consiglia di seguire gli standard di secure coding nella fase di implementazione. L'accento è p osto 
+su:  
+• test specifici di sicurezza,  
+• analisi statica del codice utilizzando i tool SDL u tili a tale scopo,  
+• revisione del codice (code review) nell’ultimo step  della fase di implementazione. Terminata la fase 
+di implementazione, il software completo viene nuov amente verificato attraverso un ulteriore test 
+di sicurezza che si concentra principalmente sui co mponenti critici (si esaminano ad esempio, i 
+punti di ingresso alle possibili aree di attacco). 
+ 
+URL  https://www.microsoft.com/en -us/securityengineering/sdl  
+Contact  https://support.microsoft.com/it -it/contactus/?ws=mscom#tab0  
+Email, chat, phone and address  
+Country of HQ location  US  
+Geographic Scope  International  
+Type  Industry (Microsoft)  
+ 
+Risultati più rilevanti: 
+Guidance  Microsoft SDL Process Guidance  
+Questa guida illustra il modo in cui Microsoft appl ica il SDL ai suoi prodotti e 
+tecnologie. Include requisiti di sicurezza e privac y e raccomandazioni per lo sviluppo di 
+software sicuro. Si rivolge ai modelli di sviluppo Cascade, Spiral, Agile. I responsabili 
+delle politiche IT e le organizzazioni di sviluppo software possono sfruttare questi 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 84  a 137  
+ 
+contenuti per migliorare l’aspetto di sicurezza e d i privacy.  
+Microsoft SDL for Agile Development  
+ 
+Microsoft SDL for Line -of -Business Applications  
+ 
+The Security Development Lifecycle  
+Fornisce una guida attraverso ogni fase della SDL, dall'istruzione e progettazione alla 
+sperimentazione e post-rilascio. Gli autori sono es perti di sicurezza del team Microsoft 
+Security Engineering. 
+Simplified Implemen tation of the Microsoft SDL  
+Questo documento illustra i concetti chiave e le si ngole attività di sicurezza che 
+devono essere eseguite per la conformità con il pro cesso Microsoft SDL. Gli aspetti da 
+tenere in considerazione includono ruoli e responsa bilità, attività di sicurezza 
+obbligatorie, attività di sicurezza opzionali e pro cesso di verifica della sicurezza 
+dell'applicazione. 
+SDL Quick Security Reference (QSR)  
+Con SDL QSR, il team SDL introduce una serie di doc umenti di orientamento di base, 
+progettati per affrontare le vulnerabilità comuni, dal punto di vista di molteplici ruoli 
+aziendali: decisori aziendali, architetti, sviluppa tori e tester / QA. 
+Securing Applications  
+Questa documentazione è rivolta agli sviluppatori d i .NET Framework per la scrittura 
+di codice sicuro. Comprende: concetti chiave sulla sicurezza, sicurezza dell'accesso al 
+codice, sicurezza basata sui ruoli, servizi crittog rafici, gestione delle politiche di 
+sicurezza, best practice sulle politiche di sicurez za, linee guida per la codifica sicura e 
+strumenti di sicurezza. 
+Tools  
+& Templates Microsoft SDL Threat Modeling Tool  
+La modellazione delle minacce consente agli archite tti di software di identificare e 
+mitigare tempestivamente potenziali problemi di sic urezza, quando risolverli è 
+relativamente facile ed economico. È uno strumento gratuito che richiede Visio. Lo 
+strumento è focalizzato sulle tecniche di analisi d el progetto. 
+Microsoft SDL Process Template  
+Un modello scaricabile che incorpora automaticament e la policy, il processo e gli 
+strumenti associati a SDL nell'ambiente di sviluppo  software di Visual Studio. 
+MSF -Agile+SDL Process Template  
+Un modello scaricabile che incorpora automaticament e la policy, il processo e gli 
+strumenti associati alla guida allo sviluppo di SDL  per Agile, nel Microsoft Solutions 
+Framework per lo sviluppo di software Agile (MSF-Ag ile) e nell'ambiente Visual Studio.  
+The Microsoft SDL Tools  
+Una mappa degli strumenti e dei modelli gratuiti di sponibili per ogni fase SDL. 
+ 
+8.2.3  Appropriate and Effective Guidance for Information Security (AEGIS) 
+AEGIS 31 32  [2] [3] è un processo SSDLC basato sul modello a s pirale e si concentra sulla specifica dei requisiti  
+di sicurezza, identificando gli elementi principali  ed eseguendo l’analisi dei rischi. Le fasi di anal isi dei 
+                                                           
+31  I. Flechais, M.A. Sasse, and S.M.V. Hales, “Bringi ng Security Home: A Process for Developing Secure a nd Usable Systems,” In Proc. 
+of the New Security Paradigms Workshop (NSPW’07), Asc ona, Switzerland, ACM Press, 2003, pp. 49-57. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 85  a 137  
+ 
+requisiti e di disegno sono strettamente collegati.  Il modello propone quattro sessioni di progettazio ne tra 
+gli sviluppatori e gli stakeholders del software. L a prima e la seconda sessione modellano le caratter istiche 
+principali del software e le loro relazioni, identi ficando i requisiti di alto livello di riservatezza , integrità e 
+disponibilità.  Nella terza sessione vengono identi ficati rischi, vulnerabilità e minacce per il softw are. La 
+quarta sessione, orientata alla progettazione, indi ca i requisiti di sicurezza per rimuovere le vulner abilità 
+identificate. 
+AEGIS suggerisce anche una metodologia di analisi d ei rischi da utilizzare durante le sessioni 3 e 4 f inalizzate 
+alla progettazione. Questo metodo di analisi dei ri schi ha le seguenti fasi principali: 
+• Determinazione delle vulnerabilità. 
+• Determinazione del costo e della probabilità di un attacco in ambiente distribuito (inclusi i ruoli 
+delle persone coinvolte e i task che verranno esegu iti sul software). 
+• Selezione dei requisiti di sicurezza basate sulle i ndicazioni dell’esperto di sicurezza. 
+• Valutazione costi-benefici dei requisiti di sicurez za selezionati. 
+• Il confronto tra il costo di ogni attacco, commisur ato con la probabilità che possa verificarsi, e il 
+costo dei requisiti di sicurezza. 
+• Selezione dei requisiti di sicurezza sulla base del l’efficacia e dei costi. 
+ 
+8.2.4  Secure Software Development Model (SSDM) 
+SSDM 33  è un processo che incorpora diverse attività di si curezza in un modello SDLC a cascata (cascade). 
+Secondo SSDM, la modellazione delle minacce dovrebb e essere eseguita in fase di specifica dei requisit i. Il 
+risultato di questa modellazione dovrebbe essere un a check-list contenente tutte le potenziali vulnera bilità 
+e attacchi. Tali elenchi di fatto dovrebbero essere  dati in input alla fase di sviluppo. 
+Dopo la modellazione delle minacce, è necessario de finire una policy che indichi chiaramente come 
+saranno raggiunti gli obiettivi di sicurezza prefis sati. 
+Tale policy, come sottolineato dal SSDM, è un insie me di decisioni di gestione di alto livello come ad  
+esempio minimizza l’impatto degli errori in tutto i l processo di sviluppo, correggendoli non appena ve ngono 
+rilevati. I test di penetrazione rappresentano, nel  modello SSDM, l’unica attività SSD per la fase sec urity 
+assurance. 
+ 
+8.2.5  Aprville and Pourzandi’s Secure Software Developmen t Life Cycle Process 
+[4]Aprville e Pourzandi 34  propongono un processo SSDLC sulla base della loro  esperienza, maturata durante 
+lo sviluppo di un software di instant messaging. Se condo il loro processo [5], il primo passo nella fa se di 
+specifica dei requisiti è quello di individuare gli  obiettivi di alto livello, per quanto riguarda la sicurezza 
+(riservatezza, integrità e disponibilità) del softw are in fase di sviluppo, considerando il suo ambien te di 
+distribuzione. Per gli obiettivi di sicurezza a bas so livello, la modellazione delle minacce dovrebbe essere di 
+supporto nella costruzione di un insieme di requisi ti di sicurezza. La priorità di tali requisiti può essere 
+                                                                                                                                                                                                 
+32  I. Flechais, C. Mascolo, and M.A. Sasse, “Integrat ing Security and Usability into the Requirements an d Design Process,” 
+International Journal of Electronic Security and Di gital Forensics, Inderscience Publishers, Geneva, S witzerland, 2007, vol. 1, no. 1, 
+pp. 12-26. 
+33  A.S. Sodiya, S.A. Onashoga, and O.B. Ajayi, “Towar ds Building Secure Software Systems,” Issues in Inf orming Science and 
+Information Technology, Informing Science Institute , California, USA, 2006, vol. 3, pp. 635-646.  
+34  A. Apvrille and M. Pourzandi, “Secure Software Dev elopment by Example,” IEEE Security and Privacy, IE EE CS Press, 2005, vol. 3, 
+no. 4, pp. 10-17. 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 86  a 137  
+ 
+modificata in base ai risultati dell'analisi del ri schio. In fase di progettazione, si raccomanda l’us o di 
+[6]UMLsec 35 . Per la fase di implementazione, si suggerisce di scegliere un linguaggio di programmazione 
+che meglio soddisfa gli obiettivi di sicurezza. Ino ltre, particolare attenzione deve essere posta su c ome 
+evitare: (i) buffer overflow, (ii) format string vu lnerabilities. Essi sottolineano di utilizzare per la crittografia 
+algoritmi già verificati. Per la fase di security a ssurance vengono indicate le seguenti attività: sta tic 
+vulnerability code scanning, code reviews, ad-hoc u nit e system security testing, fuzz testing. 
+8.2.6  Secure Software Development Model (SecSDM) 
+SecSDM 36  utilizza l'analisi dei rischi nella fase di specif ica dei requisiti al fine di dare priorità alla 
+modellazione delle minacce. Gli obiettivi di sicure zza di alto livello quali la riservatezza, l'integr ità e la 
+disponibilità sono poi identificati sulla base dell e minacce rilevate [7]. 
+In fase di progettazione, vengono identificate e se lezionate le funzionalità di sicurezza per mitigare  le 
+minacce e raggiungere gli obiettivi di sicurezza. S ecSDM propone di seguire standard di secure coding 
+durante la fase di implementazione. 
+8.2.7  Software Security Assessment Instrument (SSAI) 
+SSAI 3738  raggruppa un insieme di attività che utilizzano de terminate risorse e strumenti per lo sviluppo di 
+software sicuro. [8] [9] La prima risorsa che SSAI fornisce è un database online 39  che contiene informazioni 
+sulle varie vulnerabilità e le indicazioni per la l oro mitigazione. [10] La seconda risorsa SSAI è una  security 
+checklist che può essere sviluppata e utilizzata co me guida per lo sviluppo sicuro. Sono forniti i det tagli di 
+come redigere una checklist e quali sono gli elemen ti potenziali che possono essere inclusi 40 . La terza 
+risorsa è un elenco di strumenti accessibili pubbli camente, per la scansione statica del codice. SSAI fornisce 
+anche Flexible Modeling Framework (FMF), uno strume nto di modellazione e il property-based testing too l 
+(PBT), che utilizza le proprietà di sicurezza speci ficate nella security checklist o nel FMF come base  dei test 
+per il software. 
+8.2.8  Hadawi’s Set of Secure Development Activities 
+Hadawi 41  identifica 25 vulnerabilità (common vulnerabilitie s) da evitare durante lo sviluppo [11]. Egli 
+propone anche una serie di requisiti di sicurezza p er le fasi di progettazione e implementazione che, se 
+adottati, aiuterebbero ad evitare queste vulnerabil ità [12]. 
+                                                           
+35  J. Juerjens, Secure Systems Development with UML, Springer, 2005. 
+36  L. Futcher and R.v. Solms, “SecSDM: A Model for In tegrating Security into the Software Development Li fe Cycle,” In IFIP 
+International Federation for Information Processing , Volume 237, Proc. of the 5th World Conference on Inf ormation Security 
+Education, Springer, 2007, pp. 41-48. 
+37  D.P. Gilliam, T.L. Wolfe, J.S. Sherif, and M. Bish op, “Software Security Checklist for the Software L ife Cycle,” In Proc. of the 12th 
+IEEE International Workshops on Enabling Technologi es: Infrastructure for Collaborative Enterprises (W ETICE’03), Linz, Austria, IEEE 
+CS Press, 2003, pp. 243-248. 
+38  D. Gilliam, J. Powell, E. Haugh, and M. Bishop, “A ddressing Software Security Risk and Mitigations in  the Life Cycle,” In Proc. of 
+the 28th Annual NASA Goddard Software Engineering Wor kshop (SEW’03), Greenbelt, Maryland, USA, 2003, pp. 201-206. 
+39  DOVES: Database of Vulnerabilities, Exploits, and Signatures, http://seclab.cs.ucdavis.edu/projects/D OVES/. Last Accessed March 
+2009. 
+40  D.P. Gilliam, T.L. Wolfe, J.S. Sherif, and M. Bish op, “Software Security Checklist for the Software L ife Cycle,” In Proc. of the 12th 
+IEEE International Workshops on Enabling Technologi es: Infrastructure for Collaborative Enterprises (W ETICE’03), Linz, Austria, IEEE 
+CS Press, 2003, pp. 243-248.  
+41  M.A. Hadawi, “Vulnerability Prevention in Software  Development Process,” In Proc. of the 10th Internat ional Conference on 
+Computer & Information Technology (ICCIT’07), Dhaka,  Bangladesh, 2007, 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 87  a 137  
+ 
+Durante la fase di implementazione, l'unica attivit à SSD è la scelta di un appropriato linguaggio di 
+programmazione (sicuro). Per la fase di security as surance, Hadawi consiglia di utilizzare: (i) securi ty code 
+reviews, (ii) static code analysis tools.   
+8.2.9  Comprehensive, Lightweight Application Security Pro cess (CLASP) 
+Comprehensive, Lightweight Application Security Pro cess (CLASP) 42  identifica un insieme di attività SSD 
+classificate in base ai ruoli svolti durante lo svi luppo. CLASP suggerisce l’impiego di un esperto di sicurezza 
+fin dall'inizio dello sviluppo. Per la fase di spec ifica dei requisiti, sottolinea la necessità di un’ analisi dei rischi 
+e della modellazione delle minacce. L'analisi dei r ischi e la modellazione delle minacce devono essere  
+eseguite anche nella fase di progettazione. 
+CLASP propone di annotare i diagrammi di classe con  le informazioni di sicurezza. Nella fase di securi ty 
+assurance, consiglia di effettuare le seguenti oper azioni: security code reviews, security code scanni ng, 
+security testing.  
+CLASP fornisce anche un elenco di vulnerabilità (co mmon vulnerabilities) con informazioni complete su 
+come e quando possono essere introdotti durante lo sviluppo e come evitarli. 
+ 
+URL  https://www.owasp.org/index.php/CLASP_Concepts  
+ 
+Risultati più rilevanti: 
+Security Process  CLASP version 1.2  
+ 
+8.2.10  Secure Software Development Process Model (S2D-ProM ) 
+S2D-PROM 43  specifica molteplici strategie possibili per avanz are da ogni fase di sviluppo all’altra [13]. Alla 
+base di questo processo, c’è l’idea di fornire agli  sviluppatori opzioni flessibili. Il processo si pr opone di 
+condurre l'analisi dei rischi durante le fasi di sp ecifica dei requisiti, progettazione, e implementaz ione. 
+L'analisi del rischio, secondo S2D-PROM, può essere  eseguita in modi diversi per ogni fase di sviluppo . I 
+rischi identificati possono essere mitigati utilizz ando varie strategie (ad esempio, definendo le norm e di 
+sicurezza o utilizzando meccanismi di difesa).  
+ 
+8.2.11  Team Software Process for Secure Software Developme nt (TSP Secure) 
+[14]TSP-Secure 44  garantisce la sicurezza attraverso:  
+• la pianificazione per la sicurezza,  
+• la qualità e la gestione della sicurezza in tutto i l ciclo di vita dello sviluppo,  
+• la formazione degli sviluppatori circa gli aspetti relativi alla sicurezza.  
+ 
+                                                           
+42  https://www.owasp.org/index.php/CLASP_Concepts 
+43  M. Essafi, L. Labed, and H.B. Ghezala, “S2D-ProM: A  Strategy Oriented Process Model for Secure Softwar e Development,” In Proc. 
+of the 2nd International Conference on Software Engi neering Advances (ICSEA’07), Cap Esterel, French Rivi era, France, 2007, p. 24. 
+44  N. Davis, “Secure Software Development Life Cycle Processes: A Technology Scouting Report”, technical  note CMU/SEI-2005-TN-
+024, Software Engineering Institute, Carnegie Mellon U niversity, Pittsburgh, Pennsalyania, USA, 2005.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 88  a 137  
+ 
+Durante la fase di progettazione, il team identific a obiettivi di sicurezza e produce un piano dettagl iato 
+come guida per lo sviluppo. Le attività di sviluppo  possono includere l’identificazione dei rischi, 
+l’identificazione dei requisiti di sicurezza, la pr ogettazione sicura, le revisioni del codice, gli un it test, i fuzz 
+test e l’analisi statica del codice. Il team può sc egliere qualsiasi attività SSD che ritiene necessar ia.  
+Secondo TSP-Secure, un membro del team svolge il ru olo di responsabile della sicurezza, facendosi cari co di 
+tutte le problematiche relative alla sicurezza.  
+ 

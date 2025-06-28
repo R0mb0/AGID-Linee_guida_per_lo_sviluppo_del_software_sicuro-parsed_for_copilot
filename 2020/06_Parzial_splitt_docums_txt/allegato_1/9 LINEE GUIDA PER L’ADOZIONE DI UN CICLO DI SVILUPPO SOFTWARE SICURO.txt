@@ -1,0 +1,434 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 89  a 137  
+ 
+9 LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO SOFTWARE 
+SICURO 
+Negli ultimi anni, un numero considerevole di appli cazioni e sistemi hanno dovuto affrontare gravi min acce 
+alla sicurezza a causa di un significativo incremen to nell’impiego di nuove tecnologie disponibili e n el 
+contempo della mancanza di conoscenza e di tecniche  di indagine che riguardano la sicurezza informatic a. 
+In passato, le problematiche in materia di sicurezz a riguardavano essenzialmente i livelli dell'infras truttura 
+di rete. Attualmente, a causa del crescente utilizz o delle reti e della dominanza del concetto di Inte rnet, 
+come il cloud computing, Software as a Service (Saa S), gli aggressori stanno scoprendo sempre più la 
+presenza di gravi vulnerabilità nel livello applica tivo del software.  
+Il concetto di sicurezza a livello di applicazione è quindi emerso come una attività essenziale da int egrare 
+nel processo di sviluppo del software. 
+La sicurezza dell'informazione richiede una partico lare attenzione a causa di un gran numero di 
+vulnerabilità individuate nelle applicazioni/sistem i dichiarate come sicure. Sono ben note la compless ità e 
+la difficolta nel realizzare un’applicazione priva di difettosità e/o vulnerabilità, tuttavia, le orga nizzazioni 
+che producono hardware e software non possono asten ersi nel migliorare i propri processi di sviluppo e  
+adattarli agli attuali scenari. Oltre alle numerose  pubblicazioni di ricercatori accademici e industri e del 
+software che evidenziano l’importanza di integrare pratiche di sicurezza nel System Development Life C ycle 
+(SDLC), esiste un paradosso nell’effettiva implemen tazione. La maggior parte dei centri di sviluppo no n 
+attua le raccomandazioni di cui sopra a causa della  resistenza ai nuovi processi e al mancato adeguame nto 
+di mentalità da parte degli attori che operano nell ’ambito del SDLC. E' anche solita una certa resiste nza da 
+parte d’ingegneri e sviluppatori nell’accettare che  il software/hardware da loro realizzato possa esse re 
+soggetto a difetti di sicurezza. Anche i team di sv iluppo oramai comprendono l'importanza di un nuovo 
+paradigma di sicurezza per il SDLC, anche se, purtr oppo, ciò non è sufficiente.  
+Per raggiungere i livelli di sicurezza adeguati, è necessaria una conoscenza approfondita e dettagliat a delle 
+procedure e delle tecniche di sicurezza da adottare : una Security Policy completa è il giusto riferime nto per 
+guidare lo sviluppo della sicurezza e tutti gli att ori coinvolti come gli ingegneri hardware, sviluppa tori, 
+architetti applicativi, ingegneri software, collaud atori e project leader devono considerarla come una  regola 
+imprescindibile.  
+Questa deve stabilire le opportune indicazioni per ciascuna fase di sviluppo: requisiti, 
+progettazione/architettura, implementazione, collau do e manutenzione, e deve definire le responsabilit à 
+per tutti i ruoli coinvolti nel processo di svilupp o. Deve inoltre, stabilire le regole per la definiz ione dei 
+requisiti di fase abilitando i principi di sicurezz a, come la sicurezza delle informazioni, integrità,  privacy, 
+riservatezza, disponibilità delle informazioni, con tinuità, in base all’ambiente e alle minacce pubbli che che 
+possono in qualche modo coinvolgere il sistema.  
+Al fine di dare copertura agli aspetti di sicurezza  è necessario riunire i team di business, di svilup po e di 
+sicurezza per comprendere le principali vulnerabili tà e le conseguenze sul business causate dal rischi o 
+dovuto alla presenza di difetti di sicurezza nella versione finale del prodotto. Poiché il SDLC è un p rocesso di 
+“feed forward” come tale, eventuali errori introdot ti in questa fase, saranno poi diffusi nelle fasi s uccessive. 
+Per questo motivo è importante analizzare i rischi per la sicurezza sin dalle primissime fasi del cicl o di 
+sviluppo del software. 
+L'analisi dei requisiti, rappresenta il primo passo  nell'SDLC. Attraverso questo, vengono identificati  e definiti 
+gli obiettivi delle specifiche di sicurezza, i meto di necessari per implementarle e l'importanza che q ueste 
+ricoprono. I requisiti di sicurezza definiscono i r equisiti funzionali e non funzionali che devono ess ere 
+soddisfatti per ottenere le caratteristiche di sicu rezza di un sistema IT.  Tali requisiti possono ess ere 
+formulati a diversi livelli di astrazione; al più a lto livello, riflettono fondamentalmente solo gli o biettivi di 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 90  a 137  
+ 
+sicurezza. Un esempio di obiettivo di sicurezza pot rebbe essere "Il sistema deve mantenere la riservat ezza 
+di tutti i dati classificati come riservati".  
+I requisiti di sicurezza possono essere distinti in  quattro diverse tipologie: 
+ 
+1.  Requisiti funzionali sicuri : che descrivono i criteri di sicurezza integrati i n ciascun requisito 
+funzionale. Tipicamente indicano anche ciò che non deve accadere. Questi possono ad esempio 
+essere derivati da casi di uso improprio. 
+2.  Requisiti di sicurezza funzionale : definiscono i servizi di sicurezza che devono ess ere implementati 
+nel sistema sottoposto ad analisi. Alcuni esempi so no l'autenticazione, l'autorizzazione, il backup, i l 
+server-clustering, ecc. Questi possono essere deriv ati dalle best-practices di sicurezza, dalle 
+politiche adottate e dalle eventuali norme che il s istema stesso deve rispettare. 
+3.  Requisiti di sicurezza non funzionali : trattasi di requisiti architetturali legati alla sicurezza, come “la 
+robustezza" o "le prestazioni minime e la scalabili tà". Questa specifica tipologia di requisiti è 
+tipicamente derivata dai principi architetturali di  secure-design e dagli standard in tale ambito. 
+4.  Requisiti di sviluppo sicuro : descrivono le attività richieste durante lo svilu ppo del sistema al fine di 
+garantire che il sistema stesso nella sua versione finale sia esente da vulnerabilità. Alcuni esempi 
+possono essere la "classificazione dei dati", le "l inee guida di sviluppo sicuro” o la “metodologia di  
+test”. Tali requisiti sono derivati da framework me todologici basati su best-practices come "CLASP". 
+Tutti i requisiti di sicurezza devono essere identi ficati dall'analista e analizzati dal team di sicur ezza come 
+parte dei requisiti funzionali e quindi aggiunti ne l documento "Specifica dei requisiti di sicurezza",  in una 
+sezione dei requisiti di sistema o dei requisiti so ftware. Di seguito si riportano alcune delle voci c he 
+dovrebbero essere presenti nel documento in questio ne: 
+• Descrizione del prodotto  o sistema e relativo scopo. Definisce il perimetro  del prodotto, in termini 
+generali, sia in modo fisico sia logico. 
+• Ambiente operativo : definizione dei vincoli di sicurezza previsti per  l'ambiente operativo al fine di 
+facilitare l'identificazione e la formulazione dell e premesse sull'uso previsto del prodotto. L'analis ta 
+deve valutare l'uso dell'ambiente in cui opera il p rodotto per verificare se il comportamento 
+dell'utente può in qualche modo compromettere la si curezza del prodotto stesso. A volte sarebbe 
+necessario definire i criteri di protezione del pro dotto e del suo ambiente operativo da adottare. 
+• Funzioni di sicurezza di base : descrizione delle features essenziali per impleme ntare le necessarie 
+politiche di sicurezza organizzativa. 
+• Livello di garanzia della sicurezza : tutti i prodotti devono avere un “Software Securi ty Assurance” e 
+questo, deve necessariamente essere incluso nel doc umento di specifica dei requisiti di sicurezza. 
+• Requisiti normativi : definizione dei requisiti normativi che il prodot to, lì dove applicabile, deve 
+rispettare. 
+ 
+9.1  Definizione dei requisiti di sicurezza 
+I principali obiettivi di sicurezza da definire son o: 
+• Riservatezza e Integrità.  I due più importanti aspetti della sicurezza sono Riservatezza e Integrità. 
+La Riservatezza significa che le risorse possono es sere utilizzate solo dalla parte legittima. L'integ rità 
+dei dati significa che devono essere modificabili s olo dalle persone autorizzate. 
+• Autenticità.  Il terzo requisito di sicurezza principale è l'Aut enticità: Message authenticity  (o data  
+origin authenticity) ed entity authenticity.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 91  a 137  
+ 
+• Non-ripudio. Garantisce che qualsiasi azione sul sistema non pos sa essere in seguito rinnegata. 
+• Flusso Informativo . Il livello di sicurezza può avere regole diverse.  Generalmente si considerano 
+due livelli: alto (altamente sensibile o altamente attendibile) e basso (meno sensibile o meno 
+attendibile). Laddove componenti di sistema conside rati di alto livello interagiscono con parti meno 
+attendibili, si deve garantire che non vi sia alcun o scambio di dati dall’alto verso il basso (vale 
+invece il contrario ossia ci può essere lo scambio di dati dal basso verso l’alto non up-flow ). 
+• Controllo Accessi . Uno dei requisiti di sicurezza principali è il co ntrollo degli accessi, il che significa 
+che solo un utente fidato può avere accesso a un si stema sicuro. Il Role-Based Access Control 
+(RBAC) assicura  un meccanismo di controllo degli accessi per tutela re i beni. I privilegi di accesso 
+alle risorse dipendono dal ruolo che assumono nel t empo gli individui all'interno 
+dell'Organizzazione. Ai ruoli sono associati profil i che definiscono comandi, transazioni e accessi ai  
+dati. L'assegnazione dei ruoli è centralizzata. ABAC  (Attribute Based Access Control) fornisce i diritt i 
+di accesso in base agli attributi dell'utente, dell e risorse a cui si accede e dell'ambiente (contesto  
+operativo, tecnico e persino situazionale in cui si  verifica l'accesso alle informazioni). Gli attribu ti 
+sono insiemi di etichette o proprietà che possono e ssere utilizzati per descrivere tutte le entità che  
+devono essere considerate ai fini dell’autorizzazio ne. Le regole di sicurezza possono essere definite 
+per una qualsiasi combinazione di attributi, offren do la possibilità di creare regole specifiche per 
+particolari risorse. Questa caratteristica rende AB AC particolarmente indicato per essere adottato 
+nei sistemi che richiedono un controllo di accesso granulare come l’Internet of Things.  
+ 
+Le principali azioni di sicurezza da attuare sono:  
+• Definizione degli elementi di sicurezza applicativa , finalizzata alla valutazione dei requisiti 
+relativamente a :  
+o Integrità,  
+o Autenticità,  
+o Riservatezza,  
+o Disponibilità,  
+o Non-ripudio,  
+o Autorizzazione.  
+• Definizione dei requisiti di privacy , attraverso la raccolta strutturata delle seguenti  categorie di 
+informazioni:   
+o Dati personali,  
+o Servizi di terze parti,  
+o Policy. 
+• Risk assessment , finalizzato alla valutazione del rischio (vedi Pa ragrafo6.2). In questa fase viene 
+definito un profilo di rischio per l’applicazione c he include: aree sensibili del software e aree che 
+presentono superfici di attacco suscettibili a dete rminate minacce; aree del codice ad alto rischio 
+che possono essere vulnerabili a diverse minacce. V iene condotta quindi, una fase critica di 
+comprensione, analisi e classificazione dei vari ri schi per l’applicazione. Durante questo processo è 
+utile classificare i vari rischi utilizzando divers i framework di sicurezza quali: OWASP Top 10, SANS 
+CWE Top 25 o OWASP ASVS.   
+o Consolidamento dei Requisiti , review dei requisiti di sicurezza e privacy a seg uito del Risk 
+Assessment; 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 92  a 137  
+ 
+• A completamento di questa fase è necessario produrr e la Reportistica/documentazione completa 
+che sintetizza i risultati per ogni punto precedent e. 
+ 
+ 
+Figura 18 - Input e Output della fase Risk Assessmen t 
+ 
+Si evidenzia che in questa fase devono essere tenut i in considerazione anche gli aspetti di integrazio ne e di 
+interfaccia con eventuali altri moduli dell’ecosist ema software. Inoltre vanno considerati i requisiti  di 
+sicurezza applicativa di carattere generale: Perfor mance, Password nel codice sorgente, Privilegi esec utivi 
+minimi, Fattore di integrità, Input data validation , Gestione dell’output, etc. (per ulteriori dettagl i si rinvia al 
+al paragrafo 4.1  “Progettazione e sviluppo dell’Ap plicazione: direttive standard” del documento Allegato 2 
+- Linee Guida per lo sviluppo sicuro di codice ). Tali requisiti di sicurezza applicativa devono e ssere mutuati 
+in questa fase sulla base dei requisiti, funzionali  e non funzionali, individuati.  
+ 
+9.1.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.3.2 è stato presentato lo stato del l’arte dei tool a supporto di questa fase. Di segui to viene 
+fornito un esempio di approccio metodologico per la  valutazione dei tool. 
+La baseline comparativa è costituita da 8 parametri  (Software Security Requirements). I tool vengono 
+analizzati sulla base di questi parametri. Il risul tato è illustrato nella tabella che segue: 
+ 
+Tools Fair 
+Exchange Non- 
+repudiation Rbac Secrecy &  
+Integrity Authenticity Secure 
+Informat. 
+Flow Guarded 
+Access Freshness 
+RequisitePro √ X X X X X X √ 
+CaseComplete √ X X X X X X √ 
+Analyst Pro √ X √ X √ X X X 
+DOORS √ X √ X √ X √ √ 
+Objectiver X X X X X X X √ 
+RDT X X X X X X X √ 
+RDD-100 √ X X X X X X √ 
+RTM X X √ √ √ X √ √ 
+Reqtify √ X X X X X X √ 
+TcSE X √ √ √ √ √ √ √ 
+Atlas X √ √ √ √ √ √ √ 
+Visure RMT X X √ X X X X X 
+ 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 93  a 137  
+ 
+9.2  Progettazione di applicazioni sicure 
+Le azioni di sicurezza di questa fase possono esser e così sintetizzate :  
+• Analisi e modellazione delle minacce , attraverso l’identificazione dei componenti appli cativi coinvolti, 
+delle interfacce e degli agenti che potrebbero mina cciare il sistema;  
+• Analisi della superficie d’attacco e della finestra  di opportunità,  allo scopo di individuare le parti del 
+sistema che possono essere esposte ad attacchi e pe rtanto lo rendono vulnerabile;   
+• Piano di mitigation, attraverso l’identificazione delle contromisure da adottare in questa fase al fine di 
+mitigare le potenziali minacce individuate (utilizz ando anche tool automatici e semiautomatici);  
+• Secure Design Refactoring , revisione progettuale che attua le contromisure i ndividuate; produzione di 
+un High Level Design conforme ai principi del Secur e by Design;  
+• Questa fase produce come output finale la Reportist ica/documentazione completa che sintetizza i 
+risultati per ogni punto precedente (Specifiche Sof tware comprensive delle contromisure). 
+Questa fase è inoltre responsabile della revisione dei requisiti di sicurezza individuate nella fase p recedente 
+di definizione dei requisiti di sicurezza (paragraf o 9.1).  
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo di Progettazione  di 
+software sicuro: 
+ 
+ 
+Figura 19 - Input e Output della fase Threat Modelin g Attack Surface Analysis 
+Le linee guida di progettazione sicura sono oggetto  del documento Allegato 4 -  Linee Guida per la 
+modellazione delle minacce ed individuazione delle azioni di mitigazione conformi ai principi del 
+Secure/Privacy by Design . Si rinvia a quest’ultimo per ulteriori dettagli d ella metodologia da adottare. 
+ 
+9.2.1  Identificazione degli strumenti a supporto 
+Dopo aver identificato e documentato le esigenze di  sicurezza, viene eseguita la modellazione delle 
+minacce col fine di riconoscere e assegnare delle p riorità a queste ed individuare le opportune 
+contromisure per la loro mitigazione. A differenza delle tecniche di verifica, come ad esempio il pene tration 
+testing, il modello di minacce ottenuto attraverso la relativa modellazione, deve essere eseguito prim a che 
+un prodotto o un servizio venga implementato. Quest o contribuisce a realizzare un prodotto finale più 
+sicuro indirizzando problematiche di sicurezza ad u n early-stage del ciclo di sviluppo. Il processo pe r la 
+costruzione di un modello di minacce consiste dei s eguenti step: 
+• Disegno dell'architettura del sistema; 
+• Individuazione dei confini di fiducia; 
+• Identificazione delle minacce; 
+• Individuazione delle contromisure da attuare per mi tigare le minacce; 
+• Eventuale riprogettazione dei componenti per mitiga re le minacce; 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 94  a 137  
+ 
+• Convalida del modello architetturale; 
+• Verifica dell’esistenza di una contromisura per ogn i potenziale minaccia identificata. 
+ 
+I tool a supporto di questa fase sono stati identif icati nel paragrafo 6.4.2.  
+ 
+9.3  Implementazione di applicazioni sicure 
+Le azioni di sicurezza che devono essere intraprese  in questa fase possono essere così sintetizzate:  
+• Data Validation:  verificare la presenza di vulnerabilità che posson o riguardare eventuali dati 
+corrotti in ingresso e che possono portare a un com portamento anomalo dell’applicazione; 
+• Control Flow : verificare i rischi collegati all’assenza di spec ifiche sequenze di operazioni che, se non 
+eseguite nel corretto ordine, possono portare a vio lazioni sulla memoria o sull’uso scorretto di 
+determinati componenti; 
+• Analisi Semantica : rilevare eventuali problematiche legate all’uso p ericoloso di determinate 
+funzioni o API (es. funzioni deprecate); 
+• Controllo Configurazioni : verificare i parametri intrinseci di configurazio ne dell’applicazione; 
+• Buffer Validation : verificare la presenza di buffer overflow sfrutta bile attraverso la scrittura o la 
+lettura di un numero di dati superiore alla reale c apacità del buffer stesso. 
+ 
+L’esame del codice sorgente applicativo deve portar e alla produzione, mediante la Static Analysis, del le 
+seguenti tipologie di documenti: 
+• Report delle Vulnerabilità riscontrate : report di dettaglio delle vulnerabilità riscontra te nella fase 
+di analisi statica del codice tramite gli strumenti  a supporto; 
+• Remediation Plan : report che analizza i falsi positivi ed indirizza  la risoluzione delle problematiche 
+riscontrate nell’analisi stessa. 
+ 
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo SAST: 
+ 
+ 
+ 
+Figura 20 - Input e Output della fase Static Analysi s 
+ 
+9.3.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.5.1 sono stati presentati i tool a supporto di questa fase. Si riporta di seguito un e stratto: 
+• closed source 
+o IBM App Scan (versione SAST), 
+o Checkmarx, 
+o CodeDx, 
+o HP fortify. 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 95  a 137  
+ 
+• open source 
+o SonarQube, 
+o FxCop (.NET), 
+o BRAKEMAN (Ruby on Rails), 
+o PMD (Java, XML e XSL), 
+o PYLINT (Python), 
+o CppCheck  (C/C++), 
+o FindBugs (Java), 
+o JSHint (Javascript), 
+o OWASP Dependency-Check (Java,.NET, Ruby, Node.js, P ython, supporto limitato per 
+C/C++). 
+L’utilizzo combinato dei tool sopra indicati consen te una copertura ad ampio spettro semplificando 
+significativamente la revisione manuale che richied erebbe molto tempo.  
+In Appendice 2 è fornito un approccio metodologico per la valutazione dei tool. L’approccio è basato s u una 
+‘Scheda valutazione’ che identifica la baseline per  l’analisi. I parametri di valutazione includono, a d 
+esempio:  
+• Linguaggi di programmazione supportati (C/C++, java , JPS, ..); 
+• Standard supportati (OWASP, Top 10, SANS 25, ..); 
+• Le vulnerabilità riconosciute (Sql injection, Cross -site scripting, ..); 
+• L’incidenza dei falsi positivi; 
+• La capacità di analizzare le dipendenze da librerie  esterne; 
+• Il supporto alla reportistica, 
+• Altro. 
+ 
+Ogni elemento viene valutato assegnando uno score ( da 0 a 10) adeguatamente motivato. La metodologia 
+è stata applicata, a titolo di esempio, su tre tool  (i risultati sono indicativi con finalità di linee  guida): 
+ 
+Tools Categoria Fase Report 
+Checkmarx  SAST Implementation / Verification Vedi Appendice 2.a 
+CodeDx SAST/DAST  Implementation/Verification Vedi Appendice 2.b 
+SonarQube/SonarLint  SAST Implementation Vedi Appendice 2.c 
+ 
+1)  Checkmarx , è un tool per l’analisi statica del codice, posiz ionato da Gartner nel quadrante 
+Challengers nell’ambito dell’Application Security T esting (AST). Supporta numerosi linguaggi (vedi 
+scheda nella tabella di cui sopra). Può essere inte grato a vari livelli nell’ambito della fase di 
+Implementation: IDE, build server, bug tracking too ls.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 96  a 137  
+ 
+ 
+Figura 21 -  Report di Checkmarx 
+ 
+2)  CodeDx consente di effettuare la verifica di eventuali vul nerabilità di programmi e software presi in 
+considerazione. CodeDx riunisce una serie di strume nti di analisi del codice (Checkmarx, IBM  App 
+Scan , Veracode ), sia gratuiti sia commerciali, che consentono a l oro volta di individuare e 
+correggere agevolmente eventuali bug nel codice da analizzare. Uno screenshot dell’interfaccia 
+CodeDx è riportata nella figura che segue: 
+ 
+Figura 22 -  Interfaccia CodeDx 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 97  a 137  
+ 
+ 
+ 
+Figura 23 - Info Security Product Guide 2016 : Recension e CodeDX 
+3)  SonarQube , consente di introdurre il controllo formale fin d all'inizio del ciclo di vita del software, 
+attraverso l’introduzione di Quality Gate nelle fas i tipiche di passaggio tra lo sviluppo e la verific a e 
+tra la verifica e la produzione. 
+ 
+ 
+Figura 24 - SonarQube 
+ 
+9.4  Verifica della sicurezza delle applicazioni 
+Le azioni di sicurezza da intraprendere in questa f ase sono così sintetizzate:  
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 98  a 137  
+ 
+• Analisi dinamica : attraverso l’attuazione di test dinamici di sicur ezza sull’applicazione in esecuzione 
+in ambiente controllato; 
+• Penetration Test : attraverso l’esecuzione di scansioni ed analisi d ella superficie di attacco; 
+• Test di autenticazione multilivello : attraverso la verifica delle modalità di gestione  dell'accesso 
+degli utenti; 
+• Business Logic test : attraverso l’esecuzione di test manuali sulle app licazioni in fase di esecuzione; 
+• Analisi dei risultati : attraverso l’individuazione e la rimozione dei fa lsi positivi; 
+• Remediation Plan : attraverso la definizione del piano di rientro e la produzione di reportistica di 
+sintesi e di dettaglio; Proof of Concept delle vuln erabilità riscontrate comprensiva di azioni per la 
+riduzione della superficie d’attacco. 
+L’esame delle Applicazioni in esecuzione in ambient e di test, deve portare alla produzione, mediante l a 
+Dinamic Analysis delle seguenti tipologie di docume nti: 
+• Vulnerability Assessment : report di dettaglio delle vulnerabilità riscontra te nella fase di analisi 
+dinamica dell’applicazione tramite gli strumenti a supporto; 
+• Remediation Plan:  report che analizza i falsi positivi ed indirizza la risoluzione delle problematiche 
+riscontrate nell’analisi stessa. 
+ 
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo DAST: 
+ 
+ 
+Figura 25 - Input e Output della fase Dynamic Analys is 
+ 
+9.4.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.6.1 sono stati presentati i tool a supporto di questa fase. Si riporta di seguito un e stratto: 
+• closed source 
+o IBM App Scan (versione DAST), 
+o Veracode, 
+o CodeDx. 
+• open source 
+o OWASP Zed Attack Proxy. 
+ 
+9.5  Supporto per la manutenzione di applicazioni sicure  
+L’obiettivo di questa fase è mantenere un prodotto sicuro, a partire dai nuovi trend sugli attacchi/mi nacce. 
+Il team deve quindi analizzare le nuove minacce e i ndividuare le contromisure necessarie rilasciando n uovi 
+aggiornamenti/patch laddove necessario attraverso u n processo di ‘Continuous Security’: 
+ 
+
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 99  a 137  
+ 
+ 
+ 
+Figura 26 - Continuous Security 
+Qualsiasi modifica a un sistema ha il potenziale pe r ridurre l'efficacia dei controlli esistenti o per  avere in 
+qualche modo un impatto sulla riservatezza, sulla d isponibilità o sull'integrità dello stesso. La solu zione è 
+garantire che nella valutazione delle modifiche del  sistema sia inclusa una fase di valutazione del ri schio 
+(paragrafo 6.2). Sfortunatamente, non solo i sistem i, ma anche le minacce possono cambiare. Quando 
+vengono identificate nuove minacce, potrebbero esse re necessari nuovi controlli per portare il rischio  a un 
+livello accettabile. Questo è il motivo per cui le valutazioni periodiche del rischio sono importanti,  anche 
+quando un sistema cambia raramente. La valutazione del rischio può fornire un ulteriore vantaggio in p er 
+migliorare l'efficacia di politiche, procedure e fo rmazione. 
+9.5.1  Identificazione degli strumenti a supporto 
+In ottica di un processo di ‘Continuous Security’, in questa fase vengono attuate di nuovo le azioni a fferenti 
+alle diverse fasi di: Revisione dei requisiti di si curezza, revisione dei risultati di progettazione, revisione degli 
+aspetti di sicurezza del codice sorgente implementa to, penetration test del codice rilasciato.  
+Gli strumenti per le fasi sopra menzionati sono sta ti già identificati e indicati nei precedenti parag rafi: 
+• Definizione dei requisiti di sicurezza [Par. 9.1.1] ; 
+• Progettazione di applicazioni sicure [Par. 9.2.1]; 
+• Implementazione di applicazioni sicure [Par. 9.3.1] ; 
+• Verifica della sicurezza delle applicazioni [Par. 9 .4.1]. 
+ 
+  
+
