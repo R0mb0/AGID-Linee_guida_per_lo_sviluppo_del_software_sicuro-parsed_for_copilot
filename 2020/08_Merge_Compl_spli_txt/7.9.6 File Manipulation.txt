@@ -1,0 +1,57 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 128  a 156  
+ 
+• Nel caso fosse necessario utilizzare dati utente no n attendibili per selezionare la libreria da carica re, 
+verificare che l'input corrisponda a un insieme pre definito di nomi rigidamente indicati in una 
+"white list" o comunque selezionare esclusivamente da elenchi di nomi controllati relativamente a 
+possibili librerie software. 
+ 
+Esempio  
+Forma non corretta (con lettura dinamica di una lib reria indicate in modo arbitrario da un utente): 
+var  qs = require ('querystring' ); 
+var  server = http.createServer( function  (request, response) { 
+ var  libName = qs.parse(request.url).libName;  
+ if  (typeof  libName != "undefined" ) { 
+  var  dynamicLib = require (libName);  
+  } 
+} 
+Forma corretta tramite “white list”: 
+var  qs = require ('querystring' ); 
+var  server = http.createServer( function  (request, response) { 
+ var  libName = qs.parse(request.url).libName;  
+ var  dynamicLib;  
+ if  (typeof  libName != "undefined" ) { 
+  if  (libName == 'user' )  
+     dynamicLib = require ('userLib' );  
+    else  if  (libName == 'special' ) 
+      dynamicLib = require ('specialUserLib' );  
+    else   
+      dynamicLib = require ('anonymousLib' ); 
+  } 
+} 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/98.html,  
+CWE-98: Improper Control of Filename for Include/Re quire Statement in PHP Program ('PHP Remote File 
+Inclusion'). 
+7.9.6  File Manipulation 
+Come riconoscerla 
+Se un malintenzionato può influire su file arbitrar i di propria scelta ed è in grado di sovrascrivere o 
+corrompere file di sistema, Potrebbe agevolmente ca usare un DoS (denial of service). Se il malintenzio nato 
+in questione ha la possibilità di modificare il con tenuto di detti file, il pericolo che venga eseguit o del codice 
+dannoso è molto concreta. 
+Questa vulnerabilità (indicata con il nome esteso d i “Files or Directories Accessible to External Part ies”) ha 
+come conseguenza la possibilità che file o director y siano accessibili ad utenti esterni malintenziona ti. 
+È una variante della vulnerabilità indicata come Fi le Disclosure con possibile manipolazione di file d i sistema 
+esistenti sul server attaccato.  
+Come difendersi 
+Prendere in considerazione l'utilizzo di una soluzi one statica per i file a cui è consentita la scritt ura. Ad 
+esempio un elenco di file scrivibili verificati o u na diversa soluzione di archiviazione dei file, com e un 
+database. Se assolutamente necessario, limitare la scrittura della destinazione in una singola cartell a 
+disinfettando correttamente gli input forniti dall' utente per il nome di file e cartelle. Considerare di 
+integrare questo con un segno di spunta per garanti re l'esistenza o meno di un file, in base ai requis iti 
+aziendali del codice dell'applicazione. 
+ 
+Esempio: 
+Codice vulnerabile: 
+if (isset($_GET['lognamè]) && isset($_GET['action'] )) { 

@@ -1,0 +1,34 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 9 a 137  
+ 
+Codice Titolo 
+IFSQ Institute for Software Quality  
+IDS Intrusion Detection System  
+IFSQ Institute for Software Quality  
+ISA International Society of Automation  
+I&O IT Infrastructure & Operations  
+MISRA Motor Industry Software Reliability Association  
+MSAT Microsoft Security Assessment Tool  
+NESSI Networked European Software and Services Initiative  
+OWASP Open Web Application Security Project  
+PII Personal Identification Information  
+RASP Runtime application security testing  
+RTI  Raggruppamento Temporaneo di Impresa  
+SAFE CODE Software Assurance Forum for Excellence in Code  
+SAMATE Software Assurance Metrics and Tool Evaluation  
+SAMML Software Assurance Maturity Model  
+SANSI SANS Software Security Institute  
+SAST Static Application Security Testing  
+SCA Software composition analysis  
+SDLC Software Development Life Cycle  
+SSA Software Security A ssessment  
+SSE Secure Software Engineering  
+SSDLC Secure Software Development Life Cycle  
+S&R Security & Risk  
+SW Software  
+WASC Web Application Security Consortium  
+Tabella 3 - Acronimi  
+ 

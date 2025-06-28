@@ -1,0 +1,59 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 144  a 156  
+ 
+Esempio: 
+Qui viene aperto un socket con i dati (non validati ) dell’utente: 
+ 
+var unsafe_socket; 
+function createSocketToServer_Unsafe() {  
+ var params = new URLSearchParams(document.location .search); 
+ var wsurl = params.get("ws_url");  
+ 
+  unsafe_socket = new WebSocket(wsurl); 
+ unsafe_socket.onopen = function(){ 
+   sendMessage(unsafe_socket); 
+ } 
+ unsafe_socket.onmessage = function(msg){ 
+   receiveMessage(unsafe_socket); 
+ } 
+} 
+ 
+Qui di seguito, invece, la versione sicura: 
+var safe_socket_hc; 
+function createSocketToServer_SafeHardcoded() {  
+  safe_socket_hc = new WebSocket(SERVER_WS_URL); 
+ safe_socket_hc.onopen = function(){ 
+   sendMessage(safe_socket_hc); 
+ } 
+ safe_socket_hc.onmessage = function(msg){ 
+   receiveMessage(safe_socket_hc); 
+ } 
+} 
+ 
+Maggiori informazioni: http://cwe.mitre.org/data/de finitions/99.html 
+ 
+7.11.6   Client Second Order Sql Injection 
+Come riconoscerla 
+L'applicazione comunica con il suo database inviand o una query SQL testuale. L'applicazione crea la qu ery 
+semplicemente concatenando le stringhe con dati ott enuti dal database. Poiché tali dati potrebbero ess ere 
+stati precedentemente ottenuti dall'input dell'uten te e non sono stati verificati né tanto meno bonifi cati, 
+potrebbero contenere comandi SQL, che potrebbero es sere interpretati come tali dal database. 
+In questo modo, un malintenzionato può accedere dir ettamente a tutti i dati del sistema. L'aggressore 
+sarebbe in grado di rubare qualsiasi informazione s ensibile memorizzata dal sistema (come i dettagli 
+personali dell'utente o le carte di credito) e poss ibilmente modificare o cancellare i dati esistenti.  
+Come difendersi 
+Procedere con la validazione dei dati, prima di sal varli nel database. 
+Effettuare sempre la validazione dell’input, prima di utilizzarlo all’interno dell’applicazione. Occor re 
+controllare il tipo del dato, la sua dimensione, l' intervallo di validità (range), il formato ed event uali valori 
+attesi (white list). 
+Occorre verificare sempre l’input, fissando control li rigidi che impediscano di immettere caratteri e tipi di 
+dati potenzialmente dannosi. L’optimum è designare una white list di valori ammessi e scartare tutto c iò 
+che non vi rientra.  
+Codificare completamente tutti i dati dinamici prim a di incorporarli nella pagina web (encoding). La c odifica 
+dovrebbe essere sensibile al contesto, in base al t ipo di dato che si vuole neutralizzare: se ci si as petta che 
+possa esserci codice HTML abusivo, occorre codifica re gli eventuali tag HTML, se ci si potrebbe trovar e di 
+fronte a uno script, allora bisogna codificare gli elementi sintattici di Javascript, ecc. 
+Invece di concatenare le stringhe:  
+• Utilizzare componenti di database sicuri come le st ored procedure, query parametrizzate e le 
+associazioni degli oggetti (per comandi e parametri ).  

@@ -1,0 +1,33 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 47  a 137  
+ 
+Ridurre al minimo l'impatto dei rischi sull'organiz zazione e fornire solide basi nel processo decision ale 
+sono i motivi fondamentali per cui le organizzazion i sono chiamate a implementare un processo di 
+gestione dei rischi per i loro sistemi IT.  
+Il Risk Assessment è uno strumento di analisi, semp lice e accurato, che studia i rischi dell’organizza zione 
+(operativi, strategici, finanziari ed esterni) al f ine d’individuare successivamente le soluzioni e le  misure più 
+adeguate. I passi fondamentali del Risk Assessment possono riassumersi come segue: 
+• Identificazione dei rischi. Devono essere individua ti i fattori di pericolo per l’organizzazione, 
+evidenziando chi o cosa può essere danneggiato e in  quale modo. Per ogni fattore di pericolo 
+identificato, bisogna definire ciò che è esposto ma ggiormente al pericolo. 
+• Valutazione dei rischi e definizione delle le azion i di mitigazione. E’ necessario valutare le azioni e le 
+tecniche per ridurre il pericolo e portarlo a livel li accettabili. 
+• Annotazione dei risultati e attuazione del piano di  mitigazione del rischio. La valutazione 
+precedentemente effettuata va trasformata in un pia no operativo, per ottenere una gestione 
+consapevole dei rischi dell’organizzazione. 
+• Revisione periodica della valutazione e aggiornamen ti. E’ necessario rivedere periodicamente ciò 
+che si sta facendo. Viene identificato il profilo d i rischio e viene proposto un modello di gestione 
+integrato dei pericoli, che evidenzia i singoli fat tori di rischio. In seguito vengono valutate le var ie 
+misure preventive, agevolando la protezione del val ore dell’ente. 
+ 
+Si riporta di seguito uno schema per il Risk Assessment : 
+ 
+ 
+Figura 10 - Esempio di Schema di Risk Assessment 
+ 
+La gestione dei rischi per essere effettivamente ef ficace, deve essere totalmente integrata nell'SDLC:  
+ 
+

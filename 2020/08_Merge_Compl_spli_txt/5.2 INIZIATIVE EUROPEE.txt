@@ -1,0 +1,48 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 30  a 137  
+ 
+ifSQ ha analizzato, quantificato e migliorato lo st ato dell’arte della ricerca sulla qualità del softw are, e ha 
+definito un set di indicatori (Defect Indicators) c he sono stati raccolti in un insieme coordinato di tre 
+standard, pubblicati sul sito, in forma di opuscolo  e sotto forma di corsi e workshop. La maggior part e dei 
+criteri di valutazione, in particolare "major strin g", "parametri non controllati" e " unexpected stat e not 
+trapped", sono rilevanti per migliorare la sicurezz a del software. 
+Risultati più rilevanti: 
+Resources  Software Quality Standards - Levels 1  (An Entry -Level Standard for Computer 
+Program Source Code), 2 (A Foundation-Level Standar d for Computer Program 
+Source Code) and 3 (Industry Best Practice for Comp uter Program Source Code 
+- is not yet complete ) are available. 
+ 
+5.2  Iniziative europee 
+Questo paragrafo ha l’obiettivo di fornire una vist a delle iniziative in ambito Europeo. Le iniziative  di seguito 
+presentate sono state classificate sulla base dell’ ambito geografico e della tipologia di appartenenza  
+(accademiche, governative, industria).  
+Analizzando ambiti, obiettivi e risultati di ognuna , emerge che: 
+• Un insieme di iniziative rappresentano per obiettiv i e risultati una categoria isolata. Tra queste 
+iniziative, definiamole ‘non raggruppabili’, ci son o: NESSI, OWASP Local Chapters, MISRA e Serenity 
+Forum. 
+• Altre iniziative posso essere ‘raggruppate’ sulla b ase di alcuni elementi che li caratterizzano e li 
+accomunano: Events and Periodicals, Certifications,  Academic Education. Queste iniziative 
+potrebbero essere classificate con più tag sulla ba se dei loro risultati rilevanti o attesi in SSE: 
+standardisation, industry platform, vulnerability d etection, vulnerability protection, information 
+sharing, specialised workshop, certification and tr aining. 
+ 
+5.2.1  Networked European Software and Services Initiative  (NESSI) 
+NESSI è la piattaforma tecnologica europea dedicata  al Software e ai Servizi. L'obiettivo principale d i NESSI 
+si indirizza sul potenziamento dei servizi Internet  attraverso attività di ricerca, standard e policy,  e 
+contributi costruiti attraverso una community indus tria/università. 
+I partecipanti NESSI sono divisi in tre gruppi: 
+• partner NESSI: prevalentemente industriale, ma ci s ono anche alcuni profili accademici -  
+coordinano la piattaforma e forniscono il sostegno finanziario per le attività NESSI; 
+• I membri NESSI: industria, mondo accademico e gli u tenti - rappresentano i principali stakeholders 
+del dominio della fornitura di servizi ICT.  Non è obbligatorio un contributo finanziario 
+• abbonati NESSI: usano diversi canali di informazion e per tenersi aggiornati sulle attività di NESSI. 
+ 
+URL  http://www.nessi -europe.com  
+Country of HQ location  
+Geographic Scope  Belgium  
+Europe 
+Type  Industry  
+ 

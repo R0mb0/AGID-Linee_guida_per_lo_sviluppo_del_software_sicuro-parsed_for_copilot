@@ -1,0 +1,82 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 136  a 141  
+ 
+6 RIFERIMENTI A ISTRUZIONI OPERATIVE E TOOLS DI HARDE NING 
+6.1  Istruzioni operative (benchmarks) di terze parti 
+Si riporta nel seguito l’elenco completo dei riferi menti alle istruzioni operative di hardening (o ben chmarks) 
+delle varie componenti (sistemi operativi, middlewa re, office automation, ecc.) che sono state oggetto  di 
+analisi nei capitoli precedenti. 
+Fonte Categoria Famiglia Target Titolo 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Ubuntu Securing Ubuntu Linux - An objective, consensus-driven security 
+guideline for the Ubuntu Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/ubuntu_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux CentOS Securing CentOS Linux - An objective, consensus-driven security 
+guideline for the CentOS Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/centos_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Red Hat Securing Red Hat Linux - An objective , consensus-driven security 
+guideline for the Red Hat Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/red_hat_linux/  
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Debian Securing Debian Linux - An objective, consensus-driven security 
+guideline for the Debian Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/debian_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux Oracle 
+Linux Securing Oracle Linux - An objective, consensus-dri ven security 
+guideline for the Oracle Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/oracle_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Linux SUSE Securing SUSE Linux - An objective, cons ensus-driven security 
+guideline for the SUSE Linux Operating Systems. 
+https://www.cisecurity.org/benchmark/suse_linux/ 
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX AIX 7.1 CIS IBM AIX 7.1 Benchmark 
+https://www.cisecurity.org/benchmark/ibm_aix 
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+11.1 CIS Oracle Solaris 11.1 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+11 CIS Oracle Solaris 11 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi UNIX Solaris 
+10 CIS Oracle Solaris 10 Benchmark 
+https://www.cisecurity.org/benchmark/oracle_solaris  
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+10 CIS Benchmarks for CIS Microsoft Windows 10 Enterpris e: Securing 
+Microsoft Windows Desktop - An objective, consensus -driven security 
+guideline for the Microsoft Windows Desktop Operati ng Systems - For 
+Microsoft Windows Desktop 10 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+8.1 CIS Microsoft Windows 8.1 Workstation Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 
+CIS 
+Benchmarks Sistemi 
+Operativi Windows 
+Desktop Windows 
+8 CIS Microsoft Windows 8 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_wind ows_desktop/ 

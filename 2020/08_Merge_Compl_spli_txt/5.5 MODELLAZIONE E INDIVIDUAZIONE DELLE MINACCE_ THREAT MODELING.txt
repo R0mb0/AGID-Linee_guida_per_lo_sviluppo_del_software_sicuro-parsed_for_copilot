@@ -1,0 +1,50 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 34 a 132 
+ 
+minacce. È possibile aggiun gere al  modell o delle minacce gli opport uni controlli di 
+mitigazione al fine di  guidare i l progettist a nella gestione di particolari minacce.  A 
+livello di  organizzazione, definire quali azioni devono essere innesca te durante la 
+fase di modellazione . Ad esempio, un cambiamento di architettura o la distribuzione 
+di un'applicazione in un nuovo ambiente. Allo stesso tempo , riflettere su come 
+attuare e supportare in modo scalabile  il processo di  modellazione delle minacce in 
+tutta l'organizzazione.  Notificare i risultati  dell’attività  di modellazion e delle minacce 
+al processo di gestione dei difetti  del software  per dare seguito ad un adeguato 
+follow -up. Adottare un sistema di valutazione  per misurare e confrontare la rilevanza  
+delle diverse minacce  riscontrate .  Considerare l'utilizzo di uno strumen to per la 
+gestione de i modelli di minacce  delle distinte  applicazioni. Istruire  gli addetti ai lavori  
+a concentrarsi sulle minacce maggiormente significative , poiché una de i principali 
+problemi nella modellazione delle minacce è quello di individuare un numero elevato  
+di minacce poco significative . Gli strumenti offrono un notevole  supporto nell’  
+identificare le potenziali minacce ma, alla fine, la modellazione delle minacce 
+richiede un'intellige nza umana che difficilmente può essere automatizzata.  
+• Livello di m aturità 3  
+o Benefici : aggiornamento tempestivo e gestione qualitativa dell e minacc e applicative  
+o Attività : nell’ambito di un processo  matur o di modellazione delle minacce, 
+revisionare  regolarme nte (ad esempio, annualmente) i modelli di minacce esistenti 
+al fine di verificare un eventuale presenza di nuov e minacc e rilevant i per le 
+applicazioni  analizzate .  Utilizzare un processo di analisi automatizzat o per valutare 
+la qualità e individuare event uali difettosità  nei modelli delle minacce.   Revisionare  
+le categorie di minacce maggiormente rilevanti per l ’organizzazione. Quando si 
+identificano nuove categorie di minacce, informare  tempestivamente 
+l'organizzazione al fine di  garantir ne una appropriat a gestione.  
+5.5 Modellazione e Individuazione delle minacce : Threat Mode ling  
+I processi  di sviluppo sicuro del software, analizzati nel capitolo precedente, prevedono la 
+modellazione delle minacce e suggeriscono l'inclusione del l’attività di Threat modeling  nella 
+metodologia, al fine di migliorare la pratica d i identificazione delle vulnerabilità in materia di 
+sicurezza del Software.  
+La tecnica di modellazione e individuazione delle minacce si rivolge alle seguenti figure 
+professionali:  
+• Progettisti  e Architetti del software ; 
+• Threat Modeling SME  o Security Assessors, responsabili dell'analisi della sicurezza di tutti i 
+componenti dell'intera applicazione.  
+Le informazioni adoperate per stabilire i requisiti di sicurezza  necessari devono includere i principi 
+di progettazione sicura , descritti a seguire, e valutati da un programma prestabilito di gestione delle 
+vulnerabilità, che può anche richiedere l'intervento di terze  parti interessate, come un team di 
+conformità (ad esempio, se l'appli cazione deve essere conforme a standard quali HIPAA, PCI, 
+GDPR, ecc.) o un team di gestione e distribuzione, in quanto dove e come viene utilizzata 
+l'applicazione può incidere sulle reali esigenze di sicurezza.  Pertanto, p rima di iniziare il processo di 
+modellazione delle minacce, è importante identificare gli obiettivi di business delle applicazioni e 
+identificare i requisiti di sicurezza e conformità. Ciò è molto  importante da definire in anticipo al 

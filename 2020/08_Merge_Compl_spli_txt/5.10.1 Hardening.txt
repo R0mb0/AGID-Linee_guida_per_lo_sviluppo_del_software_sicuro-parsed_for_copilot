@@ -1,0 +1,50 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 131  a 141  
+ 
+detentore della password la smarrisca o lasci l'org anizzazione . 
+- Contro: occorre affidarsi a un soggetto fidato.  
+References  - Rimuovere o reimpostare le password dei file in Off ice , 
+https://docs.microsoft.com/it-it/previous-versions/ office/office-2013-resource-
+kit/jj923033(v=office.15)?redirectedfrom=MSDN  
+ 
+5.9.4  Procedure 
+A i principi generali già introdotti nel paragrafo [rif. 5.1.7], si aggiungono le seguenti indicazioni  per il 
+contesto specifico: 
+Patching  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+Contromisure  Per quanto concerne il Patching, il Microsoft Secur ity Response Center rilascia 
+mensilmente dei bollettini sulla sicurezza che desc rivono gli aggiornamenti di sicurezza 
+pubblicati nel mese corrente. Essi risolvono le vul nerabilità legate alla sicurezza del 
+software Microsoft, i relativi rimedi e forniscono i collegamenti agli aggiornamenti 
+applicabili per il software interessato.   
+References  - Security Bulletins , https://docs. microsoft.com/en -us/security -
+updates/securitybulletins/securitybulletins 
+ 
+Procedura  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Visto che:  
+A partire da Office 2013 si distinguono 2 tipi di d ocumenti: “normal” e “macro-
+enabled”: 
+- Normal (default): .doc x, .xls x e .ppt x 
+- Macro-enabled: .doc m, .xls m, .ppt m 
+I documenti “normal” (‘ x’) non hanno macro abilitate, mentre i documenti “m acro-
+enabled” hanno le macro abilitate 
+La regola più sicura è che si dovrebbe usare sempre  documenti di tipo “normal” (‘ x’ 
+finale), evitando di aprire quelli contenenti macro . 
+ 
+5.9.5  References and additional information 
+I riferimenti sono già stati riportati all’interno delle singole best practices. 
+ 
+5.10  Sicurezza del pacchetto OpenOffice 
+5.10.1  Hardening 
+Hardening della suite Open Office  
+Minaccia  - Accesso non autorizzato alle informazioni . 

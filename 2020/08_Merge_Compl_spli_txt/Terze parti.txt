@@ -1,0 +1,54 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 25  a 141  
+ 
+Terze parti 
+Identificazione dei requisiti di sicurezza per l'ac cesso di fornitori/clienti ad informazioni o beni a ziendali  
+Minaccia  Violazione della sicurezza, rispetto alle politiche di sicurezza dell’organizza zione , ad 
+opera di soggetti esterni. 
+Contromisure  Devono essere considerati e identificati tutti i re quisiti di sicurezza prima di concedere 
+ai partners, fornitori/clienti, anche in fase di tr attativa, l'accesso a informazioni o beni 
+dell'organizzazione ospitati nel sistema/piattaform a. Effettuare un'analisi dei rischi per 
+valutare l'impatto sul business aziendale (a livell o economico, d'immagine, di 
+continuità operativa, eccetera) nel caso di violazi oni della sicurezza, divulgazione non 
+autorizzata (es. a concorrenti), illecito trattamen to delle informazioni, effettuati da tali 
+soggetti che accedono ad informazioni. 
+ 
+Identificazione dei requisiti di sicurezza negli ac cordi con i fornitori/clienti  
+Minaccia  Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione , 
+ad opera di soggetti esterni. 
+Contromisure  Gli accordi con terze parti che prevedono accesso, elaborazione, comunicazione, 
+aggiunte o, in generale, gestione delle informazion i ospitate nel 
+sistema/piattaforma dell'organizzazione, devono con siderare tutti i requisiti di 
+sicurezza pertinenti.  
+Prevedere, in particolare, misure preventive per ev itare violazioni o illeciti delle 
+terze parti nella gestione delle informazioni.  
+Definire con precisione le attività, le modalità, l e responsabilità e la periodicità, per 
+l'esercizio di diritti di audit o comunque di verif iche sull’attività dei fornitori/clienti.  
+Gli accessi logici privilegiati da parte di soggett i esterni devono essere subordinati 
+alla nomina di tali soggetti ad amministratori di s istema, e tale nomina deve essere 
+a sua volta legata ad uno specifico contratto con l a ditta di appartenenza 
+comprendente accordi di riservatezza e regole per i l corretto uso delle risorse 
+informatiche vincolanti per il fornitore e per i su oi dipendenti. Ovviamente gli 
+accessi logici devono essere monitorati da parte di  fornitori devono essere 
+completamente monitorati. 
+In ogni caso gli accessi privilegiati da parte di s oggetti esterni non devono mai 
+avvenire da sedi esterne (es. sede fornitore). 
+ 
+5.1.2  Autenticazione 
+Gestione delle informazioni segrete di autenticazio ne degl i utenti  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  L'assegnazione agli utenti delle informazioni segre te di autenticazione (es. password) 
+deve essere controllata attraverso un processo di g estione. Il processo dovrebbe 
+prevedere:  
+- l’uso di user ID e password individuali per sostene re il principio di accountability; 
+- le modalità di assegnazione temporanea delle inform azioni segrete di 
+autenticazione, da cambiare al primo uso; 
+- procedure per verificare l'identità di un utente, p rima di fornire, modificare o 
+sostituire nuove informazioni;  
+- le modalità per assicurare il rispetto dell'utente della riservatezza delle 
+informazioni segrete di autenticazione. Per quest'u ltimo punto l'organizzazione 
+dovrebbe informare l'utente delle sue responsabilit à ed acquisire dallo stesso un 
+formale impegno a mantenere riservate le informazio ni (ad es. mediante specifica 
+lettera da sottoscrivere). 

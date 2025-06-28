@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 72  a 137  
+ 
+7 CERTIFICAZIONI PROFESSIONALI 
+7.1  GIAC Secure Software Programmer (GSSP) Certificatio n 
+GSSP Certification Exam coinvolge l'Istituto SANS, CERT CC, diverse agenzie governative statunitensi e  
+aziende leader negli Stati Uniti, Giappone, India e  Germania. SANS è il certificatore. 
+ 
+URL  https://www.giac.org/  
+ 
+Questa certificazione si concentra sulle questioni reali che stanno dietro le vulnerabilità più comuni  e i 
+problemi di sicurezza applicativi.  
+Gli esami riguardano le tecniche e i linguaggi spec ifici (Java o .NET) e molte delle domande usano ese mpi di 
+codice reale. Gli esami aiutano le organizzazioni a  soddisfare quattro obiettivi, che sono: 
+o identificare carenze nella conoscenza della sicurez za dei programmatori in-house e aiutare 
+gli individui a colmare il divario; 
+o assicurarsi che i programmatori in outsourcing abbi ano adeguate competenze Secure-
+coding; 
+o nominare nuovi dipendenti che non hanno bisogno di formazione correttiva in 
+programmazione sicura; 
+o assicurarsi che ogni grande progetto di sviluppo ab bia almeno una persona con avanzate 
+capacità di programmazione sicura. 
+Dopo l'acquisizione di questa certificazione, i pro grammatori saranno a conoscenza dei difetti più com uni di 
+sicurezza che si trovano in ambienti di programmazi one specifici (Java o .NET), e sapranno come evitar e 
+questi problemi dovuti principalmente alla vulnerab ilità delle applicazioni. 
+ 
+Web Applicaton Defender. La certificazione GIAC Web  Application Defender consente ai candidati di 
+acquisire le conoscenze e le competenze di sicurezz a necessarie per gestire gli errori comuni delle 
+applicazioni Web che portano alla maggior parte dei  problemi di sicurezza. 
+ 
+La certificazione GSSP rimane valida per quattro an ni. 
+ 
+7.2  International Council of E-Commerce Consultants (EC -Council) Certifications 
+L'EC-Council è un'organizzazione member-based che c ertifica gli individui in varie competenze e-busine ss e 
+di sicurezza delle informazioni. 
+ 
+URL  http://www.eccouncil.org  
+Contact Method  http://ww w.eccouncil.org/contact_us.aspx  
+Email, web form, phone and address  
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Industry  
+ 

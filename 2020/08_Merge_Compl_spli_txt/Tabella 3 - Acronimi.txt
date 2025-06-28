@@ -1,0 +1,40 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 10 a 132 
+ 
+Codice  Titolo  
+MLA  Multilateral Agreement  
+MPRA  Multilateral Privacy Requirements Analysis  
+MS –SDL  Microsoft ’s Security Development Lifecycle  
+NIST  National Institute of Standards and Technology  
+OCSE  Organizzazione per l a Cooperazione e lo Sviluppo E conomico  
+OdC  Organismo di certificazione  
+OWASP  Open Web Application Security Project  
+OWASP -
+Proactive  OWASP Proactive Controls  
+P Process  
+P.A.S.T.A  Process for Attack Simulation and Threat Analysis  
+PAR  Privacy Awareness Requirements  
+PbD Privacy by Design  
+PE Privacy Engineering  
+PETs  Privacy -Enhancing Technologies  
+PI Personal Informations  
+PII Personal Identifiable Information  
+PRET  Privacy Requirements Elicitation Technique  
+PriS Incorporating Privacy Requirements into the System Design Process  
+ProPAn  Problem -based Priv acy Analysis   
+ROI Return On Investment  
+S.B.S.R.S.  Security Bulletin Severity Rating System  
+SAMM  Software Assurance Maturity Model  
+SDL  Security Development Lifecycle  
+SDLC  Software Development Life Cycle  
+SSDLC  Secure Software Development Life Cycle  
+STRIDE  Spoofing, Tampering, Repudiation, Information disclosure, Denial of s ervice, 
+Elevation of  privilege  
+SW Software  
+TCP Trasmission Control Protocol  
+UML  Linguaggio di modellazione Unificata  
+XSS Cross -site scripting  
+Tabella 3 - Acronimi  

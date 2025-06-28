@@ -1,0 +1,58 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 140  a 156  
+ 
+7.11.1   Client Dom Code Injection 
+Come riconoscerla 
+Un attaccante può eseguire codice arbitrario sulla macchina dell’application server. A seconda dei per messi 
+di cui dispone l’applicazione, potrebbe: accedere a l database, leggere o modificare dati sensibili; le ggere, 
+creare, modificare o cancellare file; aprire una co nnessione al server dell’attaccante; modificare il 
+contenuto delle pagine; decifrare dati utilizzando le chiavi dell’applicazione; arrestare o avviare i servizi del 
+sistema operativo; organizzare un reindirizzamento verso siti fake (fasulli) per operazioni di phishin g; 
+prendere il completo controllo del server. 
+Accade perché l'applicazione esegue alcune azioni e seguendo codice incluso nei dati in input non 
+opportunamente validati e verificati. In questo cas o, il codice non attendibile viene letto dal browse r ed 
+eseguito sul lato client. 
+ 
+Come difendersi 
+Come prima cosa, l'applicazione non dovrebbe esegui re alcun codice non attendibile da qualsiasi fonte 
+esterna possa provenire, inclusi l’input dell'utent e, dei file caricati (upload) o un database. 
+Se è necessario passare dati non attendibili all'es ecuzione dinamica, applicare una convalida dei dati  molto 
+rigorosa. Come al solito, occorre convalidare tutti  gli input, indipendentemente dalla fonte. I parame tri 
+devono essere limitati a un set di caratteri consen tito e l'input non convalidato deve essere eliminat o. Oltre 
+ai caratteri, occorre controllare il tipo di dati, la loro dimensione, l’intervallo di validità, il fo rmato e 
+l’eventuale corrispondenza all’interno dei valori p revisti (white list). Sconsigliata invece la black list, ossia un 
+elenco di valori non consentiti: l’elenco sarebbe s empre troppo limitato, rispetto ai casi che potrebb ero 
+verificarsi. 
+Se è assolutamente necessario includere dati estern i nell'esecuzione dinamica, è consentito passare i dati 
+come parametri al codice, ma bisogna evitare assolu tamente di eseguire direttamente i dati utente. 
+L’account con il quale l’applicazione viene avviata  deve avere molte restrizioni e non deve godere di 
+privilegi non necessari. 
+Evitare di creare codice XML o JSON in modo dinamic o.  
+Proprio come la creazione di codice HTML o SQL potr ebbero causare dei bug di XML Injection, utilizzare  una 
+libreria di codifica o delle librerie JSON o XML af fidabili per rendere sicuri gli attributi dei dati degli 
+elementi. 
+Non eseguire la crittografia nel codice lato client . Utilizzare le tecnologie TLS/SSL e crittografare le 
+informazioni sul server. 
+Evitare di chiamare dinamicamente una funzione senz a averne prima bonificato il codice. 
+ 
+Esempio: 
+var  input = document .getElementById( "id" ).value; 
+window .setInterval( myFunc(input), 1000 ); 
+ 
+Questo il software corretto dopo la sanitizzazione:  
+var  input = document .getElementById( "id" ).value; 
+var  trusted = escape (input); 
+window .setInterval( myFunc(trusted), 1000 ); 
+ 
+Esempio  
+Uso corretto dell’aggiornamento dinamico dell'HTML nel DOM:  
+document.write("<%=Encoder.encodeForJS(Encoder.enco deForHTML(untrustedData))%>"); 
+ 
+Nel caso debba essere impostato del codice Javascri pt per delle chiamate dinamiche, vanno utilizzati s olo 
+metodi predefiniti o codice Javascript non influenz abile da variabili dinamiche. Non si deve usare cod ice con 
+routine tipo “eval()” particolarmente vulnerabili. 
+ 
+Esempio di codice Javascript sicuro:  
+window .setInterval( "timedFunction();" , 1000 ); 
+ 

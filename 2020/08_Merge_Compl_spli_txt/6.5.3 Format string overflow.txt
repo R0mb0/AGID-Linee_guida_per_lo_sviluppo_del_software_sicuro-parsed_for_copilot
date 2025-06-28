@@ -1,0 +1,55 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 42  a 156  
+ 
+piacimento il flusso di esecuzione dell’applicazion e, senza intaccare in modo diretto l’indirizzo di r itorno 
+della funzione vulnerabile. In genere è sufficiente  raggiungere l’ultimo byte dell’indirizzo dello sta ck frame 
+della funzione vulnerabile (il frame pointer puntat o ad esempio nell’architettura hardware x86 dal reg istro 
+EBP) per sfruttare l’attacco eseguendo uno shellcod e. Questo genere di errori si verifica molto spesso  
+all’interno di cicli. 
+ 
+Esempio:  
+Esempio corretto di riempimento di un buffer 
+ 
+In una situazione normale la variabile buffer[104] dovrebbe contenere 103 byte di dati seguiti dal 
+terminatore stringa NULL (‘\0’)  
+ 
+Esempio errato di buffer sovrascritto di pochi byte  oltre le sue reali capacità di contenimento 
+ 
+Contromisure 
+Gli sviluppatori devono porre la massima attenzione  sui loop all’interno degli array, rispettando la 
+lunghezza allocata. I null di terminazione stringa devono essere conteggiati e considerati. 
+6.5.3  Format string overflow 
+Il Format string overflow è una tecnica abbastanza recente, descritta nella sua capacità di eseguire 
+istruzioni remote su un sistema durante la prima me tà del 2000. Precedentemente nota per i soli effett i di 
+blocco di un’applicazione, questo genere di overflo w si può manifestare nelle regioni di memoria stack  o 
+heap. Si verifica quando non viene specificato deli beratamente il formato di funzioni che lavorano le 
+stringhe (ad esempio printf, fprintf, sprintf, snpr intf), costruendo tale formato a partire dall’input  utente.  
+Tramite il format string “%n”, un aggressore può, i nfatti, scrivere un valore arbitrario in un qualsia si punto 
+dello spazio di memoria allocato per il processo de ll’applicazione. 
+L’esecuzione di codice malevolo attraverso un forma t string overflow si sostanzia fondamentalmente in tre 
+step: 
+• L’aggressore colloca in un certo punto in memoria l o shellcode; 
+• L’aggressore individua in memoria l’indirizzo di ri torno della funzione vulnerabile e lo sovrascrive 
+con l’indirizzo in cui risiede lo shellcode; 
+• Al ritorno dalla funzione lo shellcode viene esegui to. 
+Questa tecnica è soggetta a variazioni nel caso di buffer che risiedono nella regione di memoria heap,  dove 
+per eseguire lo shellcode è eventualmente possibile  sfruttare indirizzi di chiamata a funzioni di hook , 
+puntatori a funzioni di distruzione (Destructor) in vocate all’uscita dell’applicazione, puntatori a ge stori delle 
+eccezioni o puntatori a funzioni residenti in libre rie esterne linkate con l’applicazione. Un aggresso re può 
+utilizzare uno di questi puntatori anche nel caso i n cui l’overflow si manifesta nella regione di memo ria 
+stack (ad esempio per bypassare restrizioni di tipo  stack canary/cookie o in quelle architetture in cu i lo 
+stack non risulti essere eseguibile). 
+Esempio 
+Se l’applicazione accetta parametri di sostituzione  come %x  e %s  in istruzioni come la printf :  
+ 
+printf(“valore immesso: %s”, valoreInput); 
+  
+      1      2     3     4     5     6     7      8      9    10    11                        98   99  100 101 102  103          
+ 
+ NULL byte 
+ 
+              ……… 
+ 
+      1     2     3     4      5      6     7      8     9    10   11                         98  99   100 101  102 103 104  105 
+……… … 

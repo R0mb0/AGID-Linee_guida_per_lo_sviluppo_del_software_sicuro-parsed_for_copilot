@@ -1,0 +1,35 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 13  a 137  
+ 
+L’approccio migliore per proteggere un sistema info rmativo, è garantire che 
+ogni sua componente abbia un proprio meccanismo di protezione. La 
+costruzione di strati multipli di controlli di sicu rezza posti lungo un sistema è 
+definita Defence in Depth .  
+La Defense-in-Depth è l’approccio alla sicurezza de lle informazioni che 
+prevede il raggiungimento di una adeguato livello d i sicurezza attraverso 
+l’utilizzo coordinato e combinato di molteplici con tromisure.  
+Questa strategia difensiva si fonda sull’integrazio ne di differenti categorie di 
+elementi: persone, tecnologie e modalità operative.  La ridondanza e la 
+distribuzione delle contromisure possono essere sin tetizzate in una “difesa a 
+differenti livelli” (“Layered Defenses”). Il concet to, di derivazione militare, si 
+basa sull’assunto che nel caso in cui un attacco ab bia successo, a causa del 
+fallimento di un meccanismo di sicurezza, altri mec canismi di sicurezza 
+possono intervenire per consentire un’adeguata prot ezione dell’intero 
+Sistema. 
+ 
+Diverse sono le iniziative che si sono incentrate s ulle problematiche Secure Development promuovendo 
+azioni di sensibilizzazione (indirizzate ad aziende  e community di sviluppatori) quali:  
+• la diffusione delle fondamentali best practices in materia di sicurezza applicativa (le prime tra tutt e 
+riconducibili a una buona ingegnerizzazione del sof tware);  
+• una piena comprensione delle minacce più comuni (co mpresi i difetti propri dei linguaggi di 
+programmazione);  
+• ancora più importante, una considerazione della pro blematica fin dalle prime fasi del ciclo di svilupp o. 
+L’OWASP traccia periodicamente la lista delle vulne rabilità più critiche delle applicazioni web. L’obi ettivo è 
+appunto, quello di educare e sensibilizzare sulle c onseguenze che possono scaturire da implementazioni  
+errate e facilmente vulnerabili. L’ultimo rapporto OWASP è stato rilasciato nel novembre del 2017 (OWA SP 
+Top 10 – 2017). La maggior parte delle problematich e identificate nella OWASP Top 10 – 2017 sono le 
+stesse (o comunque molto simili) a quelle identific ate nel rapporto precedente (OWASP Top 10 – 2013) c on 
+qualche novità, come si evince dalla figura che seg ue:  Figura 3 - Defence -in -Depth model for IT  

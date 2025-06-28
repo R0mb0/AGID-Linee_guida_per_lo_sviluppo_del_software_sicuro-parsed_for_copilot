@@ -1,0 +1,27 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 12  a 137  
+ 
+Le applicazioni software dovrebbero avere caratteri stiche di sicurezza base di default ( Secure By Default ) 
+quali, ad esempio, l’abilitazione automatica di mec canismi di costruzione di password complesse piutto sto 
+che procedure di rinnovo delle stesse secondo una s cadenza di natura temporale. Un cambiamento di 
+paradigma nello sviluppo di software (security by d esign/default) è invocato anche nel nuovo regolamen to 
+UE per la protezione dei dati (Art. 25 7). 
+Le violazioni causano danni economici reali alle az iende che spesso richiedono mesi e addirittura anni  per 
+risolversi. Secondo l’ultimo Report Cisco (2018 Ann ual Cybersecurity Report), più della metà di tutti gli 
+attacchi (circa il 53%) ha causato danni finanziari  per oltre 500.000 dollari americani e ha riguardat o perdite 
+di fatturato, di clienti, di opportunità e il dover  sostenere costi aggiuntivi non previsti.  
+ 
+ 
+Figura 2 - Il costo degli attacchi 
+[Fonte: Cisco 2018 Security Capabilities Benchmark Study] 
+Lo studio ha coinvolto oltre 3600 intervistati in v entisei paesi. Riguardo l’Italia: il 38% delle azie nde 
+intervistate all’interno dello studio stima di aver  subito danni inferiori ai 100.000 dollari, e il 37 % ha subito 
+danni che hanno superato i 500.000 dollari, mentre il 25% ha subito danni per cifre comprese tra i 100 .000 
+e i 499.000. 
+  
+                                                           
+7 http://www.privacy-regulation.eu/it/25.htm  
+

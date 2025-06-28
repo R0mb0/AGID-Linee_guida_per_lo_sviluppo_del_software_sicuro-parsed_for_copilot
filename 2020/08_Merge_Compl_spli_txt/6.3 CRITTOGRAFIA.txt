@@ -1,0 +1,41 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 32  a 156  
+ 
+ 
+Esempio:  
+In alcuni casi è possibile modificare l’url di un’a pplicazione web per accedere direttamente alle diec tory del 
+server nel quale è deployata (directory listing). O ccorre disabilitare, a livello di application serve r, l’opzione 
+di browsing delle directory. 
+ 
+ 
+In altri casi vengono sfruttate vulnerabilità conne sse con le directory accessibili dall’esterno (path  
+traversal): www.example.com/lmapp/../../../etc/hosts  
+ 
+In altri casi ancora le regole per il cambio passwo rd non sono sicure: ad esempio non viene richiesto 
+l’inserimento della vecchia password o vengono post e domande di sicurezza le cui risposte sono intuiti ve o 
+ricavabili attraverso il social engeenering. 
+ 
+Contromisure 
+È necessario: 
+• verificare i dati in input (filtrando i caratteri “ ..” e “/”) per evitare i problemi del path traversa l e 
+disabilitare nell’application server il directory l isting.  
+• garantire la robustezza delle password, seguendo re gole precise sulla lunghezza, sulla complessità e 
+sulla durata. Le password devono essere lunghe alme no otto caratteri e contenere lettere 
+minuscole e maiuscole, numeri e simboli non alfanum erici; devono scadere a intervalli regolari, non 
+devono essere inutitive, né devono essere simili al le ultime dodici inserite. 
+ 
+6.3  Crittografia 
+La crittografia rappresenta oggi uno degli strument i più proficui per sviluppare applicazioni software  sicure, 
+capaci di rispondere alle necessità crescenti di pr eservazione dell’integrità e della riservatezza dei  dati, sia 
+in transito sia a riposo. Di seguito vengono riport are le tecniche più comunemente utilizzate dagli 
+aggressori per appropriarsi in modo fraudolento d’i nformazioni private, invertendo il loro processo di  
+cifratura e le vulnerabilità più comuni che permett ono il verificarsi di tali condizioni. 
+Di seguito sono descritte le principali cause e vul nerabilità inerenti problematiche di crittografia. 
+ 
+6.3.1  Sniffing e algoritmi crittografici deboli 
+Uno dei principali motivi addotti a favore dell’uso  della crittografia è quello di preservare la riser vatezza dei 
+dati che vengono scambiati in rete. Le applicazioni  che non implementano alcun meccanismo crittografic o 
+sono le più esposte a tecniche di sniffing, il proc esso di monitoraggio e acquisizione di tutti i pacc hetti di 
+dati che attraversano una determinata rete. L’aggre ssore che riesce ad attestarsi in un punto qualsias i fra i 
+

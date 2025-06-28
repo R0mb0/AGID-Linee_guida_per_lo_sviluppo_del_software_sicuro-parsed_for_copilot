@@ -1,0 +1,62 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 135  a 156  
+ 
+7.10.2  Code Injection 
+Come riconoscerla 
+L'applicazione esegue del codice ricevuto attravers o l’input che non è stato sufficientemente verifica to. Un 
+utente in grado di inserire codice arbitrario può p rendere il controllo dell’applicazione e del server , se non 
+sono state adottate tecniche di difesa in profondit à. 
+ 
+Come difendersi . 
+• È vietata qualsiasi esecuzione dinamica di codice r icevuto da canali non attendibili. Se è proprio 
+necessario compilare ed eseguire del codice dinamic o, occorre allora predisporre una sandbox 
+isolata, ad esempio AppDomain di .NET o un thread i solato.  
+• Devono essere effettuati tutti i controlli possibil i per validare il codice in ingresso. 
+• Configurare l'applicazione da eseguire utilizzando un account utente limitato che non disponga di 
+privilegi non necessari. 
+• Se è possibile optare per isolare tutta l'esecuzion e dinamica utilizzando un account utente separato 
+e dedicato che abbia privilegi solo per le operazio ni e i file specifici utilizzati dal codice da eseg uire, 
+in base al principio denominato "Principle of Least  Privilege". Il principio stabilisce che agli utent i 
+venga attribuito il più basso livello di “diritti” che possano, detenere rimanendo comunque in grado 
+di compiere il proprio lavoro. 
+Esempio: 
+Il codice seguente mostra come del codice VB.NET pu ò essere passibile di code injection. Il codice ute nte 
+viene accettato senza verifiche e compilato “al vol o”, quindi eseguito. 
+  
+Function EsecuziondeDinamicaCodiceUtente_NonSicuro( request As HttpRequest) As 
+Integer 
+ Dim exitCode As Integer 
+ Dim codiceUtente As String = request.Form("Codice" ) 
+  
+ Dim compiler As New VBCodeProvider  
+ Dim parameters As New CompilerParameters 
+ parameters.GenerateInMemory = True 
+ parameters.GenerateExecutable = True 
+  
+ Try  
+  Dim results As CompilerResults = 
+compiler.CompileAssemblyFromSource(parameters, codi ceUtente) 
+   
+  Dim compiledAssembly As Assembly = results.Compil edAssembly 
+  exitCode = CInt(compiledAssembly.EntryPoint.Invok e(Nothing, New 
+Object())) 
+ Catch ex As Exception 
+  HandleExceptions(ex) 
+ End Try 
+  
+ Return exitCode 
+End Function  
+La seguente implementazione invece risolve il probl ema della code injection. Non viene eseguito del co dice, 
+ma l’input dell’utente è usato per selezionare del codice precompilato che viene lanciato in un nuovo 
+processo: 
+Function EsecuziondeStaticaCodiceUtente(request As HttpRequest) As Integer 
+ Dim exitCode As Integer 
+ Dim parametriUtente As String = request.Form("ExeP arams") 
+ 
+  Using proc As Process = New Process() 
+  proc.StartInfo.FileName = PATH_TO_PRECOMPILED_EXT ERNAL_PROGRAM 
+  proc.StartInfo.Arguments = SanitizeForProcess(par ametriUtente) 
+  proc.StartInfo.UseShellExecute = False 
+   
+  proc.Start() 

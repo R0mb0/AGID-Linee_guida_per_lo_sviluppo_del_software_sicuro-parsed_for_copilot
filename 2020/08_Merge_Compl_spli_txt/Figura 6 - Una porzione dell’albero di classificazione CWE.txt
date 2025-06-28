@@ -1,0 +1,30 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 42  a 137  
+ 
+ 
+Figura 6 - Una porzione dell’albero di classificazi one CWE  
+[Fonte: https://nvd.nist.gov/vuln/categories/cwe-layout ] 
+La Figura 6 mostra la classificazione gerarchica de lle CWE, come proposto nella pagina del National 
+Vulnerability Database 14  (NVD) della NIST. Il grafico presenta le varie CWE  raggruppate in categorie. Ogni 
+CWE può essere in relazione con una CWE di livello superiore (più generica). 
+Va inoltre sottolineato che CWE è una community-dev eloped, l'elenco formale delle vulnerabilità comuni  
+del software coinvolgono il mondo accademico, il se ttore commerciale e il governo degli Stati Uniti. 
+Risultati più rilevanti: 
+- CWE List (Version 3.4): https://cwe.mitre.org/data/index.html  
+Le definizioni e le descrizioni di CWE supportano l a scoperta delle tipologie di flaw di sicurezza 
+software nel codice, prima di rilasciarlo. Ciò sign ifica che sia gli utilizzatori che gli sviluppatori  dei 
+tool e dei servizi di sicurezza software possono ut ilizzare CWE come un meccanismo per descrivere i 
+flaw di sicurezza del software. 
+L'elenco CWE è disponibile in tre diversi formati: 
+• Research Concepts [ https://cwe.mitre.org/data/definitions/1000.html ]; 
+• Development Concepts [ https://cwe.mitre.org/data/definitions/699.html ]; 
+• Architectural Concepts [ https://cwe.mitre.org/data/definitions/1008.html ].  
+ 
+- CWE Top 25 Most Dangerous Software Errors. Di seguito è riportato un l’elenco pubblicato nel 
+2019: 
+                                                           
+14  https://nvd.nist.gov/vuln/categories  
+

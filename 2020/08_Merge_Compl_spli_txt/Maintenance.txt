@@ -1,0 +1,110 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 36  a 141  
+ 
+Maintenance 
+Redigere e applicare le procedure operative  
+Minaccia  - Abuso di privilegi da parte dell’utente.  
+- Abuso di risorse. 
+- Errori di amministrazione dei sistemi. 
+Contromisure  Le procedure operative concernenti la manutenzione del le strutture  di elaborazione 
+delle informazioni, quali: 
+- installazione e configurazione iniziale dei sistemi ; 
+- backup e restore; 
+- gestione delle vulnerabilità tecniche e aggiornamen ti; 
+- manutenzione delle apparecchiature; 
+- sicurezza fisica delle apparecchiature e procedure per l’accesso fisico del personale 
+tecnico addetto alla manutenzione; 
+- elenco dei componenti hardware e delle parti di ric ambio, dei relativi fornitori, dei 
+livelli di servizio per l’assistenza (es. risposta e presa in carico h24 7x7, con 
+risoluzione entro il next business day), dei riferi menti per la richiesta di intervento; 
+- procedura per la corretta dismissione del sistema e  delle sue componenti; 
+devono essere formalmente documentate per iscritto,  mantenute attive e aggiornate 
+periodicamente al sopraggiungere di ogni cambiament o. 
+Ciascuna procedura deve essere distribuita e resa n ota ai soggetti interessati 
+attraverso un portale documentale interno all’ente/ organizzazione. 
+ 
+Backup delle informazioni e del software  
+Minaccia  - Negazione dei servizi . 
+- Cancellazione o furto di informazioni. 
+Contromisure  Effettuare periodicamente copie di backup delle inf ormazioni e del software, in 
+conformità alla politica per il salvataggio dei dat i stabilita a livello aziendale. Verificare 
+periodicamente, nel rispetto delle leggi, regolamen ti, obblighi contrattuali, l'effettiva 
+memorizzazione, "leggibilità" e integrità delle inf ormazioni registrate, anche al fine di 
+assicurare la pronta disponibilità delle stesse in caso di interruzione dei servizi 
+informativi. Individuare le responsabilità per la g estione delle copie di backup. 
+ 
+Account dedicato al gruppo di manutenzione  
+Minaccia  - Divulgazione di informazioni riservate . 
+- Abuso di risorse. 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Uso non autorizzato di privilegi. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Affidare gli interventi di manutenzione che richiedono un accesso ai sistemi al solo 
+personale formalmente autorizzato, appartenente a s ocietà fornitrici con le quali sono 
+stati stipulati appositi contratti che vincolano il  manutentore al corretto uso delle 
+risorse informative e alla riservatezza. 
+Il manutentore in tali casi dovrà essere munito di un apposito account amministrativo 
+nominativo abilitato solo ai compiti stabiliti dal contratto di manutenzione. 
+Impedire, se tecnicamente possibile, l'accesso con l’account del manutentore a 
+cartelle, file, dati, interfacce applicative di esc lusiva pertinenza degli utenti autorizzati. 
+Gli interventi di manutenzione che avvengono attrav erso un accesso remoto non 
+devono mai avvenire dalla sede della società fornit rice, ma sempre dalla rete interna 
+dell’ente/organizzazione. In ogni caso le sessioni di amministrazione remota devono 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 37  a 141  
+ 
+usare pr otocolli autenticati e cifrati . 
+ 
+Manutenzione periodica dell'asset  
+Minaccia  - Negazione dei servizi  (per carenze di monitoraggio nei sistemi ICT).  
+- Cancellazione  o furto di informazioni. 
+- Attacchi all’integrità delle informazioni. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Eseguire un'attività di manutenzione , con cadenza almeno semestrale, mediante 
+procedure rigorose ed efficaci che prevedano una mo dulistica di intervento con 
+esplicitazione dell'anomalia dichiarata, malfunzion amento accertato, intervento 
+effettuato e parti sostituite. Effettuare delle sta tistiche sulla manutenzione di ogni 
+singolo componente al fine di valutarne il livello di obsolescenza e definire un 
+programma di manutenzione preventiva. 
+ 
+Regolamentazio ne della manutenzione dei dispositivi ICT  
+Minaccia  - Divulgazione di informazioni riservate . 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali 
+Contromisure  In generale, p rima di affidare le apparecchiature a servizi ester ni di manutenzione è 
+necessario stabilire contrattualmente opportune cla usole di riservatezza e di non 
+divulgazione delle informazioni e valutare i rischi  di sicurezza. 
+In alcuni casi è necessario considerare la possibil ità di sostituire le apparecchiature 
+danneggiate, piuttosto che ripararle, per evitare i l rischio di compromissione della 
+riservatezza di informazioni particolarmente critic he. In tal caso prima di gettare tali 
+apparecchiature è necessario distruggerle fisicamen te. Naturalmente questo dipende 
+dalla riservatezza dei dati contenuti. 
+La regola da osservare è la seguente: 
+I dispositivi di memorizzazione che contengono info rmazioni riservate come ad es. dati 
+personali, sensibili o giudiziari, dati di traffico  telematico e telefonico, dati relativi a 
+transazioni bancarie, specie se tali dati risultino  in chiaro (non cifrati), quando risultino 
+danneggiati non possono essere inviati a società es terne per la riparazione, a meno che 
+non sia possibile effettuare una cancellazione sicu ra dei dati memorizzati. 
+Negli altri casi, e più in generale ogni volta che tali dispositivi devono essere dismessi, i 
+dati in essi contenuti devono essere resi irrecuper abili con sistemi di smagnetizzazione 
+o attraverso la distruzione fisica. 
+ 
+Regolamentazione della manutenzione della PdL  
+Minaccia  - Negazione dei servizi  (per impossibilità di amministrarli o monitorarli da par te del 
+personale preposto).  
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Divulgazione di informazioni riservate. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Definire una procedura relativamente alla manutenzi one delle PdL che preveda:      
+- solo il personale autorizzato alla manutenzione dov rebbe svolgere le riparazioni e 
+le operazioni di servizio alle apparecchiature; 
+- devono essere tenute le registrazioni di tutti i di fetti presunti o reali, e di tutti gli 
+interventi di manutenzione preventivi e correttivi;  
+- devono essere adottati dei controlli appropriati qu ando si inviano all'esterno le 

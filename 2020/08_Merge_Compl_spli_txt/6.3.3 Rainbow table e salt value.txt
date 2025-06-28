@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 34  a 156  
+ 
+algoritmi (come MD5) è matematicamente dimostrata l a possibilità che la cifratura di valori testuali 
+diversi può produrre in output lo stesso hash. Ques ta condizione, definita appunto collisione, può 
+essere utilizzata da un aggressore per autenticarsi  in un portale, fornendo delle credenziali di 
+accesso differenti dalle originali. 
+ 
+L’attacco di brute forcing consiste nell’uso di un tool che elabora ad alta velocità combinazioni 
+alfanumeriche col fine di intercettare chiavi critt ografiche e/o password. Alcuni esempi di tool facil mente 
+reperibili per un’oprazione di brute force attack s ono: Aircrack-ng, John the Ripper, Rainbow Crack, C ain 
+and Abel, L0phtCrack, Ophcrack, ecc. 
+Contromisure 
+Il brute force attack può essere contrastato blocca ndo l’account preso di mira, dopo un certo numero d i 
+tentativi di login falliti. Tuttavia, se l’utente m alevolo ha organizzato l’attacco su un’utenza, ques ta 
+potrebbe essere bloccata nuovameente, anche subito dopo lo sblocco da parte dell’help desk, 
+determinandone la disabilitazione di fatto; se l’at tacco riguarda più utenze ne può derivare un blocco  del 
+sistema (denial of service).  
+Bloccare l’ip dell’aggressore potrebbe portare a es cludere una larga fascia di utenti leciti, in quant o l’ip 
+potrebbe essere quello di un proxy. È preferibile b loccare un ip legandolo a un singolo device e a un singolo 
+browser, attraverso l’uso di un device cookie. 
+Una misura sorprendentemente efficace è quella di u tilizzare risposte imprevedibili agli attacchi brut e 
+force. Ad esempio la web application potrebbe dare codice http 200 (success) e poi reindirizzare la ri sposta 
+su una pagina in cui si spiega che è in corso un br ute force attack. Si può reindirizzare randomicamen te 
+l’utente su una pagina e fargli ridigitare la passw ord. 
+Ogni comportamento “creativo” dell’applicazione può  disinnescare gli automatismi che gli attaccanti ha nno 
+messo in opera. 
+6.3.3  Rainbow table e salt value 
+Una rainbow table è concettualmente una tabella in cui sono mantenuti un numero cospicuo di hash per i  
+quali è già conosciuto il valore originario (testo in chiaro). Si possono comprare in rete svariati te rabyte di 
+tabelle rainbow, in base alla lunghezza delle strin ghe trattate. Un aggressore può quindi determinare in 
+pochi secondi l’esatta corrispondenza (clear text) semplicemente inserendo un hash nel software che 
+gestisce le rainbow table. Questa problematica si v erifica principalmente quando l’applicazione non ut ilizza 
+un salt value per generare un hash. Un salt value è  un fattore randomico che modifica la conformazione  in 
+output dell’hash stesso e non permette di utilizzar e le classiche Rainbow Table per la relativa conver sione 
+in testo in chiaro. 
+ 
+Esempio: nel codice che segue, una chiave ( uncrpyptedPassword ) viene concatenata ad una stringa 
+arbitraria ( salt ), per evitare che venga rivelata attraverso le rainbow tables : 
+ 
+messageDigest = MessageDigest.getInstance("SHA");  
+messageDigest.update((unecryptedPassword+salt).getB ytes());  
+ 
+Contromisure 
+Utilizzare un valore della stringa salt  sufficientemente lungo e complesso, in modo che le  tabelle rainbow 
+diventano completamente inutili ai fini della conve rsione clear text. 
+6.3.4  Archiviazione insicura 
+La trasmissione attraverso la rete di dati in chiar o testo o cifrati con algoritmi crittografici debol i non è 
+l’unica pratica che può portare alla loro appropria zione indebita da parte di un aggressore. Anche arc hiviarli 
+allo stesso modo nel filesystem o in un database pu ò portare alle stesse conseguenze.  

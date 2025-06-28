@@ -1,0 +1,98 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 90  a 137  
+ 
+sicurezza. Un esempio di obiettivo di sicurezza pot rebbe essere "Il sistema deve mantenere la riservat ezza 
+di tutti i dati classificati come riservati".  
+I requisiti di sicurezza possono essere distinti in  quattro diverse tipologie: 
+ 
+1.  Requisiti funzionali sicuri : che descrivono i criteri di sicurezza integrati i n ciascun requisito 
+funzionale. Tipicamente indicano anche ciò che non deve accadere. Questi possono ad esempio 
+essere derivati da casi di uso improprio. 
+2.  Requisiti di sicurezza funzionale : definiscono i servizi di sicurezza che devono ess ere implementati 
+nel sistema sottoposto ad analisi. Alcuni esempi so no l'autenticazione, l'autorizzazione, il backup, i l 
+server-clustering, ecc. Questi possono essere deriv ati dalle best-practices di sicurezza, dalle 
+politiche adottate e dalle eventuali norme che il s istema stesso deve rispettare. 
+3.  Requisiti di sicurezza non funzionali : trattasi di requisiti architetturali legati alla sicurezza, come “la 
+robustezza" o "le prestazioni minime e la scalabili tà". Questa specifica tipologia di requisiti è 
+tipicamente derivata dai principi architetturali di  secure-design e dagli standard in tale ambito. 
+4.  Requisiti di sviluppo sicuro : descrivono le attività richieste durante lo svilu ppo del sistema al fine di 
+garantire che il sistema stesso nella sua versione finale sia esente da vulnerabilità. Alcuni esempi 
+possono essere la "classificazione dei dati", le "l inee guida di sviluppo sicuro” o la “metodologia di  
+test”. Tali requisiti sono derivati da framework me todologici basati su best-practices come "CLASP". 
+Tutti i requisiti di sicurezza devono essere identi ficati dall'analista e analizzati dal team di sicur ezza come 
+parte dei requisiti funzionali e quindi aggiunti ne l documento "Specifica dei requisiti di sicurezza",  in una 
+sezione dei requisiti di sistema o dei requisiti so ftware. Di seguito si riportano alcune delle voci c he 
+dovrebbero essere presenti nel documento in questio ne: 
+• Descrizione del prodotto  o sistema e relativo scopo. Definisce il perimetro  del prodotto, in termini 
+generali, sia in modo fisico sia logico. 
+• Ambiente operativo : definizione dei vincoli di sicurezza previsti per  l'ambiente operativo al fine di 
+facilitare l'identificazione e la formulazione dell e premesse sull'uso previsto del prodotto. L'analis ta 
+deve valutare l'uso dell'ambiente in cui opera il p rodotto per verificare se il comportamento 
+dell'utente può in qualche modo compromettere la si curezza del prodotto stesso. A volte sarebbe 
+necessario definire i criteri di protezione del pro dotto e del suo ambiente operativo da adottare. 
+• Funzioni di sicurezza di base : descrizione delle features essenziali per impleme ntare le necessarie 
+politiche di sicurezza organizzativa. 
+• Livello di garanzia della sicurezza : tutti i prodotti devono avere un “Software Securi ty Assurance” e 
+questo, deve necessariamente essere incluso nel doc umento di specifica dei requisiti di sicurezza. 
+• Requisiti normativi : definizione dei requisiti normativi che il prodot to, lì dove applicabile, deve 
+rispettare. 
+ 
+9.1  Definizione dei requisiti di sicurezza 
+I principali obiettivi di sicurezza da definire son o: 
+• Riservatezza e Integrità.  I due più importanti aspetti della sicurezza sono Riservatezza e Integrità. 
+La Riservatezza significa che le risorse possono es sere utilizzate solo dalla parte legittima. L'integ rità 
+dei dati significa che devono essere modificabili s olo dalle persone autorizzate. 
+• Autenticità.  Il terzo requisito di sicurezza principale è l'Aut enticità: Message authenticity  (o data  
+origin authenticity) ed entity authenticity.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 91  a 137  
+ 
+• Non-ripudio. Garantisce che qualsiasi azione sul sistema non pos sa essere in seguito rinnegata. 
+• Flusso Informativo . Il livello di sicurezza può avere regole diverse.  Generalmente si considerano 
+due livelli: alto (altamente sensibile o altamente attendibile) e basso (meno sensibile o meno 
+attendibile). Laddove componenti di sistema conside rati di alto livello interagiscono con parti meno 
+attendibili, si deve garantire che non vi sia alcun o scambio di dati dall’alto verso il basso (vale 
+invece il contrario ossia ci può essere lo scambio di dati dal basso verso l’alto non up-flow ). 
+• Controllo Accessi . Uno dei requisiti di sicurezza principali è il co ntrollo degli accessi, il che significa 
+che solo un utente fidato può avere accesso a un si stema sicuro. Il Role-Based Access Control 
+(RBAC) assicura  un meccanismo di controllo degli accessi per tutela re i beni. I privilegi di accesso 
+alle risorse dipendono dal ruolo che assumono nel t empo gli individui all'interno 
+dell'Organizzazione. Ai ruoli sono associati profil i che definiscono comandi, transazioni e accessi ai  
+dati. L'assegnazione dei ruoli è centralizzata. ABAC  (Attribute Based Access Control) fornisce i diritt i 
+di accesso in base agli attributi dell'utente, dell e risorse a cui si accede e dell'ambiente (contesto  
+operativo, tecnico e persino situazionale in cui si  verifica l'accesso alle informazioni). Gli attribu ti 
+sono insiemi di etichette o proprietà che possono e ssere utilizzati per descrivere tutte le entità che  
+devono essere considerate ai fini dell’autorizzazio ne. Le regole di sicurezza possono essere definite 
+per una qualsiasi combinazione di attributi, offren do la possibilità di creare regole specifiche per 
+particolari risorse. Questa caratteristica rende AB AC particolarmente indicato per essere adottato 
+nei sistemi che richiedono un controllo di accesso granulare come l’Internet of Things.  
+ 
+Le principali azioni di sicurezza da attuare sono:  
+• Definizione degli elementi di sicurezza applicativa , finalizzata alla valutazione dei requisiti 
+relativamente a :  
+o Integrità,  
+o Autenticità,  
+o Riservatezza,  
+o Disponibilità,  
+o Non-ripudio,  
+o Autorizzazione.  
+• Definizione dei requisiti di privacy , attraverso la raccolta strutturata delle seguenti  categorie di 
+informazioni:   
+o Dati personali,  
+o Servizi di terze parti,  
+o Policy. 
+• Risk assessment , finalizzato alla valutazione del rischio (vedi Pa ragrafo6.2). In questa fase viene 
+definito un profilo di rischio per l’applicazione c he include: aree sensibili del software e aree che 
+presentono superfici di attacco suscettibili a dete rminate minacce; aree del codice ad alto rischio 
+che possono essere vulnerabili a diverse minacce. V iene condotta quindi, una fase critica di 
+comprensione, analisi e classificazione dei vari ri schi per l’applicazione. Durante questo processo è 
+utile classificare i vari rischi utilizzando divers i framework di sicurezza quali: OWASP Top 10, SANS 
+CWE Top 25 o OWASP ASVS.   
+o Consolidamento dei Requisiti , review dei requisiti di sicurezza e privacy a seg uito del Risk 
+Assessment; 

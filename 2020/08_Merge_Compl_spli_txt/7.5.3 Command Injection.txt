@@ -1,0 +1,55 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 89  a 156  
+ 
+ospita l'applicazione. In tal caso l’attaccante pot rebbe anche utilizzare il server come piattaforma p er 
+ulteriori attacchi contro altri sistemi. 
+Il pericolo si manifesta quando un malintenzionato riesce ad eseguire codice arbitrario nell'host 
+dell’application server. Si potrebbero avere le seg uenti problematiche: 
+• Possibilità di modificare i permessi all’interno di  file o directory nel file system(read / create / 
+modify / delete); 
+• Modifiche della struttura del sito web; 
+• Permettere delle connessioni di rete non autorizzat e verso il server da parte dell'attaccante; 
+• Permettere ad utenti malintenzionati la gestione de i servizi con possibili start and stop dei servizi di 
+sistema; 
+• Acquisizione completa del server da parte dell'atta ccante. 
+ 
+Come difendersi 
+Ove possibile, le applicazioni dovrebbero evitare d i incorporare dati controllabili dall'utente per ac quisire 
+codice che verrà eseguito dinamicamente. In quasi o gni situazione esistono metodi alternativi più sicu ri per 
+l'implementazione di funzioni applicative che non s iano manipolabili per iniettare codice arbitrario. 
+Se si ritiene inevitabile integrare i dati forniti dall'utente nel codice eseguito dinamicamente, i da ti devono 
+essere validati rigorosamente. Idealmente, dovrebbe  essere utilizzata una white list di specifici valo ri 
+accettati. Altrimenti, dovrebbero essere accettate solo stringhe alfanumeriche brevi. Gli input conten enti 
+altri dati, inclusi eventuali metacaratteri di codi ce eseguibile, devono essere respinti.  
+L’uso di exec() ed eval() va evitato per la possibi lità di incorrere in una code injection. 
+ 
+Esempio: 
+Il seguente esempio mostra due funzioni che imposta no un nome a paritre da una request. La prima 
+funzione utilizza exec per eseguire la funzione set name. Ciò è pericoloso in quanto un malintenzionato  
+potrebbe approfittarne per eseguire codice arbitrar io sul server.  
+Ad esempio, potrebbe fornire il valore "'+ subproce ss.call (' rm -rf ') +'", che distruggerebbe il fil e system del 
+server.  
+La seconda funzione chiama direttamente la funzione  setname e il parametro fornito dall'utente viene 
+utilizzato come dato. Nessun codice potrebbe qui es sere eseguito. 
+ 
+def esecuzione_codice_non_sicura(request): 
+  if request.method == 'POST': 
+    nome = base64.decodestring(request.POST.get('no mè, '')) 
+    #NON SICURO – Permette all’utente di eseguire d el codice arbitrario. 
+    exec("setname('%s')" % nome) 
+ 
+def esecuzione_codice_sicura(request): 
+  if request.method == 'POST': 
+    nome = base64.decodestring(request.POST.get('no mè, '')) 
+    #SICURO – Il parametro utente solo un valore ch e non verrà eseguito. 
+    setname(nome) 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/94.html, 
+Improper Control of Generation of Code ('Code Injec tion') CWE-94 
+7.5.3  Command Injection 
+Come riconoscerla 
+Si è in presenza di un attacco di command injection , noto anche come OS injection, quando l’input uten te 
+non verificato viene utilizzato, in tutto o in part e, come argomento di funzioni che eseguono comandi di 
+shell. Tramite questa vulnerabilità un aggressore p otrebbe eseguire comandi di sistema operativo arbit rari 
+sull'host dell’application server. In base alle aut orizzazioni dell'applicazione, potrebbe: 

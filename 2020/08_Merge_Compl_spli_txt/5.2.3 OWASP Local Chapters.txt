@@ -1,0 +1,164 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 33  a 137  
+ 
+URL  http:// www.nessi -europe.com/  
+NESSI - Romania  NESSI Romania è stata fondata nel 2010.  Gli obiettivi a  breve termine di NESSI -
+Romania sono: 
+• istituire gruppi di lavoro nazionali su diversi a rgomenti definiti in NESSI SRA 
+• Definire un SRA nazionale per l'evoluzione futura  del programma nazionale 
+R&D e innovazione relativamente a software e serviz i 
+• Diffondere i risultati NESSI dei progetti strateg ici e compatibili 
+ 
+5.2.3  OWASP Local Chapters 
+Questa sezione fornisce una vista dei gruppi di lav oro OWASP distribuiti sul territorio Europeo. 
+URL  https://www.owasp.org/index.php/Belgium  
+OWASP Belgium Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri su come 
+difendere le applicazioni web da attacchi. 
+ 
+URL  https://www.owasp.org/index.php/Aarhus  
+OWASP Denmark Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri su diversi 
+argomenti di sicurezza delle informazioni legate al le applicazioni web. Le 
+presentazioni sono disponibili sul sito web 
+ 
+URL  https://www.owasp.org/index.php/France  
+OWASP France Local 
+Chapter Le principali attività svolte riguardano l'organizz azione di incontri e la 
+traduzione della documentazione OWASP in francese. Questo Chapter fornisce 
+anche la formazione su progetti e risorse OWASP att raverso il programma 
+"OWASP projects and resources you can use today", c he ha lo scopo di 
+promuovere progetti OWASP, fornendo una selezione d i progetti maturi ed 
+enterprise-ready, insieme con esempi pratici di com e usarli. 
+ 
+URL  https://www.owasp.org/index.php/Germany  
+OWASP Germany Local 
+Chapter Le principali attività riguardano l'organizzazione di incontri, conosciuti come 
+AppSec Germany Conference, che si svolge ogni anno.  
+ 
+URL  https://www.owasp.org/index.php/Geneva  
+OWASP Geneva Local 
+Chapter Le principali attività svolte da questo capitolo ri guardano  l'organizzazione di 
+incontri legati alle identità digitali e autenticaz ione nelle applicazioni web. 
+ 
+URL  https://www.owasp.org/index.php/Greece  
+OWASP Greece Local 
+Chapter Il gruppo di lavoro OWASP greco è stata fondato nel  2005 con l'obiettivo di 
+informare la comunità greca sui rischi per la sicur ezza nelle applicazioni web. Il 
+motivo principale che ha spinto alla sua creazione è il sempre crescente 
+numero di incidenti di sicurezza su Internet, come ad esempio i tentativi di 
+phishing a banche greche. Oggi, il gruppo greco pro muove localmente 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 34  a 137  
+ 
+l’iniziativa OWASP attraverso il Software Libero/Op en e la traduzione in greco 
+della documentazione OWASP. Emettono una newsletter  mensile, 
+mantengono una mailing list per gli aggiornamenti e  gestiscono dibattiti online 
+su problemi di sicurezza di attualità. 
+La comunità greca OWASP vuole riunire tutti coloro che sono interessati e 
+preoccupati per la sicurezza delle applicazioni web . Allo stesso tempo, accoglie 
+i volontari che sono disposti a lavorare su progett i coordinati dall’OWASP, 
+utilizzando software libero/open source. Invitano a  chiunque di condividere le 
+proprie idee, pensieri e riflessioni sugli attacchi , la difesa, i metodi di risposta, 
+strumenti e buone pratiche in materia di sicurezza di Internet. 
+ 
+URL  https://www.owasp.org/index.php/Category:Ireland  
+OWASP Ireland Local 
+Chapter Questo paese ha quattro gruppi locali: Belfast, Cork, Dublino e Limerick. Il 
+gruppo più attivo è quello di Dublino le cui attivi tà principali riguardano 
+l'organizzazione di eventi e conferenze. Questo gru ppo fornisce anche la 
+formazione su progetti e risorse OWASP attraverso i l programma " OWASP 
+projects and resources you can use today". Questo h a lo scopo di promuovere i 
+progetti OWASP, fornendo una selezione di progetti maturi ed enterprise-
+ready con esempi pratici di come usarli. 
+ 
+URL  https://www.owasp.org/index.php/Italy  
+OWASP Italy Local 
+Chapter Le attività riguardano l’organizzazione di eventi e  lo sviluppo di tool. Il gruppo 
+cerca di organizzare almeno 2 conferenze l’anno, un o in primavera e un altro in 
+autunno. Recentemente, hanno lavorato sullo svilupp o di sqlmap, un 
+automatic SQL injection tool  sviluppato in Python. L'iniziativa è sostenuta da 
+partner come IsecLab, CLUSIT e ISACA Roma. 
+ 
+URL  https://www.owasp.org/index.php/Latvia%20  
+OWASP Latvia Local 
+Chapter E’ stata creata nell’ottobre 2007. Le attività prin cipali riguardano 
+l’organizzazione di eventi. Il gruppo non si è dimo strato molto attivo negli 
+ultimi anni. 
+ 
+URL  https://www.owasp.org/index.php/London  
+OWASP London Local 
+Chapter Le attività di OWASP Londra si concentrano sulla pr eparazione e 
+l'organizzazione di eventi, conferenze e presentazi oni. Il gruppo ha registrato 
+elevata attività nel corso del 2010. 
+Esso prevede anche la formazione su progetti e riso rse OWASP attraverso il 
+programma "OWASP projects and resources you can use  today", che mira a 
+promuovere progetti OWASP, fornendo una selezione d i progetti maturi ed 
+enterprise-ready con esempi pratici di come usarli.  
+ 
+URL  https://www.owasp.org/index.php/Luxembourg  
+OWASP Luxembourg 
+Local Chapter Le attività del gruppo riguardano la preparazione e  l'organizzazione di eventi e 
+conferenze come il Java User Group (YAJUG) o Chaos Computer Club 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 35  a 137  
+ 
+Letzebuerg (C3L). Attualmente sembra che vi sia poc a attività in questo 
+gruppo. 
+ 
+URL  https://www.owasp.org/index.php/Norway  
+OWASP Norway Local 
+Chapter Le attività di OWASP Norvegia riguardano la prepara zione e l'organizzazione di 
+eventi e conferenze. Questo gruppo è stato molto at tivo negli anni passati, 
+quando ha organizzato 8 conferenze in Norvegia in u n anno. 
+ 
+URL  https://www.owasp.org/index.php/Poland  
+OWASP Poland Local 
+Chapter L'attività principale che questo gruppo è di  organizzare eventi. In questo 
+gruppo sembra essere molto attivo, sono stati coinv olti in 11 conferenze nel 
+corso del 2010. L'iniziativa è sostenuta da ISSA. 
+ 
+URL  https://www.owasp.org/index.php/Porto  
+OWASP Portugal Local 
+Chapter Le attività di questo gruppo riguardano l'organizza zione di conferenze e 
+pubblicazioni. Ha organizzato uno dei più important i eventi di OWASP: Ibero-
+American Web Application Security Conference IBWAS’2 010 .  
+ 
+URL  https://www.owasp.org/index.php/Scotland  
+OWASP Scotland Local 
+Chapter Le principali attività svolte da questo gruppo, sec ondo quanto riportato sul loro 
+sito, sono finalizzate a fornire risposte insieme a d altri gruppi britannici locali ai 
+diversi uffici governativi del Regno Unito. Questo gruppo sembra che organizzi 
+anche incontri annuali. 
+ 
+URL  https://www.owasp.org/index.php/Spain  
+OWASP Spain Local 
+Chapter Questo gruppo svolge due attività principali. Da un  lato collabora attivamente 
+con OWASP su un progetto per fornire le specifiche e i requisiti legali per le 
+applicazioni Web. D'altra parte, come la maggior pa rte degli altri gruppi locali 
+di questa sezione, organizza eventi e conferenze an nuali. Ha partecipato anche 
+all'evento IBWAS'2010 [ https://www.owasp.org/index.php/IBWAS10 ] in 
+collaborazione con il gruppo portoghese. 
+ 
+URL  https://www.owasp.org/index.php/Sweden  
+OWASP Sweden Local 
+Chapter Questo gruppo si concentra sull'organizzazione di m eeting ed eventi. Ha 
+organizzato conferenze anche in collaborazione con altri gruppi del nord, come 
+il norvegese e il finlandese. 
+ 
+URL  https://www.owasp.org/index.php/Switzerland  
+OWASP Switzerland 
+Local Chapter Questo gruppo organizza incontri su base periodica,  soprattutto nella parte 
+tedesca della Svizzera. I loro incontri e gli event i sono principalmente su temi 
+come test di sicurezza, lo sviluppo sicuro, hacking  e architetture sicure. Sul loro 
+sito Web sono fruibili diapositive di eventi e conf erenze. 
+ 

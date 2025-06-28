@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 87  a 156  
+ 
+7.4.5  Client DOM XSS 
+Come riconoscerla 
+Un utente malintenzionato può utilizzare il social engineering per indurre un utente a inviare l'input  
+modificato in modo malevolo verso il sito Web, ad e sempio inducendolo a cliccare su un URL con un’anco ra 
+(hash) modificata, facendo sì che il browser riscri va le pagine Web. L'aggressore può quindi dirottare  la 
+vittima verso un server fake (fasullo), che gli con sentirebbe di rubare la password dell'utente, farsi  inserire i 
+dati della carta di credito, fornire informazioni f alse o eseguire del malware. Ovviamente la vittima rimane 
+ignara di ciò che accade. 
+L’attacco è possibile perché la pagina Web dell'app licazione incorpora nella pagina dati provenienti 
+dall'input dell'utente (incluso l'URL della pagina) , facendo sì che il browser li visualizzi come part e della 
+pagina Web. Se l'input include frammenti HTML o Jav aScript, anche questi vengono visualizzati (ed 
+eseguiti). La vulnerabilità è il risultato dell'inc orporamento di input dell'utente arbitrario senza p rima 
+codificarlo in un formato che impedirebbe al browse r di trattarlo come HTML anziché come testo normale . 
+ 
+Come difendersi 
+• I parametri devono essere limitati a un set di cara tteri consentito e l'input non convalidato deve 
+essere eliminato. Oltre ai caratteri, occorre contr ollare il tipo di dati, la loro dimensione, l’inter vallo 
+di validità, il formato e l’eventuale corrispondenz a all’interno dei valori previsti (white list). 
+Sconsigliata invece la black list, ossia un elenco di valori non consentiti: l’elenco sarebbe sempre 
+troppo limitato, rispetto ai casi che potrebbero ve rificarsi. 
+• Effettuare un encoding (codifica) su tutti i dati d inamici prima di includerli nella pagina web. 
+Considerare per tale scopo la libreria ESAPI4JS di OWASP. 
+ 
+Esempio: 
+codice vulnerabile: 
+ document.write("Il sito si trova qui: " + document .location); 
+codice sicuro: 
+ document.write("Il sito si trova qui: " +  
+  ESAPI4JS.encodeForURL( document.location) ); 
+ 
+Per maggiori informazioni vedere: http://cwe.mitre. org/data/definitions/79.html 
+ 
+7.5  Python 
+Python è un linguaggio di programmazione ad alto li vello, orientato agli oggetti, adatto, tra l’altro,  per 
+sviluppare applicazioni distribuite, scripting, app licazioni web, applicazioni di computazione numeric a e di 
+system testing. 
+Fu sviluppato da Guido van Rossum nel peridodo 1985 -1990 come Open Source, sotto licenza GNU General 
+Public License (GPL). 
+Dato il grande successo e la diffusione del linguag gio, sono sosrti numerosi framework e librerie che ne 
+aumentanto le potenzialità, sia in termini di carat teristiche, che di prestazioni. 
+Di seguito, un elenco delle principali vulnerabilit à alle quali i programmi Python possono essere sogg etti e 
+le contromisure da adottare per mitigarle. 
+7.5.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+Il Cross Site Scripting consiste nella possibilità di inoculare uno script e di mandarlo in esecuzione  sul front-
+end dell’applicazione. Tramite tecniche sviluppate da malintenzionati per ottenere informazioni person ali, 
+possono, ad esempio, essere simulate pagine quasi i dentiche ad altri siti molto frequentati per ottene re 
+informazioni riservate. La prassi del “social engin eering” consente di ingannare gli utenti per indurl i a 
+visitare pagine fraudolente. Gli attacchi XSS di ti po reflected si verificano ogni qualvolta uno scrip t viene 

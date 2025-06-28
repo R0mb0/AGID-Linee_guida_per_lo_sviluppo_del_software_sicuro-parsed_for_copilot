@@ -1,0 +1,55 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 102  a 156  
+ 
+    ProtocolType.Tcp); 
+ 
+    TcpClient client = new TcpClient("example.com",  80);  
+    UdpClient listener = new UdpClient(80);  
+  } 
+ 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/99.html, 
+CWE-99: Improper Control of Resource Identifiers (' Resource Injection'). 
+7.6.7   SQL Injection 
+Come riconoscerla  
+I dati forniti dall'utente, in un modulo (form) o a ttraverso i parametri URL, devono essere sempre 
+considerati non attendibili e potenzialmente corrot ti. La composizione dinamica di query SQL, a partir e da 
+dati non verificati, consente agli aggressori di in serire valori appositamente predisposti per modific arne il 
+contenuto e il significato. Gli attacchi di SQL inj ection possono leggere, modificare o eliminare info rmazioni 
+riservate dal database e talvolta persino metterlo fuori uso o eseguire comandi arbitrari di sistema 
+operativo. 
+Come difendersi 
+• In genere, la soluzione consiste nel fare affidamen to su query parametriche, piuttosto che sulla 
+concatenazione di stringhe. Questa tecnica fornisce  un valido escaping dei caratteri pericolosi. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La validazione dovrebbe essere 
+basata su una white list: dovrebbero essere accetta ti solo i dati che adattano a una struttura 
+specificata, scartando quelli che non rispettano la  white list. Occorre controllare il tipo del dato, la 
+sua dimensione, l'intervallo di validità (range), i l formato ed eventuali valori attesi (white list). 
+• Limitare l'accesso agli oggetti e alle funzionalità  di database, in base al "Principle of Least Privil ege" 
+(non fornire agli utenti permessi più elevati di qu elli strettamente necessari per svolgere il loro 
+lavoro). 
+ 
+Esempio: 
+Codice vulnerabile:  
+ public IActionResult Autenticazione(string nomeUte nte) 
+ { 
+   // Non sicuro. Un utente malintenzionato può agg irare l'autenticazione passando  
+   // nomeUtente con il valore "' or 1=1 or ''='"; 
+var query = "SELECT * FROM Utenti WHERE Nome = '" +  nomeUtente + "'";    
+var nomeUtenteExists = _context.nomeUtentes.FromSql (query).Any(); 
+ 
+    return Content(nomeUtenteExists ? "success" : " fail"); 
+ } 
+Codice sicuro: 
+ public IActionResult Autenticazione(string nomeUte nte) 
+ { 
+var query = "SELECT * FROM Utenti WHERE Username = {0}"; // Safe 
+var userExists = _context.Users.FromSql(query, nome Utente).Any(); 
+return Content(userExists ? "success" : "fail"); 
+ } 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/89.html , 
+CWE-89: Improper Neutralization of Special Elements  used in an SQL Command ('SQL Injection'). 
+7.6.8  XPath Injection 
+Come riconoscerla  

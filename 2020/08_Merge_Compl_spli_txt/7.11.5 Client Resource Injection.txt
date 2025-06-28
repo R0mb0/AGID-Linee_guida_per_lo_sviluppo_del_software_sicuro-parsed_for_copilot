@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 143  a 156  
+ 
+la funzione after() accetta un elemento DOM, quindi  consente di creare un nodo di testo: 
+select.after(document.createTextNode(option.text()) ); 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/97.html,  
+CWE-97: Improper Neutralization of Server-Side Incl udes (SSI) Within a Web Page. 
+7.11.4  Client Dom XSS 
+Come riconoscerla 
+Un utente malintenzionato può utilizzare il social engineering per indurre un utente a inviare l'input  
+modificato in modo malevolo verso il sito Web, ad e sempio inducendolo a cliccare su un URL con un’anco ra 
+(hash) modificata, facendo sì che il browser riscri va le pagine Web. L'aggressore può quindi dirottare  la 
+vittima verso un server fake (fasullo), che gli con sentirebbe di rubare la password dell'utente, farsi  inserire i 
+dati della carta di credito, fornire informazioni f alse o eseguire del malware. Ovviamente la vittima rimane 
+ignara di ciò che accade. 
+L’attacco è possibile perché la pagina Web dell'app licazione incorpora nella pagina dati provenienti 
+dall'input dell'utente (incluso l'URL della pagina) , facendo sì che il browser li visualizzi come part e della 
+pagina Web. Se l'input include frammenti HTML o Jav aScript, anche questi vengono visualizzati (ed 
+eseguiti). La vulnerabilità è il risultato dell'inc orporamento di input dell'utente arbitrario senza p rima 
+codificarlo in un formato che impedirebbe al browse r di trattarlo come HTML anziché come testo normale . 
+ 
+Come difendersi 
+I parametri devono essere limitati a un set di cara tteri consentito e l'input non convalidato deve ess ere 
+eliminato. Oltre ai caratteri, occorre controllare il tipo di dati, la loro dimensione, l’intervallo d i validità, il 
+formato e l’eventuale corrispondenza all’interno de i valori previsti (white list). Sconsigliata invece  la black 
+list, ossia un elenco di valori non consentiti: l’e lenco sarebbe sempre troppo limitato, rispetto ai c asi che 
+potrebbero verificarsi. 
+Effettuare un encoding (codifica) su tutti i dati d inamici prima di includerli nella pagina web. Consi derare 
+per tale scopo la libreria ESAPI4JS di OWASP. 
+ 
+Per creare dinamicamente URL in JavaScript, utilizz are la libreria OWASP ESAPI4JS: 
+window.location = ESAPI4JS.encodeForURL(input); 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/97.html ,  
+CWE-97: Improper Neutralization of Server-Side Incl udes (SSI) Within a Web Page. 
+7.11.5   Client Resource Injection 
+Come riconoscerla 
+Un malintenzionato potrebbe essere in grado di apri re una backdoor che gli consente di connettersi 
+direttamente al server delle applicazioni, portando  potenzialmente al controllo del server o ad altri attacchi 
+indiretti. In particolare, modificando il numero di  porta del socket, il malintenzionato può essere in  grado di 
+bypassare insufficienti controlli di rete o offusca re l'attacco da parte dei dispositivi di rete. Inol tre, questa 
+vulnerabilità può essere sfruttata per bypassare i firewall o altri meccanismi di controllo degli acce ssi; 
+utilizzare l'applicazione come proxy per la scansio ne delle porte delle reti interne e l'accesso diret to ai 
+sistemi locali; o indurre erroneamente l'utente a i nviare informazioni riservate a un server fasullo.  
+Come difendersi 
+Non consentire a un utente, direttamente o indirett amente, di definire i parametri dei socket o altre 
+impostazioni di rete. 
+Se possibile, limitare i WebSocket agli URL predefi niti. 
+ 

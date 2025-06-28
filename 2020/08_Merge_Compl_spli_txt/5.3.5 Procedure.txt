@@ -1,0 +1,54 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 92  a 141  
+ 
+5.3.5  Procedure  
+Alle linee guida ‘Procedure generali’ (Change manag ement, Maintenance, Patching, Secure testing, 
+Disposal) introdotti nel paragrafo [rif. 5.1.7], si  aggiungono, per l’ambito specifico, le indicazioni  di cui di 
+seguito: 
+ 
+Patching  
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di  sistema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Cancellazione o furto di informazioni (ad es. da ra nsomware, ecc.). 
+- Compromissione delle comunicazioni. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware) 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  È necessario controllare periodicamente il sito web de l fornitore per gli aggiornamenti. 
+A tal fine si fa notare che: 
+- Alcuni browser controllano automaticamente gli aggi ornamenti disponibili  
+- Alcuni fornitori offrono la notifica automatica deg li aggiornamenti tramite una 
+mailing list.   
+ 
+Sensibilizzare il personale sui rischi che la navig azione in Interne t via Browser comporta  
+Minaccia  Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione (es. 
+malware, ecc.). 
+Contromisure  Sensibilizzare il personale sui rischi che la navig azione in Internet via Browser 
+comporta. Di seguito le principali norme comportame ntali da seguire: 
+- Non fare clic su collegamenti senza considerare i r ischi che ne potrebbero derivare 
+(evitare di cliccare su link sospetti presenti nell e pagine). 
+- Prestare attenzione al fatto che gli indirizzi di p agine Web potrebbero essere 
+mascherati e portare in un sito imprevisto. 
+- Considerare che ogni volta che un sito web richiede  che vengano abilitate 
+determinate funzionalità o installati software e ag giornamenti, si mette a rischio il 
+computer. Ad es. non aggiornare mail il Flash Playe r su richiesta di una pagina web 
+ma solo da pannello di controllo. 
+- Non riutilizzare la stessa password per siti divers i. 
+- Non fornire mai online informazioni personali a men o di non essere certi che il sito 
+sia valido e le transazioni sicure: prima di inseri re qualsiasi informazione personale, 
+controllare la barra degli URL del browser al fine di accertarsi che il sito sia quello 
+atteso e che sia presente la dicitura "https:" e un 'icona a forma di lucchetto ad 
+indicare che la connessione al sito è protetta e ch e il certificato server è valido. 
+- Evitare Wi-Fi pubblici o gratuiti: l’attaccante spe sso utilizza sniffers wireless per 
+rubare le informazioni degli utenti quando vengono inviate su reti non protette. Il 
+modo migliore per proteggersi da questo attacco è e vitare di utilizzare queste reti, 
+oppure utilizzarle solo con una VPN che incapsuli t utto il traffico in un tunnel 
+cifrato. 
+- In caso di individuazione di una “falsa” pagina di autenticazione segnalarla al team 
+di sicurezza interna all’organizzazione per procede re all’oscuramento della 
+medesima e possibilmente all’individuazione dei res ponsabili. 
+ 

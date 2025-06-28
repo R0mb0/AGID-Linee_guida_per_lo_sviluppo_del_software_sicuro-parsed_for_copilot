@@ -1,0 +1,11 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 11  a 156  
+ 
+TLS  Transport Layer Security  
+URL  Uniform Resource Locator  
+UTF  Unicode Transformation Format  
+XML  eXtensible Markup Language  
+XSS  Cross Site Scripting  
+Tabella 3 - Acronimi  
+  

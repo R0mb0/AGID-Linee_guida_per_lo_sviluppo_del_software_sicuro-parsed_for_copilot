@@ -1,0 +1,65 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 109  a 137  
+ 
+Identificatore biometrico  
+Estratto conto della carta di credito 
+Condanne penali o reati commessi 
+Rapporti di indagini penali 
+Numero cliente 
+Data di nascita 
+Informazioni sanitarie diagnostiche 
+Disabilità 
+Fatture del medico 
+Stipendi dei dipendenti e file di risorse umane 
+Profilo finanziario 
+Genere 
+Posizione GPS 
+Traiettorie GPS 
+Indirizzo di casa 
+Indirizzo IP passaporto)  
+Indirizzo e-mail personale 
+Numeri di identificazione personale (PIN) o 
+password 
+Interessi personali derivati dall'utilizzo di 
+tracciamento di siti Web 
+Profilo personale o comportamentale 
+Numero di telefono personale 
+Fotografia o video identificabili con una persona 
+fisica 
+Preferenze di prodotto e servizio 
+Origine razziale o etnica 
+Credenze religiose o filosofiche 
+Orientamento sessuale 
+Appartenenza sindacale 
+Bollette 
+Tabella 8 - Esempi di attributi per indentificare u na persona 
+Dati pseudonimizzati  
+Al fine di limitare la capacità del titolare o del responsabile di identificare l’interessato, l’ident ità di 
+quest’ultimo e le informazioni che lo riguardano po ssono essere sostituite da pseudonimi. Tale sostitu zione 
+viene solitamente eseguita da un soggetto terzo pri ma di trasmettere le informazioni a un destinatario . La 
+sostituzione viene considerata pseudonimizzazione q uando: 
+(a) gli attributi collegati allo pseudonimo non son o sufficienti per identificare l’interessato; 
+(b) l'assegnazione degli pseudonimi è tale da non p oter essere invertita da parte delle persone che l’ hanno 
+eseguita.  
+La pseudonimizzazione evita il collegamento. Ma ess endo diversi i dati collegabili allo stesso pseudon imo, 
+esiste il rischio che la pseudonimizzazione sia vio lata, in quanto più grande è il set di dati associa to a un 
+dato pseudonimo, maggiore è il rischio che la propr ietà (a) venga violata. Inoltre, più piccolo è il g ruppo di 
+persone fisiche a cui un insieme di dati pseudonimi  si riferisce, maggiore sarà la probabilità che un 
+interessato sia identificabile. Gli attributi conte nuti direttamente nelle informazioni in questione e  quelli 
+che possono essere facilmente collegati a queste in formazioni (ad es. utilizzando un motore di ricerca  o dei 
+riferimenti incrociati con altri database) devono e ssere presi in considerazione nel determinare se 
+l'informazione si riferisce a un elemento identific abile dell’interessato. 
+La pseudonimizzazione è differente dall'anonimizzaz ione: i processi di anonimizzazione soddisfano 
+entrambe le proprietà (a) e (b) di cui sopra, ma el iminano il collegamento. Durante l'anonimizzazione,  le 
+informazioni sull'identità vengono cancellate o sos tituite da pseudonimi per i quali la funzione di 
+associazione viene distrutta. Quindi, i dati resi a nonimi non sono più personali. 
+Metadati 
+I dati personali possono essere memorizzati in un s istema ICT in modo tale da non essere facilmente vi sibili 
+all'utente del sistema. Ad esempio, la memorizzazio ne del nome dell’interessato come metadato nelle 
+proprietà di un documento, nei commenti o nelle mod ifiche. L’interessato deve essere a conoscenza 
+dell’esistenza di tali dati sotto forma di metadati  o del loro trattamento per tale scopo, in quanto p otrebbe 
+preferire che le informazioni personali non vengano  elaborate in questo modo o condivise pubblicamente . 
+Dati non richiesti 

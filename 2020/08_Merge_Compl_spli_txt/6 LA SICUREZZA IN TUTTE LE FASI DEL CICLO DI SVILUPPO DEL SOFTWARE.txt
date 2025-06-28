@@ -1,0 +1,49 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 45  a 137  
+ 
+6 LA SICUREZZA IN TUTTE LE FASI DEL CICLO DI SVILUPPO  DEL 
+SOFTWARE 
+6.1  Secure SDLC 
+Generalmente gli aspetti di sicurezza sono sottoval utati fin dalle prime fasi del ciclo di vita dello sviluppo 
+software e di conseguenza sono molte le vulnerabili tà che vengono introdotte e trasmesse negli stadi 
+successivi. È stato stimato, ad esempio, che un err ore introdotto nella fase di specifica dei requisit i, può 
+costare fino a 200 volte, se lo si corregge nelle s uccessive fasi di sviluppo, rispetto a quanto sareb be costata 
+la sua immediata rimozione. L’attuazione corretta e  completa delle attività di sicurezza  nelle prime fasi 
+consente di incrementare sensibilmente il livello d i sicurezza di ogni singola fase successiva con un 
+beneficio di ritorno importante: 
+ 
+Figura 8 - Secure development activities 
+ 
+Un Secure Software Development Life Cycle (SSDLC)  considera e implementa opportune attività di 
+sicurezza nel corso di tutte le fasi del processo S DLC, come illustrato nella figura che segue: 
+ 
+ 
+Figura 9 - Modello fasi SSDLC 
+ 
+Requisiti : in questa fase vengono effettuate, tramite rappre sentazione UML, le analisi dei requisiti di 
+sicurezza, dei rischi, delle probabilità di impatto  delle minacce, dei casi di abuso. E’ importante so ttolineare 
+che in questa fase si devono adottare le best pract ices di carattere generale nella definizione dei re quisiti di 
+sicurezza. 
+Requisiti  
+ Progettazione 
+ Implementazione  
+ Verifica  
+ Validazione  
+ Supporto  
+Risk 
+Assessment  
+Threat 
+Modeling  
+Attack 
+Static  
+Analysis  
+Dynamic 
+Analysis  
+Final Review  
+Secure  
+Release  
+Security 
+Monitoring  

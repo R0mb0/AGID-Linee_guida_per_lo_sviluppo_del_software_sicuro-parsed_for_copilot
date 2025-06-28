@@ -1,0 +1,59 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 130  a 156  
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/90.html,  
+CWE-90: Improper Neutralization of Special Elements  used in an LDAP Query ('LDAP Injection'). 
+7.9.8  Reflected Injection 
+Come riconoscerla 
+La reflection attivata con l'input non verificato d ell'utente può, nella migliore delle ipotesi, dare origine a 
+comportamenti imprevisti o causare l’instabilità de l sistema. Nel peggiore dei casi, può consentire ag li 
+aggressori di iniettare ed eseguire codice dannoso,  invocare metodi o classi non previsti all'interno del 
+codice, alterare il flusso logico, manipolare i dat i e altro ancora. 
+La reflection è una tecnica di codifica in cui clas si, metodi o funzioni incorporate sono invocate a l ivello di 
+codice dal loro nome. Se questo nome viene determin ato dinamicamente dagli input dell'utente, questi 
+input possono modificare il flusso di codice, invoc are codice imprevisto o indesiderato e, a volte, co nsentire 
+l'inserimento di nuovo codice dannoso. 
+Si ha reflected injection quando l'applicazione uti lizza un input esterno di tipo reflection (dinamico  con 
+input via web) per selezionare le classi o il codic e da utilizzare, senza effettuare i dovuti controll i. 
+Come difendersi 
+• Evitare di utilizzare qualsiasi forma di valutazion e dinamica del codice e, in particolare, evitare di  
+utilizzare la reflection se non assolutamente neces sario. 
+• Se non è richiesta un’esecuzione dinamica, utilizza re il flusso logico per determinare quali funzioni 
+eseguire. 
+• Se è necessaria un’esecuzione dinamica, applicare u na lista bianca (white list) di segmenti di codice 
+consentiti, per garantire che il codice arbitrario non possa essere eseguito 
+Esempio: 
+Codice vulnerabile: 
+function funzioneHelloWorld($name) { 
+  return 'Hello '.htmlentities($name); 
+} 
+// Se si immette ?function=file_get_contents&arg=/e tc/passwd si potrà leggere il 
+// contenuto del file /etc/passwd 
+$funcName = isset($_GET['function']) ? $_GET['funct ion'] : "funzioneHelloWorld";; 
+$arg = isset($_GET['arg']) ? $_GET['arg']: "Guest"; ; 
+echo "Output: "; 
+$func = new ReflectionFunction($funcName); 
+echo $func->invoke($arg); 
+ 
+Codice sicuro chiamato senza Reflection: 
+function funzioneHelloWorld($name) { 
+  return 'Hello ' . htmlentities($name); 
+} 
+$funcName = isset($_GET['function']) ? $_GET['funct ion'] : "funzioneHelloWorld";; 
+$arg = isset($_GET['arg']) ? $_GET['arg']: "Guest"; ; 
+if ($funcName == "funzioneHelloWorld") { 
+ echo funzioneHelloWorld($arg); 
+} else { 
+ echo "  Funzione non attendibile!"; 
+} 
+ 
+Nel seguente codice la funzione funzioneHelloWorld( ) è chiamata con Reflection, garantendo che il nome  
+della funzione sia attendibile: 
+$funcName = isset($_GET['function']) ? $_GET['funct ion'] : "funzioneHelloWorld";; 
+$arg = isset($_GET['arg']) ? $_GET['arg']: "Guest"; ; 
+echo "Output: "; 
+if ($funcName == "funzioneHelloWorld") { 
+ $func = new ReflectionFunction($funcName); 
+ echo $func->invoke($arg); 
+} else { 

@@ -1,0 +1,41 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 79  a 137  
+ 
+ 
+ 
+Figura 14 - SAMM Structure 
+ 
+Per ogni security practice, tre Maturity Levels son o definiti in termini di specifiche attività e metr iche che 
+un'organizzazione potrebbe adottare al fine di ridu rre i rischi per la sicurezza e aumentare l’affidab ilità del 
+software. 
+ 
+Risultati più rilevanti: 
+Maturi ty Model: SAMM 
+version 1.0 Il modello è disponibile in format o XML ed è stato tradotto in diverse lingue. 
+Nella stessa pagina sono evidenziati i tool a suppo rto:  
+http://www.opensamm.org/download/  
+ 
+ 
+8.1.2  Systems Security Engineering Capability Maturity Mo del (SEE-CMM) 
+Il modello SSE-CMM si indirizza sui requisiti per l 'implementazione della sicurezza in un sistema. Le attività 
+di ingegneria di sicurezza coprono l'intero ciclo d i vita del sistema (definizione dei concetti, anali si dei 
+requisiti, progettazione, sviluppo, integrazione, i nstallazione, manutenzione e disattivazione). L'SSE -CMM si 
+applica a tutti i tipi di organizzazioni, a prescin dere dalle loro dimensioni, da quelle commerciali a  quelle di 
+carattere governativo o accademico. 
+ 
+URL  http://www.sse -cmm.org   
+Country of HQ location  US  
+Geographic Scope  International  
+Type  Industry (not for profit)  
+ 
+Questo modello ha undici aree di processo di sicure zza ciascuna delle quali comprende un insieme di 
+pratiche di base. Queste aree si concentrano sui co ntrolli, sulle minacce, sulla scoperta e sull’elimi nazione 
+delle vulnerabilità: 
+• Administer Security Controls 
+• Assess Impact 
+• Assess Security Risk 
+• Assess Threat 
+

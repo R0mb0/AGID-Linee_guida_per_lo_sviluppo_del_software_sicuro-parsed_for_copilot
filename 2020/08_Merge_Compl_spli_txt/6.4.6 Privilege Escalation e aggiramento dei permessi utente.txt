@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 40  a 156  
+ 
+l’attaccante riesce a manomettere il comportamento del programma che andrà quindi a scrivere nel file 
+sbagliato.  
+Contromisure 
+La gestione della concorrenza fra diversi processi all’interno della stessa applicazione è una questio ne 
+piuttosto delicata. Massima cura deve essere presta ta, in fase di progettazione, al problema della 
+competizione fra diversi thread per le stesse risor se. Non c’è una regola universale, ma i vari lingua ggi di 
+programmazione offrono diversi strumenti per la ges tione di questo specifico aspetto. 
+La sincronizzazione di metodi e classi o l’uso di s emafori sono di solito i rimedi adottati per preven ire 
+questo problema. 
+6.4.6  Privilege Escalation e aggiramento dei permessi ute nte 
+Le eccezioni e le condizioni non previste o mal ges tite sono sfruttate molto spesso dagli aggressori p er 
+ottenere un innalzamento dei privilegi (privilege e scalation), ovvero la possibilità di svolgere opera zioni sul 
+sistema o sulla stessa applicazione con privilegi s uperiori rispetto a quelli posseduti prima dell’att acco. Ad 
+esempio, sfruttando con successo uno Stack Overflow , l’aggressore che da remoto poteva unicamente 
+godere dei privilegi di un utente anonimo o di bass o profilo, può successivamente operare nel sistema 
+come se fosse un utente locale a cui sono stati ass egnati permessi amministrativi. Analogamente sfrutt ando 
+una situazione di race condition, l’aggressore può modificare un file pur non possedendo come utenza 
+originaria gli effettivi privilegi di scrittura. Ne l caso di un Directory Listing può invece accedere ad aree 
+riservate di un portale ancor prima di autenticarsi , bypassando il meccanismo con il quale l’applicazi one 
+assegna i permessi agli utenti regolari. 
+Le motivazioni che rendono solitamente possibile un  Privilege Escalation sono menzionate di seguito: 
+• l’applicazione, il servizio o il singolo componente  vengono avviati con i privilegi amministrativi; 
+• L’applicazione utilizza privilegi amministrativi an che quando svolge azioni per conto di un’utenza 
+non privilegiata; 
+• Nei sistemi Unix o derivati il bit Set-User-ID è at tivo. 
+ 
+Una privilege escalation non si definisce tale solo  quando l’innalzamento dei privilegi riguarda diret tamente 
+il passaggio da un’utenza non privilegiata a una pr ivilegiata, ma anche quando lo scambio di permessi 
+avviene tra utenze non privilegiate. 
+ 
+Esempio:  
+Attraverso la tecnica del path traversal, l’attacca nte è in grado di individuare le pagine che consent ono 
+l’accesso senza autenticazione: 
+ 
+ /../.././userProfiles.html 
+ 
+Contromisure 
+È necessario progettare l’applicazione in modo tale  da impedire che informazioni utili all’attacco pos sano 
+essere svelate in caso di errore o di un’eventualit à non gestita.   
+6.5  Bound checking e problematiche di overflow 
+Le problematiche di Overflow si verificano solitame nte quando i dati provenienti da input utente, senz a 
+prima essere adeguatamente verificati, vengono memo rizzati all’interno di buffer non abbastanza grandi  
+per contenerli. Ciò è all’origine di differenti con seguenze, a seconda delle regioni di memoria in cui  
+l’overflow si è manifestato e delle aree sovrascrit te. In alcuni casi, l’aggressore può sfruttare l’ar ea di 
+memoria sovrascritta per eseguire comandi remoti fi nalizzati all’apertura di un canale di accesso al s istema 
+vulnerabile. Altre volte viene semplicemente genera to un crash dell’applicazione o del sistema, con 
+conseguente interruzione nell’erogazione del serviz io (DoS).  

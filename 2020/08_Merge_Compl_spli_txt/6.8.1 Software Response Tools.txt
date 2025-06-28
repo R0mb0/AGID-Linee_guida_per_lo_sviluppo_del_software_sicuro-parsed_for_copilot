@@ -1,0 +1,186 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 63  a 137  
+ 
+Prodotto Categoria  Fase SSE Tipo 
+Licenza Sito Web 
+Armor Complete Cloud Security Platform  Release Available by 
+Request https://www.armor.com  
+ 
+6.8  Supporto 
+La fase di supporto riguarda la manutenzione e l’as sistenza post rilascio. Questa fase nasce per segui re 
+tutte le novità in materia di sicurezza, imposte da l dinamico mercato informatico, per adeguarsi 
+all’evoluzione delle vulnerabilità del software. 
+ Le azioni di sicurezza di questa fase possono esse re così sintetizzate: 
+• Vulnerability assessment :  
+o esecuzione di test che consentano di individuare le  vulnerabilità dell’applicazione; 
+o valutazione della priorità/severità dei problemi ri scontrati;  
+o definizione del Remediation Plan; 
+o produzione di reportistica di sintesi e di dettagli o; 
+• Data Loss/Leak Prevention : 
+o rilevazione, analisi e classificazione dei dati che  transitano nell'organizzazione, ovunque siano 
+archiviati;  
+o creazione di regole predefinite per la protezione d ei dati, per assicurarsi che siano usati in 
+conformità con le politiche di privacy e sicurezza;   
+o generazione automatica di alert nel caso in cui ven gano violate le policy di sicurezza definite; 
+• Database Security :  
+o analisi dei database e valutazione dei rischi media nte l’accertamento di nuove  vulnerabilità;  
+o individuazione delle alterazioni dei dati, degli ut enti e dei profili di accesso;  
+o arresto in tempo reale delle sessioni che violano l e policy, evitando che i dati vengano 
+compromessi; 
+o applicazione delle ultime patch di sicurezza dispon ibili; 
+• Web Application Firewall Management e Secure Web Ga teway :  
+o funzionalità di standard firewall (policy enforceme nt, stateful inspection, packet filtering, NAT, 
+VPN client-to-site e site-to-site);  
+o anti-malware e anti-spam;  
+o Intrusion Prevention (IPS) per il blocco delle mina cce; 
+• Patching Update: notifica, installazione e test di nuovi security im provement packages.  
+ 
+6.8.1  Software Response Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Response  Tools’: 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 64  a 137  
+ 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+Airlock Suite by 
+Ergon 
+Informatik WAF, 
+Authentication, 
+Identity Response Versione trial 
+disponibile https://www.airlock.com  
+Akamai CDN, DDoS 
+Protection, WAF Response Prova gratuita 
+disponibile https://www.akamai.com/it/it/   
+Alert Logic 
+SIEMless Threat 
+Management Intrusion 
+Prevention 
+System, Cloud 
+Access Security 
+Broker, WAF, 
+Container Security  Response Versione trial 
+disponibile https://www.alertlogic.com/  
+AWS WAF WAF Response Nessuna trial 
+disponibile https://aws.amazon.com/it/waf/   
+Potection 
+Center Mobile AST  Response Nessuna demo 
+disponibile https://appmobi.com   
+AppWall by 
+Radware WAF, DDoS 
+Protection Response Nessuna versione 
+trial disponibile https://www.radware.com/  
+Arbor DDoS 
+Protection DDoS Protection Response Nessuna versione 
+trial disponibile https://www.netscout.com/arbor 
+-ddos  
+Arxan 
+Application 
+Protection Mobile AST  Response Nessuna versione 
+trial disponibile https://www.arxan.com/applicati 
+on-protection  
+Barracuda Web 
+Application 
+Firewal WAF Response Versione trial 
+disponibile su 
+richiesta https://www.barracuda.com/pro 
+ducts/webapplicationfirewall  
+Lookout Mobile 
+Endpoint 
+Security Mobile Access 
+Security Broker Response Demo disponibile su 
+richiesta https://www.lookout.com/produ 
+cts/mobile-endpoint-security  
+CD Protection 
+by CD Networks  CDN, WAF, DDoS 
+Protection Response Nessuna versione 
+trial disponibile https://www.cdnetworks.com  
+CipherCloud Cloud Access 
+Security Broker Response Versione trial 
+disponibile https://www.ciphercloud.com  
+CloudFlare CDN, DDoS 
+Protection, WAF Response Nessuna versione 
+trial disponibile www.cloudflare.com  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 65  a 137  
+ 
+CloudFront by 
+Amazon CDN, DDoS 
+Protection Response Nessuna versione 
+trial disponibile https://aws.amazon.com/it/cloud 
+front/  
+Cloud Access 
+Security Broker 
+(CASB) Cloud Access 
+Security Broker Response Demo gratuita a 
+richiesta https://umbrella.cisco.com/prod 
+ucts/casb  
+CloudPassage 
+Halo Cloud Access 
+Security Broker Response Versione trial 
+disponibile https://www.cloudpassage.com  
+DDoS Strike by 
+Security 
+Compass DDoS Protection Response Demo disponibile su 
+richiesta https://www.securitycompass.co 
+m  
+R&S®Web 
+Application 
+Firewall WAF Response Demo disponibile su 
+richiesta www.denyall.com  
+F5 Big-IP  WAF, DDoS 
+Protection Response Demo disponibile su 
+richiesta https://f5.com  
+FireEye NX Web Server 
+Scanner, WAF Response Versione trial non 
+disponibile https://www.fireeye.com  
+FortiWeb: Web 
+Application 
+Firewall and API 
+Protection WAF Response Demo disponibile su 
+richiesta https://www.fortinet.com/produ 
+cts/web-application-
+firewall/fortiweb.html  
+FortiGate 
+NGFW WAF Response Demo disponibile su 
+richiesta https://www.fortinet.com/it/pro 
+ducts/next-generation-
+firewall/models-specs.html  
+Imperva 
+FlexProtect WAF, DDoS 
+Protection Response Demo disponibile su 
+richiesta https://www.imperva.com/produ 
+cts/flexprotect-plans/  
+BloxOne Threat 
+Defense WAF Response Versione trial 
+disponibile su 
+richiesta https://www.infoblox.com/produ 
+cts/bloxone-threat-defense/  
+Hillstone E-
+Series WAF Response Demo non 
+disponibile  https://www.hillstonenet.com  
+Kona Site 
+Defender by 
+Akamai WAF, DDoS 
+Protection Response Demo disponibile su 
+richiesta https://www.akamai.com/it/it/pr 
+oducts/security/kona-site-
+defender.jsp  
+CenturyLink 
+DDoS and Web 
+Application 
+Security CDN, DDoS 
+Protection Response Demo non 
+disponibile https://www.centurylink.com/bu 
+siness/security/ddos-and-web-
+application.html  

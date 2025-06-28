@@ -1,0 +1,57 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 64  a 156  
+ 
+CWE-99: Improper Control of Resource Identifiers (' Resource Injection'). 
+7.2.5  LDAP Injection 
+Come riconoscerla 
+LDAP è una base dati che censisce in forma di direc tory le utenze del sistema. Se l’input dell’utente viene 
+utilizzato, senza subire alcun controllo o filtro, per comporre una query LDAP, è facilmente intuibile  come 
+possa trasformarsi in un mezzo per sferrare un atta cco di LDAP injection. 
+Il danno che può derivarne dipende da quanto la dir ectory delle utenze venga inquinata.  
+Con un attacco di LDAP injection è possibile legger e dati riservati, come è possibile modificarli, can cellarli o 
+inserire utenze che poi possono essere utilizzate p er successivi attacchi. 
+Se nomeUtente è “Mario Rossi”, la query restituirà i dati relativi all’utente in questione, ma se vien e fornito 
+il carattere “*”, verrà restituito l’intera directo ry di utenze.  
+Come difendersi 
+Come in altri tipi di injection è fondamentale il c ontrollo e l’encoding dell’input, se deve servire p er 
+costruire filtri e query verso server LDAP. 
+L’encoding deve filtrare i seguenti caratteri: \ # + < > , ; " =  
+Altri caratteri scpeciali sono utilizzati all’inter no delle query LDAP e quindi non possono essere eli minati in 
+automatico:  * ( ) . & - _ [ ] ` ~ | @ $ % ^ ? : { } ! ' 
+Il controllo applicativo, dipendente dal contesto, assume un’importanza fondamentale. 
+Anche ridurre al minimo i privilegi assegnati all’u tenza con la quale il server LDAP è avviato è una m isura 
+utile a minimizzare le conseguenze di un attacco. 
+ 
+Esempio: 
+Il seguente codice riceve un userid e password in i nput per comporre una query LDAP. 
+ 
+private void searchRecord(String userSN, String use rPassword) throws 
+NamingException { 
+  Hashtable < String, String > env = new Hashtable < String, String > (); 
+  env.put(Context.INITIAL_CONTEXT_FACTORY, 
+"com.sun.jndi.ldap.LdapCtxFactory"); 
+  try { 
+    DirContext dctx = new InitialDirContext(env); 
+    SearchControls sc = new SearchControls(); 
+    String[] attributeFilter = { 
+      "cn", 
+      "mail" 
+    }; 
+    sc.setReturningAttributes(attributeFilter); 
+    sc.setSearchScope(SearchControls.SUBTREE_SCOPE) ; 
+    String base = "dc=example,dc=com"; 
+    // The following resolves to (&(sn=S*)(userPass word=*)) 
+    String filter = "(&(sn=" + userSN + ")(userPass word=" + userPassword + 
+"))"; 
+    NamingEnumeration << ? > results = dctx.search( base, filter, sc); 
+    while (results.hasMore()) { 
+      SearchResult sr = (SearchResult) results.next (); 
+      Attributes attrs = (Attributes) sr.getAttribu tes(); 
+      Attribute attr = (Attribute) attrs.get("cn");  
+      System.out.println(attr); 
+      attr = (Attribute) attrs.get("mail"); 
+      System.out.println(attr); 
+    } 
+    dctx.close(); 
+  } catch (NamingException e) { 

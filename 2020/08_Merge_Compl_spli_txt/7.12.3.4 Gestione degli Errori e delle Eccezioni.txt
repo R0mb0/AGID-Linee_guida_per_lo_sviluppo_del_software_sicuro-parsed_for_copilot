@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 155  a 156  
+ 
+• Utilizzare GCM (Galois Counter Mode) piuttosto che CBC/ECB. GCM è una modalità di cifratura 
+autenticata, il che significa che dopo la fase di c rittografia viene aggiunto un tag di autenticazione  al 
+testo cifrato, che sarà quindi convalidato prima de lla decodifica dei messaggi, assicurando il 
+messaggio da eventuali manomissioni. CBC/ECB, invec e, è una crittografia a chiave pubblica o 
+asimmetrica, che utilizza coppie di chiavi: pubblic he e private. La crittografia a chiave pubblica è 
+meno performante della crittografia a chiave simmet rica per la maggior parte dei casi, per cui il suo 
+uso più comune è la condivisione di una chiave simm etrica tra due parti usando la crittografia 
+asimmetrica, in modo da poter utilizzare la chiave simmetrica per scambiare messaggi crittografati 
+con crittografia simmetrica. A parte AES, che è una  tecnologia degli anni' 90, gli autori di Go hanno 
+iniziato ad implementare e supportare algoritmi di crittografia simmetrica più moderni che 
+forniscono anche l'autenticazione, come "chacha20po ly1305". 
+• Un altro package da considerare in Go, invece dell’ uso diretto di AES, è “x/crypto/nacl”. La 
+“nacl/box” e “nacl/secretbox” in Go sono implementa zioni delle astrazioni di NaCl per l'invio di 
+messaggi crittografati per i due casi di utilizzo p iù comuni: 
+o Invio di messaggi autenticati e crittografati tra d ue parti utilizzando la crittografia a chiave 
+pubblica (nacl/box). 
+o Invio di messaggi autenticati e crittografati tra d ue parti usando la crittografia simmetrica 
+(a.k.a secret-key). 
+• Si deve stabilire e utilizzare una politica e un pr ocesso per la gestione delle chiavi crittografiche,  in 
+modo tale da proteggere i dati principali più sensi bili dall'accesso non autorizzato. Pertanto, le 
+chiavi crittografiche non devono essere assolutamen te esplicitate, né tanto meno codificate nel 
+sorgente (hard coded). 
+• Focalizzare l'attenzione sull'impiego di algoritmi crittografici più moderni come l'implementazione 
+"https://godoc.org/golang.org/x/crypto" piuttosto c he utilizzare il pacchetto "crypto/*". 
+• Tutti i numeri casuali, nomi di file casuali, GUID casuali e stringhe casuali generati applicativament e, 
+devono essere creati utilizzando un generatore di n umeri casuali approvato dal modulo 
+crittografico, soprattutto quando questi valori son o potenzialmente sensibili e soggetti ad essere 
+indovinati. Utilizzare dunque la "crypto/rand" che,  anche se più lenta della "math/rand", risulta 
+essere molto più sicura. 
+7.12.3.4  Gestione degli Errori e delle Eccezioni 
+La gestione degli errori e il logging rappresentano  una parte essenziale nella protezione dell'applica zione e 
+dell'infrastruttura. Quando si parla di gestione de gli errori, ci si riferisce all’individuazione di e ventuali errori 
+nella logica dell'applicazione che potrebbero causa re il blocco del sistema, a meno che non vengano ge stiti 
+correttamente.  
+In Go esistono funzioni per la gestione degli error i. Queste sono: il panic, recover e il defer. Quand o uno 
+stato di applicazione è panic , l'esecuzione normale viene interrotta, le dichiar azioni di defer  vengono 
+eseguite e la funzione torna al suo chiamante. Recover  di solito è utilizzato all'interno delle dichiaraz ioni di 
+defer  e consente all'applicazione di riacquistare il con trollo su una routine di panicking e di tornare all a 
+normale esecuzione. 
+D'altra parte, il logging dettagliato di tutte le o perazioni e delle richieste che si sono verificate nel sistema 
+aiuta a determinare quali azioni devono essere adot tate per proteggere il sistema. Poiché gli aggresso ri 
+tentano di eliminare tutte le tracce delle loro azi oni cancellando i log, è fondamentale che i file di  log siano 
+centralizzati e protetti da accessi non autorizzati . 
+Altre azioni: 
+• gli sviluppatori devono assicurarsi che non siano d ivulgate informazioni sensibili nelle risposte di 
+errore, nonché garantire che nessun gestore di erro ri rilasci informazioni (ad esempio, il debug o le 
+informazioni sulle tracce di stack).  
+• Il logging deve essere sempre gestito dall'applicaz ione e non deve basarsi sulla configurazione del 
+server. Tutte le registrazioni devono essere implem entate da una routine master su un sistema 
+affidabile e gli sviluppatori devono inoltre assicu rarsi che i dati sensibili non siano soggetti a log ging 

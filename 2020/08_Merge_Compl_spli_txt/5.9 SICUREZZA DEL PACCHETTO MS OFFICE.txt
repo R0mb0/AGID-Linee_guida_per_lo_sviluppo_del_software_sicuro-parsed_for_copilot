@@ -1,0 +1,49 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 127  a 141  
+ 
+ 
+5.8.9  Procedure 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.7]. 
+ 
+5.8.10  Informazioni addizionali 
+Gli standard citati per mettere in sicurezza l’ESB (Security Assertion Markup Language (SAML), WS-Secu rity, 
+eXtensible Access Control Markup Language (XACML), ecc.) sono implementati e resi fruibili da soluzion i 
+COTS (Commercial Of The Shelf), la cui adozione ind irizza molte delle best practices descritte.  
+ 
+Riferimenti  
+SAML, XACML , etc  Gli standard citati per mettere in sicurezza l’ESB (SAML - Security Assertion 
+Markup Language, WS-Security, XACML - eXtensible Ac cess Control Markup 
+Language, ecc.) sono implementati e resi fruibili d a soluzioni COTS  (Commercial Of 
+The Shelf), la cui adozione indirizza molte delle b est practices descritte nei 
+paragrafi precedenti. 
+Web Services  Per informazioni sulle problematiche di sicurezza r elative alla tecnologia dei Web 
+Services, visitare il sito: 
+https://www.us-cert.gov/bsi/articles/best-practices /assembly-integration-and-
+evolution--security-concept-challenge-and-design-co nsiderations-web-services-
+integration. 
+ 
+5.9  Sicurezza del pacchetto MS Office 
+5.9.1  Hardening 
+Hardening della suite Office  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Limitare/Disabilitare/Condizionare l'uso di contenu ti attivi.  
+Per contenuti attivi si intendono: 
+- i controlli ActiveX,  
+- i componenti aggiuntivi quali, ad esempio: 
+• Componenti aggiuntivi COM (Component Object Model) 
+• Componenti aggiuntivi Visual Studio Tools per Offic e (VSTO) 
+• Componenti aggiuntivi di automazione 
+• Server RTD (RealTimeData) 
+• Componenti aggiuntivi di applicazioni, ad esempio f ile con estensioni wll, xll e 
+xlam 
+• Pacchetti di espansione XML 
+• Fogli di stile XML 
+• Macro VBA  
+Riferimenti  - Pianificare le impostazioni di sicurezza per i cont rolli ActiveX in Office 2013 , 
+https://technet.microsoft.com/it-it/library/cc17907 6.aspx  
+- Pianificare le impostazioni di protezione per i com ponenti aggiuntivi per Office 

@@ -1,0 +1,28 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 81  a 137  
+ 
+ 
+ 
+Figura 15 - BSIMM SSF 
+ 
+Per ogni livello di pratica e di maturità vi è un'a ssociazione “one activity - one objective”. I domin i sono: 
+1.  Governance - Pratiche che aiutano a organizzare, ge stire e calibrare un framework di sicurezza del 
+software. Anche l’addestramento del personale è una  pratica da far rientrare nella governance 
+centrale. 
+2.  Intelligence - Un insieme di conoscenze aziendali u tili per svolgere attività di sicurezza del softwar e 
+all'interno di un'organizzazione; comprende sia ind icazioni proattive sulla sicurezza che modelli di 
+organizzazione delle minacce.  
+3.  SSDL Touchpoints - Pratiche associate all'analisi e  alla sicurezza di particolari sviluppi software, 
+artefatti e processi. Tutte le metodologie di sicur ezza del software includono queste pratiche.  
+4.  Deployment - Pratiche che si rifanno alla sicurezza  della rete tradizionale e alla manutenzione del 
+software. La configurazione del software, la manute nzione e altri problemi ambientali hanno un 
+impatto diretto sulla sicurezza. 
+ 
+Il modello di maturità si presenta come una serie d i attività connesse con le pratiche. Gli obiettivi per ogni 
+livello di pratica sono identificati. Gli obiettivi  possono essere ulteriormente suddivisi in obiettiv i per la 
+pratica/livello e sono associati alle attività. A t itolo di esempio, la figura seguente, tratta dal do cumento 
+BSIMM2, mostra il modello di maturità per la pratic a di addestramento del dominio Governance. 
+

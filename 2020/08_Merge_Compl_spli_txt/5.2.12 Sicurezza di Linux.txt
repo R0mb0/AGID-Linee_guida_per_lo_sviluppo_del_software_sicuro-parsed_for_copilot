@@ -1,0 +1,770 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 60  a 141  
+ 
+Questo comportamento deve essere necessariamente di sabilitato, dato che tra i “Safe 
+Files” ci sono immagini e file di installazione di applicazioni, oltre che video, immagini, 
+file archivio e testo. 
+Tali file vengono aperti nel contesto del sistema o perativo anziché in un contesto 
+isolato nel browser e dunque rappresentano gravi ri schi per la sicurezza del sistema. 
+La funzionalità è configurabile nelle preferenze ge nerali di Safari. 
+ 
+Plug -ins di Safari  
+Minaccia  - Accesso non autorizzato ai sistemi.  
+- Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi. 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+Contromisure  A partire da Safari 10, è possibile abilitare o dis abilitare i plug -in in base a uno specifico 
+sito oltre che globalmente (come in passato). 
+Per ovvi motivi di sicurezza, è necessario, quindi,  con Safari versione 10 o successivo, 
+disabilitare la configurazione che abilita globalme nte i plug-in, optando invece per una 
+configurazione in cui i plug-in sono globalmente di sabilitati. All’accesso a un sito che 
+richiede un certo plug-in, Safari chiederà all’uten te se abilitare o no il plug-in per quel 
+sito. 
+ 
+Java Virtual Machine  
+Minaccia  - Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.) 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Accesso non autorizzato alle informazioni. 
+Contromisure  Apple , in passato , inseriva Java come parte del sistema operativo "core", ma 
+sfortunatamente non fornisce più i relativi aggiorn amenti rilasciati da Oracle. 
+La versione più recente di Java, rilasciata da Appl e, contiene peraltro numerosi difetti e 
+vulnerabilità e pertanto non deve essere registrata  come default runtime delle Applet 
+Java. 
+È necessario quindi disinstallare del tutto Java se  non in uso, o altrimenti assicurarsi di 
+aver installato la versione più recente fornita da Oracle. 
+ 
+5.2.12  Sicurezza di Linux   
+Il primo passo necessario per l'hardening di un ser ver GNU/Linux è determinare la funzione che il serv er è 
+chiamato a svolgere, e che stabilisce quali servizi  necessariamente devono essere installati. Per esem pio, se 
+il server è usato come server web, si potrebbero in stallare i servizi Linux, Apache, MySQL e Perl/ PHP / 
+Python etc. Se invece il server viene utilizzato pe r i servizi di directory, le uniche applicazioni e servizi che 
+dovrebbero essere disponibili e pertanto installati  sono quelli necessari per il compito prestabilito.  Non 
+dovrebbe essere installato altro per due principali  motivi: 
+1.  L'installazione di software extra o l'esecuzione di  servizi extra potenzialmente espone il sistema a 
+inutili vulnerabilità. Ad esempio, se si installa e  si usa un servizio Lightweight Directory Access 
+Protocol (LDAP) su un server per servizi di directo ry, sia il sistema operativo che LDAP dovrebbero 
+essere regolarmente aggiornati con le relative patc h di sicurezza e bug fixing. Ciò sarebbe 
+necessario anche se si installasse qualsiasi altro software, a prescindere dal fatto che questo venga 
+usato o meno, e tale software dovrebbe essere sotto posto comunque a regolari aggiornamenti. La 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 61  a 141  
+ 
+semplice presenza sul server di software non necess ario, fornisce ad un attaccante un'altra via 
+d'accesso al sistema. 
+2.  Installare software extra su un server significa ch e qualcuno potrebbe essere tentato di usare il 
+server per qualcosa di diverso dall'uso previsto. L 'utilizzo del server per compiti diversi da quello 
+principale sottrae risorse al compito per cui è des tinato e nel contempo lo espone a potenziali 
+minacce. 
+ 
+In linea generale, le pratiche più comuni indicate nelle diverse linee guida di hardening dei sistemi 
+GNU/Linux, includono: 
+- la cifratura dei dati nelle comunicazioni, 
+- l'esclusione di protocolli insicuri che trasportano  informazioni o password in chiaro, 
+- la riduzione della presenza di software non necessa rio sul sistema, 
+- la disattivazione di file eseguibili/binari o direc tory indesiderati con permessi speciali come SUID e  
+SGID, 
+- il mantenimento dello stato di aggiornamento del si stema operativo, con particolare riguardo alle 
+patch di sicurezza, 
+- l'utilizzo di estensioni di sicurezza come valore a ggiuntivo, 
+- l'adozione di SELinux come sistema di controllo acc essi, 
+- l'uso di account con password molto robuste, 
+- il regolare cambiamento delle password e il non riu tilizzo di password recenti, 
+- il blocco degli account che presentano numerosi err ori di login, 
+- l'impossibilità di utilizzare password vuote, 
+- l'hardening del protocollo e dei servizi SSH, 
+- la disabilitazione dei servizi non necessari, 
+- il rafforzamento in termini di sicurezza dei percor si /tmp, /var/tmp e /dev/shm, 
+- l’occultazione delle versioni del BIND DNS server e  dell'Apache server, 
+- l'hardening del sysctl.conf, 
+- l'installazione di Root Kit Hunter e ChrootKit Hunt er, 
+- la riduzione al minimo delle porte di rete aperte n el sistema, 
+- la configurazione del firewall di sistema, 
+- la separazione delle partizioni in modo da rendere il sistema maggiormente sicuro, 
+- la disattivazione di file binari indesiderati, 
+- la gestione dei log del sistema; con l'esecuzione d el mirroring dei log su un server di log separato, 
+- l'installazione di Logwatch con una revisione giorn aliera delle e-mail inviate da tale sistema, 
+- l'utilizzo di sistemi di rilevamento di attacchi di  forza bruta e delle intrusioni, 
+- l'installazione di Linux Socket Monitor, 
+- l'installazione di Mod_security, 
+- l'hardening dell'installato Php, 
+- la limitazione per gli account ad accedere solo a c iò di cui questi hanno bisogno, 
+- l'adeguata gestione dei backup, 
+- la sicurezza fisica del server. 
+  
+In informatica, solitamente il termine hardening id entifica il processo di sicurezza atto a ridurre in  un 
+sistema la superficie vulnerabile. Il suo obiettivo  principale è quello di ridurre il rischio per la s icurezza 
+eliminando i potenziali vettori di attacco e riduce ndo la superficie di attacco del sistema stesso. A tale 
+scopo, con un livello maggiore di dettaglio, si rip ortano alcune buone pratiche di hardening nell’otti ca di 
+sicurezza, specifiche dei sistemi GNU/Linux. Nel de scrivere tali pratiche, ci si avvale di un indice d i 
+obbligatorietà implementativa o livello di priorità  della specifica, che è necessario considerare al f ine di 
+garantire il giusto livello di sicurezza. Tale live llo di priorità può assumere i seguenti valori in r elazione alle 
+relative specifiche:   
+- BASSO - indica che la specifica ha una priorità bas sa, 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 62  a 141  
+ 
+- MEDIO - indica che la specifica ha una priorità med ia. Anche se non obbligatoria, è comunque 
+opportuno prenderla in considerazione. 
+- ALTO - indica che la specifica ha una priorità alta  e come tale è necessario seguire l'indicazione 
+fornita nella specifica e implementare/apportare le  modifiche consigliate. 
+ 
+PARTIZIONAMENTO  
+Separazione delle partizioni  
+Specifica  Livello di priorità  
+Garantire che “ /tmp ” e “ /var/tmp ” siano collocate su partizioni separate.  ALTO  
+Garantire che “ /var/log ” e “ /var/log/audit ” siano collocate su partizioni 
+separate. ALTO  
+Garantire che “ /var ” sia collocata su una partizione separata.  MEDIO  
+Garantire che “ /usr ” sia collocata su una partizione separata.  BASSO  
+Garantire che “ /home ” sia collocata su una partizione separata.  BASSO  
+Garantire che “ /boot ” sia collocata su una partizione separata.  BASSO  
+Uso delle opzioni di l imitazione nei  mount  (/etc/fstab)  
+Specifica  Livello di priorità  
+Limitare la partizione di mount “ /dev/shm ” nel seguente modo:  
+   tmpfs  /dev/shm  tmpfs  rw,nodev,nosuid,noexec,size =1024M,mode=1777 0 0  MEDIO  
+Limitare la partizioni di mount “ /var ” e “ /var/tmp ” nel seguente modo:  
+   mv /var/tmp /var/tmp.old 
+   ln -s /tmp /var/tmp 
+   cp -prf /var/tmp.old/* /tmp && rm -fr /var/tmp.o ld 
+ 
+   UUID=<...>  /tmp  ext4  defaults,nodev,nosuid,no exec  0 2  MEDIO  
+Limitare la partizione di mount “ /home ” nel seguente modo:  
+   UUID=<...>  /home  ext4  defaults,nodev,nosuid  0 2  MEDIO  
+Limitare la partizione di mount “ /boot ” nel seguente modo:  
+   LABEL=/boot  /boot  ext2  defaults,nodev,nosuid,noe xec,ro  1 2  MEDIO  
+Limitare la partizione di mount “ /proc ” nel seguente modo:  
+   proc  /proc  proc  defaults,hidepid=2  0 0  BASSO  
+Limitare la partizioni di mount “ /var/log ” e “ /var/log/audit ” nel seguente 
+modo: 
+   UUID=<...>  /var/log        ext4  defaults,nosui d,noexec,nodev  0 2 
+   UUID=<...>  /var/log/audit  ext4  defaults,nosui d,noexec,nodev  0 2  BASSO  
+Limitare la partizione di mount “ /var ” nel seguente modo:  
+   UUID=<...>  /var  ext4  defaults,nosuid  0 2  BASSO  
+Lim itare la partizione di mount “ /usr ” nel seguente modo:  
+   UUID=<...>  /usr  ext4  defaults,nodev,ro  0 2  BASSO  
+Condivisione della memoria  
+Specifica  Livello di priorità  
+Impostare il gruppo per “ /dev/shm ” come segue:  
+   tmpfs  /dev/shm  tmpfs 
+rw,nodev,nosuid,noexec,size=1024M,mode=1770,uid=roo t,gid=shm 0 0  BASSO  
+Cifratura delle partizioni  
+Specifica  Livello di priorità  
+Cifrare la partizione di “ swap ” come segue:  
+   # Impostare in /etc/crypttab: 
+   sdb1_crypt /dev/sdb1 /dev/urandom cipher=aes-xts -plain64,size=256,swap,discard 
+ 
+   # Impostare in /etc/fstab: 
+   /dev/mapper/sdb1_crypt none swap sw 0 0  BASSO  
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 63  a 141  
+ 
+ACCESSO FISICO  
+Specifica di una password per il “Single User Mode ” 
+Specifica  Livello di priorità  
+Proteggere il “ Single User Mode ” con la password di root, come di seguito 
+mostrato: 
+   # Impostare in /etc/sysconfig/init. 
+   SINGLE=/sbin/sulogin  BASSO  
+BOOTLOADER  
+Protezione dei file di configurazione del “bootloader ” 
+Specifica  Livello di priorità  
+Assicurarsi che i file di configurazione del bootlo ader siano impostati 
+correttamente. Segue un esempio: 
+   # Impostare l’owner e group di /etc/grub.conf co n quelli dell’utente root: 
+   chown root:root /etc/grub.conf 
+   chown -R root:root /etc/grub.d 
+ 
+   # Impostare i permessi sui file /etc/grub.conf o  /etc/grub.d in modo tale che solo root 
+può leggere e scrivere: 
+   chmod og-rwx /etc/grub.conf 
+   chmod -R og-rwx /etc/grub.d  BASSO  
+KERNEL LINUX  
+Log del ke rnel  
+Specifica  Livello di priorità  
+Limitare l’accesso ai logs del kernel  nel seguente modo:  
+   echo "kernel.dmesg_restrict = 1" > /etc/sysctl.d/50 -dmesg-restrict.conf  BASSO  
+Kernel pointers  
+Specifica  Livello di priorità  
+Limitare l’accesso ai “ kernel pointers ” nel seguente modo:  
+   echo "kernel.kptr_restrict = 1" > /etc/sysctl.d/50- kptr-restrict.conf  BASSO  
+Exec  Shield  
+Specifica  Livello di priorità  
+Proteggere ”Exec Shield” come segue:  
+   echo "kernel.exec-shield = 2" > /etc/sysctl.d/50-ex ec-shield.conf  BASSO  
+Protezione della memoria  
+Specifica  Livello di priorità  
+Randomizzare lo spazio di memoria  nel seguente modo:  
+   echo "kernel.randomize_va_space=2" > /etc/sysctl.d/ 50-rand-va-space.conf  BASSO  
+LOGGING  
+Syslog  
+Specifica  Livello di priorità  
+Assicurarsi che il servizio syslog  sia abilitato ed in esecuzione.  A tal fine, 
+procedere come segue: 
+   systemctl enable rsyslog 
+   systemctl start rsyslog  MEDIO  
+Inviare i dati syslog  a un server esterno.  Ad esempio:  
+   # ELK 
+   # Logstash 
+   # Splunk 
+   # ...  MEDIO  
+UTENTI E GRUPPI  
+Password  
+Specifica  Livello di priorità  
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 64  a 141  
+ 
+Aggiornare la “ password policy ” (PAM) utilizzando il comando che segue:  
+   authconfig --passalgo=sha512 \ 
+   --passminlen=14 \ 
+   --passminclass=4 \ 
+   --passmaxrepeat=2 \ 
+   --passmaxclassrepeat=2 \ 
+   --enablereqlower \ 
+   --enablerequpper \ 
+   --enablereqdigit \ 
+   --enablereqother \ 
+   --update  MEDIO  
+Limitare il riuso delle password (PAM) nel seguente  modo:  
+   # Modificare /etc/pam.d/system-auth 
+   # Nel caso di pam_unix.so impostare: 
+   password sufficient pam_unix.so ... remember=5 
+   # nel caso di pam_pwhistory.so impostare: 
+   password requisite pam_pwhistory.so ... remember =5  MEDIO  
+Rafforzare le impostazioni relative alla politica s ulle password presenti nel file 
+“/etc/login.defs ”. Procedere come segue: 
+   # Impostare in /etc/login.defs 
+   PASS_MIN_LEN 14 
+   PASS_MIN_DAYS 1 
+   PASS_MAX_DAYS 90 
+   PASS_WARN_AGE 14  MEDIO  
+Logon A ccess  
+Specifica  Livello di priorità  
+Bloccare gli account dopo un certo numero di tentativi di access o falliti  (PAM).  
+A tal fine procedere come segue: 
+   # Modificare /etc/pam.d/system-auth e /etc/pam.d /password-auth 
+   # Aggiungere la seguente linea immediatamente pr ima dello statement pam_unix.so 
+presente nella sezione AUTH: 
+   auth required pam_faillock.so preauth silent den y=3 unlock_time=never 
+fail_interval=1800 
+   # Aggiungere la seguente linea immediatamente do po lo statement pam_unix.so 
+presente nella sezione AUTH: 
+   auth [default=die] pam_faillock.so authfail deny =3 unlock_time=never 
+fail_interval=1800 
+   # Aggiungere la seguente linea immediatamente pr ima lo statement pam_unix.so 
+presente nella sezione ACCOUNT: 
+   account required pam_faillock.so  MEDIO  
+Impostare l’auto logout per inattività dell’utente. Procedere nel se guente 
+modo: 
+   echo "readonly TMOUT=900" >> /etc/profile.d/idle -users.sh 
+   echo "readonly HISTFILE" >> /etc/profile.d/idle- users.sh 
+   chmod +x /etc/profile.d/idle-users.sh  BASSO  
+Impostare la notifica per l’ultim a operazione di  logon/acce sso. Procedere nel 
+seguente modo: 
+   # Impostare in /etc/pam.d/system-auth 
+   session required pam_lastlog.so showfailed  BASSO  
+FILESYSTEM  
+Hardlinks e Symlinks  
+Specifica  Livello di priorità  
+Abilitare la protezione per gli hard/soft link nel seguente modo:  
+   echo "fs.protected_hardlinks = 1" > /etc/sysctl. d/50-fs-hardening.conf 
+   echo "fs.protected_symlinks = 1" >> /etc/sysctl. d/50-fs-hardening.conf  BASSO  
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 65  a 141  
+ 
+Mount e Unmount dinamico  
+Specifica  Livello di priorità  
+Disattivare i file system non di uso comun e, come segue:  
+   echo "install cramfs /bin/false" > /etc/modprobe .d/uncommon-fs.conf 
+   echo "install freevxfs /bin/false" > /etc/modpro be.d/uncommon-fs.conf 
+   echo "install jffs2 /bin/false" > /etc/modprobe. d/uncommon-fs.conf 
+   echo "install hfs /bin/false" > /etc/modprobe.d/ uncommon-fs.conf 
+   echo "install hfsplus /bin/false" > /etc/modprob e.d/uncommon-fs.conf 
+   echo "install squashfs /bin/false" > /etc/modpro be.d/uncommon-fs.conf 
+   echo "install udf /bin/false" > /etc/modprobe.d/ uncommon-fs.conf 
+   echo "install fat /bin/false" > /etc/modprobe.d/ uncommon-fs.conf 
+   echo "install vfat /bin/false" > /etc/modprobe.d /uncommon-fs.conf 
+   echo "install nfs /bin/false" > /etc/modprobe.d/ uncommon-fs.conf 
+   echo "install nfsv3 /bin/false" > /etc/modprobe. d/uncommon-fs.conf 
+   echo "install gfs2 /bin/false" > /etc/modprobe.d /uncommon-fs.conf  MEDIO  
+SELINUX E AUDITD  
+Utilizzo di SELinux in modalità “Enforcing”  
+Specifica  Livello di priorità  
+Impostare SELinux in modalità “ Enforcing ” nel modo che segue:  
+   # Impostare in /etc/selinux/config. 
+   SELINUXTYPE=enforcing  ALTO  
+RETE  
+TCP/SYN  
+Specifica  Livello di priorità  
+Abilitare la protezione dei cookie TCP/SYN nel modo  che segue:  
+   echo “net.ipv4.tcp_syncookies = 1” > /etc/sysctl.d/ 50-net-stack.conf  MEDIO  
+Routing  
+Specifica  Livello di priorità  
+Disabilitare il routing dell’IP sorgente nel modo c he segue:  
+   echo “net.ipv4.conf.all.accept_source_route = 0” > /etc/sysctl.d/50-net-stack.conf  MEDIO  
+Protocollo ICMP  
+Specifica  Livello di priorità  
+Disattivare l'accettazione del re -indirizzamento nel protocollo ICMP.  A tal fine, 
+procedere come segue: 
+   echo "net.ipv4.conf.all.accept_redirects = 0" > /etc/sysctl.d/50-net-stack.conf  MEDIO  
+Consentire  di ignorare le richieste ICMP.  A tal fine procedere come segue:  
+   echo “net.ipv4.icmp_echo_ignore_all = 1” > /etc/sys ctl.d/50-net-stack.conf  MEDIO  
+Broadcast  
+Specifica  Livello di priorità  
+Consentire di ignorare l e richiest e in  broadcast . A tal fine procedere come 
+segue: 
+   echo "net.ipv4.icmp_echo_ignore_broadcasts = 1" > / etc/sysctl.d/50-net-stack.conf  MEDIO  
+ 
+Seguono alcuni riferimenti utili per la Policy Comp liance e la protezione delle informazioni: 
+• Center of Internet Security (CIS) - CIS Bemchmarks ( https://www.cisecurity.org/cis-
+benchmarks/ ) - Il Center for Internet Security (CIS) è un'orga nizzazione senza scopo di lucro. La 
+sua missione è di "identificare, sviluppare, conval idare, promuovere e sostenere soluzioni di 
+best practice per la difesa informatica". 
+• Security Technical Implementation Guide (STIG) - St igviewer 
+(https://www.stigviewer.com/stigs ) - Le Security Technical Implementation Guides (ST IGs) 
+sono gli standard di configurazione creati dalla De fense Information Systems Agency (DISA) 
+per i sistemi del Dipartimento della Difesa Statuni tense. Le STIG contengono una guida tecnica 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 66  a 141  
+ 
+per proteggere informazioni, sistemi e software, ch e altrimenti potrebbero essere vulnerabili a 
+attacchi informatici dannosi in termini di diniego.  
+• National Institute of Standards and Technology (NIS T) - National Checklist Program (NCP) 
+(https://nvd.nist.gov/ncp/repository ) - trattasi di un documento contenente istruzioni o 
+procedure di configurazione di un prodotto informat ico (IT) in un ambiente operativo, utili a 
+verificare la corretta configurazione del prodotto stesso e/o a identificare eventuali modifiche 
+non autorizzate a quest'ultimo. 
+• Payment Card Industry Data Security Standard (PCI-D SS) 
+(https://www.pcisecuritystandards.org/pci_security/ ) - Il Payment Card Industry Data Security 
+Standard (PCI DSS) è uno standard di sicurezza info rmatica per le organizzazioni che gestiscono 
+carte di credito. Tale standard è stato creato per aumentare i controlli sui dati dei titolari delle 
+carte di credito al fine di ridurne le frodi.  
+• Security Content Automation Protocol (SCAP) - Il Se curity Content Automation Protocol (SCAP) 
+è una metodologia per l'utilizzo di specifici stand ard che consentono la gestione automatizzata 
+delle vulnerabilità, la misurazione e la valutazion e della conformità alle policy dei sistemi 
+presenti in un'organizzazione, ivi inclusa, ad esem pio, la conformità FISMA. Il National 
+Vulnerability Database (NVD) rappresenta il content  repository del governo statunitense per lo 
+SCAP.  Un esempio di implementazione dello SCAP è O penSCAP. 
+o SCAP Security Policies ( https://www.open-scap.org/security-policies/ ) - insieme di 
+regole interpretabili da una macchina a cui l’infra struttura deve conformarsi. 
+o OpenSCAP Base ( https://www.open-scap.org/tools/openscap-base/ ) - Il tool di 
+scansione OpenSCAP è uno strumento capace di scansi onare il sistema, convalidare i 
+contenuti di conformità alla sicurezza e generare r eport e indicazioni basate su tali 
+scansioni. 
+o SCAP Workbench ( https://access.redhat.com/documentation/en-
+us/red_hat_enterprise_linux/7/html/security_guide/s ect-using_scap_workbench ) - 
+SCAP Workbench è un'utilità che consente di eseguir e facilmente le comuni operazioni 
+oscap su sistemi locali o remoti. 
+o OpenSCAP Static ( https://static.open-scap.org/ ) – documentazione OpenSCAP 
+suddivisa in tre distinte sezioni: “API Documentati on”, User Manuals” e “SCAP Security 
+Guides”. 
+• DevSec Hardening Framework ( https://dev-sec.io/ ) - Il progetto tratta alcuni aspetti di 
+hardening che possono essere automatizzati (ad esem pio l'impostazione della password di 
+grub o il rafforzamento dei permessi delle director y di uso comune). 
+ 
+Alle linee guida generali riportate nei paragrafi p recedenti e valide per tutti i sistemi operativi, s i 
+aggiungono, per l’ambito specifico dei sistemi Linu x, le indicazioni seguenti: 
+ 
+BIOS Protection  
+Minaccia  Possibilità di cambiare o sovrascrivere le caratteristiche di sicurezza del BIOS.  
+Contromisure  - È necessario proteggere il BIOS dell'host con una p assword in modo che l'utente 
+finale non sia in grado di modificare e sovrascrive re le impostazioni di sicurezza nel 
+BIOS; è importante mantenere quest'area protetta da  eventuali modifiche. Ogni 
+produttore di computer ha un set diverso di modalit à di accesso al BIOS che 
+dovrebbe essere comunque protetto utilizzando quest e modalità. Proteggere 
+GRUB con password per limitare l'accesso fisico al sistema. 
+- Inoltre, è necessario disabilitare l'avvio da dispo sitivi multimediali esterni (USB / 
+CD / DVD). Se si omette di modificare questa impost azione, chiunque può utilizzare 
+una chiavetta USB che contenga un sistema operativo  avviabile e accedere ai dati 
+del sistema operativo. 
+- I server linux più recenti dispongono di applicazio ni Web attraverso le quali è 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 67  a 141  
+ 
+possibile, accedendo da remoto, configurare le cara tteristiche di sistema. Bisogna 
+assicurarsi di cambiare la password predefinita o, eventualmente, disattivare 
+questa possibilità. 
+ 
+Hard disk encryption  
+Minaccia  Possibilità di accedere, ad esempio, tramite boot d a sistema operativo esterno ai dati 
+presenti sui dischi della macchina linux. 
+Contromisure  La maggior parte delle distribuzioni Linux consento no di crittografare i dischi prima 
+dell'installazione o successivamente tramite softwa re opportuni.  
+La crittografia del disco è importante in caso di f urto o di accesso fraudolento perché il 
+malintenzionato non sarà in grado di leggere le inf ormazioni presenti sui dischi stessi 
+anche collegando il disco rigido ad un altro comput er. 
+ 
+Lock boot directory  
+Minaccia  La "boot directory" contiene file importantissimi r elativi al kernel Linux, quindi è 
+necessario assicurarsi che questa directory sia blo ccata con autorizzazioni di sola 
+lettura.  
+Contromisure  Il lock della boot directory va eseguito seguendo a lcuni sempli ci passaggi.  
+Aprire con un editor il file “fstab” (path usuale / etc/fstab) e aggiungere la riga 
+LABEL=/boot /boot ext2 defaults 1 2 (i valori di ri ferimento ext2 possono variare a 
+seconda della configurazione del sistema linux). 
+Al termine della modifica del file, è necessario im postare il proprietario eseguendo il 
+seguente comando: 
+#chown root:root /etc/fstab 
+Successivamente, vanno impostate alcune autorizzazi oni per la protezione delle 
+impostazioni di avvio: 
+Come già indicato nelle pratiche precedentemente de scritte, impostare il proprietario 
+e il gruppo di /etc/grub.conf all'utente root: 
+    #chown root: root /etc/grub.conf 
+Impostare il permesso sul file /etc/grub.conf per l eggere e scrivere solo per root: 
+    #chmod og-rwx /etc/grub.conf 
+Richiedere l'autenticazione per la modalità "single  user": 
+    #sed -i "/ SINGLE / s / sushell / sulogin /" / etc / sysconfig / init 
+    #sed -i "/ PROMPT / s / yes / no /" / etc / sys config / init  
+ 
+Disabilitare l'utilizzo di device USB  
+Minaccia  Attraverso l'uso di device USB un utente malintenzi onato potrebbe accedere al sistema 
+linux come utente amministratore oppure potrebbe ac cedere a informazioni o dati 
+sensibili del sistema stesso. 
+Contromisure  A seconda della criticità del sistema, a volte  è necessario disabilitare l'uso delle 
+chiavette USB sull'host Linux. Esistono diversi mod i per bloccare l'utilizzo di un device 
+USB. Di seguito viene descritto uno dei metodi prin cipali: 
+- Aprire con un editor e modificare il file “blacklis t.conf” (path usuale 
+/etc/modprobe.d/blacklist.conf) come indicato. 
+- Aggiungere alla fine del file la riga: 
+- blacklist usb_storage  
+- Salvare e chiudere il file blacklist.conf. 
+- Aprire con un editor e modificare il file rc.local (path usuale /etc/rc.local) 
+- Aggiungere alla fine del file le due righe seguenti : 
+- modprobe -r usb_storage 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 68  a 141  
+ 
+- exit 0  
+- Salvare e chiudere il file rc.local.  
+Eseguire la ripartenza della macchina per rendere e ffettive le modifiche. 
+ 
+Aggiornamenti di Sistema  
+Minaccia  Aver e un Sistema non aggiornato può  rendere vulnerabile la macchina da attacchi di 
+utenti malintenzionati. 
+Contromisure  La prima cosa da fare dopo il primo avvio è aggiorn are il sistema operativo. La 
+procedura in genere non è complessa e può essere fa tta sia da una finestra terminale 
+che per la maggior parte dei sistemi linux anche tr amite tool grafici di amministrazione 
+del sistema. 
+ 
+Controllo dei pacchetti installati  
+Minaccia  La presenza di servizi non necessari può rappresent are un rischio per la sicurezza del 
+sistema. 
+Contromisure  Successivamente all'installazione del sistema opera tivo deve essere effettuato dagli 
+amministratori della macchina un elenco di tutti i pacchetti installati sul SO Linux.  
+ Vanno quindi rimossi tutti i pacchetti non necessa ri. La selezione deve essere molto 
+approfondita per le macchine con tipologia di serve r perché i server hanno bisogno di 
+un minor numero di applicazioni e servizi installat i.  
+Nel caso di server Linux, in particolare, è importa nte rimuovere i seguenti servizi 
+perché non necessari per il normale utilizzo di un server linux: 
+- Telnet server 
+- RSH server 
+- NIS server 
+TFTP server 
+TALK server 
+ 
+Secure Shell (SSH)  
+Minaccia  Secure Shell (SSH) è un protocollo utilizzato per f ornire comunicazioni sicure e 
+crittografate su una rete. È più utilizzato dagli a mministratori di sistema Linux per la 
+gestione remota dei server. Può anche essere utiliz zato per trasferire file su una rete. 
+Per queste caratteristiche la sicurezza SSH è molto  importante. 
+Contromisure  Il protocollo SSH, pu r essendo abbastanza sicuro, necessita di una corre tta e 
+approfondita configurazione per poter essere utiliz zato senza rischi.  
+A tal fine vanno eseguiti tutta una serie di passi sul file file di configurazione 
+"sshd_config" (path usuale /etc/ssh). 
+Tra i principali settaggi di seguito ne verranno el encati i principali: 
+- Cambio delle porte di default del servizio SSH 
+- Configurare SSH per autenticarsi tramite delle chia vi SSH invece di password 
+- Usare il protocollo SSH2 invece di SSH1 
+- Usare una lista predefinita di possibili accessi di  utenti ("User Whitelist") o in 
+alternativa usare delle "Blacklist" di utenti blocc ati. 
+- Disabilitare l'accesso tramite root login 
+Se non strettamente necessario è possibile anche el iminare la possibilità di accesso 
+tramite SSH. 
+ 
+Co ntrollo delle porte aperte su linux  
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 69  a 141  
+ 
+Minaccia  La gestione delle porte aperte su linux ed in parti colare delle connessioni Internet 
+aperte è fondamentale su linux ai fini della sicure zza del sistema in merito a possibili 
+attacchi di malintenzionati. 
+Contromisure  Vanno verificate tutte le porte aperte con attenzio ne particolare a porte nascoste.  
+Su molte versioni di linux, ad esempio, è possibile  individuare eventuali porte aperte 
+nascoste tramite il comando: #netstat -antp  
+Dopo aver configurato i servizi della rete, è quind i molto importante sapere quali porte 
+sono in ascolto sulle interfacce di rete del sistem a. Qualsiasi porta aperta può essere 
+segno di una intrusione. 
+Sono presenti due approcci di base per poter elenca re le porte in ascolto sulla rete. 
+L'approccio meno affidabile è quello di interrogare  lo stack della rete, inserendo dei 
+comandi del tipo netstat  -an o lsof -i . Questo metodo è meno affidabile in quanto 
+questi programmi non si collegano alla macchina dal la rete, ma cercano di sapere cosa 
+viene eseguito sul sistema. Per questa ragione, que ste applicazioni sono bersaglio da 
+parte di aggressori. In questo modo, i cracker cerc ano di coprire le loro tracce nel caso 
+in cui essi aprono delle porte di una rete non auto rizzata. 
+Il modo più affidabile di controllare quali sono le  porte in ascolto sulla rete, è quello di 
+usare uno scanner del tipo nmap. 
+Il seguente comando emesso dalla console, determina  quali sono le porte in ascolto 
+dalla rete per collegamenti TCP: nmap -sT -O localhost  
+ 
+Password policies  
+Minaccia  Una gestione non corretta nella gestione delle "Pas sword policies" aziendali può 
+rappresentare una possibile falla nella sicurezza d el sistema.  
+Contromisure  Una possibile fonte di criticità nella sicurezza ne i sistemi operativi è rappresentata dal 
+fatto che le persone spesso riutilizzano le loro pa ssword, consuetudine che 
+rappresenta una cattiva pratica di sicurezza. 
+Questa modalità può essere controllata e ed eventua lmente impedita tramite 
+interventi sui file di configurazione di sistema. 
+Un'altra politica sulle password che dovrebbe esser e forzata è obbligare ad usare solo 
+password con certi regole. Esistono moduli o utilit y che proteggono il server tramite 
+l'uso di dizionari e metodologie contro attacchi di  tipo brute-force.  
+Sarebbe opportuno anche assicurarsi di definire un algoritmo di hashing della 
+password sicuro ad esempio di tipo SHA512. 
+Un'altra funzionalità interessante è bloccare l'acc ount dopo cinque tentativi falliti. 
+Inoltre, un'altra buona pratica è impostare la scad enza della password dopo 90 giorni. 
+Queste attività possono essere eseguite in varie mo dalità sui sistemi linux. Per 
+esempio: settare il parametro PASS_MAX_DAYS a 90 ne l file “/etc/login.defs”. E' 
+possibile anche modificare dinamicamente il paramet ro con il comando linux: #change 
+--maxdays 90 <user> 
+ 
+Partizionamento  
+Minaccia  - Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi. 
+- Negazione dei servizi. 
+Contromisure  Come precedentemente illustrato nelle pratiche di s icurezza, in fase di installazione del 
+sistema Linux, è necessario creare delle partizioni  distinte per i seguenti percorsi: 
+- / 
+- /boot 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 70  a 141  
+ 
+- /home  
+- /tmp 
+- /var/log 
+- /var/log/audit 
+Queste partizioni devono essere utilizzate nel segu ente modo: 
+-  Sulla partizione di boot devono esser salvati tutt i i file necessari ad un corretto 
+avvio del sistema 
+- Sulla partizione /tmp devono esser salvati tutti i file temporanei necessari al 
+corretto funzionamento del sistema e il path /var/t mp dovrà esser collegato, 
+tramite link e irreversibilmente, alla partizione / tmp 
+- Sulla partizione /home devono esser salvati tutti i  dati relativi alle utenze presenti 
+sul sistema e ai loro ambienti 
+- Sulle partizioni /var/log* devono esser salvati tut ti i file di log e auditing 
+Altri applicativi particolarmente esigenti in termi ni di spazio e non inclusi nella 
+distribuzione Linux, devono essere installati in pa rtizioni separate (es. Oracle, DB2, 
+ecc.). 
+L'utilizzo di diverse partizioni permette di salvag uardare l'integrità e la riservatezza dei 
+file di configurazione, dei file di log e dei dati applicativi. 
+ 
+Opzioni di mount delle partizioni  
+Minaccia  - Abuso di privilegi da parte dell'utente.  
+- Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi. 
+- Errori di amministrazione dei sistemi. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+Contromisure  Specificare le seguenti opzioni di mounting per la partizione /tmp:  
+- nodev 
+- nosuid 
+- noexec 
+- strictatime (visualizzato come relatime dall’output  comando “mount”) 
+Specificare la seguente opzione di mounting per la partizione /home: 
+- nodev 
+Non devono esser utilizzate periferiche esterne rem ovibili. Nel caso se ne renda 
+necessario l’utilizzo, specificare le seguenti opzi oni di mounting in /etc/fstab: 
+- nodev 
+- nosuid 
+- noexec 
+Utilizzare le seguenti opzioni di mounting per il p ath relativo alla memoria condivisa:    
+- nodev 
+- nosuid 
+- noexec 
+L’utilizzo di questi parametri evita l’esecuzione d i file malevoli e l’escalation dei 
+privilegi sul server, o l’accesso non autorizzato a  periferiche di sistema. 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 71  a 141  
+ 
+ 
+Cartelle scrivibili da chiunque  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Attacchi all’integrità dei sistemi. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+Contromisure  Sul sistema non dovrebbero esistere cartelle scrivi bili da chiunque, modific are, per tali 
+cartelle, i permessi di scrittura per OTHER in modo  più restrittivo. 
+Nel caso in cui tale configurazione dei diritti di accesso sia strettamente necessaria, 
+configurare i permessi di tutte le cartelle riscriv ibili da tutti per far sì che nessun utente 
+possa cancellare e modificare i file di cui non è p roprietario. Impostare di conseguenza 
+lo “sticky bit”, su tutte le cartelle riscrivibili da tutti. 
+ 
+UMASK  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Attacchi all’integrità dei sistemi. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+Contromisure  Configurare la umask di default sia per root sia per gli altri utenti in modo che:  
+- Ogni nuovo file creato possa essere modificato o ca ncellato esclusivamente 
+dal suo owner 
+- Ogni nuovo file creato possa esser acceduto solo da  parte degli utenti 
+appartenenti al gruppo dell’owner stesso 
+Questa configurazione permette di avere un controll o nativo sulla riservatezza e 
+sull'integrità di tutti i nuovi file. 
+ 
+Single User Mode e Boot Interattivo  
+Minaccia  - Abuso di privilegi da parte dell'utente.  
+- Accesso non autorizzato ai sistemi. 
+- Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Attacchi all’integrità delle informazioni. 
+- Cancellazione dei log di accountability e/o ripudio  di operazioni effettuate. 
+- Uso non autorizzato di privilegi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+- Danneggiamento, perdita o furto di un asset fisico.  
+Contromisure  Abilitare il  controllo di autenticazione per l’accesso  alla modalità single -user al fine di 
+impedire la compromissione del sistema da parte di utenti non autorizzati in grado di 
+accedere fisicamente alla console del sistema. 
+Disabilitare il boot interattivo per gli utenti di sistema (tasto I al boot) al fine di 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 72  a 141  
+ 
+contrastare l'utilizzo impropri o di comandi sistemistici in fase di avvio del sistem a 
+operativo. 
+ 
+Sicurezza TCP/IP  
+Minaccia  - Negazione dei servizi.  
+- Compromissione delle comunicazioni. 
+Contromisure  È necessario mettere in sicurezza lo stack TCP/IP a ttraverso le seguenti impostazioni:  
+- Disabilitare l’IP forwarding al fine di impedire ch e il server in esame funga 
+come base di attacco verso ulteriori sistemi nella rete. 
+- Disabilitare l’invio e l’accettazione di pacchetti ICMP Redirect. 
+- Disabilitare l’accettazione di pacchetti ICMP Redir ect anche se questi 
+provengono da gateway trusted (ICMP Secure Redirect ). 
+- Disabilitare i pacchetti “source routed”. 
+- Abilitare i log per i pacchetti di rete ricevuti, a venti un indirizzo di origine non-
+routable (privo di una rotta in tabella di routing) . 
+- Ignorare i pacchetti ICMP Echo inviati in broadcast . 
+- Disabilitare il logging nel caso di ricezione di pa cchetti broadcast non conformi 
+allo standard RFC-1122 al fine di impedire la satur azione dello spazio destinato 
+ai file di log. 
+- Abilitare il “reverse path filtering”. 
+- Abilitare i “SYN cookies” per la gestione dell’hand shake  TCP SYN/ACK. 
+- Disabilitare l’IPv6 (se non utilizzato) in modo da ridurre la superficie di attacco 
+del sistema. 
+ 
+Utenti e gruppi di default  
+Minaccia  Accesso non autorizzato ai sistemi . 
+Contromisure  Disabilitare le utenze di default non utilizzate ma  definite sul sistema quali:  
+- lp 
+- news 
+- uucp 
+- games 
+- gopher 
+- ftp 
+- vcsa 
+- rpc 
+- smmsp 
+- pcap 
+- desktop 
+Disabilitare i gruppi di default non utilizzati qua li:  
+- lp 
+- news 
+- uucp 
+- games 
+ 
+PATH di root  
+Minaccia  - Attacchi all’integrità dei sistemi.  
+- Errori di amministrazione dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 73  a 141  
+ 
+Contromisure  L’utenza root deve avere la variabile di ambiente P ATH definita con i soli percorsi 
+necessari all’esecuzione delle operazioni di defaul t. Definire, ad esempio, 
+PATH=”/usr/bin:/usr/sbin:/sbin”  e non inserire in alcun caso il path “.” .  
+Nel caso in cui siano presenti specifiche directory , diverse da quelle standard, per 
+esigenze particolari, tali directory devono risulta re scrivibili solo da root ed 
+eventualmente dall’utente proprietario, se diverso da root. 
+ 
+Accessi amministrativi impersonali  
+Minaccia  - Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+- Uso non autorizzato di privilegi. 
+- Cancellazione dei log di accountability e/o ripudio  di operazioni effettuate. 
+Contromisure  Disabilitare il login remoto per l'utenza amministr ativa root e per altre utenze 
+impersonali (es. “oracle”, ecc.), al fine di assicu rare il corretto tracciamento delle 
+attività svolte dagli amministratori di sistema e l a corretta associazione tra le attività 
+svolte e le persone fisiche che le hanno effettivam ente attuate. 
+Gli amministratori di sistema dovranno accedere con  utenze personali univoche e 
+successivamente utilizzare il comando “sudo” per ef fettuare operazioni privilegiate. 
+Le utenze personali possono essere definite sul sis tema, o per maggiore praticità il 
+sistema può essere integrato con un server di auten ticazione centralizzato basato su 
+LDAP o Active Directory, ad es. tramite moduli PAM.  
+ 
+Tentativi di accesso ripetuti  
+Minaccia  - Accesso non autorizzato ai sistemi.  
+- Negazione dei servizi. 
+Contromisure  Impostare un limite per i tentativi di accesso remo to al sistema (3 tentativi) e un blocco 
+temporaneo (generalmente 30 minuti) al raggiungimen to di tale limite. 
+ 
+Minimizzazione dei servizi  
+Minaccia  - Abuso di risorse.  
+- Accesso non autorizzato ai sistemi. 
+- Accesso non autorizzato alle informazioni. 
+- Attacchi all’integrità dei sistemi. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+Contromisure  Disabilitare tutti i servizi non necessari, al fine  di ridurre i vettori di attacco al sistema e 
+il numero di vulnerabilità associate a servizi non necessari e insicuri. In particolare. 
+Disabilitare X-Windows se non necessario, e tutti i  servizi legacy basati su inetd e non 
+utilizzati, ovvero chargen, daytime, discard, echo,  time, tftp. 
+Disabilitare inoltre I seguenti servizi autonomi: 
+- avahi-daemon 
+- cups (server di stampa) 
+- dhcpd (server DHCP) 
+- slapd (server LDAP) 
+- nfs 
+- rpcbind 
+- named (server DNS) 

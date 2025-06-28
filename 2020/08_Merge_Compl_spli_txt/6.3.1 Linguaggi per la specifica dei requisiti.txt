@@ -1,0 +1,147 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 50  a 137  
+ 
+ 
+Ad esempio, per valutare l'impatto in termini di ri servatezza, integrità e disponibilità delle informa zioni, ci si 
+sofferma sugli aspetti economico/finanziario, opera tivo, reputazionale e legale (compliance). 
+Le fasi che costituiscono la gestione del rischio e ffettuato con Cyber Risk Management di AgID sono le  
+seguenti: 
+1)  Analisi del contesto. Vengono identificati i serviz i erogati e i servizi trasversali utilizzati in amb ito 
+pubblica amministrazione.  Di ogni servizio viene d escritto un profilo di criticità. 
+2)  Valutazione di ciascun servizio erogato e da ciascu n servizio trasversale in termini d’impatto su 
+riservatezza, integrità e disponibilità delle infor mazioni trattate. 
+3)  Calcolo del rischio attuale, sulla base dei valori di probabilità di accadimento e d’impatto, per ogni  
+minaccia identificata. La fase di Risk Assessment p revede anche l’identificazione delle contromisure 
+da implementare per un’efficace mitigazione del ris chio. 
+4)  Applicazione delle contromisure previste dal piano di trattamento del rischio, volte a mitigare, 
+accettare o trasferire i rischi individuati. 
+5)  Analisi del rischio residuo, cioè la valutazione de l rischio che permane, nonostante l’applicazione 
+del piano di trattamento del rischio. 
+6)  Fase di monitoraggio dell’intero processo, con even tuale adeguamento in seguito a modifiche del 
+contesto o in presenza di nuove minacce alla sicure zza delle informazioni. 
+ 
+Il tool AGID di Risk Management è gratuito ed a com pleta disposizione di tutte le Pubbliche 
+Amministrazioni: www.sicurezzait.gov.it  
+ 
+6.3  Requisiti 
+La fase di analisi e specifica dei requisiti è fond amentale nel ciclo di vita dello sviluppo software.   
+ 
+Di seguito si riportano i linguaggi e gli strumenti  utili alla fase di definizione dei requisiti di si curezza del 
+software. 
+6.3.1  Linguaggi per la specifica dei requisiti 
+Un linguaggio di specifica in ambito sicurezza può essere considerato: 
+• un linguaggio di specifica software utilizzato per indicare gli attacchi (AsmL e UML state charts),  
+• l’estensione di un linguaggio di specifica software  utilizzato per rappresentare gli attacchi (Misuse 
+Cases , Abuse Cases, AsmLSec e UMLintr) e i requisi ti di sicurezza (UMLsec, SecureUML, Secure 
+Tropos e Misuse Cases),  
+• un linguaggio per la specifica degli attacchi ( attack specification language), per esempio  STATL e 
+Snort Rules. 
+ 
+UMLsec 17  è un'estensione di UML per lo sviluppo di sistemi s icuri e usa stereotype, tag e constraint per 
+specificare i requisiti di sicurezza. Gli stereotyp e servono come etichette per gli elementi del model lo UML 
+allo scopo di introdurre informazioni al modello e specificare i vincoli che devono essere soddisfatti  da 
+questo. I tag sono associati con gli stereotype e s ono utilizzati per specificare in modo esplicito un a 
+                                                           
+17  https://en.wikipedia.org/wiki/UMLsec  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 51  a 137  
+ 
+semplice proprietà di un elemento del modello. UMLs ec definisce 21 stereotype da utilizzare per 
+rappresentare i seguenti requisiti di sicurezza:  
+• fair exchange (la necessità di uno scambio leale), 
+• non-repudiation (un'azione non si può negare),  
+• role-based access control,  
+• secure communication link,  
+• confidentiality,  
+• integrity,  
+• authenticity,  
+• freshness of a message (ad esempio nonce),  
+• secure information flow among components,  
+• guarded access (uso di protezioni per imporre il co ntrollo di accesso). 
+ 
+Sette di questi stereotype hanno dei tag associati e nove hanno vincoli. Gli stereotype possono essere  
+utilizzati per i diagrammi dei casi d'uso, i diagra mmi delle classi, diagrammi di stato, diagrammi di attività, 
+diagrammi di sequenza, i diagrammi e le implementaz ioni per specificare i requisiti di sicurezza in un  
+modello UML (per le specifiche relative sia ai requ isiti, sia al design). Un insieme di tools  sono stati rilasciati 
+per la modellazione attraverso l’impiego di UMLsec e per la verifica dei modelli così realizzati (util izzando il 
+model checking). 
+ 
+SecureUML 18  SecureUML è un'altra estensione di UML che si conc entra sulle politiche di controllo degli 
+accessi ad un modello basato sui ruoli. Queste poli tiche possono essere considerate come requisiti di 
+sicurezza. SecureUML propone nove stereotype che po ssono essere utilizzati per annotare un diagramma 
+delle classi, con informazioni di controllo di acce sso basato sui ruoli. SecureUML utilizza l'oggetto Constraint 
+Language (OCL) per specificare i vincoli, le azioni  e le autorizzazioni per le risorse. Contrariamente  a 
+UMLsec, questi vincoli possono essere specificati i n base alle esigenze del singolo componente softwar e. 
+Snort Rules 19  è un network intrusion detection system (IDS) ampi amente utilizzato. Esso utilizza scenari di 
+attacchi specificati come regole per rilevare gli a ttacchi attraverso la rete. Una snort rule specific a quale 
+azione deve essere intrapresa se la regola è associ ata a un pacchetto di rete, gli indirizzi IP di ori gine e 
+destinazione e le porte, il protocollo della rete o sservato, e la direzione del pacchetto di rete. Un certo 
+numero di opzioni possono anche essere specificate.  Queste opzioni vanno dalla registrazione di un 
+messaggio alla ricerca di una particolare stringa n el pacchetto. 
+Secure Tropos 20  può essere utilizzato per lo sviluppo di software sicuro ed è un'estensione della 
+metodologia di sviluppo Tropos. Secure Tropos utili zza le nozioni di actor  (person(s), organization(s), 
+software), goal  (obiettivi che gli attori vogliono ottenere), soft goal  (un obiettivo la cui realizzazione non 
+può essere determinata in modo esplicito), task  (un compito per raggiungere un obiettivo), resource  (fisica 
+o dati), security constraint  (specificato come le dichiarazioni di alto livello ), secure goal  (utilizzato per 
+soddisfare un vincolo di sicurezza), secure task  (un compito per raggiungere un obiettivo di sicure zza), 
+secure resource  (una risorsa che è connessa a security constraints , secure goal , secure task , oppure a 
+un’altra secure resource ). Un actor  può dipendere da un altro actor  per raggiungere un goal/soft goal , per 
+                                                           
+18  https://ieeexplore.ieee.org/document/6997358  
+19  https://www.snort.org/downloads  
+20  http://www.troposproject.eu/node/301  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 52  a 137  
+ 
+svolgere un task , o rilasciare una risorsa. La notazione SecureTrop os può essere utilizzato per rappresentare 
+vincoli di sicurezza (requisiti) sulle interazioni tra gli attori durante la fase di specifica dei req uisiti. 
+Misuse Cases 21  è una tipologia di Use Case UML utilizzata per des crivere comportamenti indesiderati del 
+software. Un misuse case  è avviato da un particolare tipo di attore chiamat o mis-actor  (ad esempio, l'attore 
+con intenti malevoli). Misuse cases  e mis-actors  possono essere utilizzati per suscitare più casi d 'uso per 
+neutralizzare le minacce poste dai casi di uso impr oprio. Misuse cases  e mis-actors  sono rappresentati in 
+colore nero pieno per distinguerli dai casi d'uso e  dagli attori UML. Due relazioni speciali chiamati 
+"prevents” e " detects” mettono in relazione use cases  e misuse cases . Il processo può essere utilizzato in 
+modo graduale per sviluppare un diagramma dei casi d'uso (compresi i misuse cases ) oppure, se necessario, 
+può essere utilizzato anche in modo iterativo. Seco ndo tale processo, dovrebbero essere specificati pr ima 
+gli use cases  e poi i misuse cases . Dopo di che, devono essere identificate le relazi oni potenziali tra gli use 
+cases  e i misuse cases  perché spesso la funzionalità del software viene u tilizzata per attaccarlo. Infine, i 
+nuovi use case  devono essere specificati per individuare o preven ire i misuse cases . Questi nuovi use case 
+costituiscono i requisiti di sicurezza di alto live llo del software e sono chiamati come " security us e cases”. 
+Abuse Cases 22  Un altro modo per specificare il comportamento ind esiderato di un pezzo di software 
+utilizzando i diagrammi UML è di sviluppare un abuse case model . Un abuse case model  specifica le 
+interazioni pericolose usando attori e abuse case . Non c'è differenza di notazione tra i componenti di un 
+UML use case diagram  e un abuse case model . Si raccomanda l’utilizzo di una struttura ad albe ro per gli 
+approcci multipli. Questo aggiunge ulteriori dettag li al modello e permette di identificare tutte le p ossibili 
+misure di sicurezza. Dettagli sugli attori come le loro risorse, le competenze, e l'obiettivo dovrebbe ro essere 
+inclusi come testo. Gli abuse case model  possono essere utilizzati nelle fasi di progettazi one e collaudo. 
+UMLintr 23  è un'estensione di UML che utilizza stereotype e t ag per specificare intrusioni (attacchi) 
+utilizzando use case diagrams, class diagrams, stat e charts, package diagrams. Gli attacchi vengono di visi in 
+quattro tipologie diverse. Ogni tipo è rappresentat o come un pacchetto fornito di stereotype. Ci sono tre 
+stereotype definiti per le classi e dodici per lo u se case diagram. Gli stereotype per le classi hanno  anche i 
+tag. 
+Abstract State Machine Language (AsmL) 24  ASML è un linguaggio a stati finiti machine-based e seguibile 
+utilizzato anche per specificare scenari di attacco . In generale, in ASML possono essere specificati a ttacchi 
+con step multipli. Tali scenari di attacco possono essere tradotti automaticamente in Snort rules  che 
+possono poi essere utilizzati con un’estensione di IDS Snort; sono altresì in grado di catturare più a ttacchi 
+con step multipli, utilizzando le informazioni di c ontesto. Le Snort rules, l’input standard di Snort,  non 
+possono rappresentare attacchi con step multipli. 
+AsmLSec 25  è un'estensione di ASML sviluppata per specificare  scenari di attacco. AsmLSec utilizza stati, 
+eventi e transizioni per rappresentare gli attacchi . Ogni transizione ha un’origine e uno stato di 
+destinazione, una serie di condizioni da soddisfare  e le azioni da compiere. Gli scenari di attacco 
+rappresentati in AsmLSec possono essere tradotti au tomaticamente in ASML attraverso un compilatore 
+appositamente sviluppato. E’ stato sviluppato un ID S che prende in input gli scenari di attacco tradot ti. 
+                                                           
+21  https://en.wikipedia.org/wiki/Misuse_case  
+22  https://en.wikipedia.org/wiki/Abuse_case  
+23  https://ieeexplore.ieee.org/document/1607377  
+24  https://www.microsoft.com/en-us/research/project/as ml-abstract-state-machine-language/  
+25  https://ieeexplore.ieee.org/document/4159874  

@@ -1,0 +1,48 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 73  a 137  
+ 
+I diversi tipi di certificazione offerti dal EC-Cou ncil nelle aree SSE-correlate sono descritti nelle sezioni che 
+seguono. 
+7.3  Certified Ethical Hacker (CEH) 
+Si tratta di una certificazione riconosciuta e accr editata in conformità ANSI 17024. Il corso si pone 
+l’obiettivo di formare una nuova figura professiona le, l’hacker etico, che si dedichi alla difesa dell a sicurezza 
+informatica. Il principio didattico è di apprendere  da un lato le tecniche di intrusione e violazione 
+informatica e dall’altro lato le metodologie di dif esa da queste stesse tecniche. CEH dispone di 26 mo duli, di 
+cui i seguenti sono collegati a SSE: 
+• Module 17: Web Application Vulnerabilities  
+• Module 19: SQL Injection  
+• Module 24: Buffer Overflows  
+• Module 26: Penetration Testing Methodologies  
+ 
+7.4  Certified Security Analyst (ECSA) 
+La certificazione ECSA completa la certificazione C EH (vedi sopra) esplorando la fase analitica di hac king 
+etico. ECSA fa un ulteriore passo in avanti, rispet to a CEH, approfondendo come analizzare l'esito di questi 
+strumenti e tecnologie. Attraverso metodi e tecnich e di penetration testing  la certificazione ECSA aiuta i 
+candidati a effettuare le valutazioni necessarie pe r identificare e mitigare efficacemente i rischi pe r la 
+sicurezza delle informazioni dell'infrastruttura. 
+ECSA ha 47 moduli, di cui i seguenti sono collegati  a SSE: 
+• Module 10: Advanced Exploits and Tools  
+• Module 11: Penetration Testing Methodologies  
+• Module 27: Stolen Laptop, PDAs and Cellphones Penet ration Testing  
+• Module 28: Application Penetration Testing  
+• Module 40: Security Patches Penetration Testing  
+• Module 41: Data Leakage Penetration Testing  
+• Module 42: Penetration Testing Deliverables and Con clusion  
+• Module 43: Penetration Testing Report and Documenta tion Writing  
+• Module 44: Penetration Testing Report Analysis  
+• Module 45: Post-Testing Actions  
+7.5  Certified Secure Programmer (ECSP) 
+La certificazione ECSP è destinata ai programmatori  e agli sviluppatori software è ha allo scopo di co dificare 
+e sviluppare applicazioni sicure durante tutto il c iclo di vita del software. 
+ECSP dispone di 33 moduli, di cui i seguenti sono c ollegati a SSE: 
+• Module 01: Introduction to Secure Coding  
+• Module 02: Designing Secure Architecture  
+• Module 03: Cryptography  
+• Module 04: Buffer Overflows  
+• Module 05: Secure C and C++ Programming  
+• Module 06: Secure Java and JSP Programming  
+• Module 07: Secure Java Script and VBScript Programm ing  
+• Module 08: Secure Microsoft.NET Programming  

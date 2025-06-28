@@ -1,0 +1,36 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 114  a 141  
+ 
+Oracle Database 
+12c Per informazioni aggiornate sulle impostazioni di p rotezione e privacy per Oracle 
+Database 12c, scaricare il documento: 
+http://www.oracle.com/us/products/database/securing -oracle-database-primer-
+2522965.pdf. 
+Microsoft SQL 
+Server 2012 Per informazioni aggiornate sulle impostazioni di p rotezione e privacy per Microsoft 
+SQL Server 2012, visitare il sito: 
+https://docs.microsoft.com/en-us/sql/relational-dat abases/security/securing-sql-
+server. 
+ 
+5.7  Sicurezza del Mail Server 
+5.7.1  Architettura 
+Isolamento dei sistemi critici  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  I sistemi critici come il Mail Server devono avere un ambiente di elaborazione 
+dedicato, strettamente controllato e monitorato. 
+Tipicamente è necessaria una protezione perimetrale  fisica (CED) e logica (firewall). 
+Occorrono in linea di principio: 
+- un SMTP server hardenizzato collocato in DMZ che si  limita ad accettare le 
+connessioni in ingresso provenienti da Internet, co n funzione di “relay”; 
+- uno o più mail server interni anch’essi opportuname nte messi in sicurezza (vedi 
+best practices successive) a cui l’SMTP server in D MZ inoltra (relay) le mail ricevute 
+dall’esterno e da cui riceve quelle provenienti dal l’interno. 
+Inoltre si può considerare di installare un Applica tion Layer inspection firewall a 
+protezione del server SMTP in DMZ. 
+Si consideri, a titolo di esempio, il seguente sche ma (con 2 firewall) in ambiente 
+Microsoft: 
+ 
+[Fonte: https://msdn.microsoft.com/en-us/library/cc505927.a spx ] 
+

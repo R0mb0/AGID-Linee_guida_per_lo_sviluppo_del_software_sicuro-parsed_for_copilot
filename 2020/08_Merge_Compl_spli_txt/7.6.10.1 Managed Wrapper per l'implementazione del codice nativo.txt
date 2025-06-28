@@ -1,0 +1,49 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 104  a 156  
+ 
+Come difendersi 
+• Bisogna evitare di incorporare entità esterne. 
+• Occorre assicurarsi di disabilitare il parser dal c aricamento automatico di entità esterne. 
+• Formati di dati meno complessi, come JSON, possono rendere più difficile la serializzazione di dati 
+sensibili. 
+• Devono essere apportati i necessari aggiornamenti a  tutti i parser e alle librerie XML in uso da parte  
+dell'applicazione o sul sistema operativo sottostan te.  
+• Se viene utilizzato SOAP, occorre aggiornarlo alla versione 1.2 o successive. 
+• Implementare la convalida dell’input come evidenzia to in altri punti. 
+• Verificare che la funzionalità di caricamento di fi le XML o XSL convalidI l'XML in entrata utilizzando  
+uno schema XSD. 
+Esempio : 
+Formato non corretto - Il parsing del documento XML , qui racchiuso nella stringa OurOutputXMLString, 
+carica qualunque entità esterna, se non validata. 
+XmlDocument xmlDoc = new XmlDocument(); 
+xmlDoc.LoadXml(OurOutputXMLString); 
+Formato corretto - La riga evidenziata imposta a nu ll il valore del resolver. In questo modo s’impedir à al 
+parser di prendere in considerazione le entità este rne. 
+XmlDocument xmlDoc = new XmlDocument(); 
+xmlDoc.XmlResolver = null; 
+xmlDoc.LoadXml(OurOutputXMLString); 
+Per una regolazione più sottile, basterà utilizzare  una classe derivata da XmlUrlResolver. Si potrà de cidere 
+quali domini potranno essere accettati dfile XML.  
+7.6.10  Ulteriori indicazioni per lo sviluppo sicuro 
+Di seguito ulteriori suggerimenti per lo sviluppo s icuro in C#. 
+7.6.10.1  Managed Wrapper per l'implementazione del codice na tivo 
+Spesso sorge la necessità di rendere disponibile un a funzionalità utile in codice nativo per il codice  gestito. 
+La realizzazione dei managed wrapper può essere sem plificata usando platform invoke o COM interop. Per  
+la riuscita di quest’operazione è tuttavia necessar io che i chiamanti dei wrapper dispongano di diritt i per il 
+codice non gestito (unmanaged code).  
+Invece di concedere diritti per il codice non gesti to a tutte le applicazioni che usano il wrapper, è preferibile 
+fornire questi diritti solo al codice wrapper. Se l a funzionalità sottostante non espone alcuna risors a e 
+l'implementazione è verosimilmente sicura, chiunque  potrà chiamare il wrapper con i regolari diritti 
+sull’unmanaged code. Quando invece, la funzionalità  nativa espone delle risorse, il wrapper può metter e i 
+suoi chiamanti in pericolo, per cui è necessaria, d a parte sua, un’attenta verifica della sicurezza de l codice 
+nativo. 
+7.6.10.2   Library Code che espone risorse protette 
+La libreria funge da interfaccia per l’accesso a de terminate risorse che non sono altrimenti disponibi li; deve 
+quindi richiedere autorizzazioni per l’accesso alle  risorse che utilizzano. In generale, laddove si es pone una 
+risorsa (qualunque essa sia), il codice deve implem entare una richiesta di autorizzazione appropriata alla 
+risorsa (cioè deve eseguire un controllo di protezi one).  
+7.6.10.3  Richieste di autorizzazione 
+La richiesta di autorizzazioni è il modo in cui si consente al Common Runtime Language (CLR) di .NET d i 
+sapere cosa deve fare il codice per eseguire il pro prio lavoro. Sebbene la richiesta di autorizzazioni  sia 
+facoltativa e non sia necessaria per la compilazion e del codice, ci sono importanti motivi per richied ere le 

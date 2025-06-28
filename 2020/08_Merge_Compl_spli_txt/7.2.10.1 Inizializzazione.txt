@@ -1,0 +1,61 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 69  a 156  
+ 
+7.2.10.1  Inizializzazione 
+Variabili e oggetti, prima di essere utilizzati, de vono essere correttamente inizializzati. Per evitar e 
+l’allocazione di oggetti non inizializzati: 
+• rendere tutte le variabili private e, se necessario , fornire l’accesso ad esse dall’esterno 
+esclusivamente attraverso i metodi get() e set(); 
+• aggiungere in ogni oggetto una variabile booleana p rivata (es: isInizialized) e fare in modo che ogni 
+costruttore, come ultima operazione, la inizializzi  a “true“;  
+• in ogni metodo che non sia un costruttore, verifica re che la variabile di inizializzazione della class e 
+sia impostata a true prima di eseguire qualsiasi op erazione. 
+ 
+Esempio: 
+public class MyClass { 
+ private boolean isInizialized; 
+ private String nome; 
+ public MyClass(String nome){ 
+ this.nome = nome; 
+ this.isInizialized = true; 
+ } 
+ public String getNome(){ 
+ return (isInizialized == true ? this.nome : null);  
+ } 
+} 
+ 
+Se la classe ha costruttori statici è necessario se guire la stessa procedura ma a livello di classe: 
+• rendere tutte le variabili statiche private e, se n ecessario fornirne l’accesso dall’esterno della cla sse 
+stessa: questo deve sempre essere consentito esclus ivamente attraverso i metodi get() e set(); 
+• aggiungere alla classe una variabile booleana priva ta statica (es: isClassInizialized) e fare in modo 
+che ogni costruttore statico, come ultima operazion e, la inizializzi a “true“; 
+• prima di eseguire qualsiasi operazione, in ogni met odo statico ed ogni costruttore si deve verificare 
+che la variabile “isClassInitialized” sia impostata  a “true“; 
+• Gestione delle allocazioni / deallocazioni di memor ia dinamica; 
+ 
+Prima di uscire da una classe occorre ricordarsi se mpre di azzerare il contenuto delle variabili. Si s upponga, 
+nel seguente esempio, che la variabile k contenesse  la chiave per decriptare un messaggio cifrato: 
+ 
+Esempio : 
+Forma non corretta 
+public class Decodificatore { 
+private byte[] k; 
+} 
+Forma corretta 
+public class Erase { 
+private byte[] k; 
+public void clear() { 
+for(int i = 0; i < k.length; i++) 
+k [i] = (byte) 0x00; 
+} 
+} 
+Limitare l’accesso alle classi, ai metodi e alle va riabili. 
+Ogni classe, metodo e variabile dovrebbero essere d efiniti come private o protected. Potrebbero essere  
+dichiarati”public” in casi del tutto eccezionali, m otivati e documentati. Ogni variabile privata deve essere 
+accessibile dall’esterno unicamente attraverso meto di set() e get() per mantenere l’oggetto al sicuro.   
+ 
+Esempio : 
+public class Studente { 
+ private int eta; 
+ public int getEta(){ 

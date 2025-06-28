@@ -1,0 +1,100 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 31  a 137  
+ 
+Piattaforme tecnologiche nazionali e regionali sono  parte della rete NESSI: gestiscono obiettivi NESSI  da un 
+punto di vista locale. 
+I focus NESSI hanno alcune correlazioni SSE: 
+• Identificare le direzioni della ricerca futura sui servizi; 
+• costruire contributi formali sui settori chiave; 
+• investire sulla rete NESSI per migliorare il coordi namento tra i programmi di ricerca europei, 
+nazionali e regionali. 
+ 
+Risultati più rilevanti: 
+Research Agenda  NESSI Strategic Research and Innovation Agenda  (NESSI SRIA 2017 )  
+ 
+Next Generation Software Technologies Empowering the  Digital 
+Transformation of Europe.  Recommendations on Software Technology 
+Research for Horizon Europe. 
+ 
+ 
+Working Group related 
+to SSE Security and Privacy: From the Perspective of Softwar e, Services, Cloud and 
+Data . NESSI è la Horizon 2020 European Technology Platf orm (ETP) per il 
+software, i servizi e i dati. Il presente white pap er si concentra sul ruolo 
+crescente della sicurezza e della privacy e mette i n evidenza le direzioni di 
+ricerca di una prospettiva NESSI.  
+ 
+Software and the Next Generation Internet (2019-05- 09). Per sfruttare il 
+potenziale delle NGI sono necessarie ricerca e inno vazione per affrontare le 
+sfide poste dalle crescenti minacce derivanti da at tacchi informatici, compresa 
+la gestione dei rischi e il contenimento delle intr usioni, nonché le minacce 
+derivanti dalle nuove tecnologie. 
+ 
+5.2.2  Piattaforme Nazionali NESSI  
+L'obiettivo generale delle Piattaforme NESSI è di p romuovere lo sviluppo e l'applicazione di tecnologi e e 
+servizi ICT per affrontare le sfide future all'inte rno dell'industria europea e del governo. 
+Nella tabella che segue vengono sintetizzate le att ività di ciascuna piattaforma nazionale il cui scop o è di 
+gestire gli obiettivi NESSI da un punto di vista lo cale e di pubblicare le proprie SRA nazionali. 
+URL  http://www.nessi -europe.com   
+NESSI - Norway  E’ la filiale norvegese del NESSI. Il suo obiettivo  principale è quello di creare 
+un'arena norvegese per gli stakeholders del settore  industria, ricerca/mondo 
+accademico e pubblico e di influenzare la strategia  di ricerca ICT del governo 
+norvegese. 
+ 
+URL  http://www.nessi -europe .com  
+NESSI - Slovenia  Alla base di queste attività è che NESSI assumerà l a responsabilità del 
+contenuto e dell'attuazione del 7° programma quadro  dell'UE per R&D. Essi 
+invitano chiunque sia coinvolto in attività di R&D a partecipare a questo lavoro.  
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 32  a 137  
+ 
+ 
+ 
+URL  http://www -it.fmi .uni -sofia.bg/nessibg/  
+NESSI -Bulgaria  NESSI -Bulgaria è stata fondata nel 2005. Si tratta di un forum per lo scambio di 
+conoscenze, lo sviluppo di strategie e la ricerca d i nuove potenzialità a livello 
+internazionale IT e servizi industriali. La visione  centrale della piattaforma è di 
+consentire nuovi modelli di business orientate ai s ervizi. I loro obiettivi sono: 
+• Definire una Roadmap bulgara e l’SRA per l’evoluz ione del programma di 
+innovazione R&D bulgaro. 
+• Supporto alle attività R&D nei settori del softwa re e dei servizi. 
+•Fornire formazione: nuovi corsi, programmi MSc, pr ogrammi PhD e 
+formazione 
+ 
+URL  http://nessi.ik.bme.hu/  
+NESSI - Hungary  NESSI -Ungheria è stata fondata nel 2007 con lo scopo di e volvere la direzione 
+della ricerca e dello sviluppo strategico nel setto re del software e dei servizi, 
+sulla base di un approccio unificato. 
+Gruppi di lavoro di questa piattaforma sono divisi in due sottogruppi: domain-
+oriented e technological-oriented. La piattaforma è  aperta a qualsiasi altra 
+organizzazione ungherese. 
+ 
+URL  http://www.bicc -net.de / 
+Germany Bicc -Net  BICC -NET, Piattaforma di NESSI tedesca, è il Polo ICT ba varese della Germania. 
+Fondata nel 2007, intende stimolare selettivamente l'innovazione. BICC-NET 
+comprende quanto segue: 
+• sviluppo e distribuzione del software 
+• lo sviluppo e la distribuzione di hardware 
+• telecomunicazioni 
+• sistemi software e hardware embedded nei prodotti  
+• processi basati su software in fase di sviluppo, la produzione, i servizi e della 
+pubblica amministrazione 
+• Servizi nelle aree di cui sopra. 
+BICC-NET viene utilizzato per garantire la crescita  ICT in Baviera. Essa è guidata 
+dalla BICC sede ufficiale "cluster", che è stato di rettamente commissionato dal 
+Ministero bavarese per gli Affari economici, infras trutture, trasporti e 
+tecnologia. 
+BICC-NET supporterà i profili di innovazione delle aziende ICT bavaresi e gli 
+sviluppi in corso. 
+ 
+URL  https://www.fi -stockholm.eu/  
+NESSI - Sweden  NESSI svedese è stata fondata nel 2010. L'obiettivo  generale di NESSI Svezia è 
+di promuovere lo sviluppo e l'applicazione di tecno logie e servizi ICT per 
+affrontare le sfide future all'interno dell'industr ia svedese e del governo 
+ 

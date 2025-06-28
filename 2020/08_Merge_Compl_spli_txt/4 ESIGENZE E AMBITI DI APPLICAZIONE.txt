@@ -1,0 +1,37 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 10  a 137  
+ 
+4 ESIGENZE E AMBITI DI APPLICAZIONE  
+4.1  Il panorama delle vulnerabilità applicative 
+Il panorama delle minacce per la sicurezza delle ap plicazioni è in costante evoluzione.  
+Secondo la fonte Gartner 1, già nel 2005, OLTRE IL 75% DEGLI ATTACCHI ERANO INDIRIZZATI 
+DIRETTAMENTE VERSO LE APPLICAZIONI . 
+I fattori chiave di questa evoluzione sono i progre ssi fatti dagli attaccanti, il rilascio di nuove te cnologie, 
+l’uso di sistemi sempre più complessi. Gli obiettiv i degli attacchi sono le vulnerabilità, celate all’ interno 
+delle applicazioni software, che forniscono un faci le percorso d’ingresso per compromettere i sistemi o 
+lanciare nuovi attacchi e malware.  
+I dati riportati dal Clusit 2 nel “Rapporto 2019 sulla Sicurezza ICT”3, confermano un trend ancora in crescita 
+degli attacchi informatici:  
+• Nel biennio 2017-2018 il tasso di crescita del nume ro di attacchi gravi è cresciuto del 37,7% 
+aumentando fino a dieci volte rispetto al precedent e biennio 2015-2016. Il settore pubblico rimane 
+sempre in primo piano dei criminali (+44%).   
+• I punti deboli delle applicazioni e le vulnerabilit à del software continuano a essere il mezzo più 
+comune con cui i criminali informatici compiono att acchi esterni e, ancora più grave, lo 
+sfruttamento di vulnerabilità note è ancora in cres cita (+39,4%). Nonostante queste vulnerabilità 
+possano essere risolte con misure adeguate, le vuln erabilità più comuni nelle applicazioni Web 
+continuato a essere le stesse degli ultimi anni: il  60% presenta errori di convalida dell'input, il 70 % 
+difetti di incapsulamento di dati o funzionalità cr itiche all’interno dei componenti e oltre un terzo 
+(35%) presenta problematiche provocate dall’abuso d i API. 
+• Il numero di vulnerabilità segnalate al National Vu lnerability Database (NVD) 4 nel 2018 ha raggiunto 
+quota 16.517, con un incremento del 12,8% rispetto all'anno precedente (14.647 nel 2017). 
+Secondo CVE Details 5, nel 2017 il totale delle falle di sicurezza è cre sciuto più del doppio rispetto al 
+2016 ed è continuato a crescere anche nel 2018: 
+                                                           
+1 http://selagroup.sela.co.il/_Uploads/dbsAttachedFi les/GartnerNowIsTheTimeForSecurity.pdf 
+2 Clusit (Associazione Italiana per la Sicurezza Info rmatica): www.clusit.it  
+3 https://web.uniroma1.it/infosapienza/sites/default/f iles/RapportoClusit2019.pdf  
+4 www.nvd.nist.gov/ 
+5 https://www.cvedetails.com/  

@@ -1,0 +1,25 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 7 a 156  
+ 
+1 INTRODUZIONE 
+1.1  Scopo 
+Scopo del presente documento è supportare, attraver so opportune linee guida, lo sviluppo di applicazio ni 
+software sicure. Queste linee guida, costituiscono un insieme di best practices da seguire, al fine pr evenire 
+eventuali problematiche di sicurezza nel codice, e forniscono nel contempo uno strumento utile 
+nell’individuazione di possibili vulnerabilità pres enti nel codice sorgente e le relative contromisure  da 
+applicare.  
+1.2  Struttura del documento 
+Il presente documento è articolato come segue: 
+• Il Capitolo 1 riporta le generalità e lo scopo del documento; 
+• Il Capitolo 2 riporta la documentazione applicabile  e di riferimento al presente documento; 
+• Il Capitolo 3 riporta le definizioni e gli acronimi  utili per la lettura del documento; 
+• Il Capitolo 4 riporta un’introduzione alle applicaz ioni sicure; 
+• Il Capitolo 5 fornisce un insieme di raccomandazion i generali e trasversali alle scelte 
+implementative;  
+• Il Capitolo 6 fornisce un elenco delle principali v ulnerabilità software, corredate da esempi puntuali  
+e delle relative contromisure da adottare; 
+• Il Capitolo 7 fornisce le best practices per i ling uaggi di sviluppo utilizzati (C/C++, Java, PL/SQL, 
+Javascript, PyThon, C#, ASP, ASP.NET, PHP, VBNET, A JAX, GO) e delle misure da adottare al fine di 
+diminuire l’esposizione verso problematiche di sicu rezza applicativa. 
+ 

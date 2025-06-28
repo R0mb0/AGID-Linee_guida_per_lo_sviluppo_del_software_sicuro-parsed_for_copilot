@@ -1,0 +1,107 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 153  a 156  
+ 
+o Bonifica codice HTML. 
+• Rimuovere le interruzioni di linea, i caratteri di tabulazione (tab), gli spazi bianchi non necessari.  Il 
+“text/template” e “html/template” includono un modo  per rimuovere gli spazi bianchi dal 
+template, utilizzando un segno meno - all'interno d el delimitatore dell'azione. 
+• URL Request Path. Nel pacchetto “net/http” c'è un t ipo di multiplexer di richiesta HTTP chiamato 
+ServeMux, che viene utilizzato per far corrisponder e la richiesta in arrivo ai pattern registrati e 
+quindi a invocare il gestore che più si avvicina al l' URL richiesto. Oltre al suo scopo principale, si  
+occupa anche di sanitizzare l’URL, reindirizzando q ualsiasi richiesta contenente ‘.’ o ‘..’ o ‘/’ ripe tuti 
+a un URL equivalente, ma più pulito. Di seguito un  esempio di Mux: 
+func main() {  
+mux := http.NewServeMux() 
+rh := http.RedirectHandler( "http://yourDomain.org" , 307 )  
+mux.Handle( "/login" , rh) 
+log.Println( "Listening..." )  
+http.ListenAndServe( ":3000" , mux)  
+} 
+7.12.3.3  Gestione Sessione, Controlli Accessi e Crittografia  
+7.12.3.3.1  Sessioni 
+• La creazione della sessione deve essere eseguita su  un sistema attendibile. 
+• Assicurarsi che gli algoritmi utilizzati per genera re l’identificatore di sessione siano sufficienteme nte 
+casuali al fine di prevenire una forzatura bruta di  sessione. 
+• Una volta assicurato un token sufficientemente fort e, impostare l’opportuno valore per i cookie: 
+‘Domain’, ‘Path’, ‘Expires’, ‘HttpOnly’ e ‘Securè. 
+• Al momento del login, deve essere sempre generata u na nuova sessione. La vecchia sessione non 
+deve essere mai riutilizzata, anche se non è scadut a. Utilizzare anche il parametro “Expire” per 
+eseguire la chiusura della sessione in modo da prev enire il “session hijacking”. Un altro aspetto 
+importante dei cookie è quello di impedire l'access o simultaneo per lo stesso nome utente. Ciò può 
+essere fatto mantenendo un elenco degli utenti conn essi e confrontare il nuovo nome utente di 
+accesso con tale elenco. Questo elenco di utenti at tivi viene di solito persistito su un database. 
+• Gli identificatori di sessione non devono mai esser e esposti negli URL. Questi dovrebbero essere 
+localizzabili solo nei cookie presenti nell'intesta zione http. Un esempio di cattiva pratica è quello di 
+passare gli identificatori di sessione come paramet ri della GET. I dati della sessione devono inoltre 
+essere protetti dall'accesso non autorizzato da par te di altri utenti del server.  
+• È necessario passare da HTTP a HTTPS, al fine di pr evenire potenziali attacchi Man In The Middle 
+(MITM), nei quali un attaccante si frappone fra due  endpoint, “fiutando” i pacchetti in transito. In 
+tal modo tutto il traffico è visibile e comprensibi le, poiché l’HTTP prevede la trasmissione delle 
+informazioni in chiaro. Utilizzando HTTPS in tutte le richieste (pacchetto “crypto/tls” di Go) la 
+trasmissione risulta crittografata e il compito per  l’attaccante molto più arduo.  
+• In caso di operazioni altamente sensibili o critich e, il token deve essere generato per richiesta 
+invece che per sessione. Accertarsi sempre che il t oken sia sufficientemente casuale sia 
+sufficientemente lungo da proteggerlo contro possib ili attacchi di forza bruta. 
+• Aspetto da considerare nella gestione delle session i è la funzionalità Logout. L'applicazione deve 
+fornire un modo per disconnettersi da tutte le pagi ne che richiedono l'autenticazione, nonché 
+terminare completamente la sessione e le connession e ad esse associate. In particolare, quando un 
+utente si disconnette, il cookie deve essere elimin ato dal client. La stessa azione deve essere 
+intrapresa dalla componente che si occupa della mem orizzazione delle informazioni della sessione 
+utente. 
+7.12.3.3.2  Controllo Accessi 
+ 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 154  a 156  
+ 
+• Utilizzare solo gli oggetti di sistema attendibili per le decisioni di autorizzazione all'accesso. 
+• Generare un token di sessione lato server, quindi m emorizzare e utilizzare questo token per 
+convalidare l'utente e applicare il modello predefi nito di controllo degli accessi. 
+• Il componente utilizzato per l'autorizzazione di ac cesso deve essere un unico componente 
+(centralizzazione), utilizzato a livello di sito. C iò include quelle funzioni di libreria utilizzate c he 
+chiamano servizi di autorizzazione esterni. 
+• In caso di eccezione, il controllo degli accessi do vrebbe fallire in modo sicuro. A tale scopo è 
+opportuno utilizzare la funzione 'Defer'. 
+• Se l'applicazione non può accedere alle informazion i di configurazione, ogni accesso all'applicazione 
+deve essere negato. 
+• I controlli di autorizzazione devono essere applica ti su ogni richiesta, inclusi gli script eseguiti l ato 
+server e le richieste provenienti da tecnologie lat o client come AJAX o Flash. 
+• È importante separare correttamente la logica di ge stione dei privilegi dal resto del codice 
+applicativo. 
+• Altre operazioni importanti in cui i controlli di a ccesso devono essere attuati al fine di impedire ad  
+un utente non autorizzato di accedervi, sono: 
+o File e altre risorse, 
+o Protezione URL’s, 
+o Protezioni Funzioni, 
+o Riferimenti diretti ad oggetti, 
+o Servizi, 
+o Dati applicativi, 
+o Attributi utente e dati e informaizoni sulle policy . 
+• Se i dati di stato devono essere memorizzati lato c lient, è necessario utilizzare la crittografia ed 
+effettuare opportuni controlli d'integrità per prev enire possibili manomissioni. 
+• Il flusso della logica applicativa deve essere conf orme alle regole di business. 
+• Quando si trattano transazioni, il numero di transa zioni che un singolo utente o dispositivo può 
+eseguire in un dato periodo di tempo deve essere su periore ai requisiti previsti, ma 
+sufficientemente basso da impedire all'utente di es eguire un attacco di tipo DoS. 
+• L'impiego della sola intestazione HTTP "referer" è insufficiente per convalidare l'autorizzazione e 
+deve essere utilizzato solo come controllo suppleme ntare. 
+• Per le sessioni con autenticazione a lungo termine,  l'applicazione deve riesaminare periodicamente 
+l'autorizzazione dell'utente per verificare che i p ermessi di quest'ultimo non siano cambiati. Se le 
+autorizzazioni sono cambiate, è necessario scollega re l'utente e costringerlo a riautenticarsi. 
+• Gli account degli utenti devono essere verificati p eriodicamente, al fine di rispettare le procedure d i 
+sicurezza, (ad esempio, disabilitando l'account ute nte dopo 30 giorni dalla data di scadenza della 
+password). 
+• L'applicazione deve supportare la possibilità di di sabilitare gli account e la chiusura delle sessioni  in 
+caso di revoca dell'autorizzazione dell'utente, (ad  es. cambiamento di ruolo, situazione 
+occupazionale, ecc.). 
+• Gli account di servizio esterno, o che supportano c onnessioni da o verso sistemi esterni, devono 
+essere dotati del  più basso possibile livello di p rivilegi. 
+7.12.3.3.3  Crittografia e Hashing 
+La crittografia deve essere utilizzata ogni qual vo lta è necessario comunicare o memorizzare dati sens ibili. 
+Le regole da seguire sono le seguenti: 
+• Utilizzare algoritmi sicuri di hashing come l’SHA-2 56. 
+• Un caso di utilizzo "semplice" di crittografia è il  protocollo HTTPS - Hyper Text Transfer Protocol 
+Secure.  
+• AES è lo standard di fatto per quanto riguarda la c rittografia a chiave simmetrica. Questo algoritmo, 
+come molte altre cifrature simmetriche, può essere implementato in diverse modalità.  

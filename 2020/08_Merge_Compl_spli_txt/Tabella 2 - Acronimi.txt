@@ -1,0 +1,19 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 10  a 141  
+ 
+Codice Titolo 
+SAML  Language Assertion Markup Language  
+Spim  Instant Messaging Spam  
+TLS  Transport Layer Security  
+VA  Vulnerability Assessment  
+VSTO  Visual Studio Tools per Office  
+WAF  Web Application Firewall  
+WOT  Web of Trust  
+WPA2  Wi -Fi Protected Access versione 2  
+XACML  EXtensible Access Control Markup Language  
+XKMS  XML Key Management Specification  
+XSS  Cross -site scripting  
+Tabella 2 - Acronimi  
+  

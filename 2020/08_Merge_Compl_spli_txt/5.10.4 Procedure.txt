@@ -1,0 +1,120 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 133  a 141  
+ 
+politiche configurabili , ad es. In base alla tipologia ( macro, scripts, oggetti 
+“embedded”, applets, etc.), e altre caratteristiche . 
+ 
+5.10.2  Autorizzazione 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.3], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+Autorizzazione  
+Minaccia  - Attacchi all’integrità dei sistemi.  
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Proteggere i parametri di sicurezza e la definizion e delle “trusted location” da  
+eventuali cambiamenti apportati dagli utenti finali . 
+Tali configurazioni devono essere impostabili solo da un’utenza amministrativa. 
+ 
+5.10.3  Crittografia 
+Ai principi generali già introdotti nel paragrafo [ rif.5.1.4], si aggiungono le seguenti indicazioni p er il 
+contesto specifico: 
+Crittografia  
+Minaccia  - Accesso non autorizzato alle informazioni  
+- Attacchi all’integrità delle informazioni. 
+- Falsificazione di identità. 
+Contromisure  Si tengano presenti i seguenti strumenti integrati  in OpenOffice:  
+- L’utilizzo di firma digitale per la protezione dell 'integrità dei documenti prodotti 
+(attraverso l’azione “File  Digital Signatures”); 
+- L’utilizzo di meccanismi per la protezione della co nfidenzialità dei documenti 
+prodotti eseguendone la cifratura (attraverso l’azi one "Save With Password"). 
+ 
+5.10.4  Procedure 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.7], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+Patching  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+Contromisure  Dalla versione 2.1, OpenOffice ha incluso una funzi onalità che segnala se è disponibile 
+una nuova versione. Per attivare questa opzione: Tools  Options  Online Update  
+Check for updates automatically  
+È possibile ricevere alerts via email su vulnerabil ità di sicurezza risolte (vedi references: 
+[1]); 
+È possibile ricevere informazioni complete sugli al ert per tutte le vulnerabilità di 
+sicurezza risolte (vedi references: [2 ]). 
+Tutte le patch di sicurezza devono essere installat e prontamente.  
+References  [1] Security Alerts, https://www.openoffice.org/security/alerts.html  
+[2] Security Bulletin, https://www.openoffice.org/s ecurity/bulletin.html  
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 134  a 141  
+ 
+ 
+Limitare e controllare l'uso di open source “spurio”  
+Minaccia  Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’o rganizzazione 
+(malware). 
+Contromisure  Poiché l'open source rende il codice sorgente disponibile a chiunque, un attaccante 
+potrebbe: 
+- progettare e distribuire alcuni malware incorporand o codice dannoso nella 
+distribuzione originale open source (al fine di las ciare backdoor o eseguire l’upload 
+di dati sensibili o informazioni aziendali) 
+- mostrare alcune caratteristiche interessanti della distribuzione malevola attirando 
+così alcuni utenti finali. 
+L'organizzazione deve definire una chiara politica di sicurezza sull'utilizzo di open 
+source, per evitare che vengano scaricate e install ate customizzazioni di software open 
+source da fonti non attendibili, considerando le se guenti linee guida:  
+- utilizzo di procedure di identificazione, autentica zione e autorizzazione per il 
+software open source;  
+- limitazione della disponibilità e tracciamento di t utti gli utilizzi di software open 
+source;   
+- rimozione o disabilitazione di tutti i programmi ope n source non necessari e non 
+ammessi.  
+ 
+ 
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Assicurarsi che la copia di OpenOffice sia genuina:  
+- scaricata da un sito attendibile (https://www.openo ffice.org/download/);  
+- acquisita da uno distributore ufficiale. 
+Verificare il checksum per assicurarsi che la copia  non sia stata danneggiata prima di 
+installarla. 
+ 
+ 
+Minaccia  - Accesso non  autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Falsificazione di identità. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Una macro può essere collegata a qualsiasi file OpenOffice (documento, foglio di 
+lavoro, ecc.).  
+Ogni volta che OpenOffice rileva le macro in un doc umento aperto, gestirà/eseguirà la 
+macro come impostato a livello di “Security options   Macro security”, che offre una 
+protezione limitata. 
+La regola più sicura è di non aprire alcun file Ope nOffice a meno che non si abbia 
+sicurezza della provenienza e fiducia del mittente,  tanto più se contiene delle macro. 
+Pertanto, se è necessario scambiare regolarmente do cumenti con soggetti ben 
+individuati, si consiglia l'uso di firme digitali p er certificare l’autenticità e l’integrità del 
+documento. 
+ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 135  a 141  
+ 
+ 
+Minaccia  Divulgazione di informazioni riservate.  
+Contromisure  Definire la modalità di segnalazione di eventuali v ulnerabilità sospette  o errori  di 
+OpenOffice al team di Sicurezza dell’organizzazione  o dell’eventuale provider (in caso 
+di servizi di sicurezza gestita) o a fornitori che erogano servizi di supporto tecnico, al 
+fine di impedire la divulgazione di informazioni ri servate. Occorre definire: 
+- Quali informazioni si possono fornire. 
+- Gli accordi di riservatezza. 
+ 
+ 

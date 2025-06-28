@@ -1,0 +1,72 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 57  a 137  
+ 
+Management 
+Solution 
+Website 
+Malware 
+Scanner SAST, 
+DAST Implementation 
+/ Verification Demo non 
+disponibile https://www.sitelock.com  
+SonarLint SAST Implementation Open Source https://www.sonarlint.org  
+SonarQube SAST Implementation Open Source https://www.sonarqube.org  
+Symantec 
+Advanced 
+Threat 
+Protection IAST, RASP  Implementation 
+/ Verification Versione Trial 
+disponibile su 
+richiesta https://www.symantec.com  
+Tanium 
+Endpoint 
+Platform Endpoint 
+Security, 
+App 
+Security 
+Scanning Implementation 
+/ Verification Demo non 
+disponibile https://www.tanium.com  
+Trend Micro 
+Deep Security 
+Platform SAST, 
+DAST Implementation 
+/ Verification Versione Trial 
+disponibile https://www.trendmicro.com  
+Tripwire 
+Enterprise IAST, RASP  Implementation 
+/ Verification  Demo disponibile su 
+richiesta https://www.tripwire.com  
+Veracode 
+Cloud 
+Platform SAST, 
+DAST, 
+Mobile 
+AST, 
+Penetratio 
+n Testing Implementation 
+/ Verification Demo disponibile su 
+richiesta www.veracode.com  
+WhiteHat 
+Sentinel SAST, 
+DAST, 
+MAST Implementation 
+/ Verification Demo di 30 giorni 
+disponibile su 
+richiesta https://www.whitehatsec.com/inf 
+o/security-check/  
+ 
+6.6  Verifica 
+Prima della fase di rilascio definitiva del softwar e i team che lavorano in sicurezza effettuano un ul teriore 
+verifica del codice elaborato mediante test di sicu rezza. I test di sicurezza mirano a controllare la 
+vulnerabilità delle superficie di attacco, in modo da agire in via preventiva alla correzione di event uali 
+problemi che potrebbero verificarsi in fase di rila scio. 
+6.6.1  Software Verification Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Verifica tion Tools’: 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 

@@ -1,0 +1,59 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 6 a 141  
+ 
+1 INTRODUZIONE 
+1.1  Scopo 
+La sicurezza del software di base ed applicativo ri chiede di stabilire un processo volto ad identifica re rischi e 
+contromisure di sicurezza ad ogni livello (fisico, logico e organizzativo) del contesto in cui tali so ftware 
+operano e sono utilizzati. 
+Pertanto, nel fornire delle linee guida per la conf igurazione sicura di tali software (nel seguito tal e attività 
+viene spesso indicata con il termine “hardening”), è necessario considerare vari elementi, quali le 
+protezioni perimetrali (fisiche e logiche), le arch itetture di rete (DMZ, segmentazioni, etc.), le pro cedure 
+organizzative (perché dietro alle tecnologie operan o le persone), i programmi formativi di “security 
+awareness”, ecc. 
+Partendo da questo presupposto, il presente documen to si pone l’obiettivo di fornire un insieme di 
+indicazioni per affrontare e risolvere correttament e le problematiche legate alla sicurezza del softwa re di 
+base e di individuare le misure da adottare per dif endere ogni componente da possibili minacce acciden tali 
+e/o intenzionali.   
+ 
+1.2  Struttura del Documento 
+I paragrafi a seguire entrano nel dettaglio delle s ingole componenti (software di base, middleware, of fice 
+automation, ecc.) oggetto di approfondita analisi d al punto di vista delle best practice di sicurezza,  e per 
+ognuna forniscono un elenco delle misure di sicurez za da adottare a fronte delle principali minacce, i n 
+modo da diminuire l’esposizione ai rischi per la si curezza delle informazioni e dei servizi erogati.  
+Più nel dettaglio il documento è strutturato come s egue: 
+• Il Capitolo 4 fornisce: 
+o un catalogo delle minacce alla sicurezza delle info rmazioni ritenute applicabili nel contesto 
+del presente documento (par. 4.1). 
+o un catalogo delle principali tipologie di attacco r ispetto al software di base, al middleware e 
+al software applicativo più comune (par. 4.2). 
+• Il Capitolo 5 fornisce un insieme di raccomandazion i generali ‘trasversali’ che realizzano la base 
+comune per affrontare le problematiche di sicurezza  delle specifiche componenti. 
+• Il Capitolo 6 fornisce: 
+o in una prima tabella, l’elenco dei riferimenti alle  istruzioni operative di hardening (o 
+benchmarks) messe a disposizione da enti/istituzion i preposte ed affermate a livello 
+internazionale, operanti con il pieno supporto dei rispettivi vendor; 
+o in una seconda tabella, l’elenco delle baseline di configurazione e alcuni strumenti software 
+per l’hardening, messi a disposizione direttamente dai vendor. 
+ 
+1.3  Ambito di Applicabilità 
+Il presente documento si applica alle principali ti pologie di software di base, middleware e applicati vo in 
+uso presso le pubbliche amministrazioni, ed in part icolare: 
+- Principali Sistemi Operativi UNIX, 
+- Sistemi operativi Microsoft Windows Server, 
+- Sistemi operativi Windows Client, 
+- Web Browser, 
+- Postazioni di Lavoro, 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 7 a 141  
+ 
+- Web Application Server, 
+- DBMS/Data base server, 
+- Mail Server, 
+- Enterprise Service Bus, 
+- Principali applicativi di Office Automation (Micros oft Office e OpenOffice). 
+ 

@@ -1,0 +1,48 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 117  a 141  
+ 
+cartelle pubbliche / condivise.  
+ 
+Hardening del MailServer  
+Minaccia  - Divulgazione di informazioni riservate.  
+- Negazione dei servizi (Spam). 
+Contromisure  Disabilitare il comando “VRFY” (che consente di ver ificare se un account di email esiste 
+sul server). 
+ 
+Hardening del MailServer  
+Minaccia  Negazione dei servizi.  
+Contromisure  Limitare il numero di messaggi di posta elettronica  per minuto o per ora che un server 
+può ricevere, legittimare o altro. 
+ 
+Hardening del MailServer  
+Minaccia  - Attacchi all’integrità dei sistemi.  
+- Negazione dei servizi. 
+Contromisure  Il mobile code può essere scaricato ed eseguito su PC utente anche via email. Oltre al 
+download via attachment (ad esempio: macro in un fi le Word), si consideri anche il 
+caso di body HTML della mail (ad esempio: JavaScrip t). In generale, a livello di mail 
+client occorre: 
+- Assicurarsi che il “reading pane”, se presente, non  attivi script e/o apra attachment 
+automaticamente; 
+- Bloccare contenuti esterni in HTML (es. immagini o altri elementi multimediali).  
+ 
+Hardening del sistema operativo che ospita il Mail Server  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Accesso non autorizzato al sistema. 
+- Compromissione delle comunicazioni. 
+- Furto di credenziali di autenticazione (es. keylogg er). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Eseguire l’hardening del sistema operativo che ospi ta il Mail Server  [rif.  5.2.2 ]. 
+ 
+5.7.2  Utenze 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1]. 
+5.7.3  Autenticazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.2]. 
+ 
+5.7.4  Autorizzazione 
+A i principi generali già introdotti nel paragrafo [rif. 5.1.3], si aggiungono le seguenti indicazioni  per il 
+contesto specifico: 
+Autorizzazione  
+Minaccia  Negazione dei servizi.  

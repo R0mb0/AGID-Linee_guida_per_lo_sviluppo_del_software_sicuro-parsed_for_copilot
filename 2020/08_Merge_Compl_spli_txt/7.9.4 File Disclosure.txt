@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 127  a 156  
+ 
+7.9.4  File Disclosure 
+Come riconoscerla 
+Si ha quando l’applicazione si affida all’input del l’utente per decidere a quali file o directory acce dere. Se 
+l’input non viene verificato né bonificato, un mali ntezionato può scegliere di leggere file arbitrari oltre 
+quelli previsti, divulgando il contenuto di questi file. 
+Questa vulnerabilità  è sovrapponibile al path trav ersal, cui ci si riferisce di solito per indicare l ’abusto di 
+percorsi in input. 
+Come difendersi 
+• Occorre prendere in considerazione l'utilizzo di un a soluzione statica per la lettura di file, ad 
+esempio un elenco di file consentiti da cui poter s cegliere. Oppure si potrebbe utilizzare un 
+database, al posto di file e directory.  
+• Se la lettura di file locali dal disco è assolutame nte necessaria, assicurarsi che i file vengano lett i da 
+una cartella specifica e limitare l'accesso al codi ce solo a questa cartella; inoltre, quando un utent e 
+fornisce un percorso, è necessario ripulire la stri nga dagli eventuali metacaratteri tipici del file 
+system, come le barre e i punti, per impedire ogni tentativo di manipolazione del percorso per 
+accedere a una directory riservata.  
+ 
+Esempio: 
+Codice vulnerabile: 
+if (isset($_GET['imagenamè])) { 
+ $filename = $_GET['imagenamè]; // qui un attaccant e può fornire un 
+percorso  
+        // assoluto come "/etc/passwd" 
+ readfile($filename); 
+} 
+ 
+La versione sicura toglie di mezzo il path, rendend o impossibile l’abuso: 
+if (isset($_GET['imagenamè])) { 
+ $filename = getcwd()."/images/".basename($_GET['im agenamè]); 
+ readfile($filename); 
+} 
+ 
+Per ulteriori informazioni si veda: https://cwe.mitre.org/data/definitions/538.html  
+CWE-538: File and Directory Information Exposure 
+7.9.5  Remote File Inclusion 
+Come riconoscerla 
+Un malintenzionato potrebbe tramite questa vulnerab ilità avere accesso alle librerie di sistema presen ti sul 
+server. Se non adeguatamente protette, potrebbero e ssere attaccate librerie di sistema installate sul server 
+(ad esempio in caso di attacco nella fase di carica mento delle stesse librerie) rendendo il sistema 
+completamente sotto controllo dell'attaccante. 
+Ciò può accadere perché l'applicazione utilizza i d ati non attendibili ricevuti tramite l'input dell'u tente per 
+caricare dinamicamente la libreria, senza una corre tta sanitizzazione. Il framework malevolo caricherà  
+qualsiasi codice arbitrario specificato dall'applic azione, e potrebbe anche scaricare file di codice r emoto 
+ospitati su un server esterno, se specificato. Il c odice caricato verrà quindi eseguito come se fosse un 
+software assolutamente affidabile rendendo il siste ma estremamente vulnerabile. 
+Come difendersi 
+• Non caricare in modo dinamico le librerie relative a codice software, in particolare basate sull'input  
+non controllato dell'utente. 

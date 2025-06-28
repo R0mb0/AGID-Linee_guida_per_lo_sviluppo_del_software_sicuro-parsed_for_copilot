@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 33  a 156  
+ 
+due nodi che comunicano (ad esempio nel gateway d’u scita del server) o che riesce a forzare il redirec t del 
+traffico verso la sua postazione, può in pratica ri costruire con estrema semplicità il contenuto delle  sessioni 
+applicative, intercettando e ricostruendo il flusso  dei dati in chiaro. Nessuna procedura di decryptin g è 
+necessaria per appropriarsi delle informazioni tras messe. Questo tipo di attacco è anche noto come “Ma n 
+In The Middle” (MITM). 
+Cifrare i dati, tuttavia, potrebbe non essere suffi ciente a impedire lo sniffing. Anche in presenza di  sessioni 
+cifrate, infatti, un aggressore può intercettare ed  archiviare tutto il traffico per cercare di decifr arlo in 
+modalità offline, ovvero a sessione client/server t erminata. Il tipo di algoritmo che l’applicazione 
+implementa e la dimensione della chiave di cifratur a utilizzata giocano un ruolo fondamentale nel gara ntire 
+un’adeguata protezione da questo tipo di attacchi. Se l’applicazione implementa un algoritmo semplice e/o 
+fa uso di una chiave crittografica di dimensioni no n adeguate, un aggressore può riuscire a decifrare i dati 
+scambiati, persino in tempo reale. Le principali te cniche utilizzate per violare una chiave crittograf ica 
+generata attraverso algoritmi simmetrici o di hashi ng vengono descritte nei paragrafi Brute Forcing e 
+Rainbow Table. 
+ 
+Nella crittografia simmetrica, un messaggio viene c ifrato dal mittente con una chiave e decifrato dal 
+destinatario con la stessa chiave attraverso questi  semplici passaggi: 
+il messaggio viene criptato dal mittente:  
+       messaggio_cifrato = funzioneCrittografica(me ssaggio_in_chiaro, 
+chiave_condivisa); 
+e poi decriptato dal destinatario:  
+      messaggio_in_chiaro = funzioneCrittografica(m essaggio_cifrato, 
+chiave_condivisa); 
+La crittografia simmetrica è un esempio di cifratur a debole, poiché la chiave può essere divulgata, 
+intenzionalmente o per errore, con molta facilità. 
+Contromisure 
+La soluzione è la crittografia asimmetrica, a chiav e pubblica/privata, come nelle connessioni SSL/TLS (https). 
+6.3.2  Brute forcing 
+Il brute forcing è la tecnica principalmente utiliz zata da un aggressore per “rompere” la chiave critt ografica 
+di un messaggio testuale o di una sequenza di byte cifrata (ad esempio una password).  
+Un attacco di brute forcing può, tra l'altro, pales arsi tramite ripetuti tentativi di accesso ad un se rvizio, 
+utilizzando una lista di username o password predef initi. Vengono tentate in modo sistematico tutte le  
+possibili combinazioni di un valore crittografato. 
+Un eventuale match identifica la chiave che può ess ere impiegata per riportare l’intero messaggio o la  
+sequenza di byte in chiaro (clear-text). Il brute f orcing è una tecnica che a seconda dell’algoritmo 
+crittografico utilizzato per cifrare un messaggio, e soprattutto della dimensione della chiave, può no n 
+raggiungere l’intento di un aggressore in tempi rag ionevoli. Viene solitamente sfruttata per decifrare  
+password o chiavi cifrate con algoritmi simmetrici.  
+ 
+L’attacco di brute force può essere facilitato nei seguenti casi: 
+• Weak Keys (chiavi deboli): il meccanismo di generaz ione automatico delle chiavi crittografiche di 
+un’applicazione produce delle Weak Keys. Si tratta di chiavi che, quando utilizzate per cifrare un 
+messaggio, generano in output lo stesso messaggio i n chiaro. Questa problematica è strettamente 
+correlata al tipo di algoritmo crittografico utiliz zato e può essere occasionalmente riscontrata 
+durante la generazione di chiavi DES, 3DES, RC4, Bl owfish, IDEA, etc. 
+• Collisioni:  si tratta di una particolarità che si verifica nel caso degli algoritmi di hashing one-wa y 
+(MD5, SHA-1, ecc…). Quando un’applicazione utilizza  questo genere di algoritmi, ad esempio per 
+confrontare la password fornita da un utente con il  valore hash presente in un database, il valore in 
+chiaro proveniente da input viene convertito in has h (una stringa cifrata). L’hash viene poi 
+confrontato direttamente con il valore, sempre cifr ato, mantenuto nel database. Per alcuni 

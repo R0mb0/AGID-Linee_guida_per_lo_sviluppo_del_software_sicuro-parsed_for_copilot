@@ -1,0 +1,19 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 93 a 132 
+ 
+Riferimento bibliografico: Privacy guidelines for developing software products and services 57, 
+version 3.1. Technical report, Microsoft Coorporation, Sept 2008 . 
+5.8.6.10  PRET  
+Miyazaki et al.  [12] ha definito una tecnica di elicitazione dei requisiti di riservatezza 
+informatizzata, denominata  (PRET  - privacy requirements elicitation technique ). Questa tecnica 
+restituisce i requisiti necessari affinché il sistema sia conforme alla normativa , sulla b ase di un 
+questionario compilato dall' ingegnere di sistema.  
+Riferimento bibliografico: Seiya Miyazaki, Nancy Mead, and Justin Zhan. Computer -aided privacy 
+requirements elicitation technique. Asia-Pacific Conference on Services Computing (APSCC’08), 
+pages 3 67–372, 2008.  
+ 
+57https://download.microsoft.com/download/9/3/5/935520EC -D9E2 -413E -BEA7 -
+0B86 5A79B18C/Privacy%20in%20Software%20Development.ppsx&usg=AOvVaw0McrzvmQjgjTgDzttoZEkC  

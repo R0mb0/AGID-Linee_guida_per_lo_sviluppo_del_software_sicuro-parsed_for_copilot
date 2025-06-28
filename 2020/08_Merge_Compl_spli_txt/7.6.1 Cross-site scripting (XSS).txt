@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 96  a 156  
+ 
+7.6  C# 
+C# è un linguaggio di programmazione orientato agli  oggetti sviluppato da Microsoft all’interno 
+dell’iniziativa .NET, e successivamente approvato c ome standard della Ecma (ECMA-334) e ISO (norma 
+ISO/IEC 23270). La sintassi e la struttura del C# p rendono spunto da vari linguaggi nati precedentemen te, in 
+particolare Delphi, C++ e Java. Il risultato è un l inguaggio con meno simbolismo rispetto a C++, meno 
+elelementi decorativi rispetto a Java, ma comunque orientato agli oggetti in modo nativo e adatto allo  
+sviluppo di una vasta gamma di soluzioni software.  
+Vengono di seguito analizzate le principali vulnera bilità e relative contromisure da adottare. 
+7.6.1  Cross-site scripting (XSS) 
+Come riconoscerla 
+Il Cross Site Scripting consiste nella possibilità che un attaccante possa inserire nella pagina 
+dell’applicazione, quindi nel codice HTML, script c he, una volta eseguiti, possano trarre in inganno i  legittimi 
+utenti, trafugare informazioni e predisporre nuovi attacchi.  
+Questa minaccia, enormemente diffusa, è dovuta allo  scarso controllo dell’input da parte delle web 
+application.  
+Il Cross Site Scripting può essere reflected o stor ed. Nel primo caso, uno script inoculato è valido s olo 
+all’interno della sessione corrente, ma i suoi effe tti possono essere molto dannosi per il sito vittim a 
+dell’attacco. 
+Ancora più grave è il Cross Site Scripting di tipo stored. In questo caso lo script inoculato viene me morizzato 
+come parte intregrante della pagina all’interno di un database e rispristinato ogni qual volta la pagi na in 
+questione viene caricata. Quest’attacco è stato sfr uttato ampiamente nel recente passato, soprattutto 
+laddove veniva consentito agli utenti di inserire r ecensioni, commenti e altri contributi. 
+ 
+Volendo schematizzare, possiamo categorizzare gli a ttacchi XSS nelle seguenti tipologie: 
+• Reflected XSS, in cui la stringa dannosa proviene d alla richiesta dell’utente. 
+• Stored XSS, in cui la stringa dannosa proviene dal database del sito Web. 
+ 
+Esiste anche un Cross Site Scripting dovuto a una l acuna nella codifica UTF-7, che permettere di masch erare 
+i caratteri “<” e “>”, facendoli sfuggire al contro llo. Questa minaccia non è più possibile nei modern i 
+browser, ad eccezione di Microsoft Internet Explore r 11.  
+ 
+Come difendersi 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white 
+list, scartando quelli che non la rispettano. Occor re controllare il tipo del dato, la sua dimensione,  
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Codificare completamente tutti i dati dinamici prim a di incorporarli. La codifica dovrebbe essere 
+sensibile al contesto, in base al tipo di dato che si vuole neutralizzare: se ci si aspetta che possa 
+esserci codice HTML abusivo, occorre codificare gli  eventuali tag HTML, se ci si potrebbe trovare di 
+fronte a uno script, allora bisogna codificare gli elementi sintattici di Javascript, ecc. 
+• Si consiglia, a tal proposito, di utilizzare la lib reria di codifica ESAPI. 
+• Nell'intestazione di risposta Content-Type HTTP, è necessario definire esplicitamente la codifica dei 
+caratteri (charset) per l'intera pagina. 
+• Impostare l’attributo HTTPOnly per proteggere il co okie della sessione da indebite letture da parte 
+di script malevoli. 
+ 
+Esempi: 

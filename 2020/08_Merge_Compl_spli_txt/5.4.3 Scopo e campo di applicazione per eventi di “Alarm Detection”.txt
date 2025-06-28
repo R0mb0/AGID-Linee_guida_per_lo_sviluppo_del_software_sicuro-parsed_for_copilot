@@ -1,0 +1,51 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 17  a 156  
+ 
+• Modifiche alle configurazioni dell’applicazione; 
+• Accesso ai dati (inserimento, modifica, lettura, ri mozione), ai file e alle risorse dell’applicazione e 
+tipo di accesso; 
+• Disattivazione del meccanismo di tracciamento; 
+• La procedura di tracciamento sarà predisposta per l ’emissione di “Alert” al verificarsi di uno o più 
+eventi configurabili dall’amministratore del sistem a. 
+5.4.2  Tracciamento eventi di “Alarm Detection” 
+Oltre ad attenersi alle prescrizioni riportate nei paragrafi precedenti, durante lo sviluppo del codic e è 
+essenziale inserire particolari funzioni di traccia mento che, operanti in determinati e specifici punt i 
+dell’applicativo, permettano la rilevazione e il lo gging di eventi anomali o di frode, significativi p er la 
+sicurezza dell’organizzazione. 
+Attraverso l’inserimento di specifiche stringhe di codice all’interno dell’applicativo, si vogliono ri levare 
+alcuni eventi ritenuti sensibili ai fini del manten imento della riservatezza, integrità e disponibilit à del dato 
+applicativo. 
+In seguito, le segnalazioni prodotte e inserite in appositi file di Log, discriminate per mezzo di TAG  
+(DetCode) opportuni, possono essere elaborate da un  sistema di correlazione e utilizzate come fonte pe r 
+attività di Audit (Ex/Post) degli eventi di sicurez za. 
+ 
+Questa nuova strategia di rilevazione, risulta stre ttamente necessaria per superare i limiti tecnologi ci 
+intrinseci delle tecnologie Anti-Intrusione commerc iali. In particolare, tali tecnologie non permetton o:  
+• l’analisi di flussi applicativi di applicazioni del l’ente di tipo “Make” (le soluzioni di mercato sono  
+progettate per l’esclusivo utilizzo su applicazioni  di tipo commerciale); 
+• l’analisi di flussi applicativi che fanno uso di me ccanismi di cifratura delle informazioni; 
+• la rilevazione di vulnerabilità software determinat e da errori in input commessi dall’utente; 
+• la rilevazione di vulnerabilità software determinat e dall’assenza di controlli applicativi durante le 
+operazioni di allocazione di blocchi di memoria nel le aree di memoria volatile. 
+5.4.3  Scopo e campo di applicazione per eventi di “Alarm D etection” 
+Il software sviluppato e personalizzato per l’organ izzazione è realizzato seguendo le indicazioni e le  
+necessità espresse dall’organizzazione medesima, ne l rispetto dei vincoli di sicurezza imposti nel Pia no di 
+Sicurezza (in seguito PdS). 
+Nella fase di produzione e/o aggiornamento del Pian o di Sicurezza di una specifica applicazione, insie me 
+all'esame del funzionamento, all’analisi delle info rmazioni da esso trattate e all’analisi dei flussi applicativi 
+pertinenti (input, output, accesso a DB, autenticaz ione, ecc.), si procederà all’individuazione delle 
+raccomandazioni degli eventi di Alarm Detection che  permetteranno, alle competenti linee di Sviluppo, di 
+identificare e implementare gli opportuni meccanism i di generazione delle informazioni di tracciamento . 
+5.4.4  Raccomandazioni generali per eventi di “Alarm Detec tion” 
+L’attivazione ed il tracciamento per gli eventi di Alarm Detection, di seguito elencati, sono fortemen te 
+raccomandati, poichè riguardano alcune delle princi pali debolezze applicative che, se utilizzate per s copi 
+malevoli, possono comportare un elevato fattore di rischio: 
+• Validazione Input : si devono tracciare tutti gli input (provenienti da Client o da Server) non 
+conformi con quanto atteso dall’applicativo (Cfr. [ paragrafo 5.2.7]); 
+• Buffer Overflow : si devono tracciare tutti gli avvisi e/o le eccez ioni generate dall’applicativo a 
+fronte di un evento di Buffer Overflow (Cfr. [parag rafo 6.1.7]); 
+• Sessioni applicative anomale : si devono tracciare le occorrenze di eventi che n on rientrano nella 
+corretta gestione delle sessioni applicative, come tentativi massivi di autenticazione, sessioni 
+multiple dell’utente non previste e/o consentite, p resenza di cookie con contenuti incomprensibili, 
+referrer errato o inconsistente con la funzione o c on la pagina chiamata, etc.( Cfr.[paragrafo 6.1.2]) ; 

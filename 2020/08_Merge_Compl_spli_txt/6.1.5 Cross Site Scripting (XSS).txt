@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 26  a 156  
+ 
+In generale, è sufficiente disabilitare la risoluzi one automatica di entità esterne e disabilitare il supporto per 
+XInclude, una parte della specifica XML che consent e di creare un documento XML a partire da 
+sottodocumenti. Questo di solito può essere fatto t ramite opzioni di configurazione o sostituendo a li vello 
+di programmazione il comportamento predefinito. Con sultare la documentazione per la libreria o l’API c he 
+si occupa del parsng dell’XML per dettagli su come disabilitare le funzionalità pericolose e non neces sarie. 
+6.1.4  Insecure Deserialization 
+Quando dati organizzati in strutture come matrici, record, grafici, classi o altre configurazioni, dev ono 
+essere archiviate o trasmesse in un'altra posizione , ad esempio attraverso una rete, devono passare 
+attraverso un processo chiamato serializzazione. Qu esto processo converte e modifica l'organizzazione dei 
+dati in un formato lineare, semplice da trasmettere  e da archiviare su dispositivi di storage. 
+La deserializzazione, al contrario, converte il dat o lineare in dato strutturato, istanziando l’oggett o per l’uso 
+da parte del processo di destinazione. 
+I formati degli oggetti serializzati sono standardi zzati in modo da poter essere letti da piattaforme diverse, 
+se necessario. Alcune delle piattaforme che support ano i processi di serializzazione includono python,  perl, 
+php, ruby e Java. Anche la piattaforma Microsoft .N ET supporta le funzioni di serializzazione con  le classi 
+XMLSerializer e DataContractSerializer, nonché le c lassi BinaryFormatter e NetDataContractSerializer, più 
+potenti ma più vulnerabili. XML, YAML e JSON sono t ra i formati di dati serializzati più comunemente 
+utilizzati. 
+La vulnerabilità di deserializzazione non sicura si  presenta nel momento in cui un attaccante è in gra do di 
+iniettare dati dannosi all’interno dei dati seriali zzati. Lo sfruttamento di tale attacco si compie qu ando dal 
+dato serializzato il processo di destinazione crea un’istanza attiva. 
+Contromisure 
+Per mitigare il rischio di attacco attraverso una d eserializzazione non sicura è indispensabile ridurr e al 
+minimo l'utilizzo della deserializzazione, riducend o i trasferimenti di dati non necessari tra applica zioni / 
+sistemi, riducendo anche la quantità di file scritt i su disco. 
+Occorre, inoltre, aderire al principio del privileg io minimo, minimizzando o disabilitando l'accesso a i 
+privilegi amministrativi per ridurre l'impatto di u n possibile attacco andato a buon fine (defense in depth). 
+ 
+6.1.5  Cross Site Scripting (XSS) 
+Il Cross Site Scripting (XSS) è una problematica so litamente riscontrabile nelle applicazioni Web e co nsiste 
+nella possibilità di inserire codice HTML o client- side scripting (comunemente Javascript) all’interno  di una 
+pagina visualizzata da altri utenti. Un aggressore può, in questo modo, forzare l’esecuzione del codic e 
+Javascript all’interno del browser utilizzato dal v isitatore.  
+L’uso più comune del Cross Site Scripting è finaliz zato all’intercettazione dei cookie e/o dei token d i un 
+utente regolarmente autenticato in un portale e qui ndi all’appropriazione indebita delle sessioni web da 
+esso intraprese. Con le credenziali rubate, l’attac cante si spaccerà per l’utente legittimo (spoofing) .  
+Esistono diverse forme di Cross Site Scripting, ma il funzionamento di base è sempre lo stesso. A vari are è 
+invece la tecnica utilizzata per forzare l’esecuzio ne di codice Javascript nel browser del visitatore.  In alcuni 
+casi un aggressore ha la possibilità di iniettare c odice persistente nella pagina web vulnerabile, ovv ero 
+codice memorizzato dal server (ad esempio su un dat abase) e riproposto al client durante ogni singolo 
+collegamento. In altre circostanze il codice iniett ato non viene memorizzato e la sua esecuzione è res a 
+possibile solamente invogliando l’utente, attravers o tecniche di Social Engineering, a cliccare su un link che 
+punta alla pagina web vulnerabile. In quest’ultimo caso L’URL viene solitamente rappresentato in forma to 
+esadecimale (o altre forme) per evitare che l’utent e possa identificare il codice Javascript passato c ome 
+parametro alla pagina stessa. In altri casi l’aggre ssore può beneficiare di tecniche di url spoofing p er 
+mascherare il codice malevolo. Questa tecnica consi ste nel mascherare l’url fraudolento al fine di far lo 
+sembrare del tutto simile all’url legittimo sul qua le ci si aspetta che l’utente clicchi. 
+ 
+Le vulnerabilità di Cross Site Scripting (XSS) poss ono essere in particolare sfruttate da un aggressor e per: 

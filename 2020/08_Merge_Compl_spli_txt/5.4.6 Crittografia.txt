@@ -1,0 +1,46 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 95  a 141  
+ 
+5.4.3  Utenze 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1]. 
+5.4.4  Autenticazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.2]. 
+5.4.5  Autorizzazione 
+Valgono i principi generali già introdotti nel para grafo [rif.5.1.3]. 
+5.4.6  Crittografia 
+Ai principi generali introdotti nel paragrafo [rif.  5.1.1.4], si aggiungono le indicazioni, di cui di seguito: 
+ 
+Crittografia  
+Minaccia  Accesso non autorizzato alle informazioni  
+Contromisure  Per l'accesso ai dati critici o sensibili definire requisiti di sicurezza più stringenti 
+applicando tecniche di cifratura o altri meccanismi  di sicurezza per rafforzare la 
+protezione dagli accessi non autorizzati. 
+ 
+5.4.7  Documentazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1.5]. 
+ 
+5.4.8  Logging 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.1.6]. 
+ 
+5.4.9  Procedure 
+Ai principi generali introdotti nel paragrafo [rif.  5.1.7], si aggiungono le indicazioni, di cui di se guito: 
+ 
+Politica per la gestione delle postazioni di lavoro  
+Minaccia  - Abuso di privilegi da parte dell'utente.  
+- Abuso di risorse. 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Danneggiamento, perdita o furto di un asset fisico.   
+- Uso non autorizzato di privilegi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.) 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+Contromisure  Verificare l'esistenza e l'applicazione di una form ale politica di sicurezza che specifichi 
+dei principi e delle linee guida per il corretto ut ilizzo delle postazioni di lavoro 
+(workstation, desktop, notebook) da parte degli ute nti, al fine di garantire la 
+salvaguardia dell’informazione aziendale. Tale poli tica di sicurezza deve, nel rispetto 
+della politica di sicurezza generale dell'azienda, specificare: 
+- i requisiti di sicurezza fisica da soddisfare duran te l'utilizzo dei dispositivi (ad 

@@ -1,0 +1,151 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 139  a 141  
+ 
+CIS Microsoft Office Access 365 Benchmark 
+CIS Microsoft Office Outlook 365 Benchmark 
+CIS Microsoft Office 2016 Benchmark 
+CIS Microsoft Office Word 2016 Benchmark 
+CIS Microsoft Office Excel 2016 Benchmark 
+CIS Microsoft Office PowerPoint 2016 Benchmark 
+CIS Microsoft Office Access 2016 Benchmark 
+CIS Microsoft Office Outlook 2016 Benchmark 
+CIS Microsoft Office 2013 Benchmark 
+CIS Microsoft Office Word 2013 Benchmark 
+CIS Microsoft Office Excel 2013 Benchmark 
+CIS Microsoft Office PowerPoint 2013 Benchmark 
+CIS Microsoft Office Access 2013 Benchmark 
+CIS Microsoft Office Outlook 2013 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_offi ce/ 
+CIS 
+Benchmarks Web Browser Internet 
+Explorer 11 CIS Microsoft Internet Explorer 11 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_inte rnet_explorer/ 
+CIS 
+Benchmarks Web Browser Internet 
+Explorer 10 CIS Microsoft Internet Explorer 10 Benchmark 
+https://www.cisecurity.org/benchmark/microsoft_inte rnet_explorer/ 
+CIS 
+Benchmarks Web Browser Mozilla 
+Firefox  CIS Mozilla Firefox 38 ESR Benchmark 
+https://www.cisecurity.org/benchmark/mozilla_firefo x/ 
+CIS 
+Benchmarks Web Browser Mozilla 
+Firefox  CIS Mozilla Firefox 24 ESR Benchmark 
+https://www.cisecurity.org/benchmark/mozilla_firefo x/ 
+CIS 
+Benchmarks Web Browser Google 
+Chrome  CIS Google Chrome Benchmark 
+https://www.cisecurity.org/benchmark/google_chrome/  
+CIS 
+Benchmarks Networking Cisco IOS IOS 15 CIS Cisco IOS 15 Benchmark  
+https://www.cisecurity.org/benchmark/cisco/ 
+CIS 
+Benchmarks Networking Cisco IOS IOS 12 CIS Cisco IOS 12 Benchmark  
+https://www.cisecurity.org/benchmark/cisco/ 
+ 
+6.2  Tools di hardening e baseline di sicurezza fornite dai vendor 
+Si riporta nel seguito un elenco di strumenti softw are (laddove disponibili) e baseline di sicurezza, per la 
+configurazione sicura (hardening) dei principali si stemi target. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 140  a 141  
+ 
+Fonte Categoria Famiglia Target Titolo 
+Microsoft Sistemi 
+Operativi Windows Windows 
+Server & 
+Client Microsoft Security Compliance Manager (SCM) 
+È uno strumento gratuito di Microsoft che consente di gestire 
+correttamente e agilmente la sicurezza dell’infrast ruttura IT e 
+delle applicazioni, analizzando la propria infrastr uttura e 
+configurandola seguendo le raccomandazioni di Micro soft. 
+Consente una gestione centralizzata dell’insieme de lle baseline 
+di sicurezza, con la possibilità di gestire specifi che 
+personalizzazioni in base a specifiche esigenze di certi sistemi. 
+Consente inoltre di esportare le configurazioni in vari formati 
+tra cui XLS (Excel) e GPO (Group Policy Objects). 
+Supporta i sistemi operativi Windows Server e Windo ws Client. 
+https://www.microsoft.com/en-
+us/download/details.aspx?id=53353  
+Microsoft Web Server IIS 8 Security Best Practices for IIS 8 
+https://docs.microsoft.com/en-us/previous-
+versions/windows/it-pro/windows-server-2012-R2-and-
+2012/jj635855(v=ws.11)?redirectedfrom=MSDN 
+Microsoft DBMS SQL Server 20108-
+2016 Non è disponibile ad oggi un tool specifico ma esis te una pagina 
+di riferimento di Microsoft aggiornata che contiene  opportune 
+indicazioni per la configurazione sicura di SQL Ser ver: 
+https://docs.microsoft.com/en-us/sql/relational-
+databases/security/securing-sql-server#sql-server-s ecurity-
+tools-utilities-views-and-functions 
+Esiste inoltre una pagina ulteriore di supporto per  specifici task 
+di configurazione sicura che riguardano non solo SQ L Server ma 
+più in generale l’accesso ai dati: 
+Security Checklists for the Database Engine: 
+• Checklist: Database Engine Security Configuration 
+• Checklist: Enhancing the Security of Database Engin e 
+Connections 
+• Checklist: Limiting Access to Data 
+• Checklist: Encrypting Sensitive Data 
+https://docs.microsoft.com/en-us/previous-versions/ sql/sql-
+server-2008-r2/ff848778(v=sql.105)?redirectedfrom=MSDN 
+Bastille Sistemi 
+Operativi Linux 
+(RedHat, 
+SUSE, Debian, 
+Ubuntu) e HP-
+UX Vari Bastille Linux è un tool gratuito per l’harden ing di vari sistemi 
+operative Linux (RedHat, Debian, SUSE, ecc.) e HP-U X. 
+Sulla maggior parte dei sistemi operativi supportat i fa parte 
+della distribuzione standard ed è quindi immediatam ente 
+disponibile per l’uso. 
+http://bastille-linux.sourceforge.net/ 
+Apache 
+Software 
+Foundation Web Server Apache HTTP 2.4 Security Tips - Apache HT TP Server Version 2.4 
+https://httpd.apache.org/docs/2.4/misc/security_tips. html 
+Apache 
+Software 
+Foundation Web Server Tomcat 8 Apache Tomcat 8 Security Conside rations 
+https://tomcat.apache.org/tomcat-8.0-doc/security-ho wto.html 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 141  a 141  
+ 
+Oracle DBMS Oracle 
+Database 12c 
+11g Oracle Database 12c Security and Compliance 
+https://www.oracle.com/webfolder/s/delivery_product ion/doc 
+s/FY15h1/doc6/security-compliance-wp.pdf 
+Cost Effective Security and Compliance with Oracle Database 
+11g 
+http://www.oracle.com/technetwork/database/security /owp-
+security-database-11gr2-134651.pdf 
+L’elenco del software Oracle legato alla sicurezza del prodotto 
+Oracle Database è disponibile a questo indirizzo: 
+Oracle Database Security Products 
+https://www.oracle.com/database/security/products.h tml 
+Oracle Database Oracle MySQL 5.7 MySQL Security Guid e, parte di MySQL Reference Manual 
+Un estratto è disponibile a questo link: 
+https://dev.mysql.com/doc/mysql-security-excerpt/5.7/ en/ 
+McAfee Database Oracle MySQL Varie McAfee MySQL Dat abase Security Tool (gratuito): 
+https://www.mcafee.com/content/enterprise/en-
+us/downloads/trials.html?query=database 
+Microsoft Mail Server Exchange 
+Server 2016 
+2013 
+2010 Offline Assessment for Exchange Server Security 
+http://download.microsoft.com/download/1/C/1/1C15BA51-
+840E-498D-86C6-
+4BD35D33C79E/Prerequisites_Offline_EXCHSec.pdf 
+ 

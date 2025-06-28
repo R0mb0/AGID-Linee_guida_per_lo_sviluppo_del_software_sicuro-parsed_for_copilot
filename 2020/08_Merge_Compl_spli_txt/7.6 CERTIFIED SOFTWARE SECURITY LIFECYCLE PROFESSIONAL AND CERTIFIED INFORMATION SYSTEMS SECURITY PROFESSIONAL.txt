@@ -1,0 +1,51 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 74  a 137  
+ 
+• Module 09: Secure PHP Programming  
+• Module 10: Securing Applications from Bots  
+• Module 11: Secure SQL Server Programming  
+• Module 12: SQL Rootkits  
+• Module 13: Secure Application Testing  
+• Module 14: VMware Remote Recording and Debugging  
+• Module 15: Writing Secure Documentation and Error M essages  
+• Module 16: Secure ASP Programming  
+• Module 17: Secure PERL Programming  
+• Module 18: Secure XML, Web Services and AJAX Progra mming  
+• Module 19: Secure RPC, ActiveX and DCOM Programming   
+• Module 20: Secure Linux Programming  
+• Module 21: Secure Linux Kernel Programming  
+• Module 22: Secure Xcode Programming  
+• Module 23: Secure Oracle PL/SQL Programming  
+• Module 24: Secure Network Programming  
+• Module 25: Windows Socket Programming  
+• Module 26: Writing Shellcodes  
+• Module 27: Writing Exploits  
+• Module 28: Programming Port Scanners and Hacking To ols  
+• Module 29: Secure Mobile Phone and PDA Programming  
+• Module 30: Secure Game Designing  
+• Module 31: Securing E-Commerce Applications  
+• Module 32: Software Activation, Piracy Blocking and  Automatic Updates  
+• Module 33: PCI Compliance and Secure Programming  
+ 
+7.6  Certified Software Security Lifecycle Professional (CSSLP) and Certified Information 
+Systems Security Professional (CISSP) 
+Il CSSLP ha lo scopo di convalidare le conoscenze d i sviluppo software sicuro e di buone pratiche. Il CSSLP è 
+un codice in lingua neutrale e applicabile a chiunq ue sia coinvolto nel SDLC. 
+La certificazione è rilasciata dal Consorzio di Cer tificazione Internazionale Information Systems Secu rity, 
+(ISC)², un'organizzazione globale no-profit special izzata nella formazione e certificazione di profess ionisti 
+della sicurezza informatica. Esso fornisce prodotti  di formazione vendor-neutral. 
+ 
+URL  https://www.isc2.org/csslp/default.aspx   
+Contact Method  CSSLP Contact [ https://www.isc2.org/csslp/default.aspx ] 
+Web form  
+CISSP Contact [ https://www.isc2.org/cissp/default.aspx ] 
+Web form  
+General Contact [ https://www.isc2.org/contactus/default.aspx ] 
+Web form, phone and address  
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Industry (no profit)  
+ 

@@ -1,0 +1,58 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 62  a 156  
+ 
+public class CodeInjectionFixed { 
+ static void main(String[] args){ 
+  String fileName = null; 
+  switch(args[0]){ 
+  case "First": 
+   fileName="First.txt"; 
+   break; 
+  case "Second": 
+   fileName="Second.txt"; 
+   break; 
+  case "Third": 
+   fileName="Third.txt"; 
+   break; 
+  default : 
+   fileName="none.txt"; 
+  } 
+  System.load(fileName); 
+ } 
+} 
+ 
+Si veda: http://cwe.mitre.org/data/definitions/94.html,  
+CWE-94: Improper Control of Generation of Code ('Co de Injection'). 
+7.2.3  Command injection 
+Come riconoscerla 
+Accade quando l’applicazione esegue comandi di sist ema operativo sul server che la ospita. Un attaccan te 
+potrebbe utilizzare questa caratteristica per esegu ire comandi dannosi. 
+Si realizza nel momento in cui un’applicazione prev ede un’istruzione che lancia comandi sul sistema 
+operativo utilizzando un input non verificato. Coma ndi arbitrari potrebbero: 
+• Alterare i permessi su file e directory del file sy stem, (read / create / modify / delete). 
+• Permettere delle connessioni di rete non autorizzat e verso il server da parte dell'attaccante. 
+• Avviare e fermare servizi di sistema. 
+• Consentire all’attaccante il controllo completo del  server da parte dell'attaccante. 
+ 
+Attraverso questa vulnerabilità l'applicazione vien e indotta ad eseguire dei comandi voluti dall'utent e 
+malintenzionato. L'operazione spesso viene effettua ta concatenando stringhe di input dell'utente a cod ice 
+dannoso. Potrebbero così essere eseguiti direttamen te sul server comandi anche molto pericolosi per il  
+sistema o per la sicurezza dei dati. 
+Come difendersi 
+• Scrivere il codice in modo che non esegua nessuna s hell dei comandi. Utilizzare a questo scopo le 
+API messe a disposizione delle librerie Java; 
+• Se dovessero permanere shell dirette, fare in modo che siano stringhe statiche che non utilizzino 
+l’input dell’utente; 
+• In ogni caso occorre validare l’input, filtrando i caratteri pericolosi, attraverso una struttura defi nita 
+per l’input, o – meglio ancora – imponendo una whit e list di valori ammessi. 
+ 
+Esempio: 
+Caso in cui si potrebbe avere command injection: 
+public class CommandInjection { 
+ public static void main(String[] args) throws IOEx ception { 
+  Runtime runtime = Runtime.getRuntime(); 
+  Process proc = runtime.exec( "fileNumber"  + args[ 0] + ".exe" ); 
+ } 
+} 
+ 

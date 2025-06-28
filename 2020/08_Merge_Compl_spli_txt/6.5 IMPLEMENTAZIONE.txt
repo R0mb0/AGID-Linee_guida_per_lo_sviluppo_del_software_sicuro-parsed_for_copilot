@@ -1,0 +1,67 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 55  a 137  
+ 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+Coras Threat 
+Modeling 
+tool/practies Design Open Source http://coras.sourceforge.net/download 
+s.html  
+IriusRisk Threat 
+Modeling tool  Design C’è una versione 
+(limitata) open 
+source https://iriusrisk.com/  
+Microsoft Threat 
+Modeling Tool Threat 
+Modeling tool  Design Free https://www.microsoft.com  
+ThreatModeler Threat 
+Modeling tool  Design Demo 
+disponibile https://threatmodeler.com/  
+SeaMonster - 
+Security 
+Modeling 
+Software Threat 
+Modeling tool  Design  Open Source https://sourceforge.net/projects/seamo 
+nster/  
+TRIKE Threat 
+Modeling 
+tool/practies Design Open Source http://www.octotrike.org/  
+ 
+6.5  Implementazione 
+Durante questa fase il team di sviluppatori mette i n atto le contromisure secondo le specifiche della fase 
+precedente ed effettua dei test sul codice sorgente  per verificare l’assenza di security flaws. 
+6.5.1  Software Implementation Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development. 
+ 
+Si riporta di seguito la tabella ‘Software Implemen tation Tools’: 
+Prodotto Categoria Fase SSE Tipo Licenza Sito Web 
+Brakeman SAST Implementation Open Source https://brakemanscanner.org/  
+Burp Suite by 
+PortSwigger SAST, 
+DAST, 
+Penetratio 
+n Testing Implementation 
+/ Verification Versione 
+Community 
+liberamente 
+scaricabile https://portswigger.net  
+CppCheck SAST Implementation Open Source http://cppcheck.sourceforge.net/  
+Checkmarx  SAST, 
+DAST, 
+RASP Implementation 
+/ Verification Versione  trial 
+disponibile a 
+richiesta https://www.checkmarx.com/  
+CodeDx SAST, 
+DAST Implementation 
+/ Verification Versione trial 
+disponibile https://codedx.com/  
+CodeProfiler 
+by Virtual 
+Forge SAST per 
+applicazio 
+ni SAP Implementation Nessuna versione 
+trial disponibile https://www.virtualforge.com  

@@ -1,0 +1,45 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 63  a 137  
+ 
+Prodotto Categoria  Fase SSE Tipo 
+Licenza Sito Web 
+Armor Complete Cloud Security Platform  Release Available by 
+Request https://www.armor.com  
+ 
+6.8  Supporto 
+La fase di supporto riguarda la manutenzione e l’as sistenza post rilascio. Questa fase nasce per segui re 
+tutte le novità in materia di sicurezza, imposte da l dinamico mercato informatico, per adeguarsi 
+all’evoluzione delle vulnerabilità del software. 
+ Le azioni di sicurezza di questa fase possono esse re così sintetizzate: 
+• Vulnerability assessment :  
+o esecuzione di test che consentano di individuare le  vulnerabilità dell’applicazione; 
+o valutazione della priorità/severità dei problemi ri scontrati;  
+o definizione del Remediation Plan; 
+o produzione di reportistica di sintesi e di dettagli o; 
+• Data Loss/Leak Prevention : 
+o rilevazione, analisi e classificazione dei dati che  transitano nell'organizzazione, ovunque siano 
+archiviati;  
+o creazione di regole predefinite per la protezione d ei dati, per assicurarsi che siano usati in 
+conformità con le politiche di privacy e sicurezza;   
+o generazione automatica di alert nel caso in cui ven gano violate le policy di sicurezza definite; 
+• Database Security :  
+o analisi dei database e valutazione dei rischi media nte l’accertamento di nuove  vulnerabilità;  
+o individuazione delle alterazioni dei dati, degli ut enti e dei profili di accesso;  
+o arresto in tempo reale delle sessioni che violano l e policy, evitando che i dati vengano 
+compromessi; 
+o applicazione delle ultime patch di sicurezza dispon ibili; 
+• Web Application Firewall Management e Secure Web Ga teway :  
+o funzionalità di standard firewall (policy enforceme nt, stateful inspection, packet filtering, NAT, 
+VPN client-to-site e site-to-site);  
+o anti-malware e anti-spam;  
+o Intrusion Prevention (IPS) per il blocco delle mina cce; 
+• Patching Update: notifica, installazione e test di nuovi security im provement packages.  
+ 
+6.8.1  Software Response Tools 
+Il CATALOGO SECURITY TOOLS 6.9 raccoglie i tool dis ponibili, divisi per fase del processo SSDLC, che o ffrono 
+funzionalità applicabili in ambito secure applicati on development.  
+ 
+Si riporta di seguito la tabella ‘Software Response  Tools’: 

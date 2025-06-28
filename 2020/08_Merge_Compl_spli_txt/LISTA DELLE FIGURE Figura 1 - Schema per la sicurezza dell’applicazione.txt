@@ -1,0 +1,17 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 12  a 156  
+ 
+4 SVILUPPARE APPLICAZIONI SICURE 
+La sicurezza informatica, di un’applicazione è il r isultato delle contromisure di sicurezza applicate,  nelle 
+diverse fasi che compongono un qualsiasi ciclo di s viluppo adottato, per ogni livello fisico e logico 
+dell’applicazione stessa. 
+La figura seguente mostra, a titolo di esempio non esaustivo, uno schema di modellazione concettuale d egli 
+elementi principali che intervengono in tale proces so e sui quali s’indirizzeranno le linee guida pres entate 
+nel corrente documento. 
+ 
+ 
+Figura 1 - Schema per la sicurezza dell’applicazion e 
+ 
+ 
+

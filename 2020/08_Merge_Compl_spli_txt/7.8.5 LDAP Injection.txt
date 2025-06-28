@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 119  a 156  
+ 
+• Nelle prime versioni di ASP.NET le stringhe di conn essione erano memorizzate nel file web.config. 
+Adesso, le più recenti applicazioni ASP.NET Core po ssono leggere le configurazioni da varie fonti 
+come appsettings.json, da variabili di ambiente, da  argomenti della riga di comando, ecc. È 
+possibile, in pratica, archiviare la stringa di con nessione ovunque si voglia. In ogni caso, è sempre 
+meglio che comporla a runtime con l’input dell’uten te. Si separa così l’applicazione dai metadati. Il 
+file in questione deve essere messo in sicurezza at tivando la modalità “protected configuration”, 
+che permette di memorizzare le stringhe di connessi one in forma crittografata (encrypted). 
+ 
+Esempio.  
+Nel seguente codice la stringa di connessione viene  letta dal file appsettings.json e la sua composizi one non 
+è vulnerabile ad alcuna injection: 
+var builder = new ConfigurationBuilder(); 
+builder.AddJsonFile("appsettings.json", optional: f alse); 
+var configuration = builder.Build(); 
+connectionString = configuration.GetConnectionStrin g("SQLConnection");   
+ 
+Per ulteriori informazioni: http://cwe.mitre.org/data/definitions/99.html,  
+CWE-99: Improper Control of Resource Identifiers (' Resource Injection'). 
+7.8.5  LDAP Injection 
+Come riconoscerla 
+La LDAP Injection è un tipo di attacco cui sono vul nerabili le applicazioni e che utilizzano l’input, senza 
+verificarlo adeguatamente, per costruire query LDAP  (Lightweight Directory Access Protocol). 
+Se coronato da successo, l’LDAP injection potrebbe consentire un furto di informazioni, un’elevazione dei 
+privilegi e l’autenticazione con un’identità altrui  (spoofing). 
+Per comunicare con la directory delle utenze (ad es empio Active Directory), l'applicazione costruisce 
+dinamicamente delle query. Se utilizza l’input uten te senza verificarlo, un malintenzionato può inseri re 
+comandi modificati ad arte per carpire informazioni  non dovute. 
+Come difendersi 
+Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia l ’approccio 
+white list (sono accettati solo i dati che adottano  una struttura specificata nella white list, scarta ndo quelli 
+che non la rispettano). Occorre controllare il tipo  del dato, la sua dimensione, l'intervallo di valid ità (range), 
+il formato ed eventuali valori attesi (white list).  
+A partire dalla versione 3.5 del Framework .NET, so no state introdotte nella libreria AntiXSS della ve rsione 4 
+due nuove funzioni che permettono l’encoding delle stringhe da utilizzare per le query LDAP: 
+• Encoder.LdapFilterEncode. Codifica l'input converte ndo i valori non sicuri in \n, dove n rappresenta 
+il carattere non sicuro. 
+• Encoder.LdapDistinguishedNameEncode. Codifica l'inp ut convertendo i valori non sicuri in #n, dove 
+n rappresenta il carattere non sicuro, mentre i seg ni “,”, “+”, “/”, “<” e “>” vengono codificati con la 
+barra (“\”). 
+ 
+Esempio: 
+Formato non corretto: 
+ds.Filter = "(&(name=" + input + ")(isPublic=true)) "  
+ 
+Formato corretto: 
+ds.Filter = "(&(name=" + Encoder.LdapFilterEncode(i nput) + ")(isPublic=true))"  
+ 
+Per ulteriori informazioni: http://cwe.mitre.org/data/definitions/90.html,  
+CWE-90: Improper Neutralization of Special Elements  used in an LDAP Query ('LDAP Injection'). 

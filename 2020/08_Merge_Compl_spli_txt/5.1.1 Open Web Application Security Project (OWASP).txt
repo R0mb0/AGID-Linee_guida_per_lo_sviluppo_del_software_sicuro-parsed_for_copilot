@@ -1,0 +1,46 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 18  a 137  
+ 
+5 ANALISI DELLE INIZIATIVE E DEGLI STANDARD  
+5.1  Iniziative Internazionali 
+5.1.1  Open Web Application Security Project (OWASP) 
+L'Open Web Application Security Project (chiamato s emplicemente OWASP) è un progetto open-source per 
+la sicurezza delle applicazioni Web. L'OWASP offre guide con consigli sulla creazione di applicazioni Internet 
+sicure, e indicazioni per i test cui andrebbero sot toposte. È stato, inoltre, pubblicato WebGoat, util e ad 
+apprendere, attraverso esempi concreti, le minacce più diffuse per la sicurezza delle applicazioni web . Nel 
+2004 è stata istituita una fondazione no-profit che  supporta l'OWASP e che persegue l'obiettivo di 
+aumentare la sicurezza delle applicazioni consenten do di prendere le decisioni in base ai rischi. In E uropa è 
+un'organizzazione no-profit registrata da giugno 20 11 ed è presente anche in Italia. 
+La filosofia cui si ispira OWASP si può riassumere nei seguenti punti: 
+• Apertura . Tutto in OWASP è aperto e trasparente, dal codice  sorgente ai bilanci societari. 
+• Innovazione . OWASP incoraggia e supporta l'innovazione e la sp erimentazione per trovare nuove e 
+sempre più efficaci soluzioni alle sfide della sicu rezza del software. 
+• Universalità . Chiunque è incoraggiato a partecipare alla comuni tà OWASP. 
+• Integrità . OWASP è una comunità globale, che si basa sull’on està e sull’indipendenza. 
+ 
+URL  https://www.owasp.org/  
+Country of HQ location  
+Geographic Scope  US  
+International  
+Type  Various Industry (not for profit)   
+ 
+L'iniziativa è organizzata come una comunità collab orativa che produce tool e documenti nelle seguenti  tre 
+aree principali: 
+• Protection, 
+• Detection, 
+• Life-cycle security. 
+Relativamente a queste tre aree, OWASP ha prodotto:  
+• un insieme di guide sulle buone pratiche quali: OWA SP Testing Guide, OWASP Code Review e 
+Software Assurance Maturity Model; 
+•  il Report’ OWASP Top 10’ sui rischi per le applica zioni web.  
+Da considerare inoltre, come attività rilevanti svo lte da OWASP, quanto segue: 
+Good Practice  [Protection Area] OWASP Secure Coding Practices - Quick Reference Guide v2.0 - Un 
+insieme indipendente dalla tecnologia di pratiche d i codifica della sicurezza generale 
+del software, in formato checklist, che può essere integrata nel ciclo di vita dello 
+sviluppo del software. 
+[Protection Area] OWASP Developers Guide v2.0 (2005 ) - Un documento completo 
+che copre tutti gli aspetti della sicurezza delle a pplicazioni e dei servizi web. 
+[Detection Area] OWASP Code Review Guide v2.0 - Una  guida che raccoglie le 

@@ -1,0 +1,72 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 36  a 156  
+ 
+java.util.concurrent.ThreadPoolExecutor.runWorker(U nknown Source)at  
+java.util.concurrent.ThreadPoolExecutor$Worker.run( Unknown Source) 
+java.lang.Thread.run(Unknown Source) 
+One or more listeners failed to start. Full details  will be found in the 
+appropriate container log file 
+ 
+Di seguito vengono trattate le tecniche più comuni che possono causare l’insorgere delle problematiche  
+descritte nei punti precedenti. 
+6.4.1  User Enumeration 
+Consiste nel tentativo, da parte di un attaccante, di indovinare, attraverso un attacco di brute force , 
+l’esistenza di determinate utenze. Questa vulnerabi lità è presente su quei servizi o quelle applicazio ni che 
+non gestiscono opportunamente le condizioni di erro re durante le fasi di login e/o interrogazione, 
+ritornando messaggi specifici e non generici. Gli a ttacchi di user enumeration colpiscono prevalenteme nte i 
+portali web, seppur l’ambito di sfruttamento non si a unicamente circoscrivibile a questo genere di 
+ambienti. Le applicazioni o i servizi soggetti a ta le problematica vengono stressati da un aggressore con 
+apposite richieste. In base alle risposte ottenute,  l’aggressore è in grado di determinare quali siano  le 
+utenze valide e quali quelle inesistenti nel sistem a/portale. La possibilità di determinare gli utenti  regolari, 
+gli permetterà di utilizzare le informazioni acquis iste come base di partenza per attacchi intrusivi p iù precisi 
+e mirati. Ad esempio, se a seguito di un processo d i autenticazione, in risposta alla sua richiesta di  login, 
+ottiene il messaggio specifico “Nome Utente Errato” , ne conclude che l’utenza utilizzata non esiste; 
+viceversa, se la risposta ritornata è “Password Err ata” viene provata invece la sua esistenza. Condizi oni 
+simili possono essere riscontrate non solo nei proc essi di autenticazione, ma anche di registrazione d i un 
+nuovo utente, di recupero password o in applicazion i server per lo scambio di posta elettronica. 
+ 
+Esempio:  
+Risultato di una procedura di user enumeration su u n modulo di login: 
+ 
+ 
+Contromisure 
+In nessun caso di errore, l’applicazione deve mostr are pagine di dettaglio dell’errore. L’utente deve essere 
+rinviato su una pagina generica che mostra le infor maizoni minime. 
+I messaggi d’errore devono essere il più generico p ossibile, per non dare ad un eventuale attaccante 
+informazioni preziose che ne facilitino l’opera. Ne l caso mostrato, il messaggio potrebbe essere: 
+“Attenzione! Lo username o la password inseriti non  risultano essere corretti”. Per gli utenti con pro filo 
+Amministratore non deve essere consentito l’utilizz o di user name intuitivi quali “Admin”, “Administra tor”, 
+“Superuser” e simili. 
+6.4.2  Information disclosure 
+Le problematiche d’information disclosure sono molt o comuni nelle applicazioni Web anche se non 
+unicamente circoscrivibili a questo ambito. Si mani festano quando un aggressore riesce con apposite 
+richieste a sollecitare una condizione non prevista  o mal gestita dall’applicazione che ritorna messag gi 
+
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 37  a 156  
+ 
+informativi o di errore contenenti dati o informazi oni che possono agevolarlo nella pianificazione di nuovi 
+attacchi intrusivi. Non tutte le condizioni d’infor mation disclosure sono causate da richieste o event i non 
+correttamente gestiti dall’applicazione. Alla radic e di problematiche simili possono anche esservi scr ipt o 
+componenti mal progettati che, interrogati opportun amente con richieste regolari, possono fornire 
+all’aggressore spunti utili per proseguire nella su a attività intrusiva. Sono classificabili come deri vanti da 
+problematiche d’information disclosure le seguenti informazioni rilasciate dall’applicazione ad utenze  
+anonime o non autorizzate, a seguito di richieste m alevole o regolari: 
+• I dati che svelano il percorso o i percorsi su disc o in cui gli script o le componenti dell’applicazio ne 
+sono stati installati e risiedono; 
+• I dati correlabili allo stato attuale dell’applicaz ione, alla sua versione e agli eventuali moduli o p lug-
+in installati; 
+• I dati correlabili ai log delle attività manutentiv e svolte sull’applicazione; 
+• Tutti gli altri dati eventualmente svelati che per l’organizzazione hanno valenza critica, personale o  
+sensibile; 
+• etc. 
+Le applicazioni compilate con l’opzione debugging o  verbose possono essere più facilmente soggette a 
+problematiche di information disclosure. Molte di q ueste condizioni si verificano inoltre a causa di u na poco 
+accorta gestione dell’input utente (vedasi ‘ Valida zione dell'input’ e relativi sottoparagrafi). 
+ 
+Esempio di default script web soggetto a informatio n disclosure: 
+ 
+ 
+

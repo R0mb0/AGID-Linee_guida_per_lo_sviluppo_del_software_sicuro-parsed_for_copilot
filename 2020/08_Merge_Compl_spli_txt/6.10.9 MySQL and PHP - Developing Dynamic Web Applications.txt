@@ -1,0 +1,50 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 70  a 137  
+ 
+• Identify the need to secure web services  
+• List and explain the primary elements and concepts of application security  
+• Outline the factors that must be considered when de signing a web service security solution  
+• Describe the issues and concerns related to securin g web service interactions  
+• Analyse the security requirements of web services  
+• Identify the security challenges and threats in a w eb service application  
+• Evaluate the tools and technologies available for s ecuring a Java web service  
+• Secure web services by using application-layer secu rity, transport-layer security and message-layer 
+security  
+• Describe the concept of identity and the drivers be hind identity management solutions  
+• Explain the role of Sun Java System Access Manager in securing web services  
+• Secure web services by using UserName token profile   
+• Secure web services by relying on Sun Java System A ccess Manager  
+Il corso tratta i seguenti argomenti: 
+• Encapsulating the Basics of Security  
+• Examining Web Services Security Threats and Counter measures  
+• Securing Java Web Services Using JavaEE  
+• Introduction to Web Services Security  
+• Web Services Security with JAX-WS and Project Metro   
+• Authentication in JAX-WS  
+• Identity Management and OpenSSO  
+ 
+6.10.9  MySQL and PHP - Developing Dynamic Web Applications  
+Il corso MySQL and PHP - Developing Dynamic Web App lications spiega come sviluppare applicazioni in PH P 
+e come usare MySQL in modo efficiente per le applic azioni. Con un approccio hands-on, questo corso con  
+istruttore migliorerà le capacità di PHP e di come combinarle con collaudate tecniche di gestione di 
+database per creare applicazioni web best-of-breed che siano efficienti, solide e sicure. 
+Gli obiettivi del corso sono: 
+• Design web-based applications  
+• Design schemas based on MySQL  
+• Use „include files‟ to make code easier to maintain   
+• Use PHP 5 and take advantage of its advanced featur es  
+• Build applications, following a precise flow  
+• Authenticate users in a secure way against a databa se  
+• Handle errors in your PHP applications efficiently and elegantly  
+• Write composite queries using JOINs and subqueries  
+• Use indexing in order to manipulate large amounts o f data efficiently  
+• Use JOINS to extract data from multiple tables  
+• Use GROUP BY clauses and aggregate functions  
+• Write applications whose components can be scaled t o meet increased demand  
+• Build a complete application that includes authenti cation and session management  
+• Understand how PHP, MySQL and the Apache web server  work together to deliver dynamic web 
+content  
+Il corso tratta i seguenti argomenti: 

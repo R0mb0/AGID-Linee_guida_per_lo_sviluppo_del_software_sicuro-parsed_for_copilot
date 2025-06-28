@@ -1,0 +1,52 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 47  a 141  
+ 
+Presentazione di messaggi di avvertimento  
+Minaccia  Accesso non autorizzato ad informazioni causato dal  personale utente per inadeguati 
+meccanismi, strumenti, procedure o abilità tecniche  atti a prevenire l'accesso non 
+autorizzato al sistema o a proteggere i dati di aut enticazione quando memorizzati o 
+trasmessi. 
+Contromisure  Includere nella schermata di log -on l'avvertimento che l'accesso è consentito ai sol i 
+utenti autorizzati. 
+Richiamare nella schermata le norme interne o di le gge che verrebbero violate in caso 
+di accesso non autorizzato e le relative sanzioni. 
+Informare chi si accinge ad accedere al sistema che  le attività saranno monitorate e 
+che ogni accesso non autorizzato ed ogni abuso sara nno perseguiti a norma di legge. 
+ 
+Sincronizzazione degli oro logi  
+Minaccia  - Accesso non autorizzato al sistema (macchina, confi gurazione, ecc.) . 
+- Abuso di privilegi da parte degli utenti. 
+Contromisure  Sincronizzare l'orologio interno di tutti i sistemi e gli apparati di rete  attraverso il 
+protocollo NTP con un server “fidato” posizionato s ulla propria intranet. Laddove 
+tecnicamente possibile (sistemi UNIX e apparati di rete evoluti) abilitare 
+l’autenticazione verso il server NTP. 
+Laddove tecnicamente realizzabile, il server NTP de ve a sua volta ottenere l’ora esatta 
+attraverso un segnale radio proveniente da stazione  terrestre o satellitare (GPS). 
+Per le reti di piccole dimensioni, laddove non sia possibile avere un server NTP proprio, 
+utilizzare comunque un server NTP “fidato” unico pe r tutti i sistemi, come ad es. quello 
+dell’Istituto Nazionale di Ricerca Metrologica (INR IM) (ex Istituto Elettrotecnico 
+Nazionale Galileo Ferraris). 
+ 
+5.2.3  Utenze 
+Accesso privilegiato nominativo  
+Minaccia  - Abuso di privilegi da parte degli utenti.  
+- Abuso di risorse. 
+- Accesso non autorizzato alle informazioni. 
+- Cancellazione dei log di accountability e/o ripudio  di operazioni effettuate. 
+Contromisure  Disabilitare l a possibilità di a ccesso ai sistemi (locale o remoto) utilizzando ute nze 
+amministrative impersonali come “root” o “Administr ator”. 
+Gli amministratori devono accedere con utenze nomin ative abilitate ai rispettivi 
+compiti (ad es. abilitate all’uso del comando “su” su Unix, o appartenenti al gruppo 
+Administrators su Windows). 
+ 
+Valgono inoltre i principi generali già introdotti nel paragrafo [rif. 5.1.1].  
+ 
+5.2.4  Autenticazione 
+Ai principi generali introdotti nel paragrafo [rif.  5.1.2], si aggiungono le indicazioni, di cui di se guito: 
+ 
+Identificazione e autenticazione degli utenti a liv ello di sistema  
+Minaccia  - Abuso di privilegi da parte dell’utente.  
+- Accesso non autorizzato alle informazioni. 
+- Falsificazione di identità. 

@@ -1,0 +1,43 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 93  a 137  
+ 
+9.2  Progettazione di applicazioni sicure 
+Le azioni di sicurezza di questa fase possono esser e così sintetizzate :  
+• Analisi e modellazione delle minacce , attraverso l’identificazione dei componenti appli cativi coinvolti, 
+delle interfacce e degli agenti che potrebbero mina cciare il sistema;  
+• Analisi della superficie d’attacco e della finestra  di opportunità,  allo scopo di individuare le parti del 
+sistema che possono essere esposte ad attacchi e pe rtanto lo rendono vulnerabile;   
+• Piano di mitigation, attraverso l’identificazione delle contromisure da adottare in questa fase al fine di 
+mitigare le potenziali minacce individuate (utilizz ando anche tool automatici e semiautomatici);  
+• Secure Design Refactoring , revisione progettuale che attua le contromisure i ndividuate; produzione di 
+un High Level Design conforme ai principi del Secur e by Design;  
+• Questa fase produce come output finale la Reportist ica/documentazione completa che sintetizza i 
+risultati per ogni punto precedente (Specifiche Sof tware comprensive delle contromisure). 
+Questa fase è inoltre responsabile della revisione dei requisiti di sicurezza individuate nella fase p recedente 
+di definizione dei requisiti di sicurezza (paragraf o 9.1).  
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo di Progettazione  di 
+software sicuro: 
+ 
+ 
+Figura 19 - Input e Output della fase Threat Modelin g Attack Surface Analysis 
+Le linee guida di progettazione sicura sono oggetto  del documento Allegato 4 -  Linee Guida per la 
+modellazione delle minacce ed individuazione delle azioni di mitigazione conformi ai principi del 
+Secure/Privacy by Design . Si rinvia a quest’ultimo per ulteriori dettagli d ella metodologia da adottare. 
+ 
+9.2.1  Identificazione degli strumenti a supporto 
+Dopo aver identificato e documentato le esigenze di  sicurezza, viene eseguita la modellazione delle 
+minacce col fine di riconoscere e assegnare delle p riorità a queste ed individuare le opportune 
+contromisure per la loro mitigazione. A differenza delle tecniche di verifica, come ad esempio il pene tration 
+testing, il modello di minacce ottenuto attraverso la relativa modellazione, deve essere eseguito prim a che 
+un prodotto o un servizio venga implementato. Quest o contribuisce a realizzare un prodotto finale più 
+sicuro indirizzando problematiche di sicurezza ad u n early-stage del ciclo di sviluppo. Il processo pe r la 
+costruzione di un modello di minacce consiste dei s eguenti step: 
+• Disegno dell'architettura del sistema; 
+• Individuazione dei confini di fiducia; 
+• Identificazione delle minacce; 
+• Individuazione delle contromisure da attuare per mi tigare le minacce; 
+• Eventuale riprogettazione dei componenti per mitiga re le minacce; 
+

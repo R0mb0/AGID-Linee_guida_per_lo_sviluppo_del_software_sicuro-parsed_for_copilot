@@ -1,0 +1,30 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 156  a 156  
+ 
+(ad es. Password, informazioni sulla sessione, dett agli di sistema, ecc.) né che ci siano informazioni  
+di tracciamento di debug o stack. Inoltre, la regis trazione dovrebbe coprire sia eventi di successo 
+che di insuccesso in materia di sicurezza. 
+ 
+Il package nativo di Go che contiene le funzioni di  logging non supporta livelli distinti di verbosità , il che 
+significa che tale feature deve essere implementata  a parte. Un altro problema con il logger nativo è che 
+non c'è modo di attivare o disattivare il logging p er package. Poiché normalmente sono richieste 
+funzionalità di logging adeguate per la manutenzion e e la sicurezza, a tal fine, si utilizza una libre ria di 
+registrazione di terze parti come ad esempio: 
+• Logrus  - https://github.com/Sirupsen/logrus 
+• glog  - https://github.com/golang/glog 
+• loggo  - https://github.com/juju/loggo 
+Tra queste librerie, la più usata è “ Logrus ”. Glog non più aggiornata da qualche anno. 
+Per garantire la validità e l'integrità dei log, de ve essere utilizzata come passo aggiuntivo una funz ione di 
+hash crittografica al fine di prevenire possibili m anomissioni dei log. 
+7.12.3.5  Sicurezza del Database 
+Installazione sicura del server di database: 
+• Modificare / impostare una password per account di root; 
+• Rimuovere gli accounts “root” che sono accessibili dall'esterno di localhost; 
+• Rimuovere eventuali account anonimi; 
+• Rimuovere qualsiasi database di prova esistente; 
+• Rimuovere eventuali stored procedure non necessarie , pacchetti di utilità, servizi inutili, contenuti 
+del fornitore (ad es. Schemi di esempio). 
+• Installare il set minimo di funzionalità e opzioni necessarie per il database, per funzionare con Go. 
+• Disattivare tutti gli account predefiniti che non s ono richiesti nell'applicazione Web per connettersi  
+al database. 

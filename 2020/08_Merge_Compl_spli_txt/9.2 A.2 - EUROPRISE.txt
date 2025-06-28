@@ -1,0 +1,115 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 124 a 132 
+ 
+9 ANNEX A - ANALISI DELLA PANORAMICA DELLE CERTIFICAZIONI 
+ESISTENTI  
+9.1 A.1 - ePrivacyseal  
+Ambito  Descrizione  
+Campo di 
+applicazione e 
+oggetto  ePrivacyseal certifica prodotti o servizi che sono in linea con il catalogo di 
+criteri predefiniti del sistema ePrivacyseal.  
+Requisiti e base 
+normativa  ePrivacyseal afferma che esso deriva i criteri dalla "normativa europea sulla 
+tutela della privacy dei dati", alla quale si riferisce come  "direttive UE 
+applicabili in materia di protezione dei dati" e come regolamento generale 
+dell'UE sulla protezione dei  dati (GDPR). Inoltre, esistono  una serie di 
+criteri relativi al  "comportamento pubblicitario online". Per quanto riguarda 
+gli argomenti, i criteri coprono un' ampia gamma di aspetti , quali i principi 
+del trattamento, i motivi per un trattamento lecito e i diritti degli interessati.  
+Processo di 
+certificazione  Il processo di certificazione ePrivacySeal EU prevede cinque fasi:  
+1. Definizione degli obiettivi  
+2. Workshop  
+3. Ottimizzazione  
+4. Valutazione finale  
+5. Certificazione  
+Le fasi 1 -3 sono preparatorie al processo di valutazione ("valutazione 
+finale").  Nell’ambito  del workshop, gli esperti tecnici e legali esaminano il 
+prodotto o servizio sulla base dei requisiti tecnici, organizzativi e legali di 
+pertinenza . La fase  di valutazione finale pr evede un a verifica da parte degli 
+auditor effettuata sulla  base del catalogo dei criteri di ePrivacy e  delle  
+raccomandazioni per il  miglioramento. La fase finale del processo è la 
+richiesta d el certificato  e la concessione della licenza sotto il  marchio 
+ePrivacyseal.  ePrivacy prevede che i servizi di consulenza e audit siano 
+forniti dalla ePrivacy GmbH, il conferimento del marchio di protezione dei 
+dati p ersonali avviene attraverso un' altra società, la ePrivacyseal GmbH.  
+Accreditamento 
+dell'organismo di 
+certificazione  La ePrivacy GmbH non prevede di essere essa stessa un organismo di 
+certificazione accreditato dall' Ente nazionale di accreditamento della 
+Germ ania, dove l' impresa  si è stabilita . 
+Durata del 
+processo  Non specificato  
+Monitoraggio post -
+certific azione  Non specificato  
+Periodo di validità 
+della certificazione  Due anni, con possibile ri -certificazione  
+Risorse  Le informazioni relative ai costi dei servizi sono disponibili nei Termini e 
+Condizioni della ePrivacy  
+Certificazioni 
+rilasciate  ePrivacyseal EU è stato riconosciuto a 27 imprese (fino a settembre 2017)  
+9.2 A.2 - EuroPrise  
+Ambito  Descrizione  
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 125 a 132 
+ 
+Campo di 
+applicazione e 
+oggetto  Oggetto dello schema sono i prodotti informatici quali hardware (ad es. un 
+firewall h ardware) e software (ad es. un'applicazione di database per  un 
+ospedale) e i servizi basati sull' informatica e il trattamento automatizzato 
+dei dati (ad es. elaborazione dati commissionata, siti web).  La valutazione 
+di tale ser vizio include la valutazione delle live performances n el 
+trattamento dei dati.  Per valutazione si intende il prodotto al completo (ad 
+esempio, un software) o una parte di prodotto.  EuroPrise certifica inoltre i 
+siti web e il "trattamento dei dati commissionati".  L' obiettivo della 
+certificazione è aumentare la trasparenza del mercato per i prodotti rilevanti 
+ai fini della tutela della privacy  e ampliare il mercato delle tecnologie di 
+rafforzamento della tutela della privacy  e accrescere la fiducia nelle 
+tecnologie informatiche, certificando il rispetto delle nor me europee sulla 
+tutela della vita privata (Europrise 2017).  
+Requisiti e base 
+normativa  Sono disponibili sul sito Internet di EuroPrise un elenco di criteri basato 
+sulla direttiva 95/46/CE e sulla direttiva ePrivacy  e un elenco di criteri 
+basato sul GDPR e sulla direttiva ePrivacy . I criteri sono formulati come 
+domande. Secondo EuroPrise: “ Not each and every question will be 
+applicable to e ach and every product or service. The certification authority 
+shall ensure that in any certification procedure the relevant criteria are 
+applied and that all related questions are answered in a plausible manner, 
+the appropriate granularity, and at  a unifor m and comparable level ”. Non 
+sono tuttavia disponibili informazioni sulla metodologia di valutazione 
+nell'applicabilità di tali criteri.  
+Processo di 
+certificazione  1. Gli esperti di EuroPrise valutano il prodotto o servizio in linea con i criteri 
+di valutazi one specificati per l'uso previsto, il quadro giuridico e l'ambiente 
+tecnico del prodotto. Essi riferiscono i loro risultati in una relazione di 
+valutazione.  I criteri di valutazione comprendono: panoramica delle 
+questioni fondamentali, legittimità del tra ttamento dei dati, misure 
+tecnico -organizzative, diritti della persona interessata.  
+2. L' organismo di certificazione verifica i risultati della valutazione : L' 
+organismo di certificazione verifica il rapporto di valutazione sotto il 
+profilo della completezza , plausibilità e comparabilità con altre 
+certificazioni.  Il rapporto di certificazione  viene pubblicato. Viene 
+pubblicato inoltre, un breve rapporto pubblico che riassume i risultati della 
+valutazione.  
+3. Assegnazione del marchio europeo sulla Privacy: L' org anismo di 
+certificazione compila un rapporto interno di certificazione, rilascia il sigillo 
+e pubblica il breve rapporto di valutazione . La certificazione è r ilasciata da 
+EuroPrise Gmbh, l' unico ente che rilascia certificati ed effettua la 
+valutazione della certificazione.  
+Accreditamento 
+dell'organismo di 
+certificazione  Nessuna informazione disponibile  
+Durata del 
+processo  Non specificato  
+Monitoraggio post -
+certificazione  Non specificato  
+Periodo di validità 
+della certificazione  Due anni, con possibile ri -certificazione  

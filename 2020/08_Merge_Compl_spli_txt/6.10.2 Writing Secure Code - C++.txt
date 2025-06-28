@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 67  a 137  
+ 
+ 
+ 
+Questa sezione fornisce un elenco di riferimento de i corsi disponibili in ambito secure software 
+development. 
+ 
+6.10.1  Secure Coding in C and C++ 
+Il corso è basato su material di Addison-Wesley: “S ecure Coding in C and C++” and “The CERT C Secure 
+Coding Standard”. Il training SEI può essere offert o anche fuori dall’area statunitense. 
+ 
+URL  http://www.sei.cmu.edu/training/p63.cfm   
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Academic (SEI)  
+ 
+Questo corso fornisce una spiegazione dettagliata d i errori di programmazione comuni in C e C ++ e 
+descrive come questi errori possono portare a codic e vulnerabile. Il corso si concentra sulle question i di 
+sicurezza intrinseche dei linguaggi di programmazio ne C e C ++ e delle librerie associate. 
+I partecipanti acquisiscono conoscenza sugli errori  comuni di programmazione che portano a vulnerabili tà 
+del software, come questi errori possono essere sfr uttati, e le strategie di mitigazione efficaci per impedire 
+l'introduzione di tali errori. In particolare, i pa rtecipanti acquisiscono competenze in merito a: 
+• migliorare la sicurezza complessiva di ogni tipo ap plicazione C o C ++ 
+• contrastare attacchi buffer overflow e stack-smashi ng che sfruttano la manipolazione logica di 
+stringhe insicure 
+• evitare vulnerabilità e security flaws derivanti da l non corretto utilizzo delle funzioni di gestione 
+della memoria dinamica 
+• eliminare i problemi integer-related: integer overf lows, sign errors, truncation errors 
+• usare correttamente le funzioni di output formattat o senza introdurre vulnerabilità format-string 
+• evitare le vulnerabilità di I/O, tra cui condizioni  race conditions  
+• evitare I/O vulnerabilities, including race conditi ons  
+ 
+6.10.2  Writing Secure Code - C++ 
+Questo corso di formazione computer-based spiega qu ali sono le funzioni di sicurezza principali del 
+linguaggio C ++, come evitare che gli sviluppatori cadano nelle trappole di sicurezza comuni e come 
+costruire applicazioni aziendali sicure e affidabil i utilizzando C ++. Gli studenti sono guidati attra verso 
+esempi di codice hands-on che evidenziano i problem i e le soluzioni prescritte. 
+Il corso ha i seguenti moduli: 
+• Introduction to Software Security  
+• Data Protection – in Storage and in Transit  
+• Authentication  
+• Authorisation  
+• Data Validation  

@@ -1,0 +1,53 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 27  a 137  
+ 
+tramite webcast on -demand.  
+Good Practice  Software Integrity Controls  
+Un approccio impiegato per ridurre al minimo i risc hi nella catena di fornitura 
+del software. Sulla base delle pratiche dei membri SAFECode, il rapporto 
+fornisce controlli di integrità per l'approvvigiona mento, lo sviluppo, i test, la 
+consegna e la resilienza del software. 
+The Software Supply Chain Integrity Framework  
+Documento che definisce i rischi e le responsabilit à per rendere sicuro il 
+software nella catena di fornitura globale. Sulla b ase dell'esperienza dei 
+membri del SAFECode, descrive la catena di fornitur a del software (modello a 
+scala dei fornitori di software) e i principi per l a progettazione dei controlli di 
+integrità del software. 
+Fundamental Practices for Secure Software Developme nt  
+Sulla base delle pratiche dei membri SAFECode, ques to documento delinea un 
+insieme di pratiche per lo sviluppo sicuro del soft ware che possono essere 
+applicate nelle diverse fasi del ciclo di vita dell o sviluppo del software. 
+Software Assurance: An Overview of Current Industry  Best Practices  
+Documento che descrive i metodi di sviluppo e i con trolli di integrità utilizzati 
+dai membri SAFECode per migliorare la sicurezza del  software e la sicurezza nel 
+rilascio. 
+Practices for Secure Development of Cloud Applicati ons 
+SAFECode e la Cloud Security Alliance (CSA) rilasci ano una guida per lo sviluppo 
+sicuro di applicazioni cloud. Questo documento rapp resenta il prodotto di tale 
+collaborazione ed è destinato ad aiutare i lettori a comprendere meglio e 
+implementare le migliori pratiche per lo sviluppo d i software cloud sicuro. 
+Tactical Threat Modeling 
+Questo documento sfrutta le intuizioni dei membri d el SAFECode per offrire 
+modi efficaci per integrare meglio la modellazione delle minacce nei processi di 
+sviluppo. 
+Managing Security Risks Inherent in the Use of Thir d-party Components 
+L'uso di componenti di terze parti (TPC), compresi i componenti software open 
+source (OSS) o commerciali off-the-shelf (COTS), è diventato di fatto uno 
+standard nello sviluppo del software. Questo docume nto analizza il processo e 
+le procedure di cui gli sviluppatori necessitano pe r testare, migliorare e 
+quantificare la sicurezza dei componenti di terze p arti. 
+5.1.7  SANS Software Security Institute (SANS SSI) 
+SANS SSI offre una libreria di iniziative di ricerc a e di community per aiutare sviluppatori, architet ti, 
+programmatori e responsabili della sicurezza delle applicazioni a proteggere le loro applicazioni 
+software/web. 
+Questa iniziativa raccoglie e fornisce informazioni  tecniche aggiornate, come l’accesso gratuito alle risorse 
+sui più recenti vettori di attacco e sulle vulnerab ilità di sicurezza delle applicazioni, tra cui un b log 
+aggiornato, news-letters settimanali, webcast, arti coli e documenti in materia di sicurezza del softwa re. 
+ 
+URL  https://www.sans.org  
+Country of HQ location  
+Geographic Scope  US  
+International 

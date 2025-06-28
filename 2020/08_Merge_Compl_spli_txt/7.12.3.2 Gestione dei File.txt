@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 152  a 156  
+ 
+7.12.3.2  Gestione dei File 
+Assicurarsi che gli utenti non siano autorizzati a fornire direttamente dati a tutte le funzioni dinam iche. In 
+linguaggi come PHP, il passaggio di dati utente a f unzioni incluse dinamicamente nel codice funzioni è  un 
+grave rischio di sicurezza.  
+Nel caso di reindirizzamenti dinamici, i dati utent e non devono essere passati. Se è richiesto 
+dall'applicazione, è necessario adottare ulteriori controlli, che includono ad esempio: l'accettazione  solo dei 
+dati correttamente convalidati e dei relativi URL. Inoltre, è importante assicurarsi che i percorsi a directory 
+e file siano mappati in elenchi di indici di percor si predefiniti (assicurarsi di utilizzare tali indi ci).  
+Non inviare mai il percorso assoluto del file, util izzare sempre percorsi relativi. 
+Per i file e le risorse dell'applicazione, impostar e autorizzazioni di sola lettura. 
+L’upload dei file sul server dovrebbe essere limita to ai soli utenti autenticati e solo per alcune tip ologie di 
+file accettati. Questo controllo può essere fatto u sando la seguente funzione Go che rileva i tipi MIM E: func 
+DetectContentType (data[] byte) string. I file cari cati dagli utenti non devono essere memorizzati nel  
+contesto web dell'applicazione, ma in un server di contenuti o in un database. Il percorso su file sys tm in cui 
+vengono memorizzati tali file non deve avere privil egi di esecuzione. Se il file server che ospita i d ati caricati 
+dall’utente è basato su *NIX, è necessario implemen tare meccanismi di sicurezza come l'ambiente chroot ed 
+o montare la directory del file di destinazione com e un'unità logica.      
+7.12.3.2.1  Sorgenti dati 
+Ogni volta che i dati vengono trasmessi da una font e attendibile a una fonte meno attendibile, è neces sario 
+eseguire controlli di integrità. Ciò garantisce che  i dati non siano stati manomessi e che si stanno r icevendo 
+i dati previsti. Altri controlli includono: 
+• Cross-system consistency checks; 
+• Hash totals; 
+• Referential integrity; 
+• Uniqueness check; 
+• Table look up check. 
+7.12.3.2.2  Azioni di post-validazione (azioni aggiuntive) 
+• informare l'utente che i dati inseriti non rispetta no i requisiti richiesti e pertanto devono essere 
+modificati per conformarli alle condizioni richiest e; 
+• modificare i dati inviati dall'utente lato server s enza notificare all'utente di tali modifiche. 
+7.12.3.2.3  Sanitizzazione 
+Dopo aver effettuato i controlli di convalida appro priati, un ulteriore passaggio che viene in genere 
+adottato per rafforzare la sicurezza dei dati consi ste nel rimuovere o modificare i caratteri ritenuti  
+‘pericolosi’. Le azioni più comuni di sanitizzazion e sono i seguenti: 
+• Escaping. Nel package nativo html ci sono due funzi oni usate per la sanitizzazione: una per l'escape 
+del testo HTML e un'altra per l'HTML senza escape. La funzione EscapeString(), accetta una stringa 
+e restituisce la stessa stringa con i caratteri spe ciali convertiti. (es. ‘<’ viene sostituito con ‘&l t;’). 
+Questa funzione converte solo i seguenti cinque car atteri: <,>, &, ' e ". Viceversa c'è anche la 
+funzione UnescapeString () per convertire da entità  a caratteri. 
+• Rimuovere i TAG. Sebbene il package html/template a bbia una funzione stripTags (), questa non è 
+esportabile. Poiché nessun altro package nativo ha una funzione capace di rimuovere tutti i tag, 
+l’alternativa è quella di utilizzare librerie di te rze parti o copiare l'intera funzione insieme alle sue 
+classi e funzioni private. Alcuni esempi di libreri e di terze parti sono: 
+o https://github.com/kennygrant/sanitize 
+o Il pacchetto sanitize fornisce funzioni per la sani ficazione di codice HTML e dei percorsi.  
+o https://github.com/maxwells/sanitize 
+o Una libreria per la sanificazione di HTML che sfrut ti una white list. Semplice da usare. 
+o https://github.com/microcosm-cc/bluemonday 

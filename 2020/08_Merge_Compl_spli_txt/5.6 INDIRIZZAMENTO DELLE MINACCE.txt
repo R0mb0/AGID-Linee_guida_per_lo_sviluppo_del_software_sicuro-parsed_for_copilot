@@ -1,0 +1,54 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 65 a 132 
+ 
+• VERIFICA DEL LAVORO SVOLTO  - La convalida del modello è l'ultima cosa da fare come parte della 
+modellazione delle minacce. Ci sono alcune attività da svolgere prima, ed è bene mantenerle 
+allineate con l'ordine in cui è stato svolto il lavoro p recedente. Pertanto, le attività di validazione 
+includono il controllo del modello, la verifica di ciascuna minaccia e il controllo dei test. E’ probab ile 
+che si desider i convalidare il modello anche una seconda volta, ovvero quando ci si avvicina al rilas cio 
+o all'installazione.  
+• CONTROLLO DEL MODELLO  - È necessario assicurarsi che il modello finale corrisponda a quello 
+costruito. Se così non fosse, come potremmo sapere se le minacce trovate sono corrette  e rilevanti? 
+Per fare ciò, è opportuno organizzare d egli incontri durante i quali tutti, osservando e analizzando il 
+diagramma, rispondano alle seguenti domande:  
+o il diagramma è completo?  
+o il diagramma è accurato?  
+o il diagramma copre tutti le decisioni intraprese in termini di sicurezza?  
+o è possibile procedere con la versione successiva del diagramma senza apportare 
+modifiche?  
+Una risposta affermativa a tutte le domande di cui sopra, indica che il diagramma è 
+sufficientemente aggiornato  e maturo  per poter procedere. Diversamente sarà necessario 
+apportare gli opportuni cambiamenti.  
+• DETTAGLI DEL DIAGRAMMA  - Non disegnare mai un diagramma ad occhio, con un livello di dettaglio 
+tale da rappresentare l’intero comportamento del sistema. Utilizzare un sotto diagramma che mostri 
+il solo dettaglio di una particolare area del sistema stesso. Si deve cercare di escludere  ciò che non è 
+rilevante  per il progetto. Per esempio, se si è davanti ad un processo molto complesso, forse tutto 
+ciò che è in quel proces so dovrebbe essere trattato in un diagramma, e tutto ciò che è al di fuori di 
+esso in un altro. Se è presente  un dispatcher o un sistema di code, questi sono un buon punto di 
+suddivisione, e lo sono anche i database o i sistemi di fail -over. Esistono  ancor a elementi che devono 
+essere maggiormente dettagliati? Bene, questi vanno esclusi . La cosa importante da ricordare è che 
+il diagramma ha lo scopo di aiutare a comprendere e discutere il sistema.  
+5.6 Indirizzamento delle minacce  
+Una volta raccolte le minacce in dividuate in uno o più elenchi , il passo successivo nel processo di 
+modellazione è quello di scorrere l’elenco o gli elenchi indirizzando ciascuna minaccia. Pertanto è 
+possibile  decidere se :  
+• Mitiga re la minaccia - Si concretizza nel fare qualcosa per rendere più difficile la possibilità di poter 
+essere sfruttat a. Richiede re una password per controllare chi accede al sistema, mitiga la minaccia di 
+spoofing. Aggiungere un controllo password che ne rafforza la compless ità o la scadenza, riduce la 
+probabilità che una password venga scoperta o venga utilizzata se rubata.  
+• Elimina re la minacc ia - Avviene quasi sempre eliminandone le caratteristiche. Se si presenta una 
+minaccia in cui qualcuno ha accesso ad una funzione amm inistrativa di un sito web entrando ad 
+esempio in “/admin/URL ”, è possibile mitigarla impiegando delle password o altre tecniche di 
+autenticazione, ma comunque, questa non verrà risolta. È possibile rendere più complessa la URL in 
+modo da rendere meno prob abile la possibilità che questa venga individuata , ma anche in questo 
+caso la minaccia non verrà risolta. La si può eliminare rimuovendo l’interfaccia amministrativa, e 
+gestendo l’attività di amministrazione tramite linea di comando. In questo caso esister ebbero 
+comunque altre minacce riconducibili  a come l’utente amministratore dovrebbe autenticarsi  per 
+eseguire  l’attività di amministrazione da linea di comando. Lo spostamento dell’interfaccia dall’http 
+a linea di comando rende facile la mitigazione della minaccia controllando la superficie di attacco.  
+• Sposta re la minacc ia - Consiste nel lasciare che qualcuno o qualcos'altro gestisca il rischio. Per 
+esempio, potremmo demandare la gestione delle minacce relative all’autenticazione al sistema 
+operativo, oppur e rafforzare  il perimetro di fiducia con un firewall. È anche possibile trasferire il 

@@ -1,0 +1,269 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 42  a 141  
+ 
+sistema senza perdita di informazione o interruzion e di servizi, procedendo 
+tempestivamente alla sostituzione del disco guasto.  
+Ciò si applica sia ai dischi locali al sistema, sia  a quelli disponibili in rete attraverso 
+sistemi di Storage Area Networks. 
+ 
+5.2.2  Hardening  
+Hardening del sistema  
+Minaccia  - Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, interfacce 
+amministrative, ecc.). 
+- Accesso non autorizzato alle informazioni. 
+- Furto di credenziali di autenticazione (ad es. con tecniche di brute-force o 
+password crackers). 
+- Negazione dei servizi. 
+- Cancellazione o furto di informazioni. 
+- Attacchi all’integrità dei sistemi (BIOS, software di base, configurazioni). 
+- Attacchi all’integrità delle informazioni 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Consolidare la sicurezza di base del sistema implem entando dei meccanismi di 
+protezione atti a contrastare in maniera più effica ce eventuali attacchi e limitarne la 
+capacità di azione. I principali interventi da intr aprendere sono:  
+- attivare una password a protezione del BIOS in modo  da prevenire alterazioni alla 
+configurazione di avvio del sistema;  
+- impedire l’uso di password vuote; 
+- configurare il sistema affinché obblighi all’uso di  password “robuste” (es. almeno 
+una maiuscola, una minuscola, un numero e un caratt ere speciale, e almeno 8 
+caratteri di lunghezza); 
+- cambiare le password di default delle utenze di sis tema e di quelle applicative in 
+uso; 
+- disabilitare le utenze di sistema e quelle applicat ive predefinite e non utilizzate; 
+- installare gli aggiornamenti di sicurezza più recen ti sia durante la fase di 
+installazione iniziale, prima di iniziare ad utiliz zare il sistema, sia regolarmente e 
+periodicamente, quando il sistema è in uso; 
+- disattivare o rimuovere le funzionalità non utilizz ate, inclusi protocolli di 
+comunicazione, servizi, software, interfacce di ret e, interfacce hardware (es. porte 
+seriali e parallele, cd-rom se non usati, porte usb  se non permesse, ecc.); 
+- assicurarsi che i permessi d'accesso (lettura, scri ttura, modifica, etc.) al file system 
+siano concessi secondo la profilatura degli utenti accreditati, evitando la presenza 
+di condivisioni accessibili indiscriminatamente da tutti gli utenti 
+dell’organizzazione, o senza autenticazione, o scri vibili da chiunque; 
+- bloccare tutte le porte di comunicazione non utiliz zate sul firewall di rete e su 
+quelli degli host server (se presenti). 
+ 
+Hardening del sistema  
+Minaccia  - Negazione dei servizi  (es. fault per buffer overflows).  
+- Attacchi all’integrità dei sistemi (BIOS, software di base, configurazioni). 
+Contromisure  - Rendere certe pagine di memoria, come quelle conten enti stack e heap, non 
+eseguibili. In generale, utilizzare un meccanismo d i Data Execution Prevention 
+(DEP) o l’opzione kernel ExecShield per limitare at tacchi di iniezione di codice. 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 43  a 141  
+ 
+- Utilizzare meccanismi di address space layout rando mization (ASLR)  o l’opzione del 
+kernel per il Randomized Virtual Memory Region Plac ement, nelle modalità più 
+restrittive supportata da ciascun sistema operativo . 
+ 
+Hardening del protocollo TCP/IP  
+Minaccia  Negazione dei servizi  (Denial of Service ).  
+Contromisure  - Disabilitare l’IP forwarding al fine di impedire ch e il server in esame possa essere 
+utilizzato come “testa di ponte” per attacchi verso  ulteriori sistemi nella rete 
+interna. 
+- Disabilitare il source routing, inibendo la possibi lità ad un utente malintenzionato 
+di specificare le rotte da percorrere in fase di co nnessione verso un sistema. 
+- Abilitare i log per i pacchetti di rete ricevuti av enti un indirizzo di origine non-
+routable (privo di una rotta in tabella di routing) . Questa contromisura aiuta ad 
+individuare attacchi basati sull’IP spoofing. 
+- Abilitare i TCP SYN cookies per la gestione efficie nte dell’handshake TCP SYN/ACK, 
+in presenza di attacchi DOS specifici. 
+- Disattivare la funzione di risposta alle richieste ICMP via broadcast. 
+- Filtrare i pacchetti IP in modo che siano consentit e solo le richieste ICMP 
+provenienti da indirizzi IP appartenenti al piano d 'indirizzamento aziendale. 
+- Attivare la funzione di Quality of Service (QoS) e limitare, con valori idonei, 
+l'ampiezza della banda di rete destinata al protoco llo ICMP, ad esempio mediante 
+tecniche di Committed Access Rate (CAR). 
+ 
+Hardening del sistema  
+Minaccia  Accesso no n autorizzato alle informazioni (es. da Memory dump attack ).  
+Contromisure  Sui sistemi operativi server è necessario, se possi bile tecnicamente e se consentito 
+dalle regole del supporto tecnico dei fornitori, di sabilitare la generazione dei dump di 
+memoria di sistema (“core dump”). 
+Laddove ciò non fosse possibile, è necessario confi gurare i sistemi in modo che i dump 
+contengano la minor quantità possibile di informazi oni sensibili. 
+In ogni caso, i dump di memoria possono essere invi ati ai fornitori solo in presenza di 
+un accordo di riservatezza e con modalità di trasmi ssione atte a garantirne la 
+riservatezza. 
+ 
+Hardening del sistema  
+Minaccia  - Compromissione delle comunicazioni.  (es. Cache poisoning ) 
+- Falsificazione di identità. 
+- Furto di credenziali di autenticazione. 
+- Negazione dei servizi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione (da 
+Malware). 
+Contromisure  - Assicurarsi di utilizzare versioni di software DNS più recenti  ed installare tutte le 
+patch di sicurezza disponibili; 
+- Rimuovere dal server DNS qualsiasi altro servizio e  software non necessari al suo 
+funzionamento; 
+- Proteggere i server DNS con un firewall perimetrale ; 
+- Configurare i server DNS in modo tale da fare il me no affidamento possibile nei 
+rapporti di fiducia con altri server DNS;  
+- Configurare il DNS server in modo tale da limitare query ricorsive, memorizzare 
+solo i dati relativi a domini richiesti e limitare la risposta al fine di fornire 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 44  a 141  
+ 
+informazioni inerenti  al solo dominio richiesto.  Assicurarsi che non ci siano servizi 
+attivi sul DNS che non sono utilizzati;  
+- Utilizzare DNSSEC;  
+- Utilizzare ARP e tabelle IP statiche sul server DNS ;  
+- Utilizzare comunicazioni crittografate con SSH per accedere al server DNS. 
+ 
+Hardening del sistema  
+Minaccia  - Perdita di riservatezza delle informazioni sulla re te e sui sistemi.  
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(attacchi da Malware). 
+Contromisure  Configurare i sistemi operativi , in particolare quelli che ospitano il software di r ete  (ad 
+esempio il firewall) o esposti sulla rete, per impe dire il footprinting disabilitando i 
+protocolli e le porte inutilizzate che possono rive lare informazioni sul sistema, sui 
+servizi installati, sulle versioni utilizzate, sul posizionamento dei sistemi e sulla logistica 
+degli uffici, ecc. 
+ 
+Hardening del sistema  
+Minaccia  Negazione dei servizi.  
+Contromisure  - Configurare le applicazioni, i servizi e il sistema  operativo tenendo sempre 
+presente le possibili esposizioni ad attacchi DoS. 
+- Ad es. è opportuno utilizzare estesamente architett ure di tipo “stateless” o 
+“RESTful” perché l’esaurimento delle risorse di sis tema creando un numero elevato 
+di false sessioni su sistemi che memorizzano lo sta to di ciascuna di esse è una 
+tecnica di attacco molto diffusa. 
+- Assicurarsi che i criteri di blocco dell'account pr edisposti non possano essere 
+sfruttati per bloccare service accounts ben noti (q uindi il blocco di un account in 
+caso di ripetuti tentativi di accesso deve essere t emporaneo, e tra un tentativo e 
+l’altro deve essere imposto un ritardo dell’ordine dei secondi). 
+- Assicurarsi che il sistema sia in grado di gestire alti volumi di traffico e che le soglie 
+massime per le risorse siano opportunamente imposta te per gestire carichi 
+anormalmente elevati. A tale scopo è necessario eff ettuare periodicamente il 
+monitoraggio del carico sull’applicazione in condiz ioni realistiche per verificare il 
+corretto dimensionamento del sistema in termini di risorse quali memoria RAM e 
+CPU, numero di sessioni concorrenti gestite e tempi  di connessione e di risposta 
+effettivi in presenza di picchi di carico.  
+ 
+Hardening del sistema  
+Minaccia  - Negazione dei servizi (es. fault per buffer overflo ws).  
+- Attacchi all’integrità dei sistemi. 
+Contromisure  Disabilitare tutti i protocolli e i servizi legacy non sicuri, quali ad es. Telnet, FTP, r -
+commands, SNMP v1, ecc. 
+ 
+Hardening del sistema  
+Minaccia  - Negazione dei servizi (es. fault per buffer overflo ws).  
+- Attacchi all’integrità dei sistemi (software e conf igurazioni). 
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+- Uso non autorizzato di privilegi. 
+Contromisure  Assicurarsi che la variabile d’ambiente PATH (usata su UNIX e Windows per accede re 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 45  a 141  
+ 
+alle utilità di sistema da una finestra di terminal e interattivo), non conten ga  percorsi 
+sospetti né percorsi scrivibili da chiunque, ma sol o quelli standard previsti dallo 
+specifico sistema operativo. In particolare il PATH  non deve mai contenere il percorso 
+“.” che rappresenta la directory corrente. 
+Su UNIX e Linux in particolare, l’utenza di root de ve avere la variabile di ambiente 
+PATH definita ad esempio come PATH=”/usr/bin:/usr/sbin:/sbin”. 
+ 
+Disabilitazione delle interfacce di rete inutilizza te  
+Minaccia  - Negazione dei servizi (es. fault per buffer overflo ws).  
+- Attacchi all’integrità dei sistemi. 
+- Accesso non autorizzato ai sistemi. 
+Contromisure  Disabilitare le interfacce wireless non necessarie al corretto funzionamento del server.  
+Ciò include le interfacce WiFi, Bluetooth e di altr i protocolli wireless, ivi compresi quelli 
+proprietari usati da mouse e tastiere wireless, su sistemi server e su Workstation 
+critiche. 
+Per quanto riguarda tastiere e mouse wireless sulle  postazioni desktop (non server) è 
+preferibile usare dispositivi bluetooth che consent ano di utilizzare l’autenticazione e la 
+crittografia della comunicazione. 
+ 
+Anti -spam  
+Minaccia  - Negazione dei servizi (es. fault per buffer overflo ws).  
+- Abuso di risorse. 
+Contromisure  Sui sistemi Linux e  UNIX in genere, i Mail Transfer Agents o MTA  (ad es. Sendmail e 
+Postfix) sono usati per ricevere email in entrata e  trasferire I messaggi all’utente o al 
+mail server di destinazione. 
+Se il sistema non è un mail server o un SMTP relay,  l’MTA deve essere configurato per 
+processare solo le mail generate localmente al sist ema (ad es. da applicative che 
+generano un errore e inviano un messaggio a root pe r scopi di diagnostica). 
+ 
+Hardening del sistema  
+Minaccia  - Accesso non autorizzato alle informazioni - Cold boot attack  
+- Accesso non autorizzato ai sistemi 
+Contromisure  - Utilizzare meccanismi di crittografia dei dischi di  sistema (es. BitLocker);  
+- Assicurarsi che tutti i dischi crittografati siano smontati (protetti) quando il 
+computer è in una posizione in cui può essere rubat o. Tipicamente ciò non è 
+possibile con il disco su cui il sistema operativo è in esecuzione; 
+- Impiegare un meccanismo di autenticazione a due fat tori per l’avvio del sistema, 
+ad esempio un PIN di pre-avvio o un dispositivo USB  rimovibile contenente una 
+chiave di avvio;  
+- Assicurarsi che il computer abbia completato la pro cedura di arresto prima di 
+lasciarlo incustodito;  
+- Sui sistemi UNIX inserire un controllo di autentica zione per accedere in single user 
+mode e disabilitare il boot interattivo (che consen te di presentare un prompt 
+interattivo di amministratore senza autenticazione) ; 
+- Quando è previsto che il Sistema Operativo passi in  modalità di sospensione a 
+seguito di un periodo di inutilizzo, configurarlo i nvece per l’arresto completo; 
+- Applicare le patch per kernel Linux quali TRESOR e Loop-Amnesia che modificano il 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 46  a 141  
+ 
+kernel del sistema operativo in modo tale da utiliz zare i registri della CPU (nel caso 
+TRESOR registri di debug x86 e, in caso di Loop-Amn esia, i registri di profilazione 
+AMD64 o EMT64) per memorizzare le chiavi di crittog rafia, piuttosto che 
+memorizzarle in RAM;  
+- Seguire l'approccio denominato "frozen cache" conos ciuto anche come "cache as 
+RAM", con il quale si disattiva la cache L1 della C PU per poterla utilizzare come 
+supporto di memorizzazione delle chiavi di crittogr afia. Ovviamente questo 
+approccio è oneroso dal punto di vista delle perfor mance, ma si può ovviare a ciò 
+utilizzando CPU multicore in cui tale cache viene d isattivata per un solo core; 
+Impiegare hardware in cui i moduli di memoria RAM s ono saldati o incollati nel 
+socket della scheda madre. 
+ 
+Inibizione dei terminali non in uso  
+Minaccia  Accesso non autorizzato ad informazioni , causato dal personale utente per inadeguati 
+meccanismi, strumenti, procedure o abilità tecniche  atti a prevenire l'accesso non 
+autorizzato al sistema. 
+Contromisure  Tutti gli utenti devono essere sensibilizzati sui re quisiti e sulle procedure di sicurezza  
+per proteggere le apparecchiature incustodite. 
+Le postazioni di lavoro e i sistemi informativi di qualsiasi tipo dotati di un terminale 
+video e una tastiera, devono essere configurati in modo da bloccare la sessione di login 
+e richiedere la password utente quando il sistema v iene lasciato incustodito o inattivo 
+per oltre 5 minuti. 
+Ciò si applica specialmente ai sistemi server, anch e se posizionati in data center o in 
+zone ad accesso ristretto. 
+ 
+Limitazione del tempo di connessione  
+Minaccia  - Accesso non autorizzato ad informazioni . 
+- Abuso di privilegi. 
+Contromisure  Sui sistemi più critici, laddove sia prevista una d urata massima per lo svolgimento di 
+determinati compiti, o quando l’uso di tali sistemi  sia consentito solamente in certi 
+orari, alla scadenza temporale prevista deve essere  effettuato un logout automatico. 
+ 
+Limitazione dell'uso delle utility/servizi di siste ma  
+Minaccia  - Accesso non autorizzato ad informazioni . 
+- Abuso di privilegi. 
+- Errori di amministrazione dei sistemi. 
+- Uso non autorizzato di privilegi. 
+Contromisure  Limitare l'uso delle utility/servizi di sistema att raverso:  
+- sistemi di identificazione e autenticazione per l'u so delle utility/servizi;  
+- separazione delle utility di sistema dalle applicaz ioni;  
+- autorizzazione all'uso delle utility/servizi solo p er chi ne ha la reale necessità 
+(compreso l'orologio di sistema);  
+- tracciamento di ogni operazione privilegiata svolta  con l'uso delle utility/servizi;  
+- rimozione di tutte le utility/servizi non strettame nte necessarie (in particolare i 
+servizi di RAS o dial-up, gestione remota, ecc.);  
+- disabilitazione di tutte le porte non necessarie; 
+- rimozione di tutti gli strumenti di sviluppo (compi latori e interpreti) su sistemi 
+destinati ad ambienti di test, collaudo, certificaz ione e produzione. 
+ 

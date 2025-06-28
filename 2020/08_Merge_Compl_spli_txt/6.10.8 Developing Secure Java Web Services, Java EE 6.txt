@@ -1,0 +1,47 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 69  a 137  
+ 
+6.10.6  Writing Secure Code - ASP.NET (C#) 
+Questo corso di formazione computer-based spiega le  caratteristiche chiave di sicurezza della piattafo rma 
+.NET, come evitare che gli sviluppatori web cadano nelle trappole di sicurezza comuni e quindi come cr eare 
+applicazioni web sicure e affidabili utilizzando AS P.NET. Gli studenti sono guidati attraverso esempi di 
+codice hands-on che evidenziano i problemi e le sol uzioni più idonee. 
+Il corso ha i seguenti moduli: 
+• Introduction to Software Security  
+• Data Protection – in Storage and in Transit  
+• Authentication  
+• Authorization  
+• Data Validation  
+• Process Handling  
+• Error Handling and Exception Management  
+• Logging and Auditing  
+• Memory Management  
+ 
+6.10.7  Oracle Courses 
+Oracle University è il principale fornitore di form azione per le tecnologie e i prodotti Oracle. Offre  corsi 
+class-based, on-site, virtuali e su CD-ROM, molti d ei quali si concentrano sulla programmazione Java o  sui 
+prodotti Oracle. 
+ 
+URL  http://education.oracle.com  
+Contact Method  Education Contact  
+Email and phone  
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Industry (Oracle)  
+ 
+6.10.8  Developing Secure Java Web Services, Java EE 6 
+Il corso Developing Secure Java Web Services fornis ce le informazioni necessarie per progettare, 
+implementare, distribuire e gestire secure web serv ices e web service client utilizzando componenti di  
+tecnologia Java e Java Platform, Enterprise Edition  6 (Java EE 6 della piattaforma). 
+Gli studenti vengono guidati sulla necessità di gar antire servizi web sicuri e sulle sfide associate a lla 
+sicurezza dei servizi Web. Gli studenti vengono for mati anche sui principali standard di settore e sul le 
+iniziative sviluppate per fornire soluzioni di sicu rezza complete per i servizi web; nonchè come appli carli per 
+garantire servizi web sicuri. In particolare, gli s tudenti imparano come proteggere i servizi Web util izzando 
+tecnologie application-layer security, transport-la yer security e message-layer security, come ad esem pio 
+come quelle specificate dalle estensioni di sicurez za WS- *. 
+Questo corso introduce anche i concetti di gestione  delle identità, i driver che stanno dietro le solu zioni di 
+gestione delle identità e le funzioni di Sun Java S ystem Access Manager. 
+Gli obiettivi del corso sono i seguenti: 

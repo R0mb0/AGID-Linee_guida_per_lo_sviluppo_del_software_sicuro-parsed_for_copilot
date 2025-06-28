@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 121  a 156  
+ 
+Gli attacchi XPath Injection sono possibili quando un sito Web utilizza le informazioni fornite dall'u tente per 
+costruire una query XPath per i dati XML. Inviando informazioni intenzionalmente malformate nel sito W eb, 
+un utente malintenzionato può scoprire come sono st rutturati i dati XML o accedere a dati a cui 
+normalmente non avrebbe accesso. Potrebbe persino e ssere in grado di elevare i suoi privilegi sul sito  Web 
+se i dati XML vengono utilizzati per l'autenticazio ne (come un file utente basato su XML).  
+Come difendersi 
+• Evitare che la costruzione della query XPath dipend a dalle informazioni inserite dall'utente. 
+Possibilmente mapparla con i parametri utente mante nendo la separazione tra dati e codice. Nel 
+caso fosse necessario includere l'input dell’utente  nella query, questo dovrà essere 
+precedentemente validato. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La validazione dovrebbe essere 
+basata su una white list (si dovrebbero accettare s olo i dati che adattano a una struttura 
+specificata, scartando quelli che non la rispettano ). Occorre controllare il tipo del dato, la sua 
+dimensione, l'intervallo di validità (range), il fo rmato ed eventuali valori attesi (white list). 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/643.html,  
+CWE-643: Improper Neutralization of Data within XPa th Expressions ('XPath Injection'). 
+ 
+7.8.9  Ulteriori indicazioni per lo sviluppo sicuro 
+7.8.9.1  ASP.NET Web Form 
+Web form è una tecnologia basata su ASP.NET di Micr osoft, in cui il codice eseguito sul server genera 
+dinamicamente l'output di pagina Web al browser o a l dispositivo client. È uno dei quattro modelli (as sieme 
+a ASP.NET MVC, ASP.NET Web Pages, ASP.NET Single Pa ge Applications) di programmazione che possono 
+essere utilizzati per la creazione di applicazioni web ASP.NET. 
+È compatibile con qualsiasi browser, dispositivo mo bile o linguaggio supportato da .NET ed è flessibil e in 
+quanto offre la possibilità di aggiungere controlli  creati dall'utente e terze parti. 
+ 
+Segue un elenco di best practices per lo sviluppo s icuro. 
+• Concatenazione di stringhe : Utilizzare StringBuilder. Nella concatenazione de lle stringhe, l’uso di 
+StringBuilder è preferibile rispetto a String.Conca t o all'utilizzo dell'operatore '+'. Più nel dettag lio, 
+StringBuilder è più performante nella concatenazion e di un numero elevato di stringhe (>=3), 
+mentre ha prestazioni equiparate a String.Concat pe r un minor numero (<3) di stringhe. 
+• Ajax UpdatePanel : Evitare chiamate superflue al server. Controllare  Page.IsPostBack al 
+caricamento della pagina per assicurarsi che la log ica di inizializzazione della pagina venga eseguita  
+quando una pagina viene caricata la prima volta e n on in risposta ai postback dei client. Per le 
+convalide, devono essere utilizzati script lato cli ent. 
+• ViewState e HiddenFields : Mantenere i dati minimi in ViewState. ViewState è  valido solo per il 
+postback delle stesse pagine: i dati vengono trasme ssi al client e restituiti in un campo nascosto. 
+Disattiva ViewState a PageLevel utilizzando EnableV iewState. 
+• Sessione : Variabili di sessione 
+o Non dovrebbero esistere più di 20 variabili di sess ione nel contesto applicativo. 
+o Tenere TimeOut di sessione. 
+o Disattivare lo stato della sessione, se non si util izza in una particolare pagina / applicazione. 
+• Reindirizzare : Server.Trasfer vs Response.Redirect. Utilizza Ser ver.Transfer per reindirizzare alle 
+pagine della stessa applicazione e Response.Redirec t per reindirizzare verso una pagina esterna o 
+quando è necessario avviare un nuovo contesto. 
+• DataReader : Utilizzare DataReader per il binding dei dati. Se  l'applicazione non richiede la 
+memorizzazione nella cache, è possibile utilizzare DataReader.  

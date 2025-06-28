@@ -1,0 +1,330 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 85  a 141  
+ 
+relativo bollettino di sicurezza è MS15 -011 / KB 3000483.  
+Questo meccanismo richiede sia l’installazione di u n aggiornamento di sicurezza, sia 
+l’applicazione di specifiche impostazioni di Group Policy su TUTTI i computer del 
+dominio che devono essere necessariamente basati su  Windows Vista / Windows 
+Server 2008 o versioni successive. 
+L’aggiornamento di sicurezza comprende anche un nuo vo template di Group Policy 
+(NetworkProvider.admx/adml) che indirizza i paramet ri da impostare. 
+Una volta applicato l’aggiornamento e il template d i Group Policy, l’impostazione 
+minima per mitigare il rischio in oggetto è la segu ente: 
+“Hardened UNC Paths”  ENABLED, impostato come segue: 
+\\*\NETLOGON RequireMutualAuthentication=1, Require Integrity=1 
+\\*\SYSVOL RequireMutualAuthentication=1, RequireIn tegrity=1 
+ 
+5.3  Sicurezza del Web Browser 
+Di seguito viene fornita una vista delle principali  minacce e delle relative contromisure da adottare.  
+ 
+5.3.1  Architettura 
+Architettura  
+Minaccia  - Accesso non autorizzato al sistema . 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  - Utilizzare un sistema di protezione del perimetro (Firewall)  in grado di effettuare 
+Web Application Firewalling, posizionato tra la ret e dei client e tutte le altre. 
+- Installare un IDS (intrusion detection system) o IP S (intrusion prevention system) in 
+grado di analizzare le richieste Web. 
+- Impedire la manipolazione DNS: utilizzare DNS atten dibile e protetto. 
+- Bloccare i punti di accesso wireless e utilizzare u n sistema di protezione come Wi-
+Fi Protected Access 2 e access point non vulnerabil i (con firmware aggiornato) 
+rispetto all’attacco KRACK precedentemente citato. 
+ 
+Nota Bene.  Si tenga presente che i dispositivi portatili pers onali possono eludere tali 
+contromisure. 
+ 
+5.3.2  Hardening 
+Hardening del browser  
+Minaccia  - Accesso non autorizzato al sistema . 
+- Compromissione delle comunicazioni. 
+- Furto di credenziali di autenticazione (es. keylogg er). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  - Utilizzare il browser con un account utente a bassi  privilegi (ovvero senza privilegi 
+di amministratore) in modo da limitare le possibili tà di un attacco (security exploit) 
+di compromettere l'intero sistema operativo.  
+- Impostare il browser in modo da controllare la vali dità dei certificati presentati dai 
+server, utilizzando le liste di revoca dei certific ati (CRL), l'Online Certificate Status 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 86  a 141  
+ 
+Protocol (OCSP) , o altri meccanismi equivalenti . 
+- Limitare/Disabilitare/Condizionare l'uso di:  
+• Controlli ActiveX 
+• Add-ons  
+• Estensioni del browser (plug-ins)  
+• JavaScript e Flash 
+• Java Applets e applicazioni Silverlight. 
+• “Mobile code” in generale . 
+- Ad esempio, su Internet Explorer esiste la possibil ità di esprimere delle white list 
+e/o delle black list per controlli ActiveX , add-ons, ed estensioni del browser. 
+- Abilitare (se disponibili) meccanismi di sandbox in tegrati nel browser. Ad esempio 
+a partire da IE 7 è disponibile il " protected mode ", una tecnologia che sfrutta i 
+meccanismi di sandboxing chiamati “ Mandatory Integrity Control ”. Anche Google 
+Chrome fornisce una sandbox che limita l’accesso al  sistema operativo da parte 
+delle pagine web. 
+- Valutare la possibilità di eseguire il browser all’ interno di un software di una 
+sandbox selezionata e approvata dall’organizzazione . 
+- Valutare l’adozione di estensioni e plugin di terze  parti create a scopo di hardening 
+del browser. A titolo di esempio: - il software “NoScript” che consente l’esecuzione 
+di contenuti web basati su JavaScript, Java, Flash,  Silverlight e altri plug-in solo se il 
+sito è considerato attendibile ossia è stato preced entemente aggiunto a una white 
+list.  
+- Valutare l’adozione del software “MyWOT/WOT” (Web o f Trust) che fornisce un 
+servizio di reputazione sul livello di trust dei si ti web. 
+- Considerare di utilizzare il browser all’interno di  un LiveCD. I LiveCD, che 
+forniscono un sistema operativo da una sorgente non  scrivibile e sono tipicamente 
+dotati di browser Internet. Se l'immagine originale  LiveCD è priva di malware, tutto 
+il software utilizzato, incluso il browser Internet , verrà caricato malware-free ogni 
+volta che viene eseguito il boot dall'immagine Live CD. Prestare però attenzione ad 
+altro genere di pericoli: Qualsiasi traffico web no n protetto (ad esempio, non 
+utilizzando https) o verso siti web vulnerabili pot rebbe ancora essere soggetto ad 
+attacchi man-in-the-middle o altre manipolazioni ba sate sul traffico di rete. 
+ 
+Hardening del browser  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(phishing e malware). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  - Disabilitare l a memorizzazione di  password nel browser . Quasi tutti i browser e 
+molti siti web in genere offrono la possibilità di ricordare le password per uso 
+futuro. L'attivazione di questa funzionalità memori zza le password in un'unica 
+posizione sul computer, rendendo più facile per un aggressore scoprirle se il 
+sistema venisse compromesso. Se questa funzionalità  risulta abilitata, è necessario 
+disattivarla e cancellare le password memorizzate. 
+- Attivare il blocco dei popup del browser. Le finest re di popup sono una notevole 
+tecnica di "phishing". Il blocco dei popup è oggi u na funzionalità standard dei 
+browser e dovrebbe essere abilitato ogni volta che si naviga sul web. Può essere 
+utilizzata anche su siti web specifici e non su alt ri, dove i popup potrebbero invece 
+essere necessari. 
+ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 87  a 141  
+ 
+Privacy durante la navigazione web  
+Minaccia  Divulgazione di informazioni riservate . 
+Contromisure  Adottare le seguenti misure a  salvaguardia della privacy degli utenti , rispetto a i siti 
+Web che monitorano le attività utente : 
+- Impostare una routine specifica per eliminare i coo kie regolarmente. Alcuni 
+cookie possono costituire un rischio per la privacy  in quanto tengono traccia 
+dei siti visitati. Non sempre è possibile bloccare i cookie, ma è opportuno 
+eliminarli (diversamente i cookie possono rimanere memorizzati nel sistema 
+per settimane o più)  
+- Attivare funzionalità “Do Not Track”.  “ Do Not Track” è un header HTTP che 
+comunica ai siti visitati e alle terze parti i cui contenuti sono ospitati in tali siti 
+che le proprie attività non devono essere tracciate . Nota Bene. L'invio di una 
+richiesta “Do Not Track” ai siti non garantisce la protezione della privacy. I siti 
+possono scegliere di rispettare la richiesta o cont inuare a eseguire attività che 
+potrebbero essere considerate di monitoraggio anche  se è stata espressa 
+questa preferenza.  
+- Utilizzare la navigazione anonima. Nota Bene . Il livello di protezione è diverso 
+a seconda dei browser. In certi casi si tratta fi u na difesa da attacchi locali: 
+alcune info, come le password, la cronologia di ric erca e la cronologia delle 
+pagine, vengono eliminate alla chiusura della sched a. In altri casi si tratta della 
+difesa dall’attaccante esterno ossia viene protetto  l' anonimato durante la 
+navigazione . 
+- Disattivare la condivisione della posizione geograf ica. 
+ 
+Hardening del browser: configurazione  di base per la sicurezza  
+Minaccia  - Attacchi all’integrità dei sistemi.  
+- Cancellazione o furto di informazioni (accidentale o da attacchi come ad es. il 
+ransomware, ecc.). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(es. malware, ecc.). 
+Contromisure  La configurazione di default  per molti browser web non è sicura. Si raccomanda no  i 
+passaggi a seguire per rendere maggiormente sicuro il browser web in uso. Tali 
+impostazioni assumono particolare importanza nel ca so in cui si utilizza il browser per 
+accedere a sistemi aziendali o più in generale se s i utilizza il browser per accedere, 
+inviare o ricevere informazioni sensibili. 
+- Impostare il browser di default: 
+o Firefox: sia per Mac che per Windows - andare nel m enu Firefox > 
+Preferenze (Mac) Opzioni (Windows) > scheda General e. Selezionare la 
+casella "Controlla sempre se Firefox è il browser p redefinito". 
+o Safari: andare nel menu Safari > Preferenze > sched a Generale e clicca 
+sul pulsante "Imposta predefinito....". 
+o Internet Eplorer: si raccomanda di non utilizzare I E come browser 
+predefinito. 
+o Google Chrome: andare sulle impostazioni nella sezi one “Browser 
+predefinito” e cliccare sul pulsante “Imposta come predefinito” in 
+corrispondenza della voce "Imposta Google Chrome co me browser 
+predefinito". 
+- Mantenere il software del browser aggiornato. 
+- Abilitare nel browser gli aggiornamenti automatici e mantenerli in tale stato: 
+o Firefox: sia per Mac che per Windows - vai al menu Firefox > 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 88  a 141  
+ 
+Preferenze (Mac), scheda Opzioni ( Wi ndows ), scheda Generale > 
+sezione Aggiornamenti di Firefox. Selezionare "Inst allare 
+automaticamente gli aggiornamenti (consigliato)". 
+o Safari: gli aggiornamenti in Safari sono gestiti ne l menu Apple in 
+Preferenze di sistema > Aggiornamento software. Imp ostare su 
+Aggiornamenti giornalieri. 
+o Google Chrome: a garanzia di protezione, Google Chr ome si aggiorna 
+automaticamente ogni volta che rileva che è disponi bile una nuova 
+versione del browser. Il processo di aggiornamento avviene in 
+background e non richiede alcuna azione manuale. 
+- Bloccare l’accesso ai pop-up, plug-in e ai siti di phishing: 
+o Firefox: per il blocco dei pop-up indesiderati, sia  per Mac che per 
+Windows – andare nel menu Firefox > Preferenze (Mac ) Opzioni 
+(Windows) > Privacy e sicurezza > sezione Permessi.  Selezionare 
+"Blocca le finestre pop-up". 
+o Firefox: per il blocco delle estensioni del browser  indesiderate, sia per 
+Mac che per Windows – andare nel menu Firefox > Pre ferenze (Mac) 
+Opzioni (Windows) > Privacy e sicurezza > sezione P ermessi. Seleziona 
+"Avvisa se un sito web tenta di installare un compo nente aggiuntivo". 
+o Safari: per il blocco dei pop-up indesiderati, anda re nel menu Safari > 
+Preferenze > scheda Siti web, fare clic su "Finestr e di pop-up" dal 
+pannello di sinistra e impostare "Quando si visitan o altri siti web:" su 
+"Blocca e notifica". 
+o Safari: per il blocco del phishing e delle estensio ni del browser 
+indesiderate, andare nel menu Safari > Preferenze >  Scheda Siti Web e 
+deselezionare i plug-in installati indesiderati pre senti nel pannello di 
+sinistra. 
+o Edge: per il blocco dei pop-up indesiderati, andare  su Impostazioni > 
+Impostazioni avanzate > Blocca popup e impostarlo a  Attivato. 
+o Internet Explorer: per il blocco dei pop-up indesid erati, andare nel 
+menu Strumenti > Opzioni Internet > scheda Privacy.  Selezionare la 
+casella di controllo "Attiva Blocco popup". 
+o Internet Explorer: per il blocco delle estensioni d el browser 
+indesiderate, andare nel menu Strumenti > Opzioni I nternet > scheda 
+Avanzate e scorrere verso il basso fino a “Elementi  multimediali”. 
+Deselezionare se selezionate, "Riproduci animazioni " e "Riproduci 
+suoni" in pagine web. 
+o Google Chrome: per il blocco dei pop-up indesiderat i, andare su 
+Impostazioni > Avanzate > Privacy e sicurezza > Imp ostazioni sito > 
+Pop-up e reindirizzamenti e impostare su "Bloccato" . 
+o Google Chrome: per il blocco delle estensioni del b rowser 
+indesiderate, andare su Impostazioni > Avanzate > P rivacy e sicurezza > 
+Impostazioni sito > Accesso al plugin senza sandbox  e impostare su 
+"Chiedi conferma quando un sito vuole utilizzare un  plug-in per 
+accedere al tuo computer (opzione consigliata)". 
+- Impostare il browser in modo tale da non salvare le  password. Diversamente 
+se strettamente necessario, utilizzare un meccanism o di master password 
+conforme allo standard UCSC 4: 
+o Firefox: sia per Mac che per Windows - andare nel m enu Firefox > 
+                                                           
+4 https://its.ucsc.edu/security/passwords.html 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 89  a 141  
+ 
+Preferenze (Mac) Opzioni ( Windows ) > Privacy e sicurezza  > sezione 
+Privacy del browser > Credenziali e password. Desel ezionare la casella 
+di controllo "Chiedi se salvare le credenziali di a ccesso ai siti Web". 
+o Firefox: per l’utilizzo di una master password, se è necessario salvare le 
+password, impostare una password Master in modo che  le password 
+salvate non siano facilmente accessibili a chiunque  abbia accesso al 
+sistema. Sia per Mac che per Windows- andare nel me nu Firefox > 
+Preferenze (Mac) Opzioni (Windows) > Privacy e sicu rezza > sezione 
+Privacy del Browser > Credenziali e password. Selez ionare "Utilizza una 
+password principale". 
+o Safari: andare nel menu Safari > Preferenze > Sched a Riempimento 
+automatico e deselezionare la casella "Nomi utente e password". 
+o Edge: andare nel menu Impostazioni > Impostazioni a vanzate > Privacy 
+e servizi > “Offri la possibilità di salvare le pas sword” e impostare a 
+Disattivato e “Salva i dati immessi nei moduli” a D isattivato. 
+o Internet Explorer: andare nel menu Strumenti > Opzi oni Internet > 
+Scheda Contenuto e fare clic sul pulsante Impostazi oni di 
+“completamento automatico” e deselezionare la casel la "Nome utente 
+e password sui moduli". 
+o Internet Explorer: IE non ha una funzione master pa ssword, ma 
+sarebbe opportuno disabilitare la funzione di compl etamento 
+automatico per le password. Vedere l’indicazione pr ecedente. 
+o Google Chrome: andare nel menu Impostazioni > Compi lazione 
+automatica > Password e disattivare "Chiedi di salv are le password". 
+- Disabilitare i third-party cookie. 
+o Firefox: sia per Mac che per Windows - andare nel m enu Firefox > 
+Preferenze (Mac) Opzioni (Windows) > Privacy e sicu rezza > Blocco 
+contenuti. Seleziona "Personalizzato" e imposta i c ookie per bloccare 
+"Traccianti di terze parti". Abilitare anche i cont rolli per bloccare i 
+criptominer e le Fingerprinter. 
+o Edge: andare nel menu Impostazioni > Impostazioni a vanzate > 
+“Privacy e servizi” quindi attivare “Invia richiest e Do Not Track”, 
+disattivare “Mostra suggerimenti per la ricerca e i  siti durante la 
+digitazione”, impostare i Cookie su “Blocca solo i cookie di terze parti”, 
+disattivare “Usa la previsione della pagina per vel ocizzare 
+l’esplorazione, migliorare la lettura e migliorare l’esperienza nel 
+complesso” e abilitare “Proteggi il PC da siti e do wnload dannosi con il 
+filtro SmartScreen”. 
+o Internet Explorer: andare nel menu Strumenti > Opzi oni Internet > 
+scheda Privacy e fare clic sul pulsante "Avanzate".  Selezionare la 
+casella "Accetta" per i cookie dei siti Web visuali zzati e il pulsante 
+"Chiedi conferma" per i cookie di terze parti. Il p ulsante "Accetta 
+sempre i cookie della sessione" non dovrebbe essere  selezionato. Fare 
+clic su OK. Al termine, fare clic sul pulsante Appl ica. 
+o Google Chrome: andare nel menu Impostazioni > Avanz ate > Privacy e 
+sicurezza > Impostazioni sito > Cookie > e attivare  "Consenti ai siti di 
+salvare e leggere i dati dei cookie (opzione consig liata)" e "Blocca 
+cookie di terze parti". 
+- Impostazioni specifiche per tipologia di browser: 
+o Firefox: installare l’estensione del browser “uBloc k Origin” per il blocco 
+degli annunci. 
+o Firefox: contenuto ingannevole e protezione da soft ware pericoloso - 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 90  a 141  
+ 
+sia per Mac che per Windows  - andare  nel  menu Firefox >  Preferenze 
+(Mac) Opzioni (Windows) > Privacy e sicurezza > sez ione Sicurezza. 
+Spuntare "Blocca contenuti a rischio e ingannevoli" , "Blocca download 
+a rischio" e "Avvisa in caso di software indesidera to e non scaricato 
+abitualmente". 
+o Firefox: raccolta e utilizzo dei dati Firefox – sia  per Mac che per 
+Windows - andare nel menu Firefox > Preferenze (Mac ) Opzioni 
+(Windows) > Privacy e sicurezza > Raccolta e utiliz zo dati di Firefox. 
+Deselezionare "Consenti a Firefox di inviare a Mozi lla dati tecnici e 
+relativi all’interazione con il browser", "Consenti  a Firefox di installare 
+e condurre studi" e "Consentire a Firefox di inviar e segnalazioni di 
+arresto anomalo in sospeso". 
+o Safari: disabilitare Java. Andare nel menu Safari >  Preferenze > Scheda 
+Sicurezza e impostare il segno di spunta per abilit are "Avvisa quando 
+visiti un sito web fraudolento" e un segno di spunt a per "Abilita 
+JavaScript". 
+o Safari: privacy - andare nel menu Safari > Preferen ze > scheda Privacy 
+e selezionare "Prevent cross-site tracking". 
+o Safari: apertura in modo sicuro dei file scaricati - andare nel menu 
+Safari > Preferenze > scheda Generale. Deselezionar e la casella di 
+controllo che indica "Open ‘safe’ files after downl oading". 
+o Edge: disattivare Flash – andare nel menu Impostazi oni > Impostazioni 
+avanzate > “Usa Adobe Flash Player” e impostare su Disattivato. 
+o Internet Explorer: impostare le security zones, ovv ero i livelli di 
+sicurezza per le aree “Internet”, “Intranet locale” , “Siti attendibili” e 
+“Siti con restrizioni”. 
+o Internet Explorer: disattivare il filtro ActiveX - aprire IE, premere il 
+tasto Alt, aprire il menu Strumenti, e cliccare su “ActiveX Filtering”, se 
+non è già spuntato. 
+o Internet Explorer: suggerimenti aggiuntivi – IE dis pone di zone di 
+sicurezza che possono essere impostate per diversi livelli di protezione. 
+Aprire IE, premere il tasto Alt, aprire il menu Str umenti, e cliccare su 
+“Opzioni Internet”, selezionare la scheda “Sicurezz a”. Si consiglia di 
+impostare il livello di sicurezza per l’area “Inter net” su ALTA. È inoltre 
+possibile identificare i "Siti attendibili" e impos tarli su MEDIO-ALTA. 
+o Google Chrome: andare nel menu Impostazioni > Avanz ate > Privacy e 
+sicurezza > Impostazioni sito > JavaScript e attiva re "Consentita 
+(opzione consigliata)". 
+o Google Chrome: fare in modo che per l’esecuzione di  contenuti Flash 
+venga chiesto il consenso - andare nel menu Imposta zioni > Avanzate > 
+Privacy e sicurezza > Impostazioni sito > Flash > e  impostare su "Chiedi 
+prima". 
+o Google Chrome: download automatici - andare in Impo stazioni > 
+Avanzate > Privacy e sicurezza > Impostazioni sito > Download 
+automatici e impostare su "Chiedi conferma quando u n sito tenta di 
+scaricare automaticamente file dopo il primo file ( opzione 
+consigliata)". 
+o Google Chrome: accesso alla videocamera - andare ne l menu 
+Impostazioni > Avanzate > Privacy e sicurezza > Imp ostazioni sito > 
+Videocamera e impostare su "Chiedi prima di acceder e (opzione 
+consigliata)". 
+o Google Chrome: accesso al microfono: andare nel men u Impostazioni 

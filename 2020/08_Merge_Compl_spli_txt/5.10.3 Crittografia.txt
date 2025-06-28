@@ -1,0 +1,51 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 133  a 141  
+ 
+politiche configurabili , ad es. In base alla tipologia ( macro, scripts, oggetti 
+“embedded”, applets, etc.), e altre caratteristiche . 
+ 
+5.10.2  Autorizzazione 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.3], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+Autorizzazione  
+Minaccia  - Attacchi all’integrità dei sistemi.  
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+Contromisure  Proteggere i parametri di sicurezza e la definizion e delle “trusted location” da  
+eventuali cambiamenti apportati dagli utenti finali . 
+Tali configurazioni devono essere impostabili solo da un’utenza amministrativa. 
+ 
+5.10.3  Crittografia 
+Ai principi generali già introdotti nel paragrafo [ rif.5.1.4], si aggiungono le seguenti indicazioni p er il 
+contesto specifico: 
+Crittografia  
+Minaccia  - Accesso non autorizzato alle informazioni  
+- Attacchi all’integrità delle informazioni. 
+- Falsificazione di identità. 
+Contromisure  Si tengano presenti i seguenti strumenti integrati  in OpenOffice:  
+- L’utilizzo di firma digitale per la protezione dell 'integrità dei documenti prodotti 
+(attraverso l’azione “File  Digital Signatures”); 
+- L’utilizzo di meccanismi per la protezione della co nfidenzialità dei documenti 
+prodotti eseguendone la cifratura (attraverso l’azi one "Save With Password"). 
+ 
+5.10.4  Procedure 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.7], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+Patching  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità dei sistemi. 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione 
+(malware). 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali.  
+Contromisure  Dalla versione 2.1, OpenOffice ha incluso una funzi onalità che segnala se è disponibile 
+una nuova versione. Per attivare questa opzione: Tools  Options  Online Update  
+Check for updates automatically  
+È possibile ricevere alerts via email su vulnerabil ità di sicurezza risolte (vedi references: 
+[1]); 
+È possibile ricevere informazioni complete sugli al ert per tutte le vulnerabilità di 
+sicurezza risolte (vedi references: [2 ]). 
+Tutte le patch di sicurezza devono essere installat e prontamente.  
+References  [1] Security Alerts, https://www.openoffice.org/security/alerts.html  
+[2] Security Bulletin, https://www.openoffice.org/s ecurity/bulletin.html  

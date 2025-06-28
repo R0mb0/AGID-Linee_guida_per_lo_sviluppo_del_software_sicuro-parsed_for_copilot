@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 88  a 156  
+ 
+inoculato ed eseguito nel periodo in cui dura la se ssione. Gli XSS stored, viceversa, sono script male voli che 
+sono stati memorizzati su una base dati e vengono p ertanto incorporati nella pagina ( e quindi eseguit i) 
+ogni volta che qualcuno ne fa richiesta. 
+Siamo di fronte ad DOM based XSS se i dati malevoli , contenenti tag HTML e script, vengono incorporati  
+direttamente nell'HTML della pagina, in modo che il  browser visualizzerà queste informazioni come part e 
+della pagina web eseguendo in maniera silente gli s cript. Chi visualizza la pagina modificata in modo 
+fraudolento non sarà in grado di riconoscere l’inga nno. 
+ 
+Come difendersi 
+• Per prima cosa è necessatio convalidare tutti gli i nput, indipendentemente dalla fonte: la 
+convalidazione dovrebbe essere basata su una white list (una lista di valori ammessi), per cui 
+verrebbero accettati solo i dati compresi e rifiuta ti tutti gli altri. 
+• Oltre a controllare che i valori siano compresi fra  quelli ammessi o che rientrino in un determinato 
+intervallo di validità, occorre verificare che corr ispondano alle attese anche il tipo, la dimensione e 
+il formato dei dati in input. 
+• Un altro accorgimento consiste nell’encoding di tut ti i dati dinamici, cioè nella neutralizzazione dei  
+caratteri pericolosi, in modo da rendere inattivi e ventuali inserimenti malevoli. La codifica 
+dovrebbe essere sensibile al contesto, in base al t ipo di dato che si vuole neutralizzare: se ci si 
+aspetta che possa esserci codice HTML abusivo, occo rre codificare gli eventuali tag HTML, se ci si 
+potrebbe trovare di fronte a uno script, allora bis ogna codificare gli elementi sintattici di Javascri pt, 
+ecc. 
+• È opportuno attivare lo standard Content Security P olicy (CSP) in modo che solo le risorse scaricate 
+da fonti attendibili possano essere utilizzate. Imp ostare l’attributo HTTPOnly a true per impedire il 
+furto dei cookie. 
+• La maggior parte dei template di Python oggi fanno l’escaping dell’input, anche se questa funzione 
+può essere disattivata. Il modulo flask fa l‘escapi ng dell’HTML. 
+ 
+Esempio: 
+Codice non corretto: 
+@app.route("/") 
+def hello(): 
+  name = request.args.get('namè) 
+  return "Hello %s" % name 
+Codice corretto: 
+from flask import escape 
+@app.route("/") 
+def hello(): 
+  name = request.args.get('namè) 
+  return "Hello %s" % escape(name) 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/79.html, 
+CWE-79: Improper Neutralization of Input During Web  Page Generation ('Cross-site Scripting'). 
+7.5.2  Code Injection 
+Come riconoscerla 
+Le vulnerabilità legate all'iniezione di codice sul  lato server sorgono quando un'applicazione incorpo ra dati 
+controllabili da parte dell'utente in una stringa c he viene valutata dinamicamente da un interprete di  
+codice. Se i dati dell'utente non sono rigorosament e convalidati, un malintenzionato può utilizzare l’ input 
+per iniettare codice arbitrario che verrà eseguito dal server. 
+Le vulnerabilità legate all'iniezione di codice sul  lato server sono in genere molto gravi e portano a  una 
+completa compromissione dei dati, delle funzionalit à dell'applicazione e spesso persino del server che  

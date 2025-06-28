@@ -1,0 +1,45 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 94  a 137  
+ 
+• Convalida del modello architetturale; 
+• Verifica dell’esistenza di una contromisura per ogn i potenziale minaccia identificata. 
+ 
+I tool a supporto di questa fase sono stati identif icati nel paragrafo 6.4.2.  
+ 
+9.3  Implementazione di applicazioni sicure 
+Le azioni di sicurezza che devono essere intraprese  in questa fase possono essere così sintetizzate:  
+• Data Validation:  verificare la presenza di vulnerabilità che posson o riguardare eventuali dati 
+corrotti in ingresso e che possono portare a un com portamento anomalo dell’applicazione; 
+• Control Flow : verificare i rischi collegati all’assenza di spec ifiche sequenze di operazioni che, se non 
+eseguite nel corretto ordine, possono portare a vio lazioni sulla memoria o sull’uso scorretto di 
+determinati componenti; 
+• Analisi Semantica : rilevare eventuali problematiche legate all’uso p ericoloso di determinate 
+funzioni o API (es. funzioni deprecate); 
+• Controllo Configurazioni : verificare i parametri intrinseci di configurazio ne dell’applicazione; 
+• Buffer Validation : verificare la presenza di buffer overflow sfrutta bile attraverso la scrittura o la 
+lettura di un numero di dati superiore alla reale c apacità del buffer stesso. 
+ 
+L’esame del codice sorgente applicativo deve portar e alla produzione, mediante la Static Analysis, del le 
+seguenti tipologie di documenti: 
+• Report delle Vulnerabilità riscontrate : report di dettaglio delle vulnerabilità riscontra te nella fase 
+di analisi statica del codice tramite gli strumenti  a supporto; 
+• Remediation Plan : report che analizza i falsi positivi ed indirizza  la risoluzione delle problematiche 
+riscontrate nell’analisi stessa. 
+ 
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo SAST: 
+ 
+ 
+ 
+Figura 20 - Input e Output della fase Static Analysi s 
+ 
+9.3.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.5.1 sono stati presentati i tool a supporto di questa fase. Si riporta di seguito un e stratto: 
+• closed source 
+o IBM App Scan (versione SAST), 
+o Checkmarx, 
+o CodeDx, 
+o HP fortify. 
+

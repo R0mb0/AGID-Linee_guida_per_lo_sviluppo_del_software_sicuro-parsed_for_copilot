@@ -1,0 +1,55 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 105  a 156  
+ 
+appropriate autorizzazioni all'interno del codice. Quando il codice richiede autorizzazioni utilizzand o il 
+metodo Demand, CLR verifica che tutti i moduli che chiamano il codice in questione dispongano delle 
+autorizzazioni appropriate. Senza queste autorizzaz ioni, la richiesta non riesce. La verifica delle 
+autorizzazioni viene determinata eseguendo uno stac k-walk. È importante dal punto di vista dell'usabil ità e 
+della sicurezza che il codice riceva le autorizzazi oni minime necessarie per l'esecuzione. 
+Nell'esempio di codice riportato di seguito viene i llustrata una richiesta di autorizzazione di base: 
+ 
+[assembly :FileIOPermissionAttribute(SecurityAction.RequestMi nimum,Write= "C:\\test.tmp" )] 
+[assembly :PermissionSet(SecurityAction.RequestOptional,Unres tricted=false)] 
+ 
+Questo esempio indica al sistema di protezione del Framework .NET che il codice non dovrebbe essere 
+eseguito a meno che, non riceva l'autorizzazione a scrivere a C: \ test.tmp. Se il codice incontra sem pre 
+criteri di protezione che non concedono quest’autor izzazione, viene generata una PolicyException e il 
+codice non viene eseguito. Utilizzando questa richi esta, si può essere certi che il codice verrà esegu ito solo 
+se verrà concessa tale autorizzazione. 
+Questo esempio indica anche al sistema che non è ri chiesta alcuna autorizzazione aggiuntiva. Le 
+autorizzazioni di esecuzione non necessarie al codi ce possono portare a problemi di sicurezza. 
+Un altro modo per limitare le autorizzazioni che il  codice riceve, in base al criterio dei minimi priv ilegi, è 
+quello di elencare le autorizzazioni specifiche che  si desidera rifiutare.  
+7.6.10.4  Protezione dell'accesso ai metodi 
+.NET Framework fornisce un meccanismo denominato Co de Access Security (CAS), che consente di 
+applicare vari livelli di attendibilità a codice di verso in esecuzione nella stessa applicazione. 
+Alcuni metodi potrebbero non essere adatti per cons entire le chiamate da parte di codice arbitrario no n 
+attendibile. Potrebbero, infatti, fornire informazi oni limitate; potrebbero non eseguire il controllo degli 
+errori sui parametri; non verificare la correttezza  dei parametri; potrebbero funzionare in modo non 
+corretto o causare qualche problema. L'utente dovre bbe essere informato di questi casi e adottare le 
+misure appropriate per proteggerli. 
+In alcuni casi, potrebbe essere necessario limitare  i metodi che non sono destinati all'uso generalizz ato da 
+parte del pubblico, ma che devono comunque essere e sposti pubblicamente. Ad esempio, nel caso di 
+un'interfaccia che deve essere chiamata attraverso le proprie DLL e pertanto deve essere pubblica, ma che 
+non si vuole esporre pubblicamente, per evitare che  il suo punto d’ingresso possa essere sfruttato da 
+codice dannoso. Un altro motivo comune per limitare  un metodo non destinato all'uso pubblico (ma che 
+deve essere pubblico) consiste nell'evitare di dove r documentare e supportare quella che potrebbe esse re 
+un'interfaccia molto interna. 
+Il codice gestito (managed code) offre diverse poss ibilità per essere adeguatamente protetto: 
+Limitare l'ambito di accessibilità alla classe, all 'assembly o alle classi derivate, se queste sono af fidabili. 
+Questo è il modo più semplice per limitare l'access o al metodo. Si noti che, in generale, le classi de rivate 
+possono essere meno affidabili della classe da cui derivano, sebbene in alcuni casi condividano l'iden tità 
+della classe genitore. In particolare, non dedurre il grado di sicuerzza dalla parola chiave protected , che 
+viene utilizzata in un contesto non necessariamente  relativo alla sicurezza. 
+Limitare l'accesso del metodo a determinati chiaman ti. Il criterio di selezione può essere il nome sic uro 
+(strong name), l’identità di chi lo pubblica, la zo na, ecc. 
+Limitare l'accesso del metodo ai chiamanti che disp ongono di specifiche autorizzazioni. 
+Analogamente la sicurezza delle dichiarazioni conse nte di controllare l'ereditarietà delle classi. È p ossibile 
+utilizzare InheritanceDemand per eseguire le seguen ti operazioni: 
+• Imporre che le classi derivate abbiano un'identità o un'autorizzazione specificate. 
+• Imporre alle classi derivate di sostituire metodi s pecifici per avere un'identità o un'autorizzazione 
+specifici. 
+L'esempio seguente illustra come proteggere una cla sse pubblica, limitando l'accesso, con la richiesta  che i 
+chiamanti si firmino con un nome sicuro specifico.  
+ 

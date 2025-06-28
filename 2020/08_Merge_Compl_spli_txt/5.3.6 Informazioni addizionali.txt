@@ -1,0 +1,53 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 93  a 141  
+ 
+5.3.6  Informazioni addizionali 
+Riferimenti CERT   
+CERT/CC  - Techn ical Trends in Phishing Attacks, https://www.us -
+cert.gov/sites/default/files/publications/phishing_ trends0511.pdf 
+US -CERT  - Evaluating Your Web Browser's Security Settings , http://www.us -
+cert.gov/ncas/tips/st05-001 
+- Browsing Safely: Understanding Active Content and C ookies, http://www.us-
+cert.gov/ncas/tips/st04-012 
+- Understanding Website Certificates, http://www.us-c ert.gov/ncas/tips/st05-010 
+- Understanding Internationalized Domain Names, http: //www.us-
+cert.gov/ncas/tips/st05-016 
+- Avoiding Social Engineering, http://www.us-cert.gov /ncas/tips/st04-014 
+ 
+Riferimenti Prodotti   
+Microsoft Edge  Edge è il browser presentato da Microsoft con il si stema operativo Windows 10  
+e rappresenta il successore di Internet Explorer (M SIE).  
+Nato come browser integrato con Windows 10 (tecnica mente un’app UWP, 
+ossia Universal Windows Platform), recentemente è s tato ricostruito a partire da 
+Chromium, diventando un applicativo a se stante. 
+https://docs.microsoft.com/it-it/deployedge/securit y-overview 
+Mozilla Firefox  Mozilla Firefox è un popolare browser di terze part i per Windows, Mac e Linux. 
+Per informazioni su come mantenere i dati protetti e al sicuro con la navigazione 
+privata di Firefox, le funzioni di password e altre  impostazioni di protezione, 
+visitare il sito: 
+https://support.mozilla.org/en-US/products/firefox/ privacy-and-security 
+Apple Safari  È il browser più usato nel sistema operativo macOS.  Per informazioni visitare la 
+pagina: https://www.apple.com/it/safari/  
+Google Chrome  Per informazioni sulla sicurezza di Chrome (caratte ristiche e funzionalità) si 
+rinvia alla pagina (selezionare le opzioni visualiz zate nell'argomento): 
+https://www.google.com/intl/it/chrome/security 
+Opera  Browser snello che nella sua ultima versione è stat o costruito sulla base di 
+Chromium. Ne esiste una versione per le pattaforme “mobile”, chiamato Opera 
+Mini. 
+Per informazioni relative a privacy e sicurezza vis itare la pagina: 
+https://help.opera.com/en/latest/security-and-priva cy 
+Chromium  Chromium è un progetto open source volto a realizza re un browser sicuro, 
+veloce e stabile per tutti gli utenti di Internet. 
+Per informazioni relative alla sicurezza visitare l a seguente pagina: 
+https://www.chromium.org/Home/chromium-security 
+ 
+5.4  Sicurezza delle Postazioni di lavoro 
+5.4.1  Architettura 
+Protezione reti extranet (ad es., Internet)  
+Minaccia  Furto di credenziali di autenticazione  
+Contromisure  Provvedere ad un'adeguata protezione dell'infrastruttura di rete nella quale è 
+operativa la PdL, mediante la configurazione di uno  o più dispositivi (firewall, proxy 
+server, etc.) di protezione dalle reti esterne (Int ernet e reti di partner e fornitori). 
+Prevedere inoltre una segmentazione della rete inte rna che isoli tramite firewall le PdL 

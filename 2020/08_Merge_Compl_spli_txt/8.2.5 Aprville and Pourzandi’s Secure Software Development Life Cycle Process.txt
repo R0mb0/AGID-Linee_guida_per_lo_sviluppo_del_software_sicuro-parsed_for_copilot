@@ -1,0 +1,50 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 85  a 137  
+ 
+requisiti e di disegno sono strettamente collegati.  Il modello propone quattro sessioni di progettazio ne tra 
+gli sviluppatori e gli stakeholders del software. L a prima e la seconda sessione modellano le caratter istiche 
+principali del software e le loro relazioni, identi ficando i requisiti di alto livello di riservatezza , integrità e 
+disponibilità.  Nella terza sessione vengono identi ficati rischi, vulnerabilità e minacce per il softw are. La 
+quarta sessione, orientata alla progettazione, indi ca i requisiti di sicurezza per rimuovere le vulner abilità 
+identificate. 
+AEGIS suggerisce anche una metodologia di analisi d ei rischi da utilizzare durante le sessioni 3 e 4 f inalizzate 
+alla progettazione. Questo metodo di analisi dei ri schi ha le seguenti fasi principali: 
+• Determinazione delle vulnerabilità. 
+• Determinazione del costo e della probabilità di un attacco in ambiente distribuito (inclusi i ruoli 
+delle persone coinvolte e i task che verranno esegu iti sul software). 
+• Selezione dei requisiti di sicurezza basate sulle i ndicazioni dell’esperto di sicurezza. 
+• Valutazione costi-benefici dei requisiti di sicurez za selezionati. 
+• Il confronto tra il costo di ogni attacco, commisur ato con la probabilità che possa verificarsi, e il 
+costo dei requisiti di sicurezza. 
+• Selezione dei requisiti di sicurezza sulla base del l’efficacia e dei costi. 
+ 
+8.2.4  Secure Software Development Model (SSDM) 
+SSDM 33  è un processo che incorpora diverse attività di si curezza in un modello SDLC a cascata (cascade). 
+Secondo SSDM, la modellazione delle minacce dovrebb e essere eseguita in fase di specifica dei requisit i. Il 
+risultato di questa modellazione dovrebbe essere un a check-list contenente tutte le potenziali vulnera bilità 
+e attacchi. Tali elenchi di fatto dovrebbero essere  dati in input alla fase di sviluppo. 
+Dopo la modellazione delle minacce, è necessario de finire una policy che indichi chiaramente come 
+saranno raggiunti gli obiettivi di sicurezza prefis sati. 
+Tale policy, come sottolineato dal SSDM, è un insie me di decisioni di gestione di alto livello come ad  
+esempio minimizza l’impatto degli errori in tutto i l processo di sviluppo, correggendoli non appena ve ngono 
+rilevati. I test di penetrazione rappresentano, nel  modello SSDM, l’unica attività SSD per la fase sec urity 
+assurance. 
+ 
+8.2.5  Aprville and Pourzandi’s Secure Software Developmen t Life Cycle Process 
+[4]Aprville e Pourzandi 34  propongono un processo SSDLC sulla base della loro  esperienza, maturata durante 
+lo sviluppo di un software di instant messaging. Se condo il loro processo [5], il primo passo nella fa se di 
+specifica dei requisiti è quello di individuare gli  obiettivi di alto livello, per quanto riguarda la sicurezza 
+(riservatezza, integrità e disponibilità) del softw are in fase di sviluppo, considerando il suo ambien te di 
+distribuzione. Per gli obiettivi di sicurezza a bas so livello, la modellazione delle minacce dovrebbe essere di 
+supporto nella costruzione di un insieme di requisi ti di sicurezza. La priorità di tali requisiti può essere 
+                                                                                                                                                                                                 
+32  I. Flechais, C. Mascolo, and M.A. Sasse, “Integrat ing Security and Usability into the Requirements an d Design Process,” 
+International Journal of Electronic Security and Di gital Forensics, Inderscience Publishers, Geneva, S witzerland, 2007, vol. 1, no. 1, 
+pp. 12-26. 
+33  A.S. Sodiya, S.A. Onashoga, and O.B. Ajayi, “Towar ds Building Secure Software Systems,” Issues in Inf orming Science and 
+Information Technology, Informing Science Institute , California, USA, 2006, vol. 3, pp. 635-646.  
+34  A. Apvrille and M. Pourzandi, “Secure Software Dev elopment by Example,” IEEE Security and Privacy, IE EE CS Press, 2005, vol. 3, 
+no. 4, pp. 10-17. 

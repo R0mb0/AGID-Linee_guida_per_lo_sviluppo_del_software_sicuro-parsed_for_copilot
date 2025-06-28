@@ -1,0 +1,58 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 130 a 132 
+ 
+dell'ambiente o degli ambienti a rischio per la sicurezza dell' informazione 
+di un fornitore di servizi pubblici in -the-cloud.  
+Requisiti e base 
+normativa  I controlli riguardano le politiche di sicurezza dell' informazione, le 
+organizzazioni per la sicurezza delle informazioni, la sicurezza delle risorse 
+umane, la gestione degli asset, il controllo degli accessi, la cri ttografia, la 
+sicurezza fisica e ambientale, la sicurezza delle operazioni, la sicurezza 
+delle comunicazioni, l’acquisizione dello sviluppo e la manutenzione del 
+sistema, le relazioni con i fornitori, la gestione degli incident i relativi alla 
+sicurezza del l'informazione, la gestione della continuità, il rispetto dei 
+requisiti legali e contrattuali.  In ANNEX A s ono previsti nuovi controlli, 
+classificati in base ai principi di riservatezza della norma ISO/IEC 29100.  
+Processo di 
+certificazione  Vedere tabella ISO/IEC 27001  
+Accreditamento 
+dell'organismo di 
+certificazione  Vedere tabella ISO/IEC 27001  
+Durata del 
+processo  Vedere tabella ISO/IEC 27001  
+Monitoraggio post -
+certificazione  Vedere tabella ISO/IEC 27001  
+Periodo di validità 
+della certificazione  Vedere tabella ISO/IEC 27001  
+Risorse  Vedere tabella ISO/IEC 27001  
+Certificazioni 
+rilasciate  Vedere tabella ISO/IEC 27001  
+9.7 A.7 – Sistema PrivacyMark  
+Ambito  Descrizione  
+Campo di 
+applicazione e 
+oggetto  Il sistema PrivacyMark è ge stito da JIPDEC, un' organizzazione Giapponese 
+senza scopo di lucro che ha l' obiettivo di sviluppare e proporre meccanismi 
+e infrastrutture quadro per garantire la sicur ezza e la protezione, nonché 
+l'uso delle informazioni informatiche e digitali.  
+Requisiti e base 
+normativa  Il Sistema PrivacyMark è basato sullo standard tecnico JISQ15001 
+riguardante la protezione delle informazioni personali nei sistemi di 
+gestione.  I requisiti del JISQ15001:2006 riguardano:  
+a. i requisiti generali,  
+b. la politica di protezione dei dati  personali,  
+c. il pian o (specifica  dei dati personali, leggi e linee guida stabilite dallo Stato, 
+ruoli, responsabilità, ecc.) ,  
+d. l'attuazione e il funzionamento (principi di acquisizione, utilizzo e fornitura 
+dei dati personali, controlli appropriati, diritt i delle persone) ,  
+e. la documentazione ,  
+f. il meccanismo di reclamo,  
+g. le ispezioni ,  
+h. le azioni correttive e preventive.  
+Processo di 
+certificazione  La valutazione della conformità del richiedente ai requisiti della norma è 
+costituita da  due componenti principali:  una valutazione della 
+documentazione e una valutazione in loco.  L'obiettivo della valutazione 

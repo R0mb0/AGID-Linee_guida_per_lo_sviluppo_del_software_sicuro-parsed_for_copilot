@@ -1,0 +1,39 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 150  a 156  
+ 
+ 
+7.12.2  SQL Injection 
+Come riconoscerla 
+L’SQL Injection nasce dalla mancata/non corretta co difica dei dati di input/output. Partendo dalla que ry di 
+esempio riportata di seguito: 
+ctx := context.Background()  
+customerId := r.URL.Query().Get( "id" )  
+query := "SELECT number, expireDate, cvv FROM creditcards WH ERE customerId = "  + 
+customerId 
+row, _ := db.QueryContext(ctx, query) 
+ 
+Quando viene fornito un customerId valido, la query  restituisce l’elenco delle carte di credito del cl iente. 
+Tuttavia, se customerId non è un valore, ma una str inga (concatenazione di diversi valori/simboli) com e 
+nell’esempio che segue: 
+ 
+SELECT number , expireDate, cvv  FROM creditcards  WHERE customerId =  1 OR 1=1 
+ 
+La query restituirebbe (a meno di opportune verific he dei dati immessi in input) tutti i record della tabella 
+relativamente a tutti i clienti censiti poiché la c ondizione 1 = 1 sarà ‘truè per qualsiasi record. 
+Come difendersi 
+Impostare i placeholder: 
+ 
+ctx := context.Background()  
+customerId := r.URL.Query().Get( "id" )  
+query := "SELECT number, expireDate, cvv FROM creditcards WH ERE customerId = ?" 
+stmt, _ := db.QueryContext(ctx, query, customerId) 
+ 
+La sintassi è specifica: 
+MySQL  PostgreSQL  Oracle  
+   
+WHERE col = ? WHERE col = $1 WHERE col = :col 
+VALUES(?, ?, ?) VALUES($1, $2, $3) VALUES(:val1, :val2, :val3) 
+   
+ 
+

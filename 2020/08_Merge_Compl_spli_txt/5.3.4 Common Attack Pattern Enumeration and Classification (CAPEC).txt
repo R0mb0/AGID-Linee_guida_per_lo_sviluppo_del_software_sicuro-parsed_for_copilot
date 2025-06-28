@@ -1,0 +1,32 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 43  a 137  
+ 
+ 
+ 
+Figura 7- CWE Top 25 [Fonte: https://cwe.mitre.org/top25/archive/2019/2019_cwe_top25.html ] 
+ 
+5.3.4  Common Attack Pattern Enumeration and Classificatio n (CAPEC) 
+CAPEC è un'iniziativa co-sponsorizzata dal NCSD del l’US DHS e guidata dalla Cigital 15 . Costruttori di software 
+sicuro devono proteggersi da importanti vulnerabili tà potenziali. Per identificare e mitigare le vulne rabilità 
+relative al software, la community di sviluppo ha b isogno di capire la prospettiva dell'attaccante e g li 
+approcci utilizzati per sfruttare il software. 
+Gli schemi di attacco sono le descrizioni di metodi  comuni per lo sfruttamento del software, fornendo sia la 
+prospettiva che la guida dell'attaccante sui modi p er mitigare il loro effetto. Essi derivano dal conc etto di 
+pattern design applicato in un distruttivo, piuttos to che costruttivo, contesto e sono generati da un’ analisi 
+approfondita di specifici esempi di casi del mondo reale. 
+Questa iniziativa mira a fornire un catalogo a disp osizione del pubblico di schemi di attacco, insieme  ad uno 
+schema di classificazione e tassonomia completo. La  filosofia è di evolvere il catalogo con la parteci pazione 
+e i contributi pubblici e così consolidare un mecca nismo standard per l'identificazione, la raccolta, la 
+raffinazione, e la condivisione di modelli di attac co nella community software. 
+URL  https://capec.mitre.org  
+Country of HQ location  
+Geographic Scope  US  
+National 
+Type  Government  
+ 
+                                                           
+15  https://www.synopsys.com/software-integrity.html 
+

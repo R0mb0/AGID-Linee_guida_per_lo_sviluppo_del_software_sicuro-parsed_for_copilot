@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 133  a 156  
+ 
+Se necessario ricevere XML dall'utente, assicurarsi  che il parser XML sia limitato e vincolato. In par ticolare, 
+disabilitare l'analisi e la risoluzione delle entit à DTD, applicare uno schema XML rigoroso sul server  e 
+convalidare l'XML in input di conseguenza. 
+Poiché tutte le funzionalità di analisi XML offerte  da PHP si basano sulle librerie libxml, esiste una  funzione 
+che impedisce il caricamento di queste entità: 
+<?php libxml_disable_entity_loader(true); ?> 
+La funzione libxml_disable_entity_loader indica al parser di non tentare di interpretare i valori dell e entità 
+nell'XML in entrata e di lasciarne intatti i riferi menti. Se si sta usando SimpleXML, questa è davvero  l'unica 
+scelta per prevenire un attacco XXE nell'XML in arr ivo.  
+Fortunatamente, gli altri due metodi di analisi XML  offrono alcune funzionalità che possono essere uti li a  
+proteggere l’applicazione, pur consentendo l'espans ione delle entità XML. 
+loadXML($badXml,LIBXML_DTDLOAD|LIBXML_DTDATTR); ?>  
+In entrambi i casi, stiamo aggiungendo alcuni valor i costanti predefiniti (per nome) che indicano al p arser di 
+non consentire una connessione di rete durante il c aricamento (LIBXML_NONET) o di provare ad analizzar e 
+l'XML in base al DTD (LIBXML_DTDLOAD|LIBXML_DTDATTR ). Entrambi questi metodi contribuiscono alla 
+sicurezza dell’applicazione rispetto ai problemi di  XXE. 
+7.9.12  Unsecure deserialization 
+Come riconoscerla 
+La “unsecure deserialization” è una vulnerabilità c he si verifica quando un’applicazione utilizza il p rocesso 
+di deserializzazione di dati serializzati non atten dibili. Tra la serializzazione da parte del process o originario 
+e la deserializzazione da parte del processo di des tinazione, i dati serializzati possono aver subito 
+inserimenti di codice dannoso. 
+In seguito a deserializzazione di dati inquinati co n porzioni di codice malevolo, l’attaccante può inf liggere un 
+attacco di denial of service (DoS) o eseguire codic e arbitrario.  
+Come difendersi 
+Evitare di utilizzare le tecniche di serializzazion e/deserializzazione. Se è strettamente necessario u tilizzarle, 
+verificare che il dato serializzato non possa esser e inquinato e manomesso durante il suo percorso. Ad  
+esempio, garantire la trasmissione attraverso una c onnessione sicura e criptata. 
+Controllare l'uso della funzione unserialize() e ri vedere come vengono accettati i parametri esterni. 
+Utilizzare un formato di scambio di dati standard s icuro come JSON, tramite json_decode() e json_encod e(), 
+se è necessario passare all'utente dati serializzat i. 
+ 
+Esempio: 
+Formato non corretto 
+Creazione di un utente con una deserializzazioen. 
+//.. JSON Validity Checks ..// 
+$user_params = json_decode($HTTP_RAW_POST_DATA); 
+$user = unserialize($user_params); 
+Formato corretto 
+Creazione di un utente senza deserializzazioen  
+//.. JSON Validity Checks ..// 
+$user_params = json_decode($HTTP_RAW_POST_DATA); 
+//.. Parameter Checks ..// 
+$name = $user_params['Namè]; 
+$email = $user_params['Email']; 
+$phone = $user_params['Phonè]; 
+$user = new User($name, $email, $phone);  
+ 
+Per maggiori informazioni: http://cwe.mitre.org/data/definitions/502.html  

@@ -1,0 +1,41 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 48  a 137  
+ 
+ 
+Figura 11 - Gestione del rischio nel ciclo di vita d el Software 
+• Avvio del progetto/Requisiti. La valutazione prelim inare del rischio è volta a definire l'ambiente di 
+minaccia in cui opererà il prodotto o il sistema. Q uesta valutazione è seguita da una prima 
+identificazione dei controlli di sicurezza richiest i che devono essere soddisfatti per proteggere il 
+sistema nell'ambiente operativo previsto. 
+• Disegno. I requisiti di sicurezza del sistema vengo no identificati attraverso un processo formale di 
+Risk Assessment. L'analisi parte dalla valutazione del rischio effettuata nella fase precedente di 
+avvio/inizializzazione e viene approfondita per il contesto specifico. Durante questa fase vengono 
+rivisti attentamente i requisiti e le aspettative d i sicurezza e privacy al fine di identificare probl emi 
+di sicurezza e rischi per la privacy. In questo pas saggio vengono identificate le vulnerabilità presen ti 
+nell'ambiente software o derivanti dall'interazione  con altri sistemi (Security Assessment). Una 
+volta identificati i rischi, devono essere valutati  in merito alla loro potenziale gravità dell'impatt o e 
+alla probabilità che si verifichino (Risk Assessmen t). Nel processo di valutazione è necessario 
+definire le priorità per l'attuazione del piano di gestione dei rischi. La mitigazione del rischio (Ri sk 
+Mitigation) è il piano delle azioni volte a ridurre  o eliminare le priorità più alte. Lo scopo è di 
+valutare la progettazione del sistema, i requisiti dichiarati e i requisiti minimi di sicurezza deriva nti 
+dal processo di categorizzazione della sicurezza al  fine di determinarne l’efficacia delle azioni di 
+mitigazione per i rischi previsti. I risultati dovr ebbero mostrare come i controlli di sicurezza speci fici 
+forniscono la protezione appropriata o evidenziare le aree in cui è necessaria un'ulteriore 
+pianificazione. La valutazione del rischio deve ess ere eseguita prima dell’approvazione delle 
+specifiche progettuali (design specifications) poic hé potrebbe fornire specifiche aggiuntive o 
+ulteriori elementi da valutare per le specifiche id entificate (ad esempio si dovrebbe considerare 
+come il sistema potrebbe influenzare altri sistemi a cui sarà direttamente o indirettamente 
+collegato; ciò implica che ci potrebbero essere con trolli comuni che devono essere ereditati 
+dall’applicazione in oggetto o ulteriori rischi che  devono necessariamente essere mitigati).  
+• Implementazione. In questa fase è necessario determ inare i rischi residui accettabili (le specifiche 
+possono imporre oneri e costi eccessivi se i rischi  residui accettabili non sono conosciuti). 
+L'obiettivo del processo di valutazione della sicur ezza è verificare che il sistema sia conforme ai 
+requisiti funzionali e di sicurezza e operi all'int erno di un livello accettabile di rischio residuo p er la 
+sicurezza. 
+• Monitoraggio continuo. L'obiettivo finale del monit oraggio continuo è determinare se i controlli di 
+sicurezza continuano a essere efficaci nel tempo al la luce degli inevitabili cambiamenti che si 
+potrebbero verificare nel sistema e nell'ambiente i n cui opera. La valutazione del potenziale 
+

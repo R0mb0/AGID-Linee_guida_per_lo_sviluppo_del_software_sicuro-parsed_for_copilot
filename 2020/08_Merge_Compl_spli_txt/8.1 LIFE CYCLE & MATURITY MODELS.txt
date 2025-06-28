@@ -1,0 +1,45 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 78  a 137  
+ 
+8 SECURE SOFTWARE DEVELOPMENT LIFE CYCLE (SSDLC): ANA LISI 
+DELLE METODOLOGIE E DEI PROCESSI 
+8.1  Life Cycle & Maturity Models  
+8.1.1  Software Assurance Maturity Model (SAMML)  
+SAMM è un framework aperto per aiutare le organizza zioni a formulare e attuare una strategia di sicure zza 
+software, che più si adatti ai rischi specifici del la particolare organizzazione. Il progetto OpenSAMM , 
+un'attività di OWASP, mantiene e aggiorna la docume ntazione SAMM. 
+ 
+References  www.owasp.org/index.php/Categ ory:Software_Assurance_Maturity_ModelOWASP 
+SAMM Project  
+www.opensamm.orgOpenSAMM  
+ 
+Le risorse fornite da SAMM attraverso il sito web a iutano a: 
+• Valutare le pratiche di sicurezza software esistent i di un'organizzazione 
+• Costruire un programma software security assurance in iterazioni ben definite 
+• Dimostrare miglioramenti concreti al programma di s ecurity assurance 
+• Definire e misurare le attività relative alla sicur ezza in tutta l'organizzazione  
+ 
+Essendo un progetto Open, i contenuti SAMM sono lib eramente fruibili. Il modello si basa su 4 funzioni  
+aziendali (Governance, Construction, Verification e  Deployment) di sviluppo software e di 12 procedure  di 
+sicurezza. Ogni funzione all’interno dello sviluppo  del software prevede tre pratiche di sicurezza: 
+• Governance 
+o Strategy & Metrics 
+o Education & Guidance 
+o Policy & Compliance 
+• Construction 
+o Security Requirements 
+o Threat Assessment  
+o Secure Architecture 
+• Verification 
+o Design Review 
+o Security Testing 
+o Code Review 
+• Deployment 
+o Environment Hardening 
+o Vulnerability Management 
+o Operational Enablement 
+ 
+ 

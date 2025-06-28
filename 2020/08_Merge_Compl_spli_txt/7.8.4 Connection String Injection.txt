@@ -1,0 +1,52 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 118  a 156  
+ 
+Come difendersi 
+• Rimodulare il codice per evitare una qualsiasi esec uzione diretta di script di comandi. Per effettuare  
+operazioni di sistema, utilizzare eventualmente API  fornite dalla piattaforma. 
+• Se non è possibile fare a meno di lanciare shell de i comandi, assicurarsi tuttavia di eseguire solo 
+stringhe statiche, che non includano l'input dell'u tente. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. La convalida dovrebbe essere 
+basata su una white list: dovrebbero essere accetta ti solo i dati che adattano a una struttura 
+specificata, e scartati i dati che non rientrano in  questa categoria. I parametri devono essere limita ti 
+a un set di caratteri consentito e i caratteri rico nosciuti come estranei devono essere filtrati e 
+neutralizzati (escaping). Oltre ai caratteri, occor re controllare il tipo del dato, la sua dimensione,  
+l'intervallo di validità (range), il formato ed eve ntuali valori attesi (white list). 
+• Configurare l'applicazione da eseguire utilizzando un account utente limitato che non disponga di 
+privilegi non necessari. 
+• L’esecuzione del codice dovrebbe utilizzare un acco unt utente separato e dedicato, fornito dei soli 
+privilegi strettamente necessari, in base al princi pio denominato "Principle of Least Privilege". Il 
+principio stabilisce che agli utenti venga attribui to il più basso livello di “diritti” che possano 
+detenere rimanendo comunque in grado di compiere il  proprio lavoro. 
+ 
+Per ulteriori informazioni: http://cwe.mitre.org/data/definitions/77.html,  
+CWE-77: Improper Neutralization of Special Elements  used in a Command ('Command Injection'). 
+ 
+7.8.4  Connection String Injection 
+Come riconoscerla 
+Questo tipo di attacchi è possibile nel momento in cui l’applicazione affida all’input utente la compo siszione 
+dinamica della stringa di connessione al database o ppure al server. 
+Un utente malintenzionato potrebbe manipolare la st ringa di connessione dell'applicazione al database 
+oppure al server. Utilizzando strumenti e modifiche  di testo semplici, l'aggressore potrebbe essere in  grado 
+di eseguire una delle seguenti operazioni: 
+• Danneggiare le performance delle applicazioni (ad e sempio incrementando il valore relativo al MIN 
+POOL SIZE); 
+• Manomettere la gestione delle connessioni di rete ( ad esempio, tramite TRUSTED CONNECTION); 
+• Dirigere l'applicazione sul database fraudolento an ziché a quello genuino; 
+• Scoprire la password dell'account di sistema nel da tabase (tramite un brute-force attack). 
+ 
+Per comunicare con il proprio database o con un alt ro server (ad esempio Active Directory), l'applicaz ione 
+costruisce dinamicamente una sua stringa di conness ione. Questa stringa di connessione viene costruita  
+dinamicamente con l’input inserito dall’utente. Se i valori immessi sono stati verificati in misura 
+insufficiente o non sono stati affatto verificati, la stringa di connessione potrebbe essere manipolat a ad arte 
+a vantaggio dell’attaccante. 
+Come difendersi 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consiglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white 
+list, scartando quelli che non la rispettano). In g enerale, è necessario controllare il tipo del dato,  la 
+sua dimensione, l'intervallo di validità (range), i l formato ed eventuali valori attesi (white list). 
+• Evitare di costruire dinamicamente stringhe di conn essione. Se è necessario creare dinamicamente 
+una stringa di connessione evitare di includere l'i nput dell'utente. In ogni caso, utilizzare utilità 
+basate sulla piattaforma, come SqlConnectionStringB uilder di .NET, o almeno codificare l'input 
+validato come il piu' idoneo per la piattaforma uti lizzata.  

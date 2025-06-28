@@ -1,0 +1,214 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 121  a 141  
+ 
+5.8  Sicurezza dei Enterprise Service Bus (ESB) 
+5.8.1  Architettura 
+Isolamento dei sistemi critici  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Negazione dei servizi. 
+Contromisure  I sistemi critici come l’ESB devono avere un ambien te di elaborazione dedicato, 
+strettamente controllato e monitorato. 
+Tipicamente è necessaria una protezione perimetrale  fisica (CED) e logica (firewall).  
+Occorrono in linea di principio: 
+- un “external ESB” collocato in DMZ che agisce come Security Gateway (Security 
+Enforcement Point – es. gestione identità) e un “in ternal ESB” opportunamente 
+messo in sicurezza (vedi best practices successive)  a cui l’“external ESB” passa le 
+chiamate esterne e da cui riceve le risposte (ed ev entuali chiamate verso 
+l’esterno). Oltre al routing dei messaggi, è qui ch e avviene la conversione dei 
+messaggi ed è qui che risiedono i business workflow . 
+- Un “Security Decision Service”, interno (ossia non in DMZ), cui i 2 ESB si riferiscono 
+come repository unico delle security policies. 
+ 
+5.8.2  Hardening 
+Hardening del sistema operativo che ospita l’ESB  
+Minaccia  - Accesso non autorizzato al sistema . 
+- Compromissione delle comunicazioni. 
+- Furto di credenziali di autenticazione (es. keylogg er). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Eseguire l’hardening del sistema operativo che ospi ta l’ESB  [rif.  5.2.2 ]. 
+Tipicamente è necessaria una protezione perimetrale  fisica (CED) e logica (firewall).  
+ 
+Hardening del la piattaforma web che ospita l’ESB  
+Minaccia  - Accesso non autorizzato al sistema . 
+- Compromissione delle comunicazioni. 
+- Furto di credenziali di autenticazione (es. keylogg er). 
+- Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’organizzazione. 
+- Violazione di leggi, di regolamenti, di obblighi co ntrattuali. 
+Contromisure  Siccome SOA sfrutta e si basa sulle tecnologie Web,  le vulnerabilità associate a tali 
+tecnologie influenzano anche SOA. Pertanto, deve es sere eseguito l’hardening della 
+piattaforma web che ospita l’ESB  [rif. 5.3.2]. 
+ 
+Hardening del Web Services Layer  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Divulgazione di informazioni riservate. 
+Contromisure  Utilizzare adeguati meccanismi di controllo dell'accesso per separare “operazioni 
+interne” da “operazioni esterne” come: 
+- un firewall XML che “tagli” le operazioni interne o  
+- spostare le operazioni interne su servizi Web priva ti e ospitarle sui server Web 
+interni. 
+Il WSDL di un Web Service pubblica le sue operazion i, i parametri e le associazioni di 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 122  a 141  
+ 
+rete. Alcune di queste (operazioni interne) devono essere utilizzate solo dal fornitore di 
+servizi, tipicamente le operazioni amministrative. Il resto delle operazioni (operazioni 
+esterne) può essere richiamato dal consumatore di s ervizi. Ora un attaccante può 
+tentare di indovinare le operazioni interne e invoc arle tramite l'endpoint (che è 
+disponibile nel WSDL). Tale attacco è chiamato scan sione WSDL. 
+ 
+Hardening del Web Services Layer  
+Minaccia  Compromissione delle comunicazioni.  
+Contromisure  Verificare l'autenticità dei metadati del servizio Web (si tenga presente che non 
+esistono meccanismi standard per verificare l'auten ticità dei metadati). 
+Un attaccante che, ad esempio, riesca a modificare l'endpoint del servizio può mettere 
+in atto un man-in-the-middle attack per l'intercett azione o la modifica dei dati del 
+servizio Web. 
+ 
+Hardening del Web Services Layer  
+Minaccia  Violazione della sicurezza, rispetto alle politiche  di sicurezza dell’o rganizzazione.  
+Contromisure  La validazione dello schema del contenuto cifrato v a eseguita dopo la decifratura e non 
+prima.  
+Gli standard di XML Encryption e XML Signature, uti lizzati per fornire servizi di 
+crittografia e firma digitale sui messaggi scambiat i via Web Services (ad esempio 
+SOAP), possono essere utilizzati da un attaccante p er nascondere codice malevolo che 
+va in esecuzione durante la decifratura (Attack obf uscation).  
+ 
+Hardening del Web Services Layer  
+Minaccia  Negazione dei servizi.  
+Contromisure  Le richieste dei service consumer devono essere ela borate solo se gli elementi del 
+security header del messaggio SOAP in entrata corri spondono esattamente ai requisiti 
+imposti dallo schema della security policy. Diversa mente vanno scartati. 
+Lo standard WS-Security non impone restrizioni né s u quali parti del security header di 
+un messaggio SOAP possono essere crittografate né s ulla dimensione massima di un 
+messaggio crittografato. Ciò significa che un attac cante è in grado di provocare un 
+denial of service inviando a un servizio Web dei se curity headers crittografati di grandi 
+dimensioni. Le operazioni di decifratura causano un  carico elevato sulla CPU del server 
+che ospita il Web Service, carico che a sua volta c rea problemi di disponibilità. 
+ 
+Hardening del Business Processes Layer  
+Minaccia  - Accesso non autorizzato alle informazioni.  
+- Divulgazione di informazioni riservate. 
+Contromisure  Estendere i meccanismi di controllo dell'accesso pe r  separare “operazioni interne” da 
+“operazioni esterne” a livello BPEL. 
+Un WS-BPEL (BPEL) di un processo di business può es sere sottoposto ad un attacco di 
+"BPEL scanning" analogo al “WSDL scanning” (ma port ato su un layer diverso). 
+ 
+Hardening del Business Processes Layer  
+Minaccia  Compromissione delle comunicazioni. - Metadata spoofing  
+Contromisure  Verificare l'autenticità dei metadati a livello BPE L.  
+Un attaccante, ad esempio, potrebbe modificare a su o vantaggio i riferimenti di 
+endpoint del processo aziendale nella dichiarazione  BPEL. 
+ 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 123  a 141  
+ 
+BPEL state deviation  
+Minaccia  Negazione dei servizi. - Metadata spoofing  
+Contromisure  Un attaccante può inondare (flood) il motore BPEL c on molti messaggi BPEL che sono 
+conformi allo schema ma non hanno alcun contenuto s ignificativo. Le risorse 
+computazionali del motore BPEL potrebbero esaurirsi  producendo un attacco di denial 
+of service.  
+Per rifiutare i messaggi non validi, l’approccio mi gliore è quello di utilizzare un 
+application level firewall. 
+ 
+Hardening del Business Processes Layer  
+Minaccia  Negazione dei servizi  - Instantiation flooding ( diretto e  indiret to ) 
+Contromisure  I motori BPEL istanziano un nuovo processo quando ricevono u n “receive message” 
+(che istanzia un processo BPEL). Quando viene ricev uto un “receive message”, il 
+motore BPEL sospende l'esecuzione corrente finché i l messaggio entrante è 
+completamente ricevuto. Un attaccante può sfruttare  questo comportamento dei 
+motori BPEL inondandoli di “receive message” non va lidi, producendo un attacco di 
+denial of service.  
+L'attacco può avvenire anche in modo indiretto: si colpisce un motore BPEL per 
+attaccarne un altro che interagisce con il primo. 
+La protezione dei motori BPEL contro questa tipolog ia di attacchi di flooding è 
+complessa: occorrerebbe un’analisi semantica per in dividuare i messaggi non validi. E 
+ciò esula dalle possibilità di un application level  firewall. 
+In caso di attacco occorre intervenire a livello di  difesa perimetrale in modo mirato. 
+ 
+Hardening del Business Processes Layer  
+Minaccia  Compromissione delle comunicazioni - WS -Addressing spoofing  
+Contromisure  Verificare la validità degli endpoint prima che il processo venga eseguito dal motore 
+BPEL (caso di endpoint non validi o pericolosi) 
+La specifica WS-Addressing descrive come indirizzar e in modo standard gli endpoint di 
+un web service o di un business process.  
+Un attaccante può modificare gli header WS-Addressi ng facendo puntare il motore 
+BPEL agli endpoint di servizi o di processi non val idi o pericolosi. 
+ 
+Hardening del Business Processes Layer  
+Minaccia  Negazione dei servizi - Workflow engine hijacking  
+Contromisure  Verificare la validità degli endpoint prima che il processo venga eseguito dal m otore 
+BPEL (caso di endpoint a un sistema di destinazione  esistente, che fornisce un servizio 
+reale all'URL specificato). 
+In caso contrario, un attaccante può utilizzare il WS-Addressing spoofing per provocare 
+il denial of service di un servizio legittimo attra verso un attacco di flooding. 
+L'endpoint di cui l'attaccante esegue lo spoofing è  quello di un servizio legittimo (il 
+target dell'attacco).  
+Il sistema attaccato tenta di elaborare una grande quantità di messaggi che gli 
+pervengono come risultato del WS-Addressing spoofin g e, se non ci riesce, i suoi utenti 
+legittimi subiscono un Denial of Service. 
+ 
+Hardening del protocollo SOAP  
+Minaccia  Attacchi all’integrità dei sistemi - Harmful SOAP attachments  
+Contromisure  I messaggi SOAP possono contenere allegati di dimen sione arbitraria. Pertanto u n 
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 124  a 141  
+ 
+attaccante può allegare un virus a un messaggio SOA P e inviarlo per l'elaborazi one al 
+sistema di destinazione. 
+Gestire gli allegati SOAP secondo le seguenti modal ità: 
+- bloccarli se non previsti o sospetti;  
+- filtrarli in base al MIME-type; 
+- analizzarli con un anti-malware. 
+ 
+Hardening del protocollo SOAP  
+Minaccia  - Accesso non aut orizzato alle informazioni.  
+- Attacchi all’integrità delle informazioni. 
+- Negazione dei servizi. 
+- (SOAPAction spoofing). 
+Contromisure  Verificare rigorosamente se l'azione specificata ne l SOAP body corrisponde all'azione 
+specificata nell’HTTP header. Se non corrispondono,  il messaggio in arrivo deve essere 
+rifiutato. 
+Non utilizzare mai il campo SOAPAction nell'intesta zione HTTP come identificativo 
+dell'operazione del servizio. Un malintenzionato po trebbe facilmente modificare 
+l'elemento "SOAPAction" nell'intestazione HTTP per eseguire un'azione diversa da 
+quella specificata nel SOAP body.  
+ 
+Hardening dei documenti XML  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Attacchi all’integrità delle informazioni. 
+- (XPath injection). 
+Contromisure  È necessario utilizzare un'interfaccia XPath parametr izzata (se disponibile) oppure 
+eseguire la sanitizzazione dell'input utente prima di includerlo in una query costruita 
+dinamicamente (in analogia con le tecniche per evit are la SQL Injection). 
+La specifica XPath viene utilizzata per navigare ne l contenuto di un documento XML. 
+Un attacco di XPath injection (simile all'attacco S QL injection) inietta un'espressione 
+XPath all’interno di quella predisposta dal program matore al fine di accedere a 
+informazioni non autorizzate in un documento XML. 
+ 
+Hardening dei documenti XML  
+Minaccia  Negazione dei servizi.  
+Contromisure  Limitare la dimensione dei messaggi SOAP in arrivo per contrastare un attacco di 
+payload di grandi dimensioni. 
+Si tenga presente che l'approccio Document Object M odel (DOM) per l'analisi e 
+l'elaborazione di XML consuma una grande quantità d i memoria. Ciò è dovuto al fatto 
+che è necessaria una rappresentazione in memoria ad  oggetti dell'intero documento 
+XML, che richiede molto più spazio di memoria rispe tto al documento XML stesso. 
+Payload di grandi dimensioni possono essere ottenut i ad esempio: 
+- Abusando della proprietà di nesting di elementi, in serendo a piacimento molteplici 
+elementi nel documento. 
+- Abusando della funzionalità di DTD (Document Type D efinitions) per creare 
+ricorsivamente entità all’interno del documento fin o a farlo “esplodere”. 
+ 
+Hardening dei documenti XML  
+Minaccia  Negazione dei servizi.  
+Contromisure  Considerare l’impiego di session tokens univoci nei  messaggi SOAP come i nonces 

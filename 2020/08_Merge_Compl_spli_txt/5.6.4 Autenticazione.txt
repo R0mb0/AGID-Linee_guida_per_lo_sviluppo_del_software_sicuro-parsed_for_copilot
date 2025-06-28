@@ -1,0 +1,49 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 112  a 141  
+ 
+ 
+5.6.3  Utenze 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.15.1.1]. 
+ 
+5.6.4  Autenticazione 
+Valgono i principi generali già introdotti nel para grafo [rif. 5.1.2]. 
+ 
+5.6.5  Autorizzazione 
+A i principi generali già introdotti nel paragrafo [rif. 0], si aggiungono le seguenti indicazioni per  il contesto 
+specifico: 
+ 
+Autorizzazione  
+Minaccia  Accesso non autorizzato a lle informazioni.  
+Contromisure  Utilizzare e configurare opportunamente i meccanism i di controllo di accesso alle 
+risorse (tabelle, viste, procedure, ecc.) gestite d al DBMS (a titolo di esempio 
+l’istruzione “grant” fornita da Oracle), fornendo a  ciascun utente o utenza applicativa i 
+minimi diritti effettivamente necessari al corretto  funzionamento, secondo il principio 
+del least privilege . 
+Ad es., evitare l’accesso di un application server al DBMS con utenza di amministratore 
+globale del database, anche quando un utente non pr ivilegiato deve effettuare compiti 
+di ordinaria operatività. 
+ 
+5.6.6  Crittografia 
+Ai principi generali già introdotti nel paragrafo [ rif. 5.1.4], si aggiungono le seguenti indicazioni per il 
+contesto specifico: 
+ 
+Protezione delle informazioni riservate  
+Minaccia  - Crittografia debole o non validata.  
+- Accesso non autorizzato alle informazioni. 
+Contromisure  - Per la protezione delle informazioni riservate cust odite nel database, all’interno di 
+campi specifici di tabelle specifiche, utilizzare t ecniche di crittografia dei dati a 
+livello di colonna fornite nativamente dallo specif ico DBMS, evitando l’uso di 
+soluzioni custom o di terze parti, evitando così tu tta una serie di problemi che 
+possono sorgere (ad es. quando la colonna cifrata è  parte di un indice: in tal caso 
+solitamente si indicizza il valore cifrato anziché quello in chiaro); 
+- Per la protezione delle informazioni riservate cust odite nel database, all’interno di 
+righe specifiche di una tabella, utilizzare tecnich e di crittografia dei dati a livello di 
+riga fornite nativamente dallo specifico DBMS, evit ando l’uso di soluzioni custom o 
+di terze parti; 
+- In presenza di dati particolarmente sensibili, valu tare se vi sia davvero la necessità 
+di custodirli all’interno del DBMS, e in caso contr ario, evitare la loro 
+memorizzazione permanente; 
+- I dati sensibili presenti sui DBMS di produzione no n devono mai essere trasferiti su 
+sistemi di sviluppo, test e collaudo, se non dopo e ssere stati sottoposti ad un 

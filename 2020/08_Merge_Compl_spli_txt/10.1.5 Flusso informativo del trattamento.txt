@@ -1,0 +1,37 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 110  a 137  
+ 
+Anche le informazioni personali non richieste da un  titolare, cioè non intenzionalmente ottenute, 
+potrebbero essere memorizzate da un software. Ad es empio, l’interessato potrebbe fornire delle 
+informazioni personali anche quando non è stato ric hiesto dal trattamento (ad es. ulteriori informazio ni 
+personali fornite nel contesto di un modulo di feed back anonimo su un sito Web). Il rischio di raccogl iere 
+informazioni personali indesiderate può essere rido tto considerando le misure di tutela della privacy al 
+momento della progettazione del software. 
+I dati personali stabiliti dal GDPR (cfr. DR-1 ) sono suddivisi nelle seguenti categorie di dati p ersonali: 
+Categorie di dati 
+personali Descrizione 
+Dati identificativi  I dati identificativi rappresentano tutti quei dati  che possono identificare, 
+direttamente o indirettamente una persona, con part icolare riferimento a un 
+identificativo come il nome, un numero di identific azione, dati relativi 
+all'ubicazione, un identificativo online. 
+Dati 
+Particolari/Sensibili I dati particolari  sono tutti quei dati personali che rivelino l’origi ne razziale o 
+etnica, le opinioni politiche, le convinzioni relig iose o filosofiche, o l’appartenenza 
+sindacale, nonché dati genetici dati biometrici int esi a identificare in modo 
+univoco una persona fisica, dati relativi alla salu te o alla vita sessuale o 
+all'orientamento sessuale della persona. 
+Dati giudiziari  I dati giudiziari rappresentano tutti quei dati rel ativi alle condanne penali e ai 
+reati o a connesse misure di sicurezza. 
+10.1.5  Flusso informativo del trattamento 
+Per definire l’architettura e il design di un softw are i progettisti dovranno prendere in considerazio ne la 
+struttura del flusso informativo, descrivendo le in terazioni tra interessato, titolare, responsabile e  terze 
+parti all’interno dell’applicativo software. Gli at tori identificati possono interagire tra loro in va ri modi, 
+secondo i seguenti scenari, maturati dalla ISO/IEC 29134:2017 45 : 
+ 
+ 
+  
+                                                           
+45  https://www.iso.org/standard/62289.html  

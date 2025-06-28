@@ -1,0 +1,19 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 97  a 137  
+ 
+ 
+ 
+Figura 23 - Info Security Product Guide 2016 : Recension e CodeDX 
+3)  SonarQube , consente di introdurre il controllo formale fin d all'inizio del ciclo di vita del software, 
+attraverso l’introduzione di Quality Gate nelle fas i tipiche di passaggio tra lo sviluppo e la verific a e 
+tra la verifica e la produzione. 
+ 
+ 
+Figura 24 - SonarQube 
+ 
+9.4  Verifica della sicurezza delle applicazioni 
+Le azioni di sicurezza da intraprendere in questa f ase sono così sintetizzate:  
+

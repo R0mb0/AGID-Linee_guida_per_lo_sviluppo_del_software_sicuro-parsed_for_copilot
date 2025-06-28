@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 101  a 156  
+ 
+7.6.5  LDAP Injection 
+Come riconoscerla 
+La LDAP Injection è un tipo di attacco cui sono vul nerabili le applicazioni e che utilizzano l’input, senza 
+verificarlo adeguatamente, per costruire query LDAP  (Lightweight Directory Access Protocol). 
+Se coronato da successo, l’LDAP injection potrebbe consentire un furto di informazioni, un’elevazione dei 
+privilegi e l’autenticazione con un’identità altrui  (spoofing). 
+Per comunicare con la directory delle utenze (ad es empio Active Directory), l'applicazione costruisce 
+dinamicamente delle query. Se utilizza l’input uten te senza verificarlo, un malintenzionato può inseri re 
+comandi modificati ad arte per carpire informazioni  non dovute. 
+Come difendersi 
+Validare tutti gli input, indipendentemente dalla l oro provenienza. Per la validazione, si consisglia 
+l’approccio white list (sono accettati solo i dati che adottano una struttura specificata nella white list, 
+scartando quelli che non la rispettano). Occorre co ntrollare il tipo del dato, la sua dimensione, l'in tervallo di 
+validità (range), il formato ed eventuali valori at tesi (white list). 
+ 
+Esempio: 
+Il seguente codice, avvalendosi di una variabile (n omeutente) pervenuta attraverso l’input, è passbile  di 
+LDAP injection, a meno che la stringa non sia sotto posta a codifica (encoding) e validazione. 
+ 
+DirectorySearcher search = new DirectorySearcher(de ); 
+search.Filter = "(ACName=" + nomeutente + ")"; 
+search.SearchScope = SearchScope.Subtree; 
+search.CacheResults = false; 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/90.html,  
+CWE-90: Improper Neutralization of Special Elements  used in an LDAP Query ('LDAP Injection') 
+7.6.6  Resource Injection 
+Come riconoscerla  
+Quando un'applicazione definisce un tipo di risorsa  o posizione in base all'input dell'utente, come un  nome 
+file o un numero di porta, questi dati possono esse re manipolati per eseguire o accedere a risorse div erse. 
+L’attacco di “path traversal” è un caso particolare  della resource injection. In tal caso a essere ini ettato è un 
+path manipolativo che punta a risorse diverse nel f ile system. 
+Se si utilizza l’input dell’utente per definire la porta sulla quale aprire un socket, si da all’utent e la possibilità 
+di introdurre una backdoor attraverso la quale potr ebbe prendere il controllo del sistema. 
+Come difendersi 
+In molti casi non è necessario aprire un socket man ualmente; meglio affidarsi a librerie e protocolli 
+esistenti. 
+• Tutti i dati inviati devono essere crittografati, s e sono sensibili. Nel dubbio se i dati siano sensib ili o 
+possano diventarlo, meglio comunque crittografarli.  
+• Qualsiasi input letto dal socket deve essere valida to. 
+• Le applicazioni non  dovrebbero utilizzare l’input dell’utente per accedere a risorse del sistema. Nel  
+caso si scelga di farlo, è obbligatorio validare l’ input, per esempio attraverso una white list. Se si  
+consente la creazione di socket, controllare scrupo losamente questo tipo di attività. 
+ 
+Esempio: 
+Creazione di un socket passibile di resource inject ion, qualora i parametri fossero controllati dall’u tente: 
+  public static void Run() 
+  { 
+    Socket socket = new Socket(AddressFamily.InterN etwork, SocketType.Stream,  

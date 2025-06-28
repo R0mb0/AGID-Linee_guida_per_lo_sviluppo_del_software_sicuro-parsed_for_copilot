@@ -1,0 +1,52 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 24  a 141  
+ 
+- una registrazione di tutti i privilegi assegna ti;  
+- i requisiti per la scadenza dei diritti;  
+- riesame regolare delle competenze degli utenti;  
+- per le UserId amministrative generiche (da evitar e se non indispensabile per 
+l’esecuzione del servizio), dovrebbe essere mantenu ta la riservatezza delle 
+informazioni segrete di autenticazione quando quest a è condivisa. 
+ 
+Riesame dei diritti di accesso degli utenti  
+Minaccia  - Accesso non autorizzato alle informazioni . 
+- Abuso di privilegi da parte dell'utente. 
+Contromisure  I diritti di accesso degli utenti dovrebbero essere  riesaminati regolarmente (al massimo 
+ogni sei mesi) e dopo ogni cambiamento (es. cessazi one del rapporto di lavoro, cambio 
+di ruolo, di mansione, all'interno dell'organizzazi one). Le autorizzazioni per i diritti di 
+accesso privilegiati dovrebbero essere riesaminate ad intervalli più frequenti e gli 
+eventuali cambiamenti tracciati. Per ogni cambiamen to di privilegi deve esserne 
+registrato il richiedente, l’approvatore e la motiv azione. 
+In caso di cessazione del rapporto di lavoro, sia d i personale interno sia esterno, è 
+necessario verificare i requisiti per la rimozione,  o sospensione dei diritti di accesso al 
+sistema/piattaforma. Tali diritti dovrebbero essere  ridotti o rimossi prima della 
+cessazione o della variazione del rapporto di lavor o, a seconda della valutazione di 
+fattori di rischio come:  
+- criticità delle informazioni cui si accedeva;  
+- ruolo della persona,  
+- motivazione della cessazione/cambiamento. 
+Prevedere controlli o misure di sicurezza per limit are il rischio che:  
+- in caso di licenziamento o fine contratto, dei dipe ndenti scontenti o degli utenti di 
+terze parti esterne possano deliberatamente corromp ere informazioni o 
+commettere illeciti; 
+- in caso di persone dimissionarie o in uscita, esse possano essere tentate di 
+recuperare/copiare informazioni per uso futuro. 
+Utenze tecniche 
+Protezione delle informazioni strumentali all'acces so  
+Minaccia  - Divulgazione di informazioni  riservate . 
+- Accesso non autorizzato ai sistemi (risorse di sist ema, configurazioni, ecc.). 
+- Furto di credenziali di autenticazione. 
+Contromisure  - Utilizzare ACL forti per proteggere le risorse di s istema.  
+- Utilizzare algoritmi standard di crittografia per m emorizzare i dati sensibili nei file 
+di configurazione (utenze tecniche, non legate a pe rsone fisiche: processi di 
+sistema, porzioni di DB, ecc.). 
+- Utilizzare algoritmi di comprovata robustezza come.  Ad esempio AES, l’algoritmo 
+simmetrico ritenuto al momento più sicuro, consente  di scegliere una chiave 
+crittografica di 128, 192 o 256 bit. La scelta dell a lunghezza della chiave 
+crittografica deve essere commisurata al tipo di al goritmo e al livello di riservatezza 
+delle informazioni da proteggere. Per quanto riguar da AES, anche la chiave a 128 
+bit è considerata sicura. Algoritmi asimmetrici com e RSA richiedono chaivi 
+crittografiche più lunghe. Nel caso di RSA la lungh ezza ad oggi considerata sicura e 
+raccomandata dal NIST è 2048.  

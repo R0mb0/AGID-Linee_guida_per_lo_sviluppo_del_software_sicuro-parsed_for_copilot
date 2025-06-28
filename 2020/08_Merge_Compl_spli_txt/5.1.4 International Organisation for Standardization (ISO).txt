@@ -1,0 +1,95 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 22  a 137  
+ 
+URL  http s://www. computer .org   
+Country of HQ location  
+Geographic Scope  US  
+International 
+Type  Academic (not for profit)  
+ 
+Risultati di questa iniziativa sono libri, conferen ze, pubblicazioni relative a conferenze, riviste, c orsi on-line, 
+certificazioni di sviluppo software, standard e riv iste tecniche. 
+ 
+Risultati più rilevanti: 
+Good Practice  Guide to the Software Engineering Body of Knowledge  (SWEBOK), la guida descrive le 
+conoscenze generalmente accettate in materia di ing egneria del software. Le sue 15 
+aree di conoscenza (knowledge areas) riassumono i c oncetti di base e includono un 
+elenco di riferimento per informazioni più dettagli ate. 
+Enterprise Information Technology Body of Knowledge  (EITBOK) Guide. Un 
+compendio di descrizioni di alto livello delle aree  di conoscenza (knowledge areas) 
+che sono generalmente necessarie per il buon funzio namento della tecnologia 
+dell'informazione (IT). 
+Standard  Software & Systems Engineering Standards Committee (S2ESC)  
+Formal Liaisons with ISO/IEC JTC1/SC7. 
+ 
+5.1.4  International Organisation for Standardization (ISO ) 
+ISO è il più grande sviluppatore e editore al mondo  di standard internazionali. Industrie ed esperti d el 
+settore generalmente contribuiscono come membri dei  comitati tecnici ISO proponendo nuove normative 
+che devono essere approvate almeno dal 70% dei memb ri ISO. 
+ 
+Il comitato tecnico che opera nell’ambito degli sta ndard IT è il JTC 1 che, a sua volta, è organizzato  in 22 
+sottocomitati che coprono aree specifiche. Si ripor ta di seguito un sottoinsieme significativo: 
+• ISO / IEC JTC 1 / SC 7: Ingegneria del software e d ei sistemi; 
+• ISO / IEC JTC 1 / SC 22: Linguaggi di programmazion e, compresi ambienti e interfacce software di 
+sistema; 
+• ISO / IEC JTC 1 / SC 27: Sicurezza delle informazio ni, sicurezza informatica e protezione della 
+privacy; 
+• ISO / IEC JTC 1 / SC 38: Cloud Computing e piattafo rme distribuite; 
+• ISO / IEC JTC 1 / SC 41: Internet of Things e tecno logie correlate; 
+• ISO / IEC JTC 1 / SC 42: Intelligenza artificiale. 
+ 
+Relativamente agli ambiti SSE troviamo: 
+• pubblicazione di rapporti tecnici e standard: 
+o ISO / IEC TR 15026-1: 2013, ISO / IEC TR 24731-1: 2 007, ISO / IEC TR 24772: 2013, ISO / IEC 
+15408 e ISO / IEC 18405  
+• 2 progetti in corso.  
+ 
+ 
+ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 23  a 137  
+ 
+URL  https://www.iso.org  
+Geographic Scope  International  
+Type  Network of national standards institutes  
+ 
+Risultati più rilevanti: 
+ISO/IEC JTC 1/SC 7  
+ ISO/IEC 15026 -1: 2019  Systems and software engineering --  Systems and 
+software assurance -- Part 1: Concepts and vocabula ry 
+ 
+ISO/IEC JTC 1/SC 22  
+ ISO/IEC TR 24731 -1:2007  Information technology - Programming languages, 
+their environments and system software interfaces -  Extensions to the C library 
+- Part 1: Bounds-checking interfaces.  
+Specifica una serie di estensioni del linguaggio di  programmazione C, 
+specificato dalla norma internazionale ISO/IEC 9899 : 1999. Queste estensioni 
+possono essere utili nella mitigazione delle vulner abilità di sicurezza nei 
+programmi. 
+ISO/IEC TR 24731-2:2010 Information technology — Pr ogramming languages, 
+their environments and system software interfaces —  Extensions to the C 
+library — Part 2: Dynamic Allocation Functions. 
+Fornisce funzioni alternative per la libreria C che  favoriscono la 
+programmazione sicura.  
+ISO/IEC TR 24772:2013 Information technology - Prog ramming languages - 
+Guidance on avoiding vulnerabilities in programming  languages through 
+language selection and use.  
+Specifica le vulnerabilità del linguaggio di progra mmazione software da evitare 
+nello sviluppo di sistemi in cui è richiesto un com portamento sicuro ai fini 
+security/safety, mission critical e software busine ss-critical. In generale, questa 
+guida è applicabile al software sviluppato, rivisto , o mantenuto per qualsiasi 
+applicazione. Le vulnerabilità sono descritte in mo do generico, applicabili a una 
+vasta gamma di linguaggi di programmazione. 
+Questa guida può essere anche utilizzata dagli svil uppatori per produrre o 
+selezionare gli strumenti di valutazione del codice  sorgente capaci di scoprire 
+ed eliminare alcuni costrutti che potrebbero portar e alla vulnerabilità del 
+software o per selezionare un linguaggio di program mazione che consenta di 
+evitare i problemi attesi. 
+ 
+  

@@ -1,0 +1,36 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 71  a 137  
+ 
+• PHP Foundations  
+• MySQL Foundations  
+• Manage Databases  
+• Manage Tables  
+• SQL SELECT Commands  
+• SQL Expressions  
+• SQL DML Commands  
+• SQL JOINS  
+• MySQL Database-Driven Web-Based Forms  
+• Session Handling  
+• Object-Oriented Programming  
+• Authentication  
+• Securing PHP and MySQL  
+ 
+6.10.10  Google Gruyere 
+Google Code University fornisce un ambiente di labo ratorio gratuito chiamato Gruyère 28 , dove gli studenti 
+possono provare ad hackerare applicazioni web. Gli studenti hanno l'opportunità di fare qualche prova 
+reale di penetrazione, sfruttando esempi reali con complessità crescente. In particolare, gli studenti  
+possono imparare: 
+• come un'applicazione web può essere attaccata utili zzando vulnerabilità di sicurezza comune, come 
+le vulnerabilità cross-site scripting (XSS) e cross -site request forgery (XSRF) 
+• come trovare, correggere ed evitare queste vulnerab ilità comuni, e altri bug che hanno impattano 
+sulla sicurezza, come ad esempio denial-of-service,  la divulgazione di informazioni o l'esecuzione di 
+codice remoto. 
+ 
+6.10.11  OWASP Training Courses 
+OWASP offre materiali di formazione gratuiti, video  e presentazioni, e fornisce opportunità di formazi one 
+presso le sue conferenze sulla sicurezza delle appl icazioni.  
+                                                           
+28  http://google-gruyere.appspot.com/ 

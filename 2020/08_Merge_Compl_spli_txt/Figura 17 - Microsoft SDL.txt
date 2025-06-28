@@ -1,0 +1,44 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 83  a 137  
+ 
+8.2.2  Microsoft Software Development Life Cycle (MS SDL) 
+MS SDL è un modello che pone molta attenzione alla fase di specifica dei requisiti durante la quale pr evede 
+di interagire con il cliente (end-user), al fine di  identificare gli obiettivi e le caratteristiche di  sicurezza 
+necessarie.  
+L'incorporazione di queste caratteristiche/funziona lità di sicurezza sono guidate da standard di setto re e 
+criteri di certificazione. Durante la fase di proge ttazione MS SDL suggerisce di svolgere le seguenti attività: 
+l'identificazione dei componenti critici per la sic urezza, l'identificazione di tecniche di progettazi one e linee 
+guida, l'identificazione dei punti di accesso degli  attacchi, la modellazione delle minacce e analisi del rischio 
+componente per componente, l'identificazione dei re quisiti di sicurezza per mitigare le minacce, 
+l'identificazione dei componenti che necessitano di  particolare attenzione durante le fasi di test e r eview 
+del codice, e i criteri per il completamento del so ftware. 
+ 
+ 
+Figura 17 - Microsoft SDL 
+ 
+MS SDL consiglia di seguire gli standard di secure coding nella fase di implementazione. L'accento è p osto 
+su:  
+• test specifici di sicurezza,  
+• analisi statica del codice utilizzando i tool SDL u tili a tale scopo,  
+• revisione del codice (code review) nell’ultimo step  della fase di implementazione. Terminata la fase 
+di implementazione, il software completo viene nuov amente verificato attraverso un ulteriore test 
+di sicurezza che si concentra principalmente sui co mponenti critici (si esaminano ad esempio, i 
+punti di ingresso alle possibili aree di attacco). 
+ 
+URL  https://www.microsoft.com/en -us/securityengineering/sdl  
+Contact  https://support.microsoft.com/it -it/contactus/?ws=mscom#tab0  
+Email, chat, phone and address  
+Country of HQ location  US  
+Geographic Scope  International  
+Type  Industry (Microsoft)  
+ 
+Risultati più rilevanti: 
+Guidance  Microsoft SDL Process Guidance  
+Questa guida illustra il modo in cui Microsoft appl ica il SDL ai suoi prodotti e 
+tecnologie. Include requisiti di sicurezza e privac y e raccomandazioni per lo sviluppo di 
+software sicuro. Si rivolge ai modelli di sviluppo Cascade, Spiral, Agile. I responsabili 
+delle politiche IT e le organizzazioni di sviluppo software possono sfruttare questi 
+

@@ -1,0 +1,118 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 66  a 156  
+ 
+   break; 
+  case "smtp": 
+   portNum = 25; 
+   break; 
+  default: 
+   portNum = 80; 
+  } 
+  try { 
+   ServerSocket serverSocket = new ServerSocket(por tNum); 
+  } catch (Exception e) { 
+   System.err.println("Caught Exception: " + e.getM essage()); 
+  } 
+ } 
+} 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/99.html,   
+CWE-99: Improper Control of Resource Identifiers (' Resource Injection'). 
+7.2.7  SQL injection 
+Come riconoscerla  
+Si verifica quando l’input non verificato viene uti lizzato per comporre dinamicamente uno statement SQ L 
+che poi verrà eseguito sulla base dati. Adeguatamen te manipolati, i parametri di input possono modific are 
+le query in maniera sostanziale, causando danni di impatto notevole, come l’inserimento di dati malevo li, la 
+cancellazione e la modifica di record e la rivelazi one indebita di informazioni riservate. Se i dati u tilizzati per 
+la SQL injection sono memorizzati nel database o ne l file system in generale, si parla di SQL injectio n di 
+second’ordine (second order SQL injection). 
+Come difendersi  
+• Come prima misura, occorre validare l’input, sottop onendolo a rigidi controlli, come già illustrato 
+nei punti precedenti; 
+• Le query SQL non devono mai essere realizzate conca tenando stringhe con l’input esterno. Si 
+devono invece utilizzare componenti di database sic uri come le stored procedure, le query 
+parametrizzate e le associazioni degli oggetti (per  comandi e parametri; 
+• Una soluzione che può essere d’aiuto consiste nell’ utilizzazione di una libreria ORM, come 
+EntityFramework, Hibernate o iBatis; 
+• Occorre limitare l'accesso agli oggetti e alle funz ionalità del database, in base al "Principle of Lea st 
+Privilege" (non fornire agli utenti permessi superi ori a quelli strettamente necessari. 
+ 
+Esempio : 
+Codice vulnerabile 
+String q='SELECT r FROM User r where r.userId=''+us er+'''; 
+Query query=em.createQuery(q); 
+List users=query.getResultList();  
+ 
+Codice sicuro 
+Query query=em.createNamedQuery('User.findByUserId' ); 
+query.setParameter('userId', user); 
+List users=query.getResultList(); 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/89.html,   
+CWE-89: Improper Neutralization of Special Elements  used in an SQL Command ('SQL Injection'). 
+7.2.8  XPath injection 
+Come riconoscerla 
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 67  a 156  
+ 
+Si ha quando l’applicazione interroga un documento xml usando una query XPath testuale, creata 
+concatenando dinamicamente le istruzioni con string he provenienti dall’esterno. L’attaccante potrebbe 
+immettere una stringa che modifica la query XPath, ottenendo dal documento xml informazioni non 
+dovute. Se l'input è stato manipolato ad arte, dura nte l'esecuzione dell'applicazione parti del docume nto 
+xml, che non dovevano essere raggiunte, vengono ind ebitamente estratte e lette. 
+La gravità dell’attacco dipende dal tipo di dati ch e è possibile estrarre dal documento xml. Se contie ne dati 
+personali riservati, il furto di informazioni può r ealizzare un data breach; nel caso di dati account,  l’attacco 
+può prefigurare ulteriori attacchi di spoofing ed e levation of privileges. 
+Come difendersi 
+Come prima cosa, occorre procedere con la validazio ne dell’input, come in tutti i casi di injection, 
+adottando le precauzioni illustrate nei punti prece denti, tra le quali la depurazione della stringa da  tutti i 
+caratteri potenzialmente dannosi. La’adozione di un a white list di valori ammessi è sempre un’ottima 
+soluzione. 
+ 
+Evitare che la costruzione della query XPath sia di pendente dalle informazioni inserite dall'utente. S i deve 
+mappare la query di tipo XPath con i parametri uten te mantenendo la separazione tra dati e codice. Nel  
+caso fosse necessario includere l'input dell’utente  nella query, l'input stesso dovrà essere prima val idato 
+correttamente. 
+ 
+Esempio: 
+public class XPath_Injection { 
+ public static void main(String[] args) { 
+  Scanner userInputScanner = new Scanner(System.in) ; 
+  System.out.print("\nEnter XPath expression: "); 
+  String expression = userInputScanner.nextLine(); 
+ 
+  // read a string value 
+  XPath XPath = XPathFactory.newInstance().newXPath (); 
+  try { 
+   XPathExpression email = XPath.compile(expression ); 
+  } catch (XPathExpressionException e) { 
+   e.printStackTrace(); 
+  } 
+ } 
+} 
+ 
+L’input dell’utente deve essere ricondotto a valori  ammessi (white list): 
+public class XPath_Injection_Fixed { 
+ public static void main(String[] args) { 
+  HashMap<String, String> sanitize = new HashMap<St ring, String>(); 
+  sanitize.put("student", "/class/student"); 
+  sanitize.put("graduate", "/class/graduate"); 
+  sanitize.put("professor", "/class/professor"); 
+  Scanner userInputScanner = new Scanner(System.in) ; 
+  System.out.print("\nEnter XPath expression: "); 
+  String expression = userInputScanner.nextLine(); 
+ 
+  // read a string value 
+  XPath XPath = XPathFactory.newInstance().newXPath (); 
+  try { 
+   XPathExpression email = XPath.compile(sanitize.g et(expression)); 
+  } catch (XPathExpressionException e) { 
+   e.printStackTrace(); 
+  } 
+ } 
+} 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitr e.org/data/definitions/643.html,  
+CWE-643: Improper Neutralization of Data within XPa th Expressions ('XPath Injection'). 

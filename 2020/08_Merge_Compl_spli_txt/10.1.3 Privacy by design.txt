@@ -1,0 +1,49 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 104  a 137  
+ 
+dopo l'elaborazione. Pertanto, la trasparenza deve riguardare non solo 
+l'elaborazione effettiva, ma anche l'elaborazione p ianificata (trasparenza ex ante) e 
+il tempo trascorso dall'elaborazione per sapere cos a è successo esattamente 
+(trasparenza ex post) 
+L’intervenibilità  Garantisce l'intervento in relazione a tutti i tratt amenti di dati relativi alla privacy in 
+corso o pianificati, in particolare da parte di col oro i cui dati vengono elaborati. 
+L'obiettivo dell'intervenibilità è l'applicazione d i misure correttive e controbilanci 
+ove necessario. L'intervenibilità è legata ai princ ipi relativi ai diritti degli individui, ad 
+es. i diritti di rettifica e cancellazione dei dati , il diritto di revocare il consenso o il 
+diritto di presentare un reclamo o di sollevare una  controversia per ottenere il 
+rimedio. 
+10.1.3  Privacy by design 
+10.1.3.1  Definizione della Privacy by design 
+La Privacy by Design (PbD) è definita come “un appr occio olistico concettuale che può essere applicato  - 
+end-to-end - all’interno di un’organizzazione, incl udendo le sue tecnologie informatiche, le sue prati che 
+commerciali, i suoi processi, la progettazione fisi ca e le infrastrutture di rete” (cfr. DR-8). Second o questa 
+impostazione, l'utente dovrebbe essere considerato il centro di un sistema di protezione dei dati pers onali 
+(per definizione, quindi il sistema è "user centric "). Qualsiasi progetto - sia strutturale, sia conce ttuale - 
+andrebbe realizzato considerando, sin dalla fase di  progettazione, la riservatezza e la protezione dei  dati 
+personali. La PbD comprende la seguente trilogia di  applicazioni:  
+• Sistemi IT;  
+• Pratiche di business;  
+• Progettazione delle reti.  
+E’ in questo contesto che si inserisce la necessità  di prevedere l’ingegnerizzazione della privacy by design in 
+ogni fase del ciclo di vita del software. 
+10.1.3.2  I sette principi della privacy by design 
+Principio  Descrizione  
+Proattivo non reattivo; 
+Preventivo non correttivo L'approccio di Privacy by Design  (PbD) è caratterizzato da misure 
+proattive piuttosto che reattive. Essa è diretta ad  anticipare e previene 
+gli eventi invasivi della privacy prima che accadan o. PbD non attende 
+che i rischi per la privacy si materializzino, né o ffre rimedi per la 
+risoluzione delle infrazioni della privacy una volt a che si sono verificati, 
+in quanto è diretta ad impedire che si verifichino.  
+Privacy come impostazione 
+predefinita La Privacy by Design  è diretta a garantire il massimo  grado di privacy 
+prevedendo che i dati personali siano automaticamen te protetti in 
+qualsiasi sistema IT o di business. Nessuna azione è richiesta da parte 
+dei singoli per proteggere la loro privacy, in quan to è integrata nei 
+sistemi per impostazione predefinita. 
+Privacy incorporata nel design  La Privacy by Design  è incorporato nel design e nell'architettura dei 
+sistemi IT e di business. Non è attuata successivam ente ad un evento. Il 
+risultato è che la privacy diventa una componente e ssenziale delle 

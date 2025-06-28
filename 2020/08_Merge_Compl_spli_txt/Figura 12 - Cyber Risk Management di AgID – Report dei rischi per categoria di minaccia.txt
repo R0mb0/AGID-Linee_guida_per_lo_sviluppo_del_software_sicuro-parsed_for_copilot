@@ -1,0 +1,36 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 49  a 137  
+ 
+impatto di tali modifiche sulla sicurezza del siste ma è un’attività essenziale per assicurare un 
+monitoraggio continuo e prevenire l’abbassamento de l livello di sicurezza del sistema. 
+6.2.1  Tool per l’analisi del rischio 
+6.2.1.1  AGID Cyber Risk Management 
+Cyber Risk Management 16  di AgID è lo strumento nazionale per la valutazion e e il trattamento del rischio 
+cyber. Per la protezione dei dati in formato digita le, a garanzia della loro riservatezza, integrità e  
+disponibilità, il tool AgID di Cyber Risk Managemen t identifica le situazioni e i vari ambiti nei qual i le 
+informazioni possono venirsi a trovare, consentendo  di valutare i rischi per la loro sicurezza. 
+Lo strumento è stato realizzato per consentire alle  pubbliche amministrazioni di analizzare l’esposizi one al 
+rischio dei servizi erogati dalle amministrazioni s tesse ed in caso predisporre i “Piani di Trattament o del 
+Rischio”. AgID, dal canto suo, fornisce supporto al le amministrazioni che ne hanno necessità sia in fa se di 
+analisi che nella fase d’implementazione di tali pi ani, pianificati e realizzati in base ai risultati forniti 
+attraverso la fase di Risk Treatment.  
+La Pubblica Amministrazione ha la peculiarità di er ogare servizi verso i cittadini, verso i propri dip endenti, 
+verso le imprese e verso altre amministrazioni.  
+L'analisi del rischio può essere svolta sulle singo le entità (cioè sulla pubblica amministrazione come  entità 
+unica) ed anche su parti di esse, ad esempio sui di partimenti ritenuti più critici. A essere esaminati  sono i 
+servizi erogati dalla pubblica amministrazione in c orrelazione con i servizi trasversali, cioè quelli utilizzati 
+dalle pubbliche amministrazioni ma forniti da terzi , siano essi appartenenti a una PA oppure no. 
+Il quadro normativo sul quale AgID ha costruito il processo di Risk Management si basa sulle linee gui da e 
+sui principi dettati dallo standard ISO 31000 [DR-3 ] e sull’Information Risk Assessment Methodology 2 
+(IRAM2) dell'Information Security Forum (ISF). 
+La metodologia adottata è di tipo “Gray Box”, poich é l’analisi parte da una situazione nota solo in pa rte. I 
+servizi, ad esempio, non devono necessariamente ess ere esaminati in dettaglio: le informazioni fornite  
+formano una matrice di correlazione che viene anali zzata con un algoritmo sviluppato ad hoc e che forn isce 
+come risultato l'elenco delle minacce con i relativ i dettagli. Parte del report può essere visto nell’ immagine 
+seguente: 
+                                                           
+16  https://www.sicurezzait.gov.it/Home  
+Figura 12  - Cyber Risk Management di AgID – Report dei rischi per categoria di minaccia  

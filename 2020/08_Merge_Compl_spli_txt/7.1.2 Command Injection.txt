@@ -1,0 +1,56 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 48  a 156  
+ 
+Un altro accorgimento consiste nel codificare compl etamente tutti i dati dinamici (encoding) in modo d a 
+neutralizzare eventuali inserimenti malevoli. La co difica dovrebbe essere sensibile al contesto, in ba se al 
+tipo di dato che si vuole neutralizzare: se ci si a spetta che possa esserci codice HTML abusivo, occor re 
+codificare gli eventuali tag HTML, se ci si potrebb e trovare di fronte a uno script, allora bisogna co dificare 
+gli elementi sintattici di Javascript, ecc. 
+Nell'intestazione di risposta HTTP Content-Type, de finire in modo esplicito la codifica dei caratteri (charset) 
+per l'intera pagina. 
+Impostare il flag HttpOnly a true, per evitare tent ativi di furto tramite la lettura tramite script de i cookie di 
+sessione. 
+ 
+Esempio:  
+Se ci si affida a programmi C/C++ per una web appli cation, il pericolo è insito nella specifica CGI (C ommon 
+Gateway Interface), che offre l'opportunità di acce dere al file system. 
+La necessità di bonificare l’input può essere soddi sfatta sottoponendo le stringhe in entrata a una ro utine di 
+encoding come la seguente: 
+ 
+void encode(std::string& data) { 
+  std::string buffer; 
+  buffer.reserve(data.size()); 
+  for(size_t pos = 0; pos != data.size(); ++pos) { 
+    switch(data[pos]) { 
+      case '&': buffer.append("&amp;");    break; 
+      case '\"': buffer.append("&quot;");   break; 
+      case '\'': buffer.append("&apos;");   break; 
+      case '<': buffer.append("&lt;");    break; 
+      case '>': buffer.append("&gt;");    break; 
+      default:  buffer.append(&data[pos], 1); break ; 
+    } 
+  } 
+  data.swap(buffer); 
+} 
+ 
+Per ulteriori informazioni si veda: http://cwe.mitre.org/data/definitions/79.html,  
+CWE-79: Improper Neutralization of Input During Web  Page Generation ('Cross-site Scripting'). 
+7.1.2  Command Injection 
+Come riconoscerla 
+In questa tipologia di attacco, l’aggressore potreb be eseguire comandi di sistema arbitrari sul server  
+dell’applicazione.  
+Se è in grado di iniettare e fare eseguire un coman do di sistema operativo, l’aggressore può eseguire 
+qualsiasi comando, fino all’acquisizione completa d el controllo del server. 
+La command injection è possibile se si utilizzano s tringhe di input dell'utente per creare comandi di shell 
+che poi vengono eseguiti.  
+Come difendersi 
+Di seguito un elenco delle azioni da intraprendere:  
+• Evitare qualsiasi esecuzione diretta di script di c omandi utilizzando l’input utente. Utilizzare 
+piuttosto API messe a disposizione dal linguaggio o  da librerie di funzioni. 
+• Se è impossibile rimuovere l'esecuzione del comando , eseguire solo stringhe statiche che non 
+includono l'input dell'utente. 
+• Validare tutti gli input, indipendentemente dalla l oro provenienza. Operare una convalida dell’input 
+attraverso una white list di valori ammessi e altri  controlli, come evidenziato nel punto precedente. 
+• Eseguire l'applicazione utilizzando un account uten te limitato che non disponga di privilegi non 
+necessari. 

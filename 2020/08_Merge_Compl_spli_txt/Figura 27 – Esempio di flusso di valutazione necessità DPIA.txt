@@ -1,0 +1,33 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 106  a 137  
+ 
+Sulla base di quanto stabilito dal WP Art. 29 (cfr.  DR-7), sarà necessario effettuare una valutazione della 
+necessità di svolgere una DPIA, basandosi sulla map pa concettuale definita nella Figura 27 . 
+In particolare, al fine di valutare se il trattamen to - posto in essere all’interno di un’applicazione  software - 
+possa comportare un rischio elevato per i diritti e  le libertà delle persone fisiche (Cfr. ART. 35 DR- 1) sarà 
+necessario determinare se rientra tra quelli indica ti nella Tabella 7- in cui sono descritte alcune ti pologie di 
+trattamento che obbligano il titolare a svolgere un a Data Protection Impact Assessment DPIA. 
+ 
+Figura 27 – Esempio di flusso di valutazione necessi tà DPIA 
+Alla luce di quanto sopra, se il trattamento, le su e modalità di attuazione o i dati trattati rientran o in quelli 
+descritti nella Tabella 7, e non si configurano ecc ezioni – individuate all’interno di elenchi che dov ranno 
+essere redatti dagli Stati Membri (ad oggi non risu ltano essere stati ancora individuati) - sarà neces sario 
+svolgere una DPIA. 
+ 
+Tipologia di 
+trattamento Descrizione 
+1 - Valutazione di 
+profilazione o scoring Tutti quei trattamenti che analizzano i dati presen ti all’interno dei propri archivi 
+allo scopo di trarne informazioni riguardo il rendi mento professionale, la 
+situazione economica, la salute, le preferenze o gl i interessi personali, l’affidabilità 
+o il comportamento, l’ubicazione o gli spostamenti dell’interessato 
+2 - Decisioni 
+automatizzate  Tutti quei trattamenti che producano effetti giurid ici sulla persona fisica ovvero 
+che incidono in modo analogo significativamente su dette persone fisiche 
+3 - Monitoraggio 
+sistematico Tutti quei trattamenti che sono utilizzati per osse rvare, monitorare o controllare 
+gli interessati, compresa la raccolta di dati attra verso reti o la sorveglianza di 
+

@@ -1,0 +1,54 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 122  a 156  
+ 
+o Utilizzare DataReader per recuperare i dati e caric arli in un DataSet. Non passare questo 
+DataSet tra i diversi livelli. Passare entità perso nalizzate tra i diversi livelli. 
+• Resource : Chiusura delle risorse. Una delle problematiche p iù comuni ai programmatori è la 
+sistematica chiusura delle risorse e/o connessioni aperte. Capita spesso, infatti, che per errori e/o 
+eccezioni impreviste non gestite al meglio, alcune risorse rimangano in attesa di una chiusura che 
+non arriverà mai. Per cui, chiudere le connessioni quando non in uso, migliora la sicurezza e le 
+prestazioni. Prevedere meccanismi di chiusura autom atica delle risorse (attraverso un gestore che 
+viene eseguito ad ogni uscito dal blocco). 
+• Inizialiazzazione  delle  variabili . Inizializzare la variabile @ start e usarla in un a fase successiva 
+provoca molte operazioni PUSH / POP. Quindi, inizia lizzare le variabili al momento/posto giusto. Le 
+variabili intere non devono essere inizializzate a zero perché vengono inizializzate 
+automaticamente. Le variabili stringhe invece, devo no essere inizializzate esplicitamente. 
+• Richiesta http : Utilizzare Fiddler. Utilizza Fiddler per intercet tare le richieste HTTP e per sapere 
+quale richiesta richiede più tempo. Individua anche  le eccezioni causate durante ogni richiesta 
+HTTP. 
+• URL : Rewriting URL. Per gli URL che dispongono di info rmazioni riservate, è consigliabile 
+implementare URL Rewriters. Gli URL devono essere c oerenti. 
+• Settings : Application settings.  
+o Fissare un valore per la Content-Length. Questo imp one la connessione aperta per un 
+tempo limitato (prestabilito) e la chiusura automat ica della stessa quando viene superato il 
+limite temporale dichiarato. 
+o Crittografare le stringhe di connessione sul server . 
+o Assicurarsi che tutte le DLL di riferimento siano p resenti nel GAC. 
+o Disattivare il tracciamento e il debug. Set <retail  = "true" /> nel file machine.config - obbliga 
+il debug a essere falso, disattiva la traccia di ou tput e reindirizza alla pagina di errore 
+personalizzata piuttosto che alla pagina di errore effettiva. 
+• Web  services : Impedire il sovraccarico dei servizi web 
+o Impedire il sovraccarico dei servizi web tramite at tacchi DoS (Denial of Service): 
+o Controllare se si tratta di una prima visita o la v isita ripetuta per la stessa funzione dal 
+medesimo IP. 
+o Utilizzare connessioni SQL attendibili nei servizi Web. 
+o Assicurarsi che ci siano chiamate asincrone ai serv izi web. 
+• Eccezioni : Gestire le eccezioni 
+o Registrare le eccezioni e visualizzare il messaggio  appropriato all'utente. Definire una classe 
+base MyException. La classe deve definire: 
+o Informazioni utili per l’utente: Cosa è successo; C osa è stato colpito; Quali sono le azioni da 
+intraprendere; Altre iInformazioni di supporto. 
+o Informazioni utili per la registrazione dell’eccezi one: Nome del server, Istanza id, ID utente, 
+Stack di chiamata, Nome Assembly & Versione, Fonte,  tipo e messaggio di eccezione, 
+Redirect secondo il livello di errore, Livello di a pplicazione (Cattura errori in global.asax 
+nella funzione Application_Error), Livello di pagin a (Utilizza la funzione Page_Error per 
+registrare gli errori). 
+ 
+7.8.9.2  ASP.NET MVC 
+ASP.NET MVC è una parte del framework  .NET che per mette di creare siti scalabili suddividendo la logi ca di 
+programmazione in base al metodo Model-View-Control ler. Segue un elenco di best practices per lo 
+sviluppo sicuro: 
+• Isolate Controllers. Isolare i controllers dalle di pendenze, da HttpContext, dalle classi di accesso a i 
+dati, dalla configurazione, dalla registrazione, ec c. L'isolamento può essere ottenuto creando classi 
+di wrapper e utilizzando un contenitore IoC (Invers ion of Control). 

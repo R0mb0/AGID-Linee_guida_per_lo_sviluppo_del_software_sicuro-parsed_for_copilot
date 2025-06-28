@@ -1,0 +1,34 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 38  a 156  
+ 
+ 
+L’esempio di cui sopra mostra come l’applicazione ( a seguito di condizioni mal gestite) fornisce messa ggi 
+informativi o di errore contenenti dati o informazi oni (server type –nginx-, versione ed il S.O. -Ubun tu-) che 
+possono agevolare l’aggressore. 
+Contromisure 
+Per evitare di divulgare importanti informazioni, u tilizzabili da eventuali attaccanti, è necessario c onfigurare 
+l’application server in modo tale che, nelle intest azioni http di risposta non vengano fornite informa zioni 
+quali ad esempio: server type (in questo caso ngix ), nome e/o release del sistema operativo.  
+Per tale finalità, prima di sviluppare l’applicazio ne è fondamentale analizzare le possibili minacce ( threat 
+modeling). L’analisi consente di individuare in man iera più puntuale gli elementi a rischio, che potre bbero 
+portare alla divulgazione d’informazioni utili ad u n eventuale attaccante. 
+6.4.3  Directory Listing 
+Le problematiche di directory listing sono molto co muni nelle applicazioni Web, anche se non unicament e 
+circoscrivibili a quest’ambito. Si manifestano quan do un aggressore riesce con apposite richieste a 
+visualizzare il contenuto di una directory, preleva ndo file dal suo interno o visualizzando dati che 
+dovrebbero di norma essere preclusi agli utenti non  autenticati o che non dispongono di specifici priv ilegi. 
+Comunemente un aggressore riesce a sfruttare questo  tipo di problematiche facendo leva su configurazio ni 
+applicative errate. 
+Esempio di una sessione Directory Listing: 
+ 
+ 
+Contromisure 
+I web sever prevedono l’opzione di abilitare/disabi litare il directory listing. Occorre fare attenzion e che il 
+default non sia l’abilitazione, nel qual caso impos tare la disabilitazione. 
+6.4.4  Denial of Service (DoS) 
+Traduzione di “negazione del servizio”, un denial o f service è una condizione che causa, a seconda di 
+specifiche circostanze, il blocco, la sospensione o  il rallentamento dell’applicazione, di un suo sing olo 
+processo, di un’unica componente o dell’intero sist ema. Ciò è determinato dal tipo di integrazione 
+dell’applicazione stessa con il kernel, le sue stru tture e dai privilegi con i quali viene eseguita. U na 
+

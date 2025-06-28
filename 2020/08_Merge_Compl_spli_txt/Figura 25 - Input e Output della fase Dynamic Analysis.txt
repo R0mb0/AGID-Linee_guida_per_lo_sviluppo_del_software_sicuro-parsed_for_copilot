@@ -1,0 +1,43 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 98  a 137  
+ 
+• Analisi dinamica : attraverso l’attuazione di test dinamici di sicur ezza sull’applicazione in esecuzione 
+in ambiente controllato; 
+• Penetration Test : attraverso l’esecuzione di scansioni ed analisi d ella superficie di attacco; 
+• Test di autenticazione multilivello : attraverso la verifica delle modalità di gestione  dell'accesso 
+degli utenti; 
+• Business Logic test : attraverso l’esecuzione di test manuali sulle app licazioni in fase di esecuzione; 
+• Analisi dei risultati : attraverso l’individuazione e la rimozione dei fa lsi positivi; 
+• Remediation Plan : attraverso la definizione del piano di rientro e la produzione di reportistica di 
+sintesi e di dettaglio; Proof of Concept delle vuln erabilità riscontrate comprensiva di azioni per la 
+riduzione della superficie d’attacco. 
+L’esame delle Applicazioni in esecuzione in ambient e di test, deve portare alla produzione, mediante l a 
+Dinamic Analysis delle seguenti tipologie di docume nti: 
+• Vulnerability Assessment : report di dettaglio delle vulnerabilità riscontra te nella fase di analisi 
+dinamica dell’applicazione tramite gli strumenti a supporto; 
+• Remediation Plan:  report che analizza i falsi positivi ed indirizza la risoluzione delle problematiche 
+riscontrate nell’analisi stessa. 
+ 
+La figura che segue sintetizza gli elementi in inpu t e l’output prodotto dal processo DAST: 
+ 
+ 
+Figura 25 - Input e Output della fase Dynamic Analys is 
+ 
+9.4.1  Identificazione degli strumenti a supporto 
+Nel paragrafo 6.6.1 sono stati presentati i tool a supporto di questa fase. Si riporta di seguito un e stratto: 
+• closed source 
+o IBM App Scan (versione DAST), 
+o Veracode, 
+o CodeDx. 
+• open source 
+o OWASP Zed Attack Proxy. 
+ 
+9.5  Supporto per la manutenzione di applicazioni sicure  
+L’obiettivo di questa fase è mantenere un prodotto sicuro, a partire dai nuovi trend sugli attacchi/mi nacce. 
+Il team deve quindi analizzare le nuove minacce e i ndividuare le contromisure necessarie rilasciando n uovi 
+aggiornamenti/patch laddove necessario attraverso u n processo di ‘Continuous Security’: 
+ 
+

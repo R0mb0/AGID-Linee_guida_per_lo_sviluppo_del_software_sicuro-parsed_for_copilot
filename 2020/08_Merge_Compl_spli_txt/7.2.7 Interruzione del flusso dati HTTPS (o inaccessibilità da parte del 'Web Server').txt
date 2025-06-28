@@ -1,0 +1,51 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 114 a 132 
+ 
+Discoverability  L’attaccante dovrà impegnare parecchie risorse per sfruttare la 
+vulnerabilità (deve probabilmente sapersi muoversi sul Dark Web 
+e pagare il “servizio”) . 1 
+ 
+DREAD Score (DDOS): 8/15 ( MEDIO ) 
+ 
+Valutazione della priorità della  minaccia  (Ranking ) 
+• Si considera lo scenario del crash, nell’ipotesi richieda lo sfruttamento di una vulnerabilità 0 -day d el 
+‘Web Server’.  
+DREAD  Descrizione  Score  
+Damage Potential  L’attaccante può impedire agli utenti del sistema di interagire con 
+esso.  2 
+Reproducibility  L’attacco funziona fino all’applicazione della patch (che richiede 
+la scoperta dello 0 -day, la produzione della patch, il testing della 
+patch, l’install azione della patch) . 2 
+Exploitability  L’attacco richiede una figura senior capace di trovare una 
+vulnerabilità tale da provocare il crash di Web Server . 1 
+Affected Users  100% (la piattaforma è resa indisponibile o comunque ne viene 
+degradato il funzionamento) . 3 
+Discoverability  L’attaccante dovrà impegnare parecchie risorse per scoprire la 
+vulnerabilità sfruttabile. Lo sforzo potrebbe non valere il risultato.  1 
+ 
+DREAD Score (Crash): 9/15 ( MEDIO ) 
+DREAD Score complessivo (il peggiore tra i due ): 9/15 ( MEDIO ) 
+7.2.7 Interruzione del flusso dati HTTPS (o inaccessibilità da parte del  'Web Server')  
+Categoria : Denial Of Service  
+Descrizione : Un agente esterno interrompe i dati che fluiscono attraverso '[BC2WS] HTTPS 
+Req (Credentials&Data) - Browser Client to Web Server' in entrambe le direzioni.  
+Contromisure :  
+• Se il "Client Browser" non è in grado di proseguire l'elaborazione, dovrebbe fornire 
+risposte appropriate agli utenti in attesa.  
+• Rilevamento: Si consideri l'utili zzo di un meccanismo di allarme che, rilevando lo 
+spostamento del comportamento del Server Web da metriche predefinite, consenta 
+di segnalare la sospetta condizione di DOS (per attivare le risposte appropriate).  
+• 3) Ridondanza: considerare la possibilità d i configurare un secondo "Web Server" per 
+essere utilizzato come un backup di quello sotto attacco . 
+ 
+Valutazione della priorità della  minaccia  (Ranking ) 
+DREAD  Descrizione  Score  
+Damage Potential  L’attaccante può impedire agli utenti del sistema di interagire con 
+esso. 2 
+Reproducibility  Non sembra verosimile che l’attaccante “a comando ” / ”a 
+piacimento” possa interrompere il flusso dati in qualunque 
+momento. Sembra ragionevole assumere che l’attacco funzioni 
+solo in certe condizioni che si raggiungo no raramente . 1 

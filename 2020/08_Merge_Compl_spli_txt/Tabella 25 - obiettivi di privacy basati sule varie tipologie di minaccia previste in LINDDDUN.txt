@@ -1,0 +1,37 @@
+ 
+ 
+LINEE GUIDA PER LA MODELLAZIONE DELLE MINACCE ED 
+INDIVIDUAZIONE DELLE AZIONI DI MITIGAZIONE CONFORMI AI 
+PRINCIPI DEL SECURE/PRIVACY BY DESIGN  Pag. 88 a 132 
+ 
+Identiﬁability  of (E,DF)  Anonymity/pseudonymity of (E,DF)  
+Identiﬁability  of (E,DS)  Anonymity/pseudonymity of (E,DS)  
+Identiﬁability  of (E,P)  Anonymity/pseudonymity of (E,P)  
+Non-repudiation  of (E,DF)  Plausibledeniability  of (E,DF)  
+Non-repudiation  of (E,DS)  Plausibledeniability  of (E,DS)  
+Non-repudiation  of (E,P)  Plausibledeniability  of (E,P)  
+Detectability  of DF  Undetectability  of DF  
+Detectability  of DS  Undetectability  of DS  
+Detectability  of P Undetectability  of P 
+Information  Disclosure  of DF  Conﬁdentiality  of DF  
+Information  Disclosure  of DS  Conﬁdentiality  of DS  
+Information  Disclosure  of P Conﬁdentiality  of P 
+Content  Unawareness  of E Content  awareness  of E 
+Policy and consent Noncompliance of the 
+system  Policy  and consent  compliance  of the syste m 
+Tabella 25 - obiettivi di privacy basati sule varie tipologie di minaccia previste in LINDDDUN  
+5.8.6.1.1  Tecniche di mitigazione  
+Nella metodologia LIND DUN, le proprietà e la corrisp ettive minacce  alla privacy vengono  
+classificate come hard e soft privacy.  La tabella a seguire evidenzia tale classificazione:  
+Proprietà  di privacy  Minaccia alla privacy  
+Hard privacy  
+Unlinkability  Linkability  
+Anonymity & Pseudonymity  Indentifiability  
+Plausible deniability  Non repudiation  
+Undetectability & unobservability  Detectability  
+Confidentiality  Disclosure of information  
+Soft privacy  
+Content awareness  Content Unawareness  
+Policy and consent compliance  Policy and consent non -compliance  
+Tabella 26 - LINDDUN Hard & Soft privacy  
+  

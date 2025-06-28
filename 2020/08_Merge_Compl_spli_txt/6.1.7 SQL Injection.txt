@@ -1,0 +1,53 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 28  a 156  
+ 
+Il codice sorgente può essere manomesso, per ottene re l’accesso a un file sensibile, sostituendo il no me del 
+file con il percorso al file ‘sensibilè al quale si  vuole accedere: 
+../../../../etc/password 
+Contromisure 
+In una web application si dovrebbe evitare di utili zzare percorsi di file system inseriti dall'utente.  Se l'utente 
+dovesse scegliere un file, occorrerebbe limitare la  selezione imponendogli una scelta limitata di file  
+ammessi (white list), attraverso un indice numerico . Nel caso in cui fosse necessario utilizzare un pe rcorso 
+fornito dall'utente, occorrerebbe verificarlo e/o s ottoporlo a escaping. 
+Un'altra contromisura, valida soprattutto sui siste mi Unix/Linux, potrebbe essere quella di creare una  
+chroot jail, ossia non permettere di sfuggire alla root accessibile dalla web application, in maniera tale da 
+salvaguardare le directory critiche del sistema ope rativo. Lo stesso risultato potrebbe essere raggiun to 
+consentendo l’accesso a un utente che ha accesso li mitato, la cui home directory coincida con la docum ent 
+root. 
+6.1.7  SQL Injection 
+SQL Injection è una problematica che colpisce princ ipalmente le applicazioni Web che s’interfacciano a  un 
+layer di back-end che utilizza un database relazion ale, anche se non unicamente circoscrivibile a 
+quest’ambito. La SQL Injection è, infatti, una vuln erabilità che affligge tutte le applicazioni (anche  
+client/server) che interrogano un DB. Si verifica q uando uno script o un’altra componente applicativa non 
+filtra opportunamente l’input passato dall’utente, rendendo possibile per un aggressore l’alterazione della 
+struttura originaria della query SQL, attraverso l’ utilizzo di caratteri speciali (ad esempio apici e virgolette) o 
+mediante la concatenazione di costrutti multipli (a d esempio utilizzando la keyword SQL UNION). A seco nda 
+delle circostanze e del tipo di database server con  cui l’applicazione si interfaccia, l’aggressore pu ò sfruttare 
+una problematica di SQL Injection per: 
+• Bypassare i meccanismi di autenticazione di un port ale (ad esempio forzando il ritorno di condizioni 
+veritiere alle procedure di controllo); 
+• Ricostruire il contenuto di un Database (ad esempio  localizzando le tabelle contenenti i token delle 
+sessioni attive, visualizzando le password degli ut enti cifrate/non cifrate o altre informazioni di 
+natura critica); 
+• Aggiungere, alterare o rimuovere i dati già present i nel Database; 
+• Eseguire stored-procedures. 
+ 
+Si riportano di seguito tre problematiche di SQL In jection che rappresentano le tecniche di base da cu i 
+derivano tutti i casi possibili: 
+• Iniezione di una seconda query mediante il caratter e “;” 
+Esempio: 
+Si consideri la query: $sql = "SELECT * from utenti  WHERE id=$id"; 
+Se il parametro $id  fosse acquisito da input utente e inizializzato al la stringa: 1; DROP table utenti  
+La query risultante sarebbe: SELECT * from utenti WHERE id=1; DROP table utenti  che causerebbe la 
+rimozione da parte dell’aggressore della tabella ut enti. Le query multiple non sono comunque 
+supportate da tutti I database server. 
+• Modifica della query attraverso introduzione del co mmento ‘--‘ 
+Esempio: 
+Si consideri la query: $sql = "SELECT * from utenti  WHERE login='$login' AND 
+password='$password'"; 
+Se il parametro $login fosse acquisito da input utente ed inizializzato al la stringa: xyz' OR 1=1 –-  
+La query risultante sarebbe: SELECT * from utenti WHERE login='xyz' OR 1=1 --' A ND password=''  ed il 
+database tratterebbe la parte successiva a “--“ com e commento, ignorandola e permettendo quindi 
+all’aggressore di accedere senza specificare alcuna  password. 
+• Iniezione di caratteri jolly ed eliminazione di par te della query: 

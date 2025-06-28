@@ -1,0 +1,58 @@
+ 
+ 
+Linee guida per lo sviluppo sicuro Pag. 57  a 156  
+ 
+Gli argomenti delle macro devono essere accuratamen te racchiusi in parentesi. 
+7.1.8.5  L’operatore sizeof e il passaggio di dati come para metri 
+Il passaggio della dimensione di una struttura dati  come parametro a una funzione deve essere effettua to 
+in maniera corretta, tramite l’utilizzo della funzi one sizeof(). A tal proposito, è necessario svilupp are 
+consapevolezza degli errori qui menzionati, e non r ipeterli: 
+ 
+Esempio:  
+Forma non corretta: 
+strlen(struttura)  
+sizeof(ptr) 
+sizeof(*array) 
+/* 
+ * Dimensione di un solo elemento 
+ */ 
+sizeof(array) 
+ 
+Forma corretta: 
+sizeof(struttura) 
+sizeof(*ptr) 
+sizeof(array) 
+/* 
+ * Dimensione di un solo elemento 
+ */ 
+sizeof(array[0])  
+ 
+Gli argomenti delle macro devono essere accuratamen te racchiusi in parentesi. 
+7.1.8.6  Allocazione dinamica 
+Il successo dei linguaggi C e C++ è dovuto alla gra nde flessibilità che offrono allo sviluppatore nell a gestione 
+diretta della memoria della macchina. Ciò offre ill imitate possibilità, ma comporta anche rischi piutt osto 
+elevati. Per mitigare tali rischi occorre adottare i seguenti suggerimenti: 
+• Lo spazio di memoria allocato dinamicamente (ad ese mpio con le funzioni malloc(), 
+calloc() e realloc() deve essere appropriato alla d imensione dei dati che deve 
+contenere; 
+• L’applicazione deve provvedere all’allocazione e al la deallocazione della memoria. 
+Nell’ambito della programmazione multithreaded, val e lo stesso principio: ogni 
+thread deve allocare e deallocare la propria memori a, senza delegare la 
+deallocazione ad altri thread; 
+• Se si scrive codice C++ è meglio sfrutttare le cara tteristiche peculiari di questo 
+linguaggio, piuttosto che appoggiarsi alle struttur e del C, mantenute per 
+compatibilità. Esempio: utilizzare "new" invece che  malloc(), calloc(), e 
+realloc() ; 
+7.1.8.7  Deallocazione  
+• Gli array non devono essere cancellati come dati sc alari; 
+Esempio:  
+      Forma non corretta: 
+delete mioarray;  
+      Forma corretta: 
+delete [ ] mioarray; 
+ 
+• Non devono esistere puntatori a risorse distrutte: contestualmente alla distruzione delle risorse 
+vanno dereferenziati tutti i puntatori; 
+• I puntatori relativi alla memoria allocata dinamica mente devono essere impostati a NULL subito 
+dopo essere stati rilasciati; 
+• I puntatori ottenuti via malloc(), calloc(), realloc()  devono essere distrutti con free()  (mai usare delete); 

@@ -1,0 +1,49 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 75  a 137  
+ 
+In accordo al (ISC)², il CSSLP è progettato per: 
+• Stabilire le migliori pratiche, al fine di limitare  la proliferazione delle vulnerabilità di sicurezza  che 
+derivano da processi di sviluppo insufficienti 
+• attestare la capacità professionista di mitigare i problemi di sicurezza e dei rischi che circondano l o 
+sviluppo di applicazioni in tutto il SDLC, dalla sp ecifica e progettazione alla realizzazione e 
+manutenzione  
+ 
+I seguenti domini compongono il CSSLP Common Body o f Knowledge (CBK), che si concentra sulla necessità  
+di integrare la sicurezza nel SDLC: 
+• Secure Software Concepts: implicazioni di sicurezza  nello sviluppo di software. 
+• Secure Software Requirements: catturare i requisiti  di sicurezza nei raccolta dei requisiti di fase 
+• Secure Software Design: tradurre i requisiti di sic urezza in elementi di design di applicazioni 
+• Secure Software Implementation/Coding: unit testing  per la funzionalità sicurezza e la resilienza 
+contro gli attacchi, e lo sviluppo di codice sicuro  e sfruttare la mitigazione 
+• Secure Software Testing: test integrati di quality assurance per la funzionalità sicurezza e la 
+resilienza contro gli attacchi  
+• Software Acceptance: implicazioni per la sicurezza in fase di accettazione del software 
+• Software Deployment, Operations, Maintenance and Di sposal: problemi di sicurezza intorno 
+operazioni di steady-state e la gestione del softwa re.  
+La qualificazione CSSLP è valida per tre anni, dopo  di che deve essere rinnovata. Può essere rinnovata  
+rifacendo l'esame o, più comune, con l'acquisizione  di crediti formativi professionali (CPE).  
+Il CISSP, un altro programma di certificazione da ( ISC)² con regole simili, è destinato ai professioni sti che 
+sviluppano politiche e procedure in materia di sicu rezza delle informazioni. 
+ 
+7.7  Certificazioni ISACA (CISA, CISM, CRISC) 
+Le certificazioni ISACA sono accettate e riconosciu te a livello globale e sono destinate al management  IT per 
+rafforzare le loro competenze negli ambiti: audit I T, sicurezza, governance e gestione dei rischi. Nel  
+dettaglio: 
+• Certified Information Systems Auditor (CISA). Certi fica le competenze necessarie ad amministrare e 
+controllare l’IT dell’azienda e a compiere un effet tivo audit sulla sicurezza dell’organizzazione. La 
+certificazione CISA ha per oggetto le seguenti aree : Processo di audit dei sistemi informatici; IT 
+Governance e Management; Acquisizione, sviluppo e i mplementazione dei sistemi informatici; 
+Operazioni, mantenimento e supporto dei servizi inf ormatici; Protezione delle risorse informatiche. 
+• Certified in Risk and Information Systems Control ( CRISC), prepara e abilita i professionisti IT alle 
+sfide IT e alla gestione dei rischi aziendali. La c ertificazione CRISC ha per oggetto le seguenti aree  
+della gestione degli IT Risk: Identificazione, e Va lutazione dei Rischi; Risposta ai Rischi; 
+Monitoraggio dei rischi; Impostazione e implementaz ione dei controlli IT; Monitoraggio e 
+manutenzione dei controlli IT. 
+• Certified Information Security Manager (CISM). La c ertificazione CISM ha per oggetto le seguenti 
+aree: Governance della sicurezza delle informazioni ; Gestione dei rischi e Conformità; Sviluppo e 
+Gestione dei programmi di Sicurezza delle Informazi oni; Capacità di reagire agli incidenti di 
+sicurezza. 
+ 

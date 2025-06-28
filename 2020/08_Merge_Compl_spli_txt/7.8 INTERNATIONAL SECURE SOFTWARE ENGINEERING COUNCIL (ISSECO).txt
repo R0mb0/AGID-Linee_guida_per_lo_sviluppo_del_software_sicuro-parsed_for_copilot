@@ -1,0 +1,60 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 76  a 137  
+ 
+La sicurezza IT è indirizzata nella gran parte di q ueste certificazioni, ma non viene data molta enfas i 
+all’Ingegneria Secure Software. 
+ 
+URL  https://www.isaca.org/CERTIFICATION/Pages/default.a spx  
+Contact Method  General Contact : 
+[http://www.isaca.org/About-ISACA/Contact-Us/Pages/d efault.aspx ] 
+Web form, phone and address  
+Country of HQ location  US  
+Geographic Scope  International   
+Type  Industry (no profit)  
+ 
+7.8  International Secure Software Engineering Council ( ISSECO) 
+ISSECO promuove corsi di formazione sul SSE per ing egneri del software in modo che possano ottenere un o 
+standard di certificazione (ISSECO Certified Profes sional for Secure Software Engineering). La certifi cazione 
+è fornita dall'Istituto Internazionale Software Qua lity (iSQI) 29 . 
+Secondo questa iniziativa, l'attenzione di ISSECO è  sulla produzione di software sicuro e il suo obiet tivo è 
+quello di creare un ambiente informatico sicuro per  tutti. Non è focalizzata su specifici linguaggi di  
+programmazione. 
+ 
+URL  http://www.isseco.org/index.php?p=content  
+Contact Method  ISSECO Contact:  
+http://www.isseco.org/index.php?p=contact  
+ 
+ISQUI Contact: https://www.isqi.org/  
+Email, phone and address  
+Country of HQ location  Germany  
+Geographic Scope  National  
+Type  Industry (not for profit)  
+ 
+I temi principali della certificazione sono: 
+• Viewpoints of attackers and customers 
+• Trust and threat models 
+• Methodologies 
+• Requirements engineering with respect to security 
+• Secure design 
+• Secure coding 
+• Security testing 
+• Secure deployment 
+• Security response 
+• Security metrics 
+• Code and resource protection 
+                                                           
+29  https:// www .isqi.org/ 
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 77  a 137  
+ 
+Le attività di questa iniziativa sono supportati da  partner diversi: 
+• Supporters (financial aid) 
+• Training providers (training material and classes) 
+• Certifiers (certification and certificate quality) 
+ 

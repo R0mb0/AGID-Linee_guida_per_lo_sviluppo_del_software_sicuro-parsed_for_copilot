@@ -1,0 +1,53 @@
+ 
+ 
+Linee Guida per la configurazione per adeguare la si curezza del 
+software di base Pag. 119  a 141  
+ 
+anti -phishing native, o in alternativa utilizzare un software ant i -malwa re dotato di 
+estensioni anti-phishing per i browser adottati dal l’organizzazione. 
+ 
+5.7.9  Anti-Spam 
+Software anti -Spam  
+Minaccia  Negazione dei servizi.  
+Contromisure  Installare sul Mail Server un software anti -spam che aggiorni il proprio database delle 
+“firme” almeno una volta al giorno. Il software dev e avere la funzione di auto-
+apprendimento in modo da incrementare l'accuratezza  del filtraggio, e deve eseguire il 
+filtraggio dei messaggi sospetti mediante analisi d i tipo: 
+- Semantico, ovvero la rilevazione in base a parole  chiavi (ad es. Viagra, sesso, Prozac, 
+etc.); 
+- Euristico, ovvero individuare la posta ricevuta c on comportamento anomalo (ad 
+esempio con un numero insolitamente elevato di dest inatari, con l'assenza 
+dell'indirizzo del mittente o con l'indirizzo del m ittente identico a quello del 
+destinatario). 
+Inoltre il software deve usare una specifica tecnic a di blocco dei messaggi sospetti in 
+base al mail server di provenienza come, ad esempio , la tecnica DNSBL (DNS-based 
+Blackhole Lists) che si avvale dell'ausilio di una lista pubblicata su internet, che viene 
+manutenuta costantemente da terze parti ed in cui s ono elencati i servers che 
+favoriscono lo spam (ad es. server SMTP Open Relay,  server che emettono spam, ISP 
+che supportano lo spam, etc.). 
+ 
+5.7.10  Procedure 
+A i principi generali già introdotti nel paragrafo [rif. 5.1.7] (i principi generali si applicano sia ai MailServer 
+quanto che ai Mail Client), si aggiungono le seguen ti indicazioni per il contesto specifico: 
+ 
+Uso corretto della posta elettronica  
+Minaccia  - Abuso di risorse . 
+- Attacchi all’integrità dei sistemi. 
+- Compromissione delle comunicazioni. 
+- Furto di credenziali di autenticazione. 
+Contromisure  - Evitare l'uso dell'e -mail a fini diversi da quelli strettamente aziendal i  (ad esempio, 
+per iscriversi a mailing list, forum, chat, blog, e tc.) che non siano attinenti alla 
+funzione svolta. 
+- Non cliccare mai direttamente su un link presente i n una e-mail per accedere a un 
+sito web contenente informazioni sensibili. Copiare  e incollare il testo del 
+collegamento in una nuova finestra del browser e ve rificare l'URL per assicurarsi 
+che la sessione inizi dall'indirizzo autentico cono sciuto del sito, senza che vengano 
+aggiunti altri caratteri. 
+- Controllare che la pagina web del sito dell’eventua le istituto creditizio a cui 
+conduce un link presente in una e-mail, disponga di  un certificato digitale 
+attendibile, ovvero appartenente al legittimo propr ietario, e che tale certificato sia 
+ancora valido. Ad esempio, nelle versioni più recen ti di diversi browser 
+comunemente disponibili è sufficiente cliccare con il pulsante destro del mouse in 
+un punto qualsiasi della finestra del browser e sel ezionare “Proprietà” dal menu a 
+comparsa, dopo aver visualizzato la finestra "Propr ietà", occorre cliccare su 
+“Certificati” per controllarne la validità ed atten dibilità. 

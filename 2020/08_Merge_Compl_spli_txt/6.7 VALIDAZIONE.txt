@@ -1,0 +1,82 @@
+  
+ 
+ 
+LINEE GUIDA PER L’ADOZIONE DI UN CICLO DI SVILUPPO DI 
+SOFTWARE SICURO Pag. 61  a 137  
+ 
+Scanning  
+Thunder TPS 
+by A10 
+Networks DDoS 
+Protection Verification 
+/ Response Versione Trial 
+disponibile https://www.a10networks.com/pr 
+oducts/thunder-tps/  
+Trend Micro 
+Deep Security 
+Platform SAST, DAST Implementa 
+tion / 
+Verification Versione Trial 
+disponibile https://www.trendmicro.com  
+Tripwire 
+Enterprise IAST, RASP Implementa 
+tion / 
+Verification  Demo disponibile su 
+richiesta https://www.tripwire.com  
+Trustwave 
+Secure Web 
+Gateway CDN, DAST Verification Demo non disponibile  https://www.trustwave.com/en -
+us/services/technology/secure-
+web-gateway/  
+Trustwave 
+Web 
+Application 
+Firewall WAF, 
+Penetration 
+Testing Verification Demo non disponibile  https://www.trustwave.com  
+Veracode 
+Cloud Platform  SAST, DAST, 
+Mobile AST, 
+Penetration 
+Testing Implementa 
+tion / 
+Verification Demo disponibile su 
+richiesta www.veracode.com  
+VMWare 
+Carbon Black Endpoint 
+Security Verification 
+/ Response Demo disponibile su 
+richiesta https://www.carbonblack.com/  
+vSentry by 
+Bromium Endpoint 
+Security Verification 
+/ Response Demo disponibile su 
+richiesta www.bromium.com  
+Website 
+Malware 
+Scanner SAST, DAST Implementa 
+tion / 
+Verification Demo non disponibile  https://www.sitelock.com  
+WhiteHat 
+Sentinel SAST, DAST, 
+MAST Implementa 
+tion / 
+Verification Demo di 30 giorni 
+disponibile su 
+richiesta https://www.whitehatsec.com/inf 
+o/security-check/  
+Wireshark Penetration 
+Testing and 
+Packet-level 
+Monitoring Verification Open Source https://www.wireshark.org/  
+Yottaa CDN, DDoS 
+Protection, 
+WAF Verification Demo disponibile su 
+richiesta https://www.yottaa.com  
+ 
+6.7  Validazione 
+Durante questa fase il software è oggetto di una Fi nal Security Review finalizzata a stabilire se il s oftware 
+soddisfa tutti i requisiti di sicurezza individuati  nella fase iniziale del progetto.  
+In questa fase ci si accerta, inoltre, che i bug di  sicurezza precedentemente identificati siano stati  corretti e 
+che il SW sia sufficientemente robusto di fronte a nuove vulnerabilità.  
+Le azioni di sicurezza di questa fase possono esser e così sintetizzate: 
