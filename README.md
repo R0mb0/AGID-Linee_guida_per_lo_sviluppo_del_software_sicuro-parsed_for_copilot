@@ -14,6 +14,7 @@ This repository contains a collection of documents originally sourced from the A
 
 1. From the repository home, understand the structure of the documents so you can instruct the AI on what to read in order to generate the answers you need.
 2. Access the AI starting from the repository.
+   ![Screenshot](https://github.com/R0mb0/AGID-Linee_guida_per_lo_sviluppo_del_software_sicuro-parsed_for_copilot/blob/main/ReadMeImgs/Screenshot.png)
 3. Write your prompt, making sure that the repository has been attached to the AI.
 
 ### Promt example  
